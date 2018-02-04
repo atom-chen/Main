@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "第三章_启程windows编程基础", "第三章_启程windows编程基础\第三章_启程windows编程基础.vcxproj", "{91F6E692-E370-405B-B872-A01AEC7C7578}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91F6E692-E370-405B-B872-A01AEC7C7578}.Debug|Win32.ActiveCfg = Debug|Win32
+		{91F6E692-E370-405B-B872-A01AEC7C7578}.Debug|Win32.Build.0 = Debug|Win32
+		{91F6E692-E370-405B-B872-A01AEC7C7578}.Release|Win32.ActiveCfg = Release|Win32
+		{91F6E692-E370-405B-B872-A01AEC7C7578}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

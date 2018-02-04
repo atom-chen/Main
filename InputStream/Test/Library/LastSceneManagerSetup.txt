@@ -1,0 +1,4 @@
+sceneSetups:
+- path: F:/WorkSpace/InputStream/DrawCard/DrawCard/Assets/Scenes/GameOrder.unity
+  isLoaded: 1
+  isActive: 1

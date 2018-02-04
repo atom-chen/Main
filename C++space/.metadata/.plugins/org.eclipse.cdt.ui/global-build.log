@@ -1,0 +1,1587 @@
+20:43:13 **** Rebuild of configuration Debug for project 设计模式 ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\设计模式.obj" "..\\src\\设计模式.cpp" 
+设计模式.cpp
+link /debug /nologo /OUT:设计模式.exe "src\\设计模式.obj" 
+Info: Nothing to build for 设计模式
+16:00:04 **** Rebuild of configuration Debug for project 设计模式 ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\设计模式.obj" "..\\src\\设计模式.cpp" 
+设计模式.cpp
+link /debug /nologo /OUT:设计模式.exe "src\\设计模式.obj" 
+11:35:19 **** Rebuild of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\Day4Eclipse.obj" "..\\src\\Day4Eclipse.cpp" 
+Day4Eclipse.cpp
+..\src\Day4Eclipse.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\Day4Eclipse.cpp(11) : fatal error C1083: 无法打开包括文件:“MyArray.h”: No such file or directory
+11:38:22 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\Day4Eclipse.obj" "..\\src\\Day4Eclipse.cpp" 
+Day4Eclipse.cpp
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(36) : error C2541: “delete”: 不能删除不是指针的对象
+..\src\MyArray.cpp(55) : error C2597: 对非静态成员“MyArray::m_length”的非法引用
+..\src\MyArray.cpp(67) : error C2805: 二进制“operator ==”的参数太少
+..\src\MyArray.cpp(69) : error C2355: “this”: 只能在非静态成员函数的内部引用
+..\src\MyArray.cpp(78) : error C2805: 二进制“operator !=”的参数太少
+..\src\MyArray.cpp(80) : error C2355: “this”: 只能在非静态成员函数的内部引用
+11:38:47 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(36) : error C2541: “delete”: 不能删除不是指针的对象
+..\src\MyArray.cpp(55) : error C2597: 对非静态成员“MyArray::m_length”的非法引用
+..\src\MyArray.cpp(67) : error C2805: 二进制“operator ==”的参数太少
+..\src\MyArray.cpp(69) : error C2355: “this”: 只能在非静态成员函数的内部引用
+..\src\MyArray.cpp(78) : error C2805: 二进制“operator !=”的参数太少
+..\src\MyArray.cpp(80) : error C2355: “this”: 只能在非静态成员函数的内部引用
+11:38:51 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(36) : error C2541: “delete”: 不能删除不是指针的对象
+..\src\MyArray.cpp(55) : error C2597: 对非静态成员“MyArray::m_length”的非法引用
+11:39:27 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(55) : error C2597: 对非静态成员“MyArray::m_length”的非法引用
+11:41:42 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(54) : error C2065: “m_length”: 未声明的标识符
+11:42:05 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(54) : error C2355: “this”: 只能在非静态成员函数的内部引用
+..\src\MyArray.cpp(54) : error C2227: “->m_length”的左边必须指向类/结构/联合/泛型类型
+11:43:02 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+11:43:23 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+11:46:27 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+11:47:01 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(28) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(13): 可能是“int MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+11:47:23 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" "src\\Day4Eclipse.obj" 
+11:49:03 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\Day4Eclipse.obj" "..\\src\\Day4Eclipse.cpp" 
+Day4Eclipse.cpp
+..\src\Day4Eclipse.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\Day4Eclipse.cpp(11) : fatal error C1083: 无法打开包括文件:“MyArray.h”: No such file or directory
+11:50:04 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" "src\\Day4Eclipse.obj" 
+LINK : fatal error LNK1104: 无法打开文件“src\Day4Eclipse.obj”
+11:50:04 **** Rebuild of configuration Debug for project MyArr ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArr.obj" "..\\src\\MyArr.cpp" 
+MyArr.cpp
+..\src\MyArr.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArr.cpp(11) : fatal error C1083: 无法打开包括文件:“MyArray.h”: No such file or directory
+11:55:08 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\day4eclipse\src\MyArray.h(14) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyArray.cpp(89) : error C2440: “return”: 无法从“double”转换为“int &”
+11:55:15 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(89) : error C2440: “return”: 无法从“double”转换为“int &”
+11:55:34 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(88) : error C2556: “double &MyArray::operator [](int)”: 重载函数与“int &MyArray::operator [](int)”只是在返回类型上不同
+        f:\c++space\day4eclipse\src\MyArray.h(13) : 参见“MyArray::operator []”的声明
+..\src\MyArray.cpp(88) : error C2371: “MyArray::operator []”: 重定义；不同的基类型
+        f:\c++space\day4eclipse\src\MyArray.h(13) : 参见“MyArray::operator []”的声明
+11:55:49 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+11:20:45 **** Rebuild of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(87) : error C2084: 函数“bool MyArray::operator ==(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(18) : 参见“==”的前一个定义
+..\src\MyArray.cpp(147) : error C2248: “MyArray::m_length”: 无法访问 private 成员(在“MyArray”类中声明)
+        f:\c++space\day4eclipse\src\MyArray.h(22) : 参见“MyArray::m_length”的声明
+        f:\c++space\day4eclipse\src\MyArray.h(6) : 参见“MyArray”的声明
+..\src\MyArray.cpp(149) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(19): 可能是“double &MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(151) : warning C4172: 返回局部变量或临时变量的地址
+11:21:18 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(87) : error C2084: 函数“bool MyArray::operator ==(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(19) : 参见“==”的前一个定义
+..\src\MyArray.cpp(149) : error C2678: 二进制“[”: 没有找到接受“const MyArray”类型的左操作数的运算符(或没有可接受的转换)
+        f:\c++space\day4eclipse\src\MyArray.h(20): 可能是“double &MyArray::operator [](int)”
+        尝试匹配参数列表“(const MyArray, int)”时
+..\src\MyArray.cpp(151) : warning C4172: 返回局部变量或临时变量的地址
+11:21:49 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(87) : error C2084: 函数“bool MyArray::operator ==(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(19) : 参见“==”的前一个定义
+..\src\MyArray.cpp(151) : warning C4172: 返回局部变量或临时变量的地址
+11:22:10 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(87) : error C2084: 函数“bool MyArray::operator ==(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(19) : 参见“==”的前一个定义
+..\src\MyArray.cpp(147) : error C2248: “MyArray::m_length”: 无法访问 private 成员(在“MyArray”类中声明)
+        f:\c++space\day4eclipse\src\MyArray.h(23) : 参见“MyArray::m_length”的声明
+        f:\c++space\day4eclipse\src\MyArray.h(6) : 参见“MyArray”的声明
+..\src\MyArray.cpp(149) : error C2248: “MyArray::array”: 无法访问 private 成员(在“MyArray”类中声明)
+        f:\c++space\day4eclipse\src\MyArray.h(22) : 参见“MyArray::array”的声明
+        f:\c++space\day4eclipse\src\MyArray.h(6) : 参见“MyArray”的声明
+..\src\MyArray.cpp(151) : error C2440: “return”: 无法从“const std::ostream”转换为“std::ostream &”
+        转换丢失限定符
+11:22:25 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(87) : error C2084: 函数“bool MyArray::operator ==(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(19) : 参见“==”的前一个定义
+..\src\MyArray.cpp(147) : error C2248: “MyArray::m_length”: 无法访问 private 成员(在“MyArray”类中声明)
+        f:\c++space\day4eclipse\src\MyArray.h(23) : 参见“MyArray::m_length”的声明
+        f:\c++space\day4eclipse\src\MyArray.h(6) : 参见“MyArray”的声明
+..\src\MyArray.cpp(149) : error C2248: “MyArray::array”: 无法访问 private 成员(在“MyArray”类中声明)
+        f:\c++space\day4eclipse\src\MyArray.h(22) : 参见“MyArray::array”的声明
+        f:\c++space\day4eclipse\src\MyArray.h(6) : 参见“MyArray”的声明
+11:22:46 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(87) : error C2084: 函数“bool MyArray::operator ==(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(19) : 参见“==”的前一个定义
+11:23:04 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyArray.cpp(105) : error C2084: 函数“bool MyArray::operator !=(MyArray &)”已有主体
+        f:\c++space\day4eclipse\src\MyArray.h(18) : 参见“!=”的前一个定义
+11:23:20 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:42:41 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyArray.obj" "..\\src\\MyArray.cpp" 
+MyArray.cpp
+f:\c++space\day4eclipse\src\MyArray.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:42:42 **** Rebuild of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(21) : error C2144: 语法错误:“bool”的前面应有“;”
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(35) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(21): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(67) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(21): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(91) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(97) : error C2039: “<<”: 不是“MyString”的成员
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+..\src\MyString.cpp(116) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(134) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+12:43:18 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:43:18 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(25) : error C3646: “MyString”: 未知重写说明符
+f:\c++space\mystring\src\MyString.h(25) : error C2143: 语法错误 : 缺少“;”(在“&”的前面)
+f:\c++space\mystring\src\MyString.h(25) : error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(35) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(21): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(67) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(74) : error C2556: “MyString &MyString::operator =(const MyString &)”: 重载函数与“int &MyString::operator =(const MyString &)”只是在返回类型上不同
+        f:\c++space\mystring\src\MyString.h(25) : 参见“MyString::operator =”的声明
+..\src\MyString.cpp(74) : error C2371: “MyString::operator =”: 重定义；不同的基类型
+        f:\c++space\mystring\src\MyString.h(25) : 参见“MyString::operator =”的声明
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(21): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(91) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(97) : error C2039: “<<”: 不是“MyString”的成员
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+..\src\MyString.cpp(116) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+12:43:26 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:43:26 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(35) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(21): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(67) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(21): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(91) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(97) : error C2039: “<<”: 不是“MyString”的成员
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+..\src\MyString.cpp(116) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+12:44:20 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:44:21 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(35) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(67) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(91) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(97) : error C2039: “<<”: 不是“MyString”的成员
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+..\src\MyString.cpp(112) : error C2511: “bool MyString::operator !=(MyString &)”:“MyString”中没有找到重载的成员函数
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+12:44:46 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:44:46 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(35) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(67) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(const MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(91) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+..\src\MyString.cpp(112) : error C2511: “bool MyString::operator !=(MyString &)”:“MyString”中没有找到重载的成员函数
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+12:45:36 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:45:36 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(35) : error C2678: 二进制“!=”: 没有找到接受“const MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(MyString &)”
+        尝试匹配参数列表“(const MyString, int)”时
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(MyString &)”
+        尝试匹配参数列表“(MyString, int)”时
+..\src\MyString.cpp(100) : error C2678: 二进制“!=”: 没有找到接受“MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(MyString &)”
+        尝试匹配参数列表“(MyString, int)”时
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+12:47:00 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:47:00 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(83) : error C2678: 二进制“!=”: 没有找到接受“MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(MyString &)”
+        尝试匹配参数列表“(MyString, int)”时
+..\src\MyString.cpp(100) : error C2678: 二进制“!=”: 没有找到接受“MyString”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        f:\c++space\mystring\src\MyString.h(18): 或       “bool MyString::operator !=(MyString &)”
+        尝试匹配参数列表“(MyString, int)”时
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+12:47:18 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:47:18 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2275: “MyString”: 将此类型用作表达式非法
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+12:47:40 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:47:41 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2248: “std::basic_ostream<_Elem,_Traits>::basic_ostream”: 无法访问 private 成员(在“std::basic_ostream<_Elem,_Traits>”类中声明)
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\ostream(82) : 参见“std::basic_ostream<_Elem,_Traits>::basic_ostream”的声明
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+12:48:21 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+link /debug /nologo /OUT:Day4Eclipse.exe "src\\MyArray.obj" 
+LINK : fatal error LNK1561: 必须定义入口点
+12:48:22 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2248: “std::basic_ostream<_Elem,_Traits>::basic_ostream”: 无法访问 private 成员(在“std::basic_ostream<_Elem,_Traits>”类中声明)
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\ostream(82) : 参见“std::basic_ostream<_Elem,_Traits>::basic_ostream”的声明
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+12:51:20 **** Incremental Build of configuration Debug for project Day4Eclipse ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\Day4Eclipse.obj" "..\\src\\Day4Eclipse.cpp" 
+Day4Eclipse.cpp
+..\src\Day4Eclipse.cpp(10) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\Day4Eclipse.cpp(10) : fatal error C1083: 无法打开包括文件:“MyArray.h”: No such file or directory
+12:51:20 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2248: “std::basic_ostream<_Elem,_Traits>::basic_ostream”: 无法访问 private 成员(在“std::basic_ostream<_Elem,_Traits>”类中声明)
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\ostream(82) : 参见“std::basic_ostream<_Elem,_Traits>::basic_ostream”的声明
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+12:59:19 **** Rebuild of configuration Debug for project MyArray ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\myarray.obj" "..\\src\\myarray.cpp" 
+myarray.cpp
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\myarray_test.obj" "..\\src\\myarray_test.cpp" 
+myarray_test.cpp
+link /debug /nologo /OUT:MyArray.exe "src\\myarray_test.obj" "src\\myarray.obj" 
+12:59:21 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2248: “std::basic_ostream<_Elem,_Traits>::basic_ostream”: 无法访问 private 成员(在“std::basic_ostream<_Elem,_Traits>”类中声明)
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\ostream(82) : 参见“std::basic_ostream<_Elem,_Traits>::basic_ostream”的声明
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+..\src\MyString.cpp(107) : warning C4172: 返回局部变量或临时变量的地址
+Info: Nothing to build for MyArray
+14:59:15 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(15) : error C2248: “std::basic_ostream<_Elem,_Traits>::basic_ostream”: 无法访问 private 成员(在“std::basic_ostream<_Elem,_Traits>”类中声明)
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\ostream(82) : 参见“std::basic_ostream<_Elem,_Traits>::basic_ostream”的声明
+        with
+        [
+            _Elem=char,
+            _Traits=std::char_traits<char>
+        ]
+..\src\MyString.cpp(100) : error C2248: “MyString::string”: 无法访问 private 成员(在“MyString”类中声明)
+        f:\c++space\mystring\src\MyString.h(23) : 参见“MyString::string”的声明
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(102) : error C2248: “MyString::string”: 无法访问 private 成员(在“MyString”类中声明)
+        f:\c++space\mystring\src\MyString.h(23) : 参见“MyString::string”的声明
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(104) : error C2248: “MyString::string”: 无法访问 private 成员(在“MyString”类中声明)
+        f:\c++space\mystring\src\MyString.h(23) : 参见“MyString::string”的声明
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+Info: Nothing to build for MyArray
+14:59:34 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(18) : error C2144: 语法错误:“bool”的前面应有“;”
+Info: Nothing to build for MyArray
+14:59:44 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(18) : error C2144: 语法错误:“bool”的前面应有“;”
+Info: Nothing to build for MyArray
+14:59:50 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(18) : error C2144: 语法错误:“bool”的前面应有“;”
+Info: Nothing to build for MyArray
+14:59:59 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(18) : error C2144: 语法错误:“bool”的前面应有“;”
+Info: Nothing to build for MyArray
+15:00:23 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\mystring.cpp(94) : error C4716: “MyString::operator=”: 必须返回一个值
+Info: Nothing to build for MyArray
+15:00:40 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:02:16 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+15:02:30 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:10:42 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:11:50 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+15:14:08 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+15:15:03 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:16:11 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:19:16 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:19:28 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:21:03 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(93) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+Info: Nothing to build for MyArray
+15:30:59 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:32:11 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:32:25 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:33:21 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(22) : error C2676: 二进制“+=”:“MyString”不定义该运算符或到预定义运算符可接收的类型的转换
+Info: Nothing to build for MyArray
+15:33:28 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:36:38 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+15:37:07 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:37:47 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:39:19 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:40:16 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:41:32 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:42:32 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+15:53:14 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+15:53:22 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:53:37 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+15:59:04 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(17) : error C2270: “<<”: 非成员函数上不允许修饰符
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::move_iterator<_RanIt> &,const std::move_iterator<_RanIt2> &)”: 未能从“MyString”为“const std::move_iterator<_RanIt> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1992) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::reverse_iterator<_RanIt> &,const std::reverse_iterator<_RanIt2> &)”: 未能从“MyString”为“const std::reverse_iterator<_RanIt> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1267) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::_Revranit<_RanIt,_Base> &,const std::_Revranit<_RanIt2,_Base2> &)”: 未能从“MyString”为“const std::_Revranit<_RanIt,_Base> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1086) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::pair<_Ty1,_Ty2> &,const std::pair<_Ty1,_Ty2> &)”: 未能从“MyString”为“const std::pair<_Ty1,_Ty2> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\utility(241) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2676: 二进制“>”:“MyString”不定义该运算符或到预定义运算符可接收的类型的转换
+..\src\MyString.cpp(117) : error C2270: “<<”: 非成员函数上不允许修饰符
+..\src\MyString.cpp(172) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+Info: Nothing to build for MyArray
+16:00:11 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::move_iterator<_RanIt> &,const std::move_iterator<_RanIt2> &)”: 未能从“MyString”为“const std::move_iterator<_RanIt> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1992) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::reverse_iterator<_RanIt> &,const std::reverse_iterator<_RanIt2> &)”: 未能从“MyString”为“const std::reverse_iterator<_RanIt> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1267) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::_Revranit<_RanIt,_Base> &,const std::_Revranit<_RanIt2,_Base2> &)”: 未能从“MyString”为“const std::_Revranit<_RanIt,_Base> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1086) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::pair<_Ty1,_Ty2> &,const std::pair<_Ty1,_Ty2> &)”: 未能从“MyString”为“const std::pair<_Ty1,_Ty2> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\utility(241) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2676: 二进制“>”:“MyString”不定义该运算符或到预定义运算符可接收的类型的转换
+..\src\MyString.cpp(117) : error C2270: “<<”: 非成员函数上不允许修饰符
+..\src\MyString.cpp(172) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+Info: Nothing to build for MyArray
+16:00:27 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::move_iterator<_RanIt> &,const std::move_iterator<_RanIt2> &)”: 未能从“MyString”为“const std::move_iterator<_RanIt> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1992) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::reverse_iterator<_RanIt> &,const std::reverse_iterator<_RanIt2> &)”: 未能从“MyString”为“const std::reverse_iterator<_RanIt> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1267) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::_Revranit<_RanIt,_Base> &,const std::_Revranit<_RanIt2,_Base2> &)”: 未能从“MyString”为“const std::_Revranit<_RanIt,_Base> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\xutility(1086) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2784: “bool std::operator >(const std::pair<_Ty1,_Ty2> &,const std::pair<_Ty1,_Ty2> &)”: 未能从“MyString”为“const std::pair<_Ty1,_Ty2> &”推导 模板 参数
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\utility(241) : 参见“std::operator >”的声明
+..\src\MyString.cpp(22) : error C2676: 二进制“>”:“MyString”不定义该运算符或到预定义运算符可接收的类型的转换
+..\src\MyString.cpp(172) : error C3490: 由于正在通过常量对象访问“string”，因此无法对其进行修改
+Info: Nothing to build for MyArray
+16:02:28 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(31) : error C2535: “bool MyString::operator <(const MyString &)”: 已经定义或声明成员函数
+        f:\c++space\mystring\src\MyString.h(30) : 参见“MyString::operator <”的声明
+..\src\MyString.cpp(22) : error C2679: 二进制“>”: 没有找到接受“MyString”类型的右操作数的运算符(或没有可接受的转换)
+        f:\c++space\mystring\src\MyString.h(29): 可能是“bool MyString::operator >(const char *)”
+        尝试匹配参数列表“(MyString, MyString)”时
+Info: Nothing to build for MyArray
+16:02:39 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+MyString.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall MyString::operator>(class MyString const &)" (??OMyString@@QAE_NABV0@@Z)，该符号在函数 _main 中被引用
+MyString.exe : fatal error LNK1120: 1 个无法解析的外部命令
+Info: Nothing to build for MyArray
+16:11:39 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+16:12:51 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+16:13:12 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+16:13:47 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+16:14:06 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+Info: Nothing to build for MyArray
+16:28:02 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(41) : error C2365: “MyString::length”: 重定义；以前的定义是“成员函数”
+        f:\c++space\mystring\src\MyString.h(37) : 参见“MyString::length”的声明
+..\src\MyString.cpp(25) : error C2511: “MyString::MyString(void)”:“MyString”中没有找到重载的成员函数
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(34) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(35) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(35) : error C2296: “+”: 非法，左操作数包含“const int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(38) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(39) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(39) : error C2296: “+”: 非法，左操作数包含“const int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(48) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(48) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(49) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(49) : error C2296: “+”: 非法，左操作数包含“const int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(59) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(72) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(77) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(78) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(78) : error C2296: “+”: 非法，左操作数包含“const int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(78) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+16:28:15 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(41) : error C2365: “MyString::length”: 重定义；以前的定义是“成员函数”
+        f:\c++space\mystring\src\MyString.h(37) : 参见“MyString::length”的声明
+..\src\MyString.cpp(25) : error C2511: “MyString::MyString(void)”:“MyString”中没有找到重载的成员函数
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+..\src\MyString.cpp(34) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(35) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(35) : error C2296: “+”: 非法，左操作数包含“int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(38) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(39) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(39) : error C2296: “+”: 非法，左操作数包含“int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(48) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(48) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(49) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(49) : error C2296: “+”: 非法，左操作数包含“int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(59) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(72) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(77) : error C2659: “=”: 作为左操作数
+..\src\MyString.cpp(78) : error C3867: “MyString::length”: 函数调用缺少参数列表；请使用“&MyString::length”创建指向成员的指针
+..\src\MyString.cpp(78) : error C2296: “+”: 非法，左操作数包含“int (__thiscall MyString::* )(void)”类型
+..\src\MyString.cpp(78) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+16:28:33 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(25) : error C2511: “MyString::MyString(void)”:“MyString”中没有找到重载的成员函数
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+Info: Nothing to build for MyArray
+16:29:23 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(14) : error C2668: “MyString::MyString”: 对重载函数的调用不明确
+        f:\c++space\mystring\src\MyString.h(9): 可能是“MyString::MyString(int)”
+        f:\c++space\mystring\src\MyString.h(8): 或       “MyString::MyString(void)”
+        尝试匹配参数列表“(void)”时
+Info: Nothing to build for MyArray
+16:29:30 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(14) : error C2668: “MyString::MyString”: 对重载函数的调用不明确
+        f:\c++space\mystring\src\MyString.h(9): 可能是“MyString::MyString(int)”
+        f:\c++space\mystring\src\MyString.h(8): 或       “MyString::MyString(void)”
+        尝试匹配参数列表“(void)”时
+Info: Nothing to build for MyArray
+16:29:52 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(14) : error C2668: “MyString::MyString”: 对重载函数的调用不明确
+        f:\c++space\mystring\src\MyString.h(9): 可能是“MyString::MyString(int)”
+        f:\c++space\mystring\src\MyString.h(8): 或       “MyString::MyString(void)”
+        尝试匹配参数列表“(void)”时
+Info: Nothing to build for MyArray
+16:30:01 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\MyString.cpp(25) : error C2511: “MyString::MyString(void)”:“MyString”中没有找到重载的成员函数
+        f:\c++space\mystring\src\MyString.h(6) : 参见“MyString”的声明
+Info: Nothing to build for MyArray
+16:30:24 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyArray
+16:34:22 **** Incremental Build of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Info: Nothing to build for MyString
+17:23:46 **** Rebuild of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkedList.obj" "..\\src\\LinkedList.cpp" 
+LinkedList.cpp
+..\src\LinkedList.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkedList.cpp(11) : fatal error C1083: 无法打开包括文件:“LinkList”: No such file or directory
+17:23:50 **** Rebuild of configuration Debug for project MyArray ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\myarray_test.obj" "..\\src\\myarray_test.cpp" 
+myarray_test.cpp
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\myarray.obj" "..\\src\\myarray.cpp" 
+myarray.cpp
+link /debug /nologo /OUT:MyArray.exe "src\\myarray_test.obj" "src\\myarray.obj" 
+17:23:59 **** Rebuild of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+Command canceled
+17:58:58 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(10) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(36) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(12) : error C2512: “Node”: 没有合适的默认构造函数可用
+..\src\LinkList.cpp(21) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(22) : error C2678: 二进制“==”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(507): 可能是“bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(512): 或       “bool std::operator ==(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(517): 或       “bool std::operator ==(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(426): 或       “bool std::operator ==(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(434): 或       “bool std::operator ==(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(30) : error C2512: “Node”: 没有合适的默认构造函数可用
+..\src\LinkList.cpp(32) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(33) : error C2582: “operator =”函数在“Node”中不可用
+Info: Nothing to build for MyArray
+17:59:00 **** Rebuild of configuration Debug for project MyString ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\MyString.obj" "..\\src\\MyString.cpp" 
+MyString.cpp
+..\src\MyString.cpp(9) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+f:\c++space\mystring\src\MyString.h(3) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:MyString.exe "src\\MyString.obj" 
+LINK : 没有找到 MyString.exe 或上一个增量链接没有生成它；正在执行完全链接
+17:59:49 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(11) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(37) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(13) : error C2275: “Node”: 将此类型用作表达式非法
+        ..\src\LinkList.cpp(4) : 参见“Node”的声明
+..\src\LinkList.cpp(22) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(23) : error C2678: 二进制“==”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(507): 可能是“bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(512): 或       “bool std::operator ==(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(517): 或       “bool std::operator ==(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(426): 或       “bool std::operator ==(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(434): 或       “bool std::operator ==(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(31) : error C2512: “Node”: 没有合适的默认构造函数可用
+..\src\LinkList.cpp(33) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(34) : error C2582: “operator =”函数在“Node”中不可用
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:01:51 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkedList.obj" "..\\src\\LinkedList.cpp" 
+LinkedList.cpp
+..\src\LinkedList.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkedList.cpp(11) : fatal error C1083: 无法打开包括文件:“LinkList”: No such file or directory
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:05:31 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkedList.obj" "..\\src\\LinkedList.cpp" 
+LinkedList.cpp
+..\src\LinkedList.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkedList.cpp(11) : fatal error C1083: 无法打开包括文件:“LinkList”: No such file or directory
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:13:58 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkedList.obj" "..\\src\\LinkedList.cpp" 
+LinkedList.cpp
+..\src\LinkedList.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkedList.cpp(11) : fatal error C1083: 无法打开包括文件:“LinkList”: No such file or directory
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:19:59 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkedList.obj" "..\\src\\LinkedList.cpp" 
+LinkedList.cpp
+..\src\LinkedList.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkedList.cpp(11) : fatal error C1083: 无法打开包括文件:“LinkList”: No such file or directory
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:22:37 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(8) : error C2758: “Node::next”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(7) : 参见“Node::next”的声明
+..\src\LinkList.cpp(11) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(16) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(133) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(18) : error C2664: “Node::Node(int,Node &)”: 不能将参数 2 从“int”转换为“Node &”
+..\src\LinkList.cpp(23) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:22:45 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(8) : error C2758: “Node::next”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(7) : 参见“Node::next”的声明
+..\src\LinkList.cpp(11) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(16) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(133) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(18) : error C2664: “Node::Node(int,Node &)”: 不能将参数 2 从“int”转换为“Node &”
+..\src\LinkList.cpp(23) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:23:14 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkedList.obj" "..\\src\\LinkedList.cpp" 
+LinkedList.cpp
+..\src\LinkedList.cpp(11) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkedList.cpp(11) : fatal error C1083: 无法打开包括文件:“LinkList”: No such file or directory
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:24:32 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(8) : error C2758: “Node::next”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(7) : 参见“Node::next”的声明
+..\src\LinkList.cpp(11) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(16) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(133) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(18) : error C2664: “Node::Node(int,Node &)”: 不能将参数 2 从“int”转换为“Node &”
+..\src\LinkList.cpp(23) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:24:36 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(8) : error C2758: “Node::next”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(7) : 参见“Node::next”的声明
+..\src\LinkList.cpp(11) : error C2582: “operator =”函数在“Node”中不可用
+..\src\LinkList.cpp(16) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(133) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(18) : error C2664: “Node::Node(int,Node &)”: 不能将参数 2 从“int”转换为“Node &”
+..\src\LinkList.cpp(23) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(25) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:25:41 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(8) : error C2758: “Node::next”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(7) : 参见“Node::next”的声明
+..\src\LinkList.cpp(20) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(137) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(22) : error C2664: “Node::Node(int,Node &)”: 不能将参数 2 从“int”转换为“Node &”
+..\src\LinkList.cpp(27) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(29) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(29) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+18:26:30 **** Incremental Build of configuration Debug for project LinkedList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\LinkList.obj" "..\\src\\LinkList.cpp" 
+LinkList.cpp
+..\src\LinkList.cpp(1) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\src\LinkList.cpp(8) : error C2758: “Node::next”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(7) : 参见“Node::next”的声明
+..\src\LinkList.cpp(20) : error C2758: “LinkList::top”: 必须在构造函数基/成员初始值设定项列表中初始化
+        ..\src\LinkList.cpp(137) : 参见“LinkList::top”的声明
+..\src\LinkList.cpp(22) : error C2664: “Node::Node(int,Node &)”: 不能将参数 2 从“int”转换为“Node &”
+..\src\LinkList.cpp(27) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(29) : error C2678: 二进制“!=”: 没有找到接受“Node”类型的左操作数的运算符(或没有可接受的转换)
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(522): 可能是“bool std::operator !=(const std::exception_ptr &,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(527): 或       “bool std::operator !=(std::nullptr_t,const std::exception_ptr &)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\exception(532): 或       “bool std::operator !=(const std::exception_ptr &,std::nullptr_t)”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(443): 或       “bool std::operator !=(const std::error_code &,const std::error_condition &) throw()”
+        C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\system_error(450): 或       “bool std::operator !=(const std::error_condition &,const std::error_code &) throw()”
+        尝试匹配参数列表“(Node, int)”时
+..\src\LinkList.cpp(29) : fatal error C1903: 无法从以前的错误中恢复；正在停止编译
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+
+Invoking autoreconf in build directory: F:/C++space/RemoteSystemsTempFiles/
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+)Build stopped
+()
+Invoking autoreconf in build directory: F:/C++space/LinearList/
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+)Build stopped
+()
+Invoking autoreconf in build directory: F:/C++space/LinearList/Debug
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\..\Common7\IDE;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\..\Common7\Tools;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Bin;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcpackages;C:\Program Files (x86)\Windows Kits\8.0\Bin]
+)Build stopped
+()19:06:56 **** Rebuild of configuration Debug for project LinearList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo /FolinearList.obj "..\\linearList.cpp" 
+linearList.cpp
+..\linearList.cpp(8) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\linearList.cpp(29) : error C2229: class“ArrayList”有非法的大小为零的数组
+..\linearList.cpp(15) : error C2440: “=”: 无法从“int *”转换为“int []”
+        没有转换为数组类型，但有转换为数组的引用或指针
+..\linearList.cpp(22) : warning C4154: 删除数组表达式；转换到提供的指针
+..\linearList.cpp(24) : error C2440: “=”: 无法从“int”转换为“int []”
+        没有转换为数组类型，但有转换为数组的引用或指针
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+
+Invoking autoreconf in build directory: F:/C++space/RemoteSystemsTempFiles/
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+)Build stopped
+()19:06:58 **** Build of configuration Build (GNU) for project RemoteSystemsTempFiles ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+19:07:34 **** Incremental Build of configuration Debug for project LinearList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo /FolinearList.obj "..\\linearList.cpp" 
+linearList.cpp
+..\linearList.cpp(8) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+link /debug /nologo /OUT:LinearList.exe linearList.obj 
+LINK : fatal error LNK1561: 必须定义入口点
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+
+Invoking autoreconf in build directory: F:/C++space/RemoteSystemsTempFiles/
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+)Build stopped
+()19:07:35 **** Incremental Build of configuration Build (GNU) for project RemoteSystemsTempFiles ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+19:07:43 **** Incremental Build of configuration Debug for project LinearList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo /FolinearList.obj "..\\linearList.cpp" 
+linearList.cpp
+..\linearList.cpp(8) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\linearList.cpp(28) : error C2059: 语法错误:“[”
+..\linearList.cpp(28) : error C2238: 意外的标记位于“;”之前
+..\linearList.cpp(15) : error C2065: “array”: 未声明的标识符
+..\linearList.cpp(20) : error C2065: “array”: 未声明的标识符
+..\linearList.cpp(22) : error C2065: “array”: 未声明的标识符
+..\linearList.cpp(22) : error C2541: “delete”: 不能删除不是指针的对象
+..\linearList.cpp(24) : error C2065: “array”: 未声明的标识符
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+
+Invoking autoreconf in build directory: F:/C++space/RemoteSystemsTempFiles/
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+)Build stopped
+()19:07:44 **** Incremental Build of configuration Build (GNU) for project RemoteSystemsTempFiles ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+19:07:56 **** Incremental Build of configuration Debug for project LinearList ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo /FolinearList.obj "..\\linearList.cpp" 
+linearList.cpp
+..\linearList.cpp(8) : warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+..\linearList.cpp(29) : error C2229: class“ArrayList”有非法的大小为零的数组
+..\linearList.cpp(15) : error C2440: “=”: 无法从“int *”转换为“int []”
+        没有转换为数组类型，但有转换为数组的引用或指针
+..\linearList.cpp(22) : warning C4154: 删除数组表达式；转换到提供的指针
+..\linearList.cpp(24) : error C2440: “=”: 无法从“int”转换为“int []”
+        没有转换为数组类型，但有转换为数组的引用或指针
+Info: Nothing to build for MyArray
+Info: Nothing to build for MyString
+
+Invoking autoreconf in build directory: F:/C++space/RemoteSystemsTempFiles/
+
+
+Configuration failed with error
+(sh -c "autoreconf -i" 
+Cannot run program "sh": Launching failed
+
+Error: Program "sh" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]
+)Build stopped
+()19:07:56 **** Incremental Build of configuration Build (GNU) for project RemoteSystemsTempFiles ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;D:\Mysql 5.0\bin;D:\app\Administrator\OraHome_1\bin;D:\app\orac\product\12.2.0\dbhome_1\bin;C:\Program Files\Java\jdk1.8.0_121\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;H:\Lua\5.1;H:\Lua\5.1\clibs;H:\eclipse for C++\eclipse;]

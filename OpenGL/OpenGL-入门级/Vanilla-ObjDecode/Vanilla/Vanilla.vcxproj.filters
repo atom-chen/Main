@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{83c0f4f9-d55f-4ac8-b408-97879c69de2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{8c70ffc0-e0d9-4c73-a946-66fc8c62d286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DecodeTools">
+      <UniqueIdentifier>{8e6b0b08-bd2b-4c07-84fc-5143652bba77}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>DecodeTools</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjModel.cpp">
+      <Filter>DecodeTools</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjModel.h">
+      <Filter>DecodeTools</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexData.cpp">
+      <Filter>DecodeTools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>DecodeTools</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexData.h">
+      <Filter>DecodeTools</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

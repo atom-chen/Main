@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{42aae851-a286-453a-ab9f-63489edb83ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Common">
+      <UniqueIdentifier>{6f354716-5248-4dcf-803e-a9fceaeb59b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Class">
+      <UniqueIdentifier>{80a90718-3488-4cf4-aeb2-85ecebb3b407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Class\H">
+      <UniqueIdentifier>{9aab2169-630b-4dc7-b921-f1d11b570251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Class\CPP">
+      <UniqueIdentifier>{0a75dd07-a457-4380-b0b3-259099fa987b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="B3DClass.h">
+      <Filter>Base\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Base\Class\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Base\Class\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Base\Class\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Base\Class\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>Base\Class\H</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Color.cpp">
+      <Filter>Base\Class\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Base\Class\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Base\Class\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Base\Class\CPP</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

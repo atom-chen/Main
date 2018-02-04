@@ -1,0 +1,8 @@
+16:00:04 **** Rebuild of configuration Debug for project 设计模式 ****
+Info: Internal Builder is used for build
+cl /c /EHs /MD /Zi /nologo "/Fosrc\\设计模式.obj" "..\\src\\设计模式.cpp" 
+设计模式.cpp
+link /debug /nologo /OUT:设计模式.exe "src\\设计模式.obj" 
+
+16:00:09 Build Finished (took 4s.716ms)
+

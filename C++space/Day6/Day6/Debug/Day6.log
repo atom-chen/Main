@@ -1,0 +1,19 @@
+﻿生成启动时间为 2017/9/1 12:13:35。
+     1>项目“F:\C++space\Day6\Day6\Day6.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         H:\新建文件夹\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "我的多态.cpp"
+         我的多态.cpp
+       Link:
+         H:\新建文件夹\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\C++space\Day6\Debug\Day6.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\C++space\Day6\Debug\Day6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\C++space\Day6\Debug\Day6.lib" /MACHINE:X86 "Debug\demo13_类型兼容性原则遇上函数重写.obj"
+         "Debug\dm06_继承与组合混搭.obj"
+         "Debug\dm08_继承中的static.obj"
+         Debug\text.obj
+         "Debug\兼容性原则.obj"
+         "Debug\我的多态.obj"
+         "Debug\继承中的构造析构.obj"
+         Day6.vcxproj -> F:\C++space\Day6\Debug\Day6.exe
+     1>已完成生成项目“F:\C++space\Day6\Day6\Day6.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.52

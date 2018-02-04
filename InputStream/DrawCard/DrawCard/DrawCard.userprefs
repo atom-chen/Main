@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameOrder\GameOrderView.cs">
+    <Files>
+      <File FileName="Assets\Scripts\TableManager.cs" Line="22" Column="43" />
+      <File FileName="Assets\Scripts\GameLogic.cs" Line="8" Column="23" />
+      <File FileName="Assets\Scripts\Common\GameDefine.cs" Line="22" Column="34" />
+      <File FileName="Assets\Scripts\DrawGridController.cs" Line="40" Column="6" />
+      <File FileName="Assets\Scripts\GameOrder\GameOrderView.cs" Line="27" Column="26" />
+      <File FileName="Assets\Scripts\DrawItem.cs" Line="8" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
