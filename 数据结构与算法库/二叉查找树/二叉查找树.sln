@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉查找树", "二叉查找树\二叉查找树.vcxproj", "{179C7C9C-EF59-4840-9EDB-857412021E69}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "二叉查找树", "二叉查找树\二叉查找树.vcxproj", "{C296C837-D585-4AE0-A8C4-1FE033F23FE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{179C7C9C-EF59-4840-9EDB-857412021E69}.Debug|Win32.ActiveCfg = Debug|Win32
-		{179C7C9C-EF59-4840-9EDB-857412021E69}.Debug|Win32.Build.0 = Debug|Win32
-		{179C7C9C-EF59-4840-9EDB-857412021E69}.Release|Win32.ActiveCfg = Release|Win32
-		{179C7C9C-EF59-4840-9EDB-857412021E69}.Release|Win32.Build.0 = Release|Win32
+		{C296C837-D585-4AE0-A8C4-1FE033F23FE5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C296C837-D585-4AE0-A8C4-1FE033F23FE5}.Debug|Win32.Build.0 = Debug|Win32
+		{C296C837-D585-4AE0-A8C4-1FE033F23FE5}.Release|Win32.ActiveCfg = Release|Win32
+		{C296C837-D585-4AE0-A8C4-1FE033F23FE5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
