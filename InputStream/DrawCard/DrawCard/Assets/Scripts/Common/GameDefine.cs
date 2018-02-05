@@ -24,6 +24,8 @@ public class People
     public string Name;//姓名
     public string ProjectGroup;//所属项目组
     public string Department;//所属部门
+    public string WorkType;//员工类型
+    public string IsDraw;//是否已经抽过了
     public People()
     {
         WorkID = "0";

@@ -22,6 +22,7 @@ class TableManager:MonoBehaviour
             people.Name = tuple[1].Trim();
             people.ProjectGroup = tuple[2].Trim();
             people.Department = tuple[3].Trim();
+     
             GameLogic.Instance().AddItemToList(people);
         }
     }
