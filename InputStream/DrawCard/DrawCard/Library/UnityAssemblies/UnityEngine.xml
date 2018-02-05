@@ -24779,16 +24779,6 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
         <para>iPhone 7 Plus.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.iOS.DeviceGeneration.iPhone8">
-      <summary>
-        <para>iPhone 8.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.iOS.DeviceGeneration.iPhone8Plus">
-      <summary>
-        <para>iPhone 8 Plus.</para>
-      </summary>
-    </member>
     <member name="F:UnityEngine.iOS.DeviceGeneration.iPhoneSE1Gen">
       <summary>
         <para>iPhone SE, first generation.</para>
@@ -24797,11 +24787,6 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     <member name="F:UnityEngine.iOS.DeviceGeneration.iPhoneUnknown">
       <summary>
         <para>Yet unknown iPhone.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.iOS.DeviceGeneration.iPhoneX">
-      <summary>
-        <para>iPhone X.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.iOS.DeviceGeneration.iPodTouch1Gen">

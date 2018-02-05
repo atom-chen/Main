@@ -16536,29 +16536,19 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
         <para>Enable baked ambient occlusion (AO).</para>
       </summary>
     </member>
-    <member name="P:UnityEditor.LightmapEditorSettings.filterTypeAO">
+    <member name="P:UnityEditor.LightmapEditorSettings.giBakeBackend">
       <summary>
-        <para>Configure a filter kernel for the ambient occlusion target.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.LightmapEditorSettings.filterTypeDirect">
-      <summary>
-        <para>Configure a filter kernel for the direct light target.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEditor.LightmapEditorSettings.filterTypeIndirect">
-      <summary>
-        <para>Configure a filter kernel for the indirect light target.</para>
+        <para>Determines which backend to use for baking lightmaps.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.LightmapEditorSettings.giPathTracerFilter">
       <summary>
-        <para>Determines the filtering kernel for the Progressive Lightmapper.</para>
+        <para>Determines the filtering kernel for the Progressive Path Tracer backend.</para>
       </summary>
     </member>
-    <member name="P:UnityEditor.LightmapEditorSettings.lightmapper">
+    <member name="P:UnityEditor.LightmapEditorSettings.giPathTracerSampling">
       <summary>
-        <para>Determines which backend to use for baking lightmaps.</para>
+        <para>Determines which sampling strategy to use for baking lightmaps with the path tracing backend.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.LightmapEditorSettings.maxAtlasHeight">
@@ -16586,82 +16576,72 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
         <para>Determines how Unity will compress baked reflection cubemap.</para>
       </summary>
     </member>
-    <member name="P:UnityEditor.LightmapEditorSettings.sampling">
-      <summary>
-        <para>Determines which sampling strategy to use for baking lightmaps with the Progressive Lightmapper.</para>
-      </summary>
-    </member>
     <member name="P:UnityEditor.LightmapEditorSettings.textureCompression">
       <summary>
         <para>Whether to use texture compression on the generated lightmaps.</para>
       </summary>
     </member>
-    <member name="T:UnityEditor.LightmapEditorSettings.FilterMode">
-      <summary>
-        <para>The available filtering modes for the Progressive Lightmapper.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.FilterMode.Advanced">
-      <summary>
-        <para>Enables the advanced filtering mode for the Progressive Lightmapper.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.FilterMode.Auto">
-      <summary>
-        <para>The filtering is configured automatically.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.FilterMode.None">
-      <summary>
-        <para>Turn filtering off.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.LightmapEditorSettings.FilterType">
-      <summary>
-        <para>The available filter kernels for the Progressive Lightmapper.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.FilterType.ATrous">
-      <summary>
-        <para>Use an A-Trous filter for a GI texture.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.FilterType.Gaussian">
-      <summary>
-        <para>Use a Gaussian filter for a GI texture.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.FilterType.None">
-      <summary>
-        <para>Do not filter GI texture.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEditor.LightmapEditorSettings.Lightmapper">
+    <member name="T:UnityEditor.LightmapEditorSettings.GIBakeBackend">
       <summary>
         <para>Backends available for baking lightmaps.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.Lightmapper.PathTracer">
+    <member name="F:UnityEditor.LightmapEditorSettings.GIBakeBackend.PathTracer">
       <summary>
         <para>Backend for baking lightmaps with path tracing.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.Lightmapper.Radiosity">
+    <member name="F:UnityEditor.LightmapEditorSettings.GIBakeBackend.Radiosity">
       <summary>
         <para>Backend for baking lightmaps with the Enlighten radiosity middleware.</para>
       </summary>
     </member>
-    <member name="T:UnityEditor.LightmapEditorSettings.Sampling">
+    <member name="T:UnityEditor.LightmapEditorSettings.PathTracerFilter">
       <summary>
-        <para>Available sampling strategies for baking lightmaps with the Progressive Lightmapper.</para>
+        <para>The available filter kernels for the Progressive Path Tracer GI backend.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.Sampling.Auto">
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerFilter.ATrous">
+      <summary>
+        <para>Filter baked results of the Progressive Path Tracer with an A-Trous kernel.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerFilter.Gaussian">
+      <summary>
+        <para>Filter baked results of the Progressive Path Tracer with an Gauss kernel.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.LightmapEditorSettings.PathTracerFilterMode">
+      <summary>
+        <para>The available filtering modes for the Progressive Path Tracer GI backend.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerFilterMode.Advanced">
+      <summary>
+        <para>Enables the advanced filtering mode for the Progressive Path Tracer GI backend.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerFilterMode.Auto">
+      <summary>
+        <para>The filtering is configured automatically.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerFilterMode.None">
+      <summary>
+        <para>Turn filtering off.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.LightmapEditorSettings.PathTracerSampling">
+      <summary>
+        <para>Available sampling strategies for baking lightmaps with the path tracing backend.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerSampling.Auto">
       <summary>
         <para>Auto will automatically select the sampling settings.</para>
       </summary>
     </member>
-    <member name="F:UnityEditor.LightmapEditorSettings.Sampling.Fixed">
+    <member name="F:UnityEditor.LightmapEditorSettings.PathTracerSampling.Fixed">
       <summary>
         <para>Fixed sampling uses a fixed number of samples per texel. This can be used when the other strategies fail to use enough samples in some areas. It will typically be slow.</para>
       </summary>
