@@ -65,6 +65,20 @@ Node& BinarySearchTree::GetMax(Node* root = this->root) const
 	}
 	return *pCur;
 }
+/*¹¦ÄÜÃèÊö£ºÓÃ¶ş²æËÑË÷Ê÷µÄÓÒº¢×ÓÌæ´úËü
+²ÎÊı£º
+·µ»ØÖµ£º*/
+template<class T>
+void BinarySearchTree::DeleteMin()
+{
+	
+}
+
+template<class T>
+void BinarySearchTree::DeleteMax()
+{
+
+}
 template<class T>
 Node& BinarySearchTree::Delete(const T& data)      //ÄÃÒªÉ¾³ı½ÚµãµÄÓÒ×ÓÊ÷×îĞ¡½Úµã ´úÌæÒªÉ¾³ıµÄ½Úµã
 {
@@ -79,16 +93,7 @@ Node& BinarySearchTree::Delete(const T& data)      //ÄÃÒªÉ¾³ı½ÚµãµÄÓÒ×ÓÊ÷×îĞ¡½Úµ
 
 }
 
-template<class T>
-void BinarySearchTree::DeleteMin()
-{
 
-}
-template<class T>
-void BinarySearchTree::DeleteMax()
-{
-
-}
 
 template<class T>
 void BinarySearchTree::Clear()

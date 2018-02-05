@@ -4,7 +4,9 @@ using UnityEngine.WSA;
 
 class GameDefine
 {
-    public const string TablePath = "C:\\MyWorkSpace\\InputStream\\DrawCard\\DrawCard\\p4.txt";
+    private const string FileRoot="C:\\MyWorkSpace\\InputStream\\DrawCard\\DrawCard\\";
+    public const string TablePath = FileRoot+"p4.txt";
+    public const string RememberPath = FileRoot+"Remember.txt";
     public const int Total_Three = 88;
     public const int Total_Two = 50;
     public const int Total_One = 30;

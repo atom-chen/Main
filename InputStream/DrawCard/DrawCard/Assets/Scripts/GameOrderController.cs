@@ -64,6 +64,8 @@ public class GameOrderController : MonoBehaviour
     {
         //通知逻辑层移除已经中奖的幸运同学...
         GameLogic.Instance().RemoveAtList(luckBoy);
+        //写入文件
+        TableManager.RememberName(luckBoy);
     }
     /// <summary>
     /// 自由抽奖时输入中奖人数
