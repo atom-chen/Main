@@ -12,18 +12,18 @@ public class DrawGridController : MonoBehaviour
     public int TotalDraw;
     [HideInInspector]
     public int m_Executions = 0;     //当前奖项已经抽了多少人
-	void Start () 
+    void Start()
     {
         m_Items = this.GetComponentsInChildren<DrawItem>();
-	}
-	/// <summary>
-	/// 获取当前页数
-	/// </summary>
-	/// <returns></returns>
+    }
+    /// <summary>
+    /// 获取当前页数
+    /// </summary>
+    /// <returns></returns>
     public int GetCount()
-	{
-		return m_Items.Length;
-	}
+    {
+        return m_Items.Length;
+    }
     public void SetCount(int count)
     {
         for (int i = 0; i < m_Items.Length; i++)
@@ -45,29 +45,28 @@ public class DrawGridController : MonoBehaviour
     }
     public string GetResidue()
     {
-        if (TotalDraw != -1 && m_Items.Length>0)
+        Debug.Log(this.gameObject.name + TotalDraw + " " + m_Items.Length);
+        if (TotalDraw != -1 && m_Items.Length > 0)
         {
-            return "还可以Roll：" + (int)((TotalDraw - m_Executions) / m_Items.Length )+ "次";
-        }
-        else
+            return "还可以Roll：" + (int)((TotalDraw - m_Executions) / m_Items.Length) + "次";
+        } else
         {
             return "";
         }
     }
     public int GetResidueNum()
     {
-        if (m_Items.Length>0)
+        if (m_Items.Length > 0)
         {
-            return (int)(TotalDraw - m_Executions / m_Items.Length);
-        }
-        else
+            return (int)((TotalDraw - m_Executions) / m_Items.Length);
+        } else
         {
             return -1;
-        }    
+        }
     }
     public void Begin()
     {
-        if (TotalDraw==-1)
+        if (TotalDraw == -1)
         {
             return;
         }
@@ -78,15 +77,13 @@ public class DrawGridController : MonoBehaviour
     {
         for (int i = 0; i < m_Items.Length; i++)
         {
-            if(!"0".Equals(luckBoys[i].WorkID))
+            if (!"0".Equals(luckBoys[i].WorkID))
             {
                 m_Items[i].m_ID.text = luckBoys[i].WorkID.ToString();
-            }
-            else if(!"0".Equals(luckBoys[i].ProjectGroup))
+            } else if (!"0".Equals(luckBoys[i].ProjectGroup))
             {
                 m_Items[i].m_ID.text = luckBoys[i].ProjectGroup;
-            }
-            else
+            } else
             {
                 m_Items[i].m_ID.text = luckBoys[i].Department;
             }
@@ -97,5 +94,5 @@ public class DrawGridController : MonoBehaviour
 
 
 
-    
+
 }

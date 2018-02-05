@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine.WSA;
 
 class GameDefine
 {
-    public const string TablePath = "F:\\Work\\InputStream\\DrawCard\\P4.txt";
+    public const string TablePath = "C:\\MyWorkSpace\\InputStream\\DrawCard\\DrawCard\\p4.txt";
     public const int Total_Three = 88;
     public const int Total_Two = 50;
     public const int Total_One = 30;

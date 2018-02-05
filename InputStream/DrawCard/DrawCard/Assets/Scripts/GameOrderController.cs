@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOrderController : MonoBehaviour {
+public class GameOrderController : MonoBehaviour
+{
     private static GameOrderController m_Instance;
     public static GameOrderController Instance()
     {
         return m_Instance;
     }
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake()
+    {
         m_Instance = this;
-	}
-	
+    }
+
 
     /// <summary>
     /// 随机count个幸运儿返回给界面层
@@ -47,8 +49,8 @@ public class GameOrderController : MonoBehaviour {
             luckBoy.Add(people);
             i++;
         }
-        return luckBoy;	
-	}
+        return luckBoy;
+    }
 
 
     public void Begin()
@@ -63,8 +65,11 @@ public class GameOrderController : MonoBehaviour {
         //通知逻辑层移除已经中奖的幸运同学...
         GameLogic.Instance().RemoveAtList(luckBoy);
     }
-
-    public void  OnFreeUpdateCount(int count)
+    /// <summary>
+    /// 自由抽奖时输入中奖人数
+    /// </summary>
+    /// <param name="count">中奖人数</param>
+    public void OnFreeUpdateCount(int count)
     {
         GameOrderView.Instance().m_PageFree.SetCount(count);
     }

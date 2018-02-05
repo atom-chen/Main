@@ -12,19 +12,19 @@ public class GameOrderView : MonoBehaviour
     }
     public UILabel m_Help;
     public UILabel m_Title;
-	public DrawGridController m_PageThree;
-	public DrawGridController m_PageTwo;
-	public DrawGridController m_PageOne;
-	public DrawGridController m_PageBest;
-	public DrawGridController m_PageFree;
+    public DrawGridController m_PageThree;
+    public DrawGridController m_PageTwo;
+    public DrawGridController m_PageOne;
+    public DrawGridController m_PageBest;
+    public DrawGridController m_PageFree;
     public GameObject m_PageFreeMain;
     public UILabel m_FreeCommitLabel;
 
 
     private int m_CurCount = 8;
-	public DrawGridController m_CurTage;
+    public DrawGridController m_CurTage;
     private bool m_bBeginDraw = false;
-	private List<People> luckBoy;
+    private List<People> luckBoy;
     void Awake()
     {
         m_Instance = this;
@@ -32,7 +32,7 @@ public class GameOrderView : MonoBehaviour
     void Start()
     {
         m_CurTage = m_PageThree;
-		m_CurCount = m_CurTage.GetCount ();
+        m_CurCount = m_CurTage.GetCount();
         m_PageThree.TotalDraw = 88;
         m_PageTwo.TotalDraw = 50;
         m_PageOne.TotalDraw = 30;
@@ -45,15 +45,15 @@ public class GameOrderView : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        if (m_bBeginDraw && m_CurCount>=0)
+        if (m_bBeginDraw && m_CurCount >= 0)
         {
-			luckBoy = GameOrderController.Instance().GetLuckBoys(m_CurCount);
-			//到当前面板上去展示
-			if(m_CurTage==null)
-			{
-				return;
-			}
-			m_CurTage.ShowName(luckBoy);
+            luckBoy = GameOrderController.Instance().GetLuckBoys(m_CurCount);
+            //到当前面板上去展示
+            if (m_CurTage == null)
+            {
+                return;
+            }
+            m_CurTage.ShowName(luckBoy);
         }
     }
     /// <summary>
@@ -61,19 +61,18 @@ public class GameOrderView : MonoBehaviour
     /// </summary>
     public void OnClickBegin()
     {
-        if(m_bBeginDraw==true)
+        if (m_bBeginDraw == true)
         {
             return;
         }
-        if(m_CurTage!=null)
+        if (m_CurTage != null)
         {
             m_CurCount = m_CurTage.GetCount();
-        }
-        else
+        } else
         {
             m_CurCount = 8;
         }
-        if (m_CurTage.GetResidueNum() <= 0 && m_CurTage!=m_PageFree)
+        if (m_CurTage.GetResidueNum() <= 0 && m_CurTage != m_PageFree)
         {
             //不允许操作
             return;
@@ -86,7 +85,7 @@ public class GameOrderView : MonoBehaviour
     /// </summary>
     public void OnClickStop()
     {
-        if(m_bBeginDraw==false)
+        if (m_bBeginDraw == false)
         {
             return;
         }
@@ -95,7 +94,7 @@ public class GameOrderView : MonoBehaviour
     }
     public void OnClickPageThree()
     {
-        if(m_CurTage==m_PageThree)
+        if (m_CurTage == m_PageThree)
         {
             return;
         }
@@ -147,7 +146,7 @@ public class GameOrderView : MonoBehaviour
     }
     public void OnClickTitle()
     {
-        if(m_PageFree==null)
+        if (m_PageFree == null)
         {
             m_PageFree = m_PageFreeMain.transform.GetChild(0).GetComponent<DrawGridController>();
         }
@@ -163,31 +162,30 @@ public class GameOrderView : MonoBehaviour
     {
         m_bBeginDraw = false;
         //获取输入
-        if(m_FreeCommitLabel==null)
+        if (m_FreeCommitLabel == null)
         {
             m_PageFreeMain.transform.GetChild(1).GetComponentInChildren<UILabel>();
         }
-        if(m_FreeCommitLabel!=null)
+        if (m_FreeCommitLabel != null)
         {
             int count = Convert.ToInt32(m_FreeCommitLabel.text);
             GameOrderController.Instance().OnFreeUpdateCount(count);
             m_FreeCommitLabel.text = "";
         }
 
-        
+
     }
 
     void Leave()
     {
         m_bBeginDraw = false;
-        if(m_CurTage==m_PageFree)
+        if (m_CurTage == m_PageFree)
         {
             m_PageFreeMain.gameObject.SetActive(false);
-        }
-        else
+        } else
         {
             m_CurTage.gameObject.SetActive(false);
-        }      
+        }
     }
 
     public void UpdateHelp()
