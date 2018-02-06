@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 8}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 442}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 0
     width: 950
     height: 947
-  m_MinSize: {x: 204, y: 342}
-  m_MaxSize: {x: 4004, y: 8042}
+  m_MinSize: {x: 234, y: 392}
+  m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 83
+  controlID: 80
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,15 +64,15 @@ MonoBehaviour:
     y: 481
     width: 950
     height: 466
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 234, y: 271}
+  m_MaxSize: {x: 10004, y: 10021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 18}
   - {fileID: 14}
   - {fileID: 11}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,10 +146,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 583, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 613, y: 392}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 113
+  controlID: 110
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -197,7 +197,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 442}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &9
 MonoBehaviour:
@@ -441,8 +441,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ca070000
-    m_LastClickedInstanceID: 1994
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: e01b0000ce1b0000ec1f0000a22a0000
     m_RenameOverlay:
@@ -532,9 +532,9 @@ MonoBehaviour:
     height: 926
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ca070000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: defbffff00000000
+    m_ExpandedIDs: defbffff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

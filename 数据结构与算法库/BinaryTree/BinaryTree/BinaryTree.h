@@ -1,18 +1,16 @@
 #pragma once
 
-template<class T>
 struct Node{
 	Node* pLeft;
 	Node* pRight;
 	Node* pPerent;
-	T* data;
+	int* data;
 	unsigned size;     //以当前节点为根的子树节点数量
 };
 
-template<class T>
 class BinaryTree{
 public:
-	unsigned size(){ return size; };
+	unsigned size(){ return root->size; };
 protected:
-	Node<T>* root;
+	Node* root;
 };

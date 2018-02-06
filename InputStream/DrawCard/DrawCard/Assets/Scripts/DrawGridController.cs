@@ -10,11 +10,19 @@ public class DrawGridController : MonoBehaviour
     public DrawItem[] m_Items;
     public GameObject ItemPrefab;
     public int TotalDraw;
+    public string m_Title = "";
     [HideInInspector]
     public int m_Executions = 0;     //当前奖项已经抽了多少人
     void Start()
     {
-        m_Items = this.GetComponentsInChildren<DrawItem>();
+        //初始化n个孩子
+        for(int i=0;i<m_Items.Length;i++)
+        {
+            m_Items[i] = NGUITools.AddChild(this.gameObject, ItemPrefab).GetComponent<DrawItem>();
+        }
+        //重排
+        this.gameObject.GetComponent<UITable>().Reposition();
+        
     }
     /// <summary>
     /// 获取当前页数
@@ -79,15 +87,15 @@ public class DrawGridController : MonoBehaviour
         {
             if (!"0".Equals(luckBoys[i].WorkID))
             {
-                m_Items[i].m_ID.text = luckBoys[i].WorkID.ToString();
+                m_Items[i].m_IDLabel.text = luckBoys[i].WorkID.ToString();
             } else if (!"0".Equals(luckBoys[i].ProjectGroup))
             {
-                m_Items[i].m_ID.text = luckBoys[i].ProjectGroup;
+                m_Items[i].m_IDLabel.text = luckBoys[i].ProjectGroup;
             } else
             {
-                m_Items[i].m_ID.text = luckBoys[i].Department;
+                m_Items[i].m_IDLabel.text = luckBoys[i].Department;
             }
-            m_Items[i].m_Name.text = luckBoys[i].Name;
+            m_Items[i].m_NameLabel.text = luckBoys[i].Name;
         }
     }
 

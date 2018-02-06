@@ -13,7 +13,7 @@ class TableManager
     /// </summary>
     public static void InitPeopleList()
     {
-        string[] contents = File.ReadAllLines(GameDefine.TablePath, Encoding.Default);          //读表1
+        string[] contents = File.ReadAllLines(GameDefine.TablePath, Encoding.UTF8);          //读表1
         string names = File.ReadAllText(GameDefine.RememberPath, Encoding.UTF8);               //读表2
         List<string> nameList = new List<string>(names.Split(' '));
         for (int i = 0; i < contents.Length; i++)           //遍历每一行
@@ -29,7 +29,6 @@ class TableManager
             people.Name = tuple[1].Trim();
             people.ProjectGroup = tuple[2].Trim();
             people.Department = tuple[3].Trim();
-
             GameLogic.Instance().AddItemToList(people);
         }
     }

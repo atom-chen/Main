@@ -1,18 +1,18 @@
 #pragma once
 #include "BinaryTree.h"
 
-template<T>
-class BinarySearchTree :public BinaryTree<T>{
+class BinarySearchTree :public BinaryTree{
 public:
-	void Put(const T &data);
-	Node& Get(const T &data) const;
+	void Put(const int &data);
+	Node& Get(const int &data) const;
 	Node& GetMin() const;
 	Node& GetMax() const;
-	Node& Delete(const T& data);
+	Node& Delete(const int& data);
 	void DeleteMin();
 	void DeleteMax();
 	void Clear();
 private:
-	void Put(const T &data,Node* root);
-	Node& Get(const T &data,Node* root) const;
+	void Put(const int &data,Node* root);
+	Node& Get(const int &data,Node* root) const;
+	Node& GetMin(Node* root) const;
 };

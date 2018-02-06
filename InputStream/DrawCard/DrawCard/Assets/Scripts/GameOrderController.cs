@@ -58,7 +58,7 @@ public class GameOrderController : MonoBehaviour
         //通知当前DrawGrid修改次数
         GameOrderView.Instance().m_CurTage.Begin();
         //更新Help显示
-        GameOrderView.Instance().UpdateHelp();
+        GameOrderView.Instance().UpdateView();
     }
     public void Stop(List<People> luckBoy)
     {

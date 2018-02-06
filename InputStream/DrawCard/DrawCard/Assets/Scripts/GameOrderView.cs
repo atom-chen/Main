@@ -38,7 +38,7 @@ public class GameOrderView : MonoBehaviour
         m_PageOne.TotalDraw = 30;
         m_PageBest.TotalDraw = 20;
         m_Title.text = "三等奖";
-        UpdateHelp();
+        UpdateView();
     }
     /// <summary>
     /// 开始抽奖后，每物理时间0.05s 随机当前数量个中奖者ID 按下停时停止随机
@@ -101,9 +101,7 @@ public class GameOrderView : MonoBehaviour
         Leave();
         m_PageThree.gameObject.SetActive(true);
         m_CurTage = m_PageThree;
-        m_CurCount = m_CurTage.GetCount();
-        m_Title.text = "三等奖";
-        UpdateHelp();
+        UpdateView();
     }
     public void OnClickPageTwo()
     {
@@ -114,9 +112,7 @@ public class GameOrderView : MonoBehaviour
         Leave();
         m_PageTwo.gameObject.SetActive(true);
         m_CurTage = m_PageTwo;
-        m_CurCount = m_CurTage.GetCount();
-        m_Title.text = "二等奖";
-        UpdateHelp();
+        UpdateView();
     }
     public void OnClickPageOne()
     {
@@ -127,9 +123,7 @@ public class GameOrderView : MonoBehaviour
         Leave();
         m_PageOne.gameObject.SetActive(true);
         m_CurTage = m_PageOne;
-        m_CurCount = m_CurTage.GetCount();
-        m_Title.text = "一等奖";
-        UpdateHelp();
+        UpdateView();
     }
     public void OnClickPageBest()
     {
@@ -140,9 +134,7 @@ public class GameOrderView : MonoBehaviour
         Leave();
         m_PageBest.gameObject.SetActive(true);
         m_CurTage = m_PageBest;
-        m_CurCount = m_CurTage.GetCount();
-        m_Title.text = "特等奖";
-        UpdateHelp();
+        UpdateView();
     }
     public void OnClickTitle()
     {
@@ -153,9 +145,7 @@ public class GameOrderView : MonoBehaviour
         Leave();
         m_PageFreeMain.gameObject.SetActive(true);
         m_CurTage = m_PageFree;
-        m_CurCount = 0;
-        m_Title.text = "自由发奖";
-        UpdateHelp();
+        UpdateView();
     }
 
     public void OnCommitFreeCount()
@@ -188,9 +178,11 @@ public class GameOrderView : MonoBehaviour
         }
     }
 
-    public void UpdateHelp()
+    public void UpdateView()
     {
+        m_CurCount = m_CurTage.GetCount();
         m_Help.text = m_CurTage.GetResidue();
+        m_Title.text = m_CurTage.m_Title;
     }
 
 }

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DrawItem : MonoBehaviour
 {
-    public UILabel m_ID;
-    public UILabel m_Name;
+    public UILabel m_IDLabel;
+    public UILabel m_NameLabel;
 
     // Use this for initialization
     void Start()
     {
-        if (m_ID == null)
+        if (m_IDLabel == null)
         {
-            m_ID = this.transform.GetChild(0).GetComponent<UILabel>();
+            m_IDLabel = this.transform.GetChild(0).GetComponent<UILabel>();
         }
-        if (m_Name == null)
+        if (m_NameLabel == null)
         {
-            m_Name = this.transform.GetChild(1).GetComponent<UILabel>();
+            m_NameLabel = this.transform.GetChild(1).GetComponent<UILabel>();
         }
     }
 
