@@ -18,7 +18,7 @@ void Draw()
 	glVertex3f(-0.25f, -0.25f, -2.5f);
 	glVertex3f(0.25f, -0.25f, -2.5f);
 	glVertex3f(-0.25f, 0.25f, -2.5f);
-	glVertex3f()
+	//glVertex3f()
 
 	glEnd();
 }
