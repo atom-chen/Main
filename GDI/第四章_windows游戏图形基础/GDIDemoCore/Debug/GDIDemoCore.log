@@ -1,16 +1,20 @@
-﻿生成启动时间为 2017/11/11 15:07:45。
-     1>项目“F:\C++space\第四章_windows游戏图形基础\GDIDemoCore\GDIDemoCore.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2018\3\9 星期五 21:46:46。
+     1>项目“F:\Work\GDI\第四章_windows游戏图形基础\GDIDemoCore\GDIDemoCore.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         H:\新建文件夹\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GDIdemo03.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GDIdemo01.cpp GDIdemo02.cpp GDIdemo03.cpp GDIdemoCore.cpp
+         GDIdemoCore.cpp
          GDIdemo03.cpp
+         GDIdemo02.cpp
+         GDIdemo01.cpp
+         正在生成代码...
        Link:
-         H:\新建文件夹\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\C++space\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\C++space\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\C++space\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.lib" /MACHINE:X86 Debug\GDIdemo01.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Work\GDI\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\Work\GDI\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Work\GDI\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.lib" /MACHINE:X86 Debug\GDIdemo01.obj
          Debug\GDIdemo02.obj
          Debug\GDIdemo03.obj
          Debug\GDIdemoCore.obj
-         GDIDemoCore.vcxproj -> F:\C++space\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.exe
-     1>已完成生成项目“F:\C++space\第四章_windows游戏图形基础\GDIDemoCore\GDIDemoCore.vcxproj”(Build 个目标)的操作。
+         GDIDemoCore.vcxproj -> F:\Work\GDI\第四章_windows游戏图形基础\Debug\第四章 Windows游戏图形基础.exe
+     1>已完成生成项目“F:\Work\GDI\第四章_windows游戏图形基础\GDIDemoCore\GDIDemoCore.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.72
+已用时间 00:00:30.37

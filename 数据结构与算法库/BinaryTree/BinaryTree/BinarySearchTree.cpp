@@ -6,47 +6,49 @@ void BinarySearchTree::Put(const int &data)
 	Put(data, root);
 }
 
-void Put(const int &data,Node* root)
+void BinarySearchTree::Put(const int &data, Node* root)
 {
 	if (root == nullptr)
 	{
-		root->data = data;
+		root = new Node;
+		root->data = new int;
+		*(root->data) = data;
 	}
-	else if(root->data>=data)         //root大，往左走
+	else if(*(root->data)>=data)         //root大，往左走
 	{              
 		Put(data, root->pLeft);
 	}
-	else if          //root小，往右走
+	else          //root小，往右走
 	{
 		Put(data, root->pRight);
 	}
 }
 
 
-Node& BinarySearchTree::Get(const int &data) const
+Node* BinarySearchTree::Get(const int &data) const
 {
 	return Get(data, root);
 }
 
 
-Node& Get(const int &data, Node* root)
+Node* BinarySearchTree::Get(const int &data, Node* root) const
 {
 	if (root == nullptr || *(root->data) == data)
 	{
-		return *root;
+		return root;
 	}
 	else if (*(root->data) > data)      //root大，往左找
 	{
-		Get(data, root->pLeft);
+		return Get(data, root->pLeft);
 	}
-	else if (*(root->data) < data)     //root小，往右找
+	else
 	{
-		Get(data, root->pRight);
+		return Get(data, root->pRight);
 	}
 }
 
 
-Node& BinarySearchTree::GetMin(Node* root=this->root) const
+Node& BinarySearchTree::GetMin(Node* root) const
 {
 	Node* pCur = root;
 	while (pCur->pLeft != nullptr)
@@ -56,8 +58,7 @@ Node& BinarySearchTree::GetMin(Node* root=this->root) const
 	return *pCur;
 }
 
-template<class T>
-Node& BinarySearchTree<T>::GetMax(Node* root = this->root)
+Node& BinarySearchTree::GetMax(Node* root) const
 {
 	Node* pCur = root;
 	while (pCur->pRight != nullptr)
@@ -69,11 +70,10 @@ Node& BinarySearchTree<T>::GetMax(Node* root = this->root)
 /*功能描述：用二叉搜索树的右孩子替代它
 参数：
 返回值：*/
-template<class T>
-void BinarySearchTree<T>::DeleteMin()
+void BinarySearchTree::DeleteMin()
 {
 	//找到它的最小节点
-	Node<T>& target = GetMin(this->root);
+	Node& target = GetMin(this->root);
 	//让它的右孩子代替它
 	target.data = target.pRight->data;
 	if (target.pRight != nullptr)
@@ -82,11 +82,10 @@ void BinarySearchTree<T>::DeleteMin()
 	}
 }
 
-template<class T>
-void BinarySearchTree<T>::DeleteMax()
+void BinarySearchTree::DeleteMax()
 {
 	//找到它的最大节点
-	Node<T>& target = GetMin(this->root);
+	Node& target = GetMin(this->root);
 	//让它的左孩子代替它
 	target.data = target.pLeft->data;
 	if (target.pLeft != nullptr)
@@ -95,19 +94,15 @@ void BinarySearchTree<T>::DeleteMax()
 	}
 };
 
-template<class T>
-Node& BinarySearchTree<T>::Delete(const T& data)      //拿要删除节点的右子树最小节点 代替要删除的节点
+
+Node* BinarySearchTree::Delete(const int& data)      //拿要删除节点的右子树最小节点 代替要删除的节点
 {
-
-	
-
-
+	return nullptr;
 }
 
 
 
-template<class T>
-void BinarySearchTree<T>::Clear()
+void BinarySearchTree::Clear()
 {
 
 }
