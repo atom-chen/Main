@@ -93,5 +93,5 @@ GLuint CreateTexture2DFromBMP(const char* bmpPath)
 	{
 		delete pileContent;
 	}
-	return 0;
+	return texture;
 }
