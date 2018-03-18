@@ -2,7 +2,7 @@
 #include "Utils.h"
 #include "SkyBox.h"
 
-SkyBox m_SkyBox;
+static SkyBox m_SkyBox;
 bool Init()
 {
 	glMatrixMode(GL_PROJECTION);
@@ -14,32 +14,19 @@ bool Init()
 }
 void Draw()
 {
+	cout << "重绘" << endl;
 	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//作画前擦除深度缓冲区和颜色缓冲区
 	//打开深度测试（发生遮罩、画家算法）
 	glEnable(GL_DEPTH_TEST);
 	
-	
+	//要先画天空盒（画家算法）
+	m_SkyBox.Draw();
 	DrawModel();
 }
 void DrawModel()
 {
-
 	glBegin(GL_QUADS);
-
-	//逆时针方向设置点的位置
-
-	//近的四边形
-	glColor4ub(255, 255, 255, 255);//白色
-	//左下
-	glVertex3f(-0.1f, -0.1f, -0.4f);//第一个点的坐标
-	//右下
-	glVertex3f(0.1f, -0.1f, -0.4f);
-	//右上
-	glVertex3f(0.1f, 0.1f, -0.4f);
-	//左上
-	glVertex3f(-0.1f, 0.1f, -0.4f);
-
 	//远的四边形
 	glColor4ub(0, 50, 200, 255);//蓝色
 	//左下
@@ -51,5 +38,5 @@ void DrawModel()
 	//左上
 	glVertex3f(-0.1f, 0.1f, -0.6f);
 	glEnd();
-	m_SkyBox.Draw();
+
 }
