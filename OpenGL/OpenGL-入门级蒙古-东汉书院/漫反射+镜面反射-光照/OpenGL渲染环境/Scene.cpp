@@ -20,9 +20,9 @@ void Draw()
 	
 	float whiteColor[] = { 1.0f, 1.0f, 1.0f, 1.0f };//白颜色
 	float blackColor[] = { 0.0f, 0.0f, 0.0f, 1.0f };//黑色
-	float ambientMat[] = { 0.07f, 0.07f, 0.07f, 1.0f };//环境光反射系数
-	float diffuseMat[] = { 0.4f, 0.9f, 0.9f, 1.0f };//漫反射系数
-	float specularMat[] = { 0.9f, 0.9f, 0.9f, 1.0f };//镜面反射系数
+	float ambientMat[] = { 0.07f, 0.07f, 0.07f, 1.0f };//环境光反射材质
+	float diffuseMat[] = { 0.4f, 0.9f, 0.9f, 1.0f };//漫反射材质
+	float specularMat[] = { 0.9f, 0.9f, 0.9f, 1.0f };//镜面反射材质
 
 	glLightfv(GL_LIGHT0, GL_AMBIENT, whiteColor);//设置环境光
 	glMaterialfv(GL_FRONT, GL_AMBIENT, ambientMat);//设置环境光反射系数
