@@ -168,8 +168,9 @@ void Model::Draw()
 	}
 
 	//πÿ±’Œ∆¿Ì
+	glMaterialf(GL_FRONT, GL_SHININESS, 64.0f);
 	glDisable(GL_TEXTURE_2D);
-	glMaterialf(GL_FRONT, GL_SHININESS, 64);
+
 
 
 	glEnable(GL_DEPTH_TEST);

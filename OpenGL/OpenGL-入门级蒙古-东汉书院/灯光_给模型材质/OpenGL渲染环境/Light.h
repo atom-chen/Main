@@ -22,3 +22,28 @@ public:
 protected:
 private:
 };
+
+
+class PointLight :public Light
+{
+public:
+	PointLight(GLenum ID);
+public:
+	//衰减系数f=1/(c+l*d,q*q*d)
+	void SetPosition(float x, float y, float z);//设置位置
+	void SetConstAttenuation(float v);//设置常数衰减因子
+	void SetLinearAttenuation(float v);//设置线性衰减因子
+	void SetQuadricASttenuation(float v);//设置平方衰减因子
+private:
+};
+
+class SpotLight :public PointLight
+{
+public:
+	SpotLight(GLenum ID);
+public:
+	void SetDirection(float x, float y, float z);//设置聚光灯的照射方向
+	void SetExponent(float v);//聚光灯不衰减角度
+	void SetCutoff(float v);//聚光灯可见角度
+
+};

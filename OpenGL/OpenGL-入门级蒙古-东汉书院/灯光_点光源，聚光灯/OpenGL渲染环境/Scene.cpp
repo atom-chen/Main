@@ -8,9 +8,10 @@
 static SkyBox m_SkyBox;
 static Model m_Model;
 static Ground m_Ground;
-static DirectionLight m_DirecionLight(GL_LIGHT0);
-static PointLight m_PointLight(GL_LIGHT1);
-static 
+static DirectionLight m_DirecionLight(GL_LIGHT0);//方向光
+static PointLight m_PointLight(GL_LIGHT1); //点光源
+static SpotLight m_SpotLight(GL_LIGHT2);
+
 bool Init()
 {
 	glMatrixMode(GL_PROJECTION);
@@ -20,7 +21,6 @@ bool Init()
 	m_SkyBox.Init("res/");
 	//去读模型
 	m_Model.Init("res/Sphere.obj");
-	m_Model.SetTexture("res/earth.bmp");
 	m_Model.SetAmbientMaterialColor(0.1f, 0.1f, 0.1f);
 	m_Model.SetDiffuseMaterialColor(0.8f, 0.8f, 0.8f);
 	m_Model.SetSpecularMaterialColor(1.0f, 1, 1);
@@ -33,13 +33,22 @@ bool Init()
 	m_DirecionLight.SetDirection(0, 1, 0);
 
 	//点光源
-	m_PointLight.SetPosition(0, 0, 30);
+	m_PointLight.SetPosition(0, 0, -30);
 	m_PointLight.SetAmbientColor(0.1f, 0.1f, 0.1f);
-	m_PointLight.SetDiffuseColor(0.4f, 0.4f, 0.4f);
+	m_PointLight.SetDiffuseColor(0.1f, 0.4f, 0.6f);
 	m_PointLight.SetSpecularColor(1, 1, 1);
 	m_PointLight.SetConstAttenuation(1);
 	m_PointLight.SetLinearAttenuation(0.2f);
-	m_PointLight.SetQuadricASttenuation(0.01f);
+	m_PointLight.SetQuadricASttenuation(0);
+
+	//聚光灯
+	m_SpotLight.SetPosition(10, 50, -30);
+	m_SpotLight.SetDirection(0, -10, 0);
+	m_SpotLight.SetExponent(5);
+	m_SpotLight.SetCutoff(10);
+	m_SpotLight.SetAmbientColor(0.1f, 0.1f, 0.1f);
+	m_SpotLight.SetDiffuseColor(0, 0.8f, 0);
+	m_SpotLight.SetSpecularColor(1, 0, 0);
 
 	//设置地面的材质系数
 	m_Ground.SetAmbientMaterialColor(0.1f, 0.1f, 0.1f);
@@ -53,8 +62,10 @@ void Draw()
 	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//作画前擦除深度缓冲区和颜色缓冲区
 	//要先画天空盒（画家算法）
-	m_PointLight.Enable(0);
-	m_DirecionLight.Enable(1);
-	m_Model.Draw();
+	//m_PointLight.Enable(1);
+	m_DirecionLight.Enable(0);
+	m_SpotLight.Enable(1);
+	//m_Model.Draw();
+	m_Ground.Draw();
 }
 

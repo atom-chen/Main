@@ -43,3 +43,61 @@ void DirectionLight::SetDirection(float x, float y, float z)//设置方向光的照射方
 	float position[] = { x, y, z, 0 };
 	glLightfv(this->m_LightID, GL_POSITION, position);
 }
+
+/*-------------------------------
+------------点光源begin---------
+---------------------------------*/
+PointLight::PointLight(GLenum ID)
+{
+	if (ID == NULL)
+	{
+		return;
+	}
+	this->m_LightID = ID;
+}
+void PointLight::SetPosition(float x, float y, float z)//设置位置
+{
+	float position[] = { x, y, z, 1 };
+	glLightfv(m_LightID, GL_POSITION, position);
+}
+void PointLight::SetConstAttenuation(float v)//设置常数衰减因子
+{
+	glLightf(m_LightID, GL_CONSTANT_ATTENUATION, v);
+}
+void PointLight::SetLinearAttenuation(float v)//设置线性衰减因子
+{
+	glLightf(m_LightID, GL_LINEAR_ATTENUATION, v);
+}
+void PointLight::SetQuadricASttenuation(float v)//设置平方衰减因子
+{
+	glLightf(m_LightID, GL_QUADRATIC_ATTENUATION, v);
+}
+/*-------------------------------
+------------点光源end---------
+---------------------------------*/
+
+
+/*-------------------------------
+------------聚光灯begin---------
+---------------------------------*/
+SpotLight::SpotLight(GLenum ID) :PointLight(ID)
+{
+
+}
+
+void SpotLight::SetDirection(float x, float y, float z)//设置聚光灯的照射方向
+{
+	float distance[] = { x, y, z };
+	glLightfv(m_LightID, GL_SPOT_DIRECTION, distance);
+}
+void SpotLight::SetExponent(float v)//聚光灯不衰减角度
+{
+	glLightf(m_LightID, GL_SPOT_EXPONENT, v);
+}
+void SpotLight::SetCutoff(float v)//聚光灯可见角度
+{
+	glLightf(m_LightID, GL_SPOT_CUTOFF, v);
+}
+/*-------------------------------
+------------聚光灯end---------
+---------------------------------*/
