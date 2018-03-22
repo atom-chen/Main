@@ -15,3 +15,6 @@ GLuint CreateTexture2DFromBMP(const char* bmpPath);
 
 //创建一个显示列表
 GLuint CreateDisplayList(std::function<void()> foo);
+
+//获取一帧所消耗的时间
+float GetFrameTime();

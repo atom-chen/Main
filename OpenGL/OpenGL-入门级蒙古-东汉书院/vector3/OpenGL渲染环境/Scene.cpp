@@ -4,6 +4,8 @@
 #include "Model.h"
 #include "Ground.h"
 #include "Light.h"
+#include "Camera.h"
+
 
 static SkyBox m_SkyBox;
 static Model m_Model;
@@ -11,6 +13,7 @@ static Ground m_Ground;
 static DirectionLight m_DirecionLight(GL_LIGHT0);
 static PointLight m_PointLight(GL_LIGHT1);
 static SpotLight m_SpotLight(GL_LIGHT2);
+Camera m_MainCamera;
 bool Init()
 {
 	glMatrixMode(GL_PROJECTION);
@@ -61,6 +64,9 @@ void Draw()
 {
 	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//作画前擦除深度缓冲区和颜色缓冲区
+	//摆好摄像机
+	m_MainCamera.Update(g_frame);
+
 	//要先画天空盒（画家算法）
 	m_PointLight.Enable(0);
 	m_DirecionLight.Enable(1);

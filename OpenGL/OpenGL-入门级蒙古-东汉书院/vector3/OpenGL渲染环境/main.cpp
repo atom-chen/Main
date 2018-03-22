@@ -2,14 +2,14 @@
 #include "Scene.h"
 #pragma comment(lib,"opengl32.lib")
 #pragma comment(lib,"glu32.lib")
+#pragma comment(lib,"winmm.lib")
 
 void Update();
 bool Game_Exit();
 /************************************************************************/
 /* 全局变量声明                                                              */
 /************************************************************************/
-unsigned g_frame = 900000;                   //每帧间隔时间
-DWORD g_tPre = 0, g_tNow = 0;             //记录当前时间和上一次绘图时间
+
 HDC g_hdc;
 
 POINT m_OriginalPos;//记录按下鼠标时的位置

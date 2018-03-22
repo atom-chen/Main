@@ -25,6 +25,9 @@
     <ClCompile Include="Vector.cpp">
       <Filter>Mathf</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -50,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="Vector3.h">
       <Filter>Mathf</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameDefine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

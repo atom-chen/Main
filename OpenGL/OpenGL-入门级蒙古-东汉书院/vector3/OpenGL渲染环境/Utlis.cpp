@@ -99,3 +99,18 @@ GLuint CreateDisplayList(std::function<void()> foo)
 	glEndList();
 	return displayList;
 }
+
+
+float GetFrameTime()
+{
+	static unsigned long lastTime = 0;//上次渲染时间，
+	unsigned long frameTime = 0;
+	static unsigned long timeSinceComputerStar = timeGetTime();//当前时间
+	//如果是第一次启动
+	if (lastTime != 0)
+	{
+		frameTime = timeSinceComputerStar - lastTime;
+	}
+	lastTime = timeSinceComputerStar;
+	return frameTime;
+}

@@ -22,3 +22,6 @@ using namespace std;
 
 #define INVALID -1
 #define _INVALID_ID_ (-1)
+
+static unsigned g_frame = 900000;                   //每帧间隔时间
+static DWORD g_tPre = 0, g_tNow = 0;             //记录当前时间和上一次绘图时间
