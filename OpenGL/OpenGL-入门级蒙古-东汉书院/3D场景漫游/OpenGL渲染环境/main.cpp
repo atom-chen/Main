@@ -140,15 +140,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//获取当前时间
 		g_tNow = GetTickCount();
 		//如果此次循环运行时间和上次相差一个帧的时间
-		if (g_tNow - g_tPre >= g_frame)
-		{
-			//处理游戏逻辑
-			Update();
-			Draw();
-			//画完之后 把画好的呈现出来
-			SwapBuffers(g_hdc);
-			g_tPre = GetTickCount();
-		}
+		//处理游戏逻辑
+		Update();
+		Draw();
+		//画完之后 把画好的呈现出来
+		SwapBuffers(g_hdc);
 	}
 	//注销窗口
 	UnregisterClass(wndclass.lpszClassName, wndclass.hInstance);
