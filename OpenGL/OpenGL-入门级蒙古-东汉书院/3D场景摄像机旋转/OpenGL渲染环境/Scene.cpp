@@ -162,6 +162,11 @@ void OnKeyUp(char KeyCode)
 
 void OnMouseMove(float deltaX, float deltaY)
 {
-
+	//X鼠标移动导致up的偏移
+	//Y鼠标的移动导致right的偏移
+	float angleRotateByUp = deltaX / 1000.0f;
+	float angleRotateByRight = deltaY / 1000.0f;
+	m_MainCamera.Yaw(-angleRotateByUp);
+	m_MainCamera.Pitch(-angleRotateByRight);
 }
 

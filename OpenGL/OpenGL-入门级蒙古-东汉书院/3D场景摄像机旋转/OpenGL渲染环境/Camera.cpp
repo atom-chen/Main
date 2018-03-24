@@ -90,11 +90,27 @@ const Vector3& Camera::GetPosition()
 	return this->m_Position;
 }
 
-void Camera::Pitch(float angle)
-{
-
+void Camera::Pitch(float angle) {
+	Vector3 viewDirection = m_ViewCenter - m_Position;
+	viewDirection.Normalize();
+	Vector3 rightDirection = viewDirection.Cross(m_Direction);
+	rightDirection.Normalize();
+	RotateView(angle, rightDirection.x, rightDirection.y, rightDirection.z);
 }
 void Camera::Yaw(float angle)
 {
-
+	RotateView(angle, m_Direction.x, m_Direction.y, m_Direction.z);
+}
+void Camera::RotateView(float angle, float x, float y, float z) {
+	Vector3 viewDirection =  m_ViewCenter - m_Position;
+	Vector3 newDirection(0.0f, 0.0f, 0.0f);
+	float C = cosf(angle);
+	float S = sinf(angle);
+	Vector3 tempX(C + x*x*(1 - C), x*y*(1 - C) - z*S, x*z*(1 - C) + y*S);
+	newDirection.x = tempX*viewDirection;
+	Vector3 tempY(x*y*(1 - C) + z*S, C + y*y*(1 - C), y*z*(1 - C) - x*S);
+	newDirection.y = tempY*viewDirection;
+	Vector3 tempZ(x*z*(1 - C) - y*S, y*z*(1 - C) + x*S, C + z*z*(1 - C));
+	newDirection.z = tempZ*viewDirection;
+	m_ViewCenter = m_Position + newDirection;
 }

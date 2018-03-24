@@ -14,8 +14,9 @@ public:
 	void MoveToBack(bool isMove);
 	void SetMoveSpeed(float speed);
 
-	void Pitch(float angle);
-	void Yaw(float angle);
+	void Pitch(float angle);//绕自己的X轴旋转
+	void Yaw(float angle);//绕世界坐标系y旋转
+	void RotateView(float angle, float x, float y, float z);//绕任意轴旋转（x,y,z为轴的方向向量）
 public:
 	const Vector3& GetPosition();
 private:

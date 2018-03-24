@@ -25,9 +25,9 @@ Vector3 Vector3::operator-(const Vector3& other) const
 	return Vector3(x - other.x, y - other.y, z - other.z);
 }
 
-Vector3 Vector3::operator*(const Vector3& other) const//内积
+float Vector3::operator*(const Vector3& other) const//内积
 {
-	return Vector3(x*other.x, y*other.y, z*other.z);
+	return x*other.x+ y*other.y+z*other.z;
 }
 
 Vector3 Vector3::operator*(float num) const//数乘

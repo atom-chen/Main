@@ -12,7 +12,7 @@ public:
 	Vector3& operator+=(const Vector3& other);
 	Vector3 operator-(const Vector3& other) const;
 	Vector3& operator-=(const Vector3& other);
-	Vector3 operator*(const Vector3& other) const;//内积
+	float operator*(const Vector3& other) const;//内积
 	Vector3 operator*(float num) const;//数乘
 	float Len() const;//长度
 	void Normalize();//标准化

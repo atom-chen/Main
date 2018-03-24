@@ -187,10 +187,12 @@ void Model::Draw(float frameTime)
 	{
 		glMaterialfv(GL_FRONT, GL_SPECULAR, m_SpecularMaterial);
 	}
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, m_Texture);
 
 	//πÿ±’Œ∆¿Ì
-	glDisable(GL_TEXTURE_2D);
-	glMaterialf(GL_FRONT, GL_SHININESS, 64);
+	//glDisable(GL_TEXTURE_2D);
+	//glMaterialf(GL_FRONT, GL_SHININESS, 64);
 
 
 	glEnable(GL_DEPTH_TEST);
