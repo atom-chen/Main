@@ -65,7 +65,7 @@ void Draw()
 	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);//作画前擦除深度缓冲区和颜色缓冲区
 	//摆好摄像机
-	m_MainCamera.Update(g_frame);
+	m_MainCamera.Update(GetFrameTime());
 
 	//要先画天空盒（画家算法）
 	m_PointLight.Enable(0);
