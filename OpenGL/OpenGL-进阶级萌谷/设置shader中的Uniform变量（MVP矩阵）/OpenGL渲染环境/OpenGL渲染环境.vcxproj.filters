@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Utlis.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Mathf</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>GameDefine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ggl.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Mathf</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Pixel.h">
+      <Filter>Mathf</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>GameDefine</Filter>
+    </ClInclude>
+    <ClInclude Include="Mathf.h">
+      <Filter>Mathf</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{6cddd59b-a865-49f4-ae8c-9c877296ce8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{e3e4d02b-23bf-486a-89ec-da3cbc284565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine">
+      <UniqueIdentifier>{1f6ee358-6a9a-4834-afbc-c1f6fb8b8364}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mathf">
+      <UniqueIdentifier>{4c53e6dc-22d0-44a3-b81f-8f1fe7caed27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
