@@ -1,6 +1,9 @@
 #pragma once
 
-#include "ggl.h"
+#include <Windows.h>
+#include <tchar.h>
+#include <EGL/egl.h>
+#include <gles2/gl2.h>
 #include "CELLShader.hpp"
 #include "CELLMath.hpp"
 
@@ -84,9 +87,9 @@ public:
                 CELL::float2(y,y + h),
                 CELL::float2(x + w, y + h),
             };
-            glUniformMatrix4fv(_shader.m_MVP, 1, false, screenProj.data());
-            glUniform4f(_shader.m_color,1,0,0,1);
-            glVertexAttribPointer(_shader.m_position,2,GL_FLOAT,false,sizeof(CELL::float2),pos);
+            glUniformMatrix4fv(_shader._MVP, 1, false, screenProj.data());
+            glUniform4f(_shader._color,1,0,0,1);
+            glVertexAttribPointer(_shader._position,2,GL_FLOAT,false,sizeof(CELL::float2),pos);
             glDrawArrays(GL_TRIANGLE_STRIP,0,4);
         }
         _shader.end();

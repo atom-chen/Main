@@ -22,25 +22,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ggl.h">
+    <ClCompile Include="Lesson1-gles2.0-setup.cpp">
       <Filter>资源文件\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>资源文件\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>资源文件\Scene</Filter>
-    </ClInclude>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="CELLWinApp.hpp">
       <Filter>资源文件\Main</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Utils.cpp">
-      <Filter>资源文件\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>资源文件\Main</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

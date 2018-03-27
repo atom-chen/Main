@@ -5,7 +5,7 @@
 不同标志符的插槽不共享
 */
 
-GLuint vbo,ebo;                  //vbo相当于指向显存的指针
+GLuint vbo;                  //vbo相当于指向显存的指针，ebo指导如何组织显存里的数据绘制图元
 GLint program;
 GLint positionLocation, modelMatrixLocation, viewMatrixLocation, projectionMatrixLocation;//申请几个插槽，存储几个shader里面变量的位置
 glm::mat4 modelMatrix, viewMatrix, projectionMatrix;
@@ -78,10 +78,7 @@ void Draw()
 	glVertexAttribPointer(positionLocation, 4, GL_FLOAT, GL_FALSE, sizeof(float) * 4, 0);//插槽的位置，插槽中数据有几个分量(x,y,z,w)，每个分量是什么类型，是否归一化，两个点之间的距离，设置的信息从vbo的啥地方开始取值
 	
 	//绘制三角形-》发生的事情 GPU会遍历这3个数据，然后传到3个shader,这3个shader拿到了不同的点，但是他们的三个矩阵是一模一样的
-	//glDrawArrays(GL_TRIANGLES, 0, 3);//绘制什么，从第几个点开始绘制，我要绘制多少个点
-	unsigned short arIndex[] ={0, 1, 2, 3, 4,5,6,7,8,9,10,11};
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, arIndex);//绘制模式，取几次，数据类型，分别都取pos数组中的哪些下标
-
+	glDrawArrays(GL_TRIANGLES, 0, 3);//绘制什么，从第几个点开始绘制，我要绘制多少个点
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glUseProgram(0);     //好习惯：将当前程序设置为0号程序（状态机的概念）
 }

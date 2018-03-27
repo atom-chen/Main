@@ -1,14 +1,9 @@
 #pragma once
 
-#include "ggl.h"
-#pragma comment(lib,"opengl32.lib")
-#pragma comment(lib,"glu32.lib")
-#pragma comment(lib,"winmm.lib")
-#pragma comment(lib,"SOIL.lib")
-#pragma comment(lib,"glew32.lib")
-#pragma comment(lib,"libEGL.lib")
-#pragma comment(lib,"libGLESv2.lib")
-
+#include <Windows.h>
+#include <tchar.h>
+#include <EGL/egl.h>
+#include <gles2/gl2.h>
 
 
 

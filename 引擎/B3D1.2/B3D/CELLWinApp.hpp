@@ -1,6 +1,9 @@
 #pragma once
 
-#include "ggl.h"
+#include <Windows.h>
+#include <tchar.h>
+#include <EGL/egl.h>
+#include <gles2/gl2.h>
 #include "CELLShader.hpp"
 #include "CELLMath.hpp"
 
@@ -91,11 +94,11 @@ public:
             {
                 0,1,2,3,0
             };
-            glUniformMatrix4fv(_shader.m_MVP, 1, false, screenProj.data());
-            glUniform4f(_shader.m_color,1,0,0,1);
-            glVertexAttribPointer(_shader.m_position,2,GL_FLOAT,false,sizeof(CELL::float2),pos);
+            glUniformMatrix4fv(_shader._MVP, 1, false, screenProj.data());
+            glUniform4f(_shader._color,1,0,0,1);
+            glVertexAttribPointer(_shader._position,2,GL_FLOAT,false,sizeof(CELL::float2),pos);
             //glDrawArrays(GL_TRIANGLE_STRIP,0,4);
-			glDrawElements(GL_LINE, 6, GL_UNSIGNED_SHORT, arIndex);//绘制模式，取几次，数据类型，分别都取pos数组中的哪些下标
+            glDrawElements(GL_LINE_STRIP,5,GL_UNSIGNED_SHORT,arIndex);
 
         }
         _shader.end();
@@ -137,6 +140,7 @@ public:
         onInit();
 
         _shader.initialize();
+       
         if (hWnd)
         {
             return  0;

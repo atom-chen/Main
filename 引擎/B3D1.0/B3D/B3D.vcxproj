@@ -11,14 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CELLWinApp.hpp" />
-    <ClInclude Include="ggl.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Utils.h" />
+    <ClCompile Include="Lesson1-gles2.0-setup.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClInclude Include="CELLWinApp.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{94240F26-1B8A-4FAD-A001-75F19880B6DF}</ProjectGuid>
@@ -59,6 +55,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>FreeImage.lib;libEGL.lib;libGLESv2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

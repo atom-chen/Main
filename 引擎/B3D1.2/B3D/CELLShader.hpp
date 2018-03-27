@@ -1,5 +1,5 @@
 #pragma once
-#include "ggl.h"
+
 #include <assert.h>
 
 class    ShaderId
@@ -33,7 +33,7 @@ public:
     */
     bool    createProgram( const char* vertex,const char* fragment )
     {
-        bool error=false;
+        bool        error   =   false;
         do 
         {
             if (vertex)
@@ -101,17 +101,17 @@ public:
             if (_fragment._shaderId)
             {
                 glDeleteShader(_fragment._shaderId);
-                _fragment._shaderId = 0;
+                _fragment._shaderId =   0;
             }
             if (_vertex._shaderId)
             {
                 glDeleteShader(_vertex._shaderId);
-                _vertex._shaderId = 0;
+                _vertex._shaderId   =   0;
             }
             if (_programId)
             {
                 glDeleteProgram(_programId);
-                _programId=0;
+                _programId          =   0;
             }
         }
         return  true;
@@ -140,15 +140,15 @@ class   PROGRAM_P2_C4 :public ProgramId
 public:
     typedef int location; 
 public:
-    location    m_position;
-    location    m_color;
-    location    m_MVP;
+    location    _position;
+    location    _color;
+    location    _MVP;
 public:
     PROGRAM_P2_C4()
     {
-        m_position   =   -1;
-		m_color = -1;
-		m_MVP = -1;
+        _position   =   -1;
+        _color      =   -1;
+        _MVP        =   -1;
     }
     ~PROGRAM_P2_C4()
     {
@@ -156,19 +156,19 @@ public:
 
     location    getPositionAttribute() const
     {
-        return  m_position;
+        return  _position;
     }
     location    getColorAttribute() const
     {
-        return  m_color;
+        return  _color;
     }
     location    getColorUniform()
     {
-        return  m_color;
+        return  _color;
     }
     location    getMVP() const 
     {
-        return  m_MVP;
+        return  _MVP;
     }
     /// 初始化函数
     virtual bool    initialize()
@@ -198,9 +198,9 @@ public:
         bool    res =   createProgram(vs,ps);
         if(res)
         {
-            m_position   =   glGetAttribLocation(_programId,"_position");
-           m_color      =   glGetUniformLocation(_programId,"_color");
-            m_MVP        =   glGetUniformLocation(_programId,"_MVP");
+            _position   =   glGetAttribLocation(_programId,"_position");
+            _color      =   glGetUniformLocation(_programId,"_color");
+            _MVP        =   glGetUniformLocation(_programId,"_MVP");
         }
         return  res;
     }
@@ -208,18 +208,18 @@ public:
     /**
     *   使用程序
     */
-    virtual void  begin()
+    virtual void    begin()
     {
         glUseProgram(_programId);
-        glEnableVertexAttribArray(m_position);
+        glEnableVertexAttribArray(_position);
         
     }
     /**
     *   使用完成
     */
-    virtual void  end()
+    virtual void    end()
     {
-        glDisableVertexAttribArray(m_position);
+        glDisableVertexAttribArray(_position);
         glUseProgram(0);
     }
 };

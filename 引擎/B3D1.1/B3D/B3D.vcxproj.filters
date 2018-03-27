@@ -25,31 +25,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ggl.h">
+    <ClCompile Include="Lesson2-primitive.cpp">
       <Filter>资源文件\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>资源文件\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>资源文件\Scene</Filter>
-    </ClInclude>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="CELLWinApp.hpp">
       <Filter>资源文件\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CELLMath.hpp">
-      <Filter>资源文件\Mathf</Filter>
     </ClInclude>
     <ClInclude Include="CELLShader.hpp">
       <Filter>资源文件\Render</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Utils.cpp">
-      <Filter>资源文件\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>资源文件\Main</Filter>
-    </ClCompile>
+    <ClInclude Include="CELLMath.hpp">
+      <Filter>资源文件\Mathf</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

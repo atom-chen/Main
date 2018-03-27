@@ -14,13 +14,9 @@
     <ClInclude Include="CELLMath.hpp" />
     <ClInclude Include="CELLShader.hpp" />
     <ClInclude Include="CELLWinApp.hpp" />
-    <ClInclude Include="ggl.h" />
-    <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Lesson2-primitive2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{94240F26-1B8A-4FAD-A001-75F19880B6DF}</ProjectGuid>
@@ -61,6 +57,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libGLESv2.lib;FreeImage.lib;libEGL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
