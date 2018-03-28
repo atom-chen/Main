@@ -2,6 +2,7 @@
 #include "ggl.h"
 #include "Vertex.h"
 #include "Utils.h"
+#include "Shader.h"
 class Ground
 {
 public:
