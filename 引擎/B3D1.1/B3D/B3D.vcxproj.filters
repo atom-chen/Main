@@ -25,11 +25,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lesson2-primitive.cpp">
-      <Filter>资源文件\Main</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="CELLWinApp.hpp">
       <Filter>资源文件\Main</Filter>
     </ClInclude>
@@ -39,5 +34,10 @@
     <ClInclude Include="CELLMath.hpp">
       <Filter>资源文件\Mathf</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lesson2-primitive.cpp">
+      <Filter>资源文件\Main</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

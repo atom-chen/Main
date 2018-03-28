@@ -11,12 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lesson2-primitive.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="CELLMath.hpp" />
     <ClInclude Include="CELLShader.hpp" />
     <ClInclude Include="CELLWinApp.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lesson2-primitive.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{94240F26-1B8A-4FAD-A001-75F19880B6DF}</ProjectGuid>
