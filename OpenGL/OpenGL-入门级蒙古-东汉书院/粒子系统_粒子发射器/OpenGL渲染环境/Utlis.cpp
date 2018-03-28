@@ -48,6 +48,9 @@ unsigned char* DecodeBMP(unsigned char* bmpFileData, int& width, int& height)
 //GL_CLAMP：大于1.0以上的纹理坐标，会取1.0位置的纹理颜色
 //GL_REPEAT:大于1.0以上的纹理坐标，会取坐标-1.0位置的纹理颜色，循环往复
 //GL_CLAMP_TO_EDGE：天空盒无缝相接
+
+//GL_LINEAR：线性过滤
+//另一个：取最近点
 GLuint CreateTexture2D(unsigned char* pixelData, int width, int height, GLenum type)
 {
 	GLuint texture;//该纹理在OpenGL中的唯一标识符
