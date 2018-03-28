@@ -1,22 +1,77 @@
 #pragma once
 
 #include "CELLWinApp.hpp"
+#include "CELLTimestamp.hpp"
+using namespace CELL;
 
 
 
-class   MVPApp :public CELLWinApp
+class   FirstCameraInfor
+{
+public:
+    FirstCameraInfor()
+    {
+        _moveSpeed  =   5;
+    }
+    CELL::float3    _eye;
+    CELL::float3    _look;
+    CELL::float3    _up;
+    CELL::float3    _right;
+    float           _moveSpeed;
+public:
+
+    void    updateCamera(float fElapsed)
+    {
+
+        CELL::float3    tmpLook =   _look;
+        CELL::float3    dir     =   _look - _eye;
+        dir =   normalize(dir);
+        //! 这里调用windows函数获取键盘的状态
+        unsigned char keys[256];
+        GetKeyboardState( keys );
+
+        if( keys[VK_UP] & 0x80 )
+        {
+            _eye    -=  dir*-_moveSpeed * fElapsed;
+            _look   -=  dir*-_moveSpeed * fElapsed;
+        }
+
+        if( keys[VK_DOWN] & 0x80 )
+        {
+            _eye    +=  (dir*-_moveSpeed) * fElapsed;
+            _look   +=  (dir*-_moveSpeed) * fElapsed;
+        }
+
+        if( keys[VK_LEFT] & 0x80 )
+        {
+            _eye    -=  (_right*_moveSpeed) * fElapsed;
+            _look   -=  (_right*_moveSpeed) * fElapsed;
+        }
+
+        if( keys[VK_RIGHT] & 0x80 )
+        {
+            _eye    +=  (_right*_moveSpeed) * fElapsed;
+            _look   +=  (_right*_moveSpeed) * fElapsed;
+        }
+    }
+};
+
+class   Camera1App :public CELLWinApp
 {
 public:
     PROGRAM_P2_T2_C3    _shader;
     unsigned            _textureId;
     unsigned            _texGround;
+    FirstCameraInfor    _camera1;
+    CELLTimestamp       _timeStamp;
 public:
-    MVPApp()
+    Camera1App()
     {
         _textureId  =   -1;
         _texGround  =   -1;
     }
 public:
+
 
     //! 重写初始化函数
     virtual void    onInit()
@@ -24,6 +79,10 @@ public:
         _shader.initialize();
         _textureId  =   loadTexture("woodfloor.tga");
         _texGround  =   loadTexture("1.jpg");
+        _camera1._eye   =   CELL::float3(1, 1, 1);
+        _camera1._look  =   CELL::float3(0.5f, -0.4f, -5.5f);
+        _camera1._up    =   CELL::float3(0.0f, 1.0f, 0.0f);
+        _camera1._right =   CELL::float3(1.0f, 0.0f, 0.0f);
     }
     virtual unsigned    loadTexture(const char* fileName)
     {
@@ -81,6 +140,9 @@ public:
     }
 
 
+    /**
+    *   重写绘制函数
+    */
     virtual void    render()
     {
         glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
@@ -92,6 +154,13 @@ public:
             float u,v;
             float r, g, b,a;
         };
+        float   elapseTime   =   (float)_timeStamp.getElapsedSecond();
+        //! 更新定时器
+        _timeStamp.update();
+
+        _camera1.updateCamera(elapseTime);
+
+        CELL::matrix4   matView =   CELL::lookAt(_camera1._eye,_camera1._look,_camera1._up);
 
         
         Vertex vertexs[] =
@@ -115,11 +184,10 @@ public:
             {  gSize, gPos,-gSize,rept, 0.0f,1.0f, 1.0f, 1.0f,1.0f },
             {  gSize, gPos, gSize,rept, rept,1.0f, 1.0f, 1.0f,1.0f },
 
-            //{ -gSize, gPos,-gSize,0.0f, 0.0f,1.0f, 1.0f, 1.0f,1.0f },
-            //{  gSize, gPos, gSize,rept, rept,1.0f, 1.0f, 1.0f,1.0f },
+            { -gSize, gPos,-gSize,0.0f, 0.0f,1.0f, 1.0f, 1.0f,1.0f },
+            {  gSize, gPos, gSize,rept, rept,1.0f, 1.0f, 1.0f,1.0f },
             { -gSize, gPos, gSize,0.0f, rept,1.0f, 1.0f, 1.0f,1.0f },
         };
-
         
         // MVP
 
@@ -127,13 +195,15 @@ public:
         _shader.begin();
         {
             
+            CELL::matrix4   matWorld(1);
             CELL::matrix4   matProj =   CELL::perspective(45.0f, (GLfloat)_winWidth / (GLfloat)_winHeight, 0.1f, 100.0f);
 
+            CELL::matrix4   MVP     =   matProj * matView * matWorld;
 
             glUniform1i(_shader._texture,0);
             //! 绘制地面
             glBindTexture(GL_TEXTURE_2D,_texGround);
-            glUniformMatrix4fv(_shader._MVP, 1, false, matProj.data());
+            glUniformMatrix4fv(_shader._MVP, 1, false, MVP.data());
 
             glVertexAttribPointer(_shader._positionAttr,3,  GL_FLOAT,   false,  sizeof(Vertex),&grounds[0].x);
             glVertexAttribPointer(_shader._uvAttr,2,        GL_FLOAT,   false,  sizeof(Vertex),&grounds[0].u);
@@ -143,14 +213,12 @@ public:
 
             CELL::matrix4   model(1);
 
-            CELL::matrix4   view(1);
-
             model.translate(0.0f, 0.0f, -10.0f);
             CELL::matrix4   matRot(1);
             matRot.rotateZ(x);
             x   +=  1.0f;
             
-            CELL::matrix4   mvp =   matProj * (matRot * model) * view;
+            CELL::matrix4   mvp =   matProj * matView * (matRot * model);
 
             glBindTexture(GL_TEXTURE_2D,_textureId);
             glUniform1i(_shader._texture,0);
@@ -162,11 +230,12 @@ public:
 
             glDrawArrays(GL_TRIANGLES,0,sizeof(vertexs) / sizeof(vertexs[0]) );
         }
-        
-
         _shader.end();
 
         eglSwapBuffers(_display, _surface);
 
+        
+
     }
+    
 };
