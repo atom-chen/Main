@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.domain">
+	<class name="Employee" table="employee">
+	<!-- id元素用于指定主键属性 -->
+	<id name="myid" column="myid" type="java.lang.Integer">
+	<!-- 该元素用于指定主键值生成策略hilo native increment sequence uuid -->
+	<generator class="sequence">
+	<param name="sequence">emp_sequence</param>
+	</generator>
+	</id>
+	<!-- 对其它属性还有配置 -->
+	<property name="myname" type="java.lang.String">
+	<column name="myname" not-null="false"  />
+	</property>
+	<property name="email" type="java.lang.String" >
+	<column name="email" not-null="false"/>
+	</property>
+	<property name="hiredate" type="java.util.Date">
+	<column name="hiredate" not-null="false" />
+	</property>
+	</class>
+	
+</hibernate-mapping>
