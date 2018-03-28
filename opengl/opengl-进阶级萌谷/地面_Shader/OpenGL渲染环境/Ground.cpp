@@ -4,7 +4,7 @@ Ground::~Ground()
 {
 	if (m_VertexBuf != nullptr)
 	{
-		delete[] m_VertexBuf;
+		delete m_VertexBuf;
 		m_VertexBuf = nullptr;
 	}
 }

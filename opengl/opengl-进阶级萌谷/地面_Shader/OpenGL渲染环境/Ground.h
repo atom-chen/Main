@@ -20,7 +20,4 @@ private:
 	GLuint m_Vbo;
 	VertexBuffer *m_VertexBuf;
 	Shader m_Shader;
-	GLuint m_Program;
-	GLint m_PositionLocation, m_ColorLocation, m_NormalLocation;
-	GLint m_ModeMatrixLocation, m_ViewMatrixLocation, m_ProjectionMatrix;
 };
