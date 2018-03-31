@@ -1,0 +1,8 @@
+Id	Description	ItemID1	IntimacyAdd1	ItemID2	IntimacyAdd2	ItemID3	IntimacyAdd3	ItemID4	IntimacyAdd4	ItemID5	IntimacyAdd5	ItemID6	IntimacyAdd6	ItemID7	IntimacyAdd7	ItemID8	IntimacyAdd8	ItemID9	IntimacyAdd9
+INT	STRING	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT
+#MAX_ID=4096;MAX_RECORD=4096;																			
+#ID	描述（程序不读）	物品1ID	增加的亲密度	物品2ID	增加的亲密度	物品3ID	增加的亲密度	物品4ID	增加的亲密度	物品5ID	增加的亲密度	物品6ID	增加的亲密度	物品7ID	增加的亲密度	物品8ID	增加的亲密度	物品9ID	增加的亲密度
+1	礼物-人	621	50	620	30	619	20	624	25	623	15	622	10	627	8	626	5	625	3
+2	礼物-衡-1	624	50	623	30	622	20	621	25	620	15	619	10	627	8	626	5	625	3
+3	礼物-衡-2	624	50	623	30	622	20	627	25	626	15	625	10	621	8	620	5	619	3
+4	礼物-妖	627	50	626	30	625	20	624	25	623	15	622	10	621	8	620	5	619	3

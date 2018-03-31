@@ -1,0 +1,8 @@
+Id	Description	Require	GiftAddLimit	BattleAddLimit
+INT	STRING	INT	INT	INT
+#MAX_ID=1024;MAX_RECORD=1024;				
+#ID	描述（程序不读）	该等级需要多少亲密度	赠送礼物增加亲密度的每日上限	战斗增加的亲密度每日上限
+1	一级亲密度	0	999999	80
+2	二级亲密度	3900	999999	80
+3	三级亲密度	5460	999999	80
+4	四级亲密地	7020	999999	80
