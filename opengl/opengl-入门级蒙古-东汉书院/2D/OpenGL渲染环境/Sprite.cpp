@@ -25,10 +25,11 @@ void Sprite::SetRect(float x, float y, float width, float height)
 }
 void Sprite::Draw()
 {
+	//方案1：alpha测试
 	//glEnable(GL_ALPHA_TEST);
-	//glAlphaFunc(GL_GREATER, 0);
+	//glAlphaFunc(GL_GREATER, 0);//如果alpha>0.0 那么就显示这个顶点的颜色
 	glEnable(GL_BLEND);//alpha混合
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);//源采用自身alpha，目标采用1-源的alpha
 
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, m_Texture);
