@@ -14,5 +14,14 @@ glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
 
 1.6增加第三人称摄像机。
 输入控制主角移动，摄像机跟随主角移动。
+角色移动方法：点击后获得触碰点的世界坐标，做射线。
 
+1.7增加VertexBuffer类。
+VBO和EBO
 
+1.8增加FrameBuffer，支持离屏渲染，速度更快了。
+
+1.9 Shader中加入alpha测试：a<0.2的像素点将被丢弃->discard;
+alpha混合：颜色之间通过rgba进行混合-> color=(r/255+g/255+b/255)/a; 效果使得2d物体更平滑
+glEnable(GL_BLEND);//alpha混合
+glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
