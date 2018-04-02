@@ -1,0 +1,13 @@
+
+technique Best
+{
+	pass
+	{
+		MaterialAmbient		=	float4(0.588235,0.588235,0.588235,1);
+		MaterialDiffuse		=	float4(0.588235,0.588235,0.588235,1);
+		MaterialSpecular	=	float4(0.9,0.9,0.9,1);
+		MaterialEmission	=	float4(0,0,0,1);
+		MaterialShininess	=	32.0;
+	}
+}
+
