@@ -1,0 +1,9 @@
+
+technique Best
+{
+	pass
+	{
+		MaterialShininess	=	32.0;
+	}
+}
+

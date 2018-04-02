@@ -1,0 +1,22 @@
+sampler2D baseMap < string ResourceName = "GreenSkin.jpg";
+float textureUoffset=0;
+float textureVoffset=0;
+>
+= sampler_state
+{
+	generateMipMap		=	true;
+	minFilter		=	LinearMipMapLinear;
+	magFilter		=	Linear;
+};
+technique Best
+{
+	pass
+	{
+		MaterialAmbient		=	float4(0.588,0.588,0.588,1);
+		MaterialDiffuse		=	float4(0.588,0.588,0.588,1);
+		MaterialSpecular	=	float4(0.9,0.9,0.9,1);
+		MaterialEmission	=	float4(0,0,0,1);
+		MaterialShininess	=	32.0;
+	}
+}
+

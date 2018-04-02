@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "B3D", "B3D\B3D.vcxproj", "{94240F26-1B8A-4FAD-A001-75F19880B6DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Node2", "Node2\Node2.vcxproj", "{7075E7B0-EF34-4854-8F2F-5E729D1D9DD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94240F26-1B8A-4FAD-A001-75F19880B6DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{94240F26-1B8A-4FAD-A001-75F19880B6DF}.Debug|Win32.Build.0 = Debug|Win32
+		{94240F26-1B8A-4FAD-A001-75F19880B6DF}.Release|Win32.ActiveCfg = Release|Win32
+		{94240F26-1B8A-4FAD-A001-75F19880B6DF}.Release|Win32.Build.0 = Release|Win32
+		{7075E7B0-EF34-4854-8F2F-5E729D1D9DD4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7075E7B0-EF34-4854-8F2F-5E729D1D9DD4}.Debug|Win32.Build.0 = Debug|Win32
+		{7075E7B0-EF34-4854-8F2F-5E729D1D9DD4}.Release|Win32.ActiveCfg = Release|Win32
+		{7075E7B0-EF34-4854-8F2F-5E729D1D9DD4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
