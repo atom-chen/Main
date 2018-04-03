@@ -13,13 +13,14 @@
 */
 GLuint texture;
 Ground m_Ground;
-Model m_box;
+Model m_box, m_LitterMap,m_Niu2;
 Model m_Niu;
 SkyBox m_Skybox;
 ParticleSystem m_ParticleSystem;
 Camera_1st m_MainCamera;
 //Camera_1st m_UICamera;
 Sprite m_UISprite;
+FrameBuffer* m_FrameBuf;
 bool Awake()
 {
 	glewInit();
@@ -30,7 +31,8 @@ bool Awake()
 	m_Niu.Init("res/niutou.obj");
 	m_ParticleSystem.Init(vec3(0, 0, 0));
 	m_UISprite.Init(0.1f, 0.1f, 256, 256);
-
+	m_FrameBuf = new FrameBuffer;
+	SetViewPortSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	return 1;
 }
 void Start()
@@ -43,6 +45,7 @@ void Start()
 	m_UISprite.SetImage("res/a.png");
 
 	m_MainCamera.SwitchTo3D();
+
 }
 
 
@@ -59,6 +62,7 @@ void OnDrawBegin()
 {
 	glClearColor(0, 0, 0, 1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	m_FrameBuf->Begin();
 	m_Skybox.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 }
 void Draw3D()
@@ -66,6 +70,7 @@ void Draw3D()
 	m_box.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 	m_Niu.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 	m_ParticleSystem.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
+
 }
 void Draw2D()
 {
@@ -74,9 +79,31 @@ void Draw2D()
 void OnDrawOver()
 {
 	m_Ground.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
+	m_FrameBuf->End();
+	m_LitterMap.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
+	m_Niu2.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glUseProgram(0);     //好习惯：将当前程序设置为0号程序（状态机的概念）
+}
+
+
+void SetViewPortSize(float width, float height)
+{
+	m_MainCamera.SetViewPortSize(width, height);
+	m_FrameBuf->AttachColorBuffer("color", GL_COLOR_ATTACHMENT0, width, height);
+	m_FrameBuf->AttachColorBuffer("color1", GL_COLOR_ATTACHMENT1, width, height);
+	m_FrameBuf->AttachDepthBuffer("depth", width, height);
+	m_FrameBuf->Finish();
+	m_LitterMap.Init("res/Sphere.obj");
+	m_Niu2.Init("res/Quad.obj");
+	m_LitterMap.SetTexture2D(m_FrameBuf->GetBuffer("color"));
+	m_LitterMap.SetScale(4, 4, 4.0f);
+	//m_LitterMap.SetRotate(150, 0, 1, 0);
+
+	m_Niu2.SetTexture2D(m_FrameBuf->GetBuffer("color1"));
+	m_Niu2.SetScale(4, 4, 4.0f);
+
 }
 void OnKeyDown(char KeyCode)
 {

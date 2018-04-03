@@ -2,9 +2,10 @@
 #include "Utils.h"
 #include "Resource.h"
 
-Model::Model() :m_Position(0, 0, 0), m_Scale(1,1,1)
+Model::Model() :m_Position(0, 0, 0), m_Scale(1, 1, 1), m_Rotate(0,0,0,0)
 {
-	m_ModelMatrix = glm::translate(m_Position)*glm::scale(m_Scale);
+	m_ModelMatrix = glm::translate(this->m_Position.x, this->m_Position.y, this->m_Position.z)*glm::scale(m_Scale.x, m_Scale.y, m_Scale.z);
+	//m_ModelMatrix = glm::rotate(this->m_ModelMatrix, this->m_Rotate.w, vec3(this->m_Rotate.x, this->m_Rotate.y, this->m_Rotate.z));
 	for (int i = 0; i < 4; i++)
 	{
 		if (i != 3)
@@ -92,6 +93,7 @@ void Model::SetPosition(float x, float y, float z)
 	m_Position.y = y;
 	m_Position.z = z;
 	m_ModelMatrix = glm::translate(x, y, z)*glm::scale(m_Scale.x, m_Scale.y, m_Scale.z);
+	//m_ModelMatrix = glm::rotate(this->m_ModelMatrix, this->m_Rotate.w, vec3(this->m_Rotate.x, this->m_Rotate.y, this->m_Rotate.z));
 }
 void Model::SetScale(float x, float y, float z)
 {
@@ -99,12 +101,27 @@ void Model::SetScale(float x, float y, float z)
 	m_Scale.y = y;
 	m_Scale.z = z;
 	m_ModelMatrix = glm::translate(m_Position.x, m_Position.y, m_Position.z)* glm::scale(x, y, z);
+	//m_ModelMatrix = glm::rotate(this->m_ModelMatrix, this->m_Rotate.w, vec3(this->m_Rotate.x, this->m_Rotate.y, this->m_Rotate.z));
+}
+void Model::SetRotate(float angle, float x, float y, float z)
+{
+	m_Rotate.w = angle;
+	m_Rotate.x = x;
+	m_Rotate.y = y;
+	m_Rotate.z = z;
+	m_ModelMatrix = glm::translate(this->m_Position.x, this->m_Position.y, this->m_Position.z)*glm::scale(m_Scale.x, m_Scale.y, m_Scale.z);
+	//m_ModelMatrix = glm::rotate(this->m_ModelMatrix, angle, vec3(x, y, z));
 }
 
 
 void Model::SetTexture2D(const char* path,const char* nameInShader)
 {
 	m_Shader.SetTexture2D(path,nameInShader);
+}
+
+void Model::SetTexture2D(GLuint texture, const char* nameInShader)
+{
+	m_Shader.SetTexture2D(texture, nameInShader);
 }
 
 

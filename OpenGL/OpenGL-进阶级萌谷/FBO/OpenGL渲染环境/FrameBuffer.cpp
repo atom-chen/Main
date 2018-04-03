@@ -6,7 +6,7 @@
 
 FrameBuffer::FrameBuffer()
 {
-
+	glGenFramebuffers(1, &m_Fbo);
 }
 FrameBuffer::~FrameBuffer()
 {

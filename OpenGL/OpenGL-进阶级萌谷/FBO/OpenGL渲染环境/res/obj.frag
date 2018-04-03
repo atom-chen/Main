@@ -66,5 +66,6 @@ color=(ambientColor+diffuseColor+GetPointLight())*texture2D(U_Texture_1,V_Texcoo
 }
 
 
-gl_FragColor=color;
+gl_FragData[0]=color;
+gl_FragData[1]=color;
 }

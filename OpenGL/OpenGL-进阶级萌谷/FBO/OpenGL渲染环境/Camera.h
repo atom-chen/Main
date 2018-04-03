@@ -30,6 +30,9 @@ public:
 	inline glm::mat4 GetViewMatrix() const{ return this->m_ViewMatrix; };
 	inline void SetTarget(const vec3& target){ this->m_ViewCenter = target; };
 	inline glm::mat4 GetProjectionMatrix() const{ return this->m_ProjectionMatrix; };
+	inline float GetWidth() const{ return this->m_ViewportWidget; };
+	inline float GetHeight() const{ return this->m_ViewportHeight; };
+
 	void SwitchTo2D();
 	void SwitchTo3D();
 protected:
