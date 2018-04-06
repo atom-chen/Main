@@ -13,6 +13,7 @@ bool Zhucheng::Awake()
 	m_ParticleSystem.Init(vec3(0, 0, 0));
 	return 1;
 }
+
 void Zhucheng::Start()
 {
 	Scene::Start();
@@ -31,6 +32,7 @@ void Zhucheng::Update()
 	m_Niu.Update(m_MainCamera.GetPosition());
 	m_ParticleSystem.Update();
 }
+
 void Zhucheng::Draw3D()
 {
 	Scene::Draw3D();
@@ -38,13 +40,12 @@ void Zhucheng::Draw3D()
 	m_box.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 	m_Niu.Draw(m_MainCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 }
+
 void Zhucheng::Draw2D()
 {
 	Scene::Draw2D();
 	m_Texture.Draw(m_2DCamera.GetViewMatrix(), m_MainCamera.GetProjectionMatrix());
 }
-
-
 
 void Zhucheng::OnKeyDown(char KeyCode)//按下键盘时调用
 {
@@ -80,6 +81,7 @@ void Zhucheng::OnKeyDown(char KeyCode)//按下键盘时调用
 		break;
 	}
 }
+
 void Zhucheng::OnKeyUp(char KeyCode)//松开键盘时被调用
 {
 	Scene::OnKeyUp(KeyCode);
@@ -112,6 +114,7 @@ void Zhucheng::OnKeyUp(char KeyCode)//松开键盘时被调用
 		break;
 	}
 }
+
 void Zhucheng::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 {
 	Scene::OnMouseMove(deltaX, deltaY);
@@ -120,6 +123,7 @@ void Zhucheng::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 	m_MainCamera.Yaw(-angleRotateByUp);
 	m_MainCamera.Pitch(-angleRotateByRight);
 }
+
 void Zhucheng::OnMouseWheel(int32_t direction)
 {
 	Scene::OnMouseWheel(direction);

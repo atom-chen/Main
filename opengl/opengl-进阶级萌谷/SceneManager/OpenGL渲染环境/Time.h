@@ -12,5 +12,5 @@ private:
 	static void SetDeltaTime();
 private:
 	static unsigned long lastTime , timeSinceComputerStar;//上次渲染时间，
-	static unsigned long frameTime;
+	static unsigned long frameTime;//当前帧消耗时间
 };
