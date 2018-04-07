@@ -117,6 +117,7 @@
     <ClInclude Include="Ground.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Plane.hpp" />
     <ClInclude Include="Resource.h" />

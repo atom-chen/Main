@@ -1,6 +1,5 @@
 #pragma once
 #include "ggl.h"
-#include "GameObject.h"
 #include "Frustum.hpp"
 
 class Camera_1st

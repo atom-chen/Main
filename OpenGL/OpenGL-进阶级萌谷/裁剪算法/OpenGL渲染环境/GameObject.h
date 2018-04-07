@@ -4,6 +4,7 @@
 #include "Shader.h"
 #include "Frustum.hpp"
 #include "Camera.h"
+#include "Material.h"
 
 
 class GameObject
@@ -17,6 +18,9 @@ public:
 	void SetAmbientMaterial(float r, float g, float b, float a = 1);
 	void SetDiffuseMaterial(float r, float g, float b, float a = 1);
 	void SetSpecularMaterial(float r, float g, float b, float a = 1);
+	void SetAmbientMaterial(const vec4& ambientMaterual);
+	void SetDiffuseMaterial(const vec4& diffuseMaterual);
+	void SetSpecularMaterial(const vec4& specularMaterual);
 	void SetTexture2D(const char* path, const char* nameInShader = "U_Texture_1");
 	void SetTexture2D(GLuint texture, const char* nameInShader = "U_Texture_1");
 
@@ -40,7 +44,7 @@ private:
 	vec4 m_Rotate;
 	glm::mat4 m_ModelMatrix;
 	//模型的材质
-	float m_AmbientMaterial[4], m_DiffuseMaterial[4], m_SpecularMaterial[4];
+	Material m_Material;
 
 	bool m_IsMoveToLeft, m_IsMoveToRight, m_IsMoveToTop, m_IsMoveToBottom;
 	float m_MoveSpeed = 5;

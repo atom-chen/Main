@@ -6,21 +6,9 @@
 GameObject::GameObject() :m_Position(0, 0, 0), m_Scale(1, 1, 1), m_Rotate(0,0,0,0)
 {
 	m_ModelMatrix = glm::translate(this->m_Position.x, this->m_Position.y, this->m_Position.z)*glm::scale(m_Scale.x, m_Scale.y, m_Scale.z);
-	for (int i = 0; i < 4; i++)
-	{
-		if (i != 3)
-		{
-			m_AmbientMaterial[i] = 0.1f;
-			m_DiffuseMaterial[i] = 0.6f;
-			m_SpecularMaterial[i] = 1;
-		}
-		else
-		{
-			m_AmbientMaterial[i] = 1;
-			m_DiffuseMaterial[i] = 1.0f;
-			m_SpecularMaterial[i] = 1;
-		}
-	}
+	m_Material.SetAmbientMaterial(vec4(0.1f, 0.1f, 0.1f, 1.0f));
+	m_Material.SetDiffuseMaterial(vec4(0.6f, 0.6f, 0.6f, 1.0f));
+	m_Material.SetSepcularMaterial(vec4(1,1, 1, 1.0f));
 }
 bool GameObject::Init(const char* path, const char* vertexShader, const char* fragmentShader)
 {
@@ -45,10 +33,10 @@ bool GameObject::Init(const char* path, const char* vertexShader, const char* fr
 	m_Shader.SetVec4("U_LightAmbient", 1, 1, 1, 1);
 	m_Shader.SetVec4("U_LightDiffuse", 1, 1, 1, 1);
 	m_Shader.SetVec4("U_LightSpecular", 1, 1, 1, 1);
-	this->SetAmbientMaterial(m_AmbientMaterial[0], m_AmbientMaterial[1], m_AmbientMaterial[2], m_AmbientMaterial[3]);
-	this->SetDiffuseMaterial(m_DiffuseMaterial[0], m_DiffuseMaterial[1], m_DiffuseMaterial[2], m_DiffuseMaterial[3]);
-	this->SetSpecularMaterial(m_SpecularMaterial[0], m_SpecularMaterial[1], m_SpecularMaterial[2], m_SpecularMaterial[3]);
-	m_Shader.SetVec4("U_CameraPos", 0, 0,  0,1);
+	this->SetAmbientMaterial(m_Material.GetAmbientMaterial());
+	this->SetDiffuseMaterial(m_Material.GetDiffuseMaterial());
+	this->SetSpecularMaterial(m_Material.GetSepcularMaterial());
+	m_Shader.SetVec4("U_CameraPos", 0, 0, 0, 1);
 	m_Shader.SetVec4("U_LightOpt", 32, 0, 0, 0);
 	return 1;
 }
@@ -134,29 +122,35 @@ void GameObject::SetTexture2D(GLuint texture, const char* nameInShader)
 
 void GameObject::SetAmbientMaterial(float r, float g, float b, float a)
 {
-	m_AmbientMaterial[0] = r;
-	m_AmbientMaterial[1] = g;
-	m_AmbientMaterial[2] = b;
-	m_AmbientMaterial[3] = a;
+	m_Material.SetAmbientMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_AmbientMaterial", r,g,b,a);
 }
 
 void GameObject::SetDiffuseMaterial(float r, float g, float b, float a)
 {
-	m_DiffuseMaterial[0] = r;
-	m_DiffuseMaterial[1] = g;
-	m_DiffuseMaterial[2] = b;
-	m_DiffuseMaterial[3] = a;
+	m_Material.SetDiffuseMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_DiffuseMaterial",r,g,b,a);
 }
 
 void GameObject::SetSpecularMaterial(float r, float g, float b, float a)
 {
-	m_SpecularMaterial[0] = r;
-	m_SpecularMaterial[1] = g;
-	m_SpecularMaterial[2] = b;
-	m_SpecularMaterial[3] = a;
+	m_Material.SetSepcularMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_SpecularMaterial", r,g,b,a);
+}
+void GameObject::SetAmbientMaterial(const vec4& ambientMaterual)
+{
+	m_Material.SetAmbientMaterial(ambientMaterual);
+	m_Shader.SetVec4("U_AmbientMaterial", ambientMaterual.x, ambientMaterual.y, ambientMaterual.z, ambientMaterual.w);
+}
+void GameObject::SetDiffuseMaterial(const vec4& diffuseMaterual)
+{
+	m_Material.SetDiffuseMaterial(diffuseMaterual);
+	m_Shader.SetVec4("U_DiffuseMaterial", diffuseMaterual.x, diffuseMaterual.y, diffuseMaterual.z, diffuseMaterual.w);
+}
+void GameObject::SetSpecularMaterial(const vec4& specularMaterual)
+{
+	m_Material.SetDiffuseMaterial(specularMaterual);
+	m_Shader.SetVec4("U_SpecularMaterial", specularMaterual.x, specularMaterual.y, specularMaterual.z, specularMaterual.w);
 }
 
 void GameObject::MoveToLeft(bool isMove)

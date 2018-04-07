@@ -38,7 +38,7 @@ public:
 	void SetConstAttenuation(float v);//设置常数衰减因子
 	void SetLinearAttenuation(float v);//设置线性衰减因子
 	void SetQuadricASttenuation(float v);//设置平方衰减因子
-	void Update(vec3 cameraPos);//修正灯光位置（由于摄像机的偏移，灯光也跟着偏移）
+	void Update(const vec3& cameraPos);//修正灯光位置（由于摄像机的偏移，灯光也跟着偏移）
 private:
 	float m_Position[3];
 };

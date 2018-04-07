@@ -92,7 +92,7 @@ void PointLight::SetQuadricASttenuation(float v)//设置平方衰减因子
 {
 	glLightf(m_LightID, GL_QUADRATIC_ATTENUATION, v);
 }
-void PointLight::Update(vec3 cameraPos)
+void PointLight::Update(const vec3& cameraPos)
 {
 	this->SetPosition(m_Position[0] - cameraPos.x, m_Position[1] - cameraPos.y, m_Position[2] - cameraPos.z);
 }
