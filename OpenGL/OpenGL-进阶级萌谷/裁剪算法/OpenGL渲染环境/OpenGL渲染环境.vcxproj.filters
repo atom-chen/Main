@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Utlis.cpp">
+      <Filter>GameDefine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>GameDefine\Local</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_3rd.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_1st.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>GameDefine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>GameDefine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBuffer.cpp">
+      <Filter>GameDefine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementBuffer.cpp">
+      <Filter>GameDefine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>GameDefine\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_2D.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>GameDefine\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameDefine\Local</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameDefine\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="WinApp.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>GameDefine\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>GameDefine\Tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h">
+      <Filter>GameDefine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ggl.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>GameDefine\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>GameDefine\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>GameDefine\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>GameDefine\Local</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameDefine\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>GameDefine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>GameDefine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>GameDefine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera_2D.h">
+      <Filter>GameDefine\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>GameDefine\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameDefine\Local</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameDefine\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="WinApp.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>GameDefine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GamaMain.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>GameDefine\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.hpp">
+      <Filter>GameDefine\Mathf</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.hpp">
+      <Filter>GameDefine\Mathf</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{e3e4d02b-23bf-486a-89ec-da3cbc284565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine">
+      <UniqueIdentifier>{5b6c43c4-38a0-4a40-a923-a47d80dbf9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{8676c22f-0b07-4be3-a7aa-a66d0795cd9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Tools">
+      <UniqueIdentifier>{6cddd59b-a865-49f4-ae8c-9c877296ce8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Global">
+      <UniqueIdentifier>{0ac92bef-50dc-4427-a743-8df7f0a6752c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Local">
+      <UniqueIdentifier>{5df2a23f-9359-42c8-82d6-18ca86602a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Manager">
+      <UniqueIdentifier>{eb6d9d22-986c-4efa-b4e0-f03f4e6af2b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\UI">
+      <UniqueIdentifier>{20f7158e-ba20-4a00-aaa5-5d87d7f0da49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{5a1232bf-1471-4fcd-9943-fe4e7224b585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Mathf">
+      <UniqueIdentifier>{b0d576c7-d070-4c54-86f9-eabad500986d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\obj.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\obj.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\ground.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\ground.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\skybox.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\skybox.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\texture.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\texture.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\particle.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\particle.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="res\fullScreenQuad.vert">
+      <Filter>Shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

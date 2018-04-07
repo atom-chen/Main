@@ -49,7 +49,7 @@ bool GameObject::Init(const char* path, const char* vertexShader, const char* fr
 	this->SetDiffuseMaterial(m_DiffuseMaterial[0], m_DiffuseMaterial[1], m_DiffuseMaterial[2], m_DiffuseMaterial[3]);
 	this->SetSpecularMaterial(m_SpecularMaterial[0], m_SpecularMaterial[1], m_SpecularMaterial[2], m_SpecularMaterial[3]);
 	m_Shader.SetVec4("U_CameraPos", 0, 0,  0,1);
-	m_Shader.SetVec4("U_LightOpt", 32, 0, 0, 1);
+	m_Shader.SetVec4("U_LightOpt", 32, 0, 0, 0);
 	return 1;
 }
 void GameObject::Update(const vec3& cameraPos)
@@ -77,9 +77,15 @@ void GameObject::Update(const vec3& cameraPos)
 	}
 	m_Shader.SetVec4("U_CameraPos", cameraPos.x, cameraPos.y, cameraPos.z, 1);
 }
-
-void GameObject::Draw(glm::mat4& viewMatrix, glm::mat4 &ProjectionMatrix)
+void GameObject::Draw(const Camera_1st& camera)
 {
+	const Frustum& frustum=camera.GetFrustum();
+	const glm::mat4& viewMatrix = camera.GetViewMatrix();
+	const glm::mat4 &ProjectionMatrix = camera.GetProjectionMatrix();
+	if (frustum.sphereInFrustum(m_Position, 2))
+	{
+		return;
+	}
 	glm::mat4 ITMatrix = glm::inverseTranspose(this->m_ModelMatrix);
 	glEnable(GL_DEPTH_TEST);
 	BEGIN
