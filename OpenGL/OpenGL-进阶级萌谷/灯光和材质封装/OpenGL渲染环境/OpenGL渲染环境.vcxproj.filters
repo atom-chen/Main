@@ -144,6 +144,9 @@
     <ClInclude Include="Plane.hpp">
       <Filter>GameDefine\Component</Filter>
     </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>GameDefine\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Main">

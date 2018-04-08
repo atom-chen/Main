@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Frustum.hpp" />
     <ClInclude Include="GamaMain.h" />
     <ClInclude Include="GameScene.h" />
