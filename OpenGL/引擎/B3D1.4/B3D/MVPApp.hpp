@@ -141,6 +141,8 @@ public:
 
             glDrawArrays(GL_TRIANGLES,0,sizeof(grounds) / sizeof(grounds[0]) );
 
+
+						//下面是物体
             CELL::matrix4   model(1);
 
             CELL::matrix4   view(1);
