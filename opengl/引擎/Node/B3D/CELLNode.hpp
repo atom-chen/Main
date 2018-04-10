@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CELLMath.hpp"
+#include "CELLRenderable.hpp"
 
 namespace   CELL
 {
