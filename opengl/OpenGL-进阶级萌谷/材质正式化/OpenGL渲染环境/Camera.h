@@ -15,8 +15,8 @@ public:
 	void MoveToRight(bool isMove);
 	void MoveToTop(bool isMove);
 	void MoveToBottom(bool isMove);
-	void MoveToFront();
-	void MoveToBack();
+	virtual void MoveToFront();
+	virtual void MoveToBack();
 	void SetMoveSpeed(float speed);
 
 	void Pitch(float angle);//绕自己的X轴旋转
@@ -34,7 +34,6 @@ public:
 	inline float GetRadius() const{ return this->m_Radius; };
 	inline Frustum GetFrustum() const{ return this->m_Frustum; }
 public:
-	virtual void SetDistance(float x, float y, float z){}
 
 protected:
 	glm::vec3 m_Position;//摄像机位置
@@ -62,11 +61,14 @@ class Camera_3rd:public Camera_1st
 public:
 	Camera_3rd();
 	virtual void Update();//跟着Target走
+	virtual void MoveToFront();
+	virtual void MoveToBack();
 	virtual void SetDistance(float x, float y, float z);
 	inline void SetTarget(const vec3* target){ this->m_Target = target; };
 	virtual void Pitch(float angle);//绕自己的X轴旋转
 	virtual void Yaw(float angle);//绕世界坐标系y旋转
 	virtual void RotateView(float angle, float x, float y, float z);//绕任意轴旋转（x,y,z为轴的方向向量）
+
 private:
 	vec3 m_Distance;//和目标的距离
 	const vec3 * m_Target;

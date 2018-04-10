@@ -16,6 +16,14 @@ void Camera_3rd::Update()
 	m_Position = m_ViewCenter + vec3(0, 3, 3);
 	m_ViewMatrix = glm::lookAt(m_Position, m_ViewCenter, m_Up);
 }
+void Camera_3rd::MoveToFront()
+{
+
+}
+void Camera_3rd::MoveToBack()
+{
+
+}
 
 void Camera_3rd::SetDistance(float x, float y, float z)
 {
