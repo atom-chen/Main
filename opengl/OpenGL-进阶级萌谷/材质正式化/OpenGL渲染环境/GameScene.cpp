@@ -8,7 +8,7 @@ bool Zhucheng::Awake()
 	{
 		return 0;
 	}
-	m_MainCamera = new Camera_1st;
+	m_MainCamera = new Camera_3rd;
 	m_Ground.Init("res/1.jpg");
 	m_box.Init("res/Sphere.obj");
 	m_Niu.Init("res/niutou.obj");
@@ -20,6 +20,7 @@ bool Zhucheng::Awake()
 void Zhucheng::Start()
 {
 	Scene::Start();
+	m_MainCamera->SetTarget(&m_Niu.GetPosition());
 	m_box.SetTexture2D("res/earth.bmp");
 	m_box.SetPosition(0, 0, -5);
 	m_Niu.SetTexture2D("res/niutou.bmp");

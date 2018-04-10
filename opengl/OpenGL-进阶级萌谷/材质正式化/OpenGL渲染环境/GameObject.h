@@ -26,7 +26,7 @@ public:
 	inline void SetTexture2D(GLuint texture, const char* nameInShader = "U_Texture_1"){ m_Shader.SetTexture2D(texture, nameInShader); }
 
 	inline void SetPosition(float x, float y, float z);
-	inline const vec3& GetPosition()const { return m_Position; };
+	inline vec3& GetPosition(){ return m_Position; };
 	inline void SetRotate(float angle, float x, float y, float z);
 	void SetScale(float x, float y, float z){ m_Scale.x = x; m_Scale.y = y; m_Scale.z = z; m_ModelMatrix = glm::translate(m_Position.x, m_Position.y, m_Position.z)* glm::scale(x, y, z); }
 
