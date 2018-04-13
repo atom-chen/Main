@@ -73,19 +73,6 @@ bool Ground::Init(const char* picName)
 void Ground::Draw(glm::mat4& viewMatrix,glm::mat4 &ProjectionMatrix)
 {
 	glEnable(GL_DEPTH_TEST);
-	//m_VertexBuf.Begin();
-	//{
-	//	m_Shader.Begin();
-	//	{
-	//		m_Shader.Bind(glm::value_ptr(m_ModelMatrix), glm::value_ptr(viewMatrix), glm::value_ptr(ProjectionMatrix));
-
-	//		for (int32_t i = 0; i < 400; i++)
-	//		{
-	//			glDrawArrays(GL_TRIANGLE_STRIP, i * 4, 4);
-	//		}
-	//	}
-	//	m_Shader.End();
-	//}
 	BEGIN
 		glDrawArrays(GL_TRIANGLE_STRIP, 0, m_VertexBuf.GetLenth());
 	END

@@ -294,6 +294,10 @@ bool ResourceManager::GetModel(const char* path, VertexBuffer &vbo)
 		return 1;
 	}
 }
+void ResourceManager::RemoveModel(const char* path)
+{
+
+}
 
 //----------------------------------------------------------------
 ///---------------------------Public End--------------------------
