@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainController : MonoBehaviour {
     public Color purple;
@@ -67,7 +68,7 @@ public class MainController : MonoBehaviour {
     {
         //信息存储
         this.Save();
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
 
     }
     private void Save()

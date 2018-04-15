@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class playerIcon : MonoBehaviour {
+    void Awake()
+    {
+
+    }
     private Transform Icon;
 
 	// Use this for initialization
