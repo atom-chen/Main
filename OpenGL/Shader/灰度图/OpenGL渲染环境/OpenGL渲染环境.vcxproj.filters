@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Utlis.cpp">
+      <Filter>GameDefine\SceneManager\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_3rd.cpp">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_1st.cpp">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_2D.cpp">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>GameDefine\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>GameDefine\SceneManager\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="WinApp.cpp">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="Yewai.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBuffer.cpp">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementBuffer.cpp">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="LightColor.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>GameDefine\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>GameDefine\Resourse\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderList.cpp">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderAble.cpp">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SurroundParticle.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="FullScreenQuad.cpp">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h">
+      <Filter>GameDefine\SceneManager\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ggl.h">
+      <Filter>GameDefine\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera_2D.h">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="GamaMain.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>GameDefine\SceneManager\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="WinApp.h">
+      <Filter>GameDefine\SceneManager\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Yewai.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>GameDefine\SceneManager\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBuffer.h">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementBuffer.h">
+      <Filter>GameDefine\SceneManager\Component\GPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.hpp">
+      <Filter>GameDefine\SceneManager\Component\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.hpp">
+      <Filter>GameDefine\SceneManager\Component\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="LightColor.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>GameDefine\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>GameDefine\Resourse\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>GameDefine\SceneManager\Component\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderList.h">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderAble.h">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderOptions.h">
+      <Filter>GameDefine\Scene\RelatedSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SurroundParticle.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="FullScreenQuad.h">
+      <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="GameDefine">
+      <UniqueIdentifier>{5b6c43c4-38a0-4a40-a923-a47d80dbf9a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{5a1232bf-1471-4fcd-9943-fe4e7224b585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Main">
+      <UniqueIdentifier>{e3e4d02b-23bf-486a-89ec-da3cbc284565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Resourse">
+      <UniqueIdentifier>{8155dc83-33de-4333-9ad8-ccac5b115275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene">
+      <UniqueIdentifier>{3daa8f38-021d-4c87-ac97-337e3dddccca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\SceneManager">
+      <UniqueIdentifier>{fe7cab12-1f7f-4281-90b7-48d9f2d1cf44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn">
+      <UniqueIdentifier>{8676c22f-0b07-4be3-a7aa-a66d0795cd9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Ground">
+      <UniqueIdentifier>{da50631e-1312-4826-b121-0da358d07d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\2D">
+      <UniqueIdentifier>{4a7a98c1-e307-4334-a3fd-ade6fc552701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Model">
+      <UniqueIdentifier>{c4cab224-6fdc-43be-861e-187d639c65d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\SkyBox">
+      <UniqueIdentifier>{ccd7a86f-f642-4602-8a25-3dd70d24abee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\SceneManager\Component">
+      <UniqueIdentifier>{7d932f5b-f8e3-4d73-8a22-4a7ef2e6764a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\SceneManager\Component\GPU">
+      <UniqueIdentifier>{e350daad-3d16-4ca1-9065-683b1970e36a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\SceneManager\Component\Scene">
+      <UniqueIdentifier>{09fb0cf8-1da1-414e-ba40-8c8d9be78a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Resourse\Manager">
+      <UniqueIdentifier>{eb6d9d22-986c-4efa-b4e0-f03f4e6af2b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\SceneManager\Global">
+      <UniqueIdentifier>{0ac92bef-50dc-4427-a743-8df7f0a6752c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\SceneManager\Tools">
+      <UniqueIdentifier>{6cddd59b-a865-49f4-ae8c-9c877296ce8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\RelatedSDK">
+      <UniqueIdentifier>{8f700a02-3c37-47f7-8030-24ddd8b4b7b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\NotRelatedSDK">
+      <UniqueIdentifier>{1d947490-b7d3-4538-96d4-87cb6316db81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\NotRelatedSDK\GameObject">
+      <UniqueIdentifier>{5df2a23f-9359-42c8-82d6-18ca86602a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\NotRelatedSDK\2D">
+      <UniqueIdentifier>{20f7158e-ba20-4a00-aaa5-5d87d7f0da49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\NotRelatedSDK\ParticleSystem">
+      <UniqueIdentifier>{3bd26449-44ac-4b91-a778-8fda7f342d67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\NotRelatedSDK\Light">
+      <UniqueIdentifier>{f786e780-2e90-477e-9a38-e99320b2974c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\rgbCube">
+      <UniqueIdentifier>{0f077dc5-9edd-466d-aa3d-08ad7d639a70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\FullSceneQuad">
+      <UniqueIdentifier>{79036718-60e7-4935-850b-e8ba943aa264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Particle">
+      <UniqueIdentifier>{bdd2ee5b-40d8-43b0-b3c0-87b538a23356}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ground.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\Ground</Filter>
+    </None>
+    <None Include="res\ground.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\Ground</Filter>
+    </None>
+    <None Include="res\particle.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\Particle</Filter>
+    </None>
+    <None Include="res\particle.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\Particle</Filter>
+    </None>
+    <None Include="res\texture.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\2D</Filter>
+    </None>
+    <None Include="res\texture.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\2D</Filter>
+    </None>
+    <None Include="res\obj.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
+    </None>
+    <None Include="res\obj.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
+    </None>
+    <None Include="res\skybox.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\SkyBox</Filter>
+    </None>
+    <None Include="res\skybox.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\SkyBox</Filter>
+    </None>
+    <None Include="res\rgbCube.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\rgbCube</Filter>
+    </None>
+    <None Include="res\rgbCube.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\rgbCube</Filter>
+    </None>
+    <None Include="res\fullScreenQuad.vert">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\FullSceneQuad</Filter>
+    </None>
+    <None Include="res\fullScreenQuad.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\FullSceneQuad</Filter>
+    </None>
+    <None Include="res\gray.frag">
+      <Filter>GameDefine\Scene\ShaderBuiltIn\FullSceneQuad</Filter>
+    </None>
+  </ItemGroup>
+</Project>

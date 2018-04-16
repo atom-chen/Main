@@ -4,7 +4,7 @@
 
 bool Zhucheng::Awake()
 {
-	m_Skybox.Init("res/front_1.bmp", "res/back_1.bmp", "res/top_1.bmp", "res/bottom_1.bmp", "res/left_1.bmp", "res/right_1.bmp");
+	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
 	m_MainCamera = new Camera_1st;
 	m_Cube.Init("res/Cube.obj", "res/rgbCube.vert", "res/rgbCube.frag");
 	return 1;
@@ -15,26 +15,25 @@ void Zhucheng::Start()
 	m_Cube.SetPosition(0, 0, 0);
 	m_MainCamera->SetTarget(&vec3(0, 0, 0));
 
-
 }
 
 void Zhucheng::Update()
 {
-	m_Skybox.Update(m_MainCamera->GetPosition());
+
 
 }
 void Zhucheng::OnDrawBegin()
 {
-	m_Skybox.Draw(m_MainCamera->GetViewMatrix(), m_MainCamera->GetProjectionMatrix());
 
 }
 void Zhucheng::Draw3D()
 {
-	m_Cube.Draw();
+
 }
 
 void Zhucheng::Draw2D()
 {
+	m_Cube.Draw();
 }
 
 void Zhucheng::OnKeyDown(char KeyCode)//按下键盘时调用
