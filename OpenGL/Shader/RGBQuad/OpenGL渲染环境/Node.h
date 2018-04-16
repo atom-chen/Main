@@ -16,4 +16,5 @@ public:
 	inline const vec3& GetScale() const{ return m_Transform.m_Scale; };
 protected:
 	Transform m_Transform;
+	bool m_IsInit = 0;
 };

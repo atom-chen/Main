@@ -10,6 +10,7 @@ RenderAble::~RenderAble()
 }
 void RenderAble::SetLight_1(const Light& light1)
 {
+	INIT_TEST_VOID
 	switch (light1.GetType())
 	{
 	case 0:
@@ -86,45 +87,76 @@ void RenderAble::UpdateTransform()
 }
 void RenderAble::SetAmbientMaterial(float r, float g, float b, float a)
 {
+	INIT_TEST_VOID
 	m_Material.SetAmbientMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_AmbientMaterial", r, g, b, a);
 }
 
 void RenderAble::SetDiffuseMaterial(float r, float g, float b, float a)
 {
+	INIT_TEST_VOID
 	m_Material.SetDiffuseMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_DiffuseMaterial", r, g, b, a);
 }
 
 void RenderAble::SetSpecularMaterial(float r, float g, float b, float a)
 {
+	INIT_TEST_VOID
 	m_Material.SetSepcularMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_SpecularMaterial", r, g, b, a);
 }
 void RenderAble::SetAmbientMaterial(const vec4& ambientMaterual)
 {
+	INIT_TEST_VOID
 	m_Material.SetAmbientMaterial(ambientMaterual);
 	m_Shader.SetVec4("U_AmbientMaterial", ambientMaterual.x, ambientMaterual.y, ambientMaterual.z, ambientMaterual.w);
 }
 void RenderAble::SetDiffuseMaterial(const vec4& diffuseMaterual)
 {
+	INIT_TEST_VOID
 	m_Material.SetDiffuseMaterial(diffuseMaterual);
 	m_Shader.SetVec4("U_DiffuseMaterial", diffuseMaterual.x, diffuseMaterual.y, diffuseMaterual.z, diffuseMaterual.w);
 }
 void RenderAble::SetSpecularMaterial(const vec4& specularMaterual)
 {
+	INIT_TEST_VOID
 	m_Material.SetDiffuseMaterial(specularMaterual);
 	m_Shader.SetVec4("U_SpecularMaterial", specularMaterual.x, specularMaterual.y, specularMaterual.z, specularMaterual.w);
 }
 void RenderAble::InitShader(const char* vertexShader, const char* fragmentShader)
 {
-	m_Shader.Init(vertexShader, fragmentShader);
+	if (m_IsInit)
+	{
+		m_Shader.Init(vertexShader, fragmentShader);
+	}
+
 }
 void RenderAble::SetVec4(const char* nameInShader, float x, float y, float z, float w)
 {
-	m_Shader.SetVec4(nameInShader, x, y, z, w);
+	if (m_IsInit)
+	{
+		m_Shader.SetVec4(nameInShader, x, y, z, w);
+	}
 }
 void RenderAble::SetFloat(const char* nameInShader, float value)
 {
-	m_Shader.SetFloat(nameInShader, value);
+	if (m_IsInit)
+	{
+		m_Shader.SetFloat(nameInShader, value);
+	}
+}
+//void RenderAble::SetTexture2D(const char* path, const char* nameInShader)
+//{
+//	INIT_TEST_VOID
+//	m_Shader.SetTexture2D(path, nameInShader);
+//}
+void RenderAble :: SetTexture2D(GLuint texture, const char* nameInShader)
+{ 
+	INIT_TEST_VOID 
+	m_Shader.SetTexture2D(texture, nameInShader); 
+}
+void RenderAble :: SetVec4(const char* nameInShader, const vec4& vec)
+{ 
+	INIT_TEST_VOID 
+	SetVec4(nameInShader, vec.x, vec.y, vec.z, vec.w); 
 }

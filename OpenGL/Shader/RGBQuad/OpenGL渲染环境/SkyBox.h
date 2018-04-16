@@ -22,4 +22,5 @@ private:
 	VertexBuffer m_VertexBuf[6];//6个面,顺序前后上下左右
 	Shader m_Shader[6];
 	glm::mat4 m_ModelMatrix;
+	bool m_IsInit = 0;
 };

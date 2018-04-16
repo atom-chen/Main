@@ -30,12 +30,16 @@ public:
 public:
 	//…Ë÷√Shader Ù–‘
 	void InitShader(const char* vertexShader, const char* fragmentShader);
-	inline void SetTexture2D(const char* path, const char* nameInShader = "U_Texture_1"){ m_Shader.SetTexture2D(path, nameInShader); }
-	inline void SetTexture2D(GLuint texture, const char* nameInShader = "U_Texture_1"){ m_Shader.SetTexture2D(texture, nameInShader); }
-	void SetLight_1(const Light& light1);
-	inline void SetVec4(const char* nameInShader, const vec4& vec){ SetVec4(nameInShader, vec.x, vec.y, vec.z, vec.w); }
+	inline void SetTexture2D(const char* path, const char* nameInShader = "U_Texture_1")
+	{
+		INIT_TEST_VOID
+		m_Shader.SetTexture2D(path, nameInShader);
+	}
+	inline void SetTexture2D(GLuint texture, const char* nameInShader = "U_Texture_1");
+	inline void SetVec4(const char* nameInShader, const vec4& vec);
 	void SetVec4(const char* nameInShader, float x, float y, float z, float w);
 	void SetFloat(const char* nameInShader, float value);
+	void SetLight_1(const Light& light1);
 
 	virtual inline void SetAmbientMaterial(float r, float g, float b, float a = 1);
 	virtual inline void SetDiffuseMaterial(float r, float g, float b, float a = 1);
@@ -61,4 +65,5 @@ protected:
 private:
 	glm::mat4 m_ModelMatrix;
 	Material m_Material;
+
 };

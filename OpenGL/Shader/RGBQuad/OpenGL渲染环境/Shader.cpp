@@ -49,7 +49,6 @@ void Shader::SetTexture2D(const GLuint& texture, const char* nameInShader)
 	//如果存在，则认为想要替换图片
 	else
 	{
-		glDeleteTextures(1, &(it->second.texture));
 		it->second.texture = texture;
 	}
 }
@@ -75,7 +74,6 @@ void Shader::SetTexture2D(const char* imagePath, const char* nameInShader)
 	//如果存在，则认为想要替换图片
 	else
 	{
-		glDeleteTextures(1, &(it->second.texture));
 		it->second.texture = ResourceManager::GetPic(imagePath);
 	}
 }

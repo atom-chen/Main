@@ -93,11 +93,14 @@ void Scene::OnDrawOver()
 void Scene::SetViewPortSize(float width, float height)
 {
 	m_MainCamera->SetViewPortSize(width, height);
-	m_FrameBuf = new FrameBuffer;
-	m_FrameBuf->AttachColorBuffer("2DUI", GL_COLOR_ATTACHMENT0, width, height);
-	m_FrameBuf->AttachDepthBuffer("depth", width, height);
-	m_FrameBuf->Finish();
-	m_2DCamera.Init(*m_FrameBuf);
+	if (m_FrameBuf == nullptr)
+	{
+		m_FrameBuf = new FrameBuffer;
+		m_FrameBuf->AttachColorBuffer("2DUI", GL_COLOR_ATTACHMENT0, width, height);
+		m_FrameBuf->AttachDepthBuffer("depth", width, height);
+		m_FrameBuf->Finish();
+		m_2DCamera.Init(*m_FrameBuf);
+	}
 }
 void Scene::OnKeyDown(char KeyCode)
 {
@@ -123,10 +126,12 @@ void Scene::OnDesrory()
 	if (m_FrameBuf != nullptr)
 	{
 		delete m_FrameBuf;
+		m_FrameBuf = nullptr;
 	}
 	if (m_MainCamera != nullptr)
 	{
 		delete m_MainCamera;
+		m_MainCamera = nullptr;
 	}
 }
 

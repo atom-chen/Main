@@ -13,4 +13,5 @@ protected:
 
 private:
 	float height = -1;
+
 };

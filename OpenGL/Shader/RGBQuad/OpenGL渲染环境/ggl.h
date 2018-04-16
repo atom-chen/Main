@@ -59,3 +59,6 @@ using namespace glm;
 #define MODELMATRIX_NAME m_ModelMatrix
 #define VIEWMATRIX_NAME viewMatrix
 #define PROJECTIONMATRIX_NAME ProjectionMatrix
+
+#define INIT_TEST_VOID 	if (!m_IsInit){return;}
+#define INIT_TEST_INT 	if (!m_IsInit){return 0;}
