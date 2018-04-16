@@ -19,9 +19,6 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>GameDefine\SceneManager\Global</Filter>
     </ClCompile>
@@ -36,9 +33,6 @@
     </ClCompile>
     <ClCompile Include="WinApp.cpp">
       <Filter>GameDefine\SceneManager\Global</Filter>
-    </ClCompile>
-    <ClCompile Include="Yewai.cpp">
-      <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="VertexBuffer.cpp">
       <Filter>GameDefine\SceneManager\Component\GPU</Filter>
@@ -94,6 +88,12 @@
     <ClCompile Include="FullScreenQuad.cpp">
       <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="Zhucheng.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Yewai.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -114,9 +114,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>GameDefine\SceneManager\Global</Filter>
     </ClInclude>
@@ -128,9 +125,6 @@
     </ClInclude>
     <ClInclude Include="WinApp.h">
       <Filter>GameDefine\SceneManager\Global</Filter>
-    </ClInclude>
-    <ClInclude Include="Yewai.h">
-      <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Triangle.h">
       <Filter>GameDefine\SceneManager\Tools</Filter>
@@ -203,6 +197,12 @@
     </ClInclude>
     <ClInclude Include="FullScreenQuad.h">
       <Filter>GameDefine\Scene\NotRelatedSDK\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Zhucheng.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Yewai.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

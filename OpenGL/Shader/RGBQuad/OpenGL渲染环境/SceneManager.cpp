@@ -7,6 +7,8 @@ std::map<string, Scene*> SceneManager::m_mScene;
 Scene* SceneManager::m_CurScene=nullptr;
 POINT SceneManager::m_OriginalPos;//记录按下鼠标时的位置
 bool SceneManager::m_IsRotate=0;//是否正在旋转
+bool SceneManager::m_IsGlewInit = 0;//glew是否已经初始化
+
 AlphaBlendInfo SceneManager::m_Blend;//是否开启alpha混合
 bool SceneManager::m_IsDepthTest=0;//是否开启深度测试
 bool SceneManager::m_IsProgramPointSize=0;//是否由程序控制点的大小
@@ -128,6 +130,15 @@ int SceneManager::Event(UINT message, WPARAM wParam, LPARAM lParam,HWND hwnd)
 void SceneManager::DrawGameObject(RenderAble* render)
 {
 	m_CurScene->m_3DRendList.InsertToRenderList(render);
+}
+void SceneManager::InitGlew()
+{
+	if (m_IsGlewInit)
+	{
+		return;
+	}
+	m_IsGlewInit = 1;
+	glewInit();
 }
 void SceneManager::SetBlendState(AlphaBlendInfo info)
 {

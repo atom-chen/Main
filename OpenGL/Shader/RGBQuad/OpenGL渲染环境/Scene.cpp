@@ -2,13 +2,14 @@
 #include "Utils.h"
 #include "Shader.h"
 #include "Time.h"
+#include "SceneManager.h"
 /*
 插槽起始位置从0开始
 不同标志符的插槽不共享
 */
 void Scene::SystemAwake()
 {
-	glewInit();
+	SceneManager::InitGlew();
 
 }
 void Scene::SystemStart()

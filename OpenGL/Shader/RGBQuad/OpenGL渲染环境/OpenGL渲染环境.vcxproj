@@ -105,7 +105,7 @@
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="FullScreenQuad.cpp" />
     <ClCompile Include="GameMain.cpp" />
-    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Yewai.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -129,7 +129,7 @@
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="WinApp.cpp" />
-    <ClCompile Include="Yewai.cpp" />
+    <ClCompile Include="Zhucheng.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -139,7 +139,7 @@
     <ClInclude Include="Frustum.hpp" />
     <ClInclude Include="FullScreenQuad.h" />
     <ClInclude Include="GamaMain.h" />
-    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Yewai.h" />
     <ClInclude Include="ggl.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="Light.h" />
@@ -167,7 +167,7 @@
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="WinApp.h" />
-    <ClInclude Include="Yewai.h" />
+    <ClInclude Include="Zhucheng.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\fullScreenQuad.vert" />

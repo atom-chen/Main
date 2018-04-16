@@ -2,12 +2,12 @@
 #include "Scene.h"
 #include "Light.h"
 #include "GameObject.h"
-#include "ParticleSystem.h"
 #include "Texture.h"
 #include "Ground.h"
+#include "SurroundParticle.h"
 
 
-class Zhucheng :public Scene
+class Yewai:public Scene
 {
 public:
 	virtual bool Awake();
@@ -24,5 +24,11 @@ public:
 	virtual void OnMouseWheel(int32_t direction);
 protected:
 private:
-	GameObject m_Cube;
+	Ground m_Ground;
+	GameObject m_box;
+	GameObject m_Niu;
+	SurroundParticle m_ParticleSystem;
+	Light m_DirectionLight;
+
+	int m_BoxRotateY = 0;
 };

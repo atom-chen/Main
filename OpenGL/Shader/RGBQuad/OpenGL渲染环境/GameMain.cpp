@@ -1,17 +1,17 @@
 #include "GamaMain.h"
 #include "SceneManager.h"
-#include "GameScene.h"
+#include "Zhucheng.h"
 #include "Yewai.h"
 
 
 
 void GameLogic::Start()
 {
-	Scene *scene = new Zhucheng;
+	Scene *zhucheng = new Zhucheng;
 	Scene *yewai = new Yewai;
-	SceneManager::AddScene("main", scene);
+	SceneManager::AddScene("main", zhucheng);
 	SceneManager::AddScene("yewai", yewai);
-	SceneManager::LoadScene("yewai");
+	SceneManager::LoadScene("main");
 	EngineBehavior ::Start();
 }
 void GameLogic::Update()
