@@ -6,7 +6,7 @@
 
 ///---------------------------Public Begin-----------------------
 //----------------------------------------------------------------
-GLuint ResourceManager::GetPic(const char* bmpPath)
+GLuint ResourceManager::GetPic(const char* bmpPath, PicParm* parm, int32_t count)
 {
 	string name(bmpPath);
 	auto it = m_mTexture.find(name);
@@ -18,7 +18,7 @@ GLuint ResourceManager::GetPic(const char* bmpPath)
 	else
 	{
 		//去读文件
-		GLuint texture = CreateTexture2D(bmpPath);
+		GLuint texture = CreateTexture2D(bmpPath, parm, count);
 		printf("加载图片%s\r\n", bmpPath);
 		Texture textureStrc;
 		textureStrc.CiteCount++;
@@ -401,7 +401,7 @@ GLuint ResourceManager::CreateTexture2DFromPNG(const char* bmpPath, bool invertY
 	delete fileContent;
 	return texture;
 }
-GLuint ResourceManager::CreateTexture2D(const char* fileName)
+GLuint ResourceManager::CreateTexture2D(const char* fileName, PicParm* parm, int32_t count)
 {
 	unsigned    texId = 0;
 	//1 获取图片格式
@@ -434,9 +434,13 @@ GLuint ResourceManager::CreateTexture2D(const char* fileName)
 	//设置参数
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);//举例：当128*128的纹理映射到256*256的物体上时（纹理扩大），使用线性过滤
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);//举例：当128*128的纹理映射到64*64的物体上时（纹理缩小），使用线性过滤
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);//举例：当在uv为0.5的图形上输入1.0时，去纹理的边界上取(0.5的地方取)
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);//举例：当在uv为0.5的图形上输入1.0时，去纹理的边界上取(0.5的地方取)
+	for (int32_t i = 0; i < count; i++)
+	{
+		glTexParameteri(GL_TEXTURE_2D, parm[i].pname, parm[i].param);
+	}
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);//举例：当在uv为0.5的图形上输入1.0时，去纹理的边界上取(0.5的地方取)
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);//举例：当在uv为0.5的图形上输入1.0时，去纹理的边界上取(0.5的地方取)
 	/**
 	*   将图片的rgb数据上传给opengl.
 	*/

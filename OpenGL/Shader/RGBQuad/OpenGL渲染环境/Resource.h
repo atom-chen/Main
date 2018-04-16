@@ -53,6 +53,12 @@ public:
 		}
 	}
 };
+
+struct PicParm
+{
+	GLenum pname;
+	GLint param;
+};
 #pragma endregion Texture
 
 #pragma region Program
@@ -85,7 +91,7 @@ friend class FrameBuffer;
 private:
 	ResourceManager(){};
 public:
-	static GLuint GetPic(const char* bmpPath);//获取从res中读到的文件
+	static GLuint GetPic(const char* bmpPath, PicParm* parm=nullptr,int32_t count=0);//获取从res中读到的文件
 	static void RemovePic(GLuint texture);
 
 	static bool GetModel(const char* path,VertexBuffer& vbo);//获取模型
@@ -115,7 +121,7 @@ private:
 	static GLuint CreateTexture2DFromPNG(const char* bmpPath, bool invertY = 1);
 
 	//创建2D纹理对象
-	static GLuint CreateTexture2D(const char* fileName);
+	static GLuint CreateTexture2D(const char* fileName, PicParm* parm, int32_t count);
 
 	//创建一个显示列表
 	static GLuint CreateDisplayList(std::function<void()> foo);
