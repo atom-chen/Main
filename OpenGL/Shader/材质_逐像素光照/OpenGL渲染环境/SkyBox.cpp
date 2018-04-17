@@ -24,7 +24,7 @@ void SkyBox::SetForward(const char* picPath)
 {
 	if (m_IsInit)
 	{
-		int32_t forwardIndex = 0;
+		int forwardIndex = 0;
 		this->m_VertexBuf[forwardIndex].Init(4);
 		this->m_VertexBuf[forwardIndex].SetPosition(0, -0.5f, -0.5f, -0.5f);
 		this->m_VertexBuf[forwardIndex].SetTexcoord(0, 0, 0);
@@ -43,7 +43,7 @@ void SkyBox::SetBack(const char* picPath)
 {
 	if (m_IsInit)
 	{
-		int32_t backIndex = 1;
+		int backIndex = 1;
 		this->m_VertexBuf[backIndex].Init(4);
 		this->m_VertexBuf[backIndex].SetPosition(0, 0.5f, -0.5f, 0.5f);
 		this->m_VertexBuf[backIndex].SetTexcoord(0, 0, 0);
@@ -63,7 +63,7 @@ void SkyBox::SetLeft(const char* picPath)
 {
 	if (m_IsInit)
 	{
-		int32_t leftIndex = 4;
+		int leftIndex = 4;
 		this->m_VertexBuf[leftIndex].Init(4);
 		this->m_VertexBuf[leftIndex].SetPosition(0, -0.5f, -0.5f, 0.5f);
 		this->m_VertexBuf[leftIndex].SetTexcoord(0, 0, 0);
@@ -82,7 +82,7 @@ void SkyBox::SetRight(const char* picPath)
 {
 	if (m_IsInit)
 	{
-		int32_t rightIndex = 5;
+		int rightIndex = 5;
 		this->m_VertexBuf[rightIndex].Init(4);
 		this->m_VertexBuf[rightIndex].SetPosition(0, 0.5f, -0.5f, -0.5f);
 		this->m_VertexBuf[rightIndex].SetTexcoord(0, 0, 0);
@@ -101,7 +101,7 @@ void SkyBox::SetTop(const char* picPath)
 {
 	if (m_IsInit)
 	{
-		int32_t bottomIndex = 2;
+		int bottomIndex = 2;
 		this->m_VertexBuf[bottomIndex].Init(4);
 		this->m_VertexBuf[bottomIndex].SetPosition(0, -0.5f, 0.5f, -0.5f);
 		this->m_VertexBuf[bottomIndex].SetTexcoord(0, 0, 0);
@@ -120,7 +120,7 @@ void SkyBox::SetBottom(const char* picPath)
 {
 	if (m_IsInit)
 	{
-		int32_t bottomIndex = 3;
+		int bottomIndex = 3;
 		this->m_VertexBuf[bottomIndex].Init(4);
 		this->m_VertexBuf[bottomIndex].SetPosition(0, -0.5f, -0.5f, 0.5f);
 		this->m_VertexBuf[bottomIndex].SetTexcoord(0, 0, 0);

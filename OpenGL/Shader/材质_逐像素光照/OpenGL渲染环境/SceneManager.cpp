@@ -109,8 +109,8 @@ int SceneManager::Event(UINT message, WPARAM wParam, LPARAM lParam,HWND hwnd)
 			currentPos.y = HIWORD(lParam);
 			ClientToScreen(hwnd, &currentPos);
 			//偏移坐标=现在坐标-点击时候的坐标
-			int32_t deltaX = currentPos.x - m_OriginalPos.x;
-			int32_t deltaY = currentPos.y - m_OriginalPos.y;
+			int deltaX = currentPos.x - m_OriginalPos.x;
+			int deltaY = currentPos.y - m_OriginalPos.y;
 			m_CurScene->OnMouseMove((float)deltaX, (float)deltaY);//处理消息
 			SetCursorPos(m_OriginalPos.x, m_OriginalPos.y);//复位，然后再计算偏移
 		}

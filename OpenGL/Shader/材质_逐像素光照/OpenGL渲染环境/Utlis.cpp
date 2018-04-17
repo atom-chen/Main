@@ -13,7 +13,7 @@ unsigned char* DecodeBMP(unsigned char* bmpFileData, int& width, int& height)
 		height = (*(int*)(bmpFileData + 22));//图片高
 		unsigned char* pixelData = bmpFileData + pixelDataOffset;//像素数据起始地址
 		//由BGR->RGB
-		for (int32_t i = 0; i < width*height * 3; i += 3)
+		for (int i = 0; i < width*height * 3; i += 3)
 		{
 			unsigned char temp = pixelData[i];//b
 			pixelData[i] = pixelData[i + 2];//b=r

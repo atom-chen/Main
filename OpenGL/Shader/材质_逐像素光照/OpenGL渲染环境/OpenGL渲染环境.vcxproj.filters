@@ -28,9 +28,6 @@
     <ClCompile Include="Time.cpp">
       <Filter>GameDefine\SceneManager\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="WinApp.cpp">
-      <Filter>GameDefine\SceneManager\Global</Filter>
-    </ClCompile>
     <ClCompile Include="VertexBuffer.cpp">
       <Filter>GameDefine\SceneManager\Component\GPU</Filter>
     </ClCompile>
@@ -97,6 +94,9 @@
     <ClCompile Include="GameMain.cpp">
       <Filter>Game\main</Filter>
     </ClCompile>
+    <ClCompile Include="WinApp.cpp">
+      <Filter>GameDefine\Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -122,9 +122,6 @@
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>GameDefine\SceneManager\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="WinApp.h">
-      <Filter>GameDefine\SceneManager\Global</Filter>
     </ClInclude>
     <ClInclude Include="Triangle.h">
       <Filter>GameDefine\SceneManager\Tools</Filter>
@@ -209,6 +206,9 @@
     </ClInclude>
     <ClInclude Include="GamaMain.h">
       <Filter>Game\main</Filter>
+    </ClInclude>
+    <ClInclude Include="WinApp.h">
+      <Filter>GameDefine\Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

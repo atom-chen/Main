@@ -113,7 +113,7 @@ void Zhucheng::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 	m_MainCamera->Pitch(-angleRotateByRight);
 }
 
-void Zhucheng::OnMouseWheel(int32_t direction)
+void Zhucheng::OnMouseWheel(int direction)
 {
 	switch (direction)
 	{

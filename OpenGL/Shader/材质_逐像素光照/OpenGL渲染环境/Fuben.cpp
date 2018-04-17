@@ -123,7 +123,7 @@ void Fuben::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 	m_MainCamera->Pitch(-angleRotateByRight);
 }
 
-void Fuben::OnMouseWheel(int32_t direction)
+void Fuben::OnMouseWheel(int direction)
 {
 	switch (direction)
 	{

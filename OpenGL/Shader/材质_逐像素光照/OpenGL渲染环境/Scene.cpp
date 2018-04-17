@@ -129,7 +129,7 @@ void Scene::OnMouseMove(float deltaX, float deltaY)
 
 
 }
-void Scene::OnMouseWheel(int32_t direction)
+void Scene::OnMouseWheel(int direction)
 {
 
 }

@@ -14,6 +14,6 @@ public:
 	virtual void Destory();
 protected:
 	float m_StartLiftTime=15;//每个粒子存活时间
-	int32_t m_MaxPar;//最大粒子数
+	int m_MaxPar;//最大粒子数
 	float angle = 0.0f;
 };

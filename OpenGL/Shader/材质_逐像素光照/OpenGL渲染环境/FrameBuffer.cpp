@@ -46,7 +46,7 @@ void FrameBuffer::Finish()//ÉèÖÃ½áÊø
 	if (count > 0)
 	{
 		GLenum *buffers=new GLenum[count];
-		for (int32_t i = 0; i < count; i++)
+		for (int i = 0; i < count; i++)
 		{
 			buffers[i] = m_DrawBuffer[i];
 		}

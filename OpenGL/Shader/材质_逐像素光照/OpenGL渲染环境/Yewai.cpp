@@ -138,7 +138,7 @@ void Yewai::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 	m_MainCamera->Pitch(-angleRotateByRight);
 }
 
-void Yewai::OnMouseWheel(int32_t direction)
+void Yewai::OnMouseWheel(int direction)
 {
 	switch (direction)
 	{

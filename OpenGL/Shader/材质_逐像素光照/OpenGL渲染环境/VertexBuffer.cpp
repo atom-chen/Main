@@ -12,7 +12,7 @@ VertexBuffer::VertexBuffer()
 {
 
 }
-bool VertexBuffer::Init(const int32_t& Lenth)
+bool VertexBuffer::Init(const int& Lenth)
 {
 	if (!m_IsInit)
 	{
@@ -63,7 +63,7 @@ VertexBuffer::~VertexBuffer()
 	ResourceManager::RemoveBufferObject(m_Vbo);
 }
 
-void VertexBuffer::SetPosition(const int32_t& index, const float& x, const float& y, const float& z, const float& w)
+void VertexBuffer::SetPosition(const int& index, const float& x, const float& y, const float& z, const float& w)
 {
 	if (index >= this->m_Lenth || !m_IsInit)
 	{
@@ -71,12 +71,12 @@ void VertexBuffer::SetPosition(const int32_t& index, const float& x, const float
 	}
 	m_Vertex[index].SetPosition(x, y, z, w);
 }
-void VertexBuffer::SetPosition(const int32_t& index, const vec3& position)
+void VertexBuffer::SetPosition(const int& index, const vec3& position)
 {
 	this->SetPosition(index, position.x, position.y, position.z);
 }
 
-void VertexBuffer::SetColor(const int32_t& index, const float& r, const float& g, const float& b, const float& a)
+void VertexBuffer::SetColor(const int& index, const float& r, const float& g, const float& b, const float& a)
 {
 	if (index >= this->m_Lenth || !m_IsInit)
 	{
@@ -84,12 +84,12 @@ void VertexBuffer::SetColor(const int32_t& index, const float& r, const float& g
 	}
 	m_Vertex[index].SetColor(r, g, b, a);
 }
-inline void VertexBuffer::SetColor(const int32_t& index, const vec4& color)
+inline void VertexBuffer::SetColor(const int& index, const vec4& color)
 {
 	this->SetPosition(index, color.x, color.y, color.z, color.w);
 }
 
-void VertexBuffer::SetNormal(const int32_t& index, const float& x, const float& y, const float& z, const float& w)
+void VertexBuffer::SetNormal(const int& index, const float& x, const float& y, const float& z, const float& w)
 {
 
 	if (index >= this->m_Lenth || !m_IsInit)
@@ -98,12 +98,12 @@ void VertexBuffer::SetNormal(const int32_t& index, const float& x, const float& 
 	}
 	m_Vertex[index].SetNormal(x, y, z, w);
 }
-inline void VertexBuffer::SetNormal(const int32_t& index, const vec4& normal)
+inline void VertexBuffer::SetNormal(const int& index, const vec4& normal)
 {
 	this->SetPosition(index, normal.x, normal.y, normal.z, normal.w);
 }
 
-void VertexBuffer::SetTexcoord(const int32_t& index, const float& x, const float& y, const float& z , const float& w)
+void VertexBuffer::SetTexcoord(const int& index, const float& x, const float& y, const float& z , const float& w)
 {
 	if (index >= this->m_Lenth || !m_IsInit)
 	{
@@ -111,7 +111,7 @@ void VertexBuffer::SetTexcoord(const int32_t& index, const float& x, const float
 	}
 	m_Vertex[index].SetTexcoord(x, y, z, w);
 }
-inline void VertexBuffer::SetTexcoord(const int32_t& index, const vec4& texcoord)
+inline void VertexBuffer::SetTexcoord(const int& index, const vec4& texcoord)
 {
 	this->SetPosition(index, texcoord.x, texcoord.y, texcoord.z, texcoord.w);
 }

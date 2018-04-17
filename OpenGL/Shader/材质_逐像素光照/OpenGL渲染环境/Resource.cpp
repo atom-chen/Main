@@ -58,7 +58,7 @@ GLuint ResourceManager::GetProgram(const char* vertexShaderPath, const char* fra
 	}
 	else
 	{
-		int32_t nFileSize = 0;
+		int nFileSize = 0;
 		const char* vertexShaderCode = (char*)LoadFileContent(vertexShaderPath, nFileSize);
 		ASSERT_PTR_BOOL(vertexShaderCode);
 		GLuint vsShader = CompileShader(GL_VERTEX_SHADER, vertexShaderCode);
@@ -110,7 +110,7 @@ bool ResourceManager::GetModel(const char* path, VertexBuffer &vbo)
 		it->second.CiteCount++;
 		//根据上面读到的信息，构造VertexBuffer
 		vbo.Init(obj.Indexes.size());
-		for (int32_t i = 0; i < obj.Indexes.size(); i++)
+		for (int i = 0; i < obj.Indexes.size(); i++)
 		{
 			if (obj.Indexes[i] < obj.VertexList.size())
 			{
@@ -155,7 +155,7 @@ bool ResourceManager::GetModel(const char* path, VertexBuffer &vbo)
 		vector<FloatData> texcoords;
 		vector<FloatData> normals;
 		vector<VertexDefine> VertexList;
-		vector<int32_t> Indexes;
+		vector<int> Indexes;
 		std::stringstream ssFileContent((char *)fileContent);//用字符流去读
 		char buffer[256];//缓存
 		while (!ssFileContent.eof())
@@ -226,7 +226,7 @@ bool ResourceManager::GetModel(const char* path, VertexBuffer &vbo)
 						vertex.textcoordIndex = atoi(texcoordIndexStr.c_str());
 						vertex.normalIndex = atoi(normalIndexStr.c_str());
 
-						int32_t index = INVALID;
+						int index = INVALID;
 						//如果集合里有相同的，则不添加
 						for (unsigned i = 0; i < VertexList.size(); i++)
 						{
@@ -255,7 +255,7 @@ bool ResourceManager::GetModel(const char* path, VertexBuffer &vbo)
 		//根据上面读到的信息，构造VertexBuffer
 		//根据上面读到的信息，构造VertexBuffer
 		vbo.Init(Indexes.size());
-		for (int32_t i = 0; i < Indexes.size(); i++)
+		for (int i = 0; i < Indexes.size(); i++)
 		{
 			if (Indexes[i] < VertexList.size())
 			{
@@ -405,7 +405,7 @@ GLuint ResourceManager::CreateTexture2D(unsigned char* pixelData, int width, int
 GLuint ResourceManager::CreateTexture2DFromBMP(const char* bmpPath)
 {
 	//读文件
-	int32_t fileLen = 0;
+	int fileLen = 0;
 	unsigned char* pileContent = LoadFileContent(bmpPath, fileLen);
 	if (pileContent == nullptr)
 	{
@@ -429,7 +429,7 @@ GLuint ResourceManager::CreateTexture2DFromBMP(const char* bmpPath)
 
 GLuint ResourceManager::CreateTexture2DFromPNG(const char* bmpPath, bool invertY)
 {
-	int32_t nFileSize = 0;
+	int nFileSize = 0;
 	unsigned char* fileContent = LoadFileContent(bmpPath, nFileSize);
 	if (fileContent == nullptr)
 	{
@@ -510,7 +510,7 @@ GLuint ResourceManager::CreateTexture2D(const char* fileName, bool isRepeat)
 	return  texId;
 }
 
-GLuint ResourceManager::CreateProcedureTexture(const int32_t& lenth, ALPHA_TYPE type)
+GLuint ResourceManager::CreateProcedureTexture(const int& lenth, ALPHA_TYPE type)
 {
 	unsigned char  *imageData = new unsigned char[lenth*lenth * 4];//rgba
 
@@ -520,9 +520,9 @@ GLuint ResourceManager::CreateProcedureTexture(const int32_t& lenth, ALPHA_TYPE 
 	float centerX = halfSize;
 	float centerY = halfSize;
 
-	for (int32_t y = 0; y < lenth; y++)
+	for (int y = 0; y < lenth; y++)
 	{
-		for (int32_t x = 0; x < lenth; x++)
+		for (int x = 0; x < lenth; x++)
 		{
 			//加入线性渐变：根据到中心点的距离
 			float deltaX = (float)x - centerX;
@@ -544,7 +544,7 @@ GLuint ResourceManager::CreateProcedureTexture(const int32_t& lenth, ALPHA_TYPE 
 			}
 			alpha = alpha>1 ? 1 : alpha;
 			//设置RGBA
-			int32_t index = (lenth*y + x) * 4;
+			int index = (lenth*y + x) * 4;
 			imageData[index + 0] = 150;
 			imageData[index + 1] = 200;
 			imageData[index + 2] = 128;

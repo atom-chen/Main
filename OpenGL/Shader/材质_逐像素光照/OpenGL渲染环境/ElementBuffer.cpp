@@ -17,18 +17,18 @@ ElementBuffer::~ElementBuffer()
 	}
 }
 
-void ElementBuffer::Init(const int32_t& count)
+void ElementBuffer::Init(const int& count)
 {
-	m_Indexs = new int32_t[count];
+	m_Indexs = new int[count];
 	this->m_Length = count;
-	m_Ebo = ResourceManager::CreateBufferObject(GL_ELEMENT_ARRAY_BUFFER, sizeof(int32_t)*count, GL_STATIC_DRAW, nullptr); 
+	m_Ebo = ResourceManager::CreateBufferObject(GL_ELEMENT_ARRAY_BUFFER, sizeof(int)*count, GL_STATIC_DRAW, nullptr); 
 	m_IsInit = 1;
 }
 void ElementBuffer::Destory()
 {
 	ResourceManager::RemoveBufferObject(m_Ebo);
 }
-void ElementBuffer::SetIndexes(const int32_t& indexInCPU, const int32_t& indexInGPU)//设置索引数据
+void ElementBuffer::SetIndexes(const int& indexInCPU, const int& indexInGPU)//设置索引数据
 {
 	if (m_Ebo == _INVALID_ID_ || indexInCPU >= m_Length || !m_IsInit)
 	{
@@ -44,7 +44,7 @@ void ElementBuffer::Begin()//会把m_Indexs传过去显存
 		return;
 	}
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_Ebo);
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(int32_t)*m_Length, m_Indexs);
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(int)*m_Length, m_Indexs);
 }
 
 void ElementBuffer::End()

@@ -22,16 +22,16 @@ struct FloatData
 };
 struct VertexDefine
 {
-	int32_t positionIndex;//位置信息的Index
-	int32_t textcoordIndex;//纹理贴图信息的Index
-	int32_t normalIndex;//法线信息的Index
+	int positionIndex;//位置信息的Index
+	int textcoordIndex;//纹理贴图信息的Index
+	int normalIndex;//法线信息的Index
 };
 
 struct ObjModel
 {
 	vector<FloatData> positions, texcoords, normals;//记录真实数据
 	vector<VertexDefine> VertexList;//记录绘制指令
-	vector<int32_t> Indexes;//表示所有绘制指令的索引位置。
+	vector<int> Indexes;//表示所有绘制指令的索引位置。
 	int CiteCount = 0;//引用计数
 };
 #pragma endregion 模型
@@ -117,7 +117,7 @@ private:
 
 	//生成一个程序纹理
 
-	static GLuint CreateProcedureTexture(const int32_t& size, ALPHA_TYPE type = ALPHA_TYPE::ALPHA_LINNER);
+	static GLuint CreateProcedureTexture(const int& size, ALPHA_TYPE type = ALPHA_TYPE::ALPHA_LINNER);
 
 	//从BMP创建2D纹理对象
 	static GLuint CreateTexture2DFromBMP(const char* bmpPath);
