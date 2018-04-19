@@ -1,0 +1,28 @@
+#include "ParticleSystem.h"
+#include "Utils.h"
+#include "Resource.h"
+#include "Time.h"
+#include "SceneManager.h"
+
+///////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////粒子系统 Begin/////////////////////////////////////////
+ParticleSystem::ParticleSystem()
+{
+	m_Options.DrawType = DRAW_POINTS;
+	m_Options.Program_Point_Size = 1;
+	m_Options.alphaBlend.AlphaBlend = 1;
+	m_Options.alphaBlend.Type = ALPHA_BLEND_ONE;
+}
+void ParticleSystem::Init(const vec3& position,const int& maxNum,const char* picPath) 
+{
+
+}
+
+
+void ParticleSystem::Update()
+{
+
+}
+
+/////////////////////////////////粒子系统 End/////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
