@@ -90,7 +90,7 @@ void Draw()
 	m_Ground.Draw();
 
 	m_MainCamera.SwitchTo2D();
-	m_Sprite1.Draw();
+	//m_Sprite1.Draw();
 	m_ParticleSys.Draw();
 }
 void OnKeyDown(char KeyCode)
