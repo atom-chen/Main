@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CSharpScripts\BirdsBehaviour.cs" />
      <Compile Include="Assets\Scripts\CardShadow.cs" />
      <Compile Include="Assets\Scripts\Driver.cs" />
+     <Compile Include="Assets\Scripts\MainCamera.cs" />
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
      <None Include="Assets\Shaders\PolyTerrain\FirstPassLightmap.shader" />
      <None Include="Assets\Shaders\ShadowProjection.shader" />
