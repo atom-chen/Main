@@ -1,12 +1,7 @@
 #pragma once
 #include "Vertex.h"
 
-enum DRAR_TYPE
-{
-	TRIANGLES=0,
-	TRIANGLE_STRIP=1,
-	QUADS=2,
-};
+
 //传向GPU的数据集合
 class VertexBuffer
 {
