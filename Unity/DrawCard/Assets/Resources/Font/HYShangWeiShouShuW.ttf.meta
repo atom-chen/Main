@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6a3ab4bf42df16b4ba9bee050447a9f4
+timeCreated: 1517900717
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: HYShangWeiShouShuW
+  fontNames:
+  - HYShangWeiShouShuW
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

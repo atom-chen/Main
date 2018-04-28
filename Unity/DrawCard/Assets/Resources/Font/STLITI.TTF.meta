@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: be18183fe980ad34c909250fc7d5376d
+timeCreated: 1517899154
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: STLiti
+  fontNames:
+  - STLiti
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
