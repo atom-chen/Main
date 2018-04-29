@@ -22,7 +22,14 @@ public class SpeedPanel : MonoBehaviour {
         speed = Mathf.Round(speed);
         if (speed >= 0)
         {
-          m_SpeedLabel.text = speed + "";
+            if(speed<=140)
+            {
+                m_SpeedLabel.text = speed + "";
+            }
+            else
+            {
+                m_SpeedLabel.text = 140 + "";
+            }
         }
         else
         {
