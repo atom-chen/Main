@@ -9,7 +9,7 @@
 ParticleSystem::ParticleSystem()
 {
 	m_Options.DrawType = DRAW_POINTS;
-	m_Options.Program_Point_Size = 1;
+	m_Options.Program_Point_Size.isProgramPointSize = 1;
 	m_Options.alphaBlend.AlphaBlend = 1;
 	m_Options.alphaBlend.Type = ALPHA_BLEND_ONE;
 }

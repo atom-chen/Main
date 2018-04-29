@@ -45,38 +45,38 @@ void RenderAble_Light::SetLight_1(const Light& light1)
 void RenderAble_Light::SetAmbientMaterial(float r, float g, float b, float a)
 {
 	INIT_TEST_VOID
-		m_Material.SetAmbientMaterial(vec4(r, g, b, a));
+	m_Material.SetAmbientMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_AmbientMaterial", r, g, b, a);
 }
 
 void RenderAble_Light::SetDiffuseMaterial(float r, float g, float b, float a)
 {
 	INIT_TEST_VOID
-		m_Material.SetDiffuseMaterial(vec4(r, g, b, a));
+	m_Material.SetDiffuseMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_DiffuseMaterial", r, g, b, a);
 }
 
 void RenderAble_Light::SetSpecularMaterial(float r, float g, float b, float a)
 {
 	INIT_TEST_VOID
-		m_Material.SetSepcularMaterial(vec4(r, g, b, a));
+	m_Material.SetSepcularMaterial(vec4(r, g, b, a));
 	m_Shader.SetVec4("U_SpecularMaterial", r, g, b, a);
 }
 void RenderAble_Light::SetAmbientMaterial(const vec4& ambientMaterual)
 {
 	INIT_TEST_VOID
-		m_Material.SetAmbientMaterial(ambientMaterual);
+	m_Material.SetAmbientMaterial(ambientMaterual);
 	m_Shader.SetVec4("U_AmbientMaterial", ambientMaterual.x, ambientMaterual.y, ambientMaterual.z, ambientMaterual.w);
 }
 void RenderAble_Light::SetDiffuseMaterial(const vec4& diffuseMaterual)
 {
 	INIT_TEST_VOID
-		m_Material.SetDiffuseMaterial(diffuseMaterual);
+	m_Material.SetDiffuseMaterial(diffuseMaterual);
 	m_Shader.SetVec4("U_DiffuseMaterial", diffuseMaterual.x, diffuseMaterual.y, diffuseMaterual.z, diffuseMaterual.w);
 }
 void RenderAble_Light::SetSpecularMaterial(const vec4& specularMaterual)
 {
 	INIT_TEST_VOID
-		m_Material.SetDiffuseMaterial(specularMaterual);
+	m_Material.SetDiffuseMaterial(specularMaterual);
 	m_Shader.SetVec4("U_SpecularMaterial", specularMaterual.x, specularMaterual.y, specularMaterual.z, specularMaterual.w);
 }

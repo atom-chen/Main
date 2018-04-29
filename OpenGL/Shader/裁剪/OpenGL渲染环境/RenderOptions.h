@@ -31,7 +31,7 @@ struct RenderOption
 	DRAW_TYPE DrawType = DRAW_TRIANGLES;//所需的图元
 	bool DepthTest = 0;//深度测试信息
 	AlphaBlendInfo alphaBlend;//alpha混合信息
-	bool Program_Point_Size = 0;//点大小信息
+	ProgramPointSize Program_Point_Size;//点大小信息
 };
 
 

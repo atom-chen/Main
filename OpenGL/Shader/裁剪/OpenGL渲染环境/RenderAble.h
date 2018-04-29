@@ -25,7 +25,7 @@ public:
 	//渲染选项
 	inline bool IsDepthTest()const{ return this->m_Options.DepthTest; }
 	inline AlphaBlendInfo GetAlphaBlend()const{ return this->m_Options.alphaBlend; }
-	inline bool IsProgramPointSize() const{ return this->m_Options.Program_Point_Size; }
+	inline ProgramPointSize GetProgramPointSize() const{ return this->m_Options.Program_Point_Size; }
 	inline DRAW_TYPE GetType()const{ return this->m_Options.DrawType; }
 public:
 	//设置Shader属性
@@ -49,7 +49,7 @@ public:
 	virtual void SetScale(float x, float y, float z);
 	void SetScale(const vec3& scale);
 
-	virtual void Draw();
+	void Draw();
 	virtual void Destory();
 private:
 	void UpdateTransform();

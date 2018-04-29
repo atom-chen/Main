@@ -44,7 +44,7 @@ public:
 		return m_ScissorState;
 	}
 
-	static void SetProgramPointSizeState(bool isEnable);
+	static void SetProgramPointSizeState(ProgramPointSize pointSize);
 	inline static bool GetProgramPointSizeState()
 	{
 		return m_IsProgramPointSize.isProgramPointSize;
@@ -55,7 +55,7 @@ private:
 	static std::map<string, Scene*> m_mScene;
 	static Scene* m_CurScene;
 
-	static POINT m_OriginalPos;//记录按下鼠标时的位置
+	static POINT m_OriginalPos;//记录按下时的位置
 	static bool m_IsRotate;//是否正在旋转
 	static bool m_IsGlewInit;
 
