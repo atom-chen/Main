@@ -7,22 +7,60 @@ public class Driver : MonoBehaviour {
   public WheelCollider m_FLWheel;
   public WheelCollider m_FRWheel;
   private float m_MotorTorque = 400;
-  private float m_SteerAngle = 10;
+  private float m_SteerAngle = 100;
 
   public Transform m_CenterOfMass;//质心
+
+  float m_Speed = 0;//速度
+
+  float m_MoveVertical = 0;
+  float m_MoveHozizontal = 0;
+
+  float k = -1f;
+  float b=100;
+  public float Speed
+  {
+    get
+    {
+      return m_Speed;
+    }
+  }
   void Start()
   {
     this.GetComponent<Rigidbody>().centerOfMass = m_CenterOfMass.localPosition;
   }
   void Update()
   {
-    float moveVertical = Input.GetAxis("Vertical");
-    float moveHozizontal = Input.GetAxis("Horizontal");
-    m_FLWheel.motorTorque = moveVertical * m_MotorTorque;
-    m_FRWheel.motorTorque = moveVertical * m_MotorTorque;
-    m_FLWheel.steerAngle = moveHozizontal * m_SteerAngle;
-    m_FRWheel.steerAngle = moveHozizontal * m_SteerAngle;
+    m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;
+    m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;
+
+    OnRunForward();
+    OnTurn();
+
+    m_Speed = ((m_FLWheel.rpm) * (m_FLWheel.radius * 2 * Mathf.PI) * 60 / 1000 + (m_FRWheel.rpm) * (m_FRWheel.radius * 2 * Mathf.PI) * 60 / 1000)/2.0f;
+    if (m_Speed <= 90)
+    {
+      m_SteerAngle = k * m_Speed + b;
+    }
+    else
+    {
+      m_SteerAngle = 10;
+    }
   }
+
+  void OnRunForward()
+  {
+    m_FLWheel.motorTorque = m_MoveVertical;
+    m_FRWheel.motorTorque = m_MoveVertical;
+  }
+
+  void OnTurn()
+  {
+    m_FLWheel.steerAngle = m_MoveHozizontal;
+    m_FRWheel.steerAngle = m_MoveHozizontal;
+  }
+
+
 
   //public Transform m_CenterOfMass;//质心
   //private float m_Throttle = 0;//油门大小
