@@ -46,7 +46,7 @@ namespace Client
     {
       ChatListener listener=new ChatListener();
       PhotonPeer peer = new PhotonPeer(listener,ConnectionProtocol.Tcp);
-      peer.Connect("127.0.0.1:4530", "ChatServer");//添加请求到服务器
+      peer.Connect("192.168.2.102:4530", "ChatServer");//添加请求到服务器
       Console.WriteLine("正在连接...");
       while(!listener.m_IsConnect)
       {
