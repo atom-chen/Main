@@ -17,6 +17,7 @@ public class Message implements java.io.Serializable{
 	private String time;
 
 	public String getSender() {
+		
 		return Sender;
 	}
 
