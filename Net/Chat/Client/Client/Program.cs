@@ -7,39 +7,7 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-  class ChatListener:IPhotonPeerListener
-  {
-    public bool m_IsConnect = false;
-    //debug的回调
-    public void DebugReturn(DebugLevel level, string message)
-    {
-
-    }
-    //事件处理函数
-    public void OnEvent(EventData eventData)
-    {
-
-    }
-    //服务器响应
-    public void OnOperationResponse(OperationResponse operationResponse)
-    {
-
-    }
-    //当连接状态改变时
-    public void OnStatusChanged(StatusCode statusCode)
-    {
-      switch(statusCode)
-      {
-        case StatusCode.Connect:
-          Console.WriteLine("连接成功");
-          m_IsConnect = true;
-          break;
-        default:
-          Console.WriteLine("其他状态");
-          break;
-      }
-    }
-  }
+ 
   class Program
   {
     static void Main(string[] args)
@@ -51,6 +19,14 @@ namespace Client
       while(!listener.m_IsConnect)
       {
         peer.Service();//立即发包
+      }
+      Dictionary<byte,object> dic=new Dictionary<byte,object>();
+      dic.Add(1, "1");
+      dic.Add(2, "123");
+      peer.OpCustom(1, dic, true);
+      while(true)
+      {
+        peer.Service();
       }
     }
   }

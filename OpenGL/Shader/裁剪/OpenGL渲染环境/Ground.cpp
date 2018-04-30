@@ -81,11 +81,3 @@ bool Ground::Init(const char* picName)
 }
 
 
-void Ground::Destory()
-{
-	if (m_IsInit)
-	{
-		RenderAble::Destory();
-		m_IsInit = 0;
-	}
-}

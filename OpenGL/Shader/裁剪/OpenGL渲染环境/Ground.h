@@ -7,7 +7,6 @@ public:
 	Ground();
 	bool Init();
 	bool Init(const char* picName);
-	virtual void Destory();
 protected:
 
 private:

@@ -19,10 +19,17 @@ namespace Server
     {
 
     }
-
+    //相应客户端发起的请求
     protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
     {
-
+      //消息转发
+      switch(operationRequest.OperationCode)
+      {
+        
+      }
+      OperationResponse res = new OperationResponse(1, null);
+      //给客户端响应
+      SendOperationResponse(res, sendParameters);
     }
   }
 }
