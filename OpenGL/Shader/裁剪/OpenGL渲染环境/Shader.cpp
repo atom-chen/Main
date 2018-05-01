@@ -9,15 +9,15 @@ bool Shader::Init(const char* vertShaderPath, const char* fragmentShaderPath)
 	ASSERT_INT_BOOL(m_Program);
 
 	//»ñÈ¡¸÷Location
-	m_ModelMatrixLocation = glGetUniformLocation(m_Program, "ModelMatrix");
-	m_ViewMatrixLocation = glGetUniformLocation(m_Program, "ViewMatrix");
-	m_ProjactionMatrixLocation = glGetUniformLocation(m_Program, "ProjectionMatrix");
-	m_ITModelMatrixLocation = glGetUniformLocation(m_Program, "IT_ModelMatrix");
+	m_ModelMatrixLocation = glGetUniformLocation(m_Program, m_ModelMatrixNameInShader.c_str());
+	m_ViewMatrixLocation = glGetUniformLocation(m_Program,m_ViewMatrixNameInShader.c_str());
+	m_ProjactionMatrixLocation = glGetUniformLocation(m_Program, m_ProjectionMatrixNameInShader.c_str());
+	m_ITModelMatrixLocation = glGetUniformLocation(m_Program, m_ITModelMatrixNameInShader.c_str());
 
-	m_PositionLocation = glGetAttribLocation(m_Program, "position");
-	m_ColorLocation = glGetAttribLocation(m_Program, "color");
-	m_NormalLocation = glGetAttribLocation(m_Program,"normal");
-	m_TexcoordLocation = glGetAttribLocation(m_Program,"texcoord");
+	m_PositionLocation = glGetAttribLocation(m_Program, m_PositionName.c_str());
+	m_ColorLocation = glGetAttribLocation(m_Program, m_ColorName.c_str());
+	m_NormalLocation = glGetAttribLocation(m_Program, m_NormalName.c_str());
+	m_TexcoordLocation = glGetAttribLocation(m_Program, m_TexcoordName.c_str());
 
 	return 1;
 }

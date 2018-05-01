@@ -7,17 +7,33 @@ public class Driver : MonoBehaviour {
   public WheelCollider m_FLWheel;
   public WheelCollider m_FRWheel;
   private float m_MotorTorque = 400;
-  private float m_SteerAngle = 100;
+  private float m_SteerAngle = 30;
 
   public Transform m_CenterOfMass;//质心
+
+  public ParticleEmitter m_LeftSmoke;
+  public ParticleEmitter m_RightSmoke;
+  public AudioSource m_Skid;
 
   float m_Speed = 0;//速度
 
   float m_MoveVertical = 0;
   float m_MoveHozizontal = 0;
 
-  float k = -1f;
+  float k = -1.25f;
   float b=100;
+
+  private float m_MaxSpeed=130;
+  public float MaxSpeed
+  {
+    get
+    {
+      return m_MaxSpeed;
+    }
+  }
+  private float m_MinSpeed=30;
+
+  private bool m_IsShowDowm = false;
   public float Speed
   {
     get
@@ -31,36 +47,92 @@ public class Driver : MonoBehaviour {
   }
   void Update()
   {
-    m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;
-    m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;
-
+    m_Speed = (m_FLWheel.rpm) * (m_FLWheel.radius * 2 * Mathf.PI) * 60 / 1000;
+    m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;//向前速度
+    m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;//转向
     OnRunForward();
     OnTurn();
 
-    m_Speed = ((m_FLWheel.rpm) * (m_FLWheel.radius * 2 * Mathf.PI) * 60 / 1000 + (m_FRWheel.rpm) * (m_FRWheel.radius * 2 * Mathf.PI) * 60 / 1000)/2.0f;
-    if (m_Speed <= 90)
-    {
-      m_SteerAngle = k * m_Speed + b;
-    }
-    else
-    {
-      m_SteerAngle = 10;
-    }
   }
 
   void OnRunForward()
   {
-    m_FLWheel.motorTorque = m_MoveVertical;
-    m_FRWheel.motorTorque = m_MoveVertical;
+    //刹车检测
+    if((m_Speed>0 && m_MoveVertical<0) || (m_Speed<0 && m_MoveVertical>0))
+    {
+      Debug.Log("玩家在刹车");
+      m_IsShowDowm = true;
+    }
+    else
+    {
+      Debug.Log("玩家在前进");
+      m_IsShowDowm = false;
+    }
+
+    //速度检测
+    if ((m_Speed>m_MaxSpeed &&m_MoveVertical>0) ||(m_Speed<-m_MinSpeed && m_MoveVertical<0))
+    {
+      Debug.Log("玩家被限速");
+      m_FLWheel.motorTorque = 0;
+      m_FRWheel.motorTorque = 0;
+    }
+
+    else
+    {
+      Debug.Log("玩家在全速前进");
+      m_FLWheel.motorTorque = m_MoveVertical;
+      m_FRWheel.motorTorque = m_MoveVertical;
+    }
+
+    if (m_IsShowDowm)
+    {
+      m_FLWheel.motorTorque = 0;
+      m_FRWheel.motorTorque = 0;
+      m_FLWheel.brakeTorque = 40000;
+      m_FRWheel.brakeTorque = 40000;
+    }
+    else
+    {
+      m_FLWheel.brakeTorque = 0;
+      m_FRWheel.brakeTorque = 0;
+    }
   }
 
   void OnTurn()
   {
+
     m_FLWheel.steerAngle = m_MoveHozizontal;
     m_FRWheel.steerAngle = m_MoveHozizontal;
+
+    //漂移
+    if(Mathf.Abs(m_FLWheel.steerAngle)>29 && m_Speed>40)
+    {
+      m_LeftSmoke.emit = true;
+      m_RightSmoke.emit = true;
+      Debug.Log("发射漂移粒子");
+      if(!m_Skid.isPlaying)
+      {
+        m_Skid.Play();
+      }
+    }
+    else
+    {
+      m_LeftSmoke.emit = false;
+      m_RightSmoke.emit = false;
+      if (m_Skid.isPlaying)
+      {
+        m_Skid.Stop() ;
+      }
+    }
   }
 
-
+  public void ShotDownCar()
+  {
+    //减速
+    m_FLWheel.motorTorque = 0;
+    m_FRWheel.motorTorque = 0;
+    m_IsShowDowm = true;
+  }
 
   //public Transform m_CenterOfMass;//质心
   //private float m_Throttle = 0;//油门大小

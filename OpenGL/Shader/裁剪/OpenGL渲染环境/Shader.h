@@ -84,4 +84,14 @@ private:
 	std::map<string, UniformVec3> m_mUniformVec3;
 	std::map<string, UniformFloat> m_mUniformFloats;
 	std::map<string, UniformMatrix> m_mUniformMatrixs;
+
+	string m_ModelMatrixNameInShader = "ModelMatrix";
+	string m_ViewMatrixNameInShader = "ViewMatrix";
+	string m_ProjectionMatrixNameInShader = "ProjectionMatrix";
+	string m_ITModelMatrixNameInShader = "IT_ModelMatrix";
+
+	string m_PositionName = "position";
+	string m_ColorName = "color";
+	string m_NormalName = "normal";
+	string m_TexcoordName = "texcoord";
 };

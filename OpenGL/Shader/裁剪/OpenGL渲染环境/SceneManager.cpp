@@ -38,21 +38,21 @@ void SceneManager::LoadScene(string name)
 		{
 			return;
 		}
-		if (m_CurScene != nullptr)
-		{
-			Scene* temp = m_CurScene;
-			m_CurScene = nullptr;
-			cout<<endl;
-			temp->OnDesrory();
-			temp->SystemDesrory();
-		}
-		else
+		Scene* temp = m_CurScene;
+		m_CurScene = nullptr;
+		if (m_CurScene == nullptr)
 		{
 			InitGlew();
 		}
 		cout << endl;
 		it->second->SystemAwake();
 		it->second->Awake();
+		if (temp != nullptr)
+		{
+			cout << endl;
+			temp->OnDesrory();
+			temp->SystemDesrory();
+		}
 		it->second->SetViewPortSize(m_ViewWidth, m_ViewHeight);
 		it->second->SystemStart();
 		it->second->Start();
