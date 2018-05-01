@@ -45,7 +45,7 @@ void RenderList::Draw()
 				{
 					SceneManager::SetBlendState(render->GetAlphaBlend());
 					SceneManager::SetDepthTestState(render->IsDepthTest());
-					SceneManager::SetProgramPointSizeState(render->GetProgramPointSize());
+					SceneManager::SetProgramPointSizeState(render->IsProgramPointSize());
 					glDrawArrays(render->GetType(), 0, render->GetVertexBuffer().GetLenth());
 				}
 				render->GetShader().End();
@@ -54,6 +54,7 @@ void RenderList::Draw()
 		}
 	}
 	m_RendList.clear();//渲染完了进行清空
+	glDisable(GL_SCISSOR_TEST);
 }
 
 

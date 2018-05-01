@@ -60,16 +60,8 @@ public:
 	inline const GLint& GetColorLocation() const{ return m_ColorLocation; };
 	inline const GLint& GetTexcoordLocation() const{ return m_TexcoordLocation; };
 	inline const GLint& GetNormalLocation() const{ return m_NormalLocation; };
-public:
-	void SetModelMatrixNameInShader(string modelMatrix);
-	void SetViewMatrixNameInShader(string viewMatrix);
-	void SetProjectionMatrixNameInShader(string projectionMatrix);
-	void SetITModelMatrixNameInShader(string ITModelMatrix);
 
-	void SetPositionName(string name);
-	void SetColorName(string name);
-	void SetTexcoordName(string name);
-	void SetNormalName(string name);
+	
 public:
 	void SetTexture2D(const char* imagePath, bool isRepeat = 1,const char* nameInShader = "U_Texture_1");
 	void SetTexture2D(const GLuint& texture, const char* nameInShader = "U_Texture_1");
@@ -81,7 +73,6 @@ public:
 	void SetMatrix(const char* nameInShader,const glm::mat4& matrix);
 	void SetCueMap(const char* front, const char* back, const char* top, const char* bottom, const char* left, const char* right, const char* nameInShader="U_Texture_CubeMap");
 private:
-	bool m_IsInit = 0;
 	GLuint m_Program;
 	//常规选项
 	GLint m_ModelMatrixLocation, m_ViewMatrixLocation, m_ProjactionMatrixLocation,m_ITModelMatrixLocation;
@@ -93,14 +84,4 @@ private:
 	std::map<string, UniformVec3> m_mUniformVec3;
 	std::map<string, UniformFloat> m_mUniformFloats;
 	std::map<string, UniformMatrix> m_mUniformMatrixs;
-
-	string m_ModelMatrixNameInShader = "ModelMatrix";
-	string m_ViewMatrixNameInShader = "ViewMatrix";
-	string m_ProjectionMatrixNameInShader = "ProjectionMatrix";
-	string m_ITModelMatrixNameInShader = "IT_ModelMatrix";
-
-	string m_PositionName = "position";
-	string m_ColorName = "color";
-	string m_NormalName = "normal";
-	string m_TexcoordName = "texcoord";
 };

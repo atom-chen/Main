@@ -5,30 +5,24 @@
 
 bool Shader::Init(const char* vertShaderPath, const char* fragmentShaderPath)
 {
-	if (!m_IsInit)
-	{
-		m_IsInit = 1;
-		m_Program = ResourceManager::GetProgram(vertShaderPath, fragmentShaderPath);
-		ASSERT_INT_BOOL(m_Program);
+	m_Program = ResourceManager::GetProgram(vertShaderPath, fragmentShaderPath);
+	ASSERT_INT_BOOL(m_Program);
 
-		//获取各Location
-		m_ModelMatrixLocation = glGetUniformLocation(m_Program, m_ModelMatrixNameInShader.c_str());
-		m_ViewMatrixLocation = glGetUniformLocation(m_Program, m_ViewMatrixNameInShader.c_str());
-		m_ProjactionMatrixLocation = glGetUniformLocation(m_Program, m_ProjectionMatrixNameInShader.c_str());
-		m_ITModelMatrixLocation = glGetUniformLocation(m_Program, m_ITModelMatrixNameInShader.c_str());
+	//获取各Location
+	m_ModelMatrixLocation = glGetUniformLocation(m_Program, "ModelMatrix");
+	m_ViewMatrixLocation = glGetUniformLocation(m_Program, "ViewMatrix");
+	m_ProjactionMatrixLocation = glGetUniformLocation(m_Program, "ProjectionMatrix");
+	m_ITModelMatrixLocation = glGetUniformLocation(m_Program, "IT_ModelMatrix");
 
-		m_PositionLocation = glGetAttribLocation(m_Program, m_PositionName.c_str());
-		m_ColorLocation = glGetAttribLocation(m_Program, m_ColorName.c_str());
-		m_NormalLocation = glGetAttribLocation(m_Program, m_NormalName.c_str());
-		m_TexcoordLocation = glGetAttribLocation(m_Program, m_TexcoordName.c_str());
+	m_PositionLocation = glGetAttribLocation(m_Program, "position");
+	m_ColorLocation = glGetAttribLocation(m_Program, "color");
+	m_NormalLocation = glGetAttribLocation(m_Program,"normal");
+	m_TexcoordLocation = glGetAttribLocation(m_Program,"texcoord");
 
-		return 1;
-	}
-	return 0;
+	return 1;
 }
 void Shader::Destory()
 {
-	INIT_TEST_VOID
 	ResourceManager::RemoveProgram(m_Program);
 	for (auto it = m_mUniformTextures.begin(); it!=m_mUniformTextures.end(); it++)
 	{
@@ -46,7 +40,6 @@ void Shader::Destory()
 }
 void Shader::SetTexture2D(const GLuint& texture, const char* nameInShader)
 {
-	INIT_TEST_VOID
 	auto it = m_mUniformTextures.find(nameInShader);
 	//如果it不存在于map中，则新建去shader中获取
 	if (it == m_mUniformTextures.end())
@@ -74,7 +67,6 @@ void Shader::SetTexture2D(const GLuint& texture, const char* nameInShader)
 }
 void Shader::SetTexture2D(const char* imagePath, bool isRepeat, const char* nameInShader)
 {
-	INIT_TEST_VOID
 	ASSERT(imagePath);
 	auto it = m_mUniformTextures.find(nameInShader);
 	//如果it不存在于map中，则新建去shader中获取
@@ -105,7 +97,6 @@ void Shader::SetTexture2D(const char* imagePath, bool isRepeat, const char* name
 }
 void Shader::SetVec4(const char* nameInShader, float x, float y, float z, float w)
 {
-	INIT_TEST_VOID
 	auto it = m_mUniformVec4.find(nameInShader);
 	//如果it不存在于map中，则新建去shader中获取
 	if (it == m_mUniformVec4.end())
@@ -131,7 +122,6 @@ void Shader::SetVec4(const char* nameInShader, float x, float y, float z, float 
 }
 void Shader::SetVec3(const char* nameInShader, float x, float y, float z)
 {
-	INIT_TEST_VOID
 	auto it = m_mUniformVec3.find(nameInShader);
 	//如果it不存在于map中，则新建去shader中获取
 	if (it == m_mUniformVec3.end())
@@ -155,7 +145,6 @@ void Shader::SetVec3(const char* nameInShader, float x, float y, float z)
 }
 void Shader::SetFloat(const char* nameInShader, float value)
 {
-	INIT_TEST_VOID
 	auto it = m_mUniformFloats.find(nameInShader);
 	//如果it不存在于map中，则新建去shader中获取
 	if (it == m_mUniformFloats.end())
@@ -175,7 +164,6 @@ void Shader::SetFloat(const char* nameInShader, float value)
 }
 void Shader::SetMatrix(const char* nameInShader, const glm::mat4& matrix)
 {
-	INIT_TEST_VOID
 	auto it = m_mUniformMatrixs.find(nameInShader);
 	//如果it不存在于map中，则新建去shader中获取
 	if (it == m_mUniformMatrixs.end())
@@ -195,7 +183,6 @@ void Shader::SetMatrix(const char* nameInShader, const glm::mat4& matrix)
 }
 void Shader::SetCueMap(const char* front, const char* back, const char* top, const char* bottom, const char* left, const char* right, const char* nameInShader)
 {
-	INIT_TEST_VOID
 	string name(nameInShader);
 	auto it = m_mUniformCubeMap.find(name);
 	if (it == m_mUniformCubeMap.end())
@@ -219,72 +206,20 @@ void Shader::SetCueMap(const char* front, const char* back, const char* top, con
 		it->second.texture = ResourceManager::GetTextureCube(front, back, top, bottom, left, right);
 	}
 }
-void Shader::SetModelMatrixNameInShader(string modelMatrix)
-{
-	m_ModelMatrixNameInShader = modelMatrix;
-	INIT_TEST_VOID
-	m_ModelMatrixLocation = glGetUniformLocation(m_Program, m_ModelMatrixNameInShader.c_str());
-}
-void Shader::SetViewMatrixNameInShader(string viewMatrix)
-{
-	m_ViewMatrixNameInShader = viewMatrix;
-	INIT_TEST_VOID
-	m_ViewMatrixLocation = glGetUniformLocation(m_Program, m_ViewMatrixNameInShader.c_str());
-}
-void Shader::SetProjectionMatrixNameInShader(string projectionMatrix)
-{
-	m_ProjectionMatrixNameInShader = projectionMatrix;
-	INIT_TEST_VOID
-	m_ProjactionMatrixLocation = glGetUniformLocation(m_Program, m_ProjectionMatrixNameInShader.c_str());
-}
-void Shader::SetITModelMatrixNameInShader(string ITModelMatrix)
-{
-	m_ITModelMatrixNameInShader = ITModelMatrix;
-	INIT_TEST_VOID
-	m_ITModelMatrixLocation = glGetUniformLocation(m_Program, m_ITModelMatrixNameInShader.c_str());
-}
-
-void Shader::SetPositionName(string name)
-{
-	m_PositionName = name;
-	INIT_TEST_VOID
-	m_PositionLocation = glGetAttribLocation(m_Program, m_PositionName.c_str());
-}
-void Shader::SetColorName(string name)
-{
-	m_ColorName = name;
-	INIT_TEST_VOID
-	m_ColorLocation = glGetAttribLocation(m_Program, m_ColorName.c_str());
-}
-void  Shader::SetTexcoordName(string name)
-{
-	m_TexcoordName = name;
-	INIT_TEST_VOID
-	m_TexcoordLocation = glGetAttribLocation(m_Program, m_TexcoordName.c_str());
-}
-void Shader::SetNormalName(string name)
-{
-	m_NormalName = name;
-	INIT_TEST_VOID
-	m_NormalLocation = glGetAttribLocation(m_Program, m_NormalName.c_str());
-}
 
 void Shader::Begin() const
 {
-	INIT_TEST_VOID
 	glUseProgram(this->m_Program);
 }
 
 void Shader::End() const
 {
-	INIT_TEST_VOID
 	glBindTexture(GL_TEXTURE_2D, _INVALID_ID_);
 	glUseProgram(_INVALID_ID_);
 }
 
 void Shader::Bind(const float *M, const float* V, const float *P, const float *IT )
 {
-	INIT_TEST_VOID
 	////////////////////////////////////////Uniform Begin//////////////////////////////////
 	if (m_ModelMatrixLocation != _INVALID_LOCATION_ && M != nullptr)
 	{

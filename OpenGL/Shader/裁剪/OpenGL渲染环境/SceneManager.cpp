@@ -217,13 +217,13 @@ void SceneManager::SetDepthTestState(bool isEnable)
 
 
 
-void SceneManager::SetProgramPointSizeState(ProgramPointSize pointSize)
+void SceneManager::SetProgramPointSizeState(bool isEnable)
 {
-	if (m_IsProgramPointSize.isProgramPointSize == pointSize.isProgramPointSize)
+	if (m_IsProgramPointSize.isProgramPointSize == isEnable)
 	{
 		return;
 	}
-	m_IsProgramPointSize.isProgramPointSize = pointSize.isProgramPointSize;
+	m_IsProgramPointSize.isProgramPointSize = isEnable;
 	if (m_IsProgramPointSize.isProgramPointSize)
 	{
 		glEnable(GL_POINT_SPRITE);
