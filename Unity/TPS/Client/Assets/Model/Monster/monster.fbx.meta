@@ -1,0 +1,1185 @@
+fileFormatVersion: 2
+guid: 114cb4bcf81314b65b611fcc4f346ee1
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: belly
+    100002: bellykontrol
+    100004: boventanden
+    100006: head
+    100008: hip
+    100010: hipkontrol
+    100012: jaw
+    100014: L_ankle
+    100016: L_ankle_kontrol
+    100018: L_arm
+    100020: L_elbow
+    100022: L_eye
+    100024: L_finger1
+    100026: L_finger2
+    100028: L_fingertip
+    100030: L_FOOT
+    100032: L_foot
+    100034: L_footkontrol
+    100036: L_knee
+    100038: L_leg
+    100040: L_leg_Pole
+    100042: L_OOG
+    100044: L_thumb1
+    100046: L_thumb2
+    100048: L_thumbtip
+    100050: L_toes
+    100052: L_toeskontrol
+    100054: L_wrist
+    100056: L_wristkontrol
+    100058: lip
+    100060: muktar
+    100062: muktar_2
+    100064: //RootNode
+    100066: n_Side
+    100068: Null
+    100070: Null_2
+    100072: Null_3
+    100074: Null_4
+    100076: Null_5
+    100078: ondertanden
+    100080: R_ankle
+    100082: R_ankle_kontrol
+    100084: R_arm
+    100086: R_elbow
+    100088: R_eye
+    100090: R_finger1
+    100092: R_finger2
+    100094: R_fingertip
+    100096: R_FOOT
+    100098: R_foot
+    100100: R_footkontrol
+    100102: R_knee
+    100104: R_leg
+    100106: R_leg_Pole
+    100108: R_oog
+    100110: R_thumb1
+    100112: R_thumb2
+    100114: R_thumbtip
+    100116: R_toes
+    100118: R_toeskontrol
+    100120: R_wrist
+    100122: R_wristkontrol
+    100124: shoulder
+    100126: shoulderkontrol
+    100128: spine
+    100130: top
+    400000: belly
+    400002: bellykontrol
+    400004: boventanden
+    400006: head
+    400008: hip
+    400010: hipkontrol
+    400012: jaw
+    400014: L_ankle
+    400016: L_ankle_kontrol
+    400018: L_arm
+    400020: L_elbow
+    400022: L_eye
+    400024: L_finger1
+    400026: L_finger2
+    400028: L_fingertip
+    400030: L_FOOT
+    400032: L_foot
+    400034: L_footkontrol
+    400036: L_knee
+    400038: L_leg
+    400040: L_leg_Pole
+    400042: L_OOG
+    400044: L_thumb1
+    400046: L_thumb2
+    400048: L_thumbtip
+    400050: L_toes
+    400052: L_toeskontrol
+    400054: L_wrist
+    400056: L_wristkontrol
+    400058: lip
+    400060: muktar
+    400062: muktar_2
+    400064: //RootNode
+    400066: n_Side
+    400068: Null
+    400070: Null_2
+    400072: Null_3
+    400074: Null_4
+    400076: Null_5
+    400078: ondertanden
+    400080: R_ankle
+    400082: R_ankle_kontrol
+    400084: R_arm
+    400086: R_elbow
+    400088: R_eye
+    400090: R_finger1
+    400092: R_finger2
+    400094: R_fingertip
+    400096: R_FOOT
+    400098: R_foot
+    400100: R_footkontrol
+    400102: R_knee
+    400104: R_leg
+    400106: R_leg_Pole
+    400108: R_oog
+    400110: R_thumb1
+    400112: R_thumb2
+    400114: R_thumbtip
+    400116: R_toes
+    400118: R_toeskontrol
+    400120: R_wrist
+    400122: R_wristkontrol
+    400124: shoulder
+    400126: shoulderkontrol
+    400128: spine
+    400130: top
+    4300000: L_OOG
+    4300002: R_oog
+    4300004: muktar_2
+    4300006: boventanden
+    4300008: ondertanden
+    7400000: C4D Animation Take
+    7400002: idle
+    7400004: walk
+    7400006: attack
+    7400008: fall
+    7400010: die
+    7400012: gothit
+    9500000: //RootNode
+    13700000: boventanden
+    13700002: L_OOG
+    13700004: muktar_2
+    13700006: ondertanden
+    13700008: R_oog
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 89
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bellykontrol
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/L_arm
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2/L_fingertip
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2/L_thumbtip
+        weight: 1
+      - path: hip/belly/R_arm
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2/R_fingertip
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2/R_thumbtip
+        weight: 1
+      - path: hip/belly/shoulder
+        weight: 1
+      - path: hip/belly/shoulder/head
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw/lip
+        weight: 1
+      - path: hip/belly/shoulder/head/L_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/R_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/top
+        weight: 1
+      - path: hip/L_leg
+        weight: 1
+      - path: hip/L_leg/L_knee
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot/L_toes
+        weight: 1
+      - path: hip/R_leg
+        weight: 1
+      - path: hip/R_leg/R_knee
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot/R_toes
+        weight: 1
+      - path: hipkontrol
+        weight: 1
+      - path: L_FOOT
+        weight: 1
+      - path: L_FOOT/L_ankle_kontrol
+        weight: 1
+      - path: L_FOOT/L_footkontrol
+        weight: 1
+      - path: L_FOOT/L_toeskontrol
+        weight: 1
+      - path: L_leg_Pole
+        weight: 1
+      - path: L_wristkontrol
+        weight: 1
+      - path: muktar
+        weight: 1
+      - path: muktar/boventanden
+        weight: 1
+      - path: muktar/boventanden/Null_4
+        weight: 1
+      - path: muktar/L_OOG
+        weight: 1
+      - path: muktar/L_OOG/Null
+        weight: 1
+      - path: muktar/muktar_2
+        weight: 1
+      - path: muktar/muktar_2/Null_3
+        weight: 1
+      - path: muktar/ondertanden
+        weight: 1
+      - path: muktar/ondertanden/Null_5
+        weight: 1
+      - path: muktar/R_oog
+        weight: 1
+      - path: muktar/R_oog/Null_2
+        weight: 1
+      - path: n_Side
+        weight: 1
+      - path: R_FOOT
+        weight: 1
+      - path: R_FOOT/R_ankle_kontrol
+        weight: 1
+      - path: R_FOOT/R_footkontrol
+        weight: 1
+      - path: R_FOOT/R_toeskontrol
+        weight: 1
+      - path: R_leg_Pole
+        weight: 1
+      - path: R_wristkontrol
+        weight: 1
+      - path: shoulderkontrol
+        weight: 1
+      - path: spine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: C4D Animation Take
+      firstFrame: 91
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bellykontrol
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/L_arm
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2/L_fingertip
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2/L_thumbtip
+        weight: 1
+      - path: hip/belly/R_arm
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2/R_fingertip
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2/R_thumbtip
+        weight: 1
+      - path: hip/belly/shoulder
+        weight: 1
+      - path: hip/belly/shoulder/head
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw/lip
+        weight: 1
+      - path: hip/belly/shoulder/head/L_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/R_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/top
+        weight: 1
+      - path: hip/L_leg
+        weight: 1
+      - path: hip/L_leg/L_knee
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot/L_toes
+        weight: 1
+      - path: hip/R_leg
+        weight: 1
+      - path: hip/R_leg/R_knee
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot/R_toes
+        weight: 1
+      - path: hipkontrol
+        weight: 1
+      - path: L_FOOT
+        weight: 1
+      - path: L_FOOT/L_ankle_kontrol
+        weight: 1
+      - path: L_FOOT/L_footkontrol
+        weight: 1
+      - path: L_FOOT/L_toeskontrol
+        weight: 1
+      - path: L_leg_Pole
+        weight: 1
+      - path: L_wristkontrol
+        weight: 1
+      - path: muktar
+        weight: 1
+      - path: muktar/boventanden
+        weight: 1
+      - path: muktar/boventanden/Null_4
+        weight: 1
+      - path: muktar/L_OOG
+        weight: 1
+      - path: muktar/L_OOG/Null
+        weight: 1
+      - path: muktar/muktar_2
+        weight: 1
+      - path: muktar/muktar_2/Null_3
+        weight: 1
+      - path: muktar/ondertanden
+        weight: 1
+      - path: muktar/ondertanden/Null_5
+        weight: 1
+      - path: muktar/R_oog
+        weight: 1
+      - path: muktar/R_oog/Null_2
+        weight: 1
+      - path: n_Side
+        weight: 1
+      - path: R_FOOT
+        weight: 1
+      - path: R_FOOT/R_ankle_kontrol
+        weight: 1
+      - path: R_FOOT/R_footkontrol
+        weight: 1
+      - path: R_FOOT/R_toeskontrol
+        weight: 1
+      - path: R_leg_Pole
+        weight: 1
+      - path: R_wristkontrol
+        weight: 1
+      - path: shoulderkontrol
+        weight: 1
+      - path: spine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack
+      takeName: C4D Animation Take
+      firstFrame: 214
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bellykontrol
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/L_arm
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2/L_fingertip
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2/L_thumbtip
+        weight: 1
+      - path: hip/belly/R_arm
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2/R_fingertip
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2/R_thumbtip
+        weight: 1
+      - path: hip/belly/shoulder
+        weight: 1
+      - path: hip/belly/shoulder/head
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw/lip
+        weight: 1
+      - path: hip/belly/shoulder/head/L_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/R_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/top
+        weight: 1
+      - path: hip/L_leg
+        weight: 1
+      - path: hip/L_leg/L_knee
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot/L_toes
+        weight: 1
+      - path: hip/R_leg
+        weight: 1
+      - path: hip/R_leg/R_knee
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot/R_toes
+        weight: 1
+      - path: hipkontrol
+        weight: 1
+      - path: L_FOOT
+        weight: 1
+      - path: L_FOOT/L_ankle_kontrol
+        weight: 1
+      - path: L_FOOT/L_footkontrol
+        weight: 1
+      - path: L_FOOT/L_toeskontrol
+        weight: 1
+      - path: L_leg_Pole
+        weight: 1
+      - path: L_wristkontrol
+        weight: 1
+      - path: muktar
+        weight: 1
+      - path: muktar/boventanden
+        weight: 1
+      - path: muktar/boventanden/Null_4
+        weight: 1
+      - path: muktar/L_OOG
+        weight: 1
+      - path: muktar/L_OOG/Null
+        weight: 1
+      - path: muktar/muktar_2
+        weight: 1
+      - path: muktar/muktar_2/Null_3
+        weight: 1
+      - path: muktar/ondertanden
+        weight: 1
+      - path: muktar/ondertanden/Null_5
+        weight: 1
+      - path: muktar/R_oog
+        weight: 1
+      - path: muktar/R_oog/Null_2
+        weight: 1
+      - path: n_Side
+        weight: 1
+      - path: R_FOOT
+        weight: 1
+      - path: R_FOOT/R_ankle_kontrol
+        weight: 1
+      - path: R_FOOT/R_footkontrol
+        weight: 1
+      - path: R_FOOT/R_toeskontrol
+        weight: 1
+      - path: R_leg_Pole
+        weight: 1
+      - path: R_wristkontrol
+        weight: 1
+      - path: shoulderkontrol
+        weight: 1
+      - path: spine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: fall
+      takeName: C4D Animation Take
+      firstFrame: 251
+      lastFrame: 269
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bellykontrol
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/L_arm
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2/L_fingertip
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2/L_thumbtip
+        weight: 1
+      - path: hip/belly/R_arm
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2/R_fingertip
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2/R_thumbtip
+        weight: 1
+      - path: hip/belly/shoulder
+        weight: 1
+      - path: hip/belly/shoulder/head
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw/lip
+        weight: 1
+      - path: hip/belly/shoulder/head/L_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/R_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/top
+        weight: 1
+      - path: hip/L_leg
+        weight: 1
+      - path: hip/L_leg/L_knee
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot/L_toes
+        weight: 1
+      - path: hip/R_leg
+        weight: 1
+      - path: hip/R_leg/R_knee
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot/R_toes
+        weight: 1
+      - path: hipkontrol
+        weight: 1
+      - path: L_FOOT
+        weight: 1
+      - path: L_FOOT/L_ankle_kontrol
+        weight: 1
+      - path: L_FOOT/L_footkontrol
+        weight: 1
+      - path: L_FOOT/L_toeskontrol
+        weight: 1
+      - path: L_leg_Pole
+        weight: 1
+      - path: L_wristkontrol
+        weight: 1
+      - path: muktar
+        weight: 1
+      - path: muktar/boventanden
+        weight: 1
+      - path: muktar/boventanden/Null_4
+        weight: 1
+      - path: muktar/L_OOG
+        weight: 1
+      - path: muktar/L_OOG/Null
+        weight: 1
+      - path: muktar/muktar_2
+        weight: 1
+      - path: muktar/muktar_2/Null_3
+        weight: 1
+      - path: muktar/ondertanden
+        weight: 1
+      - path: muktar/ondertanden/Null_5
+        weight: 1
+      - path: muktar/R_oog
+        weight: 1
+      - path: muktar/R_oog/Null_2
+        weight: 1
+      - path: n_Side
+        weight: 1
+      - path: R_FOOT
+        weight: 1
+      - path: R_FOOT/R_ankle_kontrol
+        weight: 1
+      - path: R_FOOT/R_footkontrol
+        weight: 1
+      - path: R_FOOT/R_toeskontrol
+        weight: 1
+      - path: R_leg_Pole
+        weight: 1
+      - path: R_wristkontrol
+        weight: 1
+      - path: shoulderkontrol
+        weight: 1
+      - path: spine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: die
+      takeName: C4D Animation Take
+      firstFrame: 271
+      lastFrame: 288
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bellykontrol
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/L_arm
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2/L_fingertip
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2/L_thumbtip
+        weight: 1
+      - path: hip/belly/R_arm
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2/R_fingertip
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2/R_thumbtip
+        weight: 1
+      - path: hip/belly/shoulder
+        weight: 1
+      - path: hip/belly/shoulder/head
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw/lip
+        weight: 1
+      - path: hip/belly/shoulder/head/L_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/R_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/top
+        weight: 1
+      - path: hip/L_leg
+        weight: 1
+      - path: hip/L_leg/L_knee
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot/L_toes
+        weight: 1
+      - path: hip/R_leg
+        weight: 1
+      - path: hip/R_leg/R_knee
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot/R_toes
+        weight: 1
+      - path: hipkontrol
+        weight: 1
+      - path: L_FOOT
+        weight: 1
+      - path: L_FOOT/L_ankle_kontrol
+        weight: 1
+      - path: L_FOOT/L_footkontrol
+        weight: 1
+      - path: L_FOOT/L_toeskontrol
+        weight: 1
+      - path: L_leg_Pole
+        weight: 1
+      - path: L_wristkontrol
+        weight: 1
+      - path: muktar
+        weight: 1
+      - path: muktar/boventanden
+        weight: 1
+      - path: muktar/boventanden/Null_4
+        weight: 1
+      - path: muktar/L_OOG
+        weight: 1
+      - path: muktar/L_OOG/Null
+        weight: 1
+      - path: muktar/muktar_2
+        weight: 1
+      - path: muktar/muktar_2/Null_3
+        weight: 1
+      - path: muktar/ondertanden
+        weight: 1
+      - path: muktar/ondertanden/Null_5
+        weight: 1
+      - path: muktar/R_oog
+        weight: 1
+      - path: muktar/R_oog/Null_2
+        weight: 1
+      - path: n_Side
+        weight: 1
+      - path: R_FOOT
+        weight: 1
+      - path: R_FOOT/R_ankle_kontrol
+        weight: 1
+      - path: R_FOOT/R_footkontrol
+        weight: 1
+      - path: R_FOOT/R_toeskontrol
+        weight: 1
+      - path: R_leg_Pole
+        weight: 1
+      - path: R_wristkontrol
+        weight: 1
+      - path: shoulderkontrol
+        weight: 1
+      - path: spine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: gothit
+      takeName: C4D Animation Take
+      firstFrame: 290
+      lastFrame: 305
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bellykontrol
+        weight: 1
+      - path: hip
+        weight: 1
+      - path: hip/belly
+        weight: 1
+      - path: hip/belly/L_arm
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_finger1/L_finger2/L_fingertip
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2
+        weight: 1
+      - path: hip/belly/L_arm/L_elbow/L_wrist/L_thumb1/L_thumb2/L_thumbtip
+        weight: 1
+      - path: hip/belly/R_arm
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_finger1/R_finger2/R_fingertip
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2
+        weight: 1
+      - path: hip/belly/R_arm/R_elbow/R_wrist/R_thumb1/R_thumb2/R_thumbtip
+        weight: 1
+      - path: hip/belly/shoulder
+        weight: 1
+      - path: hip/belly/shoulder/head
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw
+        weight: 1
+      - path: hip/belly/shoulder/head/jaw/lip
+        weight: 1
+      - path: hip/belly/shoulder/head/L_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/R_eye
+        weight: 1
+      - path: hip/belly/shoulder/head/top
+        weight: 1
+      - path: hip/L_leg
+        weight: 1
+      - path: hip/L_leg/L_knee
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot
+        weight: 1
+      - path: hip/L_leg/L_knee/L_ankle/L_foot/L_toes
+        weight: 1
+      - path: hip/R_leg
+        weight: 1
+      - path: hip/R_leg/R_knee
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot
+        weight: 1
+      - path: hip/R_leg/R_knee/R_ankle/R_foot/R_toes
+        weight: 1
+      - path: hipkontrol
+        weight: 1
+      - path: L_FOOT
+        weight: 1
+      - path: L_FOOT/L_ankle_kontrol
+        weight: 1
+      - path: L_FOOT/L_footkontrol
+        weight: 1
+      - path: L_FOOT/L_toeskontrol
+        weight: 1
+      - path: L_leg_Pole
+        weight: 1
+      - path: L_wristkontrol
+        weight: 1
+      - path: muktar
+        weight: 1
+      - path: muktar/boventanden
+        weight: 1
+      - path: muktar/boventanden/Null_4
+        weight: 1
+      - path: muktar/L_OOG
+        weight: 1
+      - path: muktar/L_OOG/Null
+        weight: 1
+      - path: muktar/muktar_2
+        weight: 1
+      - path: muktar/muktar_2/Null_3
+        weight: 1
+      - path: muktar/ondertanden
+        weight: 1
+      - path: muktar/ondertanden/Null_5
+        weight: 1
+      - path: muktar/R_oog
+        weight: 1
+      - path: muktar/R_oog/Null_2
+        weight: 1
+      - path: n_Side
+        weight: 1
+      - path: R_FOOT
+        weight: 1
+      - path: R_FOOT/R_ankle_kontrol
+        weight: 1
+      - path: R_FOOT/R_footkontrol
+        weight: 1
+      - path: R_FOOT/R_toeskontrol
+        weight: 1
+      - path: R_leg_Pole
+        weight: 1
+      - path: R_wristkontrol
+        weight: 1
+      - path: shoulderkontrol
+        weight: 1
+      - path: spine
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -21,8 +21,7 @@ namespace Client
         peer.Service();//立即发包
       }
       Dictionary<byte,object> dic=new Dictionary<byte,object>();
-      dic.Add(1, "1");
-      dic.Add(2, "123");
+      dic.Add(1, "aaa123");
       peer.OpCustom(1, dic, true);
       while(true)
       {

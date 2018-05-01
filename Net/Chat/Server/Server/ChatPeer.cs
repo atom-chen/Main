@@ -22,12 +22,14 @@ namespace Server
     //相应客户端发起的请求
     protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
     {
-      //消息转发
-      switch(operationRequest.OperationCode)
+      Dictionary<byte, object> dict = new Dictionary<byte, object>();
+      foreach(KeyValuePair<byte,object> item in operationRequest.Parameters)
       {
-        
+        //MSG_Login msg = (MSG_Login)item.Value;
+        dict.Add(item.Key,item.Value);
       }
-      OperationResponse res = new OperationResponse(1, null);
+      //dict.Add(1, operationRequest.Parameters.Values.);
+      OperationResponse res = new OperationResponse(1, dict);
       //给客户端响应
       SendOperationResponse(res, sendParameters);
     }
