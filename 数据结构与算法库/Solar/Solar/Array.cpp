@@ -2,7 +2,7 @@
 
 namespace Solar
 {
-	template<TypeName T>
+	template<class T>
 	Array<T>::Array(const int32_i& lenth)
 	{
 		BEGTRY
@@ -11,7 +11,7 @@ namespace Solar
 		ENDTRY
 	}
 
-	template<TypeName T>
+	template<class T>
 	Array<T>::~Array()
 	{
 		BEGTRY
@@ -24,18 +24,10 @@ namespace Solar
 		ENDTRY
 	}
 
-	template<TypeName T>
+	template<class T>
 	void Array<T>::CopyFrom(const Array<T>& from)
 	{
 		
 	}
 
-	template<TypeName T>
-	iterator Array<T>::begin()
-	{
-		BEGTRY
-		return begin(this->m_Arr);
-		ENDTRY
-		return  nullptr;
-	}
 };

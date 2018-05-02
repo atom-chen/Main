@@ -12,6 +12,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Algorithms">
+      <UniqueIdentifier>{cd517bc4-b8a8-4a6c-95b3-9d03d1fe1108}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="to.h">
@@ -26,10 +29,26 @@
     <ClInclude Include="Define.h">
       <Filter>Define</Filter>
     </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderContainer.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>Define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Array.cpp">
       <Filter>Container</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sort.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp">
+      <Filter>Define</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@ public class TestMysql {
 		ResultSet rs=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			ct=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydb2","root","root");
+			ct=DriverManager.getConnection("jdbc:mysql://192.168.2.102:3306/test","root","root");
 			System.out.println(ct);
 			ps=ct.prepareStatement("select * from test");
 			rs=ps.executeQuery();

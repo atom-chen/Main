@@ -24,7 +24,7 @@ public class Sz_UF {
 		
 	}
 	//获取节点的归属
-	public int Find(int p)
+	public int Root(int p)
 	{
 		//如果不是自环（根节点）
 		while(id[p]!=p)
@@ -36,13 +36,13 @@ public class Sz_UF {
 	//判断两个节点是否同类
 	public boolean connected(int p,int q)
 	{
-		return Find(p)==Find(q);
+		return Root(p)==Root(q);
 	}
 	//合并两个节点
 	public void Union(int p,int q)
 	{
-		int p_root=Find(p);
-		int q_root=Find(q);
+		int p_root=Root(p);
+		int q_root=Root(q);
 		if(p_root==q_root)
 		{
 			return;
