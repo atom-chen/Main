@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace CSMain
 {
-    public class main
-    {
-          public static void main(string[] args)
-          {
-
-          }
-    }
-
-
+  class Define
+  {
+    public static const int _INVALID_ID = (0);
+  }
 }
