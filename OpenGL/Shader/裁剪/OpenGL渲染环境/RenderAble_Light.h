@@ -4,6 +4,7 @@
 class RenderAble_Light:public RenderAble
 {
 public:
+	virtual void Update(const vec3& cameraPos);
 	virtual void SetLight_1(const Light& light1);
 
 	virtual void SetAmbientMaterial(float r, float g, float b, float a = 1);

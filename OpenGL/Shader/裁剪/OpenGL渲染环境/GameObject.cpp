@@ -38,6 +38,7 @@ void GameObject::Destory()
 }
 void GameObject::Update(const vec3& cameraPos)
 {
+	RenderAble_Light::Update(cameraPos);
 	if (m_IsInit)
 	{
 		const float& frameTime = Time::DeltaTime();
@@ -61,7 +62,6 @@ void GameObject::Update(const vec3& cameraPos)
 			float delta = frameTime*m_MoveSpeed;
 			SetPosition(m_Transform.m_Position.x, m_Transform.m_Position.y, m_Transform.m_Position.z + delta);
 		}
-		m_Shader.SetVec4("U_CameraPos", cameraPos.x, cameraPos.y, cameraPos.z, 1);
 	}
 
 }

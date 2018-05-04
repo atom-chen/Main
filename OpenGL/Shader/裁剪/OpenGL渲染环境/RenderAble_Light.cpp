@@ -80,3 +80,9 @@ void RenderAble_Light::SetSpecularMaterial(const vec4& specularMaterual)
 		m_Material.SetDiffuseMaterial(specularMaterual);
 	m_Shader.SetVec4("U_SpecularMaterial", specularMaterual.x, specularMaterual.y, specularMaterual.z, specularMaterual.w);
 }
+
+void RenderAble_Light::Update(const vec3& cameraPos)
+{
+	INIT_TEST_VOID
+	m_Shader.SetVec4("U_CameraPos", cameraPos.x, cameraPos.y, cameraPos.z, 1);
+}
