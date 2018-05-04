@@ -14,14 +14,19 @@ public class Driver : MonoBehaviour {
   public ParticleEmitter m_LeftSmoke;
   public ParticleEmitter m_RightSmoke;
   public AudioSource m_Skid;
+  public AudioSource m_Driver;
 
   float m_Speed = 0;//速度
+  private LinkList m_SpeedList=new LinkList();
+  float m_AvgSpeed = 0;
 
   float m_MoveVertical = 0;
   float m_MoveHozizontal = 0;
 
   float k = -1.25f;
   float b=100;
+
+  private bool m_IsSkin = false;
 
   private float m_MaxSpeed=130;
   public float MaxSpeed
@@ -38,7 +43,7 @@ public class Driver : MonoBehaviour {
   {
     get
     {
-      return m_Speed;
+      return m_AvgSpeed;
     }
   }
   void Start()
@@ -48,6 +53,8 @@ public class Driver : MonoBehaviour {
   void Update()
   {
     m_Speed = (m_FLWheel.rpm) * (m_FLWheel.radius * 2 * Mathf.PI) * 60 / 1000;
+    m_SpeedList.Add(m_Speed);
+    m_AvgSpeed = m_SpeedList.GetSpeed();
     m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;//向前速度
     m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;//转向
     OnRunForward();
@@ -68,7 +75,11 @@ public class Driver : MonoBehaviour {
       Debug.Log("玩家在前进");
       m_IsShowDowm = false;
     }
-
+    m_Driver.pitch = 0.5f + (m_AvgSpeed / m_MaxSpeed);
+    if(!m_Driver.isPlaying)
+    {
+      m_Driver.Play();
+    }
     //速度检测
     if ((m_Speed>m_MaxSpeed &&m_MoveVertical>0) ||(m_Speed<-m_MinSpeed && m_MoveVertical<0))
     {
@@ -100,29 +111,89 @@ public class Driver : MonoBehaviour {
 
   void OnTurn()
   {
-
+    if(m_Speed<=30)
+    {
+      m_SteerAngle = 80;
+    }
+    else
+    {
+      m_SteerAngle = 30;
+    }
     m_FLWheel.steerAngle = m_MoveHozizontal;
     m_FRWheel.steerAngle = m_MoveHozizontal;
 
-    //漂移
-    if(Mathf.Abs(m_FLWheel.steerAngle)>29 && m_Speed>40)
+    //如果当前处于漂移状态
+    if(m_IsSkin)
     {
-      m_LeftSmoke.emit = true;
-      m_RightSmoke.emit = true;
-      Debug.Log("发射漂移粒子");
-      if(!m_Skid.isPlaying)
+      if(Mathf.Abs(m_FLWheel.steerAngle)>10 && m_Speed>10)
       {
-        m_Skid.Play();
+        if(!m_Skid.isPlaying)
+        {
+          m_LeftSmoke.emit = true;
+          m_RightSmoke.emit = true;
+          m_Skid.Play();
+        }
+      }
+      else
+      {
+        if (m_Skid.isPlaying)
+        {
+          m_LeftSmoke.emit = false;
+          m_RightSmoke.emit = false;
+          m_Skid.Stop();
+          m_IsSkin = false;
+        }
+      }
+    }
+    //位移校测
+    else if(Mathf.Abs(m_FLWheel.steerAngle)>30 && m_Speed>50)
+    {
+      bool isLeftHitGround=false;
+      bool isRightHitGround = false;
+      WheelHit hit;
+      //左轮检测
+      if(m_FLWheel.GetGroundHit(out hit))
+      {
+        isLeftHitGround = true;
+        m_LeftSmoke.emit = true;
+      }
+      else
+      {
+        m_LeftSmoke.emit = false;
+        isLeftHitGround = false;
+      }
+
+      //右轮检测
+      if(m_FRWheel.GetGroundHit(out hit))
+      {
+        m_RightSmoke.emit = true;
+        isRightHitGround = true;
+      }
+      else
+      {
+        m_RightSmoke.emit = false;
+        isRightHitGround = false;
+      }
+
+      //根据计算的着陆情况判断是否处于漂移
+      if ((isRightHitGround || isLeftHitGround))
+      {
+        m_IsSkin = true;
+      }
+      else if ((!isRightHitGround && !isLeftHitGround))
+      {
+        m_IsSkin = false;
+      }
+      else
+      {
+        m_IsSkin = true;
       }
     }
     else
     {
       m_LeftSmoke.emit = false;
       m_RightSmoke.emit = false;
-      if (m_Skid.isPlaying)
-      {
-        m_Skid.Stop() ;
-      }
+      m_IsSkin = false;
     }
   }
 
