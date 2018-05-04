@@ -8,11 +8,11 @@ namespace CSMain
 {
   class MySQLInfo
   {
-    private static string m_IPAddress = "127.0.0.1";
-    private static int m_Port = 3306;
-    private static string m_UserName = "root";
-    private static string m_PassWord = "root";
-    private static string m_Database = "taidou";
+    private const string m_IPAddress = "127.0.0.1";
+    private const int m_Port = 3306;
+    private const string m_UserName = "root";
+    private const string m_PassWord = "root";
+    private const string m_Database = "taidou";
 
     public static string IPAddress
     {

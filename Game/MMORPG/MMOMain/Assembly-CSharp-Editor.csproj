@@ -219,6 +219,9 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>E:/unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="Photon3Unity3D">
+ <HintPath>E:/Space/Game/MMORPG/MMOMain/Assets/Plugin/Photon3Unity3D.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">

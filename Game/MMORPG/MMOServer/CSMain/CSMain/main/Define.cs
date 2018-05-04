@@ -8,6 +8,6 @@ namespace CSMain
 {
   class Define
   {
-    public static const int _INVALID_ID = (0);
+    public const int _INVALID_ID = (0);
   }
 }
