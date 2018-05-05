@@ -15,6 +15,7 @@ class User
 {
   public int Guid=Define._INVALID_ID;
   public string UserName="";
+  public string PassWord = "";
   public User()
   {
 
@@ -23,11 +24,13 @@ class User
   {
     Guid = dbUser.Guid;
     UserName = dbUser.UserName;
+    PassWord = dbUser.Password;
   }
   public void CopyForm(_DBUser dbUser)
   {
     Guid = dbUser.Guid;
     UserName = dbUser.UserName;
+    PassWord = dbUser.Password;
   }
 }
 class _DBUser

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ExitGames.Client.Photon;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class ServerListController : ControllerBase {
     PhotoEngine.Instance.SendRequest(OperationCode.GetServer, null);
   }
   //消息处理
-  public override void OnOperationResponse(ExitGames.Client.Photon.OperationResponse response)
+  public override void OnOperationResponse(OperationResponse response)
   {
    
   }

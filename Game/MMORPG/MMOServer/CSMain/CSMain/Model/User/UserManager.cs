@@ -72,7 +72,7 @@ class UserManager
 
   }
 
-  public IList<_DBUser> GetUserByID(string UserName)
+  public _DBUser GetUserByUserName(string UserName)
   {
     try
     {
@@ -81,7 +81,15 @@ class UserManager
         using (var transction = session.BeginTransaction())
         {
           var user = session.QueryOver<_DBUser>().Where(users => users.UserName == UserName);
-          return user.List();
+          if(user!=null && user.List().Count>0)
+          {
+            return user.List().First<_DBUser>();
+          }
+          else
+          {
+            return null;
+          }
+
         }
       }
     }
@@ -91,6 +99,7 @@ class UserManager
     }
     return null;
   }
+
 
   public void InsertUser(_DBUser user)
   {
@@ -150,5 +159,26 @@ class UserManager
     {
       Console.WriteLine(ex.Message);
     }
+  }
+
+  public IList<_DBUser> GetActiveUser()
+  {
+    try
+    {
+      using (var session = NHibernateHelper.OpenSession())
+      {
+        using (var transction = session.BeginTransaction())
+        {
+          var users = session.QueryOver<_DBUser>();
+          transction.Commit();
+          return users.List();
+        }
+      }
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+    return null;
   }
 }
