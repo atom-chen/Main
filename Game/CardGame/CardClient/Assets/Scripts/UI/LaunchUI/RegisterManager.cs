@@ -10,7 +10,7 @@ public class RegisterManager : MonoBehaviour {
   public GameObject exit;
   void Start()
   {
-    //进入游戏
+    //注册并进入游戏
     if (btn != null)
     {
       UIEventListener listener = UIEventListener.Get(btn);

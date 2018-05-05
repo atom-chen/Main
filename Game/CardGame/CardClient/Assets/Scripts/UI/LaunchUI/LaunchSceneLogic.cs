@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaunchSceneLogic : MonoBehaviour {
-  public LaunMenu m_Main; 
+  public LaunchMenu m_Main; 
   public LoginManager m_Login;
   public RegisterManager m_Register;
   public GongGaoPanel m_GongGao;
-
 
   private static LaunchSceneLogic _Instance;
   public static LaunchSceneLogic Instance
@@ -23,7 +22,7 @@ public class LaunchSceneLogic : MonoBehaviour {
   }
   void Start()
   {
-    OpenLoginPanel();
+    OpenLaunchPanel();
   }
   public void OpenLoginPanel()
   {
@@ -46,12 +45,15 @@ public class LaunchSceneLogic : MonoBehaviour {
 
   public void OnClickGongGao()
   {
-    m_GongGao.gameObject.SetActive(true);
-  }
-  public void CloseGongGao()
-  {
-    m_GongGao.gameObject.SetActive(false);
-  }
+    if(m_GongGao.gameObject.activeInHierarchy)
+    {
+      m_GongGao.gameObject.SetActive(false);
+    }
+    else
+    {
+      m_GongGao.gameObject.SetActive(true);
+    }
 
+  }
 
 }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaunMenu : MonoBehaviour {
+public class LaunchMenu : MonoBehaviour
+{
   public GameObject register;
   public GameObject login;
   public GameObject forgetPassword;
