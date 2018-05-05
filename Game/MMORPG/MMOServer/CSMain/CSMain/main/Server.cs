@@ -6,14 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Photon.SocketServer;
 
-namespace CSMain
-{
+
     public class Server:ApplicationBase
     {
 
       protected override PeerBase CreatePeer(InitRequest initRequest)
       {
-        User user = new User(initRequest.Protocol, initRequest.PhotonPeer);
+        UserConnect user = new UserConnect(initRequest.Protocol, initRequest.PhotonPeer);
         return user;
       }
 
@@ -31,4 +30,4 @@ namespace CSMain
     }
 
 
-}
+

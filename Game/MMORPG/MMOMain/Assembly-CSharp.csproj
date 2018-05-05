@@ -180,11 +180,13 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\Script\Net\Message.cs" />
+     <Compile Include="Assets\Script\Net\Common\OperationCode.cs" />
+     <Compile Include="Assets\Script\Net\Controller\ControllerBase.cs" />
+     <Compile Include="Assets\Script\Net\Controller\ServerListController.cs" />
      <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
      <Compile Include="Assets\Script\UI\StartManu\LoginMenu.cs" />
      <Compile Include="Assets\Script\UI\StartManu\RegisterMenu.cs" />
-     <Compile Include="Assets\Script\UI\StartManu\StartMenuController.cs" />
+     <Compile Include="Assets\Script\UI\StartManu\StartMenuLogic.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.6.8.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

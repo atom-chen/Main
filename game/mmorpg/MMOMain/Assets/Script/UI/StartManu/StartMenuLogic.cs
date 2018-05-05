@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartMenuController : MonoBehaviour {
-  private static StartMenuController _Instance;
-  public static StartMenuController Instance
+public class StartMenuLogic : MonoBehaviour {
+  private static StartMenuLogic _Instance;
+  public static StartMenuLogic Instance
   {
     get
     {

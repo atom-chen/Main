@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSMain
-{
+
   class MySQLInfo
   {
     private const string m_IPAddress = "127.0.0.1";
@@ -51,4 +50,6 @@ namespace CSMain
     }
 
   }
-}
+
+
+

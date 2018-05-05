@@ -66,14 +66,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\MessageCode.cs" />
+    <Compile Include="Common\OperationCode.cs" />
+    <Compile Include="Controller\ServerPropertyController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Model\ServerProperty\ServerPropertyManager.cs" />
+    <Compile Include="Model\User\UserManager.cs" />
     <Compile Include="main\Define.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="sqlHelper\MySQLInfo.cs" />
+    <Compile Include="main\UserConnect.cs" />
+    <Compile Include="Model\ServerProperty\ServerPropert.cs" />
+    <Compile Include="Model\User\User.cs" />
+    <Compile Include="main\sqlHelper\MySQLInfo.cs" />
     <Compile Include="main\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sqlHelper\NHibernateHelper.cs" />
+    <Compile Include="main\sqlHelper\NHibernateHelper.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

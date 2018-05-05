@@ -10,8 +10,7 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 
 
-namespace CSMain
-{
+
 
   class SQLHelper
   {
@@ -81,4 +80,4 @@ namespace CSMain
       return SessionFactory.OpenSession();
     }
   }
-}
+

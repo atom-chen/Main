@@ -41,7 +41,6 @@ protected:
 	glm::vec3 m_ViewCenter;//目标视点
 	glm::vec3 m_Up;//发射出去的方向向量
 
-	//glm::mat4 m_ModelMatrix;
 	glm::mat4 m_ViewMatrix;
 	glm::mat4 m_ProjectionMatrix;
 	Frustum m_Frustum;
