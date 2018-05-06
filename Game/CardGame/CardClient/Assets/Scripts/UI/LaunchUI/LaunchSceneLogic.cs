@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LaunchSceneLogic : MonoBehaviour {
   public LaunchMenu m_Main; 
-  public LoginManager m_Login;
-  public RegisterManager m_Register;
+  public LoginMenu m_Login;
+  public RegisterMenu m_Register;
   public GongGaoPanel m_GongGao;
 
   private static LaunchSceneLogic _Instance;
@@ -54,6 +54,15 @@ public class LaunchSceneLogic : MonoBehaviour {
       m_GongGao.gameObject.SetActive(true);
     }
 
+  }
+  void Update()
+  {
+    if(Input.GetKeyDown(KeyCode.A))
+    {
+      GameObject obj=ResourceManager.CreateGameObject("Prefabs/Mail", false);
+      obj.transform.parent = this.transform;
+      obj.transform.localScale = new Vector3(1, 1, 1);
+    }
   }
 
 }

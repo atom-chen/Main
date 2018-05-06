@@ -8,19 +8,12 @@ public class EmailItem : MonoBehaviour {
   public UILabel m_Time;
   public UIEventTrigger m_RemoveBtn;
 
-
-  void OnEnable()
-  {
-    m_RemoveBtn.onClick.Add(new EventDelegate( OnRemoveClick));
-  }
-  public void InitEmailItem(string headName,string sender)
+  public void InitEmailItem(string headName,string sender,string time)
   {
     m_Head.spriteName = headName;
     m_Sender.text = string.Format("{0}的来信", sender);
+    m_Time.text = time;
   }
  
-  public void OnRemoveClick()
-  {
-    Destroy(this.gameObject);
-  }
+
 }
