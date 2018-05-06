@@ -222,6 +222,12 @@
  <Reference Include="Photon3Unity3D">
  <HintPath>E:/Space/Game/MMORPG/MMOMain/Assets/Plugin/Photon3Unity3D.dll</HintPath>
  </Reference>
+ <Reference Include="LitJson">
+ <HintPath>E:/Space/Game/MMORPG/MMOMain/Assets/Plugin/LitJson.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2013/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">

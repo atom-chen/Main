@@ -21,8 +21,8 @@ class ServerListHandler:HandlerBase
     {
       string json = LitJson.JsonMapper.ToJson(serverList);
 
-      response.ReturnCode = (short)ReturnCode.Success;
-      response.Parameters.Add((byte)ParameterCode.ServerList, json);
+      response.ReturnCode = (short)ReturnCode.Success;//状态码
+      response.Parameters.Add((byte)ParameterCode.ServerList, json);//返回的参数
     }
   }
 }

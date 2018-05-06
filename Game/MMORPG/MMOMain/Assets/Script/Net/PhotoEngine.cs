@@ -54,7 +54,7 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
   //发一个OperationCode消息
   public void SendRequest(OperationCode opCode, Dictionary<byte, object> parameters)
   {
-    Debug.Log("sendrequest to server , opcode : " + opCode);
+    Debug.Log("发一个" + opCode+"包到服务器");
     peer.OpCustom((byte)opCode, parameters, true);
   }
 
@@ -67,7 +67,7 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
 
   public void OnOperationResponse(OperationResponse operationResponse)
   {
-    Debug.Log(string.Format("收到包{0}",operationResponse.OperationCode));
+    Debug.Log(string.Format("收到包{0}", (OperationCode)operationResponse.OperationCode));
     ControllerBase controller;
     controllers.TryGetValue(operationResponse.OperationCode, out controller);
     if (controller != null)

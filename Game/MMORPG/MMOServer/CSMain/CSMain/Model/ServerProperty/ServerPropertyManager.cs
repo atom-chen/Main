@@ -22,6 +22,7 @@ namespace DB
       }
     }
 
+    //从数据库获取全部区服的信息
     public IList<_DBServerPropert> GetAllServer()
     {
       try

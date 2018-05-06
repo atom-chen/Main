@@ -180,9 +180,10 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\Script\Net\Common\OperationCode.cs" />
-     <Compile Include="Assets\Script\Net\Common\ParametersCode.cs" />
-     <Compile Include="Assets\Script\Net\Common\ReturnCode.cs" />
+     <Compile Include="Assets\Script\Net\Common\Code\OperationCode.cs" />
+     <Compile Include="Assets\Script\Net\Common\Code\ParametersCode.cs" />
+     <Compile Include="Assets\Script\Net\Common\Code\ReturnCode.cs" />
+     <Compile Include="Assets\Script\Net\Common\ServerProperty\ServerProperty.cs" />
      <Compile Include="Assets\Script\Net\Controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\Net\Controller\ServerListController.cs" />
      <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
@@ -245,6 +246,9 @@
  </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>E:/Space/Game/MMORPG/MMOMain/Assets/Plugin/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>E:/Space/Game/MMORPG/MMOMain/Assets/Plugin/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
