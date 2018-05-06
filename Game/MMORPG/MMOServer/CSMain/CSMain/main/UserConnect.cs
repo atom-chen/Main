@@ -1,4 +1,6 @@
 ﻿
+using CSMain;
+using ExitGames.Logging;
 using Photon.SocketServer;
 using PhotonHostRuntimeInterfaces;
 using System;
@@ -7,8 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class UserConnect : PeerBase
+public class UserConnect : PeerBase
 {
+  private static readonly ILogger log = ExitGames.Logging.LogManager.GetCurrentClassLogger();
+
+  public User LoginUser { get; set; }//存储当前登录的user账号
 
   public UserConnect(IRpcProtocol protocol, IPhotonPeer unmanagedPeer)
     : base(protocol, unmanagedPeer)
@@ -23,16 +28,20 @@ class UserConnect : PeerBase
 
   protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
   {
-    switch (operationRequest.OperationCode)
+    HandlerBase handler;
+    Server.Instance.handlers.TryGetValue(operationRequest.OperationCode, out handler);//尝试去获取一个处理该operation的Handler
+
+    OperationResponse response = new OperationResponse();
+    response.OperationCode = operationRequest.OperationCode;
+    response.Parameters = new Dictionary<byte, object>();
+    if (handler != null)
     {
-      case (byte)OperationCode.GetServer:
-        List<ServerPropert> serverList=ServerPropertyController.Instance.GetAllServerPropert();
-        OperationResponse res = new OperationResponse(1, serverList);
-        SendOperationResponse(res, sendParameters);
-        break;
-      case (byte)OperationCode.Login:
-       //User user=UserController.Instance.Login()
-        break;
+      handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
+      SendOperationResponse(response, sendParameters);
+    }
+    else
+    {
+      log.Debug("Can't find handler from operation code : " + operationRequest.OperationCode);
     }
   }
 

@@ -4,42 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-class ServerPropertyManager
+namespace DB
 {
-  private static ServerPropertyManager _Instance = new ServerPropertyManager();
-
-  private ServerPropertyManager()
+  class ServerPropertyManager
   {
+    private static ServerPropertyManager _Instance = new ServerPropertyManager();
 
-  }
-  public static ServerPropertyManager Instance
-  {
-    get
+    private ServerPropertyManager()
     {
-      return _Instance;
+
     }
-  }
-
-  public IList<_DBServerPropert> GetAllServer()
-  {
-    try
+    public static ServerPropertyManager Instance
     {
-      using (var session = NHibernateHelper.OpenSession())
+      get
       {
-        using (var transction = session.BeginTransaction())
-        {
-          var servers = session.QueryOver<_DBServerPropert>();
-          transction.Commit();
-          return servers.List();
-        }
+        return _Instance;
       }
     }
-    catch (Exception ex)
+
+    public IList<_DBServerPropert> GetAllServer()
     {
-      Console.WriteLine(ex.Message);
+      try
+      {
+        using (var session = NHibernateHelper.OpenSession())
+        {
+          using (var transction = session.BeginTransaction())
+          {
+            var servers = session.QueryOver<_DBServerPropert>();
+            transction.Commit();
+            return servers.List();
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
+      return null;
     }
-    return null;
   }
 }
+
 

@@ -1,4 +1,5 @@
 ﻿
+using DB;
 using FluentNHibernate.Mapping;
 using Photon.SocketServer;
 using PhotonHostRuntimeInterfaces;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
  * User模型
  */ 
 
-class User
+public class User
 {
   public int Guid=Define._INVALID_ID;
   public string UserName="";
@@ -33,23 +34,27 @@ class User
     PassWord = dbUser.Password;
   }
 }
-class _DBUser
+namespace DB
 {
-  public virtual int Guid { get; set; }
-  public virtual string UserName { get; set; }
-  public virtual string Password { get; set; }
-}
-
-//映射类
-class UserMap : ClassMap<_DBUser>
-{
-  private string m_TableName = "User";
-  public UserMap()
+  public class _DBUser
   {
-    Id(x => x.Guid).Column("Guid");//设置GUID为key
-    Map(x => x.UserName).Column("UserName");
-    Map(x => x.Password).Column("Password");
-    Table(m_TableName);
+    public virtual int Guid { get; set; }
+    public virtual string UserName { get; set; }
+    public virtual string Password { get; set; }
+  }
+
+  //映射类
+  class UserMap : ClassMap<_DBUser>
+  {
+    private string m_TableName = "User";
+    public UserMap()
+    {
+      Id(x => x.Guid).Column("Guid");//设置GUID为key
+      Map(x => x.UserName).Column("UserName");
+      Map(x => x.Password).Column("Password");
+      Table(m_TableName);
+    }
   }
 }
+
 

@@ -20,8 +20,6 @@ using FluentNHibernate.Cfg.Db;
       {
         conn = new SqlConnection(string.Format("server={0};port={1};user={2};password={3}; database={4};", MySQLInfo.IPAddress, MySQLInfo.port, MySQLInfo.UserName, MySQLInfo.Password, MySQLInfo.DataBase));
         conn.Open();//打开通道，建立连接，可能出现异常,使用try catch语句
-        Console.WriteLine("已经建立连接");
-        //在这里使用代码对数据库进行增删查改
       }
       catch (MySqlException ex)
       {

@@ -15,14 +15,14 @@ class ServerPropert
   {
 
   }
-  public ServerPropert(_DBServerPropert dbServer)
+  public ServerPropert(DB._DBServerPropert dbServer)
   {
     this.ID = dbServer.ID;
     IP = dbServer.IP;
     Name = dbServer.Name;
     Count = dbServer.Count;
   }
-  public void CopyForm(_DBServerPropert dbServer)
+  public void CopyForm(DB._DBServerPropert dbServer)
   {
     this.ID = dbServer.ID;
     IP = dbServer.IP;
@@ -30,24 +30,27 @@ class ServerPropert
     Count = dbServer.Count;
   }
 }
-
-class _DBServerPropert
+namespace DB
 {
-  public virtual int ID { get; set; }
-  public virtual string IP { get; set; }
-  public virtual string Name { get; set; }
-  public virtual int Count { get; set; }
-}
-
-class ServerPropertMap:ClassMap<_DBServerPropert>
-{
-  public ServerPropertMap()
+  class _DBServerPropert
   {
-    Id(x => x.ID).Column("ID");
-    Map(x => x.IP).Column("IP");
-    Map(x => x.Name).Column("Name");
-    Map(x => x.Count).Column("Count");
-    Table("ServerPropert");
+    public virtual int ID { get; set; }
+    public virtual string IP { get; set; }
+    public virtual string Name { get; set; }
+    public virtual int Count { get; set; }
+  }
+
+  class ServerPropertMap : ClassMap<_DBServerPropert>
+  {
+    public ServerPropertMap()
+    {
+      Id(x => x.ID).Column("ID");
+      Map(x => x.IP).Column("IP");
+      Map(x => x.Name).Column("Name");
+      Map(x => x.Count).Column("Count");
+      Table("ServerPropert");
+    }
   }
 }
+
 

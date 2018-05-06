@@ -181,6 +181,8 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Script\Net\Common\OperationCode.cs" />
+     <Compile Include="Assets\Script\Net\Common\ParametersCode.cs" />
+     <Compile Include="Assets\Script\Net\Common\ReturnCode.cs" />
      <Compile Include="Assets\Script\Net\Controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\Net\Controller\ServerListController.cs" />
      <Compile Include="Assets\Script\Net\PhotoEngine.cs" />

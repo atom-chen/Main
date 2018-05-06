@@ -7,178 +7,181 @@ using System.Threading.Tasks;
  * User表的操作
  */
 
-
-class UserManager
+namespace DB
 {
-  private static UserManager _Instance = new UserManager();
-  private UserManager()
+  class UserManager
   {
+    private static UserManager _Instance = new UserManager();
+    private UserManager()
+    {
 
-  }
-  public static UserManager Instance
-  {
-    get
-    {
-      return _Instance;
     }
-  }
-  public IList<_DBUser> GetAllUser()
-  {
-    try
+    public static UserManager Instance
     {
-      using (var session = NHibernateHelper.OpenSession())
+      get
       {
-        using (var transction = session.BeginTransaction())
-        {
-          var users = session.QueryOver<_DBUser>();
-          transction.Commit();
-          return users.List();
-        }
+        return _Instance;
       }
     }
-    catch (Exception ex)
+    public IList<_DBUser> GetAllUser()
     {
-      Console.WriteLine(ex.Message);
-    }
-    return null;
-  }
-
-  public _DBUser GetUserByID(int Guid)
-  {
-    try
-    {
-      using (var session = NHibernateHelper.OpenSession())
+      try
       {
-        using (var transction = session.BeginTransaction())
+        using (var session = NHibernateHelper.OpenSession())
         {
-          var user = session.QueryOver<_DBUser>().Where(users => users.Guid == Guid);
-          transction.Commit();
-          if (user.List().Count > 0)
+          using (var transction = session.BeginTransaction())
           {
-            return user.List().First<_DBUser>();
-          }
-          else
-          {
-            return null;
+            var users = session.QueryOver<_DBUser>();
+            transction.Commit();
+            return users.List();
           }
         }
       }
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
-    return null;
-
-  }
-
-  public _DBUser GetUserByUserName(string UserName)
-  {
-    try
-    {
-      using (var session = NHibernateHelper.OpenSession())
+      catch (Exception ex)
       {
-        using (var transction = session.BeginTransaction())
+        Console.WriteLine(ex.Message);
+      }
+      return null;
+    }
+
+    public _DBUser GetUserByID(int Guid)
+    {
+      try
+      {
+        using (var session = NHibernateHelper.OpenSession())
         {
-          var user = session.QueryOver<_DBUser>().Where(users => users.UserName == UserName);
-          if(user!=null && user.List().Count>0)
+          using (var transction = session.BeginTransaction())
           {
-            return user.List().First<_DBUser>();
+            var user = session.QueryOver<_DBUser>().Where(users => users.Guid == Guid);
+            transction.Commit();
+            if (user.List().Count > 0)
+            {
+              return user.List().First<_DBUser>();
+            }
+            else
+            {
+              return null;
+            }
           }
-          else
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
+      return null;
+
+    }
+
+    public _DBUser GetUserByUserName(string UserName)
+    {
+      try
+      {
+        using (var session = NHibernateHelper.OpenSession())
+        {
+          using (var transction = session.BeginTransaction())
           {
-            return null;
+            var user = session.QueryOver<_DBUser>().Where(users => users.UserName == UserName);
+            if (user != null && user.List().Count > 0)
+            {
+              return user.List().First<_DBUser>();
+            }
+            else
+            {
+              return null;
+            }
+
           }
-
         }
       }
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
-    return null;
-  }
-
-
-  public void InsertUser(_DBUser user)
-  {
-    try
-    {
-      using (var session = NHibernateHelper.OpenSession())
+      catch (Exception ex)
       {
-        using (var transction = session.BeginTransaction())
-        {
-          session.Save(user);
-          transction.Commit();
-        }
+        Console.WriteLine(ex.Message);
       }
+      return null;
     }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
-  }
 
 
-  public void DeleteUserByID(int ID)
-  {
-    try
+    public void InsertUser(_DBUser user)
     {
-      using (var session = NHibernateHelper.OpenSession())
+      try
       {
-        using (var transction = session.BeginTransaction())
+        using (var session = NHibernateHelper.OpenSession())
         {
-          _DBUser deUser = new _DBUser();
-          deUser.Guid = ID;
-          session.Delete(deUser);
-          transction.Commit();
+          using (var transction = session.BeginTransaction())
+          {
+            session.Save(user);
+            transction.Commit();
+          }
         }
       }
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
-  }
-
-  public void UpdateUser(_DBUser user)
-  {
-    try
-    {
-      using (var session = NHibernateHelper.OpenSession())
+      catch (Exception ex)
       {
-        using (var transction = session.BeginTransaction())
-        {
-          session.Update(user);
-          transction.Commit();
-        }
+        Console.WriteLine(ex.Message);
       }
     }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
-  }
 
-  public IList<_DBUser> GetActiveUser()
-  {
-    try
+
+    public void DeleteUserByID(int ID)
     {
-      using (var session = NHibernateHelper.OpenSession())
+      try
       {
-        using (var transction = session.BeginTransaction())
+        using (var session = NHibernateHelper.OpenSession())
         {
-          var users = session.QueryOver<_DBUser>();
-          transction.Commit();
-          return users.List();
+          using (var transction = session.BeginTransaction())
+          {
+            _DBUser deUser = new _DBUser();
+            deUser.Guid = ID;
+            session.Delete(deUser);
+            transction.Commit();
+          }
         }
       }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
     }
-    catch (Exception ex)
+
+    public void UpdateUser(_DBUser user)
     {
-      Console.WriteLine(ex.Message);
+      try
+      {
+        using (var session = NHibernateHelper.OpenSession())
+        {
+          using (var transction = session.BeginTransaction())
+          {
+            session.Update(user);
+            transction.Commit();
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
     }
-    return null;
+
+    public IList<_DBUser> GetActiveUser()
+    {
+      try
+      {
+        using (var session = NHibernateHelper.OpenSession())
+        {
+          using (var transction = session.BeginTransaction())
+          {
+            var users = session.QueryOver<_DBUser>();
+            transction.Commit();
+            return users.List();
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
+      return null;
+    }
   }
 }
+

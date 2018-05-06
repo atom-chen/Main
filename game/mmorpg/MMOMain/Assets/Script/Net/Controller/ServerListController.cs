@@ -13,7 +13,7 @@ public class ServerListController : ControllerBase {
 
   public override OperationCode msgCode
   {
-    get { throw new System.NotImplementedException(); }
+    get { return OperationCode.GetServer; } //表示是获取服务器消息的码
   }
   public void GetServerList()
   {
