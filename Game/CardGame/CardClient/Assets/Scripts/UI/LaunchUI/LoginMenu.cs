@@ -25,7 +25,7 @@ public class LoginMenu : MonoBehaviour {
   public void ButtonClick(GameObject obj)
   {
     Debug.Log(m_UserName.value + "  " + m_PassWord.value);
-    UIManager.SwitchScene("Loading");
+    LaunchSceneLogic.Instance.ToMainScene();
   }
 
   public void Exit(GameObject obj)

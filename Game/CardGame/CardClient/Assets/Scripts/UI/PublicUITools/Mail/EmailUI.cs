@@ -8,6 +8,11 @@ public class EmailUI : MonoBehaviour {
   public GameObject m_ItemPrefabs;
   public GameObject m_ScrollView;
   public List<EmailItem> m_Items=new List<EmailItem>();
+  public UIEventTrigger m_Mask;
+  void Start()
+  {
+    m_Mask.onClick.Add(new EventDelegate(DestoryMail));
+  }
   void OnEnable()
   {
     ShowItems();
@@ -53,5 +58,9 @@ public class EmailUI : MonoBehaviour {
     {
       m_Items[i].transform.localPosition = new Vector3(0, 105 - i * 90, 0);
     }
+  }
+  private void DestoryMail()
+  {
+    Destroy(this.gameObject);
   }
 }

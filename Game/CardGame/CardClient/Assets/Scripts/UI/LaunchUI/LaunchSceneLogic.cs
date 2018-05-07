@@ -24,6 +24,12 @@ public class LaunchSceneLogic : MonoBehaviour {
   {
     OpenLaunchPanel();
   }
+  public void ToMainScene()
+  {
+    //假装读条的样子
+    UIManager.Loading(1, 2, this.transform.root);
+    Destroy(this.gameObject);
+  }
   public void OpenLoginPanel()
   {
     m_Main.gameObject.SetActive(false);
@@ -45,7 +51,7 @@ public class LaunchSceneLogic : MonoBehaviour {
 
   public void OnClickGongGao()
   {
-    if(m_GongGao.gameObject.activeInHierarchy)
+    if (m_GongGao.gameObject.activeInHierarchy)
     {
       m_GongGao.gameObject.SetActive(false);
     }
@@ -55,14 +61,6 @@ public class LaunchSceneLogic : MonoBehaviour {
     }
 
   }
-  void Update()
-  {
-    if(Input.GetKeyDown(KeyCode.A))
-    {
-      GameObject obj=ResourceManager.CreateGameObject("Prefabs/Mail", false);
-      obj.transform.parent = this.transform;
-      obj.transform.localScale = new Vector3(1, 1, 1);
-    }
-  }
+  
 
 }
