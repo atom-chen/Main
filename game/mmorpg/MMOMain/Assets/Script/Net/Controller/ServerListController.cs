@@ -6,10 +6,6 @@ using LitJson;
 
 public class ServerListController : ControllerBase {
 
-  public virtual void Start()
-  {
-    base.Start();
-  }
   void OnEnable()
   {
     GetServerList();
@@ -19,9 +15,12 @@ public class ServerListController : ControllerBase {
   {
     get { return OperationCode.GetServer; } //表示是获取服务器消息的码
   }
-  public void GetServerList()
+  private void GetServerList()
   {
-    PhotoEngine.Instance.SendRequest(OperationCode.GetServer, null);
+    if(PhotoEngine.Instance!=null)
+    {
+      PhotoEngine.Instance.SendRequest(OperationCode.GetServer, null);
+    }
   }
 
   //消息处理
@@ -37,10 +36,5 @@ public class ServerListController : ControllerBase {
         StartMenu.Instance.SetServerList(serverList);
       }
     }
-  }
-
-  public virtual void OnDestory()
-  {
-    base.OnDestory();
   }
 }

@@ -18,6 +18,8 @@ public class StartMenu : MonoBehaviour
   public RegisterMenu m_RegisterMenu;
   public ChooseServer m_ChooseServer;
 
+  public UILabel m_CurUserLabel;
+  public UILabel m_CurServerLabel;
 
   private User  m_CurUser;//当前用户
   private ServerProperty m_CurServer;//当前选择的服务器
@@ -32,6 +34,22 @@ public class StartMenu : MonoBehaviour
   void OnEnable()
   {
     InitUI();
+    if (m_CurServer == null)
+    {
+      m_CurServerLabel.text = "请选择服务器";
+    }
+    else
+    {
+      m_CurServerLabel.text = m_CurServer.Name;
+    }
+    if(m_CurUser==null)
+    {
+      m_CurUserLabel.text = "点击登录";
+    }
+    else
+    {
+      m_CurUserLabel.text = m_CurUser.UserName;
+    }
   }
   //点击用户名
   public void OnUserNameClick()
@@ -83,19 +101,24 @@ public class StartMenu : MonoBehaviour
 
   public void SetServerList(List<ServerProperty> serverList)
   {
-    m_ChooseServer.SetServerList(serverList);
+    m_ChooseServer.SetServerList(serverList,m_CurServer);
   }
 
-  public void SetCurUser(User user)
+  public void LoginSuccessed(User user)
   {
-    m_CurUser = user;
+    if (user != null)
+    {
+      m_CurUser = user;
+      m_CurUserLabel.text = user.UserName;
+    }
+    InitUI();
   }
-
   public void SetCurServer(ServerProperty server)
   {
     if(server!=null)
     {
       this.m_CurServer = server;
+      m_CurServerLabel.text = server.Name;
       InitUI();
     }
   }

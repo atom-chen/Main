@@ -18,7 +18,8 @@ public class LoginMenu : MonoBehaviour {
   //点击登录
   private void OnClickLogin()
   {
-    
+    LoginController controller=this.GetComponent<LoginController>();
+    controller.Login(m_UserName.value, m_Password.value);
   }
 
   //点击注册

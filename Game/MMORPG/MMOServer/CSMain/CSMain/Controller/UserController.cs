@@ -31,42 +31,42 @@ class UserController
   }
   private Dictionary<string,User> m_ActiveUser;
 
-  public User Login(string userName,string passWord)
+  public bool Login(User loginUser)
   {
     User user;
     //先在字典里找
-    m_ActiveUser.TryGetValue(userName, out user);
+    m_ActiveUser.TryGetValue(loginUser.UserName, out user);
     if(user!=null)
     {
-      if (user.PassWord.Equals(passWord))
+      if (user.PassWord.Equals(loginUser.PassWord))  //直接存储密文
       {
-        return user;
+        return true;
       }
       else
       {
-        return null;
+        return false;
       }
     }
     else
     {
       //去数据库取
-      _DBUser dbUser = UserManager.Instance.GetUserByUserName(userName);
+      _DBUser dbUser = UserManager.Instance.GetUserByUserName(loginUser.UserName);
       if(dbUser!=null)
       {
         user = new User(dbUser);
-        m_ActiveUser.Add(userName, user);
-        if(user.PassWord.Equals(passWord))
+        m_ActiveUser.Add(loginUser.UserName, user);
+        if (user.PassWord.Equals(loginUser.PassWord))
         {
-          return user;
+          return true;
         }
         else
         {
-          return null;
+          return false;
         }
       }
       else
       {
-        return null;
+        return false;
       }
     }
   }

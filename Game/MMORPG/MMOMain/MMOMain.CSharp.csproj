@@ -226,8 +226,13 @@
     <Compile Include="Assets\Script\Net\Common\ServerProperty\ServerProperty.cs" />
     <Compile Include="Assets\Script\Net\Common\ServerProperty\User.cs" />
     <Compile Include="Assets\Script\Net\Controller\ControllerBase.cs" />
+    <Compile Include="Assets\Script\Net\Controller\LoginController.cs" />
     <Compile Include="Assets\Script\Net\Controller\ServerListController.cs" />
     <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
+    <Compile Include="Assets\Script\Tools\MD5Tools.cs" />
+    <Compile Include="Assets\Script\Tools\Resources.cs" />
+    <Compile Include="Assets\Script\Tools\UIManager.cs" />
+    <Compile Include="Assets\Script\UI\PublicUI\SceneLoading.cs" />
     <Compile Include="Assets\Script\UI\StartManu\ServerChoose\ChooseServer.cs" />
     <Compile Include="Assets\Script\UI\StartManu\LoginMenu.cs" />
     <Compile Include="Assets\Script\UI\StartManu\RegisterMenu.cs" />

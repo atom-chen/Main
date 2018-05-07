@@ -34,6 +34,8 @@ public class User
     PassWord = dbUser.Password;
   }
 }
+
+
 namespace DB
 {
   public class _DBUser

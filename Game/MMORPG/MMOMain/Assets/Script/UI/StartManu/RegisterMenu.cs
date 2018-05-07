@@ -12,14 +12,9 @@ public class RegisterMenu : MonoBehaviour {
   public UIButton m_Exit;
   void Start()
   {
-    m_RePassword.onSubmit.Add(new EventDelegate(OnRePasswordCommit));
     m_Register.onClick.Add(new EventDelegate(OnRegisterClick));
     m_CancelRegister.onClick.Add(new EventDelegate(StartMenu.Instance.OnUserNameClick));
     m_Exit.onClick.Add(new EventDelegate(StartMenu.Instance.InitUI));
-  }
-  private void OnRePasswordCommit()
-  {
-
   }
 
   //注册新账号
@@ -27,12 +22,12 @@ public class RegisterMenu : MonoBehaviour {
   {
     if (m_Password.value.Equals(m_RePassword.value))
     {
-      //发一个包到服务器
 
+      
     }
     else
     {
-      //弹出提示
+      Debug.Log("重复输入的密码不正确");
     }
   }
 

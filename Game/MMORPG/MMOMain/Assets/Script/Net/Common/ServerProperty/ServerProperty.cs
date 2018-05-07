@@ -7,4 +7,11 @@ public class ServerProperty {
   public string IP;
   public string Name;
   public int Count;
+  public bool Hot
+  {
+    get
+    {
+      return Count >= 50;
+    }
+  }
 }
