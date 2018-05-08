@@ -19,6 +19,8 @@ namespace NetFrame
 
     public SocketAsyncEventArgs m_SendSAEA;//用户异步发送
 
+    private List<byte> m_Cache = new List<byte>();//消息缓存
+
     public UserToken()
     {
       m_SendSAEA = new SocketAsyncEventArgs();
