@@ -11,6 +11,7 @@ namespace LoLServer
         static void Main(string[] args)
         {
             //服务器初始化...
+
         }
     }
 }

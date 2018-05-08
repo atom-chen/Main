@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ca9f8a2a284d9f346831e424c7d9dd59
+timeCreated: 1525755214
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hanzel Condensed
+  fontNames:
+  - Hanzel Condensed
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 80bede70c5c507b46becccd704686e97, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

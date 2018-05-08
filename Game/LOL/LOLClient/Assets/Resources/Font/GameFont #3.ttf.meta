@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9dc773a338cf7304d8516d862252d1e4
+timeCreated: 1525755214
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FZZhengHeiS-DB-GB
+  fontNames:
+  - FZZhengHeiS-DB-GB
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

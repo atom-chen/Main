@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.4p1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -80,10 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripst\Login\LoginScreen.cs" />
-    <Compile Include="Assets\Scripst\Login\WaringManager.cs" />
-    <Compile Include="Assets\Scripst\Login\WaringModel.cs" />
-    <Compile Include="Assets\Scripst\Login\WaringWindow.cs" />
+    <Compile Include="Assets\Scripst\Login\LoginScreenLogic.cs" />
+    <Compile Include="Assets\Scripst\Login\RegisterPanel.cs" />
+    <Compile Include="Assets\Scripst\PublicUI\WaringManager.cs" />
+    <Compile Include="Assets\Scripst\PublicUI\WaringWindow.cs" />
+    <Compile Include="Assets\Scripst\Tools\MD5Tools.cs" />
+    <Compile Include="Assets\Scripst\Tools\Resources.cs" />
+    <Compile Include="Assets\Scripst\Tools\UIManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
