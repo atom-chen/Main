@@ -36,12 +36,13 @@ public class UserConnect : PeerBase
     response.Parameters = new Dictionary<byte, object>();
     if (handler != null)
     {
+      log.Info(string.Format("收到来自{0}的   {1}包", this.LocalIP, (OperationCode)operationRequest.OperationCode));
       handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
       SendOperationResponse(response, sendParameters);
     }
     else
     {
-      log.Debug("Can't find handler from operation code : " + operationRequest.OperationCode);
+      log.Debug("不能解释的包 " + operationRequest.OperationCode);
     }
   }
 

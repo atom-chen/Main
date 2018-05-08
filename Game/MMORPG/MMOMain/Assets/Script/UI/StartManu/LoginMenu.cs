@@ -15,9 +15,21 @@ public class LoginMenu : MonoBehaviour {
     m_RegisterBtn.onClick.Add(new EventDelegate(OnClickRegister));
     m_Exit.onClick.Add(new EventDelegate(StartMenu.Instance.InitUI));
   }
+
   //点击登录
   private void OnClickLogin()
   {
+    if(m_UserName.value.Length<=3)
+    {
+      Tips.ShowTip("账号输入不正确");
+      return;
+    }
+    else if (m_Password.value.Length <= 3)
+    {
+      Tips.ShowTip("密码输入不正确");
+      return;
+    }
+
     LoginController controller=this.GetComponent<LoginController>();
     controller.Login(m_UserName.value, m_Password.value);
   }

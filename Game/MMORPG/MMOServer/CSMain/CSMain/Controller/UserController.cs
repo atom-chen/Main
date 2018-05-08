@@ -29,7 +29,7 @@ class UserController
       }
     }
   }
-  private Dictionary<string,User> m_ActiveUser;
+  private Dictionary<string,User> m_ActiveUser;//近7日活跃玩家
 
   public bool Login(User loginUser)
   {
@@ -69,6 +69,23 @@ class UserController
         return false;
       }
     }
+  }
+
+  //失败原因：用户名已存在
+  public bool Register(User newUser)
+  {
+    _DBUser dbUser = UserManager.Instance.GetUserByUserName(newUser.UserName);
+    if(dbUser!=null)
+    {
+      return false;
+    }
+    dbUser = new _DBUser();
+    dbUser.UserName=newUser.UserName;
+    dbUser.Password=newUser.PassWord;
+    dbUser.Guid=newUser.Guid;
+    UserManager.Instance.InsertUser(dbUser);
+    m_ActiveUser.Add(newUser.UserName, newUser);
+    return true;
   }
   
 }

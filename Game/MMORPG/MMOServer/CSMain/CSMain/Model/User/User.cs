@@ -43,6 +43,16 @@ namespace DB
     public virtual int Guid { get; set; }
     public virtual string UserName { get; set; }
     public virtual string Password { get; set; }
+    public _DBUser()
+    {
+
+    }
+    public _DBUser(User other)
+    {
+      this.Guid = other.Guid;
+      this.UserName = other.UserName;
+      this.Password = other.PassWord;
+    }
   }
 
   //映射类

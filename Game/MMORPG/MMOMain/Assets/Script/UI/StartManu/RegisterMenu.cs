@@ -16,18 +16,39 @@ public class RegisterMenu : MonoBehaviour {
     m_CancelRegister.onClick.Add(new EventDelegate(StartMenu.Instance.OnUserNameClick));
     m_Exit.onClick.Add(new EventDelegate(StartMenu.Instance.InitUI));
   }
-
+  void OnEnable()
+  {
+    m_UserName.value = "";
+    m_Password.value = "";
+    m_RePassword.value = "";
+  }
   //注册新账号
   private void OnRegisterClick()
   {
+    if(m_UserName.value.Length<=3)
+    {
+      //提示
+      Tips.ShowTip("账号长度至少为3");
+      return;
+    }
+    if(m_Password.value.Length<=3)
+    {
+      //提示
+      Tips.ShowTip("密码长度至少为3");
+      return;
+    }
     if (m_Password.value.Equals(m_RePassword.value))
     {
-
-      
+      //允许登录
+      RegisterController controller=this.GetComponent<RegisterController>();
+      if(controller!=null)
+      {
+        controller.Register(m_UserName.value, m_Password.value);
+      }
     }
     else
     {
-      Debug.Log("重复输入的密码不正确");
+      Tips.ShowTip("重复输入的密码不一致");
     }
   }
 

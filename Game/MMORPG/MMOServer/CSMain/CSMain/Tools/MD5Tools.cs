@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-public class MD5Tool
+public class MD5Tools
 {
   public static string GetMD5(string str)
   {

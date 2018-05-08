@@ -120,10 +120,21 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
             }
           }
         }
+        StartCoroutine(TryConnect());
         break;
       default:
         Debug.Log("状态异常");
         break;
     }
+  }
+
+  IEnumerator TryConnect()
+  {
+    while (m_State != StatusCode.Connect)
+    {
+      peer.Connect(m_IPAddres, m_AppName);
+      yield return new WaitForSeconds(10);
+    }
+
   }
 }

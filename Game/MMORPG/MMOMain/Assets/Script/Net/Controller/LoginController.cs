@@ -15,8 +15,7 @@ class LoginController:ControllerBase
   public void Login(string userName,string passWord)
   {
     user.UserName = userName;
-    //user.PassWord = MD5Tool.GetMD5(passWord);
-    user.PassWord = passWord;
+    user.PassWord = MD5Tool.GetMD5(passWord);
     string json = LitJson.JsonMapper.ToJson(user);
     Dictionary<byte, object> dic = new Dictionary<byte, object>();
     dic.Add((byte)ParameterCode.User, json);
@@ -33,14 +32,16 @@ class LoginController:ControllerBase
     switch((ReturnCode)response.ReturnCode)
     {
       case ReturnCode.Success:
-        Debug.Log("登录成功");
+        Tips.ShowTip("登录成功");
         if(StartMenu.Instance!=null)
         {
           StartMenu.Instance.LoginSuccessed(user);
         }
         break;
       default:
-        Debug.Log("登录失败");
+        object obj;
+        response.Parameters.TryGetValue((byte)ParameterCode.ErrorInfo,out obj);
+        Tips.ShowTip(obj.ToString());
         break;
     }
   }

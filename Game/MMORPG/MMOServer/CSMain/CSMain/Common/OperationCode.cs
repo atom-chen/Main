@@ -9,9 +9,9 @@ using System.Threading.Tasks;
  */ 
 public enum OperationCode : byte
 {
-  Login,
-  GetServer,
-  Register,
+  Login,//登录消息
+  GetServer,//获取服务器列表消息
+  Register,//注册消息
   Role,
   TaskDB,
   InventoryItemDB,

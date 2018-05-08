@@ -32,5 +32,6 @@ public enum ParameterCode : byte
   EnemyAnimationModel,
   PlayerAnimationModel,
   GameStateModel,
-  BossAnimationModel
+  BossAnimationModel,
+  ErrorInfo
 }

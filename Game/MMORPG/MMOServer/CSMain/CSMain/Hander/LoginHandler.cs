@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class LoginHandler:HandlerBase
+class LoginHandler : HandlerBase
 {
 
   public override OperationCode OpCode
@@ -17,23 +17,25 @@ class LoginHandler:HandlerBase
   {
     Dictionary<byte, object> req = request.Parameters;
     object para = null;
-    if(req.TryGetValue((byte)ParameterCode.User,out para))
+    if (req.TryGetValue((byte)ParameterCode.User, out para))
     {
-      User user=LitJson.JsonMapper.ToObject<User>(para.ToString());
+      User user = LitJson.JsonMapper.ToObject<User>(para.ToString());
       //成功
       if (UserController.Instance.Login(user))
       {
         peer.LoginUser = user;
         response.ReturnCode = (short)ReturnCode.Success;
       }
+      //密码错误
       else
       {
         response.ReturnCode = (short)ReturnCode.Fail;
+        response.Parameters.Add((byte)ParameterCode.ErrorInfo,"密码错误");
       }
     }
     else
     {
-      response.ReturnCode =(short) ReturnCode.Error;
+      response.ReturnCode = (short)ReturnCode.Error;
     }
   }
 }

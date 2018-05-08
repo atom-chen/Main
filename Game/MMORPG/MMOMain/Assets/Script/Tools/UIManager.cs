@@ -5,7 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class UIManager
 {
-
+  private static Transform m_PopUI;
+  public static Transform PopUI
+  {
+    get
+    {
+      if (m_PopUI == null || !m_PopUI.gameObject.activeInHierarchy)
+      {
+        m_PopUI = GameObject.Find("PopUI").transform;
+      }
+      return m_PopUI;
+    }
+  }
   public static GameObject CreateUI(string path, Transform parent = null)
   {
     GameObject asset = ResourceManager.Load("Prefabs/" + path);
@@ -14,6 +25,7 @@ public class UIManager
     {
       obj.parent = parent;
       obj.localScale = new Vector3(1, 1, 1);
+      obj.localPosition = new Vector3(0, 0, 0);
     }
     else
     {
@@ -22,11 +34,13 @@ public class UIManager
       {
         NGUITools.AddChild(uiRoot[0].gameObject, obj);
         obj.localScale = new Vector3(1, 1, 1);
+        obj.localPosition = new Vector3(0, 0, 0);
       }
     }
 
     return obj.gameObject;
   }
+
 
   public static void Loading(int SceneID, float time, Transform parent = null)
   {
