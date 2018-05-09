@@ -14,6 +14,11 @@ public class WaringManager
     {
       window.Init(text);
     }
+    Transform tra=obj.transform;
+    tra.parent = UIManager.PopUI;
+    tra.localPosition = new Vector3(0, 0, 0);
+    tra.localScale = new Vector3(1, 1, 1);
+
   }
   private WaringManager()
   {
