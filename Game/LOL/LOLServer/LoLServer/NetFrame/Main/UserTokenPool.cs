@@ -41,6 +41,8 @@ namespace NetFrame
       }
     }
 
+
+
     //获取剩余大小
     public int Size
     {

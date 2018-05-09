@@ -19,6 +19,10 @@ namespace NetFrame
 
     UserTokenPool m_UserPool;//连接池
 
+    public LengthDecode m_LDecode;
+    public LengthEncode m_LEncode;
+    public encode m_Encode;
+    public decode m_Decode;
     /// <summary>
     /// 启服
     /// </summary>
@@ -34,6 +38,11 @@ namespace NetFrame
         UserToken token = new UserToken();
         token.m_ReceiveSAEA.Completed += new EventHandler<System.Net.Sockets.SocketAsyncEventArgs>(IO_Comleted);//消息接收处理函数
         token.m_SendSAEA.Completed += new EventHandler<System.Net.Sockets.SocketAsyncEventArgs>(IO_Comleted);//消息发送处理函数
+        token.m_LDecode = m_LDecode;
+        token.m_LEncode = m_LEncode;
+        token.m_Decode = m_Decode;
+        token.m_Encode = m_Encode;
+        token.m_SendProcess = ProcessSend;
         m_UserPool.Push(token);
       }
       m_ServerSocket.Bind(new IPEndPoint(IPAddress.Any, port));      //socket监听当前服务器网卡所有可用IP地址10001端口->外网IP和内网IP
@@ -42,9 +51,11 @@ namespace NetFrame
       //等待连接
       Accept();
     }
+
+
 #region 建立连接
     /// <summary>
-    /// 连接循环
+    /// 连接循环：为空连接分配内存，为已存在连接释放内存
     /// </summary>
     /// <param name="socket">若为空则表示建立一个连接，若不为空则表示释放一个连接</param>
     private void Accept(SocketAsyncEventArgs socket=null)//SocketAsyncEventArgs->异步socket
@@ -112,7 +123,7 @@ namespace NetFrame
         {
           byte[] msg = new byte[token.m_ReceiveSAEA.BytesTransferred];
           Buffer.BlockCopy(token.m_ReceiveSAEA.Buffer, 0, msg, 0, msg.Length);
-          token.ReceiveMsg(msg);
+          token.Receive(msg);
           StartReceive(token);//继续监听
         }
         else

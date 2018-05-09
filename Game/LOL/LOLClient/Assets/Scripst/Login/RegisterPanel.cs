@@ -75,6 +75,7 @@ public class RegisterPanel : MonoBehaviour {
     m_PassWord.enabled = true;
     m_RePassWord.enabled = true;
     m_RegisterBtn.enabled = true;
+    m_Exit.enabled = true;
   }
   public void DisUI()
   {
@@ -82,5 +83,6 @@ public class RegisterPanel : MonoBehaviour {
     m_PassWord.enabled = false;
     m_RePassWord.enabled = false;
     m_RegisterBtn.enabled = false;
+    m_Exit.enabled = false;
   }
 }

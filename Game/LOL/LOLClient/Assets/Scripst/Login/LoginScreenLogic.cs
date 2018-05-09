@@ -55,13 +55,13 @@ public class LoginScreenLogic : MonoBehaviour
   //点击登录
   public void OnLoginClick()
   {
-    if (m_LoginUsername.text.Length == 0 || m_LoginUsername.text.Length > 6)
+    if (m_LoginUsername.text.Length == 0 || m_LoginUsername.text.Length > 18)
     {
       //弹出提示窗
       WaringManager.ShowWaring("账号不合法！");
       return;
     }
-    else if (m_LoginPassword.text.Length == 0 || m_LoginPassword.text.Length > 6)
+    else if (m_LoginPassword.text.Length == 0 || m_LoginPassword.text.Length > 20)
     {
       WaringManager.ShowWaring("密码不合法！");
       return;
