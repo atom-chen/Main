@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,5 +32,12 @@ public class Utils{
     {
       return 1.9f - normPower * 0.9f;
     }
+  }
+
+  public static void GetTime(float time,out int minute,out int second,out int ms)
+  {
+    minute = (int)time / 60;
+    second = (int)Math.Floor(time % 60);//不满60的整数部分
+    ms = (int)(Math.Round(time % 1, 2) * 100);      //小数前两位
   }
 }
