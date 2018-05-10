@@ -103,7 +103,7 @@ namespace NetFrame
     public void OnData()
     {
       byte[] buff = null;
-      //当解码器存在，进行粘包处理
+      //当解码器存在，则进行粘包处理
       if (m_LDecode != null)
       {
         buff = m_LDecode(ref m_Cache);
@@ -113,12 +113,9 @@ namespace NetFrame
           m_IsRending = false;
           return;
         }
-        else
-        {
-
-        }
 
       }
+      //解码器不存在，就一直等解码器空出来解码
       else
       {
         //缓存区中没有数据，直接跳出消息处理  等待下次消息到达
@@ -133,7 +130,7 @@ namespace NetFrame
         throw new Exception("消息解码器为空");
       }
 
-      object message = m_Decode(buff);//进行消息反序列化
+      object message = m_Decode(buff);
 
       //TODO 通知应用层有消息到达
 
