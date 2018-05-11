@@ -15,6 +15,7 @@ public class UserConnect : PeerBase
 
   public User LoginUser { get; set; }//存储当前登录的user账号
 
+  public ServerPropert LoginServer { get; set; }
   public UserConnect(IRpcProtocol protocol, IPhotonPeer unmanagedPeer)
     : base(protocol, unmanagedPeer)
   {

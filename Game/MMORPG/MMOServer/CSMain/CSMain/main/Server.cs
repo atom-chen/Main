@@ -29,7 +29,7 @@ namespace CSMain
        RegisteHandlers();
     }
 
-    private static readonly ILogger log = ExitGames.Logging.LogManager.GetCurrentClassLogger();
+    public static readonly ILogger log = ExitGames.Logging.LogManager.GetCurrentClassLogger();
     protected override PeerBase CreatePeer(InitRequest initRequest)
     {
       log.Info(string .Format("获得连接{0}",initRequest.LocalIP.ToString()));

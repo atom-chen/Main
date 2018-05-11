@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class RoleSelectItem : MonoBehaviour {
 
-  public Animation m_Anima;
+  private Animation m_Anima;
 
   public UIButton m_CreateRole;//创建角色
   public UIButton m_SelectRole;//选择角色
+  public UILabel m_LevelLabel;
+  public UILabel m_NameLabel;
+  public GameObject m_InfoBG;
+  public Transform m_ModelTrans;
+
 
   private Role m_Role;//当前角色信息
   
@@ -21,8 +26,38 @@ public class RoleSelectItem : MonoBehaviour {
   public void Init(Role role,bool isSelect)
   {
     this.m_Role = role;
+    //角色不存在
+    if(role==null)
+    {
+      m_CreateRole.gameObject.SetActive(true);
+      m_SelectRole.gameObject.SetActive(false);
+      m_InfoBG.SetActive(false);
+
+    }
+      //女性角色
+    else if(role.Sex==1)
+    {
+      m_CreateRole.gameObject.SetActive(false);
+      m_SelectRole.gameObject.SetActive(true);
+      m_InfoBG.SetActive(true);
+      m_LevelLabel.text = "Lv."+role.Level;
+      m_NameLabel.text = role.Name;
+      GameObject girlModel = ResourceManager.Load("Model/GirlShow");
+      GameObject obj = NGUITools.AddChild(m_ModelTrans.gameObject, girlModel);
+      m_Anima = obj.GetComponent<Animation>();
+    }
+    else
+    {
+      m_CreateRole.gameObject.SetActive(false);
+      m_SelectRole.gameObject.SetActive(true);
+      m_InfoBG.SetActive(true);
+      m_LevelLabel.text = "Lv." + role.Level;
+      m_NameLabel.text = role.Name;
+      GameObject boyModel = ResourceManager.Load("Model/BoyShow");
+      GameObject obj=NGUITools.AddChild(m_ModelTrans.gameObject, boyModel);
+      m_Anima = obj.GetComponent<Animation>();
+    }
     Select(isSelect);
-    //根据Role信息构造信息面板
   }
 
   //是否选择当前角色

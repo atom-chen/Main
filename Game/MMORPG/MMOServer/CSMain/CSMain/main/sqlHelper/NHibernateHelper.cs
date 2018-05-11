@@ -58,7 +58,7 @@ using FluentNHibernate.Cfg.Db;
       }
       catch(FluentConfigurationException ex)
       {
-        Console.WriteLine(ex.Message);
+        CSMain.Server.log.Debug(ex.Message);
       }
 
     }

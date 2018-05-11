@@ -22,8 +22,30 @@ public class RoleSelectLogic : MonoBehaviour {
 
   void OnEnable()
   {
-    //发包获取当前服务器下角色信息
     m_Exit.onClick.Add(new EventDelegate(LaunchSceneLogic.Instance.SwitchToStartMenu));
+  }
+  public void Init(List<Role> role)
+  {
+    if(role==null)
+    {
+      for (int i = 0; i < m_Items.Count; i++)
+      {
+          m_Items[i].Init(null, false);
+      }
+      return;
+    }
+    //用角色列表去初始化
+    for(int i=0;i<m_Items.Count;i++)
+    {
+      if(i<role.Count)
+      {
+        m_Items[i].Init(role[i], i == 0);
+      }
+      else
+      {
+        m_Items[i].Init(null, false);
+      }
+    }
   }
 
   public  void OnClickCreateRole()

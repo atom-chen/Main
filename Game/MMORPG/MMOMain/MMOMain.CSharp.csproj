@@ -221,13 +221,16 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Resources\Model\Boy\scripts\characterRotate.cs" />
+    <Compile Include="Assets\Script\Global\PlayData.cs" />
     <Compile Include="Assets\Script\Net\Common\Code\OperationCode.cs" />
     <Compile Include="Assets\Script\Net\Common\Code\ParametersCode.cs" />
     <Compile Include="Assets\Script\Net\Common\Code\ReturnCode.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\Role.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\ServerProperty.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\User.cs" />
+    <Compile Include="Assets\Script\Net\Controller\AddRoleController.cs" />
     <Compile Include="Assets\Script\Net\Controller\ControllerBase.cs" />
+    <Compile Include="Assets\Script\Net\Controller\EnterGameControllr.cs" />
     <Compile Include="Assets\Script\Net\Controller\LoginController.cs" />
     <Compile Include="Assets\Script\Net\Controller\RegisterController.cs" />
     <Compile Include="Assets\Script\Net\Controller\ServerListController.cs" />
@@ -239,7 +242,6 @@
     <Compile Include="Assets\Script\Tools\UIManager.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />
-    <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\UISelectRole.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\LaunchSceneLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\RoleSelectMenu\RoleSelectItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\RoleSelectMenu\RoleSelectLogic.cs" />

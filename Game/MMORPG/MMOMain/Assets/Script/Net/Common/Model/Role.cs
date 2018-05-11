@@ -6,5 +6,9 @@ using System.Text;
 
 public class Role
 {
-  
+  public int ID;
+  public string Name;
+  public uint Level;
+  public byte Sex;
+  public int UserID;
 }

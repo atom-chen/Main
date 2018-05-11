@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateRoleLogic : MonoBehaviour {
-  public UISelectRole[] m_Roles;
+  public SelectRoleItem[] m_Roles;
   private int m_Index = 0;
 
   public UIInput m_RoleName;

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
  */ 
 public enum ParameterCode : byte
 {
+  Server,
   ServerList,
   User,
   RoleList,
   Role,
-  SubCode,
   OperationCode,
   TaskDB,
   TaskDBList,

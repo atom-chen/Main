@@ -56,11 +56,12 @@ namespace DB
   }
 
   //映射类
-  class UserMap : ClassMap<_DBUser>
+  public class UserMap : ClassMap<_DBUser>
   {
     private string m_TableName = "User";
     public UserMap()
     {
+      LazyLoad();
       Id(x => x.Guid).Column("Guid");//设置GUID为key
       Map(x => x.UserName).Column("UserName");
       Map(x => x.Password).Column("Password");

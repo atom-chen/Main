@@ -31,6 +31,7 @@ class RegisterHandler:HandlerBase
       {
         response.ReturnCode = (short)ReturnCode.Success;
         peer.LoginUser = newUser;
+        response.Parameters.Add((byte)ParameterCode.User, ParaTools.GetJson<User>(newUser));
       }
       else
       {

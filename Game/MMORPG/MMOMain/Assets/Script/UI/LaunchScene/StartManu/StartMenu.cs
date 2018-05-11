@@ -24,8 +24,6 @@ public class StartMenu : MonoBehaviour
   public UILabel m_CurUserLabel;
   public UILabel m_CurServerLabel;
 
-  private User  m_CurUser;//当前用户
-  private ServerProperty m_CurServer;//当前选择的服务器
   void Awake()
   {
     _Instance = this;
@@ -39,21 +37,21 @@ public class StartMenu : MonoBehaviour
   void OnEnable()
   {
     InitUI();
-    if (m_CurServer == null)
+    if (PlayData.ServerData == null)
     {
       m_CurServerLabel.text = "请选择服务器";
     }
     else
     {
-      m_CurServerLabel.text = m_CurServer.Name;
+      m_CurServerLabel.text = PlayData.ServerData.Name;
     }
-    if(m_CurUser==null)
+    if (PlayData.UserData == null)
     {
       m_CurUserLabel.text = "点击登录";
     }
     else
     {
-      m_CurUserLabel.text = m_CurUser.UserName;
+      m_CurUserLabel.text = PlayData.UserData.UserName;
     }
   }
   //点击用户名
@@ -76,6 +74,9 @@ public class StartMenu : MonoBehaviour
   public void OnEnterGameClick()
   {
     //发包
+    Dictionary<byte, object> dic = new Dictionary<byte, object>();
+    dic.Add((byte)ParameterCode.Server, ParaTools.GetJson<ServerProperty>(PlayData.ServerData));
+    PhotoEngine.Instance.SendRequest(OperationCode.EnterGame, dic);
   }
 
   //点击注册
@@ -105,14 +106,14 @@ public class StartMenu : MonoBehaviour
 
   public void SetServerList(List<ServerProperty> serverList)
   {
-    m_ChooseServer.SetServerList(serverList,m_CurServer);
+    m_ChooseServer.SetServerList(serverList,PlayData.ServerData);
   }
 
   public void LoginSuccessed(User user)
   {
     if (user != null)
     {
-      m_CurUser = user;
+      PlayData.UserData = user;
       m_CurUserLabel.text = user.UserName;
     }
     InitUI();
@@ -121,7 +122,7 @@ public class StartMenu : MonoBehaviour
   {
     if(server!=null)
     {
-      this.m_CurServer = server;
+      PlayData.ServerData = server;
       m_CurServerLabel.text = server.Name;
       InitUI();
     }

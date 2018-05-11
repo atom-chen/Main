@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class ServerPropert
+public class ServerPropert
 {
   public int ID;
   public string IP;
@@ -35,7 +35,7 @@ class ServerPropert
 
 namespace DB
 {
-  class _DBServerPropert
+  public class _DBServerPropert
   {
     public virtual int ID { get; set; }
     public virtual string IP { get; set; }
@@ -43,10 +43,11 @@ namespace DB
     public virtual int Count { get; set; }
   }
 
-  class ServerPropertMap : ClassMap<_DBServerPropert>
+  public class ServerPropertMap : ClassMap<_DBServerPropert>
   {
     public ServerPropertMap()
     {
+      LazyLoad();
       Id(x => x.ID).Column("ID");
       Map(x => x.IP).Column("IP");
       Map(x => x.Name).Column("Name");

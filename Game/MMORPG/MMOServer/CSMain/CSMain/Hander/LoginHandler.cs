@@ -25,6 +25,7 @@ class LoginHandler : HandlerBase
       {
         peer.LoginUser = user;
         response.ReturnCode = (short)ReturnCode.Success;
+        response.Parameters.Add((byte)ParameterCode.User, para);
       }
       //密码错误
       else

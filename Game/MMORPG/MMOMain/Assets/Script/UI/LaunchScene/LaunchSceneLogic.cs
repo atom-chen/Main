@@ -42,6 +42,12 @@ public class LaunchSceneLogic : MonoBehaviour
     m_SelectRoleMenu.SetActive(false);
     m_StartMenu.SetActive(false);
   }
+
+  public void SetRoleList(List<Role> roleList)
+  {
+    SwitchToSelectRoleMenu();
+    RoleSelectLogic.Instance.Init(roleList);
+  }
 }
 
 

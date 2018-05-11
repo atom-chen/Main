@@ -5,14 +5,9 @@ using System.Text;
 
 public enum OperationCode : byte
 {
-  Login,
-  GetServer,
-  Register,
-  Role,
-  TaskDB,
-  InventoryItemDB,
-  SkillDB,
-  Battle,
-  Enemy,
-  Boss
+  Login,//登录消息
+  GetServer,//获取服务器列表消息
+  Register,//注册消息
+  EnterGame,
+  RoleAdd,
 }
