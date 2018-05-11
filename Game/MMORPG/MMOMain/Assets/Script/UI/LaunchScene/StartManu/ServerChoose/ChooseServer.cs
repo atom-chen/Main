@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChooseServer : MonoBehaviour {
-  public ServerList m_ServerList;
+  public ServerListLogic m_ServerList;
   public Transform m_CurServerTrans;
   public void SetServerList(List<ServerProperty> serverList, ServerProperty curServer)
   {

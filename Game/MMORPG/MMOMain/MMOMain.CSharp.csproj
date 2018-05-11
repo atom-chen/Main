@@ -238,6 +238,7 @@
     <Compile Include="Assets\Script\Tools\RotateModelWithPoint.cs" />
     <Compile Include="Assets\Script\Tools\UIManager.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
+    <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\UISelectRole.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\LaunchSceneLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\RoleSelectMenu\RoleSelectItem.cs" />
@@ -246,7 +247,7 @@
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\RegisterMenu.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ChooseServer.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerItem.cs" />
-    <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerList.cs" />
+    <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerListLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\StartMenu.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\SceneLoading.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\TipItem.cs" />
