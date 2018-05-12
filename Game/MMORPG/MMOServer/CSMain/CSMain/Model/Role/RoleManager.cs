@@ -43,7 +43,7 @@ namespace DB
       }
       catch (Exception ex)
       {
-        CSMain.Server.log.Debug(ex.Message);
+        CSMain.Server.log.Error("GetRoleByUserID       ："+ex.Message);
       }
       return null;
     }
@@ -64,7 +64,7 @@ namespace DB
       }
       catch (Exception ex)
       {
-        CSMain.Server.log.Debug(ex.Message);
+        CSMain.Server.log.Error("GetRoleByID       ：" + ex.Message);
       }
       return null;
     }
@@ -97,7 +97,7 @@ namespace DB
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
+        CSMain.Server.log.Error("GetRoleByRoleName       ：" + ex.Message);
       }
       return null;
     }
@@ -117,7 +117,7 @@ namespace DB
       }
       catch (Exception ex)
       {
-        CSMain.Server.log.Debug(ex.Message);
+        CSMain.Server.log.Error("InsertRole       ：" + ex.Message);
       }
     }
 
@@ -136,7 +136,7 @@ namespace DB
       }
       catch (Exception ex)
       {
-        CSMain.Server.log.Debug(ex.Message);
+        CSMain.Server.log.Error("UpdateRole       ：" + ex.Message);
       }
     }
   }

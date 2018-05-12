@@ -22,10 +22,8 @@ class EnterGameHandler : HandlerBase
       //拿到该玩家所有角色信息
       List<Role> roleList = RoleController.Instance.GetUserAllRole(peer.LoginUser.Guid);
       //传回去
-      response.Parameters.Add((byte)ParameterCode.Server, ParaTools.GetJson<List<Role>>(roleList));
+      response.Parameters.Add((byte)ParameterCode.RoleList, ParaTools.GetJson<List<Role>>(roleList));
     }
-
-    
   }
 }
 

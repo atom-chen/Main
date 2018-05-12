@@ -35,7 +35,7 @@ public class RoleSelectItem : MonoBehaviour {
 
     }
       //女性角色
-    else if(role.Sex==1)
+    else if(role.Sex==true)
     {
       m_CreateRole.gameObject.SetActive(false);
       m_SelectRole.gameObject.SetActive(true);
