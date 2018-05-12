@@ -1,7 +1,1 @@
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\2625617675.index
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\1200429187.index
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\91680433.index
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\1920065063.index
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\3950546845.index
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\2076676620.index
-F:\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\135789308.index
+E:\Space\Lua\LuaSpace\.metadata\.plugins\org.eclipse.dltk.core\1381588892.index
