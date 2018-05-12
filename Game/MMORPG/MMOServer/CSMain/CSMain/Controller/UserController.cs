@@ -54,9 +54,9 @@ class UserController
       if(dbUser!=null)
       {
         user = new User(dbUser);
-        m_ActiveUser.Add(loginUser.UserName, user);
         if (user.PassWord.Equals(loginUser.PassWord))
         {
+          m_ActiveUser.Add(loginUser.UserName, user);
           return true;
         }
         else

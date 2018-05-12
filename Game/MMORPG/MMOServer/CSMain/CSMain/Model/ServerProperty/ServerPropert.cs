@@ -48,7 +48,7 @@ namespace DB
     public ServerPropertMap()
     {
       LazyLoad();
-      Id(x => x.ID).Column("ID");
+      Id(x => x.ID).Column("Id");
       Map(x => x.IP).Column("IP");
       Map(x => x.Name).Column("Name");
       Map(x => x.Count).Column("Count");

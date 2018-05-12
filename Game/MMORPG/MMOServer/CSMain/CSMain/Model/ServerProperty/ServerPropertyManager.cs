@@ -29,21 +29,17 @@ namespace DB
       {
         using (var session = NHibernateHelper.OpenSession())
         {
-          CSMain.Server.log.Debug("session="+session.ToString());
           using (var transction = session.BeginTransaction())
           {
-            CSMain.Server.log.Debug("transction=" + transction.ToString());
             var servers = session.QueryOver<_DBServerPropert>();
-            CSMain.Server.log.Debug("servers=" + servers.ToString());
             transction.Commit();
-            CSMain.Server.log.Debug("transction=" + transction.ToString());
             return servers.List();
           }
         }
       }
       catch (Exception ex)
       {
-        CSMain.Server.log.Debug("获取服务器列表发生异常      ：    "+ex.Message);
+        CSMain.Server.log.Error("获取服务器列表发生异常      ：    "+ex.Message);
       }
       return null;
     }

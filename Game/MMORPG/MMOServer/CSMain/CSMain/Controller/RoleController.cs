@@ -93,13 +93,15 @@ class RoleController
   /// <returns>布尔</returns>
   private bool IsUserCanCreateRole(int userId)
   {
-    //内存中已有两个角色
+
     if(m_ActiveRolesDic1.ContainsKey(userId))
     {
+      //内存中已有两个角色
       if(m_ActiveRolesDic2.ContainsKey(userId))
       {
         return false;
       }
+      //内存里只有一个角色
       else
       {
         return true;

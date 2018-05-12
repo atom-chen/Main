@@ -12,14 +12,7 @@ class ServerPropertyController
 {
   private ServerPropertyController()
   {
-    //获取全部服务器列表
-    m_AllServer = new List<ServerPropert>();
-    IList<_DBServerPropert> allDBServer = ServerPropertyManager.Instance.GetAllServer();
-    foreach(var item in allDBServer)
-    {
-      ServerPropert sp = new ServerPropert(item);
-      m_AllServer.Add(sp);
-    }
+
   }
   public static ServerPropertyController _Instance=new ServerPropertyController();
   public static ServerPropertyController Instance
@@ -33,6 +26,17 @@ class ServerPropertyController
   private List<ServerPropert> m_AllServer;
   public List<ServerPropert> GetAllServerPropert()
   {
+    if(m_AllServer==null)
+    {
+      //获取全部服务器列表
+      m_AllServer = new List<ServerPropert>();
+      IList<_DBServerPropert> allDBServer = ServerPropertyManager.Instance.GetAllServer();
+      foreach (var item in allDBServer)
+      {
+        ServerPropert sp = new ServerPropert(item);
+        m_AllServer.Add(sp);
+      }
+    }
     return m_AllServer;
   }
 }

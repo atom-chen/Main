@@ -8,6 +8,7 @@ class PlayData
 {
   public static User UserData;
   public static ServerProperty ServerData;
-  public static Role RoleData;
+  public static List<Role> RoleData;//可选角色列表
+  public static Role CurRoleData;//当前登录角色
 }
 

@@ -9,6 +9,6 @@ public class Role
   public int ID;
   public string Name;
   public uint Level;
-  public byte Sex;
+  public bool Sex;
   public int UserID;
 }
