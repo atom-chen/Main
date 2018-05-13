@@ -11,8 +11,13 @@ namespace LoLServer
   {
     static void Main(string[] args)
     {
+      LOLCenter center = new LOLCenter();
       //服务器初始化...
-      ServerStart server = new ServerStart(11111, 100);
+      ServerStart server = new ServerStart(11111, center);
+      while(true)
+      {
+
+      }
     }
   }
 }

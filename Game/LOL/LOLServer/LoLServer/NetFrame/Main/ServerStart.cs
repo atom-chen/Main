@@ -21,17 +21,31 @@ namespace NetFrame
 
     public LengthDecode m_LDecode;
     public LengthEncode m_LEncode;
-    public encode m_Encode;
-    public decode m_Decode;
+    public Encode m_Encode;
+    public Decode m_Decode;
+
+    /// <summary>
+    /// 消息处理中心，由外部应用传入
+    /// </summary>
+    public AbsHandlerCenter m_HandlerCenter;
+
     /// <summary>
     /// 启服
     /// </summary>
     /// <param name="maxConnect">最大连接数</param>
-    public ServerStart(int port,int maxConnect=100)
+    public ServerStart(int port,AbsHandlerCenter center,int maxConnect=5000)
     {
-      m_ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+      m_ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);//socket
+      this.m_HandlerCenter = center;//center
       m_MaxClient = maxConnect;
       m_AcceptClients = new Semaphore(maxConnect, maxConnect);//初始化 Semaphore 类的新实例，并指定初始入口数和最大并发入口数。
+      m_LEncode = LengthEncoding.Encode;//le
+      m_LDecode = LengthEncoding.DeCode;//ld
+      m_Encode = MessageEncodeing.Encode;//e
+      m_Decode = MessageEncodeing.DeCode;//d
+
+
+
       m_UserPool = new UserTokenPool(maxConnect);//初始化连接池
       for (int i = 0; i < maxConnect; i++)
       {
@@ -42,7 +56,42 @@ namespace NetFrame
         token.m_LEncode = m_LEncode;
         token.m_Decode = m_Decode;
         token.m_Encode = m_Encode;
+        token.m_CloseProcess = ClientDown;
         token.m_SendProcess = ProcessSend;
+        token.m_HandlerCenter = m_HandlerCenter;
+        m_UserPool.Push(token);
+      }
+      m_ServerSocket.Bind(new IPEndPoint(IPAddress.Any, port));      //socket监听当前服务器网卡所有可用IP地址10001端口->外网IP和内网IP
+      m_ServerSocket.Listen(10);                                     //10：挂起的连接队列的最大长度->队列阻塞之后，最多允许连接10个
+
+      //等待连接
+      Accept();
+    }
+
+    public ServerStart(int port, AbsHandlerCenter center, int maxConnect,LengthEncode lEncode,LengthDecode lDecode,Encode encode,Decode decode)
+    {
+      m_ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+      this.m_HandlerCenter = center;
+      m_MaxClient = maxConnect;
+      m_AcceptClients = new Semaphore(maxConnect, maxConnect);//初始化 Semaphore 类的新实例，并指定初始入口数和最大并发入口数。
+      this.m_Encode = encode;
+      this.m_Decode = decode;
+      this.m_LEncode = lEncode;
+      this.m_LDecode = lDecode;
+
+      m_UserPool = new UserTokenPool(maxConnect);//初始化连接池
+      for (int i = 0; i < maxConnect; i++)
+      {
+        UserToken token = new UserToken();
+        token.m_ReceiveSAEA.Completed += new EventHandler<System.Net.Sockets.SocketAsyncEventArgs>(IO_Comleted);//消息接收处理函数
+        token.m_SendSAEA.Completed += new EventHandler<System.Net.Sockets.SocketAsyncEventArgs>(IO_Comleted);//消息发送处理函数
+        token.m_LDecode = m_LDecode;
+        token.m_LEncode = m_LEncode;
+        token.m_Decode = m_Decode;
+        token.m_Encode = m_Encode;
+        token.m_CloseProcess = ClientDown;
+        token.m_SendProcess = ProcessSend;
+        token.m_HandlerCenter = m_HandlerCenter;
         m_UserPool.Push(token);
       }
       m_ServerSocket.Bind(new IPEndPoint(IPAddress.Any, port));      //socket监听当前服务器网卡所有可用IP地址10001端口->外网IP和内网IP
@@ -83,7 +132,7 @@ namespace NetFrame
       UserToken token = m_UserPool.Pop();
       token.m_Connect = socket.AcceptSocket;
       // TODO 通知应用层有客户端连接
-
+      m_HandlerCenter.ClientConnect(token);
       StartReceive(token);    //建立连接后开启监听
       Accept(socket);
     }
@@ -95,7 +144,8 @@ namespace NetFrame
       {
         lock (token)
         {
-          //通知应用层 TODO
+          //通知应用层
+          m_HandlerCenter.ClientClose(token, error);
 
           token.Close();
           m_UserPool.Push(token);
@@ -148,10 +198,17 @@ namespace NetFrame
     /// <param name="token">开启监听的user</param>
     private void StartReceive(UserToken token)
     {
-      bool result = token.m_Connect.ReceiveAsync(token.m_ReceiveSAEA);
-      if (!result)
+      try
       {
-        ProcessReceive(token.m_ReceiveSAEA);
+        bool result = token.m_Connect.ReceiveAsync(token.m_ReceiveSAEA);
+        if (!result)
+        {
+          ProcessReceive(token.m_ReceiveSAEA);
+        }
+      }
+      catch(Exception ex)
+      {
+        Console.WriteLine(ex.Message);
       }
     }
 

@@ -24,11 +24,15 @@ namespace NetFrame
 
     public LengthDecode m_LDecode;
     public LengthEncode m_LEncode;
-    public encode m_Encode;
-    public decode m_Decode;
+    public Encode m_Encode;
+    public Decode m_Decode;
+
+    public AbsHandlerCenter m_HandlerCenter;
 
     public delegate void SendProcess(SocketAsyncEventArgs e);
-    public SendProcess m_SendProcess;
+    public SendProcess m_SendProcess;//发送消息的委托
+    public delegate void ClientProcess(UserToken token,string error);
+    public ClientProcess m_CloseProcess;//连接断开的委托
 
     private bool m_IsRending = false;
     private bool m_IsWriting = false;
@@ -51,7 +55,8 @@ namespace NetFrame
     {
       if (m_Connect == null)
       {
-        //此连接已断开
+        //此连接已断开，通知应用层
+        m_CloseProcess(this, "调用已经断开的连接");
         return;
       }
       //放到发送队列
@@ -130,12 +135,12 @@ namespace NetFrame
         throw new Exception("消息解码器为空");
       }
 
-      object message = m_Decode(buff);
+      object message = m_Decode(buff);//反序列化
 
       //TODO 通知应用层有消息到达
+      m_HandlerCenter.MessageReceive(this, message);
 
-      //尾递归，防止在消息处理过程中有其他消息到达而没有经过处理
-      OnData();
+      OnData();//尾递归，一条一条地处理该用户的这批消息
     }
 
 

@@ -39,12 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AbsHandlerCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main\ServerStart.cs" />
+    <Compile Include="Tools\ByteArray.cs" />
     <Compile Include="Tools\Define.cs" />
     <Compile Include="Tools\LengthEncoding.cs" />
     <Compile Include="Main\UserToken.cs" />
     <Compile Include="Main\UserTokenPool.cs" />
+    <Compile Include="Tools\MessageEncodeing.cs" />
+    <Compile Include="Tools\Serialize.cs" />
+    <Compile Include="Model\SocketModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="User\" />
