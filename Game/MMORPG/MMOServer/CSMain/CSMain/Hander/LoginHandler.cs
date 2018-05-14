@@ -20,9 +20,11 @@ class LoginHandler : HandlerBase
     if (req.TryGetValue((byte)ParameterCode.User, out para))
     {
       User user = LitJson.JsonMapper.ToObject<User>(para.ToString());
+      int guid = -1;
       //成功
-      if (UserController.Instance.Login(user))
+      if ((guid=UserController.Instance.Login(user)) != -1)
       {
+        user.Guid = guid;
         peer.LoginUser = user;
         response.ReturnCode = (short)ReturnCode.Success;
         response.Parameters.Add((byte)ParameterCode.User, para);

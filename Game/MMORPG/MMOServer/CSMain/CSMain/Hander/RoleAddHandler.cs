@@ -15,9 +15,10 @@ class RoleAddHandler : HandlerBase
   //添加角色的消息处理
   public override void OnHandlerMessage(Photon.SocketServer.OperationRequest request, Photon.SocketServer.OperationResponse response, UserConnect peer, Photon.SocketServer.SendParameters sendParameters)
   {
-    Role role = ParaTools.GetParameter<Role>(response.Parameters, ParameterCode.Role);
+    Role role = ParaTools.GetParameter<Role>(request.Parameters, ParameterCode.Role);
     if(role!=null)
     {
+      role.UserID=peer.LoginUser.Guid;
       role.Level = 1;
       if(peer.LoginUser==null || peer.LoginServer==null)
       {

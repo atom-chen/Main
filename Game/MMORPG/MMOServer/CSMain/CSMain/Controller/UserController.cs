@@ -31,7 +31,7 @@ class UserController
   }
   private Dictionary<string,User> m_ActiveUser;//近7日活跃玩家
 
-  public bool Login(User loginUser)
+  public int Login(User loginUser)
   {
     User user;
     //先在字典里找
@@ -40,11 +40,11 @@ class UserController
     {
       if (user.PassWord.Equals(loginUser.PassWord))  //直接存储密文
       {
-        return true;
+        return user.Guid;
       }
       else
       {
-        return false;
+        return -1;
       }
     }
     else
@@ -57,16 +57,16 @@ class UserController
         if (user.PassWord.Equals(loginUser.PassWord))
         {
           m_ActiveUser.Add(loginUser.UserName, user);
-          return true;
+          return user.Guid;
         }
         else
         {
-          return false;
+          return -1;
         }
       }
       else
       {
-        return false;
+        return -1;
       }
     }
   }

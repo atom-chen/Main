@@ -37,7 +37,7 @@ public class UserConnect : PeerBase
     response.Parameters = new Dictionary<byte, object>();
     if (handler != null)
     {
-      log.Info(string.Format("收到来自{0}的   {1}包", this.LocalIP, (OperationCode)operationRequest.OperationCode));
+      log.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser==null?"":string.Format("ID={0},Name={1}",LoginUser.Guid,LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
       handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
       SendOperationResponse(response, sendParameters);
     }

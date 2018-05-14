@@ -82,7 +82,7 @@ namespace DB
         {
           using (var transction = session.BeginTransaction())
           {
-            var servers = session.QueryOver<_DBRole>().Where(role => role.Name.Equals(roleName));
+            var servers = session.QueryOver<_DBRole>().Where(role => role.Name==roleName);
             transction.Commit();
             if (servers.List().Count>0)
             {

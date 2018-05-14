@@ -13,6 +13,10 @@ using System.Threading.Tasks;
     public uint Level;
     public bool Sex;
     public int UserID;
+    public Role()
+    {
+
+    }
     public Role(DB._DBRole db)
     {
       this.ID = db.ID;

@@ -26,6 +26,7 @@ public class RoleSelectLogic : MonoBehaviour {
   }
   public void Init(List<Role> role)
   {
+    //角色为空
     if(role==null)
     {
       for (int i = 0; i < m_Items.Count; i++)
@@ -37,10 +38,12 @@ public class RoleSelectLogic : MonoBehaviour {
     //用角色列表去初始化
     for(int i=0;i<m_Items.Count;i++)
     {
+      //此角色不为空
       if(i<role.Count)
       {
         m_Items[i].Init(role[i], i == 0);
       }
+      //此角色为空
       else
       {
         m_Items[i].Init(null, false);
