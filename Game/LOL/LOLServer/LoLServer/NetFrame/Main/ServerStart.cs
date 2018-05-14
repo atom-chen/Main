@@ -65,6 +65,7 @@ namespace NetFrame
       m_ServerSocket.Listen(10);                                     //10：挂起的连接队列的最大长度->队列阻塞之后，最多允许连接10个
 
       //等待连接
+      Console.WriteLine("启服...");
       Accept();
     }
 
@@ -98,6 +99,7 @@ namespace NetFrame
       m_ServerSocket.Listen(10);                                     //10：挂起的连接队列的最大长度->队列阻塞之后，最多允许连接10个
 
       //等待连接
+      Console.WriteLine("启服...");
       Accept();
     }
 
