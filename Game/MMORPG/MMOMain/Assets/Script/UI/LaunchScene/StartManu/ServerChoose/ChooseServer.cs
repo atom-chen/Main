@@ -5,6 +5,17 @@ using UnityEngine;
 public class ChooseServer : MonoBehaviour {
   public ServerListLogic m_ServerList;
   public Transform m_CurServerTrans;
+  void OnEnable()
+  {
+    GetServerList();
+  }
+  private void GetServerList()
+  {
+    if (PhotoEngine.Instance != null)
+    {
+      PhotoEngine.Instance.SendRequest(OperationCode.GetServer, null);
+    }
+  }
   public void SetServerList(List<ServerProperty> serverList, ServerProperty curServer)
   {
     for (int i = 0; i < m_CurServerTrans.childCount;i++)

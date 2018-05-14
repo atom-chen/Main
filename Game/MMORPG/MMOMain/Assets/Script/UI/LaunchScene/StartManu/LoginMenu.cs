@@ -29,9 +29,23 @@ public class LoginMenu : MonoBehaviour {
       Tips.ShowTip("密码输入不正确");
       return;
     }
+    Login(m_UserName.value, m_Password.value);
 
-    LoginController controller=this.GetComponent<LoginController>();
-    controller.Login(m_UserName.value, m_Password.value);
+
+  }
+  private void Login(string userName, string passWord)
+  {
+    User user = new User();
+    user.UserName = userName;
+    user.PassWord = MD5Tool.GetMD5(passWord);
+    string json = LitJson.JsonMapper.ToJson(user);
+    Dictionary<byte, object> dic = new Dictionary<byte, object>();
+    dic.Add((byte)ParameterCode.User, json);
+
+    if (PhotoEngine.Instance != null)
+    {
+      PhotoEngine.Instance.SendRequest(OperationCode.Login, dic);
+    }
   }
 
   //点击注册

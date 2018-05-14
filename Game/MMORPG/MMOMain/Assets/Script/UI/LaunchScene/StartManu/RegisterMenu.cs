@@ -40,16 +40,21 @@ public class RegisterMenu : MonoBehaviour {
     if (m_Password.value.Equals(m_RePassword.value))
     {
       //允许登录
-      RegisterController controller=this.GetComponent<RegisterController>();
-      if(controller!=null)
-      {
-        controller.Register(m_UserName.value, m_Password.value);
-      }
+      Register(m_UserName.value, m_Password.value);
     }
     else
     {
       Tips.ShowTip("重复输入的密码不一致");
     }
+  }
+  private void Register(string userName, string passWord)
+  {
+    User user = new User() { UserName = userName, PassWord = MD5Tool.GetMD5(passWord) };
+
+    string json = ParaTools.GetJson<User>(user);
+    Dictionary<byte, object> dic = new Dictionary<byte, object>();
+    dic.Add((byte)ParameterCode.User, json);
+    PhotoEngine.Instance.SendRequest(OperationCode.Register, dic);
   }
 
 

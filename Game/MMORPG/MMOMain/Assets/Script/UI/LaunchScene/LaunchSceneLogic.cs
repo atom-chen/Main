@@ -16,10 +16,25 @@ public class LaunchSceneLogic : MonoBehaviour
   {
     _Instance = this;
   }
+  void Start()
+  {
+    m_AddRoleController = this.GetComponent<AddRoleController>();
+    m_EnterGameController = this.GetComponent<EnterGameControllr>();
+    m_LoginController = this.GetComponent<LoginController>();
+    m_RegisterController = this.GetComponent<RegisterController>();
+    m_ServerListController = this.GetComponent<ServerListController>();
+  }
   void OnEnable()
   {
     SwitchToStartMenu();
   }
+
+  private AddRoleController m_AddRoleController;
+  private EnterGameControllr m_EnterGameController;
+  private LoginController m_LoginController;
+  private RegisterController m_RegisterController;
+  private ServerListController m_ServerListController;
+
 
   public GameObject m_StartMenu;
   public GameObject m_SelectRoleMenu;
