@@ -6,12 +6,12 @@ bool SeaWater::Init(const char* seaTexture, const char* foamTexture, const char*
 	if (!m_IsInit)
 	{
 		m_IsInit = 1;
-		m_VertexBuf.Init(1600);
-		for (int z = 0; z < 20; z++)
+		m_VertexBuf.Init(16384);
+		for (int z = 0; z < 128; z++)
 		{
 			//ÆðÊ¼×ø±ê
 			float zStart = static_cast<float>(100 - z * 10);
-			for (int x = 0; x < 20; x++)
+			for (int x = 0; x < 128; x++)
 			{
 				float xStart = static_cast<float>(x * 10 - 100);
 				int offset = (x + z * 20) * 4;
@@ -19,45 +19,36 @@ bool SeaWater::Init(const char* seaTexture, const char* foamTexture, const char*
 				m_VertexBuf.SetPosition(offset, xStart, -1, zStart);
 				m_VertexBuf.SetNormal(offset, 0, 1, 0);
 
-				m_VertexBuf.SetPosition(offset + 1, xStart + 10, -1, zStart);
+				m_VertexBuf.SetPosition(offset + 1, xStart + 4, -1, zStart);
 				m_VertexBuf.SetNormal(offset + 1, 0, 1, 0);
 
-				m_VertexBuf.SetPosition(offset + 2, xStart, -1, zStart - 10);
+				m_VertexBuf.SetPosition(offset + 2, xStart, -1, zStart - 4);
 				m_VertexBuf.SetNormal(offset + 2, 0, 1, 0);
 
-				m_VertexBuf.SetPosition(offset + 3, xStart + 10, -1, zStart - 10);
+				m_VertexBuf.SetPosition(offset + 3, xStart + 4, -1, zStart - 4);
 				m_VertexBuf.SetNormal(offset + 3, 0, 1, 0);
 
-				if ((x % 2) == 0 && (z % 2) == 0)
-				{
-					m_VertexBuf.SetColor(offset, 0.1f, 0.1f, 0.1f);
-					m_VertexBuf.SetColor(offset + 1, 0.1f, 0.1f, 0.1f);
-					m_VertexBuf.SetColor(offset + 2, 0.1f, 0.1f, 0.1f);
-					m_VertexBuf.SetColor(offset + 3, 0.1f, 0.1f, 0.1f);
-				}
-				else
-				{
-					m_VertexBuf.SetColor(offset, 0.8f, 0.8f, 0.8f);
-					m_VertexBuf.SetColor(offset + 1, 0.8f, 0.8f, 0.8f);
-					m_VertexBuf.SetColor(offset + 2, 0.8f, 0.8f, 0.8f);
-					m_VertexBuf.SetColor(offset + 3, 0.8f, 0.8f, 0.8f);
-				}
-			}
 
-			m_Shader.Init("res/seawater.vert", "res/seawater.frag");
-			SetFoamTexture(foamTexture);
-			SetSeaTexture(seaTexture);
-			SetLightTexture(lightTexture);
-			SetSeaSize(512, 512);
-			SetWaveHeight(100);
-			SetWaveMoveSpeed(10);
-			SetShore_Dark(vec3(0.2f, 0.2f, 0.2f));
-			SetSeq_Dark(vec3(0.2f, 0.2f, 0.2f));
-			SetShore_Light(vec3(0.3f, 0.5f, 0.5f));
-			SetSeq_Light(vec3(0.8f, 0.8f, 0.8f));
+				m_VertexBuf.SetColor(offset, 20, 30, 40);
+				m_VertexBuf.SetColor(offset + 1, 30, 60, 90);
+				m_VertexBuf.SetColor(offset + 2, 120, 130, 160);
+				m_VertexBuf.SetColor(offset + 3, 190, 220, 255);
+			}
 		}
+		m_Shader.Init("res/seawater.vert", "res/seawater.frag");
+		//SetFoamTexture(foamTexture);
+		SetSeaTexture(seaTexture);
+		//SetLightTexture(lightTexture);
+		SetSeaSize(512, 512);
+		SetWaveHeight(200);
+		SetWaveMoveSpeed(10);
+		SetShore_Dark(vec3(0.2f, 0.2f, 0.2f));
+		SetSeq_Dark(vec3(0.2f, 0.2f, 0.2f));
+		SetShore_Light(vec3(0.3f, 0.5f, 0.5f));
+		SetSeq_Light(vec3(0.8f, 0.8f, 0.8f));
 		return 1;
 	}
+	return 0;
 }
 
 void SeaWater::Update()
@@ -109,7 +100,7 @@ void SeaWater::SetWaveMoveSpeed(float speed)
 void SeaWater::SetSeaTexture(const char* picPath)
 {
 	INIT_TEST_VOID
-		ASSERT_PTR_VOID(picPath);
+	ASSERT_PTR_VOID(picPath);
 	m_Shader.SetTexture2D(picPath, false, "normal0");
 
 }
@@ -117,13 +108,13 @@ void SeaWater::SetFoamTexture(const char* picPath)
 {
 	INIT_TEST_VOID
 		ASSERT_PTR_VOID(picPath);
-	m_Shader.SetTexture2D(picPath, "foam");
+	m_Shader.SetTexture2D(picPath,false,"foam");
 }
 void SeaWater::SetLightTexture(const char* picPath)
 {
 	INIT_TEST_VOID
 		ASSERT_PTR_VOID(picPath);
-	m_Shader.SetTexture2D(picPath, "lightmap");
+	m_Shader.SetTexture2D(picPath, false, "lightmap");
 }
 void SeaWater::SetLight1(const Light& light)
 {

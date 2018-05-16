@@ -26,12 +26,11 @@ void SceneSea::Update()
 }
 void SceneSea::OnDrawBegin()
 {
-	m_Skybox.Draw();
-	m_Sea.Draw(m_MainCamera->GetViewMatrix(), m_MainCamera->GetProjectionMatrix());
+	//m_Skybox.Draw();
 }
 void SceneSea::Draw3D()
 {
-
+	m_Sea.Draw(m_MainCamera->GetViewMatrix(), m_MainCamera->GetProjectionMatrix());
 }
 
 void SceneSea::Draw2D()
