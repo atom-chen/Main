@@ -5,173 +5,135 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-
-//一个玩家的连接
 namespace NetFrame
 {
-  //用户连接信息类
-
-  public class UserToken
-  {
-    public Socket m_Connect;//与该Token关联的连接
-
-    public SocketAsyncEventArgs m_ReceiveSAEA;//用户异步接收
-
-    public SocketAsyncEventArgs m_SendSAEA;//用户异步发送
-
-    private List<byte> m_Cache = new List<byte>();//接收消息缓存
-    private Queue<byte[]> m_WriteList = new Queue<byte[]>();//发送消息队列
-
-    public LengthDecode m_LDecode;
-    public LengthEncode m_LEncode;
-    public Encode m_Encode;
-    public Decode m_Decode;
-
-    public AbsHandlerCenter m_HandlerCenter;
-
-    public delegate void SendProcess(SocketAsyncEventArgs e);
-    public SendProcess m_SendProcess;//发送消息的委托
-    public delegate void ClientProcess(UserToken token,string error);
-    public ClientProcess m_CloseProcess;//连接断开的委托
-
-    private bool m_IsRending = false;
-    private bool m_IsWriting = false;
-
-    public UserToken()
+    /// <summary>
+    /// 用户连接信息对象
+    /// </summary>
+   public class UserToken
     {
-      m_SendSAEA = new SocketAsyncEventArgs();
-      m_ReceiveSAEA = new SocketAsyncEventArgs();
-      m_ReceiveSAEA.UserToken = this;
-      m_SendSAEA.UserToken = this;
+       /// <summary>
+       /// 用户连接
+       /// </summary>
+       public Socket conn;
+       //用户异步接收网络数据对象
+       public SocketAsyncEventArgs receiveSAEA;
+       //用户异步发送网络数据对象
+       public SocketAsyncEventArgs sendSAEA;
+
+       public LengthEncode LE;
+       public LengthDecode LD;
+       public encode encode;
+       public decode decode;
+
+
+       public delegate void SendProcess(SocketAsyncEventArgs e);
+
+       public SendProcess sendProcess;
+
+       public delegate void CloseProcess(UserToken token, string error);
+
+       public CloseProcess closeProcess;
+
+       public AbsHandlerCenter center;
+
+       List<byte> cache = new List<byte>();
+
+       private bool isReading = false;
+       private bool isWriting = false;
+       Queue<byte[]> writeQueue = new Queue<byte[]>();
+
+       public UserToken() {
+           receiveSAEA = new SocketAsyncEventArgs();
+           sendSAEA = new SocketAsyncEventArgs();
+           receiveSAEA.UserToken = this;
+           sendSAEA.UserToken = this;
+           //设置接收对象的缓冲区大小
+           receiveSAEA.SetBuffer(new byte[1024], 0, 1024);
+       }
+       //网络消息到达
+       public void receive(byte[] buff) {
+           //将消息写入缓存
+           cache.AddRange(buff);
+           if (!isReading)
+           {
+               isReading = true;
+               onData();
+           }
+       }
+       //缓存中有数据处理
+       void onData() {
+           //解码消息存储对象
+           byte[] buff = null;
+           //当粘包解码器存在的时候 进行粘包处理
+           if (LD != null)
+           {
+               buff = LD(ref cache);
+               //消息未接收全 退出数据处理 等待下次消息到达
+               if (buff == null) { isReading = false; return; }
+           }
+           else {
+               //缓存区中没有数据 直接跳出数据处理 等待下次消息到达
+               if (cache.Count == 0) { isReading = false; return; }
+               buff = cache.ToArray();
+               cache.Clear();
+           }
+           //反序列化方法是否存在
+           if (decode == null) { throw new Exception("message decode process is null"); }
+           //进行消息反序列化
+           object message = decode(buff);
+           //TODO 通知应用层 有消息到达
+           center.MessageReceive(this, message);
+           //尾递归 防止在消息处理过程中 有其他消息到达而没有经过处理
+           onData();
+       }
+
+       public void write(byte[] value) {
+           if (conn == null) {
+               //此连接已经断开了
+               closeProcess(this, "调用已经断开的连接");
+               return;
+           }
+           writeQueue.Enqueue(value);
+           if (!isWriting) {
+               isWriting = true;
+               onWrite();
+           }
+       }
+
+       public void onWrite() {
+           //判断发送消息队列是否有消息
+           if (writeQueue.Count == 0) { isWriting = false; return; }
+           //取出第一条待发消息
+           byte[] buff = writeQueue.Dequeue();
+           //设置消息发送异步对象的发送数据缓冲区数据
+           sendSAEA.SetBuffer(buff, 0, buff.Length);
+           //开启异步发送
+           bool result = conn.SendAsync(sendSAEA);
+           //是否挂起
+           if (!result) {
+               sendProcess(sendSAEA);
+           }
+       }
+
+       public void writed() {
+           //与onData尾递归同理
+           onWrite();
+       }
+       public void Close() {
+           try
+           {
+               writeQueue.Clear();
+               cache.Clear();
+               isReading = false;
+               isWriting = false;
+               conn.Shutdown(SocketShutdown.Both);
+               conn.Close();
+               conn = null;
+           }
+           catch (Exception e) {
+               Console.WriteLine(e.Message);
+           }
+       }
     }
-    #region 发送消息处理
-    //消息发送结束的回调
-    public void SendMagSuccessedCallBack()
-    {
-      OnWrite();//尾递归
-    }
-
-    public void Write(byte[] value)
-    {
-      if (m_Connect == null)
-      {
-        //此连接已断开，通知应用层
-        m_CloseProcess(this, "调用已经断开的连接");
-        return;
-      }
-      //放到发送队列
-      m_WriteList.Enqueue(value);
-      if (!m_IsWriting)
-      {
-        //开始写
-        m_IsWriting = true;
-        OnWrite();
-      }
-    }
-    //写消息的处理逻辑
-    public void OnWrite()
-    {
-      if(m_WriteList.Count==0)
-      {
-        m_IsWriting = false;
-        return;
-      }
-      byte[] buff = m_WriteList.Dequeue();
-      m_SendSAEA.SetBuffer(buff, 0, buff.Length);
-      bool result = m_Connect.SendAsync(m_SendSAEA);
-      if(!result)
-      {
-        //如果立即发送
-        m_SendProcess(m_SendSAEA);
-      }
-    }
-
-
-    #endregion
-
-
-    #region 接收消息处理
-
-    //消息处理函数
-    public void Receive(byte[] buffer)
-    {
-      //将消息插入到cache
-      m_Cache.AddRange(buffer);
-      if (!m_IsRending)
-      {
-        m_IsRending = true;
-        OnData();
-      }
-    }
-
-    //接收消息的处理函数
-    public void OnData()
-    {
-      byte[] buff = null;
-      //当解码器存在，则进行粘包处理
-      if (m_LDecode != null)
-      {
-        buff = m_LDecode(ref m_Cache);
-        //如果数据还没有传完，则退出此次数据处理，等待下次消息到达
-        if (buff == null)
-        {
-          m_IsRending = false;
-          return;
-        }
-
-      }
-      //解码器不存在，就一直等解码器空出来解码
-      else
-      {
-        //缓存区中没有数据，直接跳出消息处理  等待下次消息到达
-        if (m_Cache.Count == 0)
-        {
-          m_IsRending = false;
-          return;
-        }
-      }
-      if (m_Decode == null)
-      {
-        throw new Exception("消息解码器为空");
-      }
-
-      object message = m_Decode(buff);//反序列化
-
-      //TODO 通知应用层有消息到达
-      m_HandlerCenter.MessageReceive(this, message);
-
-      OnData();//尾递归，一条一条地处理该用户的这批消息
-    }
-
-
-    #endregion
-
-
-
-
-
-
-
-
-
-    public void Close()
-    {
-      try
-      {
-        m_WriteList.Clear();
-        m_Cache.Clear();
-        m_IsRending = false;
-        m_IsWriting = false;
-        m_Connect.Shutdown(SocketShutdown.Both);
-        m_Connect.Close();
-        m_Connect = null;
-      }
-      catch(Exception ex)
-      {
-        Console.WriteLine(ex.Message);
-      }
-    }
-
-
-  }
 }

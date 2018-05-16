@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5C3D034-AEB1-4A23-89F7-4ADE665B1EEF}</ProjectGuid>
+    <ProjectGuid>{E5C2883A-AC94-44EC-B56B-CA2DB2D70646}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NetFrame</RootNamespace>
@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Lib\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -39,20 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AbsHandlerCenter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Main\ServerStart.cs" />
-    <Compile Include="Tools\ByteArray.cs" />
-    <Compile Include="Tools\Define.cs" />
+    <Compile Include="main\AbsHandlerCenter.cs" />
     <Compile Include="Tools\LengthEncoding.cs" />
-    <Compile Include="Main\UserToken.cs" />
-    <Compile Include="Main\UserTokenPool.cs" />
-    <Compile Include="Tools\MessageEncodeing.cs" />
-    <Compile Include="Tools\Serialize.cs" />
-    <Compile Include="Model\SocketModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="User\" />
+    <Compile Include="Tools\MessageEncoding.cs" />
+    <Compile Include="Tools\SocketModel.cs" />
+    <Compile Include="Tools\ByteArray.cs" />
+    <Compile Include="Tools\CodingDelegate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\SerializeUtil.cs" />
+    <Compile Include="main\ServerStart.cs" />
+    <Compile Include="main\UserToken.cs" />
+    <Compile Include="Tools\UserTokenPool.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
