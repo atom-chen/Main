@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-class PlayData
+public class PlayData
 {
   public static User UserData;
   public static ServerProperty ServerData;
