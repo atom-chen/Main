@@ -61,19 +61,19 @@ public class LaunchSceneLogic : MonoBehaviour
   public void SetRoleList(List<Role> roleList)
   {
     SwitchToSelectRoleMenu();
-    PlayData.RoleData = roleList;
+    PlayData.RoleList = roleList;
     if(PlayData.RoleData==null)
     {
-      PlayData.RoleData = new List<Role>();
+      PlayData.RoleList = new List<Role>();
     }
     RoleSelectLogic.Instance.Init(roleList);
   }
 
   public void AddRoleSuccess(Role role)
   {
-    PlayData.RoleData.Add(role);
+    PlayData.RoleList.Add(role);
     SwitchToSelectRoleMenu();
-    RoleSelectLogic.Instance.Init(PlayData.RoleData);
+    RoleSelectLogic.Instance.Init(PlayData.RoleList);
   }
 }
 

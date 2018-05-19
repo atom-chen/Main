@@ -19,7 +19,7 @@ public class UIManager
   }
   public static GameObject CreateUI(string path, Transform parent = null)
   {
-    GameObject asset = ResourceManager.Load("Prefabs/" + path);
+    GameObject asset = ResourceManager.Load("Prefabs/UI/" + path);
     Transform obj = GameObject.Instantiate(asset).transform;
     if (parent != null)
     {

@@ -226,6 +226,7 @@
     <Compile Include="Assets\Script\Net\Common\Model\Role.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\ServerProperty.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\User.cs" />
+    <Compile Include="Assets\Script\Net\Common\Table\Table_RoleLimit.cs" />
     <Compile Include="Assets\Script\Net\ControllerBase.cs" />
     <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
     <Compile Include="Assets\Script\Net\StartMenu\AddRoleController.cs" />
@@ -238,6 +239,8 @@
     <Compile Include="Assets\Script\Tools\Resources.cs" />
     <Compile Include="Assets\Script\Tools\RotateModelWithPoint.cs" />
     <Compile Include="Assets\Script\Tools\UIManager.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\RoleStatePanel.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\LaunchSceneLogic.cs" />

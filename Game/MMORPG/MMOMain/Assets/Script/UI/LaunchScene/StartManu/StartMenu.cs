@@ -79,6 +79,7 @@ public class StartMenu : MonoBehaviour
     PhotoEngine.Instance.SendRequest(OperationCode.EnterGame, dic);
   }
 
+
   //点击注册
   public void OnClickRegister()
   {
@@ -104,6 +105,7 @@ public class StartMenu : MonoBehaviour
     m_ChooseServer.gameObject.SetActive(false);
   }
 
+  //set服务器列表
   public void SetServerList(List<ServerProperty> serverList)
   {
     m_ChooseServer.SetServerList(serverList,PlayData.ServerData);

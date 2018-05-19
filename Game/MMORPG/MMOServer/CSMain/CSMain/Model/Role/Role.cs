@@ -18,10 +18,6 @@ using System.Threading.Tasks;
     public int Coin;//金币
     public int Energy;//体力
     public int Toughen;//历练数
-    public Role()
-    {
-
-    }
     public Role(DB._DBRole db)
     {
       this.ID = db.ID;
@@ -29,6 +25,11 @@ using System.Threading.Tasks;
       this.Level = db.Level;
       this.Sex = db.Sex;
       this.UserID = db.UserID;
+      this.HeadIcon = db.HeadIcon;
+      this.Exp = db.Exp;
+      this.Coin = db.Coin;
+      this.Energy = db.Energy;
+      this.Toughen = db.Toughen;
     }
   }
 
@@ -41,6 +42,11 @@ using System.Threading.Tasks;
       public virtual uint Level { get; set; }
       public virtual bool Sex { get; set; }
       public virtual int UserID { get; set; }
+      public virtual string HeadIcon { get; set; }
+      public virtual int Exp { get; set; }
+      public virtual int Coin { get; set; }
+      public virtual int Energy { get; set; }
+      public virtual int Toughen { get; set; }
       
 
       public _DBRole()
@@ -55,6 +61,11 @@ using System.Threading.Tasks;
         Level = role.Level;
         Sex = role.Sex;
         UserID = role.UserID;
+        HeadIcon = role.HeadIcon;
+        Exp = role.Exp;
+        Coin = role.Coin;
+        Energy = role.Energy;
+        Toughen = role.Toughen;
       }
     }
 
@@ -68,6 +79,11 @@ using System.Threading.Tasks;
         Map(x => x.Level).Column("Level");
         Map(x => x.Sex).Column("Sex");
         Map(x => x.UserID).Column("UserID");
+        Map(x => x.HeadIcon).Column("HeadIcon");
+        Map(x => x.Exp).Column("Exp");
+        Map(x => x.Coin).Column("coin");
+        Map(x => x.Energy).Column("Energy");
+        Map(x => x.Toughen).Column("Toughen");
         Table("role");
       }
     }

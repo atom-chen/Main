@@ -6,7 +6,7 @@ public class Driver : MonoBehaviour {
 
   public WheelCollider m_FLWheel;
   public WheelCollider m_FRWheel;
-  private float m_MotorTorque = 400;
+  private float m_MotorTorque = 800;
   private float m_SteerAngle = 30;
 
   public Transform m_CenterOfMass;//质心
@@ -27,10 +27,9 @@ public class Driver : MonoBehaviour {
   float b=100;
 
   private bool m_IsSkid = false;//是否漂移
-  private Vector3 m_RotateDir;//转弯角
-  private Vector3 m_Inertia;//惯性方向
+  private Vector3 m_SkidDir;
 
-  private float m_MaxSpeed=130;
+  private float m_MaxSpeed=250;
   public float MaxSpeed
   {
     get
@@ -45,7 +44,7 @@ public class Driver : MonoBehaviour {
   {
     get
     {
-      return m_AvgSpeed;
+      return m_AvgSpeed/2;
     }
   }
   void Start()
@@ -116,7 +115,8 @@ public class Driver : MonoBehaviour {
 
     if(m_IsSkid)
     {
-      transform.Translate(m_RotateDir);
+      m_MotorTorque = 200;
+      transform.Translate(m_SkidDir/3);
       if(!m_Skid.isPlaying)
       {
         m_Skid.Play();
@@ -124,86 +124,13 @@ public class Driver : MonoBehaviour {
     }
     else
     {
+      m_SkidDir = Vector3.zero;
+      m_MotorTorque = 800;
       if (m_Skid.isPlaying)
       {
         m_Skid.Stop();
       }
     }
-
-
-    ////如果当前处于漂移状态
-    //if(m_IsSkin)
-    //{
-    //  if(Mathf.Abs(m_FLWheel.steerAngle)>10 && m_Speed>10)
-    //  {
-    //    if(!m_Skid.isPlaying)
-    //    {
-    //      m_LeftSmoke.emit = true;
-    //      m_RightSmoke.emit = true;
-    //      m_Skid.Play();
-    //    }
-    //  }
-    //  else
-    //  {
-    //    if (m_Skid.isPlaying)
-    //    {
-    //      m_LeftSmoke.emit = false;
-    //      m_RightSmoke.emit = false;
-    //      m_Skid.Stop();
-    //      m_IsSkin = false;
-    //    }
-    //  }
-    //}
-    ////位移校测
-    //else if(Mathf.Abs(m_FLWheel.steerAngle)>30 && m_Speed>50)
-    //{
-    //  bool isLeftHitGround=false;
-    //  bool isRightHitGround = false;
-    //  WheelHit hit;
-    //  //左轮检测
-    //  if(m_FLWheel.GetGroundHit(out hit))
-    //  {
-    //    isLeftHitGround = true;
-    //    m_LeftSmoke.emit = true;
-    //  }
-    //  else
-    //  {
-    //    m_LeftSmoke.emit = false;
-    //    isLeftHitGround = false;
-    //  }
-
-    //  //右轮检测
-    //  if(m_FRWheel.GetGroundHit(out hit))
-    //  {
-    //    m_RightSmoke.emit = true;
-    //    isRightHitGround = true;
-    //  }
-    //  else
-    //  {
-    //    m_RightSmoke.emit = false;
-    //    isRightHitGround = false;
-    //  }
-
-    //  //根据计算的着陆情况判断是否处于漂移
-    //  if ((isRightHitGround || isLeftHitGround))
-    //  {
-    //    m_IsSkin = true;
-    //  }
-    //  else if ((!isRightHitGround && !isLeftHitGround))
-    //  {
-    //    m_IsSkin = false;
-    //  }
-    //  else
-    //  {
-    //    m_IsSkin = true;
-    //  }
-    //}
-    //else
-    //{
-    //  m_LeftSmoke.emit = false;
-    //  m_RightSmoke.emit = false;
-    //  m_IsSkin = false;
-    //}
   }
 
   //按下/松开刹车
@@ -220,10 +147,12 @@ public class Driver : MonoBehaviour {
     if(m_IsSkid)
     {
       //要处理的方向
-      Vector3 rote =(m_MoveHozizontal / m_SteerAngle *transform.right);
-      //漂移偏移角
-      float angle = Mathf.Acos(Vector3.Dot(Vector3.Normalize(rote), Vector3.Normalize(transform.forward))*Mathf.Deg2Rad);
-      m_RotateDir = rote;
+      Vector3 rote = Vector3.Normalize((Input.GetAxis("Horizontal") * transform.right));
+      //漂移偏移角(惯性方向和漂移方向的夹角)
+      float angle = Mathf.Acos(Vector3.Dot(rote, Vector3.Normalize(transform.forward)));
+      //拿到对原本方向的偏移
+      //m_SkidDir = Quaternion.Euler(;
+
       Debug.Log("按下漂移");
     }
     else
