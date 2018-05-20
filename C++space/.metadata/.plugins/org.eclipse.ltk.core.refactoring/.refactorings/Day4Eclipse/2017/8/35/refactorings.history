@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Day4Eclipse/src/Array.h&apos; to &apos;MyArray.h&apos;" description="Rename resource &apos;Array.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Array.h" name="MyArray.h" stamp="1503982356756" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Day4Eclipse/src/Array.cpp&apos; to &apos;MyArray.cpp&apos;" description="Rename resource &apos;Array.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Array.cpp" name="MyArray.cpp" stamp="1503982363418" updateReferences="true"/>
-</session>
