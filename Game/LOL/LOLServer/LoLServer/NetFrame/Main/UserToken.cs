@@ -120,6 +120,7 @@ namespace NetFrame
            //与onData尾递归同理
            onWrite();
        }
+
        public void Close() {
            try
            {
