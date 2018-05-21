@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using NHibernate;
 using FluentNHibernate.Cfg;
@@ -12,37 +11,6 @@ using FluentNHibernate.Cfg.Db;
 
 
 
-  class SQLHelper
-  {
-    private SQLHelper()
-    {
-      try
-      {
-        conn = new SqlConnection(string.Format("server={0};port={1};user={2};password={3}; database={4};", MySQLInfo.IPAddress, MySQLInfo.port, MySQLInfo.UserName, MySQLInfo.Password, MySQLInfo.DataBase));
-        conn.Open();//打开通道，建立连接，可能出现异常,使用try catch语句
-      }
-      catch (MySqlException ex)
-      {
-        Console.WriteLine(ex.Message);
-      }
-      finally
-      {
-        conn.Close();
-      }
-    }
-    private SqlConnection conn;
-
-
-    private static SQLHelper _Instance = new SQLHelper();
-    public static SQLHelper Instance
-    {
-      get
-      {
-        return _Instance;
-      }
-    }
-
-  }
 
 
 

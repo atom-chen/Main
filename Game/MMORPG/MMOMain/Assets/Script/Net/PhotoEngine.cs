@@ -26,7 +26,8 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
   {
     _Instance = this;
     peer = new PhotonPeer(this, ConnectionProtocol.Tcp);
-    peer.Connect(m_IPAddres, m_AppName);
+    StartCoroutine(TryConnectLocal());
+    StartCoroutine(TryConnect());
     DontDestroyOnLoad(this.gameObject);
   }
 
@@ -86,7 +87,7 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
     switch (statusCode)
     {
       case StatusCode.Connect:
-        Debug.Log("已连上服务器");
+        Tips.ShowTip("已连上服务器");
         if(OnConnectSuccess!=null)
         {
           Delegate[] connectSuccessed = OnConnectSuccess.GetInvocationList();
@@ -104,7 +105,7 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
         }
         break;
       case StatusCode.Disconnect:
-        Debug.Log("连接断开");
+        Tips.ShowTip("连接断开");
         if(OnConnectBreak!=null)
         {
           Delegate[] connectBreak = OnConnectBreak.GetInvocationList();
@@ -123,7 +124,10 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
         StartCoroutine(TryConnect());
         break;
       default:
-        Debug.Log("状态异常");
+        //尝试连接本地
+        Tips.ShowTip("连接状态异常");
+        StartCoroutine(TryConnectLocal());
+        StartCoroutine(TryConnect());
         break;
     }
   }
@@ -133,8 +137,16 @@ public class PhotoEngine : MonoBehaviour,IPhotonPeerListener {
     while (m_State != StatusCode.Connect)
     {
       peer.Connect(m_IPAddres, m_AppName);
-      yield return new WaitForSeconds(10);
+      yield return new WaitForSeconds(3);
     }
+  }
 
+  IEnumerator TryConnectLocal()
+  {
+      while (m_State != StatusCode.Connect)
+      {
+          peer.Connect("127.0.0.1:4530", m_AppName);
+          yield return new WaitForSeconds(3);
+      }
   }
 }
