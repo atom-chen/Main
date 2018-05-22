@@ -76,6 +76,13 @@ public class Role
     set { m_Coin = value; OnChange(); }
   }
 
+  private int m_YuanBao;//元宝
+  public int YuanBao
+  {
+    get { return m_YuanBao; }
+    set { m_YuanBao = value; OnChange(); }
+  }
+
   private int m_Energy;//体力
   public int Energy
   {

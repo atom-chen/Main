@@ -55,7 +55,7 @@ public class RoleStatePanel : MonoBehaviour
         //m_BattleNumLabel.text
         SetExp(role.Exp);
         m_CoinLabel.text = role.Coin.ToString();
-        //m_YuanBaoLabel.text=
+        m_YuanBaoLabel.text = role.YuanBao.ToString();
         m_EnergyLabel.text = role.Energy.ToString();
         m_ToughenLabel.text = role.Toughen.ToString();
     }

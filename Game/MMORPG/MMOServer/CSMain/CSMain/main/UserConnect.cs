@@ -16,6 +16,8 @@ public class UserConnect : PeerBase
   public User LoginUser { get; set; }//存储当前登录的user账号
 
   public ServerPropert LoginServer { get; set; }
+
+  public Role LoginRole { get; set; }
   public UserConnect(IRpcProtocol protocol, IPhotonPeer unmanagedPeer)
     : base(protocol, unmanagedPeer)
   {
@@ -24,7 +26,16 @@ public class UserConnect : PeerBase
   //连接断开，入库
   protected override void OnDisconnect(PhotonHostRuntimeInterfaces.DisconnectReason reasonCode, string reasonDetail)
   {
-
+    if(LoginUser!=null)
+    {
+      UserController.Instance.DonwLine(LoginUser);
+      CSMain.Server.log.DebugFormat("玩家{0}下线", LoginUser.UserName);
+    }
+    if(LoginRole!=null)
+    {
+      RoleController.Instance.RoleDownLine(LoginRole);
+      CSMain.Server.log.DebugFormat("角色{0}下线", LoginRole.Name);
+    }
   }
 
   protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
@@ -37,7 +48,7 @@ public class UserConnect : PeerBase
     response.Parameters = new Dictionary<byte, object>();
     if (handler != null)
     {
-      log.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser==null?"":string.Format("ID={0},Name={1}",LoginUser.Guid,LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
+      log.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
       handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
       SendOperationResponse(response, sendParameters);
     }
@@ -45,13 +56,6 @@ public class UserConnect : PeerBase
     {
       log.Debug("不能解释的包 " + operationRequest.OperationCode);
     }
-  }
-
-
-  //一条连接的消息处理函数
-  private bool Login(string userName, string password)
-  {
-    return false;
   }
 
 }

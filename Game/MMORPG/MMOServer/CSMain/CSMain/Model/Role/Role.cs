@@ -16,8 +16,13 @@ using System.Threading.Tasks;
     public string HeadIcon;//头像
     public int Exp;//经验
     public int Coin;//金币
+    public int YuanBao;//元宝
     public int Energy;//体力
     public int Toughen;//历练数
+    public Role()
+    {
+
+    }
     public Role(DB._DBRole db)
     {
       this.ID = db.ID;
@@ -28,8 +33,31 @@ using System.Threading.Tasks;
       this.HeadIcon = db.HeadIcon;
       this.Exp = db.Exp;
       this.Coin = db.Coin;
+      this.YuanBao = db.YuanBao;
       this.Energy = db.Energy;
       this.Toughen = db.Toughen;
+    }
+    public bool CompareToRole(Role role)
+    {
+      if (ID == role.ID && UserID == role.UserID)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    public bool CompareToDB(DB._DBRole dbRole)
+    {
+      if(ID==dbRole.ID && Level==dbRole.Level && UserID==dbRole.UserID && Exp==dbRole.Exp && Coin==dbRole.Coin && YuanBao==dbRole.YuanBao)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
     }
   }
 
@@ -45,9 +73,10 @@ using System.Threading.Tasks;
       public virtual string HeadIcon { get; set; }
       public virtual int Exp { get; set; }
       public virtual int Coin { get; set; }
+      public virtual int YuanBao { get; set; }
       public virtual int Energy { get; set; }
       public virtual int Toughen { get; set; }
-      
+      public virtual string LastDownLine { get; set; }
 
       public _DBRole()
       {
@@ -64,6 +93,7 @@ using System.Threading.Tasks;
         HeadIcon = role.HeadIcon;
         Exp = role.Exp;
         Coin = role.Coin;
+        YuanBao = role.YuanBao;
         Energy = role.Energy;
         Toughen = role.Toughen;
       }
@@ -82,8 +112,10 @@ using System.Threading.Tasks;
         Map(x => x.HeadIcon).Column("HeadIcon");
         Map(x => x.Exp).Column("Exp");
         Map(x => x.Coin).Column("coin");
+        Map(x => x.YuanBao).Column("YuanBao");
         Map(x => x.Energy).Column("Energy");
         Map(x => x.Toughen).Column("Toughen");
+        Map(x => x.LastDownLine).Column("LastDownLine");
         Table("role");
       }
     }

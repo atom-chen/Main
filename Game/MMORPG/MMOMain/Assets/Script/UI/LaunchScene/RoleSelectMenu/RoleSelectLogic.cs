@@ -71,9 +71,14 @@ public class RoleSelectLogic : MonoBehaviour {
   {
     if(m_NowIndex<PlayData.RoleList.Count)
     {
-      PlayData.RoleData = PlayData.RoleList[m_NowIndex];
-      //切换场景
-      SceneManager.LoadScene(1);
+      //发送进入游戏的包
+      Role role=PlayData.RoleList[m_NowIndex];
+      Dictionary<byte, object> dic = new Dictionary<byte, object>();
+      dic.Add((byte)ParameterCode.Role, ParaTools.GetJson<Role>(role));
+      if (PhotoEngine.Instance != null)
+      {
+        PhotoEngine.Instance.SendRequest(OperationCode.StartGame, dic);
+      }
     }
   }
 

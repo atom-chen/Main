@@ -18,28 +18,22 @@ class UserController
   }
   private UserController()
   {
-    //获取最近7日上线过的玩家，将信息放到内存
-    m_ActiveUser = new Dictionary<string, User>();
-    IList<_DBUser> dbUsers = UserManager.Instance.GetActiveUser();
-    if(dbUsers!=null)
-    {
-      foreach(var item in dbUsers)
-      {
-        m_ActiveUser.Add(item.UserName,new User(item));
-      }
-    }
+    m_OnlineUser = new Dictionary<string, User>();
   }
-  private Dictionary<string,User> m_ActiveUser;//近7日活跃玩家
+  private Dictionary<string,User> m_OnlineUser;//在线用户
 
+  //玩家登陆
   public int Login(User loginUser)
   {
     User user;
-    //先在字典里找
-    m_ActiveUser.TryGetValue(loginUser.UserName, out user);
-    if(user!=null)
+    //去数据库取
+    _DBUser dbUser = UserManager.Instance.GetUserByUserName(loginUser.UserName);
+    if (dbUser != null)
     {
-      if (user.PassWord.Equals(loginUser.PassWord))  //直接存储密文
+      user = new User(dbUser);
+      if (user.PassWord.Equals(loginUser.PassWord))
       {
+        m_OnlineUser.Add(loginUser.UserName, user);//上线玩家添加到集合
         return user.Guid;
       }
       else
@@ -49,26 +43,17 @@ class UserController
     }
     else
     {
-      //去数据库取
-      _DBUser dbUser = UserManager.Instance.GetUserByUserName(loginUser.UserName);
-      if(dbUser!=null)
-      {
-        user = new User(dbUser);
-        if (user.PassWord.Equals(loginUser.PassWord))
-        {
-          m_ActiveUser.Add(loginUser.UserName, user);
-          return user.Guid;
-        }
-        else
-        {
-          return -1;
-        }
-      }
-      else
-      {
-        return -1;
-      }
+      return -1;
     }
+  }
+
+  //玩家下线
+  public void DonwLine(User user)
+  {
+    //验证合法性 TODO
+
+    UserManager.Instance.UpdateUser(new _DBUser(user));
+    m_OnlineUser.Remove(user.UserName);
   }
 
   //失败原因：用户名已存在
@@ -84,7 +69,7 @@ class UserController
     dbUser.Password=newUser.PassWord;
     dbUser.Guid=newUser.Guid;
     UserManager.Instance.InsertUser(dbUser);
-    m_ActiveUser.Add(newUser.UserName, newUser);
+    m_OnlineUser.Add(newUser.UserName, newUser);
     return true;
   }
   

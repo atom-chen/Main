@@ -48,7 +48,7 @@ namespace DB
       return null;
     }
 
-    public IList<_DBRole> GetRoleByID(int Id)
+    public _DBRole GetRoleByID(int Id)
     {
       try
       {
@@ -58,7 +58,15 @@ namespace DB
           {
             var servers = session.QueryOver<_DBRole>().Where(role => role.ID == Id);
             transction.Commit();
-            return servers.List();
+            if(servers.List().Count>=1)
+            {
+              return servers.List()[0];
+            }
+            else
+            {
+              return null;
+            }
+
           }
         }
       }
@@ -121,7 +129,7 @@ namespace DB
       }
     }
 
-    public void UpdateRole(_DBUser role)
+    public void UpdateRole(_DBRole role)
     {
       try
       {

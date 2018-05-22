@@ -24,8 +24,7 @@ class RoleController
 
 
   //活跃玩家应该保证其所有角色都在dic中，不活跃玩家应该同步清理所有数据
-  private Dictionary<int, Role> m_ActiveRolesDic1 = new Dictionary<int, Role>();//所属UserID，角色信息
-  private Dictionary<int, Role> m_ActiveRolesDic2 = new Dictionary<int, Role>();//所属UserID，角色信息
+  private Dictionary<int, Role> m_OnlineRoles = new Dictionary<int, Role>();//所属UserID，角色信息
 
   /// <summary>
   /// 获取某个玩家的所有角色
@@ -37,32 +36,16 @@ class RoleController
     List<Role> result = new List<Role>();
     //先在字典里找
     Role role1 = null;
-    if(m_ActiveRolesDic1.TryGetValue(userId,out role1))
+    IList<DB._DBRole> dbRoles = DB.RoleManager.Instance.GetRoleByUserID(userId);
+    if (dbRoles != null)
     {
-      result.Add(role1);
-      //尝试获取第二个角色
-      Role role2=null;
-      if(m_ActiveRolesDic2.TryGetValue(userId,out role2))
+      foreach (DB._DBRole item in dbRoles)
       {
-        result.Add(role2);
+        role1 = new Role(item);
+        result.Add(role1);
       }
-      return result;
     }
-    //去数据库找
-    else
-    {
-      IList<DB._DBRole> dbRoles=DB.RoleManager.Instance.GetRoleByUserID(userId);
-      if(dbRoles!=null)
-      {
-        foreach(DB._DBRole item in dbRoles)
-        {
-          role1 = new Role(item);
-          result.Add(role1);
-          AddRoleToDic(role1);
-        }
-      }
-      return result;
-    }
+    return result;
   }
 
   //创建角色
@@ -81,7 +64,6 @@ class RoleController
     }
     dbRole = new DB._DBRole(newRole);
     DB.RoleManager.Instance.InsertRole(dbRole);
-    AddRoleToDic(newRole);
     return true;
   }
 
@@ -93,21 +75,6 @@ class RoleController
   /// <returns>布尔</returns>
   private bool IsUserCanCreateRole(int userId)
   {
-
-    if(m_ActiveRolesDic1.ContainsKey(userId))
-    {
-      //内存中已有两个角色
-      if(m_ActiveRolesDic2.ContainsKey(userId))
-      {
-        return false;
-      }
-      //内存里只有一个角色
-      else
-      {
-        return true;
-      }
-    }
-    //内存中没有这个人，就去数据库找
     IList<DB._DBRole> dbRoleList = DB.RoleManager.Instance.GetRoleByUserID(userId);
     if (dbRoleList == null || dbRoleList.Count<=1)
     {
@@ -119,23 +86,80 @@ class RoleController
     }
   }
 
-  //添加角色到集合
-  private void AddRoleToDic(Role role)
+
+
+  //更新角色信息
+  public bool UpdateRoleInfo(Role role)
   {
-    if (!m_ActiveRolesDic1.ContainsKey(role.UserID))
+    Role listRole=null;
+    m_OnlineRoles.TryGetValue(role.UserID, out listRole);
+    if(listRole!=null)
     {
-      m_ActiveRolesDic1.Add(role.UserID, role);
-    }
-    else if (!m_ActiveRolesDic2.ContainsKey(role.UserID))
-    {
-      m_ActiveRolesDic2.Add(role.UserID, role);
+      if (listRole.CompareToRole(role))
+      {
+        listRole=role;//允许更新
+        return true;
+      }
+      else
+      {
+        CSMain.Server.log.Error(string.Format("玩家ID={0},角色ID={1} 和服务器数据不一致", role.UserID, role.ID));
+        return false;
+      }
     }
     else
     {
-      throw new Exception("Role数据异常");
+      return false;
     }
   }
 
-  
+
+  //角色上线
+  public bool RoleOnline(Role role)
+  {
+    if (!m_OnlineRoles.ContainsKey(role.UserID))
+    {
+      //验证数据一致性
+      DB._DBRole dbRole = DB.RoleManager.Instance.GetRoleByID(role.ID);
+      if(role.CompareToDB(dbRole))
+      {
+        m_OnlineRoles.Add(role.UserID, role);//允许上线
+        return true;
+      }
+      else
+      {
+        CSMain.Server.log.Debug(role.UserID + "有作弊嫌疑，角色信息被修改");
+        return false;
+      }
+    }
+    else
+    {
+      foreach (var item in m_OnlineRoles)
+      {
+        CSMain.Server.log.Error(string.Format("玩家ID={0},角色ID={1} 仍在集合中",item.Value.UserID,item.Value.ID));
+      }
+      throw new Exception("角色数据异常");
+    }
+  }
+
+
+  //角色下线
+  public void RoleDownLine(Role role)
+  {
+    //1数据入库
+    if (UpdateRoleInfo(role))
+    {
+      DB._DBRole dbRole = new DB._DBRole(role);
+      DateTime now = DateTime.Now;
+      dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
+      DB.RoleManager.Instance.UpdateRole(dbRole);
+      //2从集合中移除
+      m_OnlineRoles.Remove(role.UserID);
+    }
+    else
+    {
+      CSMain.Server.log.Error(string.Format("玩家ID={0},角色ID={1} 无法正确下线", role.UserID, role.ID));
+    }
+
+  }
 }
 

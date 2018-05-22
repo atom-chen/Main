@@ -92,7 +92,7 @@ public class MainUI : MonoBehaviour {
     m_Head.spriteName = role.HeadIcon;
     SetToughen(role.Toughen);
     SetEnergy(role.Energy);
-    m_YuanBaoLebel.text = 0 + "";
+    m_YuanBaoLebel.text =role.YuanBao.ToString();
     m_CoinLabel.text = role.Coin.ToString();
   }
 
