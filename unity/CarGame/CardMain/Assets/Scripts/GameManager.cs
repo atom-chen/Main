@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour {
     m_NowFinishLabel.text = "0/" + m_NeedFish;
     m_ReStartGameBtn.onClick.Add(new EventDelegate(ReStart));
 
-    m_Skid.m_OnPress.Add(new EventDelegate(m_Player.Skid));
-    m_Stop.m_OnPress.Add(new EventDelegate(m_Player.ShotDownCar));
+    m_Skid.m_OnPress.Add(new EventDelegate(m_Player.OnClickSkid));
+    m_Stop.m_OnPress.Add(new EventDelegate(m_Player.OnClickShotDownCar));
 
     m_NowFinishLabel.gameObject.SetActive(false);
     m_TimeLabel.transform.parent.gameObject.SetActive(false);
@@ -103,7 +103,10 @@ public class GameManager : MonoBehaviour {
       Utils.GetTime(m_Time, out minute, out second, out ms);
       m_TimeLabel.text = string.Format("{0}:{1}:{2}", minute.ToString(), second.ToString(), ms.ToString());
     }
-
+    if(Input.GetKeyDown(KeyCode.R))
+    {
+      ReStart();
+    }
   }
   //突破关卡时被调用
   public void OnFinish(int id)

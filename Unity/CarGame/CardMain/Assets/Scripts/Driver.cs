@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Driver : MonoBehaviour {
+  private const float m_MaxTorque=1200;
 
   public WheelCollider m_FLWheel;
   public WheelCollider m_FRWheel;
-  private float m_MotorTorque = 800;
+  public WheelCollider m_BLWheel;
+  public WheelCollider m_BRWheel;
+
+  public Light m_LeftLight;
+  public Light m_RightLight;
+  public Light m_LeftSkidLight;
+  public Light m_RightSkidLight;
+
+  private float m_MotorTorque = 1200;
   private float m_SteerAngle = 30;
 
   public Transform m_CenterOfMass;//质心
@@ -15,13 +24,16 @@ public class Driver : MonoBehaviour {
   public ParticleEmitter m_RightSmoke;
   public AudioSource m_Skid;
   public AudioSource m_Driver;
+  public AudioSource m_Boom;
+
+  public GameObject m_SkidMask;//划痕
 
   float m_Speed = 0;//速度
   private LinkList m_SpeedList=new LinkList();
   float m_AvgSpeed = 0;
 
-  float m_MoveVertical = 0;
-  float m_MoveHozizontal = 0;
+  float m_MoveVertical = 0;////向前速度
+  float m_MoveHozizontal = 0;//转向
 
   float k = -1.25f;
   float b=100;
@@ -50,17 +62,25 @@ public class Driver : MonoBehaviour {
   void Start()
   {
     this.GetComponent<Rigidbody>().centerOfMass = m_CenterOfMass.localPosition;
+    m_LeftLight.enabled = false;
+    m_RightLight.enabled = false;
+    m_LeftSkidLight.enabled = false;
+    m_RightSkidLight.enabled = false;
   }
   void Update()
   {
     m_Speed = (m_FLWheel.rpm) * (m_FLWheel.radius * 2 * Mathf.PI) * 60 / 1000;
     m_SpeedList.Add(m_Speed);
     m_AvgSpeed = m_SpeedList.GetSpeed();
-    m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;//向前速度
-    m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;//转向
+    m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;
+    m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;
     OnRunForward();
-    OnTurn();
 
+  }
+
+  void FixedUpdate()
+  {
+    OnTurn();
   }
 
   void OnRunForward()
@@ -70,8 +90,11 @@ public class Driver : MonoBehaviour {
     {
       m_Driver.Play();
     }
-    
-    if(m_IsShowDowm)
+    //倒车检测
+    HeadBackTest();
+    //((m_MoveVertical<0&&Speed>0) || (m_MoveVertical>0 && Speed<0))
+    //按下刹车键
+    if (m_IsShowDowm)
     {
       m_FLWheel.motorTorque = 0;
       m_FRWheel.motorTorque = 0;
@@ -98,6 +121,7 @@ public class Driver : MonoBehaviour {
 
   void OnTurn()
   {
+    //限制旋转
     if(m_Speed<=30)
     {
       m_SteerAngle = 60;
@@ -110,49 +134,28 @@ public class Driver : MonoBehaviour {
     {
       m_SteerAngle = 5;
     }
-    m_FLWheel.steerAngle = m_MoveHozizontal;
-    m_FRWheel.steerAngle = m_MoveHozizontal;
+    if(!m_IsSkid)
+    {
+      m_FLWheel.steerAngle = m_MoveHozizontal;
+      m_FRWheel.steerAngle = m_MoveHozizontal;
+    }
+    OnSkid();
 
-    if(m_IsSkid)
-    {
-      m_MotorTorque = 200;
-      transform.Translate(m_SkidDir/3);
-      if(!m_Skid.isPlaying)
-      {
-        m_Skid.Play();
-      }
-    }
-    else
-    {
-      m_SkidDir = Vector3.zero;
-      m_MotorTorque = 800;
-      if (m_Skid.isPlaying)
-      {
-        m_Skid.Stop();
-      }
-    }
   }
 
   //按下/松开刹车
-  public void ShotDownCar()
+  public void OnClickShotDownCar()
   {
     Debug.Log("按下刹车");
     m_IsShowDowm = !m_IsShowDowm;
   }
 
   //按下/松开漂移
-  public void Skid()
+  public void OnClickSkid()
   {
     m_IsSkid = !m_IsSkid;
     if(m_IsSkid)
     {
-      //要处理的方向
-      Vector3 rote = Vector3.Normalize((Input.GetAxis("Horizontal") * transform.right));
-      //漂移偏移角(惯性方向和漂移方向的夹角)
-      float angle = Mathf.Acos(Vector3.Dot(rote, Vector3.Normalize(transform.forward)));
-      //拿到对原本方向的偏移
-      //m_SkidDir = Quaternion.Euler(;
-
       Debug.Log("按下漂移");
     }
     else
@@ -161,6 +164,136 @@ public class Driver : MonoBehaviour {
     }
   }
 
+  /// <summary>
+  /// 漂移中持续计算方向
+  /// </summary>
+  private void  OnSkid()
+  {
+    //漂移处理
+    if (m_IsSkid)
+    {
+      float dir = Input.GetAxis("Horizontal");
+      //要处理的方向
+      Vector3 rote = Vector3.Normalize(dir * (transform.right));
+      //前方向
+      Vector3 forward=Vector3.Normalize(transform.forward);
+      float rotateSpeed=Speed /360;//转向速度
+      //漂移偏移角(惯性方向和漂移方向的夹角)
+      //float angle = Mathf.Acos(Vector3.Dot(rote, forward));
+      ////拿到对原本方向的偏移
+      //Quaternion rotation = Quaternion.Euler(forward - rote);//当前点-上一个点，形成一个方向
+      m_SkidDir = Vector3.Lerp(forward, rote, 1);
+      transform.Translate(m_SkidDir);
+
+      //漂移灯亮
+      if (dir > 0)
+      {
+        m_RightSkidLight.enabled = true;
+        m_LeftSkidLight.enabled = false;
+      }
+      else
+      {
+        m_RightSkidLight.enabled = false;
+        m_LeftSkidLight.enabled = true;
+      }
+      m_MotorTorque = 0;
+      if (!m_Skid.isPlaying)
+      {
+        m_Skid.Play();
+      }
+      SkidEffect();
+    }
+    else
+    {
+      m_SkidDir = transform.forward;
+      m_MotorTorque = m_MaxTorque;
+      if (m_Skid.isPlaying)
+      {
+        m_Skid.Stop();
+      }
+      m_RightSkidLight.enabled = false;
+      m_LeftSkidLight.enabled = false;
+      m_LeftSmoke.emit = false;
+      m_RightSmoke.emit = false;
+    }
+
+  }
+
+  //倒车检测
+  private void HeadBackTest()
+  {
+    //亮灯
+    if (Speed < 0)
+    {
+      m_LeftLight.enabled = true;
+      m_RightLight.enabled = true;
+    }
+    else
+    {
+      m_LeftLight.enabled = false;
+      m_RightLight.enabled = false;
+    }
+
+  }
+
+
+  private Vector3 m_PreLeftSkidPos = Vector3.zero;
+  private Vector3 m_PreRightSkidPos = Vector3.zero;
+  /// <summary>
+  /// 播放漂移特效
+  /// </summary>
+  private void SkidEffect()
+  {
+    //1 烟雾
+    m_LeftSmoke.emit = true;
+    m_RightSmoke.emit = true;
+
+    //2 划痕
+    WheelHit hit;
+    //左轮
+    if(m_BLWheel.GetGroundHit(out hit))
+    {
+      if(m_PreLeftSkidPos!=Vector3.zero)
+      {
+        Vector3 pos = hit.point;
+        pos.y += 0.05f;
+
+        Quaternion rotation = Quaternion.LookRotation(hit.point - m_PreLeftSkidPos);//当前点-上一个点，形成一个方向
+
+        GameObject.Instantiate(m_SkidMask, pos, rotation);
+      }
+      m_PreLeftSkidPos = hit.point;
+    }
+    else
+    {
+      m_PreLeftSkidPos = Vector3.zero;
+    }
+    //右轮
+    if (m_BRWheel.GetGroundHit(out hit))
+    {
+      if (m_PreRightSkidPos != Vector3.zero)
+      {
+        Vector3 pos = hit.point;
+        pos.y += 0.05f;
+
+        Quaternion rotation = Quaternion.LookRotation(hit.point - m_PreRightSkidPos);//当前点-上一个点，形成一个方向
+        GameObject.Instantiate(m_SkidMask, pos, rotation);
+      }
+      m_PreLeftSkidPos = hit.point;
+    }
+    else
+    {
+      m_PreRightSkidPos = Vector3.zero;
+    }
+
+  }
   
-  
+  void OnCollisionEnter(Collision other)
+  {
+    if(other.collider.tag=="Wall")
+    {
+      m_Boom.volume = m_Speed / 280;
+      m_Boom.Play();
+    }
+  }
 }
