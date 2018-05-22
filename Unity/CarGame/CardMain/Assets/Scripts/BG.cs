@@ -23,17 +23,23 @@ public class BG : MonoBehaviour {
     DontDestroyOnLoad(this.gameObject);
     m_Audio = this.GetComponentInChildren<AudioSource>();
 	}
+  public void RandomStartGame()
+  {
+    int carMap = Random.Range(2, 4);
+    OnSwitchScene(carMap);
+    SceneManager.LoadScene(carMap);
+  }
 
   public void OnSwitchScene(int index)
   {
-    if(index==2)
+    if(index>1 && m_PreIndex<=1)
     {
       m_Audio.Stop();
       AudioClip music = Resources.Load<AudioClip>("Music/2");
       m_Audio.clip = music;
       StartCoroutine(PlaySound());
     }
-    else if ((index == 1|| index==0) && m_PreIndex == 2)
+    else if (index<=1 && m_PreIndex >= 2)
     {
       m_Audio.Stop();
       AudioClip music = Resources.Load<AudioClip>("Music/BG");

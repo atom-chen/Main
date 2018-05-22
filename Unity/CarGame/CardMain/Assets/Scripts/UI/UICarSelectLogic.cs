@@ -14,7 +14,6 @@ public class UICarSelectLogic : MonoBehaviour {
   //点击确定
   private void OnClickCommit()
   {
-    BG.Instance.OnSwitchScene(2);
-    SceneManager.LoadScene(2);
+    BG.Instance.RandomStartGame();
   }
 }

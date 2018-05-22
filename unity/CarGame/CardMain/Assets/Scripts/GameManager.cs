@@ -152,8 +152,7 @@ public class GameManager : MonoBehaviour {
 
   private void ReStart()
   {
-    BG.Instance.OnSwitchScene(2);
-    SceneManager.LoadScene(2);
+    BG.Instance.RandomStartGame();
   }
 
 

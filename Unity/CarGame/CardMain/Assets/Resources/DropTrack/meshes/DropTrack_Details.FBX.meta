@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 4353cb6f6b4853a468efd68ba15b09c5
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DT-M_PowerLines
+    100002: DT-M_OfficalBuilding
+    100004: DT-M_TechShed
+    100006: DT-M_Semi_E
+    100008: DT-M_Semi_B
+    100010: DT-M_SmGrandstand
+    100012: DT-M_Ambulance
+    100014: DT-M_TreeLine
+    100016: DT-M_LgGrandstand
+    100018: DT-M_Semi_G
+    100020: DT-M_Semi_A
+    100022: DT-M_LightPole
+    100024: //RootNode
+    100026: DT-M_Semi_C
+    100028: DT-M_Semi_H
+    100030: DT-M_Semi_D
+    100032: DT-M_CrewTruck
+    100034: DT-M_Semi_F
+    100036: DT-M_TireStack
+    100038: DT-M_Cone_Mesh
+    100040: DT-M_Terrain
+    100042: DT-C_Cone_Collision
+    400000: DT-M_PowerLines
+    400002: DT-M_OfficalBuilding
+    400004: DT-M_TechShed
+    400006: DT-M_Semi_E
+    400008: DT-M_Semi_B
+    400010: DT-M_SmGrandstand
+    400012: DT-M_Ambulance
+    400014: DT-M_TreeLine
+    400016: DT-M_LgGrandstand
+    400018: DT-M_Semi_G
+    400020: DT-M_Semi_A
+    400022: DT-M_LightPole
+    400024: //RootNode
+    400026: DT-M_Semi_C
+    400028: DT-M_Semi_H
+    400030: DT-M_Semi_D
+    400032: DT-M_CrewTruck
+    400034: DT-M_Semi_F
+    400036: DT-M_TireStack
+    400038: DT-M_Cone_Mesh
+    400040: DT-M_Terrain
+    400042: DT-C_Cone_Collision
+    2300000: DT-M_PowerLines
+    2300002: DT-M_OfficalBuilding
+    2300004: DT-M_TechShed
+    2300006: DT-M_Semi_E
+    2300008: DT-M_Semi_B
+    2300010: DT-M_SmGrandstand
+    2300012: DT-M_Ambulance
+    2300014: DT-M_TreeLine
+    2300016: DT-M_LgGrandstand
+    2300018: DT-M_Semi_G
+    2300020: DT-M_Semi_A
+    2300022: DT-M_LightPole
+    2300024: DT-M_Semi_C
+    2300026: DT-M_Semi_H
+    2300028: DT-M_Semi_D
+    2300030: DT-M_CrewTruck
+    2300032: DT-M_Semi_F
+    2300034: DT-M_TireStack
+    2300036: DT-M_Cone_Mesh
+    2300038: DT-M_Terrain
+    2300040: DT-C_Cone_Collision
+    3300000: DT-M_PowerLines
+    3300002: DT-M_OfficalBuilding
+    3300004: DT-M_TechShed
+    3300006: DT-M_Semi_E
+    3300008: DT-M_Semi_B
+    3300010: DT-M_SmGrandstand
+    3300012: DT-M_Ambulance
+    3300014: DT-M_TreeLine
+    3300016: DT-M_LgGrandstand
+    3300018: DT-M_Semi_G
+    3300020: DT-M_Semi_A
+    3300022: DT-M_LightPole
+    3300024: DT-M_Semi_C
+    3300026: DT-M_Semi_H
+    3300028: DT-M_Semi_D
+    3300030: DT-M_CrewTruck
+    3300032: DT-M_Semi_F
+    3300034: DT-M_TireStack
+    3300036: DT-M_Cone_Mesh
+    3300038: DT-M_Terrain
+    3300040: DT-C_Cone_Collision
+    4300000: DT-M_Cone
+    4300002: DT-M_OfficalBuilding
+    4300004: DT-M_SmGrandstand
+    4300006: DT-M_LgGrandstand
+    4300008: DT-M_Semi_C
+    4300010: DT-M_PowerLines
+    4300012: DT-M_TireStack
+    4300014: DT-M_LightPole
+    4300016: DT-M_TechShed
+    4300018: DT-M_CrewTruck
+    4300020: DT-M_Ambulance
+    4300022: DT-M_Semi_B
+    4300024: DT-M_Semi_E
+    4300026: DT-M_Semi_G
+    4300028: DT-M_Semi_A
+    4300030: DT-M_Semi_D
+    4300032: DT-M_Semi_H
+    4300034: DT-M_Semi_F
+    4300036: DT-M_Cone_Mesh
+    4300038: DT-C_Cone_Collision
+    4300040: DT-M_Terrain
+    4300042: DT-M_TreeLine
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

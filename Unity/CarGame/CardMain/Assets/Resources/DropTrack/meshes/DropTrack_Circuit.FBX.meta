@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: eccf013ea08714e41a2cd6f82fe92400
+labels:
+- racing
+- track
+- race
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DT-M_16
+    100002: DT-M_48x90
+    100004: DT-M_32x90
+    100006: DT-M_CheckPoint
+    100008: DT-M_8
+    100010: DT-M_32S
+    100012: DT-M_Bridge
+    100014: //RootNode
+    100016: DT-M_64x90
+    100018: DT-M_Finish
+    100020: DT-M_32
+    100022: DT-M_64
+    100024: DT-M_32x45
+    100026: DT-M_48x45
+    100028: DT-M_64x45
+    100030: DT-M_32S-R
+    100032: DT-M_U-Turn
+    400000: DT-M_16
+    400002: DT-M_48x90
+    400004: DT-M_32x90
+    400006: DT-M_CheckPoint
+    400008: DT-M_8
+    400010: DT-M_32S
+    400012: DT-M_Bridge
+    400014: //RootNode
+    400016: DT-M_64x90
+    400018: DT-M_Finish
+    400020: DT-M_32
+    400022: DT-M_64
+    400024: DT-M_32x45
+    400026: DT-M_48x45
+    400028: DT-M_64x45
+    400030: DT-M_32S-R
+    400032: DT-M_U-Turn
+    2300000: DT-M_16
+    2300002: DT-M_48x90
+    2300004: DT-M_32x90
+    2300006: DT-M_CheckPoint
+    2300008: DT-M_8
+    2300010: DT-M_32S
+    2300012: DT-M_Bridge
+    2300014: DT-M_64x90
+    2300016: DT-M_Finish
+    2300018: DT-M_32
+    2300020: DT-M_64
+    2300022: DT-M_32x45
+    2300024: DT-M_48x45
+    2300026: DT-M_64x45
+    2300028: DT-M_32S-R
+    2300030: DT-M_U-Turn
+    3300000: DT-M_16
+    3300002: DT-M_48x90
+    3300004: DT-M_32x90
+    3300006: DT-M_CheckPoint
+    3300008: DT-M_8
+    3300010: DT-M_32S
+    3300012: DT-M_Bridge
+    3300014: DT-M_64x90
+    3300016: DT-M_Finish
+    3300018: DT-M_32
+    3300020: DT-M_64
+    3300022: DT-M_32x45
+    3300024: DT-M_48x45
+    3300026: DT-M_64x45
+    3300028: DT-M_32S-R
+    3300030: DT-M_U-Turn
+    4300000: DT-M_16
+    4300002: DT-M_32
+    4300004: DT-M_64
+    4300006: DT-M_64x90
+    4300008: DT-M_48x90
+    4300010: DT-M_32x90
+    4300012: DT-M_32S
+    4300014: DT-M_Finish
+    4300016: DT-M_8
+    4300018: DT-M_CheckPoint
+    4300020: DT-M_Bridge
+    4300022: DT-M_48x45
+    4300024: DT-M_32x45
+    4300026: DT-M_64x45
+    4300028: DT-M_32S
+    4300030: DT-M_32S-R
+    4300032: DT-M_U-Turn
+    6400000: DT-M_8
+    6400002: DT-M_32S
+    6400004: DT-M_32x45
+    6400006: DT-M_Bridge
+    6400008: DT-M_32
+    6400010: DT-M_64x45
+    6400012: DT-M_48x45
+    6400014: DT-M_48x90
+    6400016: DT-M_32x90
+    6400018: DT-M_64x90
+    6400020: DT-M_CheckPoint
+    6400022: DT-M_64
+    6400024: DT-M_Finish
+    6400026: DT-M_16
+    6400028: DT-M_32S-R
+    6400030: DT-M_U-Turn
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

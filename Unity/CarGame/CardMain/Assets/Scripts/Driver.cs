@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour {
   private const float m_MaxTorque=1200;
+  private const float m_SkidTorque = 400;
 
   public WheelCollider m_FLWheel;
   public WheelCollider m_FRWheel;
@@ -32,7 +33,7 @@ public class Driver : MonoBehaviour {
   private LinkList m_SpeedList=new LinkList();
   float m_AvgSpeed = 0;
 
-  float m_MoveVertical = 0;////向前速度
+  float m_MoveVertical = 0;//向前
   float m_MoveHozizontal = 0;//转向
 
   float k = -1.25f;
@@ -61,6 +62,40 @@ public class Driver : MonoBehaviour {
   }
   void Start()
   {
+    if(m_FLWheel==null)
+    {
+      Transform obj = transform.Find("Wheel/WheelFL/DiscBrakeFL/WheelCollider");
+      if (obj != null)
+      {
+        m_FLWheel=GetComponent<WheelCollider>();
+      }
+    }
+    if (m_FRWheel == null)
+    {
+      Transform obj = transform.Find("Wheel/WheelFR/WheelCollider");
+      if (obj != null)
+      {
+        m_FRWheel=GetComponent<WheelCollider>();
+      }
+    }
+    if (m_BLWheel == null)
+    {
+      Transform obj = transform.Find("Wheel/WheelRL/WheelCollider");
+      if (obj != null)
+      {
+        m_FRWheel = GetComponent<WheelCollider>();
+      }
+    }
+    if (m_BRWheel == null)
+    {
+      Transform obj = transform.Find("Wheel/WheelRR/WheelCollider");
+      if (obj != null)
+      {
+        m_FRWheel = GetComponent<WheelCollider>();
+      }
+    }
+
+
     this.GetComponent<Rigidbody>().centerOfMass = m_CenterOfMass.localPosition;
     m_LeftLight.enabled = false;
     m_RightLight.enabled = false;
@@ -72,8 +107,21 @@ public class Driver : MonoBehaviour {
     m_Speed = (m_FLWheel.rpm) * (m_FLWheel.radius * 2 * Mathf.PI) * 60 / 1000;
     m_SpeedList.Add(m_Speed);
     m_AvgSpeed = m_SpeedList.GetSpeed();
-    m_MoveVertical = Input.GetAxis("Vertical")*m_MotorTorque;
-    m_MoveHozizontal = Input.GetAxis("Horizontal")*m_SteerAngle;
+
+    //PC端输入
+#if UNITY_EDITOR
+    float input = Input.GetAxis("Horizontal");
+    m_MoveHozizontal = input * m_SteerAngle;
+    m_MoveVertical = (1 - input) * m_MotorTorque;
+
+#endif
+    //移动端输入
+#if (UNITY_ios || UNITY_ANDROID)
+   float input = Input.acceleration.x;
+   m_MoveHozizontal = input*m_SteerAngle;
+   m_MoveVertical = (1 - input) * m_MotorTorque;
+#endif
+
     OnRunForward();
 
   }
@@ -92,7 +140,6 @@ public class Driver : MonoBehaviour {
     }
     //倒车检测
     HeadBackTest();
-    //((m_MoveVertical<0&&Speed>0) || (m_MoveVertical>0 && Speed<0))
     //按下刹车键
     if (m_IsShowDowm)
     {
@@ -172,31 +219,29 @@ public class Driver : MonoBehaviour {
     //漂移处理
     if (m_IsSkid)
     {
-      float dir = Input.GetAxis("Horizontal");
+      float dir = m_MoveHozizontal/m_SteerAngle;
       //要处理的方向
       Vector3 rote = Vector3.Normalize(dir * (transform.right));
       //前方向
       Vector3 forward=Vector3.Normalize(transform.forward);
-      float rotateSpeed=Speed /360;//转向速度
+      float rotateSpeed=Speed/Mathf.PI;//转向速度
       //漂移偏移角(惯性方向和漂移方向的夹角)
-      //float angle = Mathf.Acos(Vector3.Dot(rote, forward));
+      float angle = Mathf.Acos(Vector3.Dot(rote, forward));
       ////拿到对原本方向的偏移
-      //Quaternion rotation = Quaternion.Euler(forward - rote);//当前点-上一个点，形成一个方向
-      m_SkidDir = Vector3.Lerp(forward, rote, 1);
-      transform.Translate(m_SkidDir);
+      transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.Euler(-rote), Time.deltaTime*0.1f);
 
       //漂移灯亮
       if (dir > 0)
       {
-        m_RightSkidLight.enabled = true;
-        m_LeftSkidLight.enabled = false;
+        m_RightLight.enabled = true;
+        m_LeftLight.enabled = false;
       }
       else
       {
-        m_RightSkidLight.enabled = false;
-        m_LeftSkidLight.enabled = true;
+        m_RightLight.enabled = false;
+        m_LeftLight.enabled = true;
       }
-      m_MotorTorque = 0;
+      m_MotorTorque = m_SkidTorque;
       if (!m_Skid.isPlaying)
       {
         m_Skid.Play();
@@ -211,8 +256,8 @@ public class Driver : MonoBehaviour {
       {
         m_Skid.Stop();
       }
-      m_RightSkidLight.enabled = false;
-      m_LeftSkidLight.enabled = false;
+      m_RightLight.enabled = false;
+      m_LeftLight.enabled = false;
       m_LeftSmoke.emit = false;
       m_RightSmoke.emit = false;
     }
@@ -225,13 +270,13 @@ public class Driver : MonoBehaviour {
     //亮灯
     if (Speed < 0)
     {
-      m_LeftLight.enabled = true;
-      m_RightLight.enabled = true;
+      m_LeftSkidLight.enabled = true;
+      m_RightSkidLight.enabled = true;
     }
     else
     {
-      m_LeftLight.enabled = false;
-      m_RightLight.enabled = false;
+      m_LeftSkidLight.enabled = false;
+      m_RightSkidLight.enabled = false;
     }
 
   }

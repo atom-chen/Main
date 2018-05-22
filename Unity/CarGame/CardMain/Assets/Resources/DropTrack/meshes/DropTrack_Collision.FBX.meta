@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 4f52aa157ed49224fa8d522c5d71572f
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DT-C_32x90
+    100002: DT-C_Finsih
+    100004: DT-C_48x90
+    100006: DT-C_Bridge
+    100008: //RootNode
+    100010: DT-C_64x90
+    100012: DT-C_64
+    100014: DT-C_32
+    100016: DT-C_32S
+    100018: DT-C_8
+    100020: DT-C_CheckPoint
+    100022: DT-C_16
+    100024: DT-C_32x45
+    100026: DT-C_64x45
+    100028: DT-C_48x45
+    100030: DT-C_32S-R
+    100032: DT-C_U-Turn
+    400000: DT-C_32x90
+    400002: DT-C_Finsih
+    400004: DT-C_48x90
+    400006: DT-C_Bridge
+    400008: //RootNode
+    400010: DT-C_64x90
+    400012: DT-C_64
+    400014: DT-C_32
+    400016: DT-C_32S
+    400018: DT-C_8
+    400020: DT-C_CheckPoint
+    400022: DT-C_16
+    400024: DT-C_32x45
+    400026: DT-C_64x45
+    400028: DT-C_48x45
+    400030: DT-C_32S-R
+    400032: DT-C_U-Turn
+    2300000: DT-C_32x90
+    2300002: DT-C_Finsih
+    2300004: DT-C_48x90
+    2300006: DT-C_Bridge
+    2300008: DT-C_64x90
+    2300010: DT-C_64
+    2300012: DT-C_32
+    2300014: DT-C_32S
+    2300016: DT-C_8
+    2300018: DT-C_CheckPoint
+    2300020: DT-C_16
+    2300022: DT-C_32x45
+    2300024: DT-C_64x45
+    2300026: DT-C_48x45
+    2300028: DT-C_32S-R
+    2300030: DT-C_U-Turn
+    3300000: DT-C_32x90
+    3300002: DT-C_Finsih
+    3300004: DT-C_48x90
+    3300006: DT-C_Bridge
+    3300008: DT-C_64x90
+    3300010: DT-C_64
+    3300012: DT-C_32
+    3300014: DT-C_32S
+    3300016: DT-C_8
+    3300018: DT-C_CheckPoint
+    3300020: DT-C_16
+    3300022: DT-C_32x45
+    3300024: DT-C_64x45
+    3300026: DT-C_48x45
+    3300028: DT-C_32S-R
+    3300030: DT-C_U-Turn
+    4300000: DT-C_16
+    4300002: DT-C_32
+    4300004: DT-C_64
+    4300006: DT-C_48x90
+    4300008: DT-C_32x90
+    4300010: DT-C_64x90
+    4300012: DT-C_32S
+    4300014: DT-C_8
+    4300016: DT-C_Finsih
+    4300018: DT-C_CheckPoint
+    4300020: DT-C_Bridge
+    4300022: DT-C_48x45
+    4300024: DT-C_32x45
+    4300026: DT-C_64x45
+    4300028: DT-C_32S01
+    4300030: DT-C_32S-R
+    4300032: DT-M_U-Turn01
+    4300034: DT-C_U-Turn
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

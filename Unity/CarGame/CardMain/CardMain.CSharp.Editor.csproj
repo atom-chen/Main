@@ -241,6 +241,7 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
+    <None Include="Assets\Resources\DropTrack\meshes\ScimitarLog.txt" />
     <None Include="Assets\Resources\Pro Standard Assets\Water\Sources\FX-Water.shader" />
     <None Include="Assets\Resources\Shaders\Alpha-VertexLitGlow02.shader" />
     <None Include="Assets\Resources\Shaders\PolyTerrain\FirstPassLightmap.shader" />

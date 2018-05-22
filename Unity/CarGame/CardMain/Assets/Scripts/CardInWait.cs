@@ -18,8 +18,17 @@ public class CardInWait : MonoBehaviour {
   }
 	void Update () 
   {
-    m_MoveVertical = Input.GetAxis("Vertical") ;
-    m_MoveHozizontal = Input.GetAxis("Horizontal") ;
+    m_MoveVertical = 1;
+    //PC端输入
+#if UNITY_EDITOR
+    m_MoveHozizontal = Input.GetAxis("Horizontal");
+#endif
+
+    //移动端输入
+#if (UNITY_ios || UNITY_ANDROID)
+   m_MoveHozizontal = Input.acceleration.x;
+#endif
+
     Forward();
     Turn();
 	}
