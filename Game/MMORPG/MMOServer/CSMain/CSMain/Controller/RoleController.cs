@@ -133,11 +133,8 @@ class RoleController
     }
     else
     {
-      foreach (var item in m_OnlineRoles)
-      {
-        CSMain.Server.log.Error(string.Format("玩家ID={0},角色ID={1} 仍在集合中",item.Value.UserID,item.Value.ID));
-      }
-      throw new Exception("角色数据异常");
+        //如果集合中有，则不让该角色下线
+        return true;
     }
   }
 

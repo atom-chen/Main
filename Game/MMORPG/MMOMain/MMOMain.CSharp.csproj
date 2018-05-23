@@ -228,7 +228,7 @@
     <Compile Include="Assets\Script\Net\Common\Model\Role.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\ServerProperty.cs" />
     <Compile Include="Assets\Script\Net\Common\Model\User.cs" />
-    <Compile Include="Assets\Script\Net\Common\Table\Table_RoleLimit.cs" />
+    <Compile Include="Assets\Script\Net\Common\Table\Table_Role.cs" />
     <Compile Include="Assets\Script\Net\ControllerBase.cs" />
     <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
     <Compile Include="Assets\Script\Net\StartMenu\AddRoleController.cs" />
