@@ -35,6 +35,7 @@ public class Driver : MonoBehaviour {
 
   float m_MoveVertical = 0;//向前
   float m_MoveHozizontal = 0;//转向
+  float input = 0;
 
   float k = -1.25f;
   float b=100;
@@ -110,14 +111,14 @@ public class Driver : MonoBehaviour {
 
     //PC端输入
 #if UNITY_EDITOR
-    float input = Input.GetAxis("Horizontal");
+    input = Input.GetAxis("Horizontal");
     m_MoveHozizontal = input * m_SteerAngle;
-    m_MoveVertical = (1 - input) * m_MotorTorque;
+    m_MoveVertical = (1 - input) < 0.5f ? 0.5f * m_MotorTorque : (1 - input) * m_MotorTorque;
 
 #endif
     //移动端输入
 #if (UNITY_ios || UNITY_ANDROID)
-   float input = Input.acceleration.x;
+   input = Input.acceleration.x;
    m_MoveHozizontal = input*m_SteerAngle;
    m_MoveVertical = (1 - input) * m_MotorTorque;
 #endif
@@ -219,17 +220,17 @@ public class Driver : MonoBehaviour {
     //漂移处理
     if (m_IsSkid)
     {
-      float dir = m_MoveHozizontal/m_SteerAngle;
+      float dir = input;
       //要处理的方向
       Vector3 rote = Vector3.Normalize(dir * (transform.right));
       //前方向
       Vector3 forward=Vector3.Normalize(transform.forward);
-      float rotateSpeed=Speed/Mathf.PI;//转向速度
+      rote = Vector3.Slerp(forward, rote, (m_MaxSpeed/Speed)*Time.deltaTime);
       //漂移偏移角(惯性方向和漂移方向的夹角)
-      float angle = Mathf.Acos(Vector3.Dot(rote, forward));
+      //float angle = Mathf.Acos(Vector3.Dot(rote, forward));
       ////拿到对原本方向的偏移
-      transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.Euler(-rote), Time.deltaTime*0.1f);
-
+      transform.rotation = Quaternion.FromToRotation(forward,rote);
+      Debug.Log(string.Format("right={0},dir={1},rote={2},forward={3},最终旋转={4}", transform.right, dir, rote,forward,transform.rotation));
       //漂移灯亮
       if (dir > 0)
       {
