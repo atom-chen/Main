@@ -62,7 +62,7 @@ public class RoleStatePanel : MonoBehaviour
     public void SetExp(int value)
     {
         Role role = PlayData.RoleData;
-        uint limit = Table_RoleLimit.GetExpLimit(role.Level);
+        int limit = Table_Role.GetExpLimit((int)(role.Level));
         m_ExpLabel.text = string.Format("{0}/{1}", value, limit);
         m_ExpSlider.value = (float)(role.Exp / limit);
     }
