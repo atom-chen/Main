@@ -23,6 +23,7 @@ public class PlayData
     get { return m_RoleList[m_RoleIndex]; } 
     set 
     { 
+      //将其它角色的委托去除
       for(int i=0;i<m_RoleList.Count;i++)
       {
         if(m_RoleList[i]==value)
@@ -35,6 +36,7 @@ public class PlayData
           m_RoleList[i].OnInfoChange -= OnChange;
         }
       }
+      GameManager.Instance.OneSecondCallBack += RoleEnergyRecover;
     } 
   }
 
@@ -49,6 +51,22 @@ public class PlayData
       {
         item();
       }
+    }
+  }
+
+  private static void RoleEnergyRecover()
+  {
+    if (RoleData == null)
+    {
+      return;
+    }
+    if (RoleData.EnergyNextRecoverTimer > 0)
+    {
+      RoleData.EnergyNextRecoverTimer--;
+    }
+    if (RoleData.ToughenNextRecoverTimer > 0)
+    {
+      RoleData.ToughenNextRecoverTimer--;
     }
   }
 }

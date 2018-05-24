@@ -73,6 +73,11 @@ public class StartMenu : MonoBehaviour
   //点击进入游戏
   public void OnEnterGameClick()
   {
+    if(PlayData.ServerData==null)
+    {
+      Tips.ShowTip("请选择服务器");
+      return;
+    }
     //发包
     Dictionary<byte, object> dic = new Dictionary<byte, object>();
     dic.Add((byte)ParameterCode.Server, ParaTools.GetJson<ServerProperty>(PlayData.ServerData));

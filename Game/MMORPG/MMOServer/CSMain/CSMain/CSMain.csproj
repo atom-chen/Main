@@ -97,6 +97,7 @@
     <Compile Include="main\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="main\sqlHelper\NHibernateHelper.cs" />
+    <Compile Include="Tools\FormatTools.cs" />
     <Compile Include="Tools\MD5Tools.cs" />
     <Compile Include="Tools\ParameterTools.cs" />
   </ItemGroup>

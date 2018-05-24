@@ -34,7 +34,6 @@ public class UserConnect : PeerBase
     if(LoginRole!=null)
     {
       RoleController.Instance.RoleDownLine(LoginRole);
-      CSMain.Server.log.DebugFormat("角色{0}下线", LoginRole.Name);
     }
   }
 

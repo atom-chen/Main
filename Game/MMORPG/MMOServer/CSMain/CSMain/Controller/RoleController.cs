@@ -87,7 +87,6 @@ class RoleController
   }
 
 
-
   //更新角色信息
   public bool UpdateRoleInfo(Role role)
   {
@@ -122,6 +121,7 @@ class RoleController
       DB._DBRole dbRole = DB.RoleManager.Instance.GetRoleByID(role.ID);
       if(role.CompareToDB(dbRole))
       {
+        role = new Role(dbRole);
         m_OnlineRoles.Add(role.UserID, role);//允许上线
         return true;
       }
@@ -148,6 +148,7 @@ class RoleController
       DB._DBRole dbRole = new DB._DBRole(role);
       DateTime now = DateTime.Now;
       dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
+      CSMain.Server.log.DebugFormat("角色{0}在{1}下线", role.Name,dbRole.LastDownLine);
       DB.RoleManager.Instance.UpdateRole(dbRole);
       //2从集合中移除
       m_OnlineRoles.Remove(role.UserID);
@@ -158,5 +159,6 @@ class RoleController
     }
 
   }
+
 }
 
