@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="line">
+      <UniqueIdentifier>{532a8834-9976-4e11-9630-0182ea783617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{e491bec3-95b3-47c5-9ec0-87ac8334a47c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="line\DDA.hpp">
+      <Filter>line</Filter>
+    </ClInclude>
+    <ClInclude Include="main\ggl.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Scene.h">
+      <Filter>main</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main\main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Scene.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
