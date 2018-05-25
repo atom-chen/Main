@@ -14,7 +14,7 @@ public class QqClienConServer {
 	{
 		//每尝试连接一次，就应该获得一个连接
 		try {
-			s=new Socket("127.0.0.1",9999);
+			s=new Socket("192.168.2.102",9999);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
