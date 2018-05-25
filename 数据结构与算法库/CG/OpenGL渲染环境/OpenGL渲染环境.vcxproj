@@ -11,9 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{81A745D9-7FFE-4ABD-B00D-32392CFBA15F}</ProjectGuid>
+    <ProjectGuid>{D5FC7C49-C594-4E9E-AFCE-6F0D8758C770}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CG</RootNamespace>
+    <RootNamespace>OpenGL渲染环境</RootNamespace>
+    <ProjectName>CG</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -58,6 +59,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>editbin /SUBSYSTEM:CONSOLE $(OutDir)/$(ProjectName).exe</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -78,13 +82,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="line\DDA.hpp" />
-    <ClInclude Include="main\ggl.h" />
-    <ClInclude Include="main\Scene.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Tools.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main\main.cpp" />
-    <ClCompile Include="main\Scene.cpp" />
+    <ClInclude Include="DDA.hpp" />
+    <ClInclude Include="ggl.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

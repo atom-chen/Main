@@ -1,18 +1,14 @@
 #include "ggl.h"
 #include "Scene.h"
-#include <tchar.h>
-#pragma comment(lib,"winmm.lib")
 #pragma comment(lib,"opengl32.lib")
 #pragma comment(lib,"glu32.lib")
-void Game_Update();
-bool Game_Exit(const HWND& hwnd);
-
-//每帧间隔时间
-unsigned g_frame = 100;
-//记录当前时间和上一次绘图时间
-DWORD g_tPre = 0, g_tNow = 0;
-
-
+void Update();
+bool Game_Exit();
+/************************************************************************/
+/* 全局变量声明                                                              */
+/************************************************************************/
+unsigned g_frame = 100;                   //每帧间隔时间
+DWORD g_tPre = 0, g_tNow = 0;             //记录当前时间和上一次绘图时间
 HDC g_hdc;
 
 void ShowErrMessage(const HWND & hwnd)
@@ -26,17 +22,27 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
 	case WM_PAINT:
 		//绘制
 		Draw();
-
 		break;
 	case WM_KEYDOWN:
 		//键盘信息
+		switch (wParam)
+		{
+		case '2':
+			SwitchTo2D();
+			break;
+		case '3':
+			SwitchTo3D();
+			break;
+		default:
+			break;
+		}
 		if (wParam == VK_ESCAPE)
 		{
 			DestroyWindow(hwnd);
 		}
 		break;
 	case WM_DESTROY:
-		Game_Exit(hwnd);
+		Game_Exit();
 		PostQuitMessage(0);
 		return 0;
 	default:
@@ -58,11 +64,11 @@ inline bool initWndclass(WNDCLASSEX& wndclass, const HINSTANCE& hInstance, HWND&
 	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wndclass.hbrBackground = NULL;
 	wndclass.lpszMenuName = NULL;
-	wndclass.lpszClassName = L"WINCLASS";
+	wndclass.lpszClassName = WINDOW_TITLE;
 
 	RegisterClassEx(&wndclass);
-	hwnd = CreateWindowEx(NULL, wndclass.lpszClassName, WINDOW_TITLE, WS_OVERLAPPEDWINDOW | WS_VISIBLE
-		, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, NULL, NULL, wndclass.hInstance, NULL);
+	hwnd = CreateWindowEx(NULL, wndclass.lpszClassName,WINDOW_TITLE, WS_OVERLAPPEDWINDOW | WS_VISIBLE
+		, 100, 100, WINDOW_WIDTH, WINDOW_HEIGHT, NULL, NULL, wndclass.hInstance, NULL);
 	if (hwnd == NULL)
 	{
 		return false;
@@ -84,14 +90,18 @@ inline bool initWndclass(WNDCLASSEX& wndclass, const HINSTANCE& hInstance, HWND&
 	int pixelFormat = ChoosePixelFormat(g_hdc, &pfd);
 	SetPixelFormat(g_hdc, pixelFormat, &pfd);
 	HGLRC rc = wglCreateContext(g_hdc);
+	if (rc == NULL)
+	{
+
+	}
 	wglMakeCurrent(g_hdc, rc);           //设置OpenGL设备环境
-	MoveWindow(hwnd, 200, 20, WINDOW_WIDTH, WINDOW_HEIGHT, true);
-	ShowWindow(hwnd, nCmdShow);
-	UpdateWindow(hwnd);
 	if (!Init())
 	{
 		return false;
 	}
+	MoveWindow(hwnd, 200, 20, WINDOW_WIDTH, WINDOW_HEIGHT, true);
+	ShowWindow(hwnd, nCmdShow);
+	UpdateWindow(hwnd);
 	return true;
 }
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -112,30 +122,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		else{
-			//获取当前时间
-			g_tNow = GetTickCount();
-			//如果此次循环运行时间和上次相差一个帧的时间
-			if (g_tNow - g_tPre >= g_frame)
-			{
-				//处理游戏逻辑
-				Game_Update();
-				Draw();
-				//画完之后 把画好的呈现出来
-				SwapBuffers(g_hdc);
-			}
+		//获取当前时间
+		g_tNow = GetTickCount();
+		//如果此次循环运行时间和上次相差一个帧的时间
+		if (g_tNow - g_tPre >= g_frame)
+		{
+			//处理游戏逻辑
+			Update();
+			Draw();
+			//画完之后 把画好的呈现出来
+			SwapBuffers(g_hdc);
+			g_tPre = GetTickCount();
 		}
 	}
 	//注销窗口
 	UnregisterClass(wndclass.lpszClassName, wndclass.hInstance);
 	return 0;
 }
-//游戏逻辑
-void Game_Update()
+void Update()
 {
-
+	
 }
-bool Game_Exit(const HWND& hwnd)
+bool Game_Exit()
 {
 	//释放资源对象
 	if (g_hdc != NULL)
