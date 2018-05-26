@@ -1,6 +1,5 @@
-Test lua file
+--Test lua file
 
-File created onaaa
+--File created on--aaa
 
 print("hello world!")
-
