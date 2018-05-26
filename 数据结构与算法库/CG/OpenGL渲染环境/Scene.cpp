@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include "DDA.hpp"
+#include "DDA.h"
 void SwitchTo2D()
 {
 	glMatrixMode(GL_PROJECTION);

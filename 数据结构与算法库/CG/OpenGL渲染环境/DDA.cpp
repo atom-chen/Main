@@ -1,6 +1,4 @@
-#pragma once
-#include "Tools.h"
-
+#include "DDA.h"
 
 void DDA(int x0, int y0, int x1, int y1)
 {
@@ -35,11 +33,11 @@ void DDA(int x0, int y0, int x1, int y1)
 		{
 			for (; y <= y1; y++)
 			{
-				DrawPoint(x+=(1/k), y);
+				DrawPoint(x += (1 / k), y);
 			}
 		}
 		//dy=-1 dx=1/k
-		else if (k!=0)
+		else if (k != 0)
 		{
 			for (; y >= y1; y--)
 			{
@@ -50,7 +48,7 @@ void DDA(int x0, int y0, int x1, int y1)
 		{
 			for (; y >= y1; y--)
 			{
-				DrawPoint(x , y);
+				DrawPoint(x, y);
 			}
 		}
 	}

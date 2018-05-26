@@ -27,6 +27,9 @@
     <ClCompile Include="Tools.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DDA.cpp">
+      <Filter>line</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -38,7 +41,7 @@
     <ClInclude Include="Tools.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="DDA.hpp">
+    <ClInclude Include="DDA.h">
       <Filter>line</Filter>
     </ClInclude>
   </ItemGroup>
