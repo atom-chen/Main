@@ -1,15 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 
 int main(int argc,char ** argv)
 {
-	if(argc>=2 && strcmp("low" ,argv[0]))
+	printf("agrgc=%d,input para=%s\n", argc,argv[1]);
+	if(argc>=3 && strcmp("low" ,argv[1])==0)
 	{
-		printf("%s\n", tolower(argv[1]));
+		char text=argv[2][0];
+		printf("tolower,input=%c,output=",text);
+		putchar(tolower(text));
 	}
-	else if(argc>=2 && strcmp("upp",argv[0]))
+	else if(argc>=3 && strcmp("upp",argv[1])==0)
 	{
-		printf("%s\n", toupper(argv[1]));
+		char text=argv[2][0];
+		printf("toupper,input=%c,output=",text);
+		putchar(toupper(text));
 	}
 	return 9;
 }
