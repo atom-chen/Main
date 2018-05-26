@@ -22,7 +22,8 @@ void DDA(int x0, int y0, int x1, int y1)
 		{
 			for (; x >= x1; x--)
 			{
-				DrawPoint(x, y += k);
+				DrawPoint(x, y);
+				y += k;
 			}
 		}
 	}
@@ -33,7 +34,8 @@ void DDA(int x0, int y0, int x1, int y1)
 		{
 			for (; y <= y1; y++)
 			{
-				DrawPoint(x += (1 / k), y);
+				DrawPoint(x, y);
+				x += (1 / k);
 			}
 		}
 		//dy=-1 dx=1/k
@@ -41,7 +43,8 @@ void DDA(int x0, int y0, int x1, int y1)
 		{
 			for (; y >= y1; y--)
 			{
-				DrawPoint(x -= (1 / k), y);
+				DrawPoint(x, y);
+				x += (1 / k);
 			}
 		}
 		else

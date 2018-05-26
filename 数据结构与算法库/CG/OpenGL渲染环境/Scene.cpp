@@ -17,12 +17,15 @@ void SwitchTo3D()
 }
 bool Init()
 {
-	SwitchTo2D();
+
+	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
+	glDisable(GL_DEPTH_TEST);
+	SwitchTo3D();
 	return true;
 }
 void Draw()
 {
-	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
+
 	glClear(GL_COLOR_BUFFER_BIT);
-	DDA(0, 0, 1, 1);
+	DDA(0, 0, 500,20);
 }
