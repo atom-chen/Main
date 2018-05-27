@@ -30,6 +30,9 @@
     <ClCompile Include="DDA.cpp">
       <Filter>line</Filter>
     </ClCompile>
+    <ClCompile Include="MidDrawLine.cpp">
+      <Filter>line</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="DDA.h">
+      <Filter>line</Filter>
+    </ClInclude>
+    <ClInclude Include="MidDrawLine.h">
       <Filter>line</Filter>
     </ClInclude>
   </ItemGroup>

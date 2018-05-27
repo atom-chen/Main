@@ -84,12 +84,14 @@
   <ItemGroup>
     <ClCompile Include="DDA.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MidDrawLine.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Tools.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DDA.h" />
     <ClInclude Include="ggl.h" />
+    <ClInclude Include="MidDrawLine.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Tools.h" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "DDA.h"
+#include "MidDrawLine.h"
 void SwitchTo2D()
 {
 	glMatrixMode(GL_PROJECTION);
@@ -27,5 +28,6 @@ void Draw()
 {
 
 	glClear(GL_COLOR_BUFFER_BIT);
-	DDA(0, 0, 500,20);
+	//DDA(0, 0, 500,20);
+	Mid(0, 0, 500, 20);
 }
