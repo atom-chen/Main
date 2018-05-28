@@ -18,10 +18,10 @@ void SwitchTo3D()
 }
 bool Init()
 {
-
 	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
 	glDisable(GL_DEPTH_TEST);
 	SwitchTo3D();
+	glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 	return true;
 }
 void Draw()
