@@ -7,6 +7,9 @@
     <Filter Include="main">
       <UniqueIdentifier>{ebd5f3fd-e2da-4072-bd74-bae6f9b9a9b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="part">
+      <UniqueIdentifier>{4c31f077-2298-4718-a6da-955ee5a3d3cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lapi.c">
@@ -111,6 +114,12 @@
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="GlobalData.cpp">
+      <Filter>part</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>part</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lapi.h">
@@ -190,6 +199,9 @@
     </ClInclude>
     <ClInclude Include="lzio.h">
       <Filter>luavm</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
