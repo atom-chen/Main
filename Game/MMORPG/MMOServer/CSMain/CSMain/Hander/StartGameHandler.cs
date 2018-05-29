@@ -18,12 +18,23 @@ class StartGameHandler : HandlerBase
     Role role = ParaTools.GetParameter<Role>(request.Parameters, ParameterCode.Role);
     if (role != null)
     {
-      if(RoleController.Instance.RoleOnline(role))
+      Role newRole = RoleController.Instance.RoleOnline(role);
+      if(newRole!=null)
       {
-        peer.LoginRole = role;
+        response.ReturnCode = (short)ReturnCode.Success;
+        peer.LoginRole = newRole;
         //传回去
-        response.Parameters.Add((byte)ParameterCode.RoleList, ParaTools.GetJson<Role>(role));
+        response.Parameters.Add((byte)ParameterCode.Role, ParaTools.GetJson<Role>(newRole));
       }
+      else
+      {
+        response.ReturnCode = (short)ReturnCode.Fail;
+        response.Parameters.Add((byte)ParameterCode.ErrorInfo, "角色信息异常！！");
+      }
+    }
+    else
+    {
+      CSMain.Server.log.Error("收到的角色信息为空");
     }
   }
 }

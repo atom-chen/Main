@@ -11,6 +11,11 @@ public class RoleStatePanel : MonoBehaviour
   public UILabel m_BattleNumLabel;//战斗力
   public UIButton m_RenameBtn;//重命名
 
+  public GameObject m_ReNamePanel;//改名窗口
+  public UIInput m_ReNameInput;//改名输入
+  public UIButton m_ReNameCommit;//改名确认
+  public UIButton m_ReNameCancel;//改名取消
+
   public UISlider m_ExpSlider;//经验
   public UILabel m_ExpLabel;
 
@@ -32,11 +37,14 @@ public class RoleStatePanel : MonoBehaviour
   {
     m_ExitBtn.onClick.Add(new EventDelegate(Exit));
     m_RenameBtn.onClick.Add(new EventDelegate(OnClickRename));
+    m_ReNameCommit.onClick.Add(new EventDelegate(OnClickReNameCommit));
+    m_ReNameCancel.onClick.Add(new EventDelegate(OnClickCancelReName));
   }
   void OnEnable()
   {
     UpdateInfo();
     PlayData.OnRoleInfoChange += UpdateInfo;
+    m_ReNamePanel.SetActive(false);
     //开启携程
     StartCoroutine(ShowRecoverData());
   }
@@ -55,8 +63,8 @@ public class RoleStatePanel : MonoBehaviour
     SetExp(role.Exp);
     m_CoinLabel.text = role.Coin.ToString();
     m_YuanBaoLabel.text = role.YuanBao.ToString();
-    m_EnergyLabel.text = role.Energy.ToString();
-    m_ToughenLabel.text = role.Toughen.ToString();
+    m_EnergyLabel.text = string.Format("{0}/{1}",role.Energy.ToString(),Table_Role.GetEnergyLimit(role.Level));
+    m_ToughenLabel.text = string.Format("{0}/{1}",role.Toughen.ToString(),Table_Role.GetToughenLimit(role.Level));
   }
   public void SetExp(int value)
   {
@@ -66,12 +74,23 @@ public class RoleStatePanel : MonoBehaviour
     m_ExpSlider.value = (float)(role.Exp / limit);
   }
 
+  //点击改名，直接弹出界面
   private void OnClickRename()
   {
-
+    m_ReNamePanel.SetActive(true);
+  }
+  //取消改名
+  private void OnClickCancelReName()
+  {
+    m_ReNamePanel.SetActive(false);
+  }
+  //确认改名，向服务器发包
+  private void OnClickReNameCommit()
+  {
+    string name = m_ReNameInput.value;
   }
 
-  //向服务器请求体力恢复时间的数据
+  //向服务器请求同步体力恢复时间的数据
   private void SetPackageToGetRecoverTimer()
   {
 
@@ -88,29 +107,31 @@ public class RoleStatePanel : MonoBehaviour
     Destroy(this.gameObject);
   }
 
+
   IEnumerator ShowRecoverData()
   {
     while (true)
     {
       int timer;
       //拿到PlayerData的值，然后做显示
-      if ((timer=PlayData.RoleData.GetEnergyAllRecoverTimer()) != 0)
+      if ((timer = PlayData.RoleData.EnergyNextRecoverTimer) != 0)
       {
         int hour, min, second;
         FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
         m_EnergyRecoverAll.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());
-        if((timer=PlayData.RoleData.EnergyNextRecoverTimer)!=0)
+        if((timer=PlayData.RoleData.GetEnergyAllRecoverTimer())!=0)
         {
           FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
           m_EnergyRecoverNext.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());
         }
       }
-      if ((timer = PlayData.RoleData.GetToughenAllRecoverTimer()) != 0)
+
+      if ((timer = PlayData.RoleData.ToughenNextRecoverTimer) != 0)
       {
         int hour, min, second;
         FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
         m_ToughenRecoverAll.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());
-        if ((timer = PlayData.RoleData.ToughenNextRecoverTimer) != 0)
+        if ((timer = PlayData.RoleData.GetToughenAllRecoverTimer()) != 0)
         {
           FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
           m_ToughenRecoverNext.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());

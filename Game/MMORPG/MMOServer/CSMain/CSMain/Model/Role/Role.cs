@@ -38,9 +38,10 @@ public class Role
       this.Exp = db.Exp;
       this.Coin = db.Coin;
       this.YuanBao = db.YuanBao;
+      this.Energy = db.Energy;
+      this.Toughen = db.Toughen;
       EnergyNextRecoverTimer = Table_Role.GetRecoverSpendTime();
       ToughenNextRecoverTimer = Table_Role.GetRecoverSpendTime();
-      Recover(db);
     }
     catch (Exception ex)
     {
@@ -70,7 +71,7 @@ public class Role
     }
   }
 
-  private void Recover(DB._DBRole db)
+  public void Recover(DB._DBRole db)
   {
     //根据上次时间增加体力
     if (db.LastDownLine == null)

@@ -113,7 +113,7 @@ class RoleController
 
 
   //角色上线
-  public bool RoleOnline(Role role)
+  public Role RoleOnline(Role role)
   {
     if (!m_OnlineRoles.ContainsKey(role.UserID))
     {
@@ -122,19 +122,20 @@ class RoleController
       if(role.CompareToDB(dbRole))
       {
         role = new Role(dbRole);
+        role.Recover(dbRole);
         m_OnlineRoles.Add(role.UserID, role);//允许上线
-        return true;
+        return role;
       }
       else
       {
         CSMain.Server.log.Debug(role.UserID + "有作弊嫌疑，角色信息被修改");
-        return false;
+        return null;
       }
     }
     else
     {
         //如果集合中有，则不让该角色下线
-        return true;
+        return null;
     }
   }
 
@@ -160,5 +161,10 @@ class RoleController
 
   }
 
+  //改名
+  public void ReName(Role role)
+  {
+
+  }
 }
 

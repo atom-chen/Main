@@ -7,19 +7,19 @@ using System.Text;
 class Table_Role
 {
     //获取体力上限
-    public static int GetEnergyLimit(int level)
+    public static int GetEnergyLimit(uint level)
     {
         int baseNum = 60;
         int increment = 1;
-        return baseNum + level * increment;
+        return (int)(baseNum + level * increment);
     }
 
     //获取历练上限
-    public static int GetToughenLimit(int level)
+    public static int GetToughenLimit(uint level)
     {
         int baseNum = 60;
         int increment = 1;
-        return baseNum + level * increment;
+        return (int)(baseNum + level * increment);
     }
 
     //获取经验上限

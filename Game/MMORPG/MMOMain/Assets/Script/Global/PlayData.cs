@@ -26,8 +26,9 @@ public class PlayData
       //将其它角色的委托去除
       for(int i=0;i<m_RoleList.Count;i++)
       {
-        if(m_RoleList[i]==value)
+        if(m_RoleList[i].ID==value.ID)
         {
+          m_RoleList[i] = value;
           m_RoleList[i].OnInfoChange += OnChange;
           m_RoleIndex = i;
         }
