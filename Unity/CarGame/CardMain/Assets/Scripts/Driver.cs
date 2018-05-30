@@ -41,7 +41,6 @@ public class Driver : MonoBehaviour {
   float b=100;
 
   private bool m_IsSkid = false;//是否漂移
-  private Vector3 m_SkidDir;
 
   private float m_MaxSpeed=250;
   public float MaxSpeed
@@ -112,8 +111,10 @@ public class Driver : MonoBehaviour {
     //PC端输入
 #if UNITY_EDITOR
     input = Input.GetAxis("Horizontal");
+    float forward = Input.GetAxis("Vertical");
     m_MoveHozizontal = input * m_SteerAngle;
-    m_MoveVertical = (1 - input) < 0.5f ? 0.5f * m_MotorTorque : (1 - input) * m_MotorTorque;
+    //m_MoveVertical = (1 - input) < 0.5f ? 0.5f * m_MotorTorque : (1 - input) * m_MotorTorque;
+    m_MoveVertical = forward * m_MotorTorque;
 
 #endif
     //移动端输入
@@ -202,14 +203,6 @@ public class Driver : MonoBehaviour {
   public void OnClickSkid()
   {
     m_IsSkid = !m_IsSkid;
-    if(m_IsSkid)
-    {
-      Debug.Log("按下漂移");
-    }
-    else
-    {
-      Debug.Log("松开漂移");
-    }
   }
 
   /// <summary>
@@ -222,15 +215,16 @@ public class Driver : MonoBehaviour {
     {
       float dir = input;
       //要处理的方向
-      Vector3 rote = Vector3.Normalize(dir * (transform.right));
+      Vector3 rote =dir * (transform.right);
       //前方向
-      Vector3 forward=Vector3.Normalize(transform.forward);
-      rote = Vector3.Slerp(forward, rote, (m_MaxSpeed/Speed)*Time.deltaTime);
+      Vector3 forward=transform.forward;
+      //rote = Vector3.Slerp(forward, rote, (m_MaxSpeed/Speed)*Time.deltaTime);
       //漂移偏移角(惯性方向和漂移方向的夹角)
-      //float angle = Mathf.Acos(Vector3.Dot(rote, forward));
+      float angle = Mathf.Acos(Vector3.Dot(Vector3.Normalize(rote), Vector3.Normalize(forward)));
       ////拿到对原本方向的偏移
-      transform.rotation = Quaternion.FromToRotation(forward,rote);
-      Debug.Log(string.Format("right={0},dir={1},rote={2},forward={3},最终旋转={4}", transform.right, dir, rote,forward,transform.rotation));
+      transform.Rotate(0, input*3*m_Speed/MaxSpeed, 0);
+
+
       //漂移灯亮
       if (dir > 0)
       {
@@ -251,7 +245,6 @@ public class Driver : MonoBehaviour {
     }
     else
     {
-      m_SkidDir = transform.forward;
       m_MotorTorque = m_MaxTorque;
       if (m_Skid.isPlaying)
       {
