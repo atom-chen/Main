@@ -85,6 +85,7 @@
     <Compile Include="Hander\RegisterHandler.cs" />
     <Compile Include="Hander\RoleAddHandler.cs" />
     <Compile Include="Hander\ServerListHandler.cs" />
+    <Compile Include="Model\Item\Item.cs" />
     <Compile Include="Model\Role\Role.cs" />
     <Compile Include="Model\Role\RoleManager.cs" />
     <Compile Include="Model\ServerProperty\ServerPropertyManager.cs" />

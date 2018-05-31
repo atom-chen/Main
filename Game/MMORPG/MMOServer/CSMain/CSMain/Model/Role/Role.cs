@@ -4,7 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+public enum INFO_TYPE
+{
+  INVALID,
+  NAME,
+  SEX,
+  USERID,
+  HEADICON,
+  EXP,
+  COIN,
+  YUANBAO,
+  ENERGY,
+  TOUGHEN,
+}
 
 public class Role
 {
