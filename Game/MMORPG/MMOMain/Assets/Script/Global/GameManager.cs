@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
   {
     _Instance = this;
     DontDestroyOnLoad(this.gameObject);
+
+    //Road所有表格
   }
   void Start()
   {
