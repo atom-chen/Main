@@ -24,10 +24,10 @@ public class Cube : MonoBehaviour {
     m_Dir = (m_Target.position - transform.position).normalized;//获取移动方向
 
     LookAt();
-
-
-
 	}
+  /// <summary>
+  /// 直接对pos+=
+  /// </summary>
   void PosAdd()
   {
     if (Vector3.Distance(transform.position, m_Target.position) > 0.01)
@@ -40,6 +40,9 @@ public class Cube : MonoBehaviour {
       transform.position = m_Target.position;
     }
   }
+  /// <summary>
+  /// 通过线性插值的方式进行位移
+  /// </summary>
   void Lerp()
   {
     if (Vector3.Distance(transform.position, m_Target.position) > 0.01)
@@ -53,6 +56,9 @@ public class Cube : MonoBehaviour {
     }
   }
 
+  /// <summary>
+  /// 
+  /// </summary>
   void LookAt()
   {
     Vector3 view = Vector3.Cross(transform.forward, m_Dir);//由前方转向射线方向
