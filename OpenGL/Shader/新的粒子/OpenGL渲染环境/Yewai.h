@@ -31,7 +31,7 @@ public:
 protected:
 private:
 	SkyBox m_Skybox;
-	Ground m_Ground;
+	//Ground m_Ground;
 	GameObject m_box;
 	GameObject m_Niu;
 	UpParticle m_ParticleSystem;

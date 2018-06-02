@@ -6,7 +6,8 @@ bool Yewai2::Awake()
 {
 	m_Skybox.Init("res/front_2.bmp", "res/back_2.bmp", "res/top_2.bmp", "res/bottom_2.bmp", "res/left_2.bmp", "res/right_2.bmp");
 	m_MainCamera = new Camera_1st;
-	m_Ground.Init("res/woodfloor.tga");
+	//m_Ground.Init("res/woodfloor.tga");
+	m_Ground.Init("res/1.jpg");
 	m_box.Init("res/Sphere.obj", "res/VertexObj_Blin.vert", "res/VertexObj.frag");
 	m_Niu.Init("res/niutou.obj", "res/FragObj.vert", "res/FragObj_Blin.frag");
 	m_box.SetTexture2D("res/earth.bmp");
@@ -18,10 +19,17 @@ bool Yewai2::Awake()
 void Yewai2::Start()
 {
 	SceneManager::SetClearColor(vec4(0, 0, 0, 1));
+	//m_SpotLight.SetRotate(0, -1.5f, 0);
+	//m_SpotLight.SetAmbientColor(0.2f, 0.8f, 0.2f, 1.0f);
+	//m_SpotLight.SetDiffuseColor(0.2f, 0.8f, 0.2f, 1.0f);
+	//m_SpotLight.SetSpecularColor(0.2f, 0.8f, 0.2f, 1.0f);
+	//m_SpotLight.SetPosition(0, 20, 0);
+	//m_SpotLight.SetCutoff(5);
+	//m_SpotLight.SetExponent(2);
 	m_SpotLight.SetRotate(0, -1.5f, 0);
-	m_SpotLight.SetAmbientColor(0.2f, 0.8f, 0.2f, 1.0f);
-	m_SpotLight.SetDiffuseColor(0.2f, 0.8f, 0.2f, 1.0f);
-	m_SpotLight.SetSpecularColor(0.2f, 0.8f, 0.2f, 1.0f);
+	m_SpotLight.SetAmbientColor(1, 0, 0, 1.0f);
+	m_SpotLight.SetDiffuseColor(1, 0, 0, 1.0f);
+	m_SpotLight.SetSpecularColor(1, 0, 0, 1.0f);
 	m_SpotLight.SetPosition(0, 20, 0);
 	m_SpotLight.SetCutoff(5);
 	m_SpotLight.SetExponent(2);

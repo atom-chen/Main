@@ -6,7 +6,7 @@ bool Yewai::Awake()
 {
 	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
 	m_MainCamera = new Camera_3rd;
-	m_Ground.Init("res/1.jpg");
+	//m_Ground.Init("res/1.jpg");
 	m_box.Init("res/Sphere.obj", "res/VertexObj.vert", "res/VertexObj.frag");
 	m_Niu.Init("res/niutou.obj", "res/FragObj.vert", "res/FragObj.frag");
 	m_box.SetTexture2D("res/earth.bmp");
@@ -34,7 +34,7 @@ void Yewai::Start()
 	m_Niu.SetScale(0.01f, 0.01f, 0.01f);
 	m_box.SetLight_1(m_DirectionLight);
 	m_Niu.SetLight_1(m_DirectionLight);
-	m_Ground.SetLight_1(m_SpotLight);
+	//m_Ground.SetLight_1(m_SpotLight);
 	m_Niu.SetRotate(0, 90, 0);
 
 }
@@ -50,7 +50,7 @@ void Yewai::Update()
 void Yewai::OnDrawBegin()
 {
 	m_Skybox.Draw();
-	m_Ground.Draw();
+	//m_Ground.Draw();
 }
 void Yewai::Draw3D()
 {
@@ -67,7 +67,7 @@ void Yewai::OnDesrory()
 {
 	m_Niu.Destory();
 	m_box.Destory();
-	m_Ground.Destory();
+	//m_Ground.Destory();
 	m_ParticleSystem.Destory();
 	m_Skybox.Destory();
 }
