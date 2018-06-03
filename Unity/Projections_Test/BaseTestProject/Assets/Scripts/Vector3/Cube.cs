@@ -40,6 +40,7 @@ public class Cube : MonoBehaviour {
       transform.position = m_Target.position;
     }
   }
+
   /// <summary>
   /// 通过线性插值的方式进行位移
   /// </summary>
@@ -65,7 +66,7 @@ public class Cube : MonoBehaviour {
     float angle = Vector3.Angle(transform.forward, m_Dir);//自身前方和需要朝向方向的夹角
     if (view.y < 0)
     {
-      angle = -angle;
+      angle = -angle;//小于0说明在左边
     }
     if (Mathf.Abs(angle) >= 5)
     {
