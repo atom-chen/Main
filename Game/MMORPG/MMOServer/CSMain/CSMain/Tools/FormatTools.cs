@@ -12,7 +12,7 @@ public class FormatTools
   /// </summary>
   public static void MySQLDateTimeToString(string dateVal, out int year, out int month, out int day, out int hour, out int min, out int second)
   {
-      string[] words = dateVal.Split('/', ' ', ':');
+      string[] words = dateVal.Split('/', ' ', ':','\\');
       year = Convert.ToInt32(words[0]);
       month = Convert.ToInt32(words[1]);
       day = Convert.ToInt32(words[2]);
