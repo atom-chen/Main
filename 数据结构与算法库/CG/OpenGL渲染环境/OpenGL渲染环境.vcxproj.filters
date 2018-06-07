@@ -16,6 +16,9 @@
     <Filter Include="line">
       <UniqueIdentifier>{37522f12-e267-4aed-ad2e-e23494d74c4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="circle">
+      <UniqueIdentifier>{ce2b4361-5605-408e-abe4-00c6a9c870c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,6 +36,15 @@
     <ClCompile Include="MidDrawLine.cpp">
       <Filter>line</Filter>
     </ClCompile>
+    <ClCompile Include="Bresenham.cpp">
+      <Filter>line</Filter>
+    </ClCompile>
+    <ClCompile Include="MidCircle.cpp">
+      <Filter>circle</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleCircle.cpp">
+      <Filter>circle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -49,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="MidDrawLine.h">
       <Filter>line</Filter>
+    </ClInclude>
+    <ClInclude Include="Bresenham.h">
+      <Filter>line</Filter>
+    </ClInclude>
+    <ClInclude Include="MidCircle.h">
+      <Filter>circle</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleCircle.h">
+      <Filter>circle</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

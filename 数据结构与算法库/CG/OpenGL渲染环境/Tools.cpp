@@ -41,6 +41,6 @@ void DrawPoint(int x, int y, COLOR color)
 		glColor4ub(255, 255, 255, 255);
 		break;
 	}
-	glVertex3i(x, y,-5);
+	glVertex2i(x, y);
 	glEnd();
 }

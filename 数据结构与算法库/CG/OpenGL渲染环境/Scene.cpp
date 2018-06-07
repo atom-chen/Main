@@ -1,6 +1,30 @@
 #include "Scene.h"
 #include "DDA.h"
 #include "MidDrawLine.h"
+#include "Bresenham.h"
+#include "MidCircle.h"
+#include "SimpleCircle.h"
+void DrawDDA()
+{
+	DDA(0, 0, 200, 500);
+	DDA(0, 0, -200, 500);
+	DDA(0, 0, 200, -500);
+	DDA(0, 0, -200, -500);
+}
+void DrawMid()
+{
+	Mid(0, 0, 200, 500);
+	Mid(0, 0, -200, 500);
+	Mid(0, 0, 200, -500);
+	Mid(0, 0, -200, -500);
+}
+void DrawBresenham()
+{
+	Bresenham(0, 0, 200, 500);
+	Bresenham(0, 0, -200, 500);
+	Bresenham(0, 0, 200, -500);
+	Bresenham(0, 0, -200, -500);
+}
 void SwitchTo2D()
 {
 	glMatrixMode(GL_PROJECTION);
@@ -19,15 +43,15 @@ void SwitchTo3D()
 bool Init()
 {
 	glClearColor(0, 0, 0, 1.0f);     //设置用什么颜色擦缓冲区
-	glDisable(GL_DEPTH_TEST);
-	SwitchTo3D();
+	SwitchTo2D();
 	glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 	return true;
 }
 void Draw()
 {
-
 	glClear(GL_COLOR_BUFFER_BIT);
-	//DDA(0, 0, 500,20);
-	Mid(0, 0, 500, 20);
+	//DrawDDA();
+	//DrawMid();
+	//DrawCircle(0, 0, 50);
+	//DrawBresenham();
 }
