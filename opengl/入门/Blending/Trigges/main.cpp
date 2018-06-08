@@ -51,7 +51,7 @@ void SetupRC()
 
 	shaderManager.InitializeStockShaders();
 
-	// Load up a triangle fan
+	//init vertex data
 	squareBatch.Begin(GL_TRIANGLE_FAN, 4);
 	squareBatch.CopyVertexData3f(vVerts);
 	squareBatch.End();
@@ -97,7 +97,7 @@ void SetupRC()
 }
 void RenderScene()
 {
-	// Clear the window with current clearing color
+	//draw
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	GLfloat vRed[] = { 1.0f, 0.0f, 0.0f, 0.5f };
@@ -106,7 +106,7 @@ void RenderScene()
 	GLfloat vBlack[] = { 0.0f, 0.0f, 0.0f, 1.0f };
 
 
-	shaderManager.UseStockShader(GLT_SHADER_IDENTITY, vGreen);
+	shaderManager.UseStockShader(GLT_SHADER_IDENTITY, vGreen);//指定当前shader
 	greenBatch.Draw();
 
 	shaderManager.UseStockShader(GLT_SHADER_IDENTITY, vRed);
@@ -119,7 +119,7 @@ void RenderScene()
 	blackBatch.Draw();
 
 
-
+	//绘制主角
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	shaderManager.UseStockShader(GLT_SHADER_IDENTITY, vRed);

@@ -16,8 +16,6 @@ GLBatch moonBatch;
 #define SCREEN_X        800
 #define SCREEN_Y        600
 
-///////////////////////////////////////////////////////////////////////
-// Reset flags as appropriate in response to menu selections
 void ProcessMenu(int value)
 {
 	switch (value)
@@ -27,10 +25,14 @@ void ProcessMenu(int value)
 		// job possible.
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_BLEND);
+
 		glEnable(GL_POINT_SMOOTH);
 		glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
+
 		glEnable(GL_LINE_SMOOTH);
 		glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+
+
 		glEnable(GL_POLYGON_SMOOTH);
 		glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
 		break;
@@ -51,8 +53,6 @@ void ProcessMenu(int value)
 }
 
 
-///////////////////////////////////////////////////
-// Called to draw scene
 void RenderScene(void)
 {
 	// Clear the window
