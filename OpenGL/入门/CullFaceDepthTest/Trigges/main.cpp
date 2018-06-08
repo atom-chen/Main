@@ -43,7 +43,6 @@ void ProcessMenu(int value)
 }
 
 
-// Called to draw scene
 void RenderScene(void)
 {
 	// Clear the window and the depth buffer
@@ -130,8 +129,7 @@ void ChangeSize(int w, int h)
 	transformPipeline.SetMatrixStacks(modelViewMatix, projectionMatrix);
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// Main entry point for GLUT based programs
+
 int main(int argc, char* argv[])
 {
 	gltSetWorkingDirectory(argv[0]);
