@@ -20,7 +20,7 @@ void GameLogic::Start()
 	SceneManager::AddScene("yewai2", yewai2);
 	SceneManager::AddScene("fuben", fuben);
 	SceneManager::AddScene("sea", sea);
-	SceneManager::LoadScene("yewai");
+	SceneManager::LoadScene("main");
 	EngineBehavior ::Start();
 }
 void GameLogic::Update()

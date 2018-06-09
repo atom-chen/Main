@@ -4,7 +4,22 @@ void Draw1(int x0, int y0, int r)
 {
 	int x = x0 + r;
 	int y = y0;
-	
+	int d = 1 - 2*r;
+	while (x>y)
+	{
+		DrawPoint(x, y);
+		if (d >= 0)
+		{
+			d += 2 * (-x) + 3;
+			x--;
+		}
+		else
+		{
+			d += 2 * (y - x) + 5;
+			x--;
+			y++;
+		}
+	}
 }
 void Draw2(int x0, int y0, int r)
 {
