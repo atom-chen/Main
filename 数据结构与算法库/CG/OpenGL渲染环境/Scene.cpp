@@ -52,6 +52,6 @@ void Draw()
 	glClear(GL_COLOR_BUFFER_BIT);
 	//DrawDDA();
 	//DrawMid();
-	//DrawCircle(0, 0, 50);
+	DrawCircle(0, 0, 50);
 	//DrawBresenham();
 }

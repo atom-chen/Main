@@ -2,7 +2,9 @@
 
 void Draw1(int x0, int y0, int r)
 {
-
+	int x = x0 + r;
+	int y = y0;
+	
 }
 void Draw2(int x0, int y0, int r)
 {
