@@ -1,0 +1,115 @@
+Initialize engine version: 5.6.4p1 (e67c4b7007d5)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+    Driver:   22.21.13.8476
+Begin MonoManager ReloadAssembly
+Platform assembly: F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.025 seconds
+Platform assembly: F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: F:\Work\Unity\CarGame\CardMain\Game\Game_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.393455 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 23d0 -> priority: 1 
+  Thread -> id: 2498 -> priority: 1 
+  Thread -> id: 6a8 -> priority: 1 
+  Thread -> id: 1c4c -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.812569 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 577.
+Total: 0.354087 ms (FindLiveObjects: 0.026053 ms CreateObjectMapping: 0.029605 ms MarkObjects: 0.290533 ms  DeleteObjects: 0.007500 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+Shader 'PolyTerrain/Splatmap/Lightmap-FirstPass': fallback shader 'Hidden/TerrainEngine/Splatmap/Lightmap-BaseMap' not found
+UnloadTime: 0.575145 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 1840.
+Total: 4.734590 ms (FindLiveObjects: 0.103028 ms CreateObjectMapping: 0.086054 ms MarkObjects: 0.552645 ms  DeleteObjects: 3.992861 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.914915 ms
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1862.
+Total: 1.153449 ms (FindLiveObjects: 0.087238 ms CreateObjectMapping: 0.057632 ms MarkObjects: 0.434221 ms  DeleteObjects: 0.573566 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.432535 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1862.
+Total: 1.155423 ms (FindLiveObjects: 0.092370 ms CreateObjectMapping: 0.055659 ms MarkObjects: 0.428300 ms  DeleteObjects: 0.578303 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.323979 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1862.
+Total: 1.188976 ms (FindLiveObjects: 0.086054 ms CreateObjectMapping: 0.062369 ms MarkObjects: 0.437379 ms  DeleteObjects: 0.602383 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.329111 ms
+
+Unloading 192 unused Assets to reduce memory usage. Loaded Objects now: 1287.
+Total: 2.618748 ms (FindLiveObjects: 0.054869 ms CreateObjectMapping: 0.056054 ms MarkObjects: 0.357640 ms  DeleteObjects: 2.150184 ms)
+
+关卡2遭遇
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+关卡2遭遇
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+关卡0遭遇
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+关卡0遭遇
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+关卡1遭遇
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+d3d11: failed to create buffer (target 0x2 mode 1 size 324) [0x887A0005]
+D3D11: Failed to create RenderTexture (1920 x 1080 fmt 19 aa 1), error 0x887a0005
+ 
+(Filename:  Line: 388)
+
+d3d11: failed to create buffer (target 0x1 mode 1 size 96) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 12) [0x887A0005]
+d3d11: failed to create buffer (target 0x1 mode 1 size 192) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 24) [0x887A0005]
+d3d11: failed to create buffer (target 0x1 mode 1 size 288) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 24) [0x887A0005]
+d3d11: failed to create buffer (target 0x1 mode 1 size 96) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 12) [0x887A0005]
+d3d11: failed to create buffer (target 0x1 mode 1 size 192) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 24) [0x887A0005]
+d3d11: failed to create buffer (target 0x1 mode 1 size 3072) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 324) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 336) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 312) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 324) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 336) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 312) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 324) [0x887A0005]
+d3d11: failed to create buffer (target 0x1 mode 1 size 96) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 12) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 336) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 312) [0x887A0005]
+d3d11: failed to create buffer (target 0x2 mode 1 size 324) [0x887A0005]
