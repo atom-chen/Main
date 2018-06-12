@@ -7,8 +7,9 @@ public class MainCamera : MonoBehaviour {
 
     Transform m_TargetTransform;
     float distance = 5.0f;//水平距离
-    float height = 5;//高度
+    float height = 3;//高度
     float cameraSpeed = 20.0f;
+    float cameraRotateSpeed = 40.0f;
 	void Start ()
     {
 		m_CameraTransform=this.transform;
@@ -24,16 +25,18 @@ public class MainCamera : MonoBehaviour {
 	}
     void Translate()
     {
-        Vector3 targerPos = m_TargetTransform.position - Vector3.forward * distance + Vector3.up * height;
+        Vector3 targerPos = m_TargetTransform.position - m_TargetTransform.forward * distance + m_TargetTransform.up * height;
 
         m_CameraTransform.position = Vector3.Lerp(m_CameraTransform.position, targerPos, cameraSpeed * Time.deltaTime);
     }
 
     void Rotate()
     {
+        //Debug.Log(m_TargetTransform.rotation);
         //修改摄像机朝向
-        Quaternion targetRotation = Quaternion.LookRotation((m_TargetTransform.position - (m_CameraTransform.position+Vector3.down*3)).normalized);
-        transform.rotation = Quaternion.Slerp(targetRotation,m_CameraTransform.rotation, cameraSpeed * Time.deltaTime);
+        Quaternion targetRotation = Quaternion.LookRotation((m_TargetTransform.position).normalized);
+        m_CameraTransform.rotation = Quaternion.Slerp(m_TargetTransform.rotation, m_CameraTransform.rotation, cameraRotateSpeed * Time.deltaTime);
+        //Vector3 targetPos = m_TargetTransform.position - (m_CameraTransform.position + Vector3.down * 3);
         //m_CameraTransform.LookAt(m_TargetTransform.position);
     }
 }
