@@ -30,10 +30,20 @@ int TestCFunction_Return(lua_State *lua)
 	return 1;//返回1个参数给lua
 	//现在从栈顶数两个参数，是要return 给lua的
 }
+int TestCFunction_Export(lua_State *lua)
+{
+	lua_pushstring(lua, "window");
+	return 1;
+}
 
 void SetCFunction(lua_State *lua, int(*CFunc)(lua_State *lua),const char* funcName)
 {
 	lua_pushcfunction(lua, CFunc);
 	lua_setglobal(lua, funcName);
+}
+void SetCFunction(lua_State *lua, int(*CFunc)(lua_State *lua), const char* packageName, const char* funcName)
+{
+	luaL_Reg apis[] = { { funcName, CFunc }, { NULL, NULL } };
+	luaL_openlib(lua, packageName, apis, 0);//package name
 }
 

@@ -18,6 +18,7 @@ public class Player : MonoBehaviour {
     public Anim m_Anim;//所有动画
 
 
+
     float m_Vertical;                          //竖直方向输入
     float m_Horizontal;                          //水平方向输入
     float m_MouseX;                              //鼠标水平位置
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour {
     {
         m_PlayerTramsform = this.transform;
         m_PlayerAnimation = GetComponentInChildren<Animation>();
+
         if(m_PlayerAnimation!=null)
         {
             m_PlayerAnimation.clip = m_Anim.idle;
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour {
         Rotate();
         PlayAnimation();
     }
+
 
 
     void TransLate()

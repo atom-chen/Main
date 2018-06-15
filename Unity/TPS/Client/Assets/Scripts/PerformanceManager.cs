@@ -47,7 +47,5 @@ public class PerformanceManager : MonoBehaviour
                 light.shadows = shadowType;
             }
         }
-
-
     }
 }

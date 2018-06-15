@@ -34,7 +34,7 @@ public class MainCamera : MonoBehaviour {
     {
         //Debug.Log(m_TargetTransform.rotation);
         //修改摄像机朝向
-        Quaternion targetRotation = Quaternion.LookRotation((m_TargetTransform.position).normalized);
+        //Quaternion targetRotation = Quaternion.LookRotation((m_TargetTransform.position).normalized);
         m_CameraTransform.rotation = Quaternion.Slerp(m_TargetTransform.rotation, m_CameraTransform.rotation, cameraRotateSpeed * Time.deltaTime);
         //Vector3 targetPos = m_TargetTransform.position - (m_CameraTransform.position + Vector3.down * 3);
         //m_CameraTransform.LookAt(m_TargetTransform.position);
