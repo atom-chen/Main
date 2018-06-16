@@ -45,6 +45,9 @@
     <ClCompile Include="SimpleCircle.cpp">
       <Filter>circle</Filter>
     </ClCompile>
+    <ClCompile Include="BresenhamCircle.cpp">
+      <Filter>circle</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -69,6 +72,9 @@
       <Filter>circle</Filter>
     </ClInclude>
     <ClInclude Include="SimpleCircle.h">
+      <Filter>circle</Filter>
+    </ClInclude>
+    <ClInclude Include="BresenhamCircle.h">
       <Filter>circle</Filter>
     </ClInclude>
   </ItemGroup>

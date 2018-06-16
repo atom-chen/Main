@@ -83,6 +83,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bresenham.cpp" />
+    <ClCompile Include="BresenhamCircle.cpp" />
     <ClCompile Include="DDA.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MidCircle.cpp" />
@@ -93,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bresenham.h" />
+    <ClInclude Include="BresenhamCircle.h" />
     <ClInclude Include="DDA.h" />
     <ClInclude Include="ggl.h" />
     <ClInclude Include="MidCircle.h" />

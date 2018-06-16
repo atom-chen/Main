@@ -11,11 +11,13 @@ void Draw1(int x0, int y0, int r)
 		if (d >= 0)
 		{
 			d += 2 * (-x) + 3;
+			//×ó·½
 			x--;
 		}
 		else
 		{
 			d += 2 * (y - x) + 5;
+			//×óÉÏ·½
 			x--;
 			y++;
 		}

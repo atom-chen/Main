@@ -4,6 +4,7 @@
 #include "Bresenham.h"
 #include "MidCircle.h"
 #include "SimpleCircle.h"
+#include "BresenhamCircle.h"
 void DrawDDA()
 {
 	DDA(0, 0, 200, 500);
@@ -52,6 +53,6 @@ void Draw()
 	glClear(GL_COLOR_BUFFER_BIT);
 	//DrawDDA();
 	//DrawMid();
-	DrawCircle(0, 0, 50);
+	BDrawCircle(0, 0, 50);
 	//DrawBresenham();
 }
