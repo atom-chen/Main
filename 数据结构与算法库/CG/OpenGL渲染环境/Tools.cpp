@@ -1,4 +1,5 @@
 #include "Tools.h"
+#include <vector>
 
 
 float GetSlope(int x0, int y0, int x1, int y1)
@@ -7,40 +8,86 @@ float GetSlope(int x0, int y0, int x1, int y1)
 	float k = ((y1 - (float)y0) / ((float)x1 - x0));
 	return k;
 }
-
+struct vertx
+{
+	int posX;
+	int posY;
+	unsigned char r;
+	unsigned char g;
+	unsigned char b;
+	unsigned char a;
+};
+std::vector<vertx> m_Vertexs;
 //OpenGL固定管线使用右手坐标系
 void DrawPoint(int x, int y, unsigned char r, unsigned char g, unsigned b, unsigned a)
 {
-	glBegin(GL_POINTS);
-	glColor4ub(r, g, b, a);
-	glVertex2i(x, y);
+	vertx v;
+	v.posX = x;
+	v.posY = y;
+	v.r = r;
+	v.g = g;
+	v.b = b;
+	v.a = a;
+	m_Vertexs.push_back(v);
 	glEnd();
 }
 
 void DrawPoint(int x, int y, COLOR color)
 {
-	glBegin(GL_POINTS);
+	vertx v;
+	v.posX = x;
+	v.posY = y;
 	switch (color)
 	{
 	case White:
-		glColor4ub(255, 255, 255, 255);
+		v.r = 255;
+		v.g = 255;
+		v.b = 255;
+		v.a = 255;
 		break;
 	case Black:
-		glColor4ub(0, 0, 0, 255);
+		v.r = 0;
+		v.g = 0;
+		v.b = 0;
+		v.a = 255;
 		break;
 	case Red:
-		glColor4ub(255, 0, 0, 255);
+		v.r = 255;
+		v.g = 0;
+		v.b = 0;
+		v.a = 255;
 		break;
 	case Blue:
-		glColor4ub(0, 0, 255, 255);
+		v.r = 0;
+		v.g = 0;
+		v.b = 255;
+		v.a = 255;
 		break;
 	case Green:
-		glColor4ub(0, 255, 0, 255);
+		v.r = 0;
+		v.g = 255;
+		v.b = 0;
+		v.a = 255;
 		break;
 	default:
-		glColor4ub(255, 255, 255, 255);
+		v.r = 255;
+		v.g = 255;
+		v.b = 255;
+		v.a = 255;
 		break;
 	}
-	glVertex2i(x, y);
+	m_Vertexs.push_back(v);
+}
+
+void CommitPoints()
+{
+	glBegin(GL_POINTS);
+	for (auto it = m_Vertexs.begin(); it != m_Vertexs.end(); it++)
+	{
+		vertx v= *it;
+		glColor4ub(v.r, v.g, v.b, v.a);
+		glVertex2i(v.posX, v.posY);
+	}
 	glEnd();
+	m_Vertexs.clear();
 }

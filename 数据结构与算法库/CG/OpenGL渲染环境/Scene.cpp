@@ -55,4 +55,5 @@ void Draw()
 	//DrawMid();
 	BDrawCircle(0, 0, 50);
 	//DrawBresenham();
+	CommitPoints();
 }
