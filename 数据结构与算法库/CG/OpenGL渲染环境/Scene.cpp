@@ -5,6 +5,10 @@
 #include "MidCircle.h"
 #include "SimpleCircle.h"
 #include "BresenhamCircle.h"
+#include "Rect.h"
+#include "Oval.h"
+
+
 void DrawDDA()
 {
 	DDA(0, 0, 200, 500);
@@ -53,7 +57,9 @@ void Draw()
 	glClear(GL_COLOR_BUFFER_BIT);
 	//DrawDDA();
 	//DrawMid();
-	BDrawCircle(0, 0, 50);
+	//BDrawCircle(0, 0, 50);
 	//DrawBresenham();
+	//DrawRect(0, 0, 200, 200);
+	DrawOval(20, 30);
 	CommitPoints();
 }
