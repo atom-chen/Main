@@ -22,6 +22,9 @@
 
 void ChangeSize(int width, int height);
 void RenderScene();
+void OnDrawBegin();
+void Draw();
+void OnDrawEnd();
 void SetupRC();
 void OnSpecialKeys(int key, int x, int y);
 
