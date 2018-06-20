@@ -21,9 +21,11 @@ public class Player : MonoBehaviour {
 
     float m_Vertical;                          //竖直方向输入
     float m_Horizontal;                          //水平方向输入
-    float m_MouseX;                              //鼠标水平位置
+    //float m_MouseX;                              //鼠标水平位置
     float m_MoveSpeed=5.0f;                      //玩家移动速度
     float m_RotateSpeed = 100.0f;                  //玩家旋转速度
+    bool m_IsLeft = false;
+    bool m_IsRight = false;
     void Start()
     {
         m_PlayerTramsform = this.transform;
@@ -39,10 +41,14 @@ public class Player : MonoBehaviour {
     {
         m_Vertical=Input.GetAxis("Vertical");
         m_Horizontal = Input.GetAxis("Horizontal");
-        m_MouseX=Input.GetAxis("Mouse X");
+        //m_MouseX=Input.GetAxis("Mouse X");
+        m_IsLeft = Input.GetKey(KeyCode.Q);
+        m_IsRight = Input.GetKey(KeyCode.E);
         TransLate();
         Rotate();
         PlayAnimation();
+        m_IsLeft = false;
+        m_IsRight = false;
     }
 
 
@@ -58,11 +64,20 @@ public class Player : MonoBehaviour {
 
     void Rotate()
     {
-        if(m_MouseX!=0)
+        //if(m_MouseX!=0)
+        //{
+        //    m_PlayerTramsform.Rotate(Time.deltaTime * m_RotateSpeed * Vector3.up*m_MouseX, Space.Self);
+        //}
+        if(m_IsRight)
         {
-            m_PlayerTramsform.Rotate(Time.deltaTime * m_RotateSpeed * Vector3.up*m_MouseX, Space.Self);
+            m_PlayerTramsform.Rotate(Time.deltaTime * m_RotateSpeed * Vector3.up * 1, Space.Self);
+        }
+        else if(m_IsLeft)
+        {
+            m_PlayerTramsform.Rotate(Time.deltaTime * -m_RotateSpeed * Vector3.up * 1, Space.Self);
         }
     }
+
 
     void PlayAnimation()
     {

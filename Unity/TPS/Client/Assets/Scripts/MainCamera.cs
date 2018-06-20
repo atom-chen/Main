@@ -6,7 +6,7 @@ public class MainCamera : MonoBehaviour {
     private Transform m_CameraTransform;
 
     Transform m_TargetTransform;
-    float distance = 5.0f;//水平距离
+    float distance = 2.5f;//水平距离
     float height = 3;//高度
     float cameraSpeed = 20.0f;
     float cameraRotateSpeed = 40.0f;

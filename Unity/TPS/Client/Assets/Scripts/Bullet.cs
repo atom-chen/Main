@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour {
         {
             rb = this.GetComponent<Rigidbody>();
         }
+        rb.velocity = Vector3.zero;
         rb.AddForce(speed * m_Dir);
 	}
 
