@@ -9,7 +9,7 @@ public class Wall : MonoBehaviour {
         if(other.collider.tag=="Bullet")
         {
             ParticalPool.Instance.PlayBoomPartical(other.transform.position);
-            BulletPool.Instance.GCBullet(other.transform);
+            BulletPool.Instance.GCBullet(other.gameObject);
         }
     }
 }

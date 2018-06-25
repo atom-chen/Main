@@ -23,7 +23,7 @@ public class Barrel : MonoBehaviour {
     {
         if(coll.collider.transform.tag=="Bullet")
         {
-            BulletPool.Instance.GCBullet(coll.collider.transform);
+            BulletPool.Instance.GCBullet(coll.collider.gameObject);
             
             if(++hitCount>=3)
             {

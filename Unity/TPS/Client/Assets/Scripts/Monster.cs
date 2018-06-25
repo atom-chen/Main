@@ -108,7 +108,7 @@ public class Monster : MonoBehaviour {
     {
         if(other.gameObject.tag=="Bullet")
         {
-            BulletPool.Instance.GCBullet(other.transform);
+            BulletPool.Instance.GCBullet(other.gameObject);
             m_Animator.SetTrigger("IsHit");
             ParticalPool.Instance.PlayBloodDecal(footTrans.position);
             ParticalPool.Instance.PlayBloodEffect(other.transform.position);

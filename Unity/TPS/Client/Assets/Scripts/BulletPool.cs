@@ -30,49 +30,55 @@ public class BulletPool : MonoBehaviour {
     }
     void Start()
     {
-        if(m_BulletPrefab!=null)
-        {
-            for(int i=0;i<m_Size;i++)
-            {
-                GameObject obj = GameObject.Instantiate(m_BulletPrefab);
-                m_Bullets[i] = obj.transform;
-                m_Bullets[i].parent = m_PoolTranform;
-            }
-        }
+        //if(m_BulletPrefab!=null)
+        //{
+        //    for(int i=0;i<m_Size;i++)
+        //    {
+        //        GameObject obj = GameObject.Instantiate(m_BulletPrefab);
+        //        m_Bullets[i] = obj.transform;
+        //        m_Bullets[i].parent = m_PoolTranform;
+        //    }
+        //}
     }
     
     public Transform GetBullet()
     {
-        int ret = m_NowIndex;
-        if(m_Bullets[ret].gameObject.activeInHierarchy)
-        {
-            m_Bullets[ret].gameObject.SetActive(false);
-        }
-        if(m_NowIndex>=m_Size-1)
-        {
-            m_NowIndex = 0;
-        }
-        else
-        {
-            m_NowIndex++;
-        }
-        StartCoroutine(gcBullet(m_Bullets[ret]));
-        return m_Bullets[ret];
+        //int ret = m_NowIndex;
+        //if(m_Bullets[ret].gameObject.activeInHierarchy)
+        //{
+        //    m_Bullets[ret].gameObject.SetActive(false);
+        //}
+        //if(m_NowIndex>=m_Size-1)
+        //{
+        //    m_NowIndex = 0;
+        //}
+        //else
+        //{
+        //    m_NowIndex++;
+        //}
+        //StartCoroutine(gcBullet(m_Bullets[ret]));
+        //return m_Bullets[ret];
+        GameObject obj = GameObject.Instantiate(m_BulletPrefab);
+        obj.transform.parent=m_PoolTranform;
+        StartCoroutine(gcBullet(obj));
+        return obj.transform;
     }
-
-    public void GCBullet(Transform bullet)
+    public void GCBullet(GameObject bullet)
     {
-        if(bullet.tag=="Bullet")
+        if (bullet!=null && bullet.activeInHierarchy && bullet.tag == "Bullet")
         {
-            Debug.Log("GC Bullet");
-            bullet.parent = m_PoolTranform;
-            bullet.gameObject.SetActive(false);
+            Destroy(bullet);
+            //bullet.parent = m_PoolTranform;
+            //bullet.gameObject.SetActive(false);
         }
     }
 
-    IEnumerator gcBullet(Transform bullet)
+    IEnumerator gcBullet(GameObject bullet)
     {
         yield return new WaitForSeconds(m_WaitTimer);
-        GCBullet(bullet);
+        if(bullet!=null)
+        {
+            GCBullet(bullet);
+        }
     }
 }
