@@ -82,17 +82,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bresenham.cpp" />
+    <ClCompile Include="BresenhamCircle.cpp" />
     <ClCompile Include="DDA.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MidCircle.cpp" />
     <ClCompile Include="MidDrawLine.cpp" />
+    <ClCompile Include="Oval.cpp" />
+    <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SimpleCircle.cpp" />
     <ClCompile Include="Tools.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bresenham.h" />
+    <ClInclude Include="BresenhamCircle.h" />
     <ClInclude Include="DDA.h" />
     <ClInclude Include="ggl.h" />
+    <ClInclude Include="MidCircle.h" />
     <ClInclude Include="MidDrawLine.h" />
+    <ClInclude Include="Oval.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SimpleCircle.h" />
     <ClInclude Include="Tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -118,7 +118,7 @@
       <Filter>part</Filter>
     </ClCompile>
     <ClCompile Include="Function.cpp">
-      <Filter>part</Filter>
+      <Filter>main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

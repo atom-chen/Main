@@ -35,3 +35,56 @@ void WriteGlobalDataToLua(lua_State* lua)
 	lua_newtable(lua);//创建一个表
 	lua_setglobal(lua, "e");
 }
+
+void WriteArrayTable(lua_State* lua)
+{
+	//数组类型表
+	lua_newtable(lua);
+	lua_pushinteger(lua, 10);
+	lua_rawseti(lua, -2, 1);//将1位置赋值为10
+
+	lua_pushinteger(lua, 11);
+	lua_rawseti(lua, -2, 2);//2位置赋值11
+	lua_setglobal(lua, "t");
+}
+
+void ReadArrayTable(lua_State* lua)
+{
+	lua_getglobal(lua, "t");
+	lua_rawgeti(lua, -1, 1);
+	printf("C Said: %d\n", lua_tointeger(lua, -1));
+	lua_rawgeti(lua, -2, 2);
+	printf("C Said: %d\n", lua_tointeger(lua, -1));
+}
+void WriteKVTable(lua_State* lua)
+{
+	//kv类型表
+	lua_newtable(lua);
+	//赋值法1
+	lua_pushstring(lua, "x");
+	lua_pushinteger(lua, 0);
+	lua_settable(lua, -3);//key=x value=0，位置在-3
+
+	//赋值法2
+	lua_pushinteger(lua, 11);
+	lua_setfield(lua, -2, "y");//key=y value=11，位置在-2
+
+	lua_setglobal(lua, "t2");
+}
+void ReadKVTable(lua_State* lua)
+{
+	lua_getglobal(lua, "t2");
+	//获取法1
+	lua_getfield(lua, -1, "x");//把key为x的value防到栈顶
+	printf("c said: x is %d\n", lua_tointeger(lua,-1));
+
+	//获取法2
+	lua_pushstring(lua, "y");
+	lua_gettable(lua, -3);
+	printf("c said: y is %d\n", lua_tointeger(lua, -1));
+}
+
+int TestFunction(lua_State *lua)
+{
+
+}
