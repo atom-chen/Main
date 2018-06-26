@@ -1,6 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public delegate void OnPlayerDie();
+
 
 [System.Serializable]
 public class Anim
@@ -26,6 +30,8 @@ public class Player : MonoBehaviour {
     float m_RotateSpeed = 100.0f;                  //玩家旋转速度
     bool m_IsLeft = false;
     bool m_IsRight = false;
+    public static OnPlayerDie m_OnPlayerDie;    //玩家死亡时的回调函数
+    private float m_HP = 100;
     void Start()
     {
         m_PlayerTramsform = this.transform;
@@ -51,7 +57,17 @@ public class Player : MonoBehaviour {
         m_IsRight = false;
     }
 
-
+    void OnTriggerEnter(Collider coll)
+    {
+        if(coll.tag=="PUNCH")
+        {
+            m_HP -= 10;
+            if(m_HP<=0)
+            {
+                OnPlayerDie();
+            }
+        }
+    }
 
     void TransLate()
     {
@@ -102,4 +118,18 @@ public class Player : MonoBehaviour {
             m_PlayerAnimation.CrossFade(m_Anim.runBackward.name, 0.3f);
         }
     }
+
+    void OnPlayerDie()
+    {
+        if (m_OnPlayerDie != null)
+        {
+           foreach(Action item in m_OnPlayerDie.GetInvocationList())
+           {
+               item();
+           }
+        }
+    }
+    
 }
+
+
