@@ -1,6 +1,6 @@
-math.randomseed(os.time());--ÉèÖÃËæ»úÊıÖÖ×Ó
+math.randomseed(os.time());--è®¾ç½®éšæœºæ•°ç§å­
 for i=0,20,1 do
-local num=math.random()  --Ä¬ÈÏ»áËæ»ú³ö[0,1]Çø¼äµÄÊı
+local num=math.random()  --é»˜è®¤ä¼šéšæœºå‡º[0,1]åŒºé—´çš„æ•°
 if(num>=0.9) then
 print(num)
 end
@@ -11,11 +11,11 @@ print(math.random(100))  --[1,100]
 
 print(math.random(5,20)) --[5,20]
 
---Èı½Çº¯ÊıÒÔ»¡¶È×÷Îª²ÎÊı
+--ä¸‰è§’å‡½æ•°ä»¥å¼§åº¦ä½œä¸ºå‚æ•°
 
 
-print(math.floor(1.1)) --ÏòÏÂÈ¡Õû
-print(math.ceil(1.5)) --ÏòÉÏÈ¡Õû
+print(math.floor(1.1)) --å‘ä¸‹å–æ•´
+print(math.ceil(1.5)) --å‘ä¸Šå–æ•´
 
-print(math.max(1,2)) --È¡´ó
-print(math.min(1,2))  --È¡Ğ¡
+print(math.max(1,2)) --å–å¤§
+print(math.min(1,2))  --å–å°
