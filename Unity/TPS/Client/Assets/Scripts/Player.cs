@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
     float m_RotateSpeed = 100.0f;                  //玩家旋转速度
     bool m_IsLeft = false;
     bool m_IsRight = false;
-    public static OnPlayerDie m_OnPlayerDie;    //玩家死亡时的回调函数
+    public static event OnPlayerDie m_OnPlayerDie;    //玩家死亡时的回调函数
     private float m_HP = 100;
     void Start()
     {
@@ -128,6 +128,11 @@ public class Player : MonoBehaviour {
                item();
            }
         }
+        //GameObject[] monsterObj = GameObject.FindGameObjectsWithTag("MONSTER");
+        //foreach(GameObject obj in monsterObj)
+        //{
+        //    obj.SendMessage("OnPlayerDie", SendMessageOptions.DontRequireReceiver);//参数2：调不到这个函数就算了
+        //}
     }
     
 }

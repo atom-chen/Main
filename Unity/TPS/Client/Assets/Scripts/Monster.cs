@@ -22,6 +22,8 @@ public class Monster : MonoBehaviour {
     private float m_traceDistance = 10.0f;
     private MonstStats m_State = MonstStats.idel;
     private bool m_IsDie = false;
+
+    private float m_HP = 100;
     void Start()
     {
         monsterTrans = this.transform;
@@ -35,6 +37,15 @@ public class Monster : MonoBehaviour {
         m_Animator = this.GetComponent<Animator>();
         StartCoroutine(CheckMonstState());
         StartCoroutine(MonsterAction());
+    }
+
+    void OnEnable()
+    {
+        Player.m_OnPlayerDie += OnPlayerDie;
+    }
+    void OnDisable()
+    {
+        Player.m_OnPlayerDie -= OnPlayerDie;
     }
 
     IEnumerator CheckMonstState()
@@ -101,7 +112,18 @@ public class Monster : MonoBehaviour {
     }
     void OnDie()
     {
-
+        StopAllCoroutines();
+        m_IsDie = true;
+        nvAgent.Stop();
+        m_Animator.SetTrigger("IsDie");
+        Collider coll = this.GetComponent<Collider>();
+        coll.enabled = false;
+        foreach(Collider co in GetComponentsInChildren<Collider>())
+        {
+            co.enabled = false;
+        }
+        Destroy(this.gameObject,3.0f);
+        
     }
 
     void OnCollisionEnter(Collision other)
@@ -112,6 +134,17 @@ public class Monster : MonoBehaviour {
             m_Animator.SetTrigger("IsHit");
             ParticalPool.Instance.PlayBloodDecal(footTrans.position);
             ParticalPool.Instance.PlayBloodEffect(other.transform.position);
+            m_HP -= 50;
+            if(m_HP<=0)
+            {
+                m_State = MonstStats.die;
+            }
         }
+    }
+    void OnPlayerDie()
+    {
+        StopAllCoroutines();
+        nvAgent.Stop();
+        m_Animator.SetTrigger("IsPlayerDie");
     }
 }
