@@ -123,10 +123,7 @@ public class Player : MonoBehaviour {
     {
         if (m_OnPlayerDie != null)
         {
-           foreach(Action item in m_OnPlayerDie.GetInvocationList())
-           {
-               item();
-           }
+            m_OnPlayerDie();
         }
         //GameObject[] monsterObj = GameObject.FindGameObjectsWithTag("MONSTER");
         //foreach(GameObject obj in monsterObj)

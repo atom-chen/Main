@@ -11,7 +11,10 @@ public enum MonstStats
     die
 }
 
-public class Monster : MonoBehaviour {
+public delegate void OnMonstDie(Monster monst);
+
+public class Monster : MonoBehaviour
+{
     private Transform monsterTrans;
     private Transform playerTrans;
     private Transform footTrans;
@@ -24,13 +27,14 @@ public class Monster : MonoBehaviour {
     private bool m_IsDie = false;
 
     private float m_HP = 100;
+    public event OnMonstDie WhenMonstDie;
     void Start()
     {
         monsterTrans = this.transform;
         nvAgent = this.GetComponent<NavMeshAgent>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         footTrans = transform.Find("FootPos");
-        if(playerObj!=null)
+        if (playerObj != null)
         {
             playerTrans = playerObj.transform;
         }
@@ -54,11 +58,15 @@ public class Monster : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.2f);
             float dist = Vector3.Distance(monsterTrans.position, playerTrans.position);
-            if (dist <= m_AttackDistance)
+            if (m_HP <= 0)
+            {
+                m_State = MonstStats.die;
+            }
+            else if (dist <= m_AttackDistance)
             {
                 m_State = MonstStats.attack;
             }
-            else if(dist<=m_traceDistance)
+            else if (dist <= m_traceDistance)
             {
                 m_State = MonstStats.trace;
             }
@@ -72,9 +80,9 @@ public class Monster : MonoBehaviour {
 
     IEnumerator MonsterAction()
     {
-        while(!m_IsDie)
+        while (!m_IsDie)
         {
-            switch(m_State)
+            switch (m_State)
             {
                 case MonstStats.idel:
                     OnIdel();
@@ -95,7 +103,10 @@ public class Monster : MonoBehaviour {
 
     void OnIdel()
     {
-        nvAgent.Stop();
+        if(nvAgent.isOnNavMesh)
+        {
+            nvAgent.Stop();
+        }
         m_Animator.SetBool("IsTrace", false);
     }
     void OnTrace()
@@ -107,44 +118,54 @@ public class Monster : MonoBehaviour {
     }
     void OnAttack()
     {
-        nvAgent.Stop();
+        if(!nvAgent.isStopped)
+        {
+            nvAgent.Stop();
+        }
         m_Animator.SetBool("IsAttack", true);
     }
     void OnDie()
     {
+        if (WhenMonstDie != null)
+        {
+            WhenMonstDie(this);
+        }
         StopAllCoroutines();
         m_IsDie = true;
-        nvAgent.Stop();
+        if (nvAgent.isOnNavMesh)
+        {
+            nvAgent.Stop();
+        }
         m_Animator.SetTrigger("IsDie");
         Collider coll = this.GetComponent<Collider>();
         coll.enabled = false;
-        foreach(Collider co in GetComponentsInChildren<Collider>())
+        foreach (Collider co in GetComponentsInChildren<Collider>())
         {
             co.enabled = false;
         }
-        Destroy(this.gameObject,3.0f);
-        
+        Player.m_OnPlayerDie -= OnPlayerDie;
+        Destroy(this.gameObject, 3.0f);
+
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag=="Bullet")
+        if (other.gameObject.tag == "Bullet")
         {
             BulletPool.Instance.GCBullet(other.gameObject);
             m_Animator.SetTrigger("IsHit");
             ParticalPool.Instance.PlayBloodDecal(footTrans.position);
             ParticalPool.Instance.PlayBloodEffect(other.transform.position);
             m_HP -= 50;
-            if(m_HP<=0)
-            {
-                m_State = MonstStats.die;
-            }
         }
     }
     void OnPlayerDie()
     {
         StopAllCoroutines();
-        nvAgent.Stop();
+        if (nvAgent.isOnNavMesh)
+        {
+            nvAgent.Stop();
+        }
         m_Animator.SetTrigger("IsPlayerDie");
     }
 }
