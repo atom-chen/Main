@@ -2,4 +2,5 @@
 
 <Project Name="函数.luaprj" >
     <LuaFile RelativePath=".\MoreReturn.lua" />
+    <LuaFile RelativePath=".\FunctionExample.lua" />
 </Project>
