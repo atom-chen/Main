@@ -1,107 +1,200 @@
 #include "main.h"
 #include "Tools.h"
-#define NUM_SPHERE 50
 #define TGA_PATH "stone.tga"
-GLFrame spheres[NUM_SPHERE];
+GLShaderManager		shaderManager;
+GLMatrixStack		modelViewMatrix;
+GLMatrixStack		projectionMatrix;
+GLFrame				cameraFrame;
+GLFrame             objectFrame;
+GLFrustum			viewFrustum;
 
-GLMatrixStack modelViewMatrix;
-GLMatrixStack projectionMatrix;
-GLGeometryTransform transformPipeline;//矩阵对阵管理器
-GLFrustum           viewFrustum;
-GLShaderManager     shaderManager;
+GLBatch             pyramidBatch;
 
-GLuint texture;
-GLBatch pyramidBatch;
+GLuint              textureID;
 
-GLFrame cameraFrame;
-M3DMatrix44f  mCamera;//view Matrix
+GLGeometryTransform	transformPipeline;
+M3DMatrix44f		shadowMatrix;
 
-GLfloat vRed[] = { 1.0f, 0.0f, 0.0f, 1.0f };
-GLfloat vGreen[] = { 0.0f, 1.0f, 0.0f, 1.0f };
-GLfloat vBlue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
 
-M3DVector4f vLightPos = { 0.0f, 10.0f, 5.0f, 1.0f };//光位置
-M3DVector4f vLightEyePos;//眼睛的位置由摄像机决定
 void MakePyramid(GLBatch& pyramidBatch)
 {
+	pyramidBatch.Begin(GL_TRIANGLES, 18, 1);
 
+	// Bottom of pyramid
+	pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+	pyramidBatch.Vertex3f(-1.0f, -1.0f, -1.0f);
+
+	pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+	pyramidBatch.Vertex3f(1.0f, -1.0f, -1.0f);
+
+	pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 1.0f);
+	pyramidBatch.Vertex3f(1.0f, -1.0f, 1.0f);
+
+	pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 1.0f);
+	pyramidBatch.Vertex3f(-1.0f, -1.0f, 1.0f);
+
+	pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+	pyramidBatch.Vertex3f(-1.0f, -1.0f, -1.0f);
+
+	pyramidBatch.Normal3f(0.0f, -1.0f, 0.0f);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 1.0f);
+	pyramidBatch.Vertex3f(1.0f, -1.0f, 1.0f);
+
+
+	M3DVector3f vApex = { 0.0f, 1.0f, 0.0f };
+	M3DVector3f vFrontLeft = { -1.0f, -1.0f, 1.0f };
+	M3DVector3f vFrontRight = { 1.0f, -1.0f, 1.0f };
+	M3DVector3f vBackLeft = { -1.0f, -1.0f, -1.0f };
+	M3DVector3f vBackRight = { 1.0f, -1.0f, -1.0f };
+	M3DVector3f n;
+
+	// Front of Pyramid
+	m3dFindNormal(n, vApex, vFrontLeft, vFrontRight);
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.5f, 1.0f);
+	pyramidBatch.Vertex3fv(vApex);		// Apex
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vFrontLeft);		// Front left corner
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vFrontRight);		// Front right corner
+
+
+	m3dFindNormal(n, vApex, vBackLeft, vFrontLeft);
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.5f, 1.0f);
+	pyramidBatch.Vertex3fv(vApex);		// Apex
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vBackLeft);		// Back left corner
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vFrontLeft);		// Front left corner
+
+	m3dFindNormal(n, vApex, vFrontRight, vBackRight);
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.5f, 1.0f);
+	pyramidBatch.Vertex3fv(vApex);				// Apex
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vFrontRight);		// Front right corner
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vBackRight);			// Back right cornder
+
+
+	m3dFindNormal(n, vApex, vBackRight, vBackLeft);
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.5f, 1.0f);
+	pyramidBatch.Vertex3fv(vApex);		// Apex
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vBackRight);		// Back right cornder
+
+	pyramidBatch.Normal3fv(n);
+	pyramidBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+	pyramidBatch.Vertex3fv(vBackLeft);		// Back left corner
+
+	pyramidBatch.End();
 }
+
 
 void SetupRC()
 {
+	// Black background
+	glClearColor(0.7f, 0.7f, 0.7f, 1.0f);
+
 	shaderManager.InitializeStockShaders();
+
 	glEnable(GL_DEPTH_TEST);
-	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	LoadTGATexture(TGA_PATH, GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE);
 
-	texture=LoadTGATexture(TGA_PATH, GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE);
 	MakePyramid(pyramidBatch);
-}
-void ChangeSize(int w, int h)
-{
-	if (h == 0)
-	{
-		h = 1;
-	}
-	glViewport(0, 0, w, h);
-	//设置视景体以及投影矩阵
-	viewFrustum.SetPerspective(35.0f, float(w) / float(h), 1.0f, 1000.0f);
-	projectionMatrix.LoadMatrix(viewFrustum.GetProjectionMatrix());
-	transformPipeline.SetMatrixStacks(modelViewMatrix, projectionMatrix);//设置变换管线
-}
-void OnDrawBegin()
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	//摄像机处理
-	cameraFrame.GetCameraMatrix(mCamera);//获取viewMatrix
-	modelViewMatrix.PushMatrix(mCamera);//V 1
+	cameraFrame.MoveForward(-7.0f);
+}
 
-	m3dTransformVector4(vLightEyePos, vLightPos, mCamera);//更新眼睛的位置
-}
-void Draw()
+void ShutdownRC(void)
 {
+	glDeleteTextures(1, &textureID);
+}
 
-}
-void OnDrawEnd()
-{
-	modelViewMatrix.PopMatrix();
-	glutSwapBuffers();
-	glutPostRedisplay();
-}
+
 void RenderScene(void)
 {
-	OnDrawBegin();
-	Draw();
-	OnDrawEnd();
+	static GLfloat vLightPos[] = { 1.0f, 1.0f, 0.0f };
+	static GLfloat vWhite[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+	modelViewMatrix.PushMatrix();
+	M3DMatrix44f mCamera;
+	cameraFrame.GetCameraMatrix(mCamera);
+	modelViewMatrix.MultMatrix(mCamera);
+
+	M3DMatrix44f mObjectFrame;
+	objectFrame.GetMatrix(mObjectFrame);
+	modelViewMatrix.MultMatrix(mObjectFrame);
+
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	shaderManager.UseStockShader(GLT_SHADER_TEXTURE_POINT_LIGHT_DIFF,
+		transformPipeline.GetModelViewMatrix(),
+		transformPipeline.GetProjectionMatrix(),
+		vLightPos, vWhite, 0);
+
+	pyramidBatch.Draw();
+
+
+	modelViewMatrix.PopMatrix();
+
+	// Flush drawing commands
+	glutSwapBuffers();
 }
 
-void OnSpecialKeys(int key,int x,int y)
+
+void SpecialKeys(int key, int x, int y)
 {
-	float linear = 0.1f;
-	float angular = float(m3dDegToRad(5.0f));//每帧旋转5度
-
 	if (key == GLUT_KEY_UP)
-	{
-		cameraFrame.MoveForward(linear);
-	}
+		objectFrame.RotateWorld(m3dDegToRad(-5.0f), 1.0f, 0.0f, 0.0f);
+
 	if (key == GLUT_KEY_DOWN)
-	{
-		cameraFrame.MoveForward(-linear);
-	}
-	if (key == GLUT_KEY_RIGHT)
-	{
-		cameraFrame.RotateWorld(-angular, 0.0f, 1.0f, 0.0f);
-	}
+		objectFrame.RotateWorld(m3dDegToRad(5.0f), 1.0f, 0.0f, 0.0f);
+
 	if (key == GLUT_KEY_LEFT)
-	{
-		cameraFrame.RotateWorld(angular, 0.0f, 1.0f, 0.0f);
-	}
+		objectFrame.RotateWorld(m3dDegToRad(-5.0f), 0.0f, 1.0f, 0.0f);
+
+	if (key == GLUT_KEY_RIGHT)
+		objectFrame.RotateWorld(m3dDegToRad(5.0f), 0.0f, 1.0f, 0.0f);
+
+	glutPostRedisplay();
 }
 
 
 
+
+void ChangeSize(int w, int h)
+{
+	glViewport(0, 0, w, h);
+	viewFrustum.SetPerspective(35.0f, float(w) / float(h), 1.0f, 500.0f);
+	projectionMatrix.LoadMatrix(viewFrustum.GetProjectionMatrix());
+	transformPipeline.SetMatrixStacks(modelViewMatrix, projectionMatrix);
+}
 
 int main(int argc, char* argv[])
 {
@@ -110,10 +203,10 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_STENCIL);
 	glutInitWindowSize(800, 600);
-	glutCreateWindow("Sphere World Example");
+	glutCreateWindow("Pyramid");
 	glutReshapeFunc(ChangeSize);
+	glutSpecialFunc(SpecialKeys);
 	glutDisplayFunc(RenderScene);
-	glutSpecialFunc(OnSpecialKeys);
 
 	GLenum err = glewInit();
 	if (GLEW_OK != err) {
@@ -121,8 +214,12 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
+
 	SetupRC();
 
 	glutMainLoop();
+
+	ShutdownRC();
+
 	return 0;
 }
