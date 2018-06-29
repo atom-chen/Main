@@ -11,6 +11,7 @@ GLFrustum           viewFrustum;
 GLShaderManager     shaderManager;
 
 GLuint texture;
+GLBatch pyramidBatch;
 
 GLFrame cameraFrame;
 M3DMatrix44f  mCamera;//view Matrix
@@ -21,6 +22,11 @@ GLfloat vBlue[] = { 0.0f, 0.0f, 1.0f, 1.0f };
 
 M3DVector4f vLightPos = { 0.0f, 10.0f, 5.0f, 1.0f };//光位置
 M3DVector4f vLightEyePos;//眼睛的位置由摄像机决定
+void MakePyramid(GLBatch& pyramidBatch)
+{
+
+}
+
 void SetupRC()
 {
 	shaderManager.InitializeStockShaders();
@@ -30,6 +36,7 @@ void SetupRC()
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 	texture=LoadTGATexture(TGA_PATH, GL_LINEAR, GL_LINEAR, GL_CLAMP_TO_EDGE);
+	MakePyramid(pyramidBatch);
 }
 void ChangeSize(int w, int h)
 {
