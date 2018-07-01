@@ -5,7 +5,7 @@ using UnityEngine;
 public class ServerItem : MonoBehaviour {
   public UILabel m_ServerNameLabel;
   private string m_ServerName;
-  private ServerProperty m_ServerProperty;
+  private ServerPropert m_ServerProperty;
 
   void Start()
   {
@@ -20,7 +20,7 @@ public class ServerItem : MonoBehaviour {
     }
   }
 
-  public void InitItem(ServerProperty server)
+  public void InitItem(ServerPropert server)
   {
     m_ServerNameLabel.text = server.Name;
     m_ServerProperty = server;

@@ -10,12 +10,12 @@ using System.Text;
 public class PlayData
 {
   private static User m_User;
-  private static ServerProperty m_Server;
+  private static ServerPropert m_Server;
   private static List<Role> m_RoleList;
   private static int m_RoleIndex;
 
   public static User UserData{get {return m_User;}set{m_User=value;}}
-  public static ServerProperty ServerData { get { return m_Server; } set { m_Server = value; } }
+  public static ServerPropert ServerData { get { return m_Server; } set { m_Server = value; } }
   public static List<Role> RoleList { get { return m_RoleList; } set { m_RoleList = value; } }
   //当前登录角色
   public static Role RoleData 

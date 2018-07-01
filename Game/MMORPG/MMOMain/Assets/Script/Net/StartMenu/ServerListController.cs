@@ -20,7 +20,7 @@ public class ServerListController : ControllerBase {
     object json = null;
     if(parameters.TryGetValue((byte)ParameterCode.ServerList,out json))
     {
-      List<ServerProperty> serverList = JsonMapper.ToObject<List<ServerProperty>>(json.ToString());
+        List<ServerPropert> serverList = JsonMapper.ToObject<List<ServerPropert>>(json.ToString());
       if(serverList!=null)
       {
         StartMenu.Instance.SetServerList(serverList);

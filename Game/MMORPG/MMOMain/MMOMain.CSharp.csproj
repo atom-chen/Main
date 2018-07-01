@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.4p1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -218,12 +220,25 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+    <Compile Include="Assets\Public\Common\Item.cs" />
+    <Compile Include="Assets\Public\Common\Role.cs" />
+    <Compile Include="Assets\Public\Common\ServerPropert.cs" />
+    <Compile Include="Assets\Public\Common\User.cs" />
+    <Compile Include="Assets\Public\Define\Define.cs" />
+    <Compile Include="Assets\Public\Define\OperationCode.cs" />
+    <Compile Include="Assets\Public\Define\ParameterCode.cs" />
+    <Compile Include="Assets\Public\Define\ReturnCode.cs" />
+    <Compile Include="Assets\Public\TableManager\ReadTableTools.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Assets\Public\TableManager\Table_Role.cs" />
+    <Compile Include="Assets\Public\TableManager\Tab_Item.cs" />
+    <Compile Include="Assets\Public\Tools\FormatTools.cs" />
+    <Compile Include="Assets\Public\Tools\MD5Tools.cs" />
+    <Compile Include="Assets\Public\Tools\ParameterTools.cs" />
     <Compile Include="Assets\Resources\Model\Boy\scripts\characterRotate.cs" />
     <Compile Include="Assets\Script\Global\GameManager.cs" />
     <Compile Include="Assets\Script\Global\PlayData.cs" />
-    <Compile Include="Assets\Script\Net\Code\OperationCode.cs" />
-    <Compile Include="Assets\Script\Net\Code\ParametersCode.cs" />
-    <Compile Include="Assets\Script\Net\Code\ReturnCode.cs" />
     <Compile Include="Assets\Script\Net\ControllerBase.cs" />
     <Compile Include="Assets\Script\Net\Model\Role.cs" />
     <Compile Include="Assets\Script\Net\Model\ServerProperty.cs" />
@@ -235,10 +250,6 @@
     <Compile Include="Assets\Script\Net\StartMenu\RegisterController.cs" />
     <Compile Include="Assets\Script\Net\StartMenu\ServerListController.cs" />
     <Compile Include="Assets\Script\Net\StartMenu\StartGameControllr.cs" />
-    <Compile Include="Assets\Script\Net\Table\Table_Role.cs" />
-    <Compile Include="Assets\Script\Tools\FormatTools.cs" />
-    <Compile Include="Assets\Script\Tools\MD5Tools.cs" />
-    <Compile Include="Assets\Script\Tools\ParameterTools.cs" />
     <Compile Include="Assets\Script\Tools\Resources.cs" />
     <Compile Include="Assets\Script\Tools\UIManager.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
@@ -292,8 +303,9 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
-    <None Include="Assets\Table\Item.txt" />
-    <None Include="Assets\Table\Role.txt" />
+    <None Include="Assets\Public\Table\Item.txt" />
+    <None Include="Assets\Public\Table\Role.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

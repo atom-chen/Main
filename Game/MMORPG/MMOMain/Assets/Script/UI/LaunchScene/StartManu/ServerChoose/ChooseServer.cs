@@ -16,7 +16,7 @@ public class ChooseServer : MonoBehaviour {
       PhotoEngine.Instance.SendRequest(OperationCode.GetServer, null);
     }
   }
-  public void SetServerList(List<ServerProperty> serverList, ServerProperty curServer)
+  public void SetServerList(List<ServerPropert> serverList, ServerPropert curServer)
   {
     for (int i = 0; i < m_CurServerTrans.childCount;i++)
     {

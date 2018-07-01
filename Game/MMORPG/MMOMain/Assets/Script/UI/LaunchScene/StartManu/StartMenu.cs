@@ -80,7 +80,7 @@ public class StartMenu : MonoBehaviour
     }
     //发包
     Dictionary<byte, object> dic = new Dictionary<byte, object>();
-    dic.Add((byte)ParameterCode.Server, ParaTools.GetJson<ServerProperty>(PlayData.ServerData));
+    dic.Add((byte)ParameterCode.Server, ParaTools.GetJson<ServerPropert>(PlayData.ServerData));
     PhotoEngine.Instance.SendRequest(OperationCode.EnterGame, dic);
   }
 
@@ -111,7 +111,7 @@ public class StartMenu : MonoBehaviour
   }
 
   //set服务器列表
-  public void SetServerList(List<ServerProperty> serverList)
+  public void SetServerList(List<ServerPropert> serverList)
   {
     m_ChooseServer.SetServerList(serverList,PlayData.ServerData);
   }
@@ -125,7 +125,7 @@ public class StartMenu : MonoBehaviour
     }
     InitUI();
   }
-  public void SetCurServer(ServerProperty server)
+  public void SetCurServer(ServerPropert server)
   {
     if(server!=null)
     {

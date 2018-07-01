@@ -5,118 +5,105 @@ using System.Text;
 using UnityEngine;
 
 
-public class Role
+public partial class Role
 {
-  private int m_ID;//ID
-  private string m_Name;//名称
-  private uint m_Level;//等级
-  private bool m_Sex;//性别
-  private int m_UserID;//所属用户
-  private string m_HeadIcon;//头像
-  private int m_Exp;//经验
-  private int m_Coin;//金币
-  private int m_YuanBao;//元宝
-  private int m_Energy;//体力
-  private int m_Toughen;//历练数
-  private int m_EnergyNextRecoverTimer;//距离下次恢复的时间(秒)
-  private int m_ToughenNextRecoverTimer;//距离下次恢复的时间(秒)
-  public int ID
+  public int id
   {
     get
     {
-      return m_ID;
+      return ID;
     }
     set
     {
-      m_ID = value;
+      ID = value;
       OnChange();
     }
   }
 
-  public string Name
+  public string name
   {
     get
     {
-      return m_Name;
+      return Name;
     }
     set
     {
-      m_Name = value;
+      Name = value;
       OnChange();
     }
   }
-  public uint Level
+  public uint level
   {
-    get { return m_Level; }
-    set { m_Level = value; OnChange(); }
+    get { return Level; }
+    set { Level = value; OnChange(); }
   }
 
 
-  public bool Sex
+  public bool sex
   {
-    get { return m_Sex; }
-    set { m_Sex = value; OnChange(); }
+    get { return Sex; }
+    set { Sex = value; OnChange(); }
   }
 
 
-  public int UserID
+  public int userID
   {
-    get { return m_UserID; }
-    set { m_UserID = value; OnChange(); }
+    get { return UserID; }
+    set { UserID = value; OnChange(); }
   }
 
 
-  public string HeadIcon
+  public string headIcon
   {
-    get { return m_HeadIcon; }
-    set { m_HeadIcon = value; OnChange(); }
+    get { return HeadIcon; }
+    set { HeadIcon = value; OnChange(); }
   }
 
 
-  public int Exp
+  public int exp
   {
-    get { return m_Exp; }
-    set { m_Exp = value; OnChange(); }
+    get { return Exp; }
+    set { Exp = value; OnChange(); }
   }
 
 
-  public int Coin
+  public int coin
   {
-    get { return m_Coin; }
-    set { m_Coin = value; OnChange(); }
+    get { return Coin; }
+    set { Coin = value; OnChange(); }
   }
 
 
-  public int YuanBao
+  public int yuanBao
   {
-    get { return m_YuanBao; }
-    set { m_YuanBao = value; OnChange(); }
+    get { return YuanBao; }
+    set { YuanBao = value; OnChange(); }
   }
 
 
-  public int Energy
+  public int energy
   {
-    get { return m_Energy; }
-    set { m_Energy = value; OnChange(); }
+    get { return Energy; }
+    set { Energy = value; OnChange(); }
   }
 
 
-  public int Toughen
+  public int toughen
   {
-    get { return m_Toughen; }
-    set { m_Toughen = value; OnChange(); }
+    get { return Toughen; }
+    set { Toughen = value; OnChange(); }
   }
 
 
-  public int EnergyNextRecoverTimer
+  public int energyNextRecoverTimer
   {
-    get { return m_EnergyNextRecoverTimer; }
-    set { m_EnergyNextRecoverTimer = value; }
+    get { return EnergyNextRecoverTimer; }
+    set { EnergyNextRecoverTimer = value; }
   }
-  public int ToughenNextRecoverTimer
+  public int toughenNextRecoverTimer
   {
-    get { return m_ToughenNextRecoverTimer; }
-    set { m_ToughenNextRecoverTimer = value; }
+    get { return ToughenNextRecoverTimer; }
+    set { ToughenNextRecoverTimer = value; }
   }
   
   /// <summary>
@@ -125,16 +112,16 @@ public class Role
   /// <returns></returns>
   public int GetEnergyAllRecoverTimer()
   {
-    int baseTimer=(Table_Role.GetEnergyLimit(m_Level)-m_Energy-1)* Table_Role.GetRecoverSpendTime();
-    return baseTimer <= 0 ? 0 : baseTimer + m_EnergyNextRecoverTimer;
+    int baseTimer=(Table_Role.GetEnergyLimit((int)Level)-Energy-1)* Table_Role.GetRecoverSpendTime();
+    return baseTimer <= 0 ? 0 : baseTimer + EnergyNextRecoverTimer;
   }
   /// <summary>
   /// 获取历练全部恢复的时间
   /// </summary>
   public int GetToughenAllRecoverTimer()
   {
-    int baseTimer = (Table_Role.GetToughenLimit(m_Level) - m_Toughen - 1) * Table_Role.GetRecoverSpendTime();
-    return baseTimer<=0?0:baseTimer + m_ToughenNextRecoverTimer;
+    int baseTimer = (Table_Role.GetToughenLimit((int)Level) - Toughen - 1) * Table_Role.GetRecoverSpendTime();
+    return baseTimer<=0?0:baseTimer + ToughenNextRecoverTimer;
   }
 
   public delegate void de();

@@ -71,41 +71,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\OperationCode.cs" />
-    <Compile Include="Common\ParameterCode.cs" />
-    <Compile Include="Common\ReturnCode.cs" />
-    <Compile Include="Common\Table\Table_Role.cs" />
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Item.cs">
+      <Link>Public\Common\Item.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role.cs">
+      <Link>Public\Common\Role.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\ServerPropert.cs">
+      <Link>Public\Common\ServerPropert.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\User.cs">
+      <Link>Public\Common\User.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Define.cs">
+      <Link>Public\Define\Define.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\OperationCode.cs">
+      <Link>Public\Define\OperationCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\ParameterCode.cs">
+      <Link>Public\Define\ParameterCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\ReturnCode.cs">
+      <Link>Public\Define\ReturnCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\ReadTableTools.cs">
+      <Link>Public\TableManager\ReadTableTools.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Table_Role.cs">
+      <Link>Public\TableManager\Table_Role.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Item.cs">
+      <Link>Public\TableManager\Tab_Item.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\FormatTools.cs">
+      <Link>Public\Tools\FormatTools.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\MD5Tools.cs">
+      <Link>Public\Tools\MD5Tools.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
+      <Link>Public\Tools\ParameterTools.cs</Link>
+    </Compile>
+    <Compile Include="Model\Role\DBRole.cs" />
+    <Compile Include="Model\Role\ServerRole.cs" />
+    <Compile Include="Model\ServerProperty\DBServerPropert .cs" />
+    <Compile Include="Model\User\DBUser.cs" />
     <Compile Include="Controller\RoleController.cs" />
     <Compile Include="Controller\ServerPropertyController.cs" />
     <Compile Include="Controller\UserController.cs" />
-    <Compile Include="Hander\StartGameHandler.cs" />
-    <Compile Include="Hander\EnterGameHandler.cs" />
-    <Compile Include="Hander\HandlerBase.cs" />
-    <Compile Include="Hander\LoginHandler.cs" />
-    <Compile Include="Hander\RegisterHandler.cs" />
-    <Compile Include="Hander\RoleAddHandler.cs" />
-    <Compile Include="Hander\ServerListHandler.cs" />
-    <Compile Include="Model\Item\Item.cs" />
-    <Compile Include="Model\Role\Role.cs" />
+    <Compile Include="User\Hander\StartGameHandler.cs" />
+    <Compile Include="User\Hander\EnterGameHandler.cs" />
+    <Compile Include="User\Hander\HandlerBase.cs" />
+    <Compile Include="User\Hander\LoginHandler.cs" />
+    <Compile Include="User\Hander\RegisterHandler.cs" />
+    <Compile Include="User\Hander\RoleAddHandler.cs" />
+    <Compile Include="User\Hander\ServerListHandler.cs" />
     <Compile Include="Model\Role\RoleManager.cs" />
     <Compile Include="Model\ServerProperty\ServerPropertyManager.cs" />
     <Compile Include="Model\User\UserManager.cs" />
-    <Compile Include="main\Define.cs" />
-    <Compile Include="main\UserConnect.cs" />
+    <Compile Include="User\UserConnect.cs" />
     <Compile Include="Model\ServerProperty\ServerPropert.cs" />
     <Compile Include="Model\User\User.cs" />
     <Compile Include="main\sqlHelper\MySQLInfo.cs" />
     <Compile Include="main\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="main\sqlHelper\NHibernateHelper.cs" />
-    <Compile Include="Tools\FormatTools.cs" />
-    <Compile Include="Tools\MD5Tools.cs" />
-    <Compile Include="Tools\ParameterTools.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\MMOMain\Assets\Public\Table\Item.txt">
+      <Link>Public\Table\Item.txt</Link>
+    </Content>
+    <Content Include="..\..\..\MMOMain\Assets\Public\Table\Role.txt">
+      <Link>Public\Table\Role.txt</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

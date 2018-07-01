@@ -6,14 +6,14 @@ public class ServerListLogic : MonoBehaviour {
   public UIGrid m_Grid;
   public GameObject m_HotServerPrefab;
   public GameObject m_NormalServerPrefab;
-  public void InitServerList(List<ServerProperty> serverList)
+  public void InitServerList(List<ServerPropert> serverList)
   {
     List<Transform> childList=m_Grid.GetChildList();
     for (int i = 0; i < childList.Count;i++)
     {
       DestroyImmediate(childList[i].gameObject);
     }
-    foreach (ServerProperty item in serverList)
+    foreach (ServerPropert item in serverList)
     {
       ServerItem serverItem;
       if (item.Count >= 50)

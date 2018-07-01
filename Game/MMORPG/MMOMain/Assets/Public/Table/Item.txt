@@ -1,0 +1,2 @@
+﻿ID（第一行不读）	名称	Icon	ClassType	SubType	Level	MaxCount	Price	Desc
+1	金疮药		0	1	0	99	200	生命回复400

@@ -37,7 +37,7 @@ public class LoginMenu : MonoBehaviour {
   {
     User user = new User();
     user.UserName = userName;
-    user.PassWord = MD5Tool.GetMD5(passWord);
+    user.PassWord = MD5Tools.GetMD5(passWord);
     string json = LitJson.JsonMapper.ToJson(user);
     Dictionary<byte, object> dic = new Dictionary<byte, object>();
     dic.Add((byte)ParameterCode.User, json);

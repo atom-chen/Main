@@ -49,7 +49,7 @@ public class RegisterMenu : MonoBehaviour {
   }
   private void Register(string userName, string passWord)
   {
-    User user = new User() { UserName = userName, PassWord = MD5Tool.GetMD5(passWord) };
+      User user = new User() { UserName = userName, PassWord = MD5Tools.GetMD5(passWord) };
 
     string json = ParaTools.GetJson<User>(user);
     Dictionary<byte, object> dic = new Dictionary<byte, object>();
