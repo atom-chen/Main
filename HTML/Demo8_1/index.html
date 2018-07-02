@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>招商银行宣传片</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<!--分析：我认为整个结构是这样的：	
+	每次滚动一个小界面到手机屏幕上-->
+	<!--我认为有4页→1个大的div，4个div-->
+	<div class="content">
+		<div class="page page1">
+			<img src="images/indexTxt.png" 
+				class="page1_txt" />
+			<img src="images/indexFlowers01.png " 
+				class="page1_flowers01"  />
+			<img src="images/indexFlowers02.png" 
+				class="page1_flowers02"  />
+			<img src="images/endCloudys.png" 
+				class="page1_cloudys" />
+			<img src="images/indexElements.png"
+				class="page1_elements"  />
+			<img src="images/indexBuilding.png"
+				class="page1_building" />
+			<img src="images/endAvatar.png"
+				class="page1_avatar" />
+			
+		</div>
+		<div class="page page2">
+			<img src="images/wasBg.jpg"
+				class="page2_bg" />
+			<img src="images/wasFarm.png" 
+				class="page2_farm"/>
+			<img src="images/wasIT.png" 
+				class="page2_it"/>
+		</div>
+		<div class="page page3">
+			<img src="images/earlyBg.jpg" class="page3_bg"/>
+			<img src="images/lastBusStation.png" class="page3_station"/>
+			<img src="images/bus.png" class="page3_bus"/>
+			<img src="images/earlyTitle.png" class="page3_eT" />
+			<img src="images/lastBusTitle.png" class="page3_Bt" />
+			<img src="images/lastBusAvatar.png" class="page3_person"/>
+			
+			<!--场景2-->
+			<img src="images/myTeamWall.png" class="page3-wall" />
+			<img src="images/myTeamAvatar.png" class="page3-tAvatar" />
+			<img src="images/myTeamSpace.png" class="page3-space" />
+			<img src="images/myteamWhereTxt.png" class="page3-where" />
+		</div>
+		<div class="page page4">
+			<img src="images/lightOffBg.jpg" class="page4_bg"/>
+			<img src="images/cornerTitle.png" class="page4_title" />
+			<img src="images/clickGuide.png" class="page4_guide"  />
+			<img src="images/lightOff.png" class="page4_off" onclick="start(this)"  />
+			<!--场景2的图片-->
+			<img src="images/lightOnBg.jpg" class="page4_onBg" />
+			<img src="images/weKnowYou.png" class="page4_you" />
+		</div>
+		<div class="page page5">
+			<img src="images/salaryBg.png" class="page5_bg"/>
+			<img src="images/salaryAvatar.png" class="page5_person"/>
+			<img src="images/salaryTa.png" class="page5_Ta"/>
+			<img src="images/salaryTxt.png" class="page5_Txt" />
+		</div>
+		<div class="page page6">
+			<img src="images/runBg.jpg" class="page6_bg" />
+			<img src="images/runAvatar.png" class="page6_person" />
+			<img src="images/runTa.png" class="page6_runTa" />
+			<img src="images/runTxt.png" class="page6_runTxt" />
+		</div>
+	</div>
+	<img src="images/arrow-right.png " id="arrow" />
+	<img src="images/music.png" class="music" onclick="playPause(this)"/>;
+	<audio id="musicplayer" src="MP3/music.mp3" autoplay="autoplay"></audio>
+	<!--引包-->
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js" ></script>
+	<script type="text/javascript" src="js/style.js" ></script>
+</body>
+</html>

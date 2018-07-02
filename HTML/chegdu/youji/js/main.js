@@ -1,0 +1,19 @@
+$(document).ready(function(){
+	$(".p1").fadeIn(2000,function(){
+		$(".qianyan").fadeIn(2000,function(){
+			$(".p2").animate({left:"5%"},{duration:1000,complete:function(){
+				$(".p3").animate({right:"3%"},{duration:1000,complete:function(){
+					$(".P1").animate({left:"20%"},{duration:1000,complete:function(){
+						$(".P2").animate({right:"15%",width:"35%"},{duration:2000,complete:function(){
+							$(".P3").fadeIn(1000,function(){
+								$(".P4").animate({right:"10%"},{duration:1000,complete:function(){
+									$(".p4 a").fadeIn(1500);
+								}})
+							})
+						}})
+					}})
+				}})
+			}})
+		});
+	});
+});

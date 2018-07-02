@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>天王</title>
+		<!--导入css-->
+		<link rel="stylesheet" href="css/周董.css" />
+	</head>
+	<!--先执行的代码被盖在下面-->
+	<body>
+		<!--分析：大的div里面放9张图片-->
+		<div id="box">
+			<!--figure：用作文档中插图的图像（图片不会把字盖住）-->
+			<!--1-->
+			<figure class="view1">
+				<!--alt:如果无法显示图像，浏览器将显示默认文本-->
+				<img src="img/1.jpg" alt="加载超时"/>
+				<!--figcaption：标签定义figcaption元素的标题-->
+				<figcaption>
+					<h2>周杰伦</h2>
+					<p class="p1">范特西</p>
+					<p class="p2">叶惠美</p>
+					<p class="p3">哎哟,不错哦</p>
+				</figcaption>
+			</figure>
+			<!--2-->
+			<figure class="view2">
+				<img src="img/2.jpg" alt="加载超时"/>
+				<h2>第一个专辑</h2>
+				<p class="p1">星晴</p>
+				<p class="p2">黑色幽默</p>
+				<p class="p3">龙卷风</p>
+			</figure>
+			<!--3-->
+			<figure class="view3">
+				<img src="img/3.jpg" alt="加载超时"/>
+				<figcaption>
+					<h2>不能说的秘密</h2>
+					<p>
+                                                最美的不是下雨天<br>是曾与你躲过雨的屋檐。
+					</p>
+				</figcaption>
+			</figure>
+			<!--4-->
+			<figure class="view4">
+				<img src="img/4.jpg" alt="加载超时"/>
+				<figcaption>
+					<div></div>
+					<h2>叶惠美</h2>
+					<p>
+						你听得到<br />
+						晴天
+					</p>
+				</figcaption>
+			</figure>
+			<!--5-->
+			<figure class="view5">
+				<img src="img/5.jpg" alt="加载超时"/>
+				<figcaption>
+					<div>
+					</div>
+					<h2>《彩虹》</h2>
+					<p>
+						也许时间是一种解药<br>也是我现在所服下的毒药。
+					</p>
+				</figcaption>
+			</figure>
+			<!--6-->
+			<figure class="view6">
+				<img src="img/6.jpg" alt="加载超时"/>
+				<figcaption>
+					<p>
+						黑暗已在空中盘旋<br>该往哪我看不见<br>也许爱在梦的另一端<br>无法存活在真实的空间
+					</p>
+				</figcaption>
+			</figure>
+			<!--7-->
+			<figure class="view7">
+				<img src="img/7.jpg" alt="加载超时"/>
+				<h2>魔杰座</h2>
+				<p>
+					花海<br />
+					兰亭序<br />
+					时光机
+				</p>
+			</figure>	
+			<!--8-->
+			<figure class="view8">
+				<img src="img/8.jpg" alt="加载超时"/>
+				<h2>
+					周杰伦的床边故事
+				</h2>
+				<p>
+					告白气球<br />
+					一点点<br />
+					前世情人
+				</p>
+				<div class="TopAndBotton"></div>
+				<div class="LeftAndRight"></div>
+			</figure>
+			<!--9-->
+			<figure class="view9">
+				<img src="img/9.jpg" alt="加载超时"/>
+				<h2>枫</h2>
+			</figure>
+		</div>
+		<!--处理点击事件-->
+		<img src="img/music.png" class="music" onclick="playPause(this)"/>;
+		<!--autoplay：自动播放-->
+		<audio id="musicplayer" src="mp3/周杰伦 - 告白气球.mp3" autoplay="autoplay"></audio>
+		
+		<script type="text/javascript" src="js/Demo3_1.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas基础</title>
+	</head>
+	<body>
+		<!--canvas标签定义图形，比如图表和其他图像
+			只是一个图形容器！！使用js绘制图形
+		-->
+		<canvas id="myCanvas" width="500" height="500"></canvas>
+		<script>
+			var hudu=Math.PI;
+			var canvas=document.getElementById("myCanvas");
+			//给他一支画笔,返回一个用于在画布上绘图的环境
+			var ctx=canvas.getContext('2d');
+			//填充绘画颜色的:赋值或者set方法
+			ctx.fillStyle="skyblue";
+//			ctx.setFillColor("red");
+			
+			//Rect(x1,y1,width,height)
+			ctx.fillRect(0,0,80,100);
+			
+			
+			ctx.beginPath();//声明：画一条路径，或重置当前路径
+			
+			//arc(圆心x1,圆心y1,圆心半径,
+				//沿着圆指定弧的开始点和结束点的一个角度：用弧度度量，沿着x轴正半轴3点钟方向角度为0，角度沿着逆时针方向增加):
+			//使用一个中心点和半径，为一个画布的当前子路径添加一条弧
+			//参数6：true顺时针false逆时针
+			ctx.arc(80,50,50,0,hudu/3,false);
+			
+			
+			ctx.stroke();//开始绘制
+			
+			
+			ctx.beginPath();//声明绘制
+			ctx.lineWidth="5";//线的宽为5
+			ctx.strokeStyle="red";//颜色主题
+			ctx.moveTo(0,300);//从(0,300)开始绘制
+			ctx.lineTo(250,240);//绘制到(250,240)
+			ctx.stroke();
+		</script>
+	</body>
+</html>

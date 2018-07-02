@@ -1,0 +1,148 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url(../img/img1/背景2.jpg) no-repeat;
+	background-size: 100% 100%;
+
+} 
+
+.box1{
+	width: 100%;
+	height:100%
+}
+.box img{
+	 box-shadow: 5px 5px 50px yellow;
+	  transition: all 0.5s;
+}
+
+.box img:hover{
+		transform: rotate(0deg) scale(0.9);
+		/*调节层级关系*/
+		z-index: 99;
+		}
+
+
+.box1 .p1{
+     font-size: 25px;
+	text-align: center;
+	line-height:40px;
+	font-family:"宋体";
+	color: chocolate;
+	display: none;
+	
+	
+}
+
+.box1 .p2{
+	position: absolute;
+	display: block;
+	width:120px;
+	height: 40px;
+	top: 20%;
+	left:-10%;
+	/*字体颜色*/
+	color: lightgray;
+	/*字体类型*/
+	font-family: "宋体";
+	/*设置字号*/
+	font-size: 25px;
+	/*字体加粗*/
+	}
+	
+.box1 .p3{
+	position: absolute;
+	display: block;
+	width:120px;
+	height: 40px;
+	top: 20%;
+	right: -10% ;
+     color:aquamarine;
+     font-family: "宋体";
+	font-size: 25px;
+	z-index: 99;
+	
+}
+
+.box3 .P3{
+	position: absolute;
+	width: 30%;
+	bottom: 10%;
+	transform: rotate(-20deg);
+	display: none;
+	}
+	
+.box2 .p4{
+	/*display: none;*/
+}
+
+.box2 .p4 a{
+	display: block;
+	position: absolute;
+	left: 41%;
+	bottom: 15%;
+	color: yellow;
+	font-size: 25px;
+    font-family: "Times New Roman" ;
+   	text-decoration:none ;
+   	display: none;
+   }
+    	
+.box1 .qianyan{
+	position: absolute;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: #FFFF00;
+	box-shadow: 5px 5px 50px yellow;
+	display: none;
+     }
+
+.P1{
+	position: absolute;
+	top: 20%;
+	left:-50%;
+	width: 30%;
+	z-index: 99;
+	transform: rotate(10deg);
+	animation: xuanzhuan 2s infinite;
+	
+    }
+    
+ @keyframes xuanzhuan{
+ 	0%{}
+ 	25%{transform: rotate(-30deg);}
+ 	50%{transform: rotate(0deg);}
+ 	100%{transform: rotate(30deg);}
+ }   
+.P2{
+	position: absolute;
+	top:20% ;
+	width: 35%;
+	height: 40%;
+	right: -40%;
+	z-index: 99;
+	
+    }
+
+
+.P4{
+	position: absolute;
+	width:25% ;
+	bottom: 10%;
+	right: -30%;
+	transform:rotate(20deg);
+	animation: xuanzhuan1 2s infinite;
+}
+
+@keyframes xuanzhuan1{
+ 	0%{}
+ 	25%{transform: rotate(30deg);}
+ 	50%{transform: rotate(0deg);}
+ 	100%{transform: rotate(-30deg);}
+ }   

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>八卦图</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<canvas id="myCanvas" width="400px" height="400px"
+				style="background: skyblue"</canvas>
+		</div>
+		
+		<script>
+			//获取canvas
+			var canvas=document.getElementById("myCanvas");
+			//获取画笔
+			var g=canvas.getContext('2d');
+			
+			g.fillStyle="black";
+			g.beginPath();
+			g.arc(150,150,100,0.5*Math.PI,3*Math.PI/2,false);
+			g.arc(150,50,50,3*Math.PI/2,0.5*Math.PI);
+			
+			g.stroke();
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字体缩放</title>
+		
+	</head>
+	<body>
+		<button id="bigger" value="+">+</button>
+		<button id="litter" value="-">-</button>
+		<p id="text">
+			我怎么那么帅！
+		</p>
+		<script type="text/javascript" src="js/Demo4_3.js" ></script>
+	</body>
+</html>

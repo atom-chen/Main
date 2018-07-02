@@ -1,0 +1,70 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#gameDiv{
+	width: 330px;
+	height: 330px;
+	margin: 50px auto;
+	background: url(../img/5.jpg) no-repeat center;
+	background-size: 100% 100%;		
+	
+}
+
+
+#gameDiv img{
+	width: 100px;
+	height: 100px;
+	
+}
+
+#score {
+	width: 100px;
+	height: 50px;
+	margin: 0 auto;
+	background: yellow;
+	text-align: center;
+	line-height: 50px;
+	color: red;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 20px; 
+}
+#time{
+	width: 100px;
+	height: 50px;
+	margin: 0 auto;
+	background: yellow;
+	text-align: center;
+	line-height: 50px;
+	color: red;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 20px; 
+}
+
+.start{
+	width: 80px;
+	height: 50px;
+	margin: 20px auto;
+	font-family: arial;
+	font-size: 20px;
+	font-weight: bold;	
+	color: darkblue;
+	text-align: center;
+}
+
+
+.title{
+	position: relative;
+	width: 330px;
+	margin:20px auto;
+	background: lightcoral;
+	height: 50px;
+	line-height: 50px;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	
+}

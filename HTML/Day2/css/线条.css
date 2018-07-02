@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.box{
+	/*分析：要让别的线条相对于大盒子来飞：相对布局*/
+	position: relative;
+	width: 200px;
+	height: 50px;
+	border: 3px solid black;
+	
+	/*居中*/
+	margin: 100px auto;
+}
+/*定义共同属性*/
+.line{
+	/*让它找大盒子定位*/
+	position: absolute;
+	background: black;
+	transition: all 0.5s;
+}
+
+.line-top{
+	width: 0px;
+	height: 3px;
+	top: -3px;
+	/*相对于div：从外边飞进来，*/
+	left: -200px;
+}
+/*鼠标放在Box上面,画出top线条*/
+.box:hover .line-top{
+	width: 200px;
+	/*height: 3px;*/
+	/*top: 0 px;*/
+	left: 0px;
+	}
+.line-bottom{
+	width: 0px;
+	height: 3px;
+	bottom: -3px;
+	/*相对于div：从外边飞进来，*/
+	right: -200px;
+}
+.box:hover .line-bottom{
+	width: 200px;
+	height: 3px;
+	bottom: -3px;
+	right: 0;
+	}
+.line-left{
+	width: 3px;
+	height: 0px;	
+	bottom: -50px;
+	left: -3px;
+}
+.box:hover .line-left{
+	width: 3px;
+	height: 50px;
+	bottom: 0px;
+	left: -3px;
+}
+.line-right{
+	width: 3px;
+	height: 0px;
+	top:-50px;
+	right: -3px;
+	}
+.box:hover .line-right{
+	width: 3px;
+	height: 50px;
+	top: 0;
+	right: -3px;
+}
+	

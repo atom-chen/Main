@@ -1,0 +1,45 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.navBar{
+	width: 100%;
+	height: 40px;
+	background-color: blanchedalmond;
+	z-index: 99;
+	
+}
+
+.navBar nav{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.navBar nav a{
+	/*显示光标*/
+	cursor: pointer;
+	color: black;
+	display: block;
+	float: left;
+	text-decoration: none;
+	width: 10%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	
+	font-family:"黑体"
+	font-size: 15px;
+	/*加边框*/
+	border:1px solid grey;
+	transform: translateX(30px);
+}
+.navBar nav .currentPage{
+	color: rgb(45,203,116);
+}
+
+.mouse{
+	color:rgb(45,203,116);
+}

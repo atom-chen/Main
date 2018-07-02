@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>民俗风情</title>
+		<link rel="stylesheet" href="css/page.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/index_nav.css" />
+	</head>
+	<body bgcolor="#C4E3F3">
+				<!--网页的顶部-->
+		<div class="index_top">
+			<div class="both">
+				<div class="top_left top-header-left wow fadeInRight animated" data-wow-delay=".5s">
+					<span><a href="#">设为首页</a></span>
+					<span><a href="#">/收藏本站</a></span>
+				</div>	
+			</div>
+			<div class="top_right wow fadeInRight animated" >
+				<span class="top_time">时间：2017/4/26</span>
+				<span class="top_weather">/天气:多云转晴</span>
+			</div>
+			<div class="top_log wow fadeInLeftBig animated">
+				<img src="img/logo.jpg"/>
+			</div>			
+		</div>
+
+<!--网页的导航栏-->
+		<div class="index_nav wow fadeInRight animated"  >
+			<nav>
+				<a href="../shouye/index.html">首页</a>
+				<a href="../jingdian/chengdu.html">景观</a>
+				<a href="../meishi/top.html">美食</a>
+				<a href="../youji/index.html">游记</a>
+				<a href="../minsu/Customs.html">风俗</a>	
+			</nav>
+			
+		</div>
+		<div class="title">
+			<h1 style="text-align: center;color: #204D74;top: 100px;">民俗风情</h1>
+		</div>
+
+		<p class="introduce" ><br /><br /><br /><br /><b>民风民俗是特定社会文化区域内历代人们共同遵守的行为模式。风俗的多样性，是以习惯上，人们往往将由自然条件的不同而造成的行为规范差异，称之为“风”；而将由社会文化的差异所造成的行为规则之不同，称之为“俗”。所谓“百里不同风，千里不同俗”正恰当地反映了风俗因地而异的特点。我国56个民族的风俗习惯也是各不相同的。
+		</b></p>
+		<div id="cd">
+			<img src="img/cd1.jpg"/>
+			<img src="img/cd2.jpg"/>
+			<img src="img/cd3.jpg"/>
+			<br />
+			<p class="cd_in" style="color: #204D74">
+				华夏文化源远流长，博大精深。其中巴蜀文化独有特色，巴蜀文化是华夏文化的一个分支。蜀文化以成都为中心，包括盆地西部及陕南、滇北一带。巴蜀文化的活跃造就了成都一带独有的民俗风情，成都的历史从何而来？巴蜀文化元素有哪些？让我们一起走进成都文化世界。
+			</p>
+			<ul>
+				<li><a href="chengdu.html" style="color: #204D74">更多>></a></li>
+			</ul>	
+		</div>
+		<div id="hn">
+			<img src="img/hn1.jpg" />
+			<img src="img/hn2.jpg" />
+			<img src="img/hn3.jpg" />
+			<br />
+			<p class="hn_in" style="color: #204D74">
+				海南是“天然大温室”，这里常年夏天没有严寒，光温充足，岛上四季长青，如此优越的地势和气候状况有哪些民俗民风呢？
+			</p>
+			<ul>
+				<li><a href="hainan.html" style="color: #204D74">更多>></a></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script>
+			var $index = 3;
+			$(".introduce").fadeOut(6000,function(){
+				
+			
+				setInterval(function(){
+					$index--;
+					if($index<1){
+						$index = 3;
+	
+						$("#cd img").fadeIn(2000);
+						$("#hn img").fadeIn(2000);
+					}	
+					$("#cd img").eq($index).fadeOut(2000);
+					$("#hn img").eq($index).fadeOut(2000);
+				},50);
+			$("#cd .cd_in,#hn .hn_in").fadeIn(3000);
+			$("#cd ul li a ,#hn ul li a").fadeIn(4000);
+				}
+
+			);
+//			$("h1").animate({top:"20%"},{duration:2000});
+
+
+		</script>
+	</body>
+</html>
+
+
+

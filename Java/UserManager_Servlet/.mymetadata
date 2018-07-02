@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="UserManager"
+  id="myeclipse.1372076848400"
+  context-root="/UserManager"
+  j2ee-spec="5.0"
+  archive="UserManager.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

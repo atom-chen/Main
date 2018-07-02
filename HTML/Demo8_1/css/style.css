@@ -1,0 +1,344 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.content{
+	/*分析：绝对定位，让其它相对它动*/
+	position: absolute;
+}
+.page1{
+	position: relative;
+	background: #0cf;
+}
+
+/*手机app；应该用百分比写（适应所有手机屏幕）*/
+/*页面1布局开始*/
+.page1_txt{
+	position: absolute;
+	width: 60%;
+	top: 10%;
+	left: 20%;
+}
+@keyframes rock{
+	0%{}
+	25%{transform: rotate(30deg);}
+	50%{transform: rotate(0deg);}
+	75%{transform: rotate(-30deg);}
+	100%{transform: rotate(0deg);}
+}
+.page1_flowers01{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	/*缩小*/
+	height: 15%;
+	
+	/*让小花动起来*/
+	animation: rock 2s infinite;
+}
+.page1_flowers02{
+	position: absolute;
+	top: 22%;
+	right: 18%;
+	
+	height: 15%;
+	
+	animation: rock 2s infinite;
+}
+@keyframes zoom{
+	0%{}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(1);}
+}
+.page1_cloudys,.page1_elements{
+	position: absolute;
+	/*把云彩当做一个背景图片放进去*/
+	width: 90%;
+	height: 90%;
+	
+	top: 5%;
+	left: 5%;
+	animation: zoom 2s infinite;
+}
+.page1_building{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	
+	/*初始状态：隐藏*/
+	display: none;
+	
+}
+.page1_avatar{
+	position: absolute;
+	bottom: 30%;
+	/*初始大小：0%，然后再渐变大*/
+	width: 0%;
+	left: 15%;
+	animation: person 2s infinite;
+}
+@keyframes person{
+	0%{}
+	50%{transform: scale(1.2);}
+	100%{transform: scale(1);}
+}
+.page2{
+	position: relative;
+	background: white;
+}
+.page2_bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	display: none;
+}
+.page2_farm{
+	position: absolute;
+	width: 70%;
+	top: 30%;
+	right: 0;
+	
+	display: none;
+}
+.page2_it{
+	position: absolute;
+	width: 70%;
+	top: 60%;
+	right: 0;
+	
+	display: none;
+}
+.page3{
+	position: relative;
+	background: #f00;
+}
+.page3_bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.page3_station{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+.page3_bus{
+	position: absolute;
+	left:0;
+	bottom: 13%;
+	width: 50%;
+}
+.page3_person{
+	position: absolute;
+	bottom: 15%;
+	right: 0%;
+	/*缩放*/
+	height: 15%;
+}
+.page3_eT{
+	position: absolute;
+	top: 10%;
+	left: 0;
+	
+	height: 5%;
+	display: none;
+}
+.page3_Bt{
+	position: absolute;
+	top: 18%;
+	left: 0;
+	height: 5%;
+	display: none;
+}
+
+/*第二个界面*/
+.page3-wall{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 70%;
+	display: none;
+	}
+.page3-tAvatar{
+	position: absolute;
+	right: 15%;
+	bottom: 66%;
+	width: 20%;
+	display: none;
+}
+.page3-space{
+	position: absolute;
+	left: 5%;
+	top: 20%;
+	
+	width: 45%;
+	display: none;
+}
+.page3-where{
+	position: absolute;
+	left: 10%;
+	bottom: 10%;
+	
+	width: 50%;
+	display: none;
+}
+.page4{
+	position: relative;
+	background: saddlebrown;
+}
+.page4_bg{
+	position: absolute;
+	width: 100%;
+	
+	height: 100%;
+}
+.page4_title{
+	position: absolute;
+	right: 0;
+	top: 15%;
+	
+	height: 10%;
+}
+.page4_off{
+	position: absolute;
+	height: 70%;
+	
+	left: 5%;
+	bottom: 0;
+	/*调节层级关系*/
+	z-index: 99;
+}
+.page4_guide{
+	position: absolute;
+	width: 50%;
+	
+	left: 25%;
+	top: 40%;
+	/*灯缩放*/
+	animation: guide 1.5s infinite;
+}
+@keyframes guide{
+	0%{}
+	50%{transform: scale(1.1);}
+	100%{transform: scale(1);}
+}
+.page4_onBg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.page4_you{
+	position: absolute;
+	width: 50%;
+	
+	left: 25%;
+	top: 15%;
+	display: none;
+}
+.page5{
+	position: relative;
+	background:skyblue;
+}
+
+.page5_bg{
+	position: absolute;
+	width: 110%;
+	top: -3%;
+	
+	display: none;
+}
+.page5_person{
+	position: absolute;
+	width: 0%;
+	
+	bottom: -100%;
+	right: 30%;
+}
+.page5_Ta{
+	position: absolute;
+	width: 50%;
+	
+	bottom: 20%;
+	left:5%;
+	display: none;
+}
+.page5_Txt{
+	position: absolute;
+	width: 50%;
+	
+	bottom: 5%;
+	left: 50%;
+	display: none;
+}
+
+
+.page6{
+	position: relative;
+	background: black;
+}
+.page6_bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+	display: none;
+}
+.page6_person{
+	position: absolute;
+	right: 13%;
+	top: 8%;
+	
+	width: 15%;
+}
+.page6_runTa{
+	position: absolute;
+	left: 10%;
+	bottom: 50%;
+	
+	display: none;
+}
+.page6_runTxt{
+	position: absolute;
+	right: 20%;
+	bottom: 10%;
+	
+	display: none;
+}
+
+.music{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 40px;
+	/*设置一段动画 命名 冷却（多少秒执行一次） 动画类型：无限循环*/
+	animation: rotate 2s infinite;
+}
+/*实现一段动画*/
+@keyframes rotate{
+	/*动画开始部分和结束部分：实现动画中间加上某些特效*/
+	0%{}
+	100%{transform:rotate(360deg) }
+}
+/*箭头*/
+#arrow{
+	position: absolute;
+	transform: rotate(-90deg);
+	
+	bottom: 10px;
+	right: 50%;
+	animation: arrow_move 1.2s infinite;
+}
+/*实现箭头动起来*/
+@keyframes arrow_move{
+	0%{}
+	/*25%{bottom: 15px;}
+	50%{bottom: 20px;}
+	75%{bottom: 25px;}*/
+	100%{bottom: 20px;}
+}

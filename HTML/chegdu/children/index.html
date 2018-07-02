@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>子页面</title>
+		<link rel="stylesheet" href="../shouye/css/index_nav.css" />
+		<link rel="stylesheet" href="../shouye/css/animate.css" />
+		<link rel="stylesheet" href="css/Children.css" />
+	</head>
+	<body>
+				<!--网页的顶部-->
+		<div class="index_top">
+			<div class="both">
+				<div class="top_left top-header-left wow fadeInRight animated" data-wow-delay=".5s">
+					<span><a href="#">设为首页</a></span>
+					<span><a href="#">/收藏本站</a></span>
+				</div>	
+			</div>
+			<div class="top_right wow fadeInRight animated" >
+				<span class="top_time">时间：2017/4/26</span>
+				<span class="top_weather">/天气:多云转晴</span>
+			</div>
+			<div class="top_log wow fadeInLeftBig animated">
+				<img src="../shouye/img/logo.jpg"/>
+			</div>			
+		</div>
+
+<!--网页的导航栏-->
+		<div class="index_nav wow fadeInRight animated"  >
+			<nav>
+				<a href="../shouye/index.html">首页</a>
+				<a href="../jingdian/chengdu.html">景观</a>
+				<a href="../meishi/top.html">美食</a>
+				<a href="../youji/index.html">游记</a>
+				<a href="../minsu/Customs.html">风俗</a>
+				
+				
+				
+			</nav>
+			
+		</div>
+		<div id="connect">
+			<img src="img/left.png" id="left" onclick="paging_left(this)"/>
+			<img src="img/right.png" id="right" onclick="paging_right(this)"/>
+			<p id="quanbu">全部</p>
+			
+			<div id="m1">
+			<h3 class="t1">阿坝州</h3>
+			<img src="img/jp3_1.jpg" class="p1"/>
+			<a id="w1" >清水潭又名清水泉，位于南宁市金陵镇宁村坡，距离市区大约30公里，无论是自驾或是乘坐大巴都能很方便地到达。清水潭之所以名为清水潭在见到她的第一眼便能够知晓个大概，湖面不宽但却处处清澈，水深之处还呈现出稍有的湖蓝色，落叶漂浮其上别有一番意境。</a>
+			<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+			<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m2">
+				<h3 class="t2">九寨沟</h3>
+				<img src="img/jp3_2.jpg" class="p2"/>
+				<a id="w2" >三月末，四野萧疏时，棋盘山杏花沟内已是十里花海，独成仙境。3月25日，棋盘山第十一届杏花节开幕，漫山遍野杏花斗艳吐芳，山水皆香，向为游人所青睐，摄影爱好者所独钟。随着时间的推移，沟下半先开花，花败后...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m3">
+				<h3 class="t3">黄龙风景区</h3>
+				<img src="img/jp3_3.jpg" class="p3"/>
+				<a id="w3" >穿山越海，只为了发现心中的美景 等待寒冬的过去变得有些漫长 但春光大作，西南的风一吹 百里杜鹃转眼间变成了地球上的一个花篮 在春日中我们必须出去旅行，去看看这花花世界 而百里杜鹃在等你 百里杜鹃 3...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m4">
+				<h3 class="t4">长海</h3>
+				<img src="img/jp3_4.jpg" class="p4"/>
+				<a id="w4" >大家应该还记得，曾经风靡一时的越南新娘，都是以年轻貌美、任劳任怨、礼金便宜等优点被我天朝广大光棍一族所惦记着。我去越南旅游次数不多，在旅途中看到过的部分越南妹纸们还是如传说中所说的那样——...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m5">
+				<h3 class="t5">三条沟</h3>
+				<img src="img/jp3_5.jpg" class="p5"/>
+				<a id="w5" >三四月份，春雨绵绵，偶尔放慢脚步，来一趟汤池，感受不一样的风景！ 蟠桃花开 明媚的春天来了，春姑娘垂柳脱去灰色的衣裳，换上淡绿的外套，让绿色的翡翠飞上枝头，让轻柔的枝条婆娑起舞。 垂柳初芽 站在路的...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>		
+			</div>
+			<div id="m6">
+				<h3 class="t6">镜海</h3>
+				<img src="img/jp3_6.jpg" class="p6"/>
+				<a id="w6" >世界何其美好，你要告别苍白和无趣的自己，去见你喜欢的人，去见不一样的风景。 徽州古村落（摄影：行走旅行人生） 春天已经来临，你要到徽州去寻找古老诗词中的遥远梦境。 寻梦徽州（图源：@安徽爱游） 当我...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<!--<div id="m7">
+				<h3 class="t7">牟尼沟</h3>
+				<img src="img/jp3_7.jpg" class="p7"/>
+				<a id="w7" >三月末，四野萧疏时，棋盘山杏花沟内已是十里花海，独成仙境。3月25日，棋盘山第十一届杏花节开幕，漫山遍野杏花斗艳吐芳，山水皆香，向为游人所青睐，摄影爱好者所独钟。随着时间的推移，沟下半先开花，花败后...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>			
+			</div>-->
+				
+			</div>
+		
+	</div>
+	<script type="text/javascript" src="../shouye/js/wow.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="js/Children.js" ></script>
+			
+	</body>
+</html>

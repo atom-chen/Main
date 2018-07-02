@@ -1,0 +1,316 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+/*整个大容器*/
+#connect{
+	position: relative;
+	width: 100%;
+	height: 700px;
+	
+}
+#connect #quanbu{
+	position: absolute;
+	font-family: "微软雅黑";
+	font-size: 40px;
+	
+	top: 4%;
+	left: 20%;
+}
+/*所有图片*/
+#connect img{
+	overflow: hidden;
+}
+/*所有文本*/
+#connect a{
+	font-family: "微软雅黑";
+	font-size: 15px;
+}
+#connect h3{
+	position: absolute;
+	transform: translateX(680px);
+}
+/*左箭头*/
+#connect #left{
+	position: absolute;
+	width: 3%;
+	top: 45%;
+	left: 3%;
+	
+}
+/*右箭头*/
+#connect #right{
+	position: absolute;
+	width: 3%;
+	top: 45%;
+	right:3%;
+}
+
+/*所有图标*/
+/*第1组*/
+#connect #m1{
+	position: absolute;
+	width: 90%;
+	
+	top: 20%;
+	left: 10%;
+	
+	display: none;
+}
+/*第1组图片*/
+#connect #m1 .p1{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	
+	transition: all 0.5s;
+}
+#connect #m1 .p1:hover{
+	transform: scale(1.1);
+}
+/*第1组文字*/
+#connect #m1 #w1{
+	position: absolute;
+	width: 40%;
+	
+	transform: translateY(100px);
+	left: 50%;
+}
+/*图标*/
+#connect #m1 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m1 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}
+
+/*第2组*/
+#connect #m2{
+	position: absolute;
+	width: 90%;
+	
+	top: 65%;
+	left: 10%;
+	
+	display: none;
+}
+/*第2组图片*/
+#connect #m2 .p2{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	transition: all 0.5s;
+}
+#connect #m2 .p2:hover{
+	transform: scale(1.1);
+}
+/*第2组文字*/
+#connect #m2 #w2{
+	position: absolute;
+	width: 40%;
+	transform: translateY(100px);
+	left: 50%;
+}
+#connect #m2 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m2 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}
+
+
+/*第3组*/
+#connect #m3{
+	position: absolute;
+	width: 90%;
+	
+	top: 20%;
+	left: -100%;
+}
+/*第3组图片*/
+#connect #m3 .p3{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	transition: all 0.5s;
+}
+#connect #m3 .p3:hover{
+	transform: scale(1.1);
+}
+/*第3组文字*/
+#connect #m3 #w3{
+	position: absolute;
+	width: 40%;
+	
+	transform: translateY(100px);
+	left: 50%;
+}
+#connect #m3 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m3 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}
+
+
+/*第4组*/
+#connect #m4{
+	position: absolute;
+	width: 90%;
+	
+	top: 65%;
+	left: -100%;
+}
+/*第4组图片*/
+#connect #m4 .p4{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	transition: all 0.5s;
+}
+#connect #m4 .p4:hover{
+	transform: scale(1.1);
+}
+/*第4组文字*/
+#connect #m4 #w4{
+	position: absolute;
+	width: 40%;
+	
+	transform: translateY(100px);
+	left: 50%;
+}
+#connect #m4 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m4 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}
+
+
+/*第5组*/
+#connect #m5{
+	position: absolute;
+	width: 90%;
+	
+	top: 20%;
+	left: -100%;
+}
+/*第5组图片*/
+#connect #m5 .p5{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	transition: all 0.5s;
+}
+#connect #m5 .p5:hover{
+	transform: scale(1.1);
+}
+/*第5组文字*/
+#connect #m5 #w5{
+	position: absolute;
+	width: 40%;
+	
+	transform: translateY(100px);
+	left: 50%;
+}
+#connect #m5 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m5 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}
+
+
+/*第6组*/
+#connect #m6{
+	position: absolute;
+	width: 90%;
+	
+	top: 65%;
+	left: -100%;
+}
+/*第6组图片*/
+#connect #m6 .p6{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	transition: all 0.5s;
+}
+#connect #m6 .p6:hover{
+	transform: scale(1.1);
+}
+/*第6组文字*/
+#connect #m6 #w6{
+	position: absolute;
+	width: 40%;
+	
+	transform: translateY(100px);
+	left: 50%;
+}
+#connect #m6 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m6 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}
+
+
+/*第7组*/
+/*#connect #m7{
+	position: absolute;
+	width: 90%;
+	
+	top: 100%;
+	left: 10%;
+}*/
+/*第7组图片*/
+/*#connect #m7 .p7{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	transition: all 0.5s;
+}
+#connect #m7 .p7:hover{
+	transform: scale(1.1);
+}
+/*第7组文字*/
+/*#connect #m7 #w7{
+	position: absolute;
+	width: 40%;
+	
+	transform: translateY(100px);
+	left: 50%;
+}
+#connect #m7 .love{
+	position: absolute;
+	
+	transform: translateY(220px) translateX(1150px);
+}
+#connect #m7 .tixing{
+	position: absolute;
+	transform: translateY(220px) translateX(1100px);
+}*/
+
+.write{
+	color: skyblue;
+}

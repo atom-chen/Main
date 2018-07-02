@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>子页面</title>
+		<link rel="stylesheet" href="../shouye/css/index_nav.css" />
+		<link rel="stylesheet" href="../shouye/css/animate.css" />
+		<link rel="stylesheet" href="../children/css/Children.css" />
+	</head>
+	<body>
+				<!--网页的顶部-->
+		<div class="index_top">
+			<div class="both">
+				<div class="top_left top-header-left wow fadeInRight animated" data-wow-delay=".5s">
+					<span><a href="#">设为首页</a></span>
+					<span><a href="#">/收藏本站</a></span>
+				</div>	
+			</div>
+			<div class="top_right wow fadeInRight animated" >
+				<span class="top_time">时间：2017/4/26</span>
+				<span class="top_weather">/天气:多云转晴</span>
+			</div>
+			<div class="top_log wow fadeInLeftBig animated">
+				<img src="img/logo.jpg"/>
+			</div>			
+		</div>
+
+<!--网页的导航栏-->
+		<div class="index_nav wow fadeInRight animated"  >
+			<nav>
+				<a href="../shouye/index.html">首页</a>
+				<a href="../jingdian/chengdu.html">景观</a>
+				<a href="../meishi/top.html">美食</a>
+				<a href="../youji/index.html">游记</a>
+				<a href="../minsu/Customs.html">风俗</a>	
+			</nav>
+			
+		</div>
+		<div id="connect">
+			<img src="img/left.png" id="left" onclick="paging_left(this)"/>
+			<img src="img/right.png" id="right" onclick="paging_right(this)"/>
+			<p id="quanbu">全部</p>
+			
+			<div id="m1">
+			<h3 class="t1">老爸茶</h3>
+			<img src="img/laobacha.jpg" class="p1"/>
+			<a id="w1" >老爸茶，是海南海口市的特色茶文化，老爸老妈子们相聚在一起喝茶。 是海口市的一道风景，一壶茶，一碟花生，或一二个面包，陈旧的桌凳，围着三两个打扮朴素的茶客，闲闲静静地 “吃”着茶。</a>
+			<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+			<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m2">
+				<h3 class="t2">木瓜雪梨</h3>
+				<img src="img/muguaxueli.png" class="p2"/>
+				<a id="w2" >木瓜雪梨甜品，这是一道非常适合女性饮用的甜品，滋补润燥的哦。木瓜果皮光滑美观，果肉厚实细致、香气浓郁、汁水丰多、甜美可口、营养丰富，有“百益之果”、“水果之皇”、“万寿瓜”之雅称，是岭南四大名果之一。</a>		       	
+					<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m3">
+				<h3 class="t3">糯米糕</h3>
+				<img src="img/nuomigao.jpg" class="p3"/>
+				<a id="w3" >糯米糕是以糯米和面粉混合各类食材制成的传统糕类小吃。有血糯米，黑糯米等种类。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m4">
+				<h3 class="t4">糖水豆腐脑</h3>
+				<img src="img/tangshuidoufunao.jpg" class="p4"/>
+				<a id="w4" >将豆腐脑做好之后，加入糖水制成，是避暑必备的良器</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m5">
+				<h3 class="t5">清补凉</h3>
+				<img src="img/huoguo.jpeg" class="p5"/>
+				<a id="w5" >清补凉（Sém bǎo liō），在海南话中清补凉的“凉”字会读成阴上声，与用作重量单位时的两字同音。是夏天清热祛湿的老火汤，流行于中国海南、广东、香港和澳门、广西等地区。清补凉的材料并不统一，有以健脾去湿为主，亦有以润肺为主。材料配方通常有以：绿豆、红豆、淮山、莲子、茨实、薏米、西米、百合、红枣和南北杏，并加入西瓜、菠萝、龙眼等水果多做成糖水，亦有以黄芪、党参、淮山、莲子、麦冬、云苓、蓝枣、无花果、猪腱肉的老火汤，但不同地区不同店家根据不同人群常又有其特色配料。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>		
+			</div>
+			<div id="m6">
+				<h3 class="t6">炸土豆</h3>
+				<img src="img/zhazha.jpg" class="p6"/>
+				<a id="w6" >炸土豆是一道菜品，主料是小土豆，辅料是面粉，油料。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<!--<div id="m7">
+				<h3 class="t7">牟尼沟</h3>
+				<img src="img/jp3_7.jpg" class="p7"/>
+				<a id="w7" >三月末，四野萧疏时，棋盘山杏花沟内已是十里花海，独成仙境。3月25日，棋盘山第十一届杏花节开幕，漫山遍野杏花斗艳吐芳，山水皆香，向为游人所青睐，摄影爱好者所独钟。随着时间的推移，沟下半先开花，花败后...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>			
+			</div>-->
+				
+			</div>
+		
+	</div>
+	<script type="text/javascript" src="../shouye/js/wow.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="../children/js/Children.js" ></script>
+			
+	</body>
+</html>

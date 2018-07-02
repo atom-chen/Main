@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript基础</title>		
+	</head>
+	<body>
+		<div class="demo" id="demo"></div>
+		<!--input:用户搜集用户信息,属性选择其中一个type-->
+		<input  type="text" id="num1"/>
+		<!--<input type="combobox" id="symbol" />-->
+		<span>+</span>
+		<input type="text" id="num2" />
+		<button id="sum">=</button>
+		<span id="res"></span>
+		
+		<!--导入JavaScript-->
+		<script type="text/javascript" src="js/Demo4_1.js" ></script>
+	</body>
+</html>

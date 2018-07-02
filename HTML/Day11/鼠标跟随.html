@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标跟随</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="300px" height="300px"
+			style="background: skyblue";></canvas>
+			
+			<script>
+				var canvas=document.getElementById("myCanvas");
+				var context=canvas.getContext('2d');
+				//给画布绑定鼠标跟随事件
+				canvas.onmousemove=function(event)
+				{
+					context.clearRect(0,0,canvas.width,canvas.height);
+					//根据鼠标当前坐标，设置小方块位置
+					context.fillRect(event.offsetX,event.offsetY,20,20);
+				}
+			</script>
+	</body>
+</html>

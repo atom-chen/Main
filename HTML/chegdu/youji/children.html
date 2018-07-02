@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>子页面</title>
+		<link rel="stylesheet" href="../shouye/css/index_nav.css" />
+		<link rel="stylesheet" href="../shouye/css/animate.css" />
+		<link rel="stylesheet" href="../children/css/Children.css" />
+	</head>
+	<body>
+				<!--网页的顶部-->
+		<div class="index_top">
+			<div class="both">
+				<div class="top_left top-header-left wow fadeInRight animated" data-wow-delay=".5s">
+					<span><a href="#">设为首页</a></span>
+					<span><a href="#">/收藏本站</a></span>
+				</div>	
+			</div>
+			<div class="top_right wow fadeInRight animated" >
+				<span class="top_time">时间：2017/4/26</span>
+				<span class="top_weather">/天气:多云转晴</span>
+			</div>
+			<div class="top_log wow fadeInLeftBig animated">
+				<img src="img/logo.jpg"/>
+			</div>			
+		</div>
+
+<!--网页的导航栏-->
+		<div class="index_nav wow fadeInRight animated"  >
+			<nav>
+				<a href="../shouye/index.html">首页</a>
+				<a href="../jingdian/chengdu.html">景观</a>
+				<a href="../meishi/top.html">美食</a>
+				<a href="../youji/index.html">游记</a>
+				<a href="../minsu/Customs.html">风俗</a>
+
+			</nav>
+			
+		</div>
+		<div id="connect">
+			<img src="img/left.png" id="left" onclick="paging_left(this)"/>
+			<img src="img/right.png" id="right" onclick="paging_right(this)"/>
+			<p id="quanbu">全部</p>
+			
+			<div id="m1">
+			<h3 class="t1">街边摊狂热分子的成都逛吃72小时</h3>
+			<img src="img/游记1.jpeg" class="p1"/>
+			<a id="w1" >没有锦里和春熙路的美食街，没有什么龙抄手，赖汤圆，让这些国营老店自己傲娇去吧！72小时，16家成都本地人推崇的餐馆，26种成都地道小吃，这就是最专业的成都探店攻略。各景点附近苍蝇馆子推荐名单详见个文中各景点，以美食为主要目的的旅行者绝不可错过.</a>
+			<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+			<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m2">
+				<h3 class="t2">彭镇老茶馆：浮生半日</h3>
+				<img src="img/游记2.jpeg" class="p2"/>
+				<a id="w2" >十一月的成都一如我记忆中那般灰蒙蒙一片。我们挑了个周末前去彭镇，竟十分幸运的遇上了晴天。彭镇老茶馆早已声名在外，我们遇上了一波又一波组团来参观的摄影爱好者们。大家拿着各式各样大小各异的数码相机对着茶馆以及喝茶的老人一阵狂拍，快门声不断，第一次目睹“中国式摄影团”的我抱着胶片相机，看得目瞪口呆。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m3">
+				<h3 class="t3">吃一嘴红油 看漫天美景</h3>
+				<img src="img/游记3.jpeg" class="p3"/>
+				<a id="w3" >每一次旅行就是一次学习的过程，虽然这次很匆忙，但还是习惯性地在忙碌间隙看各种有关目的地及周边的资料和游记。资料看得越多，对旅程就越是期待，下班后我们直接搭乘晚上的航班，终于踏上这片据说空气中都弥漫着火锅味的城市。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m4">
+				<h3 class="t4">一场夜色，一场星空</h3>
+				<img src="img/游记4.jpeg" class="p4"/>
+				<a id="w4" >去九峰山看一场独一无二的四川夜色，当夜幕降临的时候，眼前的画面震惊了我。成都，绵竹，什邡，德阳，彭州一闪一闪出现在黑夜中，在夜色中闪闪发光，原来四川的夜色这么美！...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m5">
+				<h3 class="t5">海南琼中最美溪谷-仙女溪</h3>
+				<img src="img/海南游记1.jpeg" class="p5"/>
+				<a id="w5" >海南拥有广袤山岳、热带原始雨林，森林覆盖率达62%，81座海拔1000米以上的山峰，从中部向全岛延展，绵延起伏、气势雄伟。11个国家森林公园面积达170多万亩，山林之间，5大热带雨林丰富的物种在温暖湿润的气候下自我生长、更新繁育，深深吸引了每一个来到这片雨林探访这片神奇秘境的游客...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>		
+			</div>
+			<div id="m6">
+				<h3 class="t6">不止大海，海南环岛自驾行</h3>
+				<img src="img/海南游记2.jpeg" class="p6"/>
+				<a id="w6" >海南的山林資源和海洋資源一樣豐富，甚至更甚。如果只去了海灣，而沒有去登山，那是遺憾；就像仅去了亞龍灣，卻沒有去棋子灣，沒有去南灣猴島。這是一個值得去許多次的地方，三亞及周邊的酒店太多，要多去幾次才能住完，景點也是；海口、儋州、文昌的曆史太幽微，需要多去幾次才能聽聞；五指山、霸王嶺、七仙嶺、尖峰嶺、東山嶺，都值得去遠眺，去聽憑四麵八方的海風包裹。當然，最值得一再體味的，可能是海南熱烈灼人的陽光，暴露在那樣的陽光裏，感覺心情都明媚起來了！</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<!--<div id="m7">
+				<h3 class="t7">牟尼沟</h3>
+				<img src="img/jp3_7.jpg" class="p7"/>
+				<a id="w7" >三月末，四野萧疏时，棋盘山杏花沟内已是十里花海，独成仙境。3月25日，棋盘山第十一届杏花节开幕，漫山遍野杏花斗艳吐芳，山水皆香，向为游人所青睐，摄影爱好者所独钟。随着时间的推移，沟下半先开花，花败后...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>			
+			</div>-->
+				
+			</div>
+		
+	</div>
+	<script type="text/javascript" src="../shouye/js/wow.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="../children/js/Children.js" ></script>
+			
+	</body>
+</html>

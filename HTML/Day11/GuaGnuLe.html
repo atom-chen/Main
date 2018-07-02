@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绘图</title>
+		<style>
+			.box{
+				position: relative;
+				width: 300px;
+				height: 100px;
+				
+				top: 0;
+				left: 0;
+			}
+			.box p{
+				position: absolute;
+				top: 30%;
+				left: 30%;		
+			}
+			.box #myCanvas{
+				position: absolute;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p>再来一瓶</p>
+			<canvas id="myCanvas" width="300px" height="100px"></canvas>
+		</div>
+		
+		<script>
+			var canvas=document.getElementById("myCanvas");
+			var context=canvas.getContext('2d');
+			
+			context.fillStyle="black";
+			context.fillRect(0,0,300,100);
+			
+			//给画布加鼠标事件
+			canvas.onmousemove=function(event)
+			{
+				context.clearRect(event.offsetX,event.offsetY,30,30);
+			}
+		</script>
+	</body>
+</html>

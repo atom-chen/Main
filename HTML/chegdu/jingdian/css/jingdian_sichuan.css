@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+/*整个成都大板块*/
+#page1{
+	position: relative;
+	width: 90%;
+	height: 600px;
+	
+	left: 5%;
+	top:10 %;
+	opacity: 0;
+	
+}
+/*整个字体*/
+#page1 #Title p{
+	position: absolute;
+	transform: translateY(20px);
+}
+/*page1的字体 四川*/
+#page1 #Title #MyMain{
+	position: absolute;
+	font-family: "微软雅黑";
+	font-size: 50px;
+	font-weight: 700;
+	color: black;
+	text-decoration:none;
+	
+	top: 0px;
+	left: 45%;
+	opacity: 0;
+}
+/*四川的简介文字1*/
+#page1 #Title #write1{
+	position: absolute;
+	font-family:"黑体" ;
+	font-size: 15px;
+	font-weight: 500;
+	color: black;
+	
+	top: 38%;
+	left: 15%;
+	opacity: 0;
+}
+/*四川的简介文字2*/
+#page1 #Title #write2{
+	position: absolute;
+	font-family: "黑体";
+	font-size: 15px;
+	font-weight: 500;
+	color: black;
+	
+	top: 42%;
+	left: 25%;
+	opacity: 0;
+}
+/*四川的图片1*/
+#page1 #sichuan{
+	position: absolute;
+	left: 0%;
+	top: 60%;
+	
+	width: 100%;
+	opacity: 0;
+	
+	
+}
+/*#page1 #sichuan2{
+	position: absolute;
+	left: 50%;;
+	top: 60%;
+	
+	width: 41%;
+	opacity: 0;
+}*/
+/*中间部分div*/
+#mid{
+	position: relative;
+	width: 100%;
+	height: 250px;
+	
+	
+}
+/*中间部分字体*/
+#mid p{
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	color: black;
+	opacity: 0;
+	
+	top: 30%;
+	transform: translateY(195px);
+}
+/*下半部分div*/
+#page2{
+	position: relative;
+	width: 100%;
+	height: 700px;
+	
+	background:burlywood;
+	
+	transform: translateY(120px);
+	
+	opacity: 0;
+}
+#page2 #TitleHainan a,p{
+	position: absolute;
+	font-family: "微软雅黑";
+	color: white;
+	text-decoration:none;
+}
+/*海南的标题：海南*/
+#page2 #TitleHainan #MyHainan{
+	position: absolute;
+	
+	font-size: 50px;
+	font-weight: 700;
+	
+	left: 45%;
+	top: 0%;
+	
+	opacity: 0;
+}
+/*下面部分的字体*/
+#page2 #TitleHainan #write1{
+	position: absolute;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	font-weight: 500;
+	
+	top: 22%;
+	left: 20%;
+	
+	opacity: 0;
+}
+#page2 #TitleHainan #write2{
+	position: absolute;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	font-weight: 500;
+	
+	top: 30%;
+	left: 20%;
+	
+	opacity: 0;
+}
+/*海南的图片*/
+#page2 img{
+	position: absolute;
+	width: 30%;
+	opacity: 0;
+
+}
+/*下面部分的图片3*/
+#page2 #hainan{
+	position: absolute;
+	left: -15%;
+	bottom: 10%;
+	top: 36%;
+	overflow: overlay;
+	
+	transform: translateX(-20px);
+}
+/*下面部分的图片2*/
+#page2 #hainan2{
+	position: absolute;
+	left: 35%;
+	bottom: 10%;
+	top: 51%;
+	overflow: overlay;
+}
+/*下面部分的图片1*/
+#page2 #hainan3{
+	position: absolute;
+	left: 85%;
+	bottom: 10%;
+	top: 36%;
+	overflow: overlay;
+	
+	transform: translateX(20px);
+}
+
+
+
+
+

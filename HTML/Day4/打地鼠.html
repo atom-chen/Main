@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>打地鼠</title>
+		<link rel="stylesheet" href="css/Demo4_5.css" />
+	</head>
+	<body>
+		<div class="title">
+			<!--marquee移动的标题--
+				1.不仅可以移动文字，也可以移动图片，表格等等。
+				2.direction 表示滚动方向
+				3.behavior:表示行为，滚动效果(alternate 来回滚动)
+				4.scrollamount 滚动的速度(单位时间滚动的长度，单位为px)
+				5.scrolldelay 滚动延迟（单位:毫秒）
+			-->
+			<marquee direction="right" behavior="alternate" scrollamount="100" scrolldelay="500">打地鼠</marquee>
+		</div>
+		
+		<div id="gameDiv">
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+			<img src="img/5.jpg" onclick="beat(this)"/>
+		</div>
+		<!--计分框-->
+		<p id="score">得分：0分</p>
+		<!--计时框-->
+		<p id="time">时间：0s</p>
+		<button class="start" onclick="start(this)">START</button>
+		
+		<script type="text/javascript" src="js/Demo4_5.js" ></script>
+	</body>
+<ml>

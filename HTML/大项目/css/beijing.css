@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+/*设置标题位置*/
+.title{
+	position: relative;
+	top: 0;
+	left: 10%;
+	
+	width: 100%;
+	height: 20%;
+}
+.title .beijinglvyoup{
+	position: absolute;
+	line-height: 80px;
+	font-family: "微软雅黑";
+	font-size: 30px;
+	
+}
+.title .beijinglvyouimg{
+	position: absolute;
+	left: 20%;
+}
+
+/*限制大div位置*/
+.image{
+	position: relative;
+	width: 80%;
+	height: 90%;
+	
+	left: 10%;
+	top: 20%;
+}
+.image .gugong{
+	position: absolute;
+	width: 50%;
+	
+	
+}
+.image .tiananmen{
+	position: absolute;
+	display: none;
+}
+.image .changcheng{
+	position: absolute;
+	display: none;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>淡入淡出轮播</title>
+		
+		<style>
+			#someImage{
+				position: relative;	
+				width: 720px;
+				height: 433px;
+				margin: 60px auto;
+				background: red;
+			}
+			
+			#someImage img{
+				position: absolute;
+				width: 720px;
+				height: 433px;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="someImage">
+			<img src="img/ban1.jpg" />
+			<img src="img/ban2.jpg" />
+			<img src="img/ban3.jpg" />
+			<img src="img/ban4.jpg" />
+			<img src="img/ban5.jpg" />
+			<img src="img/ban6.jpg" />
+			<img src="img/ban7.jpg" />
+			<img src="img/ban8.jpg" />
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script>
+//			思路：由于执行顺序原因,先加载的标签,在下面一层
+//			所以,切换顺序8~1
+//			8消失,露出7,7消失,露出6,依次类推
+			var $index = 8;
+			
+			setInterval(function(){
+//				每次$index减1
+				$index--;
+//				如果是最后一张图片消失
+				if($index<1){
+//					$index重新赋值为8
+					$index = 8;
+//					将所有的图片全部淡入重新淡出
+//					(由于第8张在最上面，只能看见第8张淡入，其他图片都在第8张后面叠加显示，
+//					但是都已经淡入)
+					$("#someImage img").fadeIn(1000);
+				}
+//				下标为$index的图片淡出
+				$("#someImage img").eq($index).fadeOut(1000);
+//				$index重新赋值
+				$index = $index;
+			},1000);
+		</script>
+	</body>
+</html>

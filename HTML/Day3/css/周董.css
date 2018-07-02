@@ -1,0 +1,393 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+/*figure是个标签*/
+figure{
+	/*分析：认为相对布局*/
+	position: relative;
+	width: 33.3%;
+	height: 350px;
+	/*依次靠左*/
+	float: left;
+	
+	/*隐藏超出模块范围的部分*/
+	overflow: hidden;
+}
+/*全部图片*/
+figure img{
+	/*控制figure里面图片的大小*/
+	width: 100%;
+	height: 100%;
+	
+	/*改变透明度*/
+	opacity: 1;
+}
+/*监听：鼠标停到figure上，产生效果*/
+figure:hover img{
+	opacity: 0.5;
+}
+/*首先处理图片类型的变化*/
+.view1 img {
+	transform: translateX(0px);
+	transition: all 0.5s;
+}
+/*处理v1上的字*/
+.view1 h2{
+	position: absolute;
+	left: 30px;
+	top: 50px;
+	transform: translateX(0);
+	transition: all 0.5s;
+	/*设置字体颜色*/
+	color: black;
+	/*设置Font*/
+	font-family:"楷体"
+	/*字号*/
+	font-size:30px ;
+	/*加粗*/
+	font-weight: 900;
+}
+.view1:hover h2{
+	transform: translateX(40px);
+}
+/*设置v1的三个小字共同属性*/
+.view1 p{
+	position: absolute;
+	left: 50px;
+	width: 100px;
+	background:white;
+	transition: all 0.5s;
+}
+/*单独设置每个小字触发方向*/
+.view1 .p1{
+	top:100px;
+	transform: translateY(250px);
+}
+.view1:hover .p1{
+	transform: translateY(0);
+}
+.view1 .p2{
+	top: 150px;
+	transform: translateX(-250px);
+}
+.view1:hover .p2{
+	transform: translatex(0);
+}
+.view1 .p3{
+	top: 200px;
+	transform: translatex(300px);
+}
+.view1:hover .p3{
+	transform: translatex(0);
+}
+.view1:hover img{
+	/*让它向x轴正向移动*/
+	transform: translateX(30px);
+}
+
+.view2 img {
+	transform: translateX(0px);
+	transition: all 0.5s;
+}
+.view2:hover img{
+	/*让它向x轴负方向向移动*/
+	transform: translateX(-20px);
+}
+.view2 h2{
+	position: absolute;
+	top: 60px;
+	left:230px;
+	
+	opacity: 0;
+	color: black;
+	/*字号*/
+	font-size:20px ;
+	/*加粗*/
+	font-weight: 900;
+	transition: all 1.5s;
+}
+.view2:hover h2{
+	opacity: 1;
+	}
+.view2 p{
+	position: absolute;
+	left: 20px;
+	background: white;
+	width: 120px;
+	transform: translateX(-300px);
+}
+.view2 .p1{
+	top: 110px;
+	/*transition后面参数表示，在num1的基础上延迟num2*/
+	transition: all 0.5s 0.1s;
+}
+.view2 .p2{
+	top: 150px;
+	transition: all 0.5s 0.4s;
+}
+.view2 .p3{
+	top: 190px;
+	transition: all 0.5s 0.3s;
+}
+.view2:hover p{
+	transform: translateX(0);
+}
+
+
+
+.view3 img {
+	transform: translateY(0px);
+	transition: all 0.5s;
+}
+.view3:hover img{
+	/*让它向y轴负方向向移动*/
+	transform: translateY(-20px);
+}
+.view3 h2{
+	position: absolute;
+	top: 40px;
+	left: 60px;
+	color: white;
+	transform: translateY(-150px);
+	transition: all 3s;
+}
+.view3:hover h2{
+	transform: translateY(0px)
+}
+.view3 p{
+	position: absolute;
+	left: 30px;
+	bottom: 0px;
+	width: 80%;
+	color: white;
+	opacity: 0;
+	transition: all 3s;
+}
+.view3:hover p{
+	opacity: 1;
+	bottom: 180px;
+}
+
+.view4 div{
+	position: absolute;
+	width: 150%;
+	height: 150px;
+	left: 0;
+	bottom: -150px;
+	background: greenyellow;
+	opacity: 0;
+	transition: all 0.5s;
+	/*调整旋转基点 默认50% 50%*/
+	transform-origin: 0% 0%;
+}
+.view4:hover div{
+	opacity: 0.7;
+	transform: rotate(-20deg);
+}
+.view4 h2{
+	position: absolute;
+	top: 500px;
+	left: 250px;
+	transition: all 2s;
+	color: white;
+}
+.view4:hover h2{
+	color: black;
+	top:260px
+}
+
+.view4 p {
+	position: absolute;
+	top: 500px;
+	left: 250px;
+	transition: all 2s;
+	color: black;
+}
+.view4:hover p{
+	top:300px;
+}
+
+/*分析：这是一个会转的只有边框的div*/
+.view5 div{
+	position: absolute;
+	border: 3px solid black;
+	width: 80%;
+	height: 80%;
+	top: 10%;
+	left: 10%;
+	/*设置旋转基点*/
+	transform-origin: 0% 0%;
+	/*分析：先移到后旋转*/
+	transform: rotate(0deg) translateY(-400px);	
+	transition: all 3s;
+}
+.view5:hover div{
+	transform: rotate(360deg) translateY(0px);
+}
+.view5 h2{
+	position: absolute;
+	left: 50px;
+	bottom: 0px;
+	width: 80%;
+	color: black;
+	transform:translateY(0px);
+	opacity: 0;
+	transition: all 2s;
+}
+.view5:hover h2{
+	transform: translateY(-250px);
+	opacity: 1;
+}
+.view5 p{
+	position: absolute;
+	left: 50px;
+	bottom: 0px;
+	width: 80%;
+	color: black;
+	transform:translateY(0px);
+	opacity: 0;
+	transition: all 3s;
+}
+.view5:hover p{
+	transform: translateY(-150px);
+	opacity: 1;
+}
+
+
+.view6 img{
+	transition: all 0.5s;
+}
+/*图片6：放大*/
+.view6:hover img{
+	transform: scale(1.3);
+}
+.view6 p{
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	transition: all 2s;
+	color: black;
+	opacity: 0;
+}
+.view6:hover p{
+	opacity: 1;
+	transform: rotate(360deg);
+}
+
+.view7 img{
+	transition: all 2.5s;
+}
+/*图片7：缩小*/
+.view7:hover img{
+	transform: scale(0.9);
+}
+.view7 h2{
+	position: absolute;
+	top: 50px;
+	left: 30px;
+	color: white;
+	opacity: 0;
+	transition: all 3s;
+}
+.view7:hover h2{
+	opacity: 1;
+}
+.view7 p{
+	position: absolute;
+	top: 100px;
+	left: 30px;
+	color: white;
+	opacity: 0;
+	transition: all 3s;
+}
+.view7:hover p{
+	opacity: 1;
+}
+
+
+.view8 .TopAndBotton{
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	width: 0px;
+	height: 200px;
+	border-top:2px solid white;
+	border-bottom:2px solid white;
+	transition: all 2s;
+}
+.view8:hover .TopAndBotton{
+	width: 240px;
+}
+.view8 .LeftAndRight{
+	position: absolute;
+	left: 60px;
+	top: 40px;
+	width: 200px;
+	height: 0px;
+	border-left:2px solid white;
+	border-right:2px solid white;
+	transition: all 2s;
+}
+.view8:hover .LeftAndRight{
+	height: 230px;
+}
+.view8 h2{
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	opacity: 0;
+	color: wheat;
+	
+}
+.view8:hover h2{
+	opacity: 1;
+}
+.view8 p{
+	position: absolute;
+	top: 35%;
+	left: 35%;
+	opacity: 0;
+	color: wheat;
+	transition: all 1s;
+}
+.view8:hover p{
+	opacity: 1;
+}
+
+
+.view9 img{
+	transition: all 1s;
+}
+.view9:hover img{
+	transform: rotate(10deg);
+}
+.view9 h2{
+	position: absolute;
+	top: -20px;
+	left: 100px;
+	opacity: 1;
+	color: white;
+	transition: all 1s;
+}
+.view9:hover h2{
+	top: 20px;
+	left:100px;
+	transform: rotate(10deg);
+}
+
+.music{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 40px;
+	/*设置一段动画 命名 冷却（多少秒执行一次） 动画类型：无限循环*/
+	animation: rotate 2s infinite;
+}
+/*实现一段动画*/
+@keyframes rotate{
+	/*动画开始部分和结束部分：实现动画中间加上某些特效*/
+	0%{}
+	100%{transform:rotate(360deg) }
+}

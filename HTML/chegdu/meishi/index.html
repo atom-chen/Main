@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>子页面</title>
+		<link rel="stylesheet" href="../shouye/css/index_nav.css" />
+		<link rel="stylesheet" href="../shouye/css/animate.css" />
+		<link rel="stylesheet" href="../children/css/Children.css" />
+	</head>
+	<body>
+		<!--网页的顶部-->
+		<div class="index_top">
+			<div class="both">
+				<div class="top_left top-header-left wow fadeInRight animated" data-wow-delay=".5s">
+					<span><a href="#">设为首页</a></span>
+					<span><a href="#">/收藏本站</a></span>
+				</div>	
+			</div>
+			<div class="top_right wow fadeInRight animated" >
+				<span class="top_time">时间：2017/4/26</span>
+				<span class="top_weather">/天气:多云转晴</span>
+			</div>
+			<div class="top_log wow fadeInLeftBig animated">
+				<img src="img/logo.jpg"/>
+			</div>			
+		</div>
+
+<!--网页的导航栏-->
+		<div class="index_nav wow fadeInRight animated"  >
+			<nav>
+				<a href="../shouye/index.html">首页</a>
+				<a href="../jingdian/chengdu.html">景观</a>
+				<a href="../meishi/top.html">美食</a>
+				<a href="../youji/index.html">游记</a>
+				<a href="../minsu/Customs.html">风俗</a>
+			</nav>
+			
+		</div>
+		<div id="connect">
+			<img src="img/left.png" id="left" onclick="paging_left(this)"/>
+			<img src="img/right.png" id="right" onclick="paging_right(this)"/>
+			<p id="quanbu">全部</p>
+			
+			<div id="m1">
+			<h3 class="t1">夫妻肺片</h3>
+			<img src="img/fuqifeipian.jpeg" class="p1"/>
+			<a id="w1" >由郭朝华、张田政夫妻创制而成。
+					通常以牛头皮、牛心、牛舌、牛肚、牛肉为主料，进行卤制，而后切片。再配以辣椒油、花椒面等辅料制成红油浇在上面。
+					夫妻肺片，制作精细，色泽美观，质嫩味鲜，麻辣浓香，非常适口。</a>
+			<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+			<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m2">
+				<h3 class="t2">龙抄手</h3>
+				<img src="img/chaoshou.jpeg" class="p2"/>
+				<a id="w2" >龙抄手是成都市著名的传统小吃，抄手是四川人对馄饨的特殊叫法，抄手的得名。成都的“龙抄手”1941年开设于成都的悦来场，上个世纪50年代初迁往新集场，60年代后又迁至春熙路南段至今，迄今已有70余年的历史了。</a>		       	
+					<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m3">
+				<h3 class="t3">豆花</h3>
+				<img src="img/douhua.jpeg" class="p3"/>
+				<a id="w3" >豆花是一种用黄豆制作的小吃，个别的会用豌豆、蚕豆等豆类制作。 将黄豆用水泡涨，磨碎过滤出豆浆，豆浆如果加入盐卤或石膏，就会凝结成非常稀软的固体。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>
+			</div>
+			<div id="m4">
+				<h3 class="t4">汤圆</h3>
+				<img src="img/tangyuan.jpeg" class="p4"/>
+				<a id="w4" >是由糯米粉等做的球形食品，一般有馅料，煮熟带汤吃，同时也是元宵节最具有特色的食物。历史十分悠久。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<div id="m5">
+				<h3 class="t5">火锅</h3>
+				<img src="img/huoguo.jpeg" class="p5"/>
+				<a id="w5" >四川火锅，以麻，辣，鲜，香著称，他来源于民间，升华于庙堂，无论是贩夫走卒、达官显宦、文人骚客、商贾农工，还是红男绿女、黄发垂髫，其消费群体涵盖之广泛、人均消费次数之大，都是他地望尘莫及的。作为一种美食，火锅已成为四川和重庆两地的代表美食。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>		
+			</div>
+			<div id="m6">
+				<h3 class="t6">三大炮</h3>
+				<img src="img/sandapao.jpg" class="p6"/>
+				<a id="w6" >三大炮的主要食材为糯米、红糖、芝麻、黄豆，口味香甜。三大炮非凉食，卖时将舂好的半成品糍粑装入锅中至火炉上以微火保温，吃时现做。</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>	
+			</div>
+			<!--<div id="m7">
+				<h3 class="t7">牟尼沟</h3>
+				<img src="img/jp3_7.jpg" class="p7"/>
+				<a id="w7" >三月末，四野萧疏时，棋盘山杏花沟内已是十里花海，独成仙境。3月25日，棋盘山第十一届杏花节开幕，漫山遍野杏花斗艳吐芳，山水皆香，向为游人所青睐，摄影爱好者所独钟。随着时间的推移，沟下半先开花，花败后...</a>
+		       	<img src="img/anxin.jpg" class="love" onclick="love(this)"/>
+		       	<img src="img/jm1_icon4.jpg" class="tixing"/>			
+			</div>-->
+				
+			</div>
+		
+	</div>
+	<script type="text/javascript" src="../shouye/js/wow.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="../children/js/Children.js" ></script>
+			
+	</body>
+</html>

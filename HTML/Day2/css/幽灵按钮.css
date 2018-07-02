@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #333;
+}
+/*设置顶层容器属性*/
+.box{
+	/*分析：要让别的线条相对于大盒子来飞：相对布局*/
+	position: relative;
+	width: 900px;
+	height: 300px;
+	/*居中*/
+	margin: 100px auto;
+}
+/*设置每个小盒子的属性*/
+.link{
+	width: 270px;
+	height: 300px;
+	/*让第二个靠在第一个左边*/
+	float: left;
+	
+	/*设置外边距*/
+	margin-left: 22.5px;
+	
+}
+/*设置每个小盒子上面图片的属性*/
+.link .image{
+	display: block;
+	
+	width: 200px;
+	height: 200px;
+	background: green;
+	margin: 20px auto;
+	
+	transition: all 1s;
+}
+/*设置mission盒子上的图片属性*/
+.link-mission .image{
+	background: url(../img/mission.png) no-repeat center center;
+}
+.link-play .image{
+	background: url(../img/play.png) no-repeat center center;
+}
+.link-touch .image{
+	background: url(../img/touch.png) no-repeat center center;
+}
+.link .image:hover{
+	transform: rotate(360deg) scale(1.2);
+}
+.link .JButton{
+	/*让其它东西相对小盒子动*/
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 40px;
+	border: 2px solid white;
+	margin: 0px auto;
+	
+	/*设置里面的字体*/
+	color: white;
+	font-weight: bolder;
+	font-family: "微软雅黑";
+	
+	/*使字体垂直居中，水平中靠右*/
+	padding-left: 40px;
+	line-height: 35px;
+	/*内边距时：禁止本身变大*/
+	box-sizing: border-box;
+	
+	/*清除下划线*/
+	text-decoration: none;
+	/*箭头：左右距离140px　上下居中*/
+	background: url(../img/allow.png) no-repeat 150px center;
+	transition: all 1s;
+	
+}
+/*鼠标移到JButton上时：重绘图片*/
+.JButton:hover{
+	background: url(../img/allow.png) no-repeat 170px center;
+}
+/*设置每个小线条属性*/
+.line{
+	/*让它找大盒子定位*/
+	position: absolute;
+	background: white;
+	transition: all 0.5s;
+}
+.line-top{
+	/*把上面的线画出来*/
+	width: 0px;
+	height: 2px;
+	top: -2px;
+	/*相对于div：从外边飞进来，*/
+	left: -200px;
+}
+.box:hover .line-top{
+	width: 200px;
+	height: 2px;
+	
+	top:-2px;
+	left: 0px;
+}
+.line-botton{
+	width: 0px;
+	height: 2px;
+	bottom: -2px;
+	right: -200px;
+}
+.box:hover .line-botton{
+	width: 200px;
+	height: 2px;
+	bottom: -2px;
+	right: 0px;
+}
+.line-left{
+	width: 2px;
+	height: 0px;
+	bottom: -80px;
+	left: -2px;
+}
+.box:hover .line-left{
+	width: 2px;
+	height: 40px;
+	bottom: 0px;
+	right: 2px;
+}
+.line-right{
+	width: 2px;
+	height: 0px;
+	top: -80px;
+	right: -2px;
+}
+.box:hover .line-right{
+	width: 2px;
+	height: 40px;
+	top: 0px;
+	right: -2px;
+}
+
+
+

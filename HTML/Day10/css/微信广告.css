@@ -1,0 +1,83 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	position: relative;
+	margin: 50px auto;
+	border: 1px solid black;
+	
+	width: 720px;
+	height: 344px;;
+	/*隐藏显示的多余部分*/
+	overflow: overlay;
+}
+
+/*设置页签：右下角*/
+#list{
+	position: absolute;
+	right: 50px;
+	bottom: 20px;
+	
+	/*调节层级关系：防止被盖住*/
+	z-index: 99;
+}
+#list li{
+	width: 20px;
+	height: 20px;
+    border: 1px solid white;
+    
+    /*横过来*/
+   float: left;
+   /*去掉黑点*/
+   list-style: none;
+   /*外边距*/
+   margin: 0 5px;
+}
+#imgbox{
+	position: absolute;
+	height: 344px;
+	width: 1440px;
+	
+	background: red;
+	float: left;
+	left: 0;
+}
+
+#imgbox img{
+	position: absolute;
+	left: 720px;
+	top: 0;
+	background: black;
+
+}
+.btmLeft{
+	position: absolute;
+	top: 40%;
+	left: 0;
+	
+	width: 50px;
+	height: 50px;
+	z-index: 98;
+}
+.btmRight{
+	position: absolute;
+	top: 40%;
+	right:0;
+	
+	width: 50px;
+	height: 50px;
+	z-index: 99;
+}
+
+#imgbox .first{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.hover{
+	background: white;
+}
+
