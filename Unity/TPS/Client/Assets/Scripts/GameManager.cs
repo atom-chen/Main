@@ -16,17 +16,16 @@ public class GameManager : MonoBehaviour
     }
 
     private List<Transform> m_MonstSpawnPoints=new List<Transform>();
-    private GameObject m_MonstPrefab;
+
 
     private float m_SpawnTimer = 2.0f;//生成CD
-    private int m_MonsterMaxCount = 10;//最大数量
+    private int m_MonsterMaxCount = 5;//最大数量
     private bool m_GameIsOver = false;
     private int m_MonstNowCount=0;//当前怪兽数量
    
     void Awake()
     {
         _Instance = this;
-        m_MonstPrefab = Resources.Load("Prefabs/monster") as GameObject;
     }
 	// Use this for initialization
 	void Start () 
@@ -51,30 +50,28 @@ public class GameManager : MonoBehaviour
     {
         while(!m_GameIsOver)
         {
+            if(m_GameIsOver)
+            {
+                yield break;
+            }
             if(m_MonstNowCount<m_MonsterMaxCount)
             {
                 int index = Random.Range(0, m_MonstSpawnPoints.Count);
-                GameObject obj = Instantiate(m_MonstPrefab, m_MonstSpawnPoints[index]);
-                Monster monst = obj.GetComponent<Monster>();
-                if (monst != null)
+                Monster monst = MonstPool.Instance.GetMonster();
+                if(monst!=null)
                 {
-                    monst.WhenMonstDie += OnMonstDie;
+                    monst.transform.position = m_MonstSpawnPoints[index].position;
+                    m_MonstNowCount++;
                 }
-                m_MonstNowCount++;
             }
             yield return new WaitForSeconds(m_SpawnTimer);
         }
     }
 	
-	void Update () 
-    {
-		
-	}
 
-    void OnMonstDie(Monster monst)
+    public void OnMonstDie(Monster monst)
     {
         m_MonstNowCount--;
-        monst.WhenMonstDie -= OnMonstDie;
     }
 
     public void GameOver()

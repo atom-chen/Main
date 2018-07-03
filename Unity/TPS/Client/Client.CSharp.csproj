@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\FireController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainCamera.cs" />
+    <Compile Include="Assets\Scripts\MonstPool.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\MyGizmo.cs" />
     <Compile Include="Assets\Scripts\ParticalPool.cs" />

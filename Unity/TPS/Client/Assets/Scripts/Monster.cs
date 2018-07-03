@@ -23,13 +23,22 @@ public class Monster : MonoBehaviour
 
     private float m_AttackDistance = 2.0f;
     private float m_traceDistance = 10.0f;
-    private MonstStats m_State = MonstStats.idel;
-    private bool m_IsDie = false;
+
+    bool m_bIsInit = false;
 
     private float m_HP = 100;
     public event OnMonstDie WhenMonstDie;
+    //Need to init
+    Collider coll;
+    Collider[] coInChild;
+    public MonstStats m_State = MonstStats.idel;
+    public bool m_IsDie = false;
     void Start()
     {
+        if(m_bIsInit)
+        {
+            return;
+        }
         monsterTrans = this.transform;
         nvAgent = this.GetComponent<NavMeshAgent>();
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -39,13 +48,21 @@ public class Monster : MonoBehaviour
             playerTrans = playerObj.transform;
         }
         m_Animator = this.GetComponent<Animator>();
-        StartCoroutine(CheckMonstState());
-        StartCoroutine(MonsterAction());
+        coll = this.GetComponent<Collider>();
+        coInChild = this.GetComponentsInChildren<Collider>();
+        Player.m_OnPlayerDie += OnPlayerDie;
     }
 
     void OnEnable()
     {
-        Player.m_OnPlayerDie += OnPlayerDie;
+        if(!m_bIsInit)
+        {
+            Start();
+            m_bIsInit = true;
+        }
+        StopAllCoroutines();
+        StartCoroutine(CheckMonstState());
+        StartCoroutine(MonsterAction());
     }
     void OnDisable()
     {
@@ -137,15 +154,29 @@ public class Monster : MonoBehaviour
             nvAgent.Stop();
         }
         m_Animator.SetTrigger("IsDie");
-        Collider coll = this.GetComponent<Collider>();
         coll.enabled = false;
-        foreach (Collider co in GetComponentsInChildren<Collider>())
+        foreach (Collider co in coInChild)
         {
             co.enabled = false;
         }
         Player.m_OnPlayerDie -= OnPlayerDie;
-        Destroy(this.gameObject, 3.0f);
+        StartCoroutine(GCMonst());
+        //Destroy(this.gameObject, 3.0f);
+    }
 
+    IEnumerator GCMonst()
+    {
+        yield return new WaitForSeconds(3.00f);
+        //初始化各种变量
+        coll.enabled = true;
+        m_State = MonstStats.idel;
+        m_HP = 100;
+        foreach (Collider co in coInChild)
+        {
+            co.enabled = true;
+        }
+        m_IsDie = false;
+        MonstPool.Instance.GCMonst(this);
     }
 
     void OnCollisionEnter(Collision other)
