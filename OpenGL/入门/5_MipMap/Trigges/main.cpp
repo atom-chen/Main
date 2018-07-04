@@ -87,23 +87,109 @@ void SetupRC()
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 
+		glTexImage2D(GL_TEXTURE_2D, 0, iComponents, iWidth, iHeight, 0, eFormat, GL_UNSIGNED_BYTE, pByte);
 		glGenerateMipmap(GL_TEXTURE_2D);
 		free(pByte);
 	}
 	//准备纹理 end
 
 	//准备顶点数据 begin
+	GLfloat z;
+	floorBatch.Begin(GL_TRIANGLE_STRIP, 28, 1);
+	for (z = 60.0f; z >= 0.0f; z -= 10.0f)
+	{
+		floorBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+		floorBatch.Vertex3f(-10.0f, -10.0f, z);
 
+		floorBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+		floorBatch.Vertex3f(10.0f, -10.0f, z);
+
+		floorBatch.MultiTexCoord2f(0, 0.0f, 1.0f);
+		floorBatch.Vertex3f(-10.0f, -10.0f, z - 10.0f);
+
+		floorBatch.MultiTexCoord2f(0, 1.0f, 1.0f);
+		floorBatch.Vertex3f(10.0f, -10.0f, z - 10.0f);
+	}
+	floorBatch.End();
+
+	ceilingBatch.Begin(GL_TRIANGLE_STRIP, 28, 1);
+	for (z = 60.0f; z >= 0.0f; z -= 10.0f)
+	{
+		ceilingBatch.MultiTexCoord2f(0, 0.0f, 1.0f);
+		ceilingBatch.Vertex3f(-10.0f, 10.0f, z - 10.0f);
+
+		ceilingBatch.MultiTexCoord2f(0, 1.0f, 1.0f);
+		ceilingBatch.Vertex3f(10.0f, 10.0f, z - 10.0f);
+
+		ceilingBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+		ceilingBatch.Vertex3f(-10.0f, 10.0f, z);
+
+		ceilingBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+		ceilingBatch.Vertex3f(10.0f, 10.0f, z);
+	}
+	ceilingBatch.End();
+
+	leftWallBatch.Begin(GL_TRIANGLE_STRIP, 28, 1);
+	for (z = 60.0f; z >= 0.0f; z -= 10.0f)
+	{
+		leftWallBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+		leftWallBatch.Vertex3f(-10.0f, -10.0f, z);
+
+		leftWallBatch.MultiTexCoord2f(0, 0.0f, 1.0f);
+		leftWallBatch.Vertex3f(-10.0f, 10.0f, z);
+
+		leftWallBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+		leftWallBatch.Vertex3f(-10.0f, -10.0f, z - 10.0f);
+
+		leftWallBatch.MultiTexCoord2f(0, 1.0f, 1.0f);
+		leftWallBatch.Vertex3f(-10.0f, 10.0f, z - 10.0f);
+	}
+	leftWallBatch.End();
+
+
+	rightWallBatch.Begin(GL_TRIANGLE_STRIP, 28, 1);
+	for (z = 60.0f; z >= 0.0f; z -= 10.0f)
+	{
+		rightWallBatch.MultiTexCoord2f(0, 0.0f, 0.0f);
+		rightWallBatch.Vertex3f(10.0f, -10.0f, z);
+
+		rightWallBatch.MultiTexCoord2f(0, 0.0f, 1.0f);
+		rightWallBatch.Vertex3f(10.0f, 10.0f, z);
+
+		rightWallBatch.MultiTexCoord2f(0, 1.0f, 0.0f);
+		rightWallBatch.Vertex3f(10.0f, -10.0f, z - 10.0f);
+
+		rightWallBatch.MultiTexCoord2f(0, 1.0f, 1.0f);
+		rightWallBatch.Vertex3f(10.0f, 10.0f, z - 10.0f);
+	}
+	rightWallBatch.End();
+	//准备顶点数据 end
 }
 
 void ShutdownRC(void)
 {
-
+	glDeleteTextures(TEXTURE_COUNT, texture);
 }
 void OnDrawBegin()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 	modelViewMatrix.PushMatrix();
+
+}
+void Draw()
+{
+	modelViewMatrix.Translate(0, 0, viewZ);//摄像机移动
+
+	shaderManager.UseStockShader(GLT_SHADER_TEXTURE_REPLACE, transformPipeline.GetModelViewProjectionMatrix(), 0);
+	glBindTexture(GL_TEXTURE_2D, texture[TEXTURE_FLOOR]);
+	floorBatch.Draw();
+
+	glBindTexture(GL_TEXTURE_2D, texture[TEXTURE_CEILING]);
+	ceilingBatch.Draw();
+
+	glBindTexture(GL_TEXTURE_2D, texture[TEXTURE_BRICK]);
+	leftWallBatch.Draw();
+	rightWallBatch.Draw();
 }
 void OnDrawEnd()
 {
@@ -115,18 +201,25 @@ void OnDrawEnd()
 
 void RenderScene(void)
 {
-	static GLfloat vLightPos[] = { 1.0f, 1.0f, 0.0f };
-	static GLfloat vWhite[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+	OnDrawBegin();
 
 
+	Draw();
 
-
+	OnDrawEnd();
 }
 
 
 void SpecialKeys(int key, int x, int y)
 {
-
+	if (key == GLUT_KEY_DOWN)
+	{
+		viewZ -= 0.5f;
+	}
+	else if (key == GLUT_KEY_UP)
+	{
+		viewZ += 0.5f;
+	}
 
 	glutPostRedisplay();
 }
@@ -136,7 +229,12 @@ void SpecialKeys(int key, int x, int y)
 
 void ChangeSize(int w, int h)
 {
+	if (h == 0)
+	{
+		h = 1;
+	}
 	glViewport(0, 0, w, h);
+
 	viewFrustum.SetPerspective(35.0f, float(w) / float(h), 1.0f, 500.0f);
 	projectionMatrix.LoadMatrix(viewFrustum.GetProjectionMatrix());
 	transformPipeline.SetMatrixStacks(modelViewMatrix, projectionMatrix);
@@ -149,10 +247,21 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_STENCIL);
 	glutInitWindowSize(800, 600);
-	glutCreateWindow("Pyramid");
+	glutCreateWindow("MipMap");
 	glutReshapeFunc(ChangeSize);
 	glutSpecialFunc(SpecialKeys);
 	glutDisplayFunc(RenderScene);
+
+	//添加菜单入口以改变过滤器
+	glutCreateMenu(ProcessMenu);
+	glutAddMenuEntry("GL_NEAREAT", 0);
+	glutAddMenuEntry("GL_LINEAR", 1);
+	glutAddMenuEntry("GL_NEAREST_MIPMAP_NEAREST", 2);
+	glutAddMenuEntry("GL_NEAREST_MIPMAP_LINEAR", 3);
+	glutAddMenuEntry("GL_LINEAR_MIPMAP_NEAREST", 4);
+	glutAddMenuEntry("GL_LINEAR_MIPMAP_LINEAR", 5);
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
+
 
 	GLenum err = glewInit();
 	if (GLEW_OK != err) {
