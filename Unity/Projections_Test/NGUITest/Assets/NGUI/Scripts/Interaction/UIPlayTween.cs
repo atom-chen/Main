@@ -314,7 +314,7 @@ public class UIPlayTween : MonoBehaviour
 						if (resetOnPlay || (resetIfDisabled && !tw.enabled))
 						{
 							tw.Play(forward);
-							tw.ResetToBeginning();
+							tw.ResetToBeginning(true);
 						}
 						// Listen for tween finished messages
 						EventDelegate.Add(tw.onFinished, OnFinished, true);

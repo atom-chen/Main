@@ -398,11 +398,11 @@ public abstract class UITweener : MonoBehaviour
 	/// If the tween is playing in reverse, this means the tween's end.
 	/// </summary>
 
-	public void ResetToBeginning ()
+    public void ResetToBeginning(bool direction=true)
 	{
-		mStarted = false;
-		mFactor = (amountPerDelta < 0f) ? 1f : 0f;
-		Sample(mFactor, false);
+        mStarted = false;
+        mFactor = direction ? 0 : 1;
+        Sample(mFactor, false);
 	}
 
 	/// <summary>
