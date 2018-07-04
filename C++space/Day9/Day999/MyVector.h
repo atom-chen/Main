@@ -1,24 +1,33 @@
-#pragma once
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-template<class T>
-class MyVector{
+template <typename T>
+class MyVector
+{
+
+	friend ostream & operator<< <T>(ostream &out,  const MyVector &obj);
 public:
-	MyVector(int size = 0);
-	MyVector(const MyVector &obj);
-	~MyVector();
+	MyVector(int size = 0);  //构造函数
+	MyVector(const MyVector &obj); // 拷贝构造函数
+	~MyVector(); //析构函数
+
 public:
-	T& operator[](int index);
-	MyVector& operator=(const MyVector &obj);
-	friend ostream& operator<< <T>(ostream& out, const MyVector<T> &obj);
+
+	T& operator[] (int index);
+	// a3 = a2 = a1;
+	MyVector &operator=(const MyVector &obj);
+
+	
+
 public:
-	int size()
+	int getLen()
 	{
 		return m_len;
 	}
+
 protected:
-private:
 	T *m_space;
 	int m_len;
 };
+
+

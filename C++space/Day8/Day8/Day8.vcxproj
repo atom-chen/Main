@@ -83,11 +83,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Day8.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\02_C++基础\02_C++基础\c++基础day08\源码\dm01_函数指针语法基础.c" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\02_C++基础\02_C++基础\c++基础day08\源码\dm02_函数指针做函数参数的思想剖析.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

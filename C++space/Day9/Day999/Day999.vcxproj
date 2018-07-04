@@ -10,6 +10,30 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm09_complex.h" />
+    <ClInclude Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm09_complex.hpp" />
+    <ClInclude Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\MyVector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\1.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm01_为什么会有函数模板和基本语法.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm02_函数模板当函数参数强化.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm03_函数模板遇上函数重载.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm04_函数模板和普通函数在一起调用规则研究.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm05_模板机制剖析.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm06_类模板基本语法.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm07_复数类_所有函数都写在类的内部.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm08_复数类_所有函数都写在类的外部(在一个cpp中).cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm09_complex_test.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm09_复数类_所有函数都写在类的外部(h和cpp分开).cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\dm10_类模板中的static关键字.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\MyVector.cpp" />
+    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\MyVector_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\超适合自学的C++基础视频_深入浅出版\03_C++进阶\03_C++进阶\C++视频day09\代码\1.s" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{ED8402CD-910F-40FE-873F-27B4FE8BC0A8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -77,27 +101,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ArrayTest.cpp" />
-    <ClCompile Include="ArrayTest2.cpp" />
-    <ClCompile Include="cinTest.cpp" />
-    <ClCompile Include="demo01.cpp" />
-    <ClCompile Include="demo02.cpp" />
-    <ClCompile Include="DEMO07_复数类1.cpp" />
-    <ClCompile Include="demo09.cpp" />
-    <ClCompile Include="demo10.cpp" />
-    <ClCompile Include="demo11_Test.cpp" />
-    <ClCompile Include="demo6.cpp" />
-    <ClCompile Include="Complex.hpp" />
-    <ClCompile Include="demoo08_复数类2cpp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Array.h" />
-    <ClInclude Include="Array.hpp" />
-    <ClInclude Include="Complex.h" />
-    <ClInclude Include="MyVector.h" />
-    <ClInclude Include="MyVector.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -79,6 +79,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="demo06_重载().cpp" />
+    <ClCompile Include="dm06_重载括号.cpp" />
+    <ClCompile Include="dm07_逻辑与和逻辑或运算符重载说明.cpp" />
+    <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="MyString_Test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
