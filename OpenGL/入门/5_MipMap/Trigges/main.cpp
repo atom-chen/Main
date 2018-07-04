@@ -30,6 +30,7 @@ M3DMatrix44f		shadowMatrix;
 //0 GL_NEAREST 1 GL_LINEAR
 void ProcessMenu(int flag)
 {
+	GLfloat fLargest;
 	for (GLuint i = 0; i < TEXTURE_COUNT; i++)
 	{
 		glBindTexture(GL_TEXTURE_2D, texture[i]);
@@ -52,6 +53,14 @@ void ProcessMenu(int flag)
 			break;
 		case 5:
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);//选哪个以及对选中的如何拉伸，使用线性插值
+			break;
+		case 6:
+			glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &fLargest);
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, fLargest);
+			break;
+
+		case 7:
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 1.0f);//关闭各向异性
 			break;
 		}
 	}
@@ -260,6 +269,11 @@ int main(int argc, char* argv[])
 	glutAddMenuEntry("GL_NEAREST_MIPMAP_LINEAR", 3);
 	glutAddMenuEntry("GL_LINEAR_MIPMAP_NEAREST", 4);
 	glutAddMenuEntry("GL_LINEAR_MIPMAP_LINEAR", 5);
+	if (1 || gltIsExtSupported("GL_EXT_texture_filter_anisotropic"))
+	{
+		glutAddMenuEntry("Anisotropic Filter", 6);
+		glutAddMenuEntry("Anisotropic Off", 7);
+	}
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 
 
