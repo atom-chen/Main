@@ -42,27 +42,36 @@ int main(int argc, char const *argv[])
 
 	int fd_write=open(SERVER_ADDR,O_WRONLY);
 	int fd_read=open(buffer,O_RDWR);
+
 	if(fd_write>0 && fd_read>0)
 	{
+
 		struct MSG msg;
 		//send online package
 		memset(&msg,0,sizeof(MSG));
 		msg.send=pid;
 		msg.receive=-1;
 		strcpy(msg.data,buffer);
-		SendRequest(msg);
+		SendRequest(msg,fd_write);
 		int ret;
+		int receive;
 		while(1)
 		{
 			memset(&msg,0,sizeof(msg));
 			//read input
-			ret=read(,buffer,1024);
+			ret=read(STDIN_FILENO,buffer,4);
 			if(ret>0)
 			{
-				msg.send=pid;
-				msg.receive=;
-				strcpy(msg.data,);
-				memset(&msg,0,sizeof(msg));
+				receive=atoi(buffer);
+				ret=read(STDIN_FILENO,buffer,1024);
+				if(ret>0)
+				{
+					msg.send=pid;
+					msg.receive=receive;
+					strcpy(msg.data,);
+					SendRequest(msg,fd_write);
+					memset(&msg,0,sizeof(msg));
+				}
 			}
 			//receive from server
 			ret=read(fd_read,&msg,1024);;
@@ -72,14 +81,18 @@ int main(int argc, char const *argv[])
 			}
 		}
 	}
-
 	return 0;
 }
-void SendRequest(struct MSG msg)
+void SendRequest(struct MSG msg,int fd_write)
 {
-	
+	write(fd_write,msg,sizeof(msg));
 }
 void Response(struct MSG msg)
 {
-
+	switch(msg.msgCode)
+	{
+		case CHAT:
+		printf("%u said:%s\n",msg.send,msg.data);
+		break;
+	}
 }

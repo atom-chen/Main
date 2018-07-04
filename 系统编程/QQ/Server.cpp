@@ -25,8 +25,14 @@ struct MSG
 	char data[1024];
 }
 void Server(struct MSG msg);
+void SendRes(struct MSG msg);
 
-std::map<int,char[1024]> clientAddr;  //key=pid value=addr
+struct  Client
+{
+	int fd;
+};
+
+std::map<int,Client> clientAddr;  //key=pid value=addr
 
 int main(int argc, char const *argv[])
 {
@@ -59,11 +65,33 @@ void Server(struct MSG msg)
 	switch(msg.msgCode)
 	{
 	case ONLINE:
-	    map.insert(std::pair<int,>);
+	    struct Client client;
+	    //try connect to client fifo
+	    int fd=open(msg.data,O_WRONLY);
+	    if(fd>0)
+	    {
+	        client.fd=fd;
+	        clientAddr.insert(std::pair<int,Client>(msg.send,client));
+	    }
 		break;
 	case DOWMLINE:
+        auto it=clientAddr.find(msg.send);
+        if(it!=clientAddr.end())
+        {
+        	close(it->fd);
+        	clientAddr.erase(it);
+        }
 		break;
 	case CHAT:
+        SendRes(msg);
 		break;
+	}
+}
+void SendRes(struct MSG msg)
+{
+	auto it=clientAddr.find(msg.send);
+	if(it!=clientAddr.end())
+	{
+		write(it->fd,&msg,sizeof(msg));
 	}
 }
