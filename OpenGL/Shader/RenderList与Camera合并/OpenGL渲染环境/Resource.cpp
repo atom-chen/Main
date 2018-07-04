@@ -475,8 +475,9 @@ GLuint ResourceManager::CreateTexture2D(unsigned char* pixelData, int width, int
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);//举例：当128*128的纹理映射到256*256的物体上时（纹理扩大），使用线性过滤
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);//举例：当128*128的纹理映射到64*64的物体上时（纹理缩小），使用线性过滤
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);//举例：当在uv为0.5的图形上输入1.0时，去纹理的边界上取(0.5的地方取)
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);//举例：当在uv为0.5的图形上输入1.0时，去纹理的边界上取(0.5的地方取)
+	//GL_CLAMP_TO_EDGE，在这种模式下，边框始终被忽略。位于纹理边缘或者靠近纹理边缘的纹理单元将用于纹理计算，但不使用纹理边框上的纹理单元。
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); 
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); 
 
 	//拷贝数据到显卡（啥数据，MipMapLevel级别（用不同级别的像素数据为多边形着色），纹理数据在显卡上的像素格式，宽，高，boder必须写0，纹理数据在内存中的格式，每个像素数据的分量是什么类型，像素数据在内存哪里）
 	glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, type, pixelData);
