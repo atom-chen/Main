@@ -123,10 +123,10 @@ void fun1()
 void fun2()
 {
 	printf("a = %d\n", a);
-	printf("b = %d\n", b);
+	//printf("b = %d\n", b);
 }
 
-int main()
+int main1111()
 {
 	fun1();
 	fun2();

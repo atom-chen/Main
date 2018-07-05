@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+//三目运算符
 //在C语言中 表达式的结果 放在什么地方 寄存器
 //1 
 // 在C语言中, 表达式的返回值 是变量的值
@@ -15,7 +15,7 @@ using namespace std;
 //3 本质 
 //c++编译器 帮我们程序员完成了 取地址的工作 
 
-int main()
+int main701()
 {
 	int a = 10;
 	int b = 20;

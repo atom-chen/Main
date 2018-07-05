@@ -5,7 +5,7 @@ using namespace std;
 //C语言中的变量都必须在作用域开始的位置定义！！
 //C++中更强调语言的“实用性”，所有的变量都可以在需要使用时再定义。
 
-void main41()
+void main401()
 {
 	int i;
 
@@ -20,7 +20,7 @@ void main41()
 
 }
 
-void main42()
+void main402()
 {
 	register int a = 0; 
 	printf("&a: %d \n", &a); //不能在寄存器变量上取地址
@@ -47,7 +47,7 @@ C++直接拒绝这种二义性的做法。
 int g_a = 100;
 //int g_a ;
 
-void main()
+void main403()
 {
 	printf("hello...g_a:%d \n", g_a);
 }

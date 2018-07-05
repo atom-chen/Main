@@ -9,7 +9,7 @@ public:
 };
 
 // 2010编译不通过 但是在2013编译器能编译通过
-int main()
+int main202()
 {
 	circle c1;
 	cout << "please input your r" << endl;

@@ -104,7 +104,7 @@ void printfT3(Teacher pT)
 	cout<<pT.age<<endl;
 	pT.age = 45; //只会修改pT变量 ,不会修改t1变量
 }
-void main()
+void main008978()
 {
 	Teacher t1;
 	t1.age = 35;

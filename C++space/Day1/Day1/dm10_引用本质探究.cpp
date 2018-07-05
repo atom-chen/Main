@@ -3,7 +3,7 @@
 using namespace std;
 
 //1 第一点 单独定义的引用时，必须初始化；说明很像一个常量
-void main01()
+void main1001()
 {
 	//
 	 const  int c1 = 10;
@@ -40,7 +40,7 @@ void modifyA2(int * const a1)
 	*a1 = 200;  //*实参的地址 ,去间接的修改实参的值 
 }
 
-void main1001()
+void main1002()
 {
 	int a = 10;
 
@@ -62,7 +62,7 @@ void modifyA3(int *p)
 	*p = 200;  //*p 3*p形参去间接修改实参的值
 }
 //间接赋值
-void main()
+void main213131()
 {
 	int a = 10;
 	int *p = NULL; //间接赋值成立的三个条件 1 定义两个变量 

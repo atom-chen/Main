@@ -18,7 +18,7 @@ void main()
 
 using namespace std; //使用命名空间 std 标准的命名空间 (在这个命名空间中定义了很多标准定义)
 
-void main01()
+void main101()
 {
 	//printf("hello....\n");
 
@@ -34,7 +34,7 @@ void main01()
 //求圆的面积
 //用面向过程的方法求解圆形的面积
 // << >> 不会用: 标准输入cin和标准输出cout 始终写在操作符的左边 
-void main02()
+void main102()
 {
 	double	r = 0;
 	double	s = 0;
@@ -82,7 +82,7 @@ public:
 
 //
 
-void main03()
+void main103()
 {
 	MyCicle		c1, c2, c3; //用类 定义 变量 对象
 	double		r;
@@ -110,7 +110,7 @@ void main03()
 //用数据类型定义变量的时候,才会分配内存
 //思考2:抛砖: c++编译器是如何处理 多个对象,调用类的成员函数的;具体一点:如何区分是c1 c2 c3 调用了getS,抛砖.....
 
-void main04()
+void main104()
 {
 	MyCicle		c1, c2, c3; //用类 定义 变量 对象
 	double		r1, r2, r3;

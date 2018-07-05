@@ -19,7 +19,7 @@ protected:
 		int a;
 };
 
-void main51()
+void main501()
 {
 	Teacher t1; //
 	t1.age = 10;

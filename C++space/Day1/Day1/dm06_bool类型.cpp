@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void main()
+void main601()
 {
 	bool b1 = true;  //告诉c++编译器给我分配 1个字节的内存
 

@@ -4,7 +4,7 @@ using namespace std;
 //1文件中iostream 没有引入标准的 std ; 需要我们程序员手工的写
 //2 如果不写 using namespace std; 需要显示的引入std
 
-void main31()
+void main301()
 {
 	std::cout<<"namespace test"<<std::endl;
 
@@ -33,7 +33,7 @@ namespace  namespaceB
 
 //4 使用命名空间
 //
-void main()
+void main302()
 {
 	using namespace namespaceA;
 	using namespace namespaceB;
