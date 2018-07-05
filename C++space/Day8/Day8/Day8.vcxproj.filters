@@ -26,10 +26,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\02_C++基础\02_C++基础\c++基础day08\源码\dm01_函数指针语法基础.c">
+    <ClCompile Include="dm02_函数指针做函数参数的思想剖析.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="D:\超适合自学的C++基础视频_深入浅出版\02_C++基础\02_C++基础\c++基础day08\源码\dm02_函数指针做函数参数的思想剖析.c">
+    <ClCompile Include="dm01_函数指针语法基础.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
