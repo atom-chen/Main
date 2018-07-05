@@ -24,8 +24,8 @@ struct MSG
 	int msgCode;
 	char data[1024];
 }
-void Server(struct MSG msg);
-void SendRes(struct MSG msg);
+void Server(const MSG& msg);
+void SendRes(const MSG& msg);
 
 struct  Client
 {
@@ -60,16 +60,17 @@ int main(int argc, char const *argv[])
 	}
 	return 0;
 }
-void Server(struct MSG msg)
+//消息处理
+void Server(const MSG& msg)
 {
 	switch(msg.msgCode)
 	{
 	case ONLINE:
-	    struct Client client;
 	    //try connect to client fifo
 	    int fd=open(msg.data,O_WRONLY);
 	    if(fd>0)
 	    {
+	        struct Client client;
 	        client.fd=fd;
 	        clientAddr.insert(std::pair<int,Client>(msg.send,client));
 	    }
@@ -86,8 +87,10 @@ void Server(struct MSG msg)
         SendRes(msg);
 		break;
 	}
+	memset(msg,0,sizeof(msg));
 }
-void SendRes(struct MSG msg)
+//向客户端发送消息
+void SendRes(const MSG& msg)
 {
 	auto it=clientAddr.find(msg.send);
 	if(it!=clientAddr.end())

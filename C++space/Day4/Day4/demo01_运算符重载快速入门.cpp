@@ -24,7 +24,7 @@ Complex operator+(Complex &c1, Complex &c2)
 	return c3;
 }
  
-void main22()
+void main1()
 {
 	int a = 0, b = 0;
 	int c;//基础数据类型 编译器知道如何运算

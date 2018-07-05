@@ -69,7 +69,7 @@ void objplaymain()
 	obj1 = obj2 = obj3;
 }
 
-void main()
+void main3()
 {
 	objplaymain();
 	cout << "hello..." << endl;

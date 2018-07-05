@@ -25,7 +25,7 @@ int pppp()
 	
 	return 0;
 }
-int main()
+int main1()
 {
 	pppp();
 	ABCD(2, 2);

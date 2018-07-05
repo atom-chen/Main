@@ -7,7 +7,7 @@ class BB
 public:
 	void printC()
 	{
-		cout<<"c:"<<c<<endl;
+		cout<<"c = "<<c<<endl;
 	}
 	void AddC()
 	{
@@ -17,7 +17,7 @@ public:
 	{
 		cout<<"c:"<<c<<endl;
 		//请在静态成员函数中,能调用 普通成员属性  或者 普通成员函数吗?
-		cout<<"a:"<<a<<endl; //error C2597: 对非静态成员“BB::a”的非法引用
+		//cout<<"a:"<<a<<endl; //error C2597: 对非静态成员“BB::a”的非法引用
 	}
 protected:
 private:
@@ -29,7 +29,7 @@ private:
 //静态函数中 不能使用 普通成员变量 普通成员函数 ..
 int BB::c = 10;
 
-void main()
+void main1501()
 {
 	
 	BB b1, b2, b3;
@@ -42,8 +42,4 @@ void main()
 	b3.getC(); //用对象.
 	BB::getC();//类::
 
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

@@ -22,7 +22,7 @@ public:
 
 
 //
-void main()
+void main06()
 {
 	
 	F f;
@@ -33,7 +33,5 @@ void main()
 	//
 	//operator() (int a, int b)
 
-	cout<<"hello..."<<endl;
-	system("pause");
 	return ;
 }

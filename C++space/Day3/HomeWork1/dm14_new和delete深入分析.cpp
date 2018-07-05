@@ -11,7 +11,7 @@ using namespace std;
 //3		
 
 ////分配基础类型
-void main01()
+void main1401()
 {
 	// 
 	int *p = (int *)malloc(sizeof(int));
@@ -34,7 +34,7 @@ void main01()
 }
 
 //分配数组变量
-void main02()
+void main1402()
 {
 	//c语言分配数组
 	int *p = (int *)malloc(sizeof(int) * 10);  //int array[10];
@@ -57,16 +57,16 @@ void main02()
 	return ;
 }
 
-class Test
+class Test14
 {
 public:
-	Test(int _a)
+	Test14(int _a)
 	{
 		a = _a;
 		cout<<"构造函数执行" <<endl;
 	}
 
-	~Test()
+	~Test14()
 	{
 		cout<<"析构函数执行" <<endl;
 	}
@@ -82,18 +82,15 @@ private:
 //	malloc 	free函数 C
 //1 new 	delete 操作符号 c++的关键字
 //结论
-void main()
+void main1403()
 {
 	//c 
-	Test *pT1 = (Test *)malloc(sizeof(Test));
-	//free(pT1);
-	delete pT1;
+	Test14 *pT1 = (Test14 *)malloc(sizeof(Test14));
+	free(pT1);//不执行析构函数
+	//delete pT1; 
 
 	//c++
-	Test *pT2 = new Test(10);
-	//delete pT2;
-	free(pT2);
-
-	cout<<"hello..."<<endl;
-	system("pause");
+	Test14 *pT2 = new Test14(10);
+	delete pT2;
+	//free(pT2);
 }

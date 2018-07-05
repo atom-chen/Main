@@ -22,7 +22,7 @@ public:
 	}
 	~MyTest()
 	{
-		printf("MyTest~:%d, %d, %d\n", a, b, c);
+		printf("OnDestroy,MyTest~:%d, %d, %d\n", a, b, c);
 	}
 
 protected:
@@ -36,10 +36,9 @@ public:
 	void setC(int val) { c = val; }
 };
 
-int main()
+int main1201()
 {
 	MyTest t1(1, 2);
-	printf("c:%d", t1.getC()); //请问c的值是？
-	system("pause");
+	printf("c:%d \n", t1.getC()); //请问c的值是？ 未赋值，随机
 	return 0;
 }

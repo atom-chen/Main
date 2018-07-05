@@ -56,7 +56,7 @@ Complex2 operator++(Complex2 &c1,int)
 	return tmp;
 }
 
-void main222()
+void main2()
 {
 
 	Complex2 c1(1, 2), c2(3, 4); 

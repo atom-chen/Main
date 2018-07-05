@@ -1,10 +1,10 @@
 
 #include <iostream>
 using namespace std;
-class Test
+class Test17
 {
 public:
-	Test(int a, int b) //---> Test(Test *this, int a, int b)
+	Test17(int a, int b) //---> Test(Test *this, int a, int b)
 	{
 		this->a = a;
 		this-> b = b;	
@@ -20,10 +20,10 @@ private:
 	int b;
 };
 
-void main()
+void main1701()
 {
 	
-	Test t1(1, 2);
+	Test17 t1(1, 2);
 	t1.printT();// ===> printT(&t1)
 	cout<<"hello..."<<endl;
 	system("pause");

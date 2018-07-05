@@ -34,9 +34,14 @@ Complex operator+(Complex &c1, Complex &c2)
 	return tmp; //
 }
 
+Complex operator/(Complex &c1, Complex &c2)
+{
+	cout << "12345上山 打老虎" << endl;
+	Complex tmp(c1.a / c2.a, c1.b / c2.b);
+	return tmp; //
+}
 
-
-void main()
+void main101()
 {
 	
 	int a = 0, b = 0;

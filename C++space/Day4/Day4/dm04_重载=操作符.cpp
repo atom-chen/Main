@@ -75,7 +75,7 @@ void objplaymain()
 	//obj1 = void;
 }
 
-void main()
+void main401()
 {
 	objplaymain();
 	cout<<"hello..."<<endl;

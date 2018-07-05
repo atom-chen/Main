@@ -82,7 +82,7 @@ void main03()
 	cout<<s4<<endl;
 }
 
-void main011()
+void main04()
 {
 	MyString s1(128);
 	cout<<"\n请输入字符串(回车结束)";
@@ -93,7 +93,7 @@ void main011()
 	
 }
 
-void main()
+void main05()
 {
 	MyString s1(128);
 	cout<<"\n请输入字符串(回车结束)";

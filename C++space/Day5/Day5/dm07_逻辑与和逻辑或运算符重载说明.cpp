@@ -30,7 +30,7 @@ public:
 };
 
 // && ´Ó×óÏòÓÒ
-void main()
+void main07()
 {
 	int a1 = 0;
 	int a2 = 1;

@@ -39,7 +39,7 @@ private:
 	int b;
 };
 
-void main()
+void main1701()
 {
 
 	int *m_space = new int[0];

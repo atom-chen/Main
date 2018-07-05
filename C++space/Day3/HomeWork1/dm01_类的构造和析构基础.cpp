@@ -3,10 +3,10 @@
 #include <iostream>
 using namespace std;
 
-class Test
+class Test1
 {
 public:
-	Test()  //无参数 构造函数
+	Test1()  //无参数 构造函数
 	{
 		a = 10;  //作用完成对属性的初始化工作
 		p = (char *)malloc(100);
@@ -18,7 +18,7 @@ public:
 		cout<<p<<endl;
 		cout<<a<<endl;
 	}
-	~Test() //析构函数
+	~Test1() //析构函数
 	{
 		if (p != NULL)
 		{
@@ -37,11 +37,11 @@ private:
 void objplay()
 {
 	//先创建的对象 后释放
-	Test t1;
+	Test1 t1;
 	t1.print();
 
 	printf("分隔符\n");
-	Test t2;
+	Test1 t2;
 	t2.print();
 }
 void main101()

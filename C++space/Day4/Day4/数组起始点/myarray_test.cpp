@@ -5,7 +5,7 @@ using namespace std;
 
 //类的框架设计完毕
 //类的测试案例
-void main()
+void main5()
 {
 	
 	Array  a1(10);

@@ -47,22 +47,19 @@ void main1302()
 	char *pArray2 = new char[25] ; //char buf[25]
 	delete [] pArray2;
 	
-
-	cout<<"hello..."<<endl;
-	system("pause");
 	return ;
 }
 
-class Test
+class Test13
 {
 public:
-	Test(int _a)
+	Test13(int _a)
 	{
 		a = _a;
 		cout<<"构造函数执行" <<endl;
 	}
 
-	~Test()
+	~Test13()
 	{
 		cout<<"析构函数执行" <<endl;
 	}
@@ -74,16 +71,14 @@ private:
 
 //分配对象new delete
 //相同 和 不同的地方 new能执行类型构造函数   delete操作符 能执行类的析构函数
-void main()
+void main1303()
 {
 	//c 
-	Test *pT1 = (Test *)malloc(sizeof(Test));
+	Test13 *pT1 = (Test13 *)malloc(sizeof(Test13));
 	free(pT1);
 
 	//c++
-	Test *pT2 = new Test(10);
+	Test13 *pT2 = new Test13(10);
 	delete pT2;
 
-	cout<<"hello..."<<endl;
-	system("pause");
 }

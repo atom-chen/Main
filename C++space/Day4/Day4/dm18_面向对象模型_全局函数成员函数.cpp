@@ -62,7 +62,7 @@ Test TestAdd(Test &t1, Test &t2)
 	return tmp;
 }
 
-void main()
+void main1801()
 {
 	Test t1(1, 2);
 	Test t2(3, 4);
@@ -72,7 +72,7 @@ void main()
 	t1.printT();
 }
 
-void main181()
+void main1802()
 {
 	Test t1(1, 2);
 	Test t2(3, 4);

@@ -1,8 +1,7 @@
 
 #include <iostream>
 using namespace std;
-
-class Test
+class Test8
 {
 public:
 	
@@ -16,10 +15,8 @@ public:
 // 	{
 // 		;
 // 	}
-	Test()
-	{
 
-	}
+
 	
 	void printT()
 	{
@@ -27,6 +24,7 @@ public:
 	}
 
 protected:
+	Test8() = default;
 private:
 	int a;
 	int b;
@@ -37,10 +35,9 @@ private:
 
 //在定义类时, 只要你写了构造函数,则必须要用
 
-void main81()
+void main801()
 {
 	//Test t1; //调用无参构造函数
-	cout<<"hello..."<<endl;
 	system("pause");
 	return ;
 }

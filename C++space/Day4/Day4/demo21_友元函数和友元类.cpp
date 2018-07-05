@@ -43,7 +43,7 @@ void modifyA(A *pa)
 	pa->a = 100;
 }
 
-int main22()
+int main4()
 {
 	A a(1, 2);
 	//cout << "a=" << a.getA() << endl;

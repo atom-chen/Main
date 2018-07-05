@@ -10,7 +10,7 @@ public:
 };
 
 
-int main()
+int main1()
 {
 	F f;
 	cout<<f(2, 4)<<endl;

@@ -10,7 +10,7 @@ using namespace std;
 class ABCD 
 {
 public:
-	ABCD(int a, int b, int c)
+	ABCD(int a, int b, int c) :a(a), b(b), c(c)
 	{
 		this->a = a;
 		this->b = b;
@@ -76,7 +76,7 @@ int run3()
 {
 	printf("run3 start..\n");
 
-	//ABCD(400, 500, 600); //临时对象的生命周期  
+	ABCD(400, 500, 600); //临时对象的生命周期  ->没人来接，构造后直接析构
 
 	ABCD abcd = ABCD(100, 200, 300);
 	//若直接调用构造函数呢？
@@ -87,11 +87,10 @@ int run3()
 	return 0;
 }
 
-int main()
+int main1101()
 {
 	//run2();
 	run3();
-	system("pause");
 	return 0;
 }
 

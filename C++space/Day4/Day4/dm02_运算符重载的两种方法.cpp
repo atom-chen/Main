@@ -64,7 +64,7 @@ Complex& operator++(Complex &c1)
 	return c1;
 }
 
-//后置++
+//后置++（占位参数）
 Complex operator++(Complex &c1, int)
 {
 	//先使用 在让c1加加
@@ -81,7 +81,7 @@ Complex operator++(Complex &c1, int)
 	2）根据操作数，写出函数参数 
 	3）根据业务，完善函数返回值(看函数是返回引用 还是指针 元素)，及实现函数业务
 */
-void main()
+void main201()
 {
 	Complex c1(1, 2), c2(3, 4);
 

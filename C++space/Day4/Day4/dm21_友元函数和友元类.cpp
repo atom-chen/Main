@@ -70,14 +70,14 @@ gcc -c hello.c或gcc -c hello.c -o hello.o（编译生成可重定位目标文件）
 
  
 
-void main()
+void main2101()
 {
 	B b1;
 	b1.Set(300);
 	b1.printB();
 	system("pause");
 }
-void main2101()
+void main2102()
 {
 	
 	A a1(1, 2);

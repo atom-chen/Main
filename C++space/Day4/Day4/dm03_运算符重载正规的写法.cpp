@@ -80,7 +80,7 @@ public:
 };
 
 
-void main31()
+void main301()
 {
 	Complex c1(1, 2), c2(3, 4);
 
@@ -134,7 +134,7 @@ ostream& operator<<(ostream &out, Complex &c1)
 	return out;
 }
 
-void main()
+void main302()
 {
 	int a = 10;
 	Complex c1(1, 2), c2(3, 4);
