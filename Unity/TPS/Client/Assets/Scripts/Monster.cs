@@ -184,11 +184,20 @@ public class Monster : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             BulletPool.Instance.GCBullet(other.gameObject);
-            m_Animator.SetTrigger("IsHit");
-            ParticalPool.Instance.PlayBloodDecal(footTrans.position);
-            ParticalPool.Instance.PlayBloodEffect(other.transform.position);
-            m_HP -= 50;
+            OnDamage(other.transform.position);
         }
+    }
+
+    /// <summary>
+    /// 被攻击时调用
+    /// </summary>
+    /// <param name="beAttackPos">被击中的位置</param>
+    public void OnDamage(Vector3 beAttackPos)
+    {
+        m_Animator.SetTrigger("IsHit");
+        ParticalPool.Instance.PlayBloodDecal(footTrans.position);
+        ParticalPool.Instance.PlayBloodEffect(beAttackPos);
+        m_HP -= 50;
     }
     void OnPlayerDie()
     {

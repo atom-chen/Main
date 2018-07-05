@@ -295,7 +295,7 @@ public class Driver : MonoBehaviour
 
         //2 划痕
         WheelHit hit;
-        //左轮
+        //检测车轮是否与地面接触
         if (m_BLWheel.GetGroundHit(out hit))
         {
             if (m_PreLeftSkidPos != Vector3.zero)
@@ -305,7 +305,7 @@ public class Driver : MonoBehaviour
 
                 Quaternion rotation = Quaternion.LookRotation(hit.point - m_PreLeftSkidPos);//当前点-上一个点，形成一个方向
 
-                GameObject.Instantiate(m_SkidMask, pos, rotation);
+                GameObject.Instantiate(m_SkidMask, pos, rotation);//在正确的方向处理划痕
             }
             m_PreLeftSkidPos = hit.point;
         }

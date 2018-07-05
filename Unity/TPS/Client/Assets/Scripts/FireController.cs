@@ -5,12 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class FireController : MonoBehaviour {
     private Transform m_FirePos;
-    private const float m_CD = 0.25f;
+    private const float m_CD = 0.1f;
     private float m_NextFire = 0;
     public AudioClip m_AudioClip;
 
     private MeshRenderer m_Render;
     private Transform m_FireRenderTrans;
+
+    private int AttackState = 1;
 
 	void Start () 
     {
@@ -23,8 +25,9 @@ public class FireController : MonoBehaviour {
 
 	void Update () 
     {
+        Debug.DrawRay(m_FirePos.position, m_FirePos.forward * 10.0f, Color.red);
         m_NextFire += Time.deltaTime;
-        if (Input.GetMouseButtonDown(0) && m_NextFire>=m_CD)
+        if (Input.GetMouseButton(0) && m_NextFire>=m_CD)
         {
             Attack();
             m_NextFire = 0;
@@ -33,12 +36,37 @@ public class FireController : MonoBehaviour {
 
     public void Attack()
     {
+        switch(AttackState)
+        {
+            case 0:
+                Attack0();
+                break;
+            case 1:
+                Attack1();
+                break;
+        }
+        AudioManager.Instance.PlayGun(m_FirePos.position);
+        StartCoroutine(ShowMuzzFlash());
+    }
+    void Attack0()
+    {
         Transform bullet = BulletPool.Instance.GetBullet();
         bullet.position = m_FirePos.position;
         bullet.rotation = m_FirePos.rotation;
         bullet.gameObject.SetActive(true);
-        AudioManager.Instance.PlayGun(m_FirePos.position);
-        StartCoroutine(ShowMuzzFlash());
+    }
+
+    void Attack1()
+    {
+        RaycastHit ray;
+        if(Physics.Raycast(m_FirePos.position,m_FirePos.forward,out ray,10.0f))
+        {
+            if(ray.collider.tag=="MONSTER")
+            {
+                Vector3 para = ray.point;
+                ray.collider.gameObject.SendMessage("OnDamage", para, SendMessageOptions.DontRequireReceiver);
+            }
+        }
     }
 
     IEnumerator ShowMuzzFlash()
