@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void myPrint(int x = 3)
+void myPrint15(int x = 3)
 {
 	cout<<"x"<<x<<endl;
 }
@@ -14,12 +14,12 @@ void myPrint2( int m, int n, int x = 3, int y = 4)
 {
 	cout<<"x"<<x<<endl;
 }
-
-void main_默认参数()
+//默认参数
+void main1501()
 {
 	
-	myPrint(4);
-	myPrint(); 
+	myPrint15(4);
+	myPrint15();
 
 	//
 	cout<<"hello..."<<endl;
@@ -29,16 +29,16 @@ void main_默认参数()
 
 //函数占位参数 函数调用是,必须写够参数
 
-void func1(int a, int b, int)
+void func1_15(int a, int b, int)
 {
 	cout<<"a"<<a<<" b"<<b<<endl;
 }
-
-void main_占位参数()
+//占位参数
+void main1502()
 {
 	
 	//func1(1, 2); //err调用不起来
-	func1(1, 2, 3);
+	func1_15(1, 2, 3);
 
 	cout<<"hello..."<<endl;
 	system("pause");
@@ -47,15 +47,15 @@ void main_占位参数()
 
 //默认参数和占位参数
 
-void  func2(int a, int b, int =0)
+void  func2_15(int a, int b, int =0)
 {
 	cout<<"a="<<a<<";b="<<b<<endl;
 }
 
-void main()
+void main1503()
 {
-	func2(1, 2); //0k
-	func2(1, 2, 3); //ok
+	func2_15(1, 2); //0k
+	func2_15(1, 2, 3); //ok
 	
 	cout<<"hello..."<<endl;
 	system("pause");

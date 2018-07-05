@@ -73,7 +73,7 @@ void TestNoNameObj()
 
 }
 
-void main()
+void main701()
 {
 	//objplaymain();
 	objplaymain72();

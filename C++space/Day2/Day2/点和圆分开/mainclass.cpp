@@ -5,10 +5,10 @@ using namespace std;
 #include "AdvCircle.h"
 #include "MyPoint.h"
 
-void main()
+void main1()
 {
-	AdvCircle c1;
-	MyPoint p1;
+	Circle c1;
+	Point p1;
 
 	c1.setCircle(2, 3, 3);
 	p1.setPoint(7, 7);

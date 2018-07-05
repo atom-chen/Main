@@ -4,7 +4,7 @@
 using namespace std;
 #include "MyTeacher.h"
 
-void mainxxx()
+void main2()
 {
 	MyTeacher t1;
 	t1.setAge(36);

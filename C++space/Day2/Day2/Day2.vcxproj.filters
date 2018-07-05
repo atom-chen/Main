@@ -16,6 +16,9 @@
     <Filter Include="点和圆分开">
       <UniqueIdentifier>{291fa560-0e24-4bb0-9428-56a1bc4788bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Teacher">
+      <UniqueIdentifier>{b8ea7a3b-7e35-4ff0-aaaf-304661933afb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dm01_类的封装.cpp">
@@ -45,12 +48,6 @@
     <ClCompile Include="dm17_函数重载和函数指针在一起.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="mainclass.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyTeacher.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="点和圆分开\AdvCircle.cpp">
       <Filter>点和圆分开</Filter>
     </ClCompile>
@@ -60,16 +57,22 @@
     <ClCompile Include="点和圆分开\MyPoint.cpp">
       <Filter>点和圆分开</Filter>
     </ClCompile>
+    <ClCompile Include="MyTeacher.cpp">
+      <Filter>Teacher</Filter>
+    </ClCompile>
+    <ClCompile Include="mainclass.cpp">
+      <Filter>Teacher</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyTeacher.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="点和圆分开\MyPoint.h">
       <Filter>点和圆分开</Filter>
     </ClInclude>
     <ClInclude Include="点和圆分开\AdvCircle.h">
       <Filter>点和圆分开</Filter>
+    </ClInclude>
+    <ClInclude Include="MyTeacher.h">
+      <Filter>Teacher</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -26,7 +26,7 @@ public:
 	}
 
 	//赋值构造函数 (copy构造函数) //
-	Test4(const Test4& obj )
+	/*explicit*/ Test4(const Test4& obj )
 	{
 		cout<<"我也是构造函数 " <<endl;
 		m_b = obj.m_b + 100;
@@ -45,7 +45,7 @@ private:
 };
 
 //1  赋值构造函数 用1个对象去初始化另外一个对象  
-void main41()
+void main401()
 {
 	Test4 t1(1, 2);
 	Test4 t0(1, 2);
@@ -55,7 +55,7 @@ void main41()
 	t0 = t1; //用t1 给 t0赋值  到操作 和 初始化是两个不同的概念
 
 	//第1种调用方法
-	Test4 t2 = t1; //用t1来初始化 t2 
+	Test4 t2 = t1; //用t1来初始化 t2   若explicit关键字声明则这种调用会报错
 	t2.printT();
 	
 	cout<<"hello..."<<endl;
@@ -64,7 +64,7 @@ void main41()
 }
 
 //第二种调用时机
-void main44()
+void main402()
 {
 	Test4 t1(1, 2);
 	Test4 t0(1, 2);

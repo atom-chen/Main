@@ -37,7 +37,7 @@ typedef void (*myPTypeFunc)(int a,int b) ;  //声明了一个指针的数据类型
 void (*myVarPFunc)(int a, int b);
 //
 
-void main()
+void main1701()
 {
 	myPTypeFunc fp; //定义了一个 函数指针 变量  
 

@@ -51,7 +51,7 @@ private:
 };
 
 //MFC cocos2d-x 
-void main()
+void main301()
 {
 	AdvCircle c1;
 	MyPoint p1;
@@ -75,7 +75,7 @@ void main()
 	return ;
 }
 
-void main111()
+void main302()
 {	
 	//∂®“Âµ„
 	int x0 = 1;

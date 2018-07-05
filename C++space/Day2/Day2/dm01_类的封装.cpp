@@ -59,7 +59,7 @@ void printCircle03(MyCircle myc)
 {
 
 }
-void main_类的封装第一层含有()
+void main101()
 {
 	MyCircle c1, c2;
 	c1.setR(10);
@@ -106,7 +106,7 @@ public:
 	}
 };
 
-void main_02()
+void main102()
 {
 	MyAdvCircle c1, c2;
 	//c1.m_r = 10; 
@@ -125,7 +125,7 @@ protected:
 private:
 };
 
-void main()
+void main103()
 {
 	AAA a1;
 	a1.a = 11;

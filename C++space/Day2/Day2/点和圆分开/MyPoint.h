@@ -1,6 +1,6 @@
 #pragma once
 
-class MyPoint
+class Point
 {
 public:
 	void setPoint(int _x1, int _y1);	

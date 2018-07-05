@@ -1,6 +1,20 @@
 
 #include <iostream>
 using namespace std;
+//我们可以通过定义一个只含有引用的类来解决这个问题：
+
+class refClass
+{
+private:
+	double& ref;
+public:
+	refClass(double var = 42.0) :ref(var)
+	{
+
+	}
+};
+
+//所以结论就是引用和指针一样实际占内存空间4个字节。
 
 //常引用的知识架构
 void main1301()
@@ -25,18 +39,19 @@ void main1301()
 	//2> 用字面量 初始化 常量引用
 	{
 		const int a = 40;  //c++编译器把a放在符号表中
-		int &m = 41; //普通引用 引用一个字面量 请问字面量有没有内存地址
+		//int &m = 41; //普通引用 引用一个字面量 请问字面量有没有内存地址
 		//引用 就是给内存取多个门牌号 (多个别名)
 		//printf("&40:%d \n", &40);
-		const int &m = 43;  //c++编译器 会 分配内存空间 
+		const char &m = 43;  //c++编译器 会 分配内存空间 ，用printf实际得到的是变量本身的大小 而非引用的大小
+
 	}
-	cout<<"hello..."<<endl;
+	cout <<"sizeof ref="<< sizeof refClass << endl;  // print 4
 	system("pause");
 	return ;
 }
 
 
-//
+
 struct Teacher
 {
 	char name[64];
@@ -53,7 +68,7 @@ void printTeacher(const Teacher &myt)
 	
 }
 
-void main()
+void main1302()
 {
 	Teacher  t1;
 	t1.age = 36;

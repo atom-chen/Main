@@ -22,12 +22,13 @@ int getTeacher(Teacher **p)
 		return -2;
 	}
 	tmp->age = 33;
-	// p是实参的地址  *实参的地址 去间接的修改实参的值
+	// p是实参的地址  *实参的地址 去间接的修改实参的值。*p存储的是堆空间的地址
 	*p = tmp; 
+	return 0;
 }
 
 
-//指针的引用 做函数参数
+//指针的引用 做函数参数  myp是一个指针的别名
 int getTeacher2(Teacher* &myp)
 {
 	//给myp赋值 相当于给main函数中的pT1赋值
@@ -37,6 +38,7 @@ int getTeacher2(Teacher* &myp)
 		return -1;
 	}
 	myp->age = 36;
+	return 0;
 }
 
 void FreeTeacher(Teacher *pT1)
@@ -46,6 +48,7 @@ void FreeTeacher(Teacher *pT1)
 		return ;
 	}
 	free(pT1);
+	pT1 = nullptr;
 }
 
 void main1201()
@@ -65,7 +68,6 @@ void main1201()
 	cout<<"age:"<<pT1->age<<endl;
 	FreeTeacher(pT1);
 
-	cout << "hello..." << endl;
 	system("pause");
 }
 

@@ -2,17 +2,17 @@
 #include <iostream>
 using namespace std;
 
-void myPrint(int a)
+void myPrint16(int a)
 {
 	printf("a:%d \n", a);
 }
 
-void myPrint(char *p)
+void myPrint16(char *p)
 {
 	printf("%s \n", p);
 }
 
-void myPrint(int a, int b)
+void myPrint16(int a, int b)
 {
 	printf("a:%d ", a);
 	printf("b:%d \n", b);
@@ -40,9 +40,9 @@ int myPrint(int a, int b)
 void main1601()
 {
 	
-	myPrint(1);
-	myPrint("111222233aaaa");
-	myPrint(1, 2);
+	myPrint16(1);
+	myPrint16("111222233aaaa");
+	myPrint16(1, 2);
 	cout<<"hello..."<<endl;
 	system("pause");
 	return ;
@@ -50,24 +50,24 @@ void main1601()
 
 // 函数重载  和  函数默认参数 在一起
 
-void myfunc(int a, int b, int c = 0)
+void myfunc16(int a, int b, int c = 0)
 {
 	printf("a:%d b:%d c:%d \n", a, b, c);
 }
 
-void myfunc(int a, int b)
+void myfunc16(int a, int b)
 {
 	printf("a:%d b:%d\n", a, b);
 }
 
-void myfunc(int a)
+void myfunc16(int a)
 {
 	printf("a:%d\n", a);
 }
 void main1602()
 {
 	//myfunc(1, 2); //函数调用时,会产生二义性
-	myfunc(1);
+	myfunc16(1);
 
 	
 	cout<<"hello..."<<endl;

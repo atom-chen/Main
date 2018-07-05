@@ -111,7 +111,7 @@ int judgeCube(Cube &v1, Cube &v2)
 }
 
 
-void main11111()
+void main201()
 {
 	Cube v1, v2;
 	v1.setABC(1, 2, 3);
@@ -148,8 +148,8 @@ void main11111()
 	system("pause");
 	return ;
 }
-
-void main01_全局函数调用()
+//全局函数调用
+void main202()
 {
 	Cube v1, v2;
 	v1.setABC(1, 2, 3);

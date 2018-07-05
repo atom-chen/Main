@@ -100,9 +100,6 @@
     <ClCompile Include="拷贝构造函数.cpp" />
     <ClCompile Include="构造析构.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="dm05_copy构造函数的调用场景3(1).o" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

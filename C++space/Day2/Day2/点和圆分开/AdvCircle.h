@@ -2,11 +2,11 @@
 #pragma once
 #include "MyPoint.h"
 
-class AdvCircle
+class Circle
 {
 public:
 	void setCircle(int _r, int _x0, int _y0);
-	int judge(MyPoint &myp);
+	int judge(Point &myp);
 
 private:
 	int r;

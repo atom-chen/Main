@@ -23,6 +23,7 @@ public:
 		if (p != NULL)
 		{
 			free(p);
+			p = nullptr;
 		}
 		cout<<"我是析构函数,被调用了" <<endl;
 	}
@@ -43,10 +44,9 @@ void objplay()
 	Test t2;
 	t2.print();
 }
-void main11()
+void main101()
 {
 	objplay();
-	cout<<"hello..."<<endl;
 	system("pause");
 	return ;
 }

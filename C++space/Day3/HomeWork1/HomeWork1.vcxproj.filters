@@ -79,7 +79,4 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="dm05_copy构造函数的调用场景3(1).o" />
-  </ItemGroup>
 </Project>
