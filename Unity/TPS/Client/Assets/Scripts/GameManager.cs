@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 yield break;
             }
+            yield return new WaitForSeconds(m_SpawnTimer);
             if(m_MonstNowCount<m_MonsterMaxCount)
             {
                 int index = Random.Range(0, m_MonstSpawnPoints.Count);
@@ -64,7 +65,6 @@ public class GameManager : MonoBehaviour
                     m_MonstNowCount++;
                 }
             }
-            yield return new WaitForSeconds(m_SpawnTimer);
         }
     }
 	

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
     private static float damage=20;//子弹伤害
-    private static float speed=10000;//子弹速度
+    private static float speed=2000;//子弹速度
     Transform trans;
     private Vector3 m_Dir;
 

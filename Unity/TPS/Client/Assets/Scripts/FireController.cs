@@ -7,7 +7,6 @@ public class FireController : MonoBehaviour {
     private Transform m_FirePos;
     private const float m_CD = 0.25f;
     private float m_NextFire = 0;
-    private AudioSource m_FireAudio;
     public AudioClip m_AudioClip;
 
     private MeshRenderer m_Render;
@@ -16,7 +15,6 @@ public class FireController : MonoBehaviour {
 	void Start () 
     {
         m_FirePos = transform.Find("FirePos");
-        m_FireAudio = this.GetComponent<AudioSource>();
         m_Render = m_FirePos.GetComponentInChildren<MeshRenderer>();
         m_FireRenderTrans = m_Render.transform;
         m_Render.enabled = false;
@@ -39,7 +37,7 @@ public class FireController : MonoBehaviour {
         bullet.position = m_FirePos.position;
         bullet.rotation = m_FirePos.rotation;
         bullet.gameObject.SetActive(true);
-        m_FireAudio.PlayOneShot(m_AudioClip, 0.9f);
+        AudioManager.Instance.PlayGun(m_FirePos.position);
         StartCoroutine(ShowMuzzFlash());
     }
 
