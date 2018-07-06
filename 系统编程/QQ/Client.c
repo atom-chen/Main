@@ -27,8 +27,8 @@ struct MSG
 
 int fd_write;
 int fd_read;
-void SendRequest(MSG* pMsg);
-void Response(const MSG* const pMsg);
+void SendRequest(struct MSG* pMsg);
+void Response(const struct MSG* const pMsg);
 void Lock(int fd);
 void UNLock(int fd);
 int main(int argc, char const *argv[])
@@ -60,16 +60,14 @@ int main(int argc, char const *argv[])
 		strcpy(msg.data,buffer);        //此时buffer存储的是fifo文件路径
 		SendRequest(&msg);
 		int ret;                       //读取到的长度
-		int receive;                  //接收方ID
-		bool isBeginInputData=false;  //是否正在接收输入data
+		char isBeginInputData=0;  //是否正在接收输入data
 		UNLock(fd_write);
 		UNLock(fd_read);
 		UNLock(STDIN_FILENO);
+		int receive=0;                  //接收方ID
 		while(1)
 		{
 			//ReSetState
-
-			receive=0;
 			memset(&msg,0,sizeof(msg));
 			memset(buffer,0,1024);		
 			//read input
@@ -80,15 +78,15 @@ int main(int argc, char const *argv[])
 				if(receive>0)
 				{
 					printf("receive=%u\n",receive);
-			        isBeginInputData=true;		
+			        isBeginInputData=1;		
 				}
 
 			}
 			else
 			{
 				Lock(STDIN_FILENO);
-				printf("\n %s","您要发送的内容： ");
 				gets(buffer);
+				printf("\n %s","您要发送的内容： ");
 				//cin>>buffer;
 				if(strlen(buffer)>0)
 				{
@@ -98,7 +96,7 @@ int main(int argc, char const *argv[])
 					strcpy(msg.data,buffer);
 					SendRequest(&msg);
 			        receive=0;
-					isBeginInputData=false;	
+					isBeginInputData=0;	
 					UNLock(STDIN_FILENO);				
 				}
 
@@ -111,18 +109,19 @@ int main(int argc, char const *argv[])
 			{
 				Response(&msg);
 			}
+			sleep(0.5f);
 		}
 	}
 	return 0;
 }
 //向服务器发出消息
-void SendRequest(MSG* pMsg)
+void SendRequest(struct MSG* pMsg)
 {
 	write(fd_write,pMsg,sizeof(*pMsg));
 	memset(pMsg,0,sizeof(*pMsg));
 }
 //处理服务器发过来的消息
-void Response(const MSG* const pMsg)
+void Response(const struct MSG* const pMsg)
 {
 	switch(pMsg->msgCode)
 	{
@@ -133,9 +132,8 @@ void Response(const MSG* const pMsg)
 }
 void Lock(int fd)
 {
-	int flags = fcntl(fd, F_GETFL, 0);               //获取当前flag	
         /* 设置为阻塞*/
-	if (fcntl(fd, F_SETFL, flags | F_SETFL) < 0)
+	if (fcntl(fd, F_SETFL,F_SETFL) < 0)
 	{
 		perror("fcntl fd_write 失败");
 		exit(-1);
