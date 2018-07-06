@@ -16,20 +16,20 @@ private:
 
 };
 
-class B1 : virtual public B //12
+class B1 : virtual public B //12 int*2 虚函数表指针*1
 {
 public:
 	int b1;
 
 };
 
-class B2 :    public B //8
+class B2 :    public B //8 int*2，没有虚表指针
 {
 public:
 	int b2;
 };
 
-class C : public B1, public B2
+class C : public B1, public B2 //int*5 其中有两个同名变量b 虚表指针*1 =24
 {
 public:
 	int c;
@@ -40,8 +40,9 @@ void main1101()
 	cout<<sizeof(B)<<endl; //4
 	cout<<sizeof(B1)<<endl; //12 //加上virtual以后 , C++编译器会在给变量偷偷增加属性
 	cout<<sizeof(B2)<<endl;  //8
-	//cout<<sizeof(B)<<endl;
-
+	cout<<sizeof(C)<<endl;   //24
+	C c;
+	//c.b = 5;  ->不明确
 	system("pause");
 
 }
@@ -57,10 +58,6 @@ void main1102()
 	//c1.b = 500; //继承的二义性 和 虚继承解决方案
 	//c1.B1::b = 500;
 	//c1.B2::b = 500;
-
-
-	cout<<"hello..."<<endl;
-	system("pause");
 	return ;
 }
 
@@ -93,6 +90,6 @@ void main1103()
 	 E e1;
 	 e1.D1::k = 100;
 	 e1.D2::k = 200;
-
+	 //e1.k = 1000;
 	system("pause");
 }

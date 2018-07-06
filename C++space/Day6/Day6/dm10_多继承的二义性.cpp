@@ -18,15 +18,16 @@ public:
 
 };
 
-class B2 : virtual  public B
+class B2 : virtual public B
 {
 public:
 	int b2;
 };
 
-class C : public B1, public B2
+class C : public B1, public B2    
 {
 public:
+
 	int c;
 };
 
@@ -38,12 +39,12 @@ void main1001()
 	c1.b2 = 200;
 	c1.c = 300;
 
-	c1.b = 500; //继承的二义性 和 虚继承解决方案
-	//c1.B1::b = 500;
-	//c1.B2::b = 500;
+	c1.b = 500; //继承的二义性 和 虚继承解决方案  ---->>>虚继承机制使得C类只继承一个来自于B的变量b
 
 	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
+	//1、如果不适用虚继承，则C里面有两个来自B2的变量b
+
+	//2、基类的多个分支必须都是虚继承
+	//c1.B1::b = 500;
+	//c1.B2::b = 500;
 }

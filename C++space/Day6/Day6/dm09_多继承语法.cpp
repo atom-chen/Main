@@ -34,10 +34,10 @@ private:
 	int  b2;
 };
 
-class B : public Base1, public Base2
+class B901 : public Base1, public Base2
 {
 public:
-	B(int b1, int b2, int c): Base1(b1), Base2(b2)
+	B901(int b1, int b2, int c) : Base1(b1), Base2(b2)
 	{
 		this->c = c;
 	}
@@ -52,11 +52,8 @@ private:
 
 void main901()
 {
-	B b1(1, 2, 3);
+	B901 b1(1, 2, 3);
 	b1.printC();
 	b1.printB1();
 	b1.printB2();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
