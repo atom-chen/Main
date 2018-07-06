@@ -84,10 +84,8 @@
     <ClCompile Include="dm03_派生类访问控制综合训练.cpp" />
     <ClCompile Include="dm04_类型兼容性原则.cpp" />
     <ClCompile Include="dm05_继承中构造和析构.cpp" />
-    <ClCompile Include="dm06_继承与组合混搭.cpp" />
     <ClCompile Include="dm06_继承和组合混搭下的构造和析构.cpp" />
     <ClCompile Include="dm07_继承中的同名成员变量和函数.cpp" />
-    <ClCompile Include="dm08_继承中的static.cpp" />
     <ClCompile Include="dm08_继承中的static关键字.cpp" />
     <ClCompile Include="dm09_多继承语法.cpp" />
     <ClCompile Include="dm10_多继承的二义性.cpp" />

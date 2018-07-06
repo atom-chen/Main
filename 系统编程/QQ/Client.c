@@ -27,8 +27,8 @@ struct MSG
 
 int fd_write;
 int fd_read;
-void SendRequest(MSG& msg);
-void Response(const MSG& msg);
+void SendRequest(MSG* pMsg);
+void Response(const MSG* const pMsg);
 void Lock(int fd);
 void UNLock(int fd);
 int main(int argc, char const *argv[])
@@ -58,7 +58,7 @@ int main(int argc, char const *argv[])
 		msg.send=pid;
 		msg.receive=-1;
 		strcpy(msg.data,buffer);        //此时buffer存储的是fifo文件路径
-		SendRequest(msg);
+		SendRequest(&msg);
 		int ret;                       //读取到的长度
 		int receive;                  //接收方ID
 		bool isBeginInputData=false;  //是否正在接收输入data
@@ -84,9 +84,7 @@ int main(int argc, char const *argv[])
 				}
 
 			}
-
-
-			if(isBeginInputData)
+			else
 			{
 				Lock(STDIN_FILENO);
 				printf("\n %s","您要发送的内容： ");
@@ -98,9 +96,10 @@ int main(int argc, char const *argv[])
 					msg.receive=receive;
 					msg.msgCode=CHAT;
 					strcpy(msg.data,buffer);
-					SendRequest(msg);
+					SendRequest(&msg);
 			        receive=0;
-					isBeginInputData=false;					
+					isBeginInputData=false;	
+					UNLock(STDIN_FILENO);				
 				}
 
 			}
@@ -110,25 +109,25 @@ int main(int argc, char const *argv[])
 			ret=read(fd_read,&msg,1024);;
 			if(ret>0)
 			{
-				Response(msg);
+				Response(&msg);
 			}
 		}
 	}
 	return 0;
 }
 //向服务器发出消息
-void SendRequest(MSG& msg)
+void SendRequest(MSG* pMsg)
 {
-	write(fd_write,&msg,sizeof(msg));
-	memset(&msg,0,sizeof(msg));
+	write(fd_write,pMsg,sizeof(*pMsg));
+	memset(pMsg,0,sizeof(*pMsg));
 }
 //处理服务器发过来的消息
-void Response(const MSG& msg)
+void Response(const MSG* const pMsg)
 {
-	switch(msg.msgCode)
+	switch(pMsg->msgCode)
 	{
 		case CHAT:
-		    printf("%u said:%s \n",msg.send,msg.data);
+		    printf("%u said:%s \n",pMsg->send,pMsg->data);
 		break;
 	}
 }

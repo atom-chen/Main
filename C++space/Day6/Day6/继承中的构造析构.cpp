@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
-/*
-class Parent{
+
+class Parent1{
 public:
 	void printP(int a,int b)
 	{
@@ -9,17 +9,17 @@ public:
 		this->b = b;
 		cout << "我是爸爸" << endl;
 	}
-	Parent(int a, int b)
+	Parent1(int a, int b)
 	{
 		this->a = a;
 		this->b = b;
 		cout << "父类构造函数" << endl;
 	}
-	Parent(const Parent& obj)
+	Parent1(const Parent1& obj)
 	{
 		cout << "父类拷贝构造" << endl;
 	}
-	~Parent()
+	~Parent1()
 	{
 		cout << "父类析构函数" << endl;
 	}
@@ -27,18 +27,18 @@ private:
 	int a,b;
 };
 
-class Child : public Parent{
+class Child1 : public Parent1{
 public:
 	void printC()
 	{
 		cout << "我是崽" << endl;
 	}
-	Child(int a,int b,int c) :Parent(a,b)
+	Child1(int a, int b, int c) :Parent1(a, b)
 	{
 		this->c = c;
 		cout << "子类构造函数" << endl;
 	};
-	~Child()
+	~Child1()
 	{
 		cout << "子类析构函数" << endl;
 	}
@@ -46,7 +46,7 @@ private:
 	int c;
 };
 
-void haotoPrint(Parent *base)
+void haotoPrint(Parent1 *base)
 {
 	base->printP(1,2);
 }
@@ -54,13 +54,12 @@ void haotoPrint(Parent *base)
 
 void mainplayer()
 {
-	Child(1,2,3);
+	Child1(1, 2, 3);
 
 	
 }
-void main44()
+void main1()
 {
 	mainplayer();
 	system("pause");
 }
-*/

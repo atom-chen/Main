@@ -13,16 +13,16 @@ using namespace std;
 	4、析构函数调用的先后顺序与构造函数相反
 */
 
-class Parent
+class Parent501
 {
 public:
-	Parent(int a, int b)
+	Parent501(int a, int b)
 	{
 		this->a = a;
 		this->b = b;
 		cout<<"父类构造函数..."<<endl;
 	}
-	~Parent()
+	~Parent501()
 	{
 		cout<<"析构函数..."<<endl;
 	}
@@ -39,15 +39,15 @@ private:
 };
 
 
-class child : public Parent
+class child501 : public Parent501
 {
 public:
-	child(int a, int b, int c) : Parent(a, b)
+	child501(int a, int b, int c) : Parent501(a, b)
 	{
 		this->c = c;
 		cout<<"子类的构造函数"<<endl;
 	}
-	~child()
+	~child501()
 	{
 		cout<<"子类的析构"<<endl;
 	}
@@ -63,11 +63,11 @@ private:
 
 void playObj()
 {
-	child c1(1, 2, 3);
+	child501 c1(1, 2, 3);
 }
-void main()
+void main501()
 {
-	//Parent p(1, 2);
+	//Parent501 p(1, 2);
 	playObj();
 
 

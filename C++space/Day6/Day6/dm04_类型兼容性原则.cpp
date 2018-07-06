@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class Parent
+class Parent401
 {
 public:
 	void printP()
@@ -10,12 +10,12 @@ public:
 		cout<<"我是爹..."<<endl;
 	}
 
-	Parent()
+	Parent401()
 	{
 		cout<<"parent构造函数"<<endl;
 	}
 
-	Parent(const Parent &obj)
+	Parent401(const Parent401 &obj)
 	{
 		cout<<"copy构造函数"<<endl;
 	}
@@ -24,7 +24,7 @@ private:
 	int a;
 };
 
-class child : public Parent
+class child401 : public Parent401
 {
 public:
 	void printC()
@@ -50,31 +50,32 @@ private:
 
 
 //C++编译器 是不会报错的 .....
-void howToPrint(Parent *base)
+void howToPrint(Parent401 *base)
 {
 	base->printP(); //父类的 成员函数 
 
 }
 
-void howToPrint2(Parent &base)
+void howToPrint2(Parent401 &base)
 {
 	base.printP(); //父类的 成员函数 
 }
-void main()
-{
-	//
 
-	Parent p1;
+void main401()
+{
+	//里氏替换原则
+
+	Parent401 p1;
 	p1.printP();
 
-	child c1;
+	child401 c1;
 	c1.printC();
 	c1.printP();
 
 
 	//赋值兼容性原则 
 	//1-1 基类指针 (引用) 指向 子类对象
-	Parent *p = NULL;
+	Parent401 *p = NULL;
 	p = &c1;
 	p->printP();  
 
@@ -92,10 +93,7 @@ void main()
 
 	//可以让子类对象   初始化   父类对象
 	//子类就是一种特殊的父类
-	Parent p3 = c1;
+	Parent401 p3 = c1;
 
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
+	
 }

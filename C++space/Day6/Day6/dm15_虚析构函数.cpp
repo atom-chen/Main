@@ -79,7 +79,7 @@ void howtodelete(B *base)
 	delete base;  //这句话不会表现成多态 这种属性
 }
 */
-void main()
+void main1501()
 {
 	C *myC = new C; //new delete匹配
 	//

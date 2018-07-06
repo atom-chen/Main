@@ -46,7 +46,7 @@ void howToPrint2(Parent &base)
 {
 	base.print();
 }
-void main()
+void main1301()
 {
 	
 	Parent	*base = NULL;

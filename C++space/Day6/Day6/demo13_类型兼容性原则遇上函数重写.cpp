@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 
-class Parent{
+class Parent3{
 public:
-	Parent(int a)
+	Parent3(int a)
 	{
 		this->a = a;
 		cout << "a" << a << endl;
@@ -18,9 +18,9 @@ private:
 	int a;
 };
 
-class Child : public Parent{
+class Child : public Parent3{
 public:
-	Child(int b) :Parent(b)
+	Child(int b) :Parent3(b)
 	{
 		this->b = b;
 		cout << "b" << b << endl;

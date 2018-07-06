@@ -50,7 +50,7 @@ private:
 	int c;
 };
 
-void main()
+void main901()
 {
 	B b1(1, 2, 3);
 	b1.printC();

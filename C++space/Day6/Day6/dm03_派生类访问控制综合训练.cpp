@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class A
+class A301
 {
 private:
 	int a;
@@ -14,7 +14,7 @@ protected:
 public:
 	int c;
 
-	A()
+	A301()
 	{
 		a = 0;		b = 0;		c = 0;
 	}
@@ -24,7 +24,7 @@ public:
 		this->a = a;		this->b = b;		this->c = c;
 	}
 };
-class B : public A
+class B301 : public A301
 {
 public:
 	void print()
@@ -35,7 +35,7 @@ public:
 	}
 };
 
-class C : protected A
+class C301 : protected A301
 {
 public:
 	void print()
@@ -46,7 +46,7 @@ public:
 	}
 };
 
-class D : private A
+class D301 : private A301
 {
 public:
 	void print()
@@ -57,13 +57,13 @@ public:
 	}
 };
 
-int main()
+int main301()
 {
 	
-	A aa;
-	B bb;
-	C cc;
-	D dd;
+	A301 aa;
+	B301 bb;
+	C301 cc;
+	D301 dd;
 
 	aa.c = 100;  //ok
 	bb.c = 100; // ok

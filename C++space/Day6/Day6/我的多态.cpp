@@ -6,10 +6,11 @@ public:
 	int hp;
 	int atk;
 	int damage;	
+	virtual void  Attack(gameObject &enemy) = 0;
 };
 class Hero :public gameObject{
 public:
-	virtual void  atkMonst(gameObject &monst)
+	virtual void  Attack(gameObject &monst)
 	{
 		monst.hp = monst.hp-(this->atk - monst.damage);
 	}
@@ -23,7 +24,7 @@ public:
 		this->atk = 100;
 		this->damage = 0;
 	}
-	virtual void atkMonst(gameObject &monst)
+	virtual void Attack(gameObject &monst)
 	{
 		cout << "我是易大师，我在偷大龙" << "atk="<<atk<<"hp="<<hp<<endl;
 		monst.hp -= (this->atk - monst.damage);
@@ -34,7 +35,7 @@ public:
 
 class Monst :public gameObject{
 public:
-	virtual void atkPlayer(Hero &hero)
+	virtual void Attack(gameObject &hero)
 	{
 		hero.hp -= this->atk - hero.damage;
 	}
@@ -48,7 +49,7 @@ public:
 		this->atk = 10;
 		this->damage = 50;	
 	}
-	void atkPlayer(Hero &hero)
+	void Attack(gameObject &hero)
 	{
 		cout << "我是Boss，我在攻击玩家" << "atk=" << atk << "hp=" << hp << endl;
 		hero.hp = hero.hp-(this->atk - hero.damage);
@@ -61,18 +62,18 @@ bool Ground(Hero &hero, Monst &monst)
 		while (hero.hp > 0 && monst.hp > 0)
 		{
 			//玩家攻击
-			hero.atkMonst(monst);
+			hero.Attack(monst);
 			if (monst.hp <= 0)
 			{
 				break;
 			}
-			monst.atkPlayer(hero);
+			monst.Attack(hero);
 		}
 		return (hero.hp > 0);
 	}
 
 
-void main()
+void main3()
 {
 	Yi yi;
 	Boss boss;

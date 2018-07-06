@@ -30,7 +30,7 @@ public:
 	int c;
 };
 
-void main()
+void main1001()
 {
 
 	C  c1;

@@ -21,12 +21,6 @@
     <ClCompile Include="继承中的构造析构.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dm06_继承与组合混搭.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dm08_继承中的static.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="demo13_类型兼容性原则遇上函数重写.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

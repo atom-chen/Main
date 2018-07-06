@@ -78,7 +78,7 @@ void PlayObj(HeroFighter *hf, EnemyFighter *ef)
 //2 要有虚函数重写
 //3 用父类指针(父类引用)指向子类对象....
 
-void main()
+void main1401()
 {
 	HeroFighter		hf;
 	AdvHeroFighter	Advhf;
@@ -95,7 +95,7 @@ void main()
 	system("pause");
 
 }
-void main1401()
+void main1402()
 {
 	
 	HeroFighter		hf;

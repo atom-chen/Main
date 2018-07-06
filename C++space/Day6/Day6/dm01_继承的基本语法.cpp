@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Parent
+class Parent101
 {
 public:
 	void print()
@@ -20,7 +20,7 @@ private:
 
 //class Child : private Parent
 //class Child :  protected Parent public
-class Child :  public Parent
+class Child101 :  public Parent101
 {
 public:
 protected:
@@ -28,10 +28,10 @@ private:
 	int c;
 };
 
-void main11()
+void main101()
 {
 	
-	Child c1;
+	Child101 c1;
 	//c1.c = 1;
 	//c1.a = 2;
 	c1.b = 3;

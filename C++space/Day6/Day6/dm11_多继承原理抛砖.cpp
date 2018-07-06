@@ -35,7 +35,7 @@ public:
 	int c;
 };
 
-void main()
+void main1101()
 {
 	cout<<sizeof(B)<<endl; //4
 	cout<<sizeof(B1)<<endl; //12 //加上virtual以后 , C++编译器会在给变量偷偷增加属性
@@ -46,7 +46,7 @@ void main()
 
 }
 
-void main1101()
+void main1102()
 {
 
 	C  c1;
@@ -88,7 +88,7 @@ protected:
 private:
 };
 
-void main1202()
+void main1103()
 {
 	 E e1;
 	 e1.D1::k = 100;

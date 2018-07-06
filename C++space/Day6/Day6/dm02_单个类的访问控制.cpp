@@ -12,19 +12,19 @@ using namespace std;
 //3
 
 
-class Parent
+class Parent201
 {
 public:
 			int a; //老爹的名字
 protected:
 			int b; //老爹的银行密码
 private:
-			int c; //老的情人
+			int c; //老爹的情人
 };
 
 
 //保护继承
-class Child3 : protected Parent
+class Child203 : protected Parent201
 {
 public:
 protected:
@@ -38,9 +38,9 @@ public:
 	}
 };
 
-void main()
+void main201()
 {
-	Child3 c3;
+	Child203 c3;
 	//c3.a = 10; //err
 	//c3.b = 20; //err
 	//c3.c = 30;//err
@@ -50,7 +50,7 @@ void main()
 
 
 //私有继承
-class Child2 : private Parent
+class Child202 : private Parent201
 {
 public:
 	void useVar()
@@ -64,17 +64,17 @@ protected:
 private:
 };
 
-void main22()
+void main202()
 {
-	Child2 c2;
+	Child202 c2;
 	//c1.a = 10; err
 	//c2.b = 20; err
 	//c3.b = 30;
 }
 
 
-
-class Child : public Parent
+//public继承
+class Child201 : public Parent201
 {
 public:
 	void useVar()
@@ -97,9 +97,9 @@ C++中的继承方式（public、private、protected）会影响子类的对外访问属性
 	3）看父类中的访问级别（public、private、protected）
 */
 //共有继承 
-void main21()
+void main203()
 {
-	Parent t1, t2;
+	Parent201 t1, t2;
 	t1.a  = 10; //ok
 	//t1.b = 20; //err
 	//t2.c = 30 ; //err
