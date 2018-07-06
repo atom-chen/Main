@@ -15,7 +15,7 @@ this is QQ Server
 #define CHAT 2
 
 
-#define SERVER_ADDR /home/uzi/桌面/gitSPace/系统编程/QQ/ServerFifo
+#define SERVER_ADDR "/home/uzi/桌面/gitSPace/系统编程/QQ/ServerFifo"
 #define FILE_MODEL (S_IRUSR | S_IWUSR | S_IRGRP | S_IWOTH)
 struct MSG
 {
@@ -23,8 +23,8 @@ struct MSG
 	int receive;
 	int msgCode;
 	char data[1024];
-}
-void Server(const MSG& msg);
+};
+void Server(MSG& msg);
 void SendRes(const MSG& msg);
 
 struct  Client
@@ -55,46 +55,50 @@ int main(int argc, char const *argv[])
 			{
 				Server(msg);
 			}
-            memset(msg,0,sizeof(MSG));
+            memset(&msg,0,sizeof(MSG));
 		}
 	}
 	return 0;
 }
 //消息处理
-void Server(const MSG& msg)
+void Server(MSG& msg)
 {
+	printf("%s %u %s %u %s %u\n","receive a package,send= ",msg.send,"msgCode=",msg.msgCode,"receive=",msg.receive);
+    auto it=clientAddr.find(msg.send);
+    struct Client client;
+    int fd;
 	switch(msg.msgCode)
 	{
 	case ONLINE:
 	    //try connect to client fifo
-	    int fd=open(msg.data,O_WRONLY);
+	    fd=open(msg.data,O_WRONLY);
 	    if(fd>0)
 	    {
-	        struct Client client;
 	        client.fd=fd;
 	        clientAddr.insert(std::pair<int,Client>(msg.send,client));
+	        printf("%s %u Online\n","client",msg.send);
 	    }
 		break;
 	case DOWMLINE:
-        auto it=clientAddr.find(msg.send);
         if(it!=clientAddr.end())
         {
-        	close(it->fd);
+        	close(it->second.fd);
         	clientAddr.erase(it);
+            printf("%s %u DOWMLINE\n","client",msg.send);
         }
 		break;
 	case CHAT:
         SendRes(msg);
 		break;
 	}
-	memset(msg,0,sizeof(msg));
+	memset(&msg,0,sizeof(msg));
 }
 //向客户端发送消息
 void SendRes(const MSG& msg)
 {
-	auto it=clientAddr.find(msg.send);
+	auto it=clientAddr.find(msg.receive);
 	if(it!=clientAddr.end())
 	{
-		write(it->fd,&msg,sizeof(msg));
+		write(it->second.fd,&msg,sizeof(msg));
 	}
 }
