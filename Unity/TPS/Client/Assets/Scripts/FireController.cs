@@ -14,6 +14,10 @@ public class FireController : MonoBehaviour {
 
     private int AttackState = 1;
 
+    public delegate void OnFire1(Transform fireTransform);
+    public delegate void OnFire2(Transform fireTransform, RaycastHit ray);
+    public static event OnFire1 onFire;
+    public static event OnFire2 onHitColl;
 	void Start () 
     {
         m_FirePos = transform.Find("FirePos");
@@ -45,6 +49,10 @@ public class FireController : MonoBehaviour {
                 Attack1();
                 break;
         }
+        if(onFire!=null)
+        {
+            onFire(m_FirePos);
+        }
         AudioManager.Instance.PlayGun(m_FirePos.position);
         StartCoroutine(ShowMuzzFlash());
     }
@@ -61,12 +69,26 @@ public class FireController : MonoBehaviour {
         RaycastHit ray;
         if(Physics.Raycast(m_FirePos.position,m_FirePos.forward,out ray,10.0f))
         {
-            if(ray.collider.tag=="MONSTER")
+            switch (ray.collider.tag)
             {
-                Vector3 para = ray.point;
-                ray.collider.gameObject.SendMessage("OnDamage", para, SendMessageOptions.DontRequireReceiver);
+                case "MONSTER":
+                    Vector3 para = ray.point;
+                    ray.collider.gameObject.SendMessage("OnDamage", para, SendMessageOptions.DontRequireReceiver);
+                    break;
+                case "BARREL":
+                    Barrel ba=ray.collider.GetComponent<Barrel>();
+                    if(ba!=null)
+                    {
+                        ba.OnDamage(m_FirePos.position, ray.point);
+                    }
+                    break;
+            }
+            if (onHitColl != null)
+            {
+                onHitColl(m_FirePos, ray);
             }
         }
+
     }
 
     IEnumerator ShowMuzzFlash()

@@ -1,0 +1,3601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ogre\OgreMain\include\Android\OgreAndroidLogListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Android\OgreAPKFileSystemArchive.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Android\OgreAPKZipArchive.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Emscripten\OgreTimerImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\iOS\ARCMacros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\iOS\macUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Ogre.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAlignedAllocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAnimable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAnimation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAnimationState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAnimationTrack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAny.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreArchive.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreArchiveFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreArchiveManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreASTCCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAtomicObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAtomicScalar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAutoParamDataSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreAxisAlignedBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBillboard.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBillboardChain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBillboardParticleRenderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBillboardSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBitwise.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBlendMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreBone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreColourValue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositionPass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositionTargetPass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositionTechnique.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositorChain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositorInstance.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositorLogic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCompositorManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreConfigDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreConfigFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreConfigOptionMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreControllerManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreConvexBody.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreCustomCompositionPass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDataStream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDDSCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDefaultHardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDeflate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDistanceLodStrategy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDualQuaternion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDynLib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreDynLibManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreEdgeListBuilder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreEntity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreErrorDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreETCCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreExternalTextureSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreExternalTextureSourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreFactoryObj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreFileSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreFileSystemLayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreFrameListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreFreeImageCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreFrustum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreGpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreGpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreGpuProgramParams.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreGpuProgramUsage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareCounterBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareOcclusionQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareUniformBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHeaderPrefix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHeaderSuffix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHighLevelGpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreHighLevelGpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreId.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreIdString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreImageCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstanceBatch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstanceBatchHW.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstanceBatchHW_VTF.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstanceBatchShader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstanceBatchVTF.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstancedEntity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstancedGeometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreInstanceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreIteratorRange.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreIteratorWrapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreIteratorWrappers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreKeyFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreLodListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreLodStrategy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreLodStrategyManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreLogManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreManualObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMaterialManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMaterialSerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMatrix3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMatrix4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemoryAllocatedObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemoryAllocatorConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemoryNedAlloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemoryNedPooling.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemoryStdAlloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemorySTLAllocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMemoryTracker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMeshFileFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMeshManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMeshSerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMeshSerializerImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMovableObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMovablePlane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreMurmurHash3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreNameGenerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreNumerics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreOptimisedUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleEmitterCommands.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleIterator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleSystemManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreParticleSystemRenderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePatchMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePatchSurface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePixelCountLodStrategy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePixelFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePlane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePlaneBoundedVolume.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePlatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePlatformInformation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePolygon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePose.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePOSIXTimerImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePredefinedControllers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePrefabFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreProfiler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgrePVRTCCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreQuaternion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRadixSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRay.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRectangle2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderObjectListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderOperation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderQueueInvocation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderQueueListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderQueueSortingGrouping.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderSystemCapabilities.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderSystemCapabilitiesManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderSystemCapabilitiesSerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderTargetListener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderToVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRenderWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreResource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreResourceBackgroundQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreResourceGroupManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRibbonTrail.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRoot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreRotationalSpline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSceneManagerEnumerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSceneNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSceneQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreScriptCompiler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreScriptLexer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreScriptLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreScriptParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreScriptTranslator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSearchOps.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowCameraSetup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowCameraSetupFocused.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowCameraSetupLiSPSM.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowCameraSetupPlaneOptimal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowCameraSetupPSSM.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowCaster.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowTextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreShadowVolumeExtrudeProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSharedPtr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSimpleRenderable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSimpleSpline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSingleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSkeleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSkeletonFileFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSkeletonInstance.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSkeletonManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSkeletonSerializer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSphere.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSpotShadowFadePng.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStableHeaders.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStaticFaceGroup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStaticGeometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSTBICodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStdHeaders.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStreamSerialiser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStringConverter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStringInterface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreStringVector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSubEntity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreSubMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTagPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTangentSpaceCalc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTechnique.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTextureUnitState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreTimer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreUnifiedHighLevelGpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreUserObjectBindings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreUTFString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreVector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreVector3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreVector4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreVertexBoneAssignment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreVertexIndexData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreViewport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreWindowEventUtilities.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreWireBoundingBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreWorkQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OgreZip.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\OSX\macUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreBarrier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreDefaultWorkQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreDefaultWorkQueueStandard.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreDefaultWorkQueueTBB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreLightweightMutex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadDefines.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadDefinesBoost.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadDefinesNone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadDefinesPoco.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadDefinesSTD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadDefinesTBB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadHeaders.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadHeadersBoost.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadHeadersPoco.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadHeadersSTD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreadHeadersTBB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\Threading\OgreThreads.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\WIN32\OgreComPtr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\WIN32\OgreErrorDialogImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\WIN32\OgreMinGWSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\include\WIN32\OgreTimerImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\GLX\GLX_backdrop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\nedmalloc\malloc.c.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\nedmalloc\nedmalloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\OgreImageResampler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\OgrePixelConversions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\OgrePixelFormatDescriptions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\OgreSIMDHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\stbi\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\stbi\stb_image_write.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\OgreMain\src\WIN32\resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreBspLevel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreBspNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreBspResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreBspSceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreBspSceneManagerPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreBspSceneNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreQuake3Level.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreQuake3Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreQuake3ShaderManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\BSPSceneManager\include\OgreQuake3Types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\CgProgramManager\include\OgreCgFxScriptLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\CgProgramManager\include\OgreCgPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\CgProgramManager\include\OgreCgPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\CgProgramManager\include\OgreCgProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\CgProgramManager\include\OgreCgProgramFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\EXRCodec\include\OgreEXRCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\EXRCodec\src\O_IStream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeSceneManager\include\OgreOctree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeSceneManager\include\OgreOctreeCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeSceneManager\include\OgreOctreeNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeSceneManager\include\OgreOctreePlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeSceneManager\include\OgreOctreeSceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeSceneManager\include\OgreOctreeSceneQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeZone\include\OgreOctreeZone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeZone\include\OgreOctreeZoneOctree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\OctreeZone\include\OgreOctreeZonePlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreAreaEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreBoxEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreBoxEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourFaderAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourFaderAffector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourFaderAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourFaderAffectorFactory2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourImageAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourImageAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourInterpolatorAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreColourInterpolatorAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreCylinderEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreCylinderEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreDeflectorPlaneAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreDeflectorPlaneAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreDirectionRandomiserAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreDirectionRandomiserAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreEllipsoidEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreEllipsoidEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreHollowEllipsoidEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreHollowEllipsoidEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreLinearForceAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreLinearForceAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreParticleFXPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgrePointEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgrePointEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreRingEmitter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreRingEmitterFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreRotationAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreRotationAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreScaleAffector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\ParticleFX\include\OgreScaleAffectorFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgreAntiPortal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgreCapsule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgreDefaultZone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCPlane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZFrustum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZoneFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZSceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZSceneNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePCZSceneQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePortal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgrePortalBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\PlugIns\PCZSceneManager\include\OgreSegment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11DepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11Device.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11DeviceResource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11Driver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11DriverList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11GpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwareBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwareOcclusionQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwareUniformBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HLSLProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11HLSLProgramFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11Mappings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11MultiRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11Plugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11Prerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11RenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11RenderToVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11RenderWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11StereoDriverAMD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11StereoDriverBridge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11StereoDriverImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11StereoDriverNVIDIA.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11TextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11VertexDeclaration.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11VideoMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreD3D11VideoModeList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreMonitorInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D11\include\OgreNsightChecker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9DepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Device.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9DeviceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Driver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9DriverList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9GpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9GpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HardwareOcclusionQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HLSLProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9HLSLProgramFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Mappings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9MultiRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Plugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Prerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9RenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9RenderWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9ResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9StereoDriverAMD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9StereoDriverBridge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9StereoDriverImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9StereoDriverNVIDIA.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9TextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9VertexDeclaration.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9VideoMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\Direct3D9\include\OgreD3D9VideoModeList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\GL\gl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\GL\glew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\GL\glext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\GL\glxew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\GL\wglew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLCopyingRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLDepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLFBOMultiRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLFBORenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLFrameBufferObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLGpuNvparseProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLGpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLGpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLHardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLHardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLHardwareOcclusionQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLHardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLHardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLPBRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLPixelFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLRenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLRenderToVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLStateCacheManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\include\OgreGLTextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\atifs\include\ATI_FS_GLGpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\atifs\include\Compiler2Pass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\atifs\include\ps_1_4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\GLSL\include\OgreGLSLExtSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\GLSL\include\OgreGLSLGpuProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\GLSL\include\OgreGLSLLinkProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\GLSL\include\OgreGLSLLinkProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\GLSL\include\OgreGLSLProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\GLSL\include\OgreGLSLProgramFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\macro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\nvparse.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\nvparse_errors.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\nvparse_externs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\ps1.0_program.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_combiners.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_final.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_general.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_register.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\ts1.0_inst.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\ts1.0_inst_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\vs1.0_inst.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\vs1.0_inst_list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\_ps1.0_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\_rc1.0_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\_ts1.0_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL\src\nvparse\_vs1.0_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GL\gl3w.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GL\glcorearb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLExtSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLMonolithicProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLSeparableProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLShader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLShaderFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\GLSL\OgreGLSLShaderManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusDepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusFBOMultiRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusFBORenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusFrameBufferObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareCounterBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareOcclusionQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareShaderStorageBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareUniformBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusHardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusPixelFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusRenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusRenderToVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusStateCacheManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusTextureBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GL3Plus\include\OgreGL3PlusTextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreEAGLESContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreEAGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreEAGLSupport(1).h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreEAGLView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreEAGLViewController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreEAGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EAGL\OgreGLESUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\Android\OgreAndroidEGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\Android\OgreAndroidEGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\Android\OgreAndroidEGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\Android\OgreAndroidResource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\Android\OgreAndroidResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\Android\OgreGLESUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\OgreEGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\OgreEGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\OgreEGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\OgreEGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\OgreGLESUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\WIN32\OgreGLESUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\X11\OgreGLESUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\X11\OgreX11EGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\X11\OgreX11EGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\X11\OgreX11EGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\EGL\X11\OgreX11EGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESDefaultHardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESDepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESFBOMultiRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESFBORenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESFrameBufferObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESGpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESHardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESHardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESHardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESHardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESManagedResource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESPBRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESPBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESPixelFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESPlugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESRenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESStateCacheManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\include\OgreGLESTextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\src\StateCacheManager\OgreGLESNullStateCacheManagerImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES\src\StateCacheManager\OgreGLESStateCacheManagerImp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\EAGL\OgreEAGL2Support.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\EAGL\OgreEAGL2View.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\EAGL\OgreEAGL2ViewController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\EAGL\OgreEAGL2Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\EAGL\OgreEAGLES2Context.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\GLES2\gl2ext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\GLES3\gl3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\GLES3\gl3platform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\GLES3\glesw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\KHR\khrplatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\NaCl\OgreNaClGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\NaCl\OgreNaClGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\NaCl\OgreNaClWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2DepthBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2FBOMultiRenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2FBORenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2FrameBufferObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2GpuProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwareBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwareBufferManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwareIndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwareOcclusionQuery.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwarePixelBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwareUniformBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2HardwareVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2ManagedResource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2ManagedResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2PixelFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2Plugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2Prerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2RenderSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2RenderToVertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2StateCacheManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2Support.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\include\OgreGLES2TextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESCgProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESCgProgramFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESExtSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESLinkProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESProgramCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESProgramFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESProgramManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLES2\src\GLSLES\include\OgreGLSLESProgramPipeline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\Android\OgreAndroidEGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\Android\OgreAndroidEGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\Emscripten\OgreEmscriptenEGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\Emscripten\OgreEmscriptenEGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\OgreEGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\OgreEGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\OgreEGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\OgreEGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\WIN32\OgreWin32EGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\WIN32\OgreWin32EGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\X11\OgreX11EGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\X11\OgreX11EGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\EGL\X11\OgreX11EGLWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLSL\OgreGLSLPreprocessor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLSL\OgreGLSLProgramCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLSL\OgreGLSLProgramManagerCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLSL\OgreGLSLShaderCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLX\OgreGLXContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLX\OgreGLXGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLX\OgreGLXRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\GLX\OgreGLXWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLHardwarePixelBufferCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLNativeSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLPBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLRenderSystemCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLStateCacheManagerCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLTextureCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLUniformCache.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLUtil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OgreGLVertexArrayObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OSX\OgreOSXCocoaContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OSX\OgreOSXCocoaView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OSX\OgreOSXCocoaWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OSX\OgreOSXCocoaWindowDelegate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OSX\OgreOSXGLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\OSX\OgreOSXRenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\win32\GL\wglext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\win32\OgreWin32Context.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\win32\OgreWin32GLSupport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\win32\OgreWin32Prerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\win32\OgreWin32RenderTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ogre\RenderSystems\GLSupport\include\win32\OgreWin32Window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Ogre\OgreMain\src\Android\OgreAndroidLogListener.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Android\OgreAPKFileSystemArchive.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Android\OgreAPKZipArchive.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Android\OgreFileSystemLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Emscripten\OgreTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\GLX\OgreConfigDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\GLX\OgreFileSystemLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\nedmalloc\nedmalloc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAlignedAllocator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAnimable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAnimation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAnimationState.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAnimationTrack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreArchive.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreArchiveManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreASTCCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAtomicScalar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAutoParamDataSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreAxisAlignedBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreBillboard.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreBillboardChain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreBillboardParticleRenderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreBillboardSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreBone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreColourValue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositionPass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositionTargetPass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositionTechnique.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositorChain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositorInstance.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreCompositorManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreConfigDialogNoOp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreConfigFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreControllerManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreConvexBody.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDataStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDDSCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDefaultHardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDefaultSceneQueries.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDeflate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDistanceLodStrategy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDualQuaternion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDynLib.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreDynLibManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreEdgeListBuilder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreEntity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreErrorDialogNoOp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreETCCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreException.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreExternalTextureSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreExternalTextureSourceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreFileSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreFileSystemLayerNoOp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreFreeImageCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreFrustum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreGpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreGpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreGpuProgramParams.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreGpuProgramUsage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwareCounterBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwareOcclusionQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwareUniformBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHighLevelGpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreHighLevelGpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstanceBatch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstanceBatchHW.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstanceBatchHW_VTF.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstanceBatchShader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstanceBatchVTF.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstancedEntity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstancedGeometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreInstanceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreKeyFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreLodStrategy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreLodStrategyManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreLog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreLogManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreManualObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMaterialManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMaterialSerializer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMath.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMatrix3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMatrix4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMemoryAllocatedObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMemoryNedAlloc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMemoryNedPooling.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMemoryTracker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMeshManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMeshSerializer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMeshSerializerImpl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMovableObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMovablePlane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreMurmurHash3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreNumerics.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreOptimisedUtil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreOptimisedUtilGeneral.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreOptimisedUtilSSE.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreParticle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreParticleEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreParticleEmitterCommands.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreParticleIterator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreParticleSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreParticleSystemManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePatchMesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePatchSurface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePixelCountLodStrategy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePixelFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePlane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePlatformInformation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePolygon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePose.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePOSIXTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePrecompiledHeaders.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePredefinedControllers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePrefabFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreProfiler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgrePVRTCCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreQuaternion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRectangle2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderQueueInvocation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderQueueSortingGrouping.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderSystemCapabilities.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderSystemCapabilitiesManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderSystemCapabilitiesSerializer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderToVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRenderWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreResource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreResourceBackgroundQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreResourceGroupManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreResourceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRibbonTrail.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRoot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreRotationSpline.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSceneManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSceneManagerEnumerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSceneNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSceneQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreScriptCompiler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreScriptLexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreScriptParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreScriptTranslator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSearchOps.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSerializer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowCameraSetup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowCameraSetupFocused.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowCameraSetupLiSPSM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowCameraSetupPlaneOptimal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowCameraSetupPSSM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowCaster.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowTextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreShadowVolumeExtrudeProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSimpleRenderable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSimpleSpline.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSkeleton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSkeletonInstance.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSkeletonManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSkeletonSerializer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreStaticGeometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSTBICodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreStreamSerialiser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreStringConverter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreStringInterface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSubEntity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreSubMesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreTagPoint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreTangentSpaceCalc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreTechnique.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreTextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreTextureUnitState.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreUnifiedHighLevelGpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreUserObjectBindings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreUTFString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreVector2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreVector3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreVector4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreVertexIndexData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreViewport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreWindowEventUtilities.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreWireBoundingBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreWorkQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OgreZip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\OSX\OgreFileSystemLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreBarrierPThreads.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreBarrierWin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreDefaultWorkQueueStandard.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreDefaultWorkQueueTBB.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreLightweightMutexPThreads.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreLightweightMutexWin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreThreadsPThreads.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\Threading\OgreThreadsWin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\WIN32\OgreConfigDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\WIN32\OgreErrorDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\WIN32\OgreFileSystemLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\WIN32\OgreMinGWSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\WIN32\OgreOptimisedUtilDirectXMath.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\OgreMain\src\WIN32\OgreTimer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspLevel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspResourceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspSceneManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspSceneManagerDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspSceneManagerPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreBspSceneNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreQuake3Level.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreQuake3Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\BSPSceneManager\src\OgreQuake3ShaderManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\CgProgramManager\src\OgreCgFxScriptLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\CgProgramManager\src\OgreCgPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\CgProgramManager\src\OgreCgProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\CgProgramManager\src\OgreCgProgramFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\CgProgramManager\src\OgreCgProgramManagerDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\EXRCodec\src\OgreEXRCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\EXRCodec\src\OgreEXRCodecDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\EXRCodec\src\O_IStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctreeCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctreeNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctreePlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctreeSceneManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctreeSceneManagerDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeSceneManager\src\OgreOctreeSceneQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeZone\src\OgreOctreeZone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeZone\src\OgreOctreeZoneDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeZone\src\OgreOctreeZoneOctree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\OctreeZone\src\OgreOctreeZonePlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreAreaEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreBoxEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreColourFaderAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreColourFaderAffector2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreColourImageAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreColourInterpolatorAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreCylinderEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreDeflectorPlaneAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreDirectionRandomiserAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreEllipsoidEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreHollowEllipsoidEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreLinearForceAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreParticleFX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreParticleFXPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgrePointEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreRingEmitter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreRotationAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\ParticleFX\src\OgreScaleAffector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgreAntiPortal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgreCapsule.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgreDefaultZone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCPlane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZFrustum.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZoneFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZSceneManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZSceneManagerDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZSceneNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePCZSceneQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePortal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgrePortalBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\PlugIns\PCZSceneManager\src\OgreSegment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11DepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11Device.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11DeviceResource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11Driver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11DriverList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11EngineDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11GpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwareBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwareOcclusionQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwareUniformBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HLSLProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11HLSLProgramFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11Mappings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11MultiRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11Plugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11RenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11RenderToVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11RenderWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11StereoDriverAMD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11StereoDriverBridge.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11StereoDriverNVIDIA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11TextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11VertexDeclaration.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11VideoMode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreD3D11VideoModeList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreMonitorInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D11\src\OgreNsightChecker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9DepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9Device.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9DeviceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9Driver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9DriverList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9EngineDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9GpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9GpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HardwareOcclusionQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HLSLProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9HLSLProgramFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9Mappings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9MultiRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9Plugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9RenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9RenderWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9Resource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9ResourceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9StereoDriverAMD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9StereoDriverBridge.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9StereoDriverNVIDIA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9TextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9VertexDeclaration.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9VideoMode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreD3D9VideoModeList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\Direct3D9\src\OgreDxErr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\atifs\src\ATI_FS_GLGpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\atifs\src\Compiler2Pass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\atifs\src\ps_1_4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\glew.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\GLSL\src\OgreGLSLExtSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\GLSL\src\OgreGLSLGpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\GLSL\src\OgreGLSLLinkProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\GLSL\src\OgreGLSLLinkProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\GLSL\src\OgreGLSLProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\GLSL\src\OgreGLSLProgramFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\avp1.0_impl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\nvparse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\nvparse_errors.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\ps1.0_program.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\ps1.0__test_main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_combiners.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_final.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\rc1.0_general.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\ts1.0_inst.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\ts1.0_inst_list.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\vcp1.0_impl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\vp1.0_impl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\vs1.0_inst.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\vs1.0_inst_list.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\vsp1.0_impl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_ps1.0_lexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_ps1.0_parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_rc1.0_lexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_rc1.0_parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_ts1.0_lexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_ts1.0_parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_vs1.0_lexer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\nvparse\_vs1.0_parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLCopyingRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLDepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLEngineDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLFBOMultiRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLFBORenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLFrameBufferObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLGpuNvparseProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLGpuProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLGpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLHardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLHardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLHardwareOcclusionQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLHardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLHardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLPBRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLPixelFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLRenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLRenderToVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLStateCacheManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL\src\OgreGLTextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\gl3w.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLExtSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLMonolithicProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLSeparableProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLShader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLShaderFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\GLSL\OgreGLSLShaderManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusDepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusEngineDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusFBOMultiRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusFBORenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusFrameBufferObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareCounterBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareOcclusionQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareShaderStorageBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareUniformBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusHardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusPixelFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusRenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusRenderToVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusStateCacheManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusTextureBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GL3Plus\src\OgreGL3PlusTextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\Android\OgreAndroidEGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\Android\OgreAndroidEGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\Android\OgreAndroidEGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\Android\OgreAndroidResource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\Android\OgreAndroidResourceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\OgreEGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\OgreEGLRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\OgreEGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\OgreEGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\X11\OgreX11EGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\X11\OgreX11EGLRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\X11\OgreX11EGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\EGL\X11\OgreX11EGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESDefaultHardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESDepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESEngineDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESFBOMultiRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESFBORenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESFrameBufferObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESGpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESHardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESHardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESHardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESHardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESPBRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESPixelFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESPlugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESRenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESStateCacheManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\OgreGLESTextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\StateCacheManager\OgreGLESNullStateCacheManagerImp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES\src\StateCacheManager\OgreGLESStateCacheManagerImp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\glesw.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESCgProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESCgProgramFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESExtSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESLinkProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESProgramCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESProgramFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\GLSLES\src\OgreGLSLESProgramPipeline.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\NaCl\OgreNaClGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\NaCl\OgreNaClGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\NaCl\OgreNaClWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2DepthBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2EngineDll.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2FBOMultiRenderTarget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2FBORenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2FrameBufferObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2GpuProgramManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwareBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwareBufferManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwareIndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwareOcclusionQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwarePixelBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwareUniformBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2HardwareVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2ManagedResource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2ManagedResourceManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2PixelFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2Plugin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2RenderSystem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2RenderToVertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2StateCacheManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2Support.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLES2\src\OgreGLES2TextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\Android\OgreAndroidEGLSupport(1).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\Android\OgreAndroidEGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\Emscripten\OgreEmscriptenEGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\Emscripten\OgreEmscriptenEGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\OgreEGLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\OgreEGLRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\OgreEGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\OgreEGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\WIN32\OgreWin32EGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\WIN32\OgreWin32EGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\X11\OgreX11EGLRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\X11\OgreX11EGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\EGL\X11\OgreX11EGLWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLSL\OgreGLSLPreprocessor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLSL\OgreGLSLProgramCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLSL\OgreGLSLProgramManagerCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLSL\OgreGLSLShaderCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLX\OgreGLXContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLX\OgreGLXGLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLX\OgreGLXRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\GLX\OgreGLXWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OgreGLHardwarePixelBufferCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OgreGLRenderSystemCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OgreGLRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OgreGLTextureCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OgreGLUniformCache.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OgreGLVertexArrayObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\OSX\OgreOSXRenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\win32\OgreWin32Context.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\win32\OgreWin32GLSupport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\win32\OgreWin32RenderTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Ogre\RenderSystems\GLSupport\src\win32\OgreWin32Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ogre\OgreMain\src\WIN32\OgreWin32Resources.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ogre\PlugIns\EXRCodec\misc\OgreEXRCodec.def">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

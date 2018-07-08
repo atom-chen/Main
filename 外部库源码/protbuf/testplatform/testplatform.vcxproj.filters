@@ -1,0 +1,1473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="protobuf\any.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\any.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\any_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\api.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\arena.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\arenastring.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\arenastring_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\arena_nc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\arena_test_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\arena_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\code_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\command_line_interface.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\command_line_interface_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_bootstrap_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_enum.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_enum_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_extension.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_helpers.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_map_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_plugin_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_primitive_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_service.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_string_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\cpp_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\cpp\metadata_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_doc_comment.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_enum.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_enum_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_field_base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_generator_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_helpers.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_map_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_primitive_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_reflection_class.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_repeated_enum_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_repeated_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_repeated_primitive_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_source_generator_base.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\csharp\csharp_wrapper_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\importer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\importer_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_context.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_doc_comment.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_doc_comment_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_enum.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_enum_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_enum_field_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_enum_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_extension.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_extension_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_generator_factory.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_helpers.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_lazy_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_lazy_message_field_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_map_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_map_field_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_message_builder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_message_builder_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_message_field_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_message_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_name_resolver.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_plugin_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_primitive_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_primitive_field_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_service.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_shared_code_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_string_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\java\java_string_field_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_enum.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_enum_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_extension.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_helpers.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_map_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\javanano\javanano_primitive_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\js\js_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\main.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\mock_code_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_enum.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_enum_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_extension.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_helpers.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_helpers_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_map_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_message_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_oneof.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\objectivec\objectivec_primitive_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\parser.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\parser_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\plugin.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\plugin.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\python\python_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\python\python_plugin_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\ruby\ruby_generator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\ruby\ruby_generator_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\subprocess.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\test_plugin.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\compiler\zip_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\descriptor.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\descriptor.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\descriptor_database.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\descriptor_database_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\descriptor_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\drop_unknown_fields_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\duration.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\dynamic_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\dynamic_message_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\empty.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\extension_set.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\extension_set_heavy.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\extension_set_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\field_mask.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\generated_message_reflection.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\generated_message_reflection_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\generated_message_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\coded_stream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\coded_stream_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\gzip_stream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\printer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\printer_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\strtod.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\tokenizer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\tokenizer_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\zero_copy_stream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\zero_copy_stream_impl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\zero_copy_stream_impl_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\io\zero_copy_stream_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\lite_arena_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\lite_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\map_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\map_field_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\map_lite_test_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\map_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\map_test_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\message_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\message_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\no_field_presence_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\preserve_unknown_enum_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\proto3_arena_lite_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\proto3_arena_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\proto3_lite_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\reflection_ops.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\reflection_ops_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\repeated_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\repeated_field_reflection_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\repeated_field_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\service.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\source_context.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\struct.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\atomicops_internals_x86_gcc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\atomicops_internals_x86_msvc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\bytestream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\bytestream_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\common.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\common_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\int128.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\int128_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\mathlimits.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\once.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\once_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\status.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\statusor.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\statusor_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\status_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\stringpiece.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\stringpiece_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\stringprintf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\stringprintf_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\structurally_valid.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\structurally_valid_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\strutil.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\strutil_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\substitute.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\template_util_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\time.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\time_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\stubs\type_traits_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\testing\file.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\testing\googletest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\testing\zcgunzip.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\testing\zcgzip.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\test_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\test_util_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\text_format.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\text_format_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\timestamp.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\type.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\unknown_field_set.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\unknown_field_set_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\field_comparator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\field_comparator_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\field_mask_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\field_mask_util_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\datapiece.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\default_value_objectwriter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\default_value_objectwriter_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\error_listener.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\field_mask_utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\json_escaping.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\json_objectwriter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\json_objectwriter_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\json_stream_parser.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\json_stream_parser_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\object_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\protostream_objectsource.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\protostream_objectsource_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\protostream_objectwriter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\protostream_objectwriter_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\proto_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\type_info.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\type_info_test_helper.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\internal\utility.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\json_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\json_util_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\message_differencer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\message_differencer_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\time_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\time_util_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\type_resolver_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\util\type_resolver_util_test.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\well_known_types_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\wire_format.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\wire_format_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\wire_format_unittest.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\wrappers.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="protobuf\any.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\any.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\api.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\arena.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\arenastring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\arena_test_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\code_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\command_line_interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_enum_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_extension.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_helpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_map_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_options.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_primitive_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_service.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_string_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\cpp\cpp_unittest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_doc_comment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_enum_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_field_base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_helpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_map_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_names.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_options.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_primitive_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_reflection_class.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_repeated_enum_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_repeated_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_repeated_primitive_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_source_generator_base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\csharp\csharp_wrapper_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\importer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_context.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_doc_comment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_enum_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_enum_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_enum_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_extension.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_extension_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_generator_factory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_helpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_lazy_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_lazy_message_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_map_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_map_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_message_builder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_message_builder_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_message_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_message_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_names.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_name_resolver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_options.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_primitive_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_primitive_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_service.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_shared_code_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_string_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\java\java_string_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_enum_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_extension.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_helpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_map_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_params.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\javanano\javanano_primitive_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\js\js_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\mock_code_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_enum_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_extension.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_helpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_map_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_message_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_oneof.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\objectivec\objectivec_primitive_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\package_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\plugin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\plugin.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\python\python_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\ruby\ruby_generator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\subprocess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\compiler\zip_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\descriptor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\descriptor.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\descriptor_database.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\duration.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\dynamic_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\empty.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\extension_set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\field_mask.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\generated_enum_reflection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\generated_enum_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\generated_message_reflection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\generated_message_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\coded_stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\coded_stream_inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\gzip_stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\package_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\printer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\strtod.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\tokenizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\zero_copy_stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\zero_copy_stream_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\io\zero_copy_stream_impl_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_entry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_entry_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_field_inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_lite_test_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_test_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_test_util_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\map_type_handler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\message_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\metadata.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\package_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\reflection.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\reflection_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\reflection_ops.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\repeated_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\service.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\source_context.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\struct.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_arm64_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_arm_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_arm_qnx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_atomicword_compat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_generic_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_macosx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_mips_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_pnacl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_power.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_ppc_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_solaris.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_tsan.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_x86_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomicops_internals_x86_msvc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\atomic_sequence_num.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\bytestream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\callback.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\casts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\fastmem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\hash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\int128.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\map_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\mathlimits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\mathutil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\mutex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\once.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\platform_macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\port.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\scoped_ptr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\shared_ptr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\status.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\statusor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\status_macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\stl_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\stringpiece.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\stringprintf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\strutil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\substitute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\template_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\stubs\type_traits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\testing\file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\testing\googletest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\test_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\test_util_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\text_format.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\timestamp.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\type.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\unknown_field_set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\field_comparator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\field_mask_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\constants.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\datapiece.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\default_value_objectwriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\error_listener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\expecting_objectwriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\field_mask_utility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\json_escaping.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\json_objectwriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\json_stream_parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\location_tracker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\mock_error_listener.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\object_location_tracker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\object_source.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\object_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\protostream_objectsource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\protostream_objectwriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\proto_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\structured_objectwriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\type_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\type_info_test_helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\internal\utility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\json_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\message_differencer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\time_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\type_resolver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\util\type_resolver_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\wire_format.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\wire_format_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\wire_format_lite_inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\wrappers.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

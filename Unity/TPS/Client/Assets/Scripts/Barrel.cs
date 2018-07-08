@@ -6,6 +6,7 @@ public class Barrel : MonoBehaviour {
     public List<Texture> m_Textures = new List<Texture>();
     public GameObject expEffect;
     private Transform tr;
+    private Rigidbody rb;
     private int hitCount = 0;
     void Start()
     {
@@ -17,6 +18,8 @@ public class Barrel : MonoBehaviour {
         {
             render.material.mainTexture = m_Textures[index];
         }
+
+        rb = this.GetComponent<Rigidbody>();
     }
 
     void OnCollisionEnter(Collision coll)
@@ -24,11 +27,20 @@ public class Barrel : MonoBehaviour {
         if(coll.collider.transform.tag=="Bullet")
         {
             BulletPool.Instance.GCBullet(coll.collider.gameObject);
-            
-            if(++hitCount>=3)
+            if (++hitCount >= 3)
             {
                 ExpBarrel();
             }
+        }
+    }
+
+    public void OnDamage(Vector3 firePos,Vector3 hitPos)
+    {
+        Vector3 incomeDir = (hitPos - firePos).normalized;
+        rb.AddForceAtPosition(incomeDir*1000.0f,hitPos);
+        if (++hitCount >= 3)
+        {
+            ExpBarrel();
         }
     }
 
