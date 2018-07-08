@@ -7,6 +7,107 @@ using System.Threading.Tasks;
 
 public partial class Role
 {
+    public int id
+    {
+        get
+        {
+            return ID;
+        }
+        set
+        {
+            ID = value;
+        }
+    }
+
+    public string name
+    {
+        get
+        {
+            return Name;
+        }
+        set
+        {
+            Name = value;
+        }
+    }
+    public uint level
+    {
+        get { return Level; }
+        set { Level = value;  }
+    }
+
+
+    public bool sex
+    {
+        get { return Sex; }
+        set { Sex = value;  }
+    }
+
+
+    public int userID
+    {
+        get { return UserID; }
+        set { UserID = value;  }
+    }
+
+
+    public string headIcon
+    {
+        get { return HeadIcon; }
+        set { HeadIcon = value;  }
+    }
+
+
+    public int exp
+    {
+        get { return Exp; }
+        set { Exp = value; }
+    }
+
+
+    public int coin
+    {
+        get { return Coin; }
+        set { Coin = value; }
+    }
+
+
+    public int yuanBao
+    {
+        get { return YuanBao; }
+        set { YuanBao = value; }
+    }
+
+
+    public int energy
+    {
+        get { return Energy; }
+        set { Energy = value; }
+    }
+
+
+    public int toughen
+    {
+        get { return Toughen; }
+        set { Toughen = value;}
+    }
+
+
+    public int energyNextRecoverTimer
+    {
+        get { return EnergyNextRecoverTimer; }
+        set { EnergyNextRecoverTimer = value; }
+    }
+    public int toughenNextRecoverTimer
+    {
+        get { return ToughenNextRecoverTimer; }
+        set { ToughenNextRecoverTimer = value; }
+    }
+
+    public Bag bag
+    {
+        get { return BagInfo; }
+    }
     public Role(DB._DBRole db)
     {
         try

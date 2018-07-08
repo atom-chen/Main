@@ -220,7 +220,11 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-    <Compile Include="Assets\Public\Common\Item.cs" />
+    <Compile Include="Assets\Public\Common\BagSystem\Bag.cs" />
+    <Compile Include="Assets\Public\Common\BagSystem\Drug.cs" />
+    <Compile Include="Assets\Public\Common\BagSystem\Equip.cs" />
+    <Compile Include="Assets\Public\Common\BagSystem\EquipBag.cs" />
+    <Compile Include="Assets\Public\Common\BagSystem\Item.cs" />
     <Compile Include="Assets\Public\Common\Role.cs" />
     <Compile Include="Assets\Public\Common\ServerPropert.cs" />
     <Compile Include="Assets\Public\Common\User.cs" />
@@ -232,6 +236,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Assets\Public\TableManager\Table_Role.cs" />
+    <Compile Include="Assets\Public\TableManager\Tab_Equip.cs" />
     <Compile Include="Assets\Public\TableManager\Tab_Item.cs" />
     <Compile Include="Assets\Public\Tools\FormatTools.cs" />
     <Compile Include="Assets\Public\Tools\MD5Tools.cs" />
@@ -240,9 +245,9 @@
     <Compile Include="Assets\Script\Global\GameManager.cs" />
     <Compile Include="Assets\Script\Global\PlayData.cs" />
     <Compile Include="Assets\Script\Net\ControllerBase.cs" />
-    <Compile Include="Assets\Script\Net\Model\Role.cs" />
-    <Compile Include="Assets\Script\Net\Model\ServerProperty.cs" />
-    <Compile Include="Assets\Script\Net\Model\User.cs" />
+    <Compile Include="Assets\Script\Model\Role.cs" />
+    <Compile Include="Assets\Script\Model\ServerProperty.cs" />
+    <Compile Include="Assets\Script\Model\User.cs" />
     <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
     <Compile Include="Assets\Script\Net\StartMenu\AddRoleController.cs" />
     <Compile Include="Assets\Script\Net\StartMenu\EnterGameControllr.cs" />
@@ -303,8 +308,6 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
-    <None Include="Assets\Public\Table\Item.txt" />
-    <None Include="Assets\Public\Table\Role.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />

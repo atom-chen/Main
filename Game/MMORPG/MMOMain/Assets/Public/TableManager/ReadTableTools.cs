@@ -82,7 +82,6 @@ namespace Public.TableManager
         //下一行
         public void LineDown()
         {
-
             line++;
             row = 0;
 

@@ -4,35 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/// <summary>
-/// 物品一级分类
-/// </summary>
-public enum ITEM_FIRST
-{
-    INVALID=-1,
-    DRUG=0,//物品
-    EQUIP=1,//装备
-}
-public enum ITEM_TYPE
-{
-    INVALID=-1,
-    DEFAULT=0,//默认
-    MEDICINE=1,//药品
-}
 
-//装备类型
-public enum EQUIP_TYPE
-{
-    INVALID = -1,
-    HELM = 0,
-    CLOTH = 1,
-    WEAPON = 2,
-    SHOES = 3,
-    NECKLACE = 4,
-    BRACELET = 5,
-    RING = 6,
-    WING = 7,
-}
 public class Tab_Item
 {
     public int id;//ID
@@ -60,6 +32,7 @@ public class TabItem_Manager
     
     public static void ReLoad()
     {
+        m_TabItemDic.Clear();
         ReadTableTools table = new ReadTableTools("Item.txt");
         //将每个元组构造成Tab_Item，添加到表格
         while (!table.IsTupleEnd())

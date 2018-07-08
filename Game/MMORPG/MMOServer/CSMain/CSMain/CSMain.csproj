@@ -71,8 +71,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Item.cs">
-      <Link>Public\Common\Item.cs</Link>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Bag.cs">
+      <Link>Public\Common\BagSystem\Bag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Drug.cs">
+      <Link>Public\Common\BagSystem\Drug.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Equip.cs">
+      <Link>Public\Common\BagSystem\Equip.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\EquipBag.cs">
+      <Link>Public\Common\BagSystem\EquipBag.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Item.cs">
+      <Link>Public\Common\BagSystem\Item.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role.cs">
       <Link>Public\Common\Role.cs</Link>
@@ -101,6 +113,9 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Table_Role.cs">
       <Link>Public\TableManager\Table_Role.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Equip.cs">
+      <Link>Public\TableManager\Tab_Equip.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Item.cs">
       <Link>Public\TableManager\Tab_Item.cs</Link>
     </Compile>
@@ -113,6 +128,7 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
       <Link>Public\Tools\ParameterTools.cs</Link>
     </Compile>
+    <Compile Include="Model\Bag\ServerBag.cs" />
     <Compile Include="Model\Role\DBRole.cs" />
     <Compile Include="Model\Role\ServerRole.cs" />
     <Compile Include="Model\ServerProperty\DBServerPropert .cs" />
@@ -142,14 +158,6 @@
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\..\..\MMOMain\Assets\Public\Table\Item.txt">
-      <Link>Public\Table\Item.txt</Link>
-    </Content>
-    <Content Include="..\..\..\MMOMain\Assets\Public\Table\Role.txt">
-      <Link>Public\Table\Role.txt</Link>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

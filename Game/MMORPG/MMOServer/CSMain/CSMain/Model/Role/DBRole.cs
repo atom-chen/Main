@@ -29,17 +29,17 @@ namespace DB
 
         public _DBRole(Role role)
         {
-            ID = role.ID;
-            Name = role.Name;
-            Level = role.Level;
-            Sex = role.Sex;
-            UserID = role.UserID;
-            HeadIcon = role.HeadIcon;
-            Exp = role.Exp;
-            Coin = role.Coin;
-            YuanBao = role.YuanBao;
-            Energy = role.Energy;
-            Toughen = role.Toughen;
+            ID = role.id;
+            Name = role.name;
+            Level = role.level;
+            Sex = role.sex;
+            UserID = role.userID;
+            HeadIcon = role.headIcon;
+            Exp = role.exp;
+            Coin = role.coin;
+            YuanBao = role.yuanBao;
+            Energy = role.energy;
+            Toughen = role.toughen;
         }
     }
 
