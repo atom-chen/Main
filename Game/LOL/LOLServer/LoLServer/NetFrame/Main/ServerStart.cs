@@ -29,7 +29,8 @@ namespace NetFrame
        /// 初始化通信监听
        /// </summary>
        /// <param name="port">监听端口</param>
-       public ServerStart(int max) {
+       public ServerStart(int max) 
+       {
            //实例化监听对象
            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
            //设定服务器最大连接人数
@@ -37,7 +38,8 @@ namespace NetFrame
            
        }
 
-       public void Start(int port) {
+       public void Start(int port) 
+       {
            //创建连接池
            pool = new UserTokenPool(maxClient);
            //连接信号量
@@ -74,7 +76,8 @@ namespace NetFrame
        /// <summary>
        /// 开始客户端连接监听
        /// </summary>
-       public void StartAccept(SocketAsyncEventArgs e) {
+       public void StartAccept(SocketAsyncEventArgs e) 
+       {
            //如果当前传入为空  说明调用新的客户端连接监听事件 否则的话 移除当前客户端连接
            if (e == null)
            {
@@ -93,7 +96,8 @@ namespace NetFrame
            }
        }
 
-       public void ProcessAccept(SocketAsyncEventArgs e) {
+       public void ProcessAccept(SocketAsyncEventArgs e) 
+       {
            //从连接对象池取出连接对象 供新用户使用
            UserToken token = pool.pop();
            token.conn = e.AcceptSocket;
@@ -105,11 +109,13 @@ namespace NetFrame
            StartAccept(e);
        }
 
-       public void Accept_Comleted(object sender, SocketAsyncEventArgs e) {
+       public void Accept_Comleted(object sender, SocketAsyncEventArgs e) 
+       {
            ProcessAccept(e);
        }
 
-       public void StartReceive(UserToken token) {
+       public void StartReceive(UserToken token) 
+       {
            try
            {
                //用户连接对象 开启异步数据接收
@@ -136,7 +142,8 @@ namespace NetFrame
            }
        }
 
-       public void ProcessReceive(SocketAsyncEventArgs e) {
+       public void ProcessReceive(SocketAsyncEventArgs e) 
+       {
            UserToken token= e.UserToken as UserToken;
            //判断网络消息接收是否成功
            if (token.receiveSAEA.BytesTransferred > 0 && token.receiveSAEA.SocketError == SocketError.Success)
@@ -158,7 +165,8 @@ namespace NetFrame
                }
            }
        }
-       public void ProcessSend(SocketAsyncEventArgs e) {
+       public void ProcessSend(SocketAsyncEventArgs e) 
+       {
            UserToken token = e.UserToken as UserToken;
            if (e.SocketError != SocketError.Success)
            {
@@ -175,7 +183,8 @@ namespace NetFrame
        /// </summary>
        /// <param name="token"> 断开连接的用户对象</param>
        /// <param name="error">断开连接的错误编码</param>
-       public void ClientClose(UserToken token,string error) {
+       public void ClientClose(UserToken token,string error)
+       {
            if (token.conn != null) {
                lock (token) { 
                 //通知应用层面 客户端断开连接了
@@ -187,5 +196,6 @@ namespace NetFrame
                }
            }
        }
+
     }
 }

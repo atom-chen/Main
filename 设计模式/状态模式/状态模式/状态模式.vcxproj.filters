@@ -13,14 +13,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Worker.h">
-      <Filter>软件设计</Filter>
-    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>软件设计</Filter>
-    </ClInclude>
-    <ClInclude Include="Content.h">
-      <Filter>游戏设计模式</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>游戏设计模式</Filter>

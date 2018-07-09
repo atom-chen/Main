@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 #include "State.h"
-#include "Worker.h"
 
 
 

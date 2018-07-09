@@ -43,7 +43,8 @@ namespace NetFrame
        private bool isWriting = false;
        Queue<byte[]> writeQueue = new Queue<byte[]>();
 
-       public UserToken() {
+       public UserToken()
+       {
            receiveSAEA = new SocketAsyncEventArgs();
            sendSAEA = new SocketAsyncEventArgs();
            receiveSAEA.UserToken = this;
@@ -51,8 +52,10 @@ namespace NetFrame
            //设置接收对象的缓冲区大小
            receiveSAEA.SetBuffer(new byte[1024], 0, 1024);
        }
+
        //网络消息到达
-       public void receive(byte[] buff) {
+       public void receive(byte[] buff) 
+       {
            //将消息写入缓存
            cache.AddRange(buff);
            if (!isReading)
@@ -61,8 +64,10 @@ namespace NetFrame
                onData();
            }
        }
+
        //缓存中有数据处理
-       void onData() {
+       void onData() 
+       {
            //解码消息存储对象
            byte[] buff = null;
            //当粘包解码器存在的时候 进行粘包处理
@@ -88,7 +93,8 @@ namespace NetFrame
            onData();
        }
 
-       public void write(byte[] value) {
+       public void write(byte[] value) 
+       {
            if (conn == null) {
                //此连接已经断开了
                closeProcess(this, "调用已经断开的连接");
@@ -101,7 +107,8 @@ namespace NetFrame
            }
        }
 
-       public void onWrite() {
+       public void onWrite() 
+       {
            //判断发送消息队列是否有消息
            if (writeQueue.Count == 0) { isWriting = false; return; }
            //取出第一条待发消息
@@ -116,12 +123,14 @@ namespace NetFrame
            }
        }
 
-       public void writed() {
+       public void writed() 
+       {
            //与onData尾递归同理
            onWrite();
        }
 
-       public void Close() {
+       public void Close() 
+       {
            try
            {
                writeQueue.Clear();

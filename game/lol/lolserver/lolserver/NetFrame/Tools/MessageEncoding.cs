@@ -9,11 +9,12 @@ namespace NetFrame.auto
    public class MessageEncoding
     {
        /// <summary>
-       /// 消息体序列化
+       /// 消息体序列化（应用层）
        /// </summary>
        /// <param name="value"></param>
        /// <returns></returns>
-       public static byte[] encode(object value) {
+       public static byte[] encode(object value) 
+       {
            SocketModel model = value as SocketModel;
            ByteArray ba = new ByteArray();
            ba.write(model.type);
@@ -28,8 +29,9 @@ namespace NetFrame.auto
            ba.Close();
            return result;
        }
+
        /// <summary>
-       /// 消息体反序列化
+       /// 消息体反序列化（应用层）
        /// </summary>
        /// <param name="value"></param>
        /// <returns></returns>

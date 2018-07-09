@@ -11,11 +11,12 @@ namespace NetFrame
    public class SerializeUtil
     {
        /// <summary>
-       /// 对象序列化
+       /// 对象序列化（传输层）
        /// </summary>
        /// <param name="value"></param>
        /// <returns></returns>
-       public static byte[] encode(object value) {
+       public static byte[] encode(object value) 
+       {
            MemoryStream ms = new MemoryStream();//创建编码解码的内存流对象
            BinaryFormatter bw = new BinaryFormatter();//二进制流序列化对象
            //将obj对象序列化成二进制数据 写入到 内存流
@@ -26,8 +27,11 @@ namespace NetFrame
            ms.Close();
            return result;
        }
+
+
+
        /// <summary>
-       /// 反序列化对象
+       /// 反序列化对象（传输层）
        /// </summary>
        /// <param name="value"></param>
        /// <returns></returns>

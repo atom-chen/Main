@@ -1,7 +1,7 @@
-#include "Content.h"
+
 #include "GameState.h"
 
-void main()
+void main02()
 {
 	Content *theContext = new Content();
 	theContext->SetState(new GameState1(theContext));

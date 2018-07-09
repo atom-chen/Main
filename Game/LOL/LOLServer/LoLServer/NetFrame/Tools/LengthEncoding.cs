@@ -14,7 +14,8 @@ namespace NetFrame.auto
        /// </summary>
        /// <param name="buff"></param>
        /// <returns></returns>
-       public static byte[] encode(byte[] buff) {
+       public static byte[] encode(byte[] buff) 
+       {
            MemoryStream ms = new MemoryStream();//创建内存流对象
            BinaryWriter sw = new BinaryWriter(ms);//写入二进制对象流
            //写入消息长度

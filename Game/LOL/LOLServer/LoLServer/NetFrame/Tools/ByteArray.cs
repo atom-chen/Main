@@ -15,7 +15,8 @@ namespace NetFrame
 
        BinaryWriter bw;
        BinaryReader br;
-       public void Close() {
+       public void Close() 
+       {
            bw.Close();
            br.Close();
            ms.Close();
@@ -34,7 +35,8 @@ namespace NetFrame
        /// <summary>
        /// 获取当前数据 读取到的下标位置
        /// </summary>
-       public int Position {
+       public int Position 
+       {
            get { return (int)ms.Position; }
        }
 
@@ -55,12 +57,14 @@ namespace NetFrame
        /// <summary>
        /// 默认构造
        /// </summary>
-      public ByteArray() {
+      public ByteArray() 
+      {
            bw = new BinaryWriter(ms);
            br = new BinaryReader(ms);
        }
 
-      public void write(int value) {
+      public void write(int value) 
+      {
           bw.Write(value);
       }
       public void write(byte value)
