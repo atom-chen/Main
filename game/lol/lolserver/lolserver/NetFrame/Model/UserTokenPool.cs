@@ -20,7 +20,6 @@ namespace NetFrame
        /// </summary>
        public UserToken pop() 
        {
-
            return pool.Pop();
        }
 

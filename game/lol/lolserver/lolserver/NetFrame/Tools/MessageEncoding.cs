@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+ * 消息体内容编码工具
+ */ 
 namespace NetFrame.auto
 {
    public class MessageEncoding
@@ -20,9 +22,10 @@ namespace NetFrame.auto
            ba.write(model.type);
            ba.write(model.area);
            ba.write(model.command);
-           //判断消息体是否为空  不为空则序列化后写入
+
            if (model.message != null)
            {
+               //序列化然后写入
                ba.write(SerializeUtil.encode(model.message));
            }
            byte[] result = ba.getBuff();
@@ -50,7 +53,8 @@ namespace NetFrame.auto
            model.area = area;
            model.command = command;
            //判断读取完协议后 是否还有数据需要读取 是则说明有消息体 进行消息体读取
-           if (ba.Readnable) {
+           if (ba.Readnable) 
+           {
                byte[] message;
                //将剩余数据全部读取出来
                ba.read(out message, ba.Length - ba.Position);

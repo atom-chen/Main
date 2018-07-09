@@ -165,6 +165,8 @@ namespace NetFrame
                }
            }
        }
+
+       //处理消息的发送
        public void ProcessSend(SocketAsyncEventArgs e) 
        {
            UserToken token = e.UserToken as UserToken;
@@ -172,7 +174,8 @@ namespace NetFrame
            {
                ClientClose(token, e.SocketError.ToString());
            }
-           else { 
+           else
+           { 
             //消息发送成功，回调成功
                token.writed();
            }
@@ -185,8 +188,10 @@ namespace NetFrame
        /// <param name="error">断开连接的错误编码</param>
        public void ClientClose(UserToken token,string error)
        {
-           if (token.conn != null) {
-               lock (token) { 
+           if (token.conn != null) 
+           {
+               lock (token) 
+               { 
                 //通知应用层面 客户端断开连接了
                    center.ClientClose(token, error);
                    token.Close();
