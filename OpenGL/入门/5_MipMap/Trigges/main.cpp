@@ -212,7 +212,6 @@ void RenderScene(void)
 {
 	OnDrawBegin();
 
-
 	Draw();
 
 	OnDrawEnd();
@@ -278,7 +277,8 @@ int main(int argc, char* argv[])
 
 
 	GLenum err = glewInit();
-	if (GLEW_OK != err) {
+	if (GLEW_OK != err) 
+	{
 		fprintf(stderr, "GLEW Error: %s\n", glewGetErrorString(err));
 		return 1;
 	}

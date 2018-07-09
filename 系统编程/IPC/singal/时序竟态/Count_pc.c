@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <unistd.h>
 
 pid_t pid;
 int data=0;
@@ -24,13 +25,14 @@ int main(int argc, char const *argv[])
 	if(pid>0)
 	{
 		struct sigaction act,old;
+		sleep(1);
 		act.sa_handler=ParentCatch;
 		sigemptyset(&(act.sa_mask));
 		act.sa_flags=0;
 		sigaction(SIGUSR1,&act,&old);
 
 		data=1;
-		ParentCatch();
+		ParentCatch(-1);
 		while(1)
 		{
 			sleep(5);
