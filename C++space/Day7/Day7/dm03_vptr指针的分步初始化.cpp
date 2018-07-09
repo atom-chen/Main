@@ -4,13 +4,13 @@ using namespace std;
 
 //构造函数中调用虚函数能发生多态吗?
 
-class Parent
+class Parent301
 {
 public:
-	Parent(int a=0)
+	Parent301(int a = 0)
 	{
 		this->a = a;
-		print();
+		print();        //调用：我是爹 因为此时虚表指针还未初始化
 	}
 
 	virtual void print()  
@@ -22,10 +22,10 @@ private:
 	int a;
 };
 
-class Child : public Parent
+class Child301 : public Parent301
 {
 public:
-	Child(int a = 0, int b=0):Parent(a)
+	Child301(int a = 0, int b = 0) :Parent301(a)
 	{
 		this->b = b;
 		print();
@@ -39,19 +39,9 @@ private:
 	int b;
 };
 
-void HowToPlay(Parent *base)
+void main301()
 {
-	base->print(); //有多态发生  //2 动手脚  
+	Child301  c1; //定义一个子类对象 ,在这个过程中,在父类构造函数中调用虚函数print 能发生多态吗?
 	
-}
-
-void main()
-{
-
-	Child  c1; //定义一个子类对象 ,在这个过程中,在父类构造函数中调用虚函数print 能发生多态吗?
 	//c1.print();
-	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

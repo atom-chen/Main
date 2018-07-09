@@ -3,10 +3,10 @@
 using namespace std;
 
 
-class Parent1
+class Parent201
 {
 public:
-	Parent1(int a=0)
+	Parent201(int a = 0)
 	{
 		this->a = a;
 	}
@@ -19,10 +19,10 @@ private:
 	int a;
 };
 
-class Parent2
+class Parent202
 {
 public:
-	Parent2(int a=0)
+	Parent202(int a = 0)
 	{
 		this->a = a;
 	}
@@ -35,10 +35,7 @@ private:
 	int a;
 };
 
-void main()
+void main201()
 {
-	printf("sizeof(Parent):%d sizeof(Parent2):%d \n", sizeof(Parent1), sizeof(Parent2));
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
+	printf("sizeof(Parent):%d sizeof(Parent2):%d \n", sizeof(Parent201), sizeof(Parent202));
 }

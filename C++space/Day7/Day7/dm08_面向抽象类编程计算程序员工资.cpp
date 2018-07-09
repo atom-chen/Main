@@ -56,7 +56,6 @@ private:
 };
 
 //adv_programmer
-
 class adv_programmer : public programmer
 {
 public:
@@ -77,7 +76,7 @@ private:
 };
 
 
-//
+//架构师
 class architect : public programmer 
 {
 public:
@@ -104,7 +103,7 @@ void CalProgSal(programmer *base)
 	base->getSal();
 }
 
-void main()
+void main801()
 {
 	junior_programmer jp("小王", "初级", 4000);
 
@@ -118,9 +117,4 @@ void main()
 	CalProgSal(&mp);
 	CalProgSal(&ap);
 	CalProgSal(&ar);
-
-	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

@@ -51,17 +51,14 @@ int main011()
 	CSocketProtocol *sp = NULL;
 	//sp = new CSckFactoryImp1
 
-	sp = new CSckFactoryImp2; //
+	sp = new CSckFactoryImp2; 
 
-	ret = SckSendAndRec01(sp, in, inlen, out, &outlen);
+	ret = SckSendAndRec01(sp, in, inlen, out, &outlen);       //完成一次通信
 	if (ret != 0)
 	{
 		printf("func SckSendAndRec() err:%d \n", ret);
 		return ret;
 	}
 	delete sp; //想通过父类指针 释放所有的子类对象的资源 ..
-
-	cout<<"hello..."<<endl;
-	system("pause");
 	return ret;
 }

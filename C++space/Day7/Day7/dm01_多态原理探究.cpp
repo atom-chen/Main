@@ -5,10 +5,10 @@ using namespace std;
 //多态成立的三个条件 
 //要有继承  虚函数重写  父类指针指向子类对象 
 
-class Parent
+class Parent101
 {
 public:
-	Parent(int a=0)
+	Parent101(int a = 0)
 	{
 		this->a = a;
 	}
@@ -25,10 +25,10 @@ private:
 	int a;
 };
 
-class Child : public Parent
+class Child101 : public Parent101
 {
 public:
-	Child(int a = 0, int b=0):Parent(a)
+	Child101(int a = 0, int b = 0) :Parent101(a)
 	{
 		this->b = b;
 	}
@@ -41,7 +41,7 @@ private:
 	int b;
 };
 
-void HowToPlay(Parent *base)
+void HowToPlay1(Parent101 *base)
 {
 	base->print(); //有多态发生  //2 动手脚  
 	//效果:传来子类对 执行子类的print函数 传来父类对执行父类的print函数 
@@ -50,17 +50,13 @@ void HowToPlay(Parent *base)
 	//迟绑定 (运行时的时候,c++编译器才去判断)
 }
 
-void main01()
+void main101()
 {
 
-	Parent	p1; //3 动手脚 提前布局  
+	Parent101	p1; //3 动手脚 提前布局  
 				//用类定义对象的时候 C++编译器会在对象中添加一个vptr指针 
-	Child	c1; //子类里面也有一个vptr指针
+	Child101	c1; //子类里面也有一个vptr指针
 
-	HowToPlay(&p1);
-	HowToPlay(&c1);
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
+	HowToPlay1(&p1);
+	HowToPlay1(&c1);
 }

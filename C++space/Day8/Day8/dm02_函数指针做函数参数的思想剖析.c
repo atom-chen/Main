@@ -25,8 +25,8 @@ int myadd4(int a, int b)  //子任务的实现者
 	return a + b;
 }
 
-//定义了一个类型 
-typedef int (*MyTypeFuncAdd)(int a, int b);
+
+typedef int (*MyTypeFuncAdd)(int a, int b);     //定义了一个函数指针类型 
 
 //函数指针 做 函数参数
 int MainOp(MyTypeFuncAdd myFuncAdd)
@@ -45,7 +45,7 @@ int MainOp2(int (*MyPointerFuncAdd)(int a, int b) )
 //间接调用 
 
 //任务的调用 和 任务的编写可以分开
-void main()
+void main201()
 {
 	/*
 	MyTypeFuncAdd  myFuncAdd = NULL;
@@ -63,11 +63,4 @@ void main()
 	MainOp(myadd2);
 	MainOp(myadd3);
 	MainOp(myadd4);
-
-
-
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }

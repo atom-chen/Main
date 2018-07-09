@@ -21,7 +21,7 @@ int CSckFactoryImp2::cltSocketSend( unsigned char *buf /*in*/,  int buflen /*in*
 	{
 		return -1;
 	}
-	memcpy(p, buf, buflen);
+	memcpy(p, buf, buflen);                   //模拟把消息发出去
 	len = buflen;
 	return 0;
 }
@@ -35,7 +35,7 @@ int CSckFactoryImp2::cltSocketRev( unsigned char *buf /*in*/, int *buflen /*in o
 	}
 
 	*buflen  = this->len ;
-	memcpy(buf, this->p, this->len);
+	memcpy(buf, this->p, this->len);                    //模拟接受消息
 	return 0;
 }
 

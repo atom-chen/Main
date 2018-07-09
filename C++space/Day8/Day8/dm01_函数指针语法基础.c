@@ -12,13 +12,12 @@
 
 //定义一个指向 数组类型的指针 数组类的指针
 
-void main01()
+void main101()
 {
 	int a[10]; //a代表的是数组首元素的地址  &a代表整个数组的地址  a+1 4  &a+1步长 40 .
 
-	//
 	{
-		//定义一个数组类型
+		//定义一个数组类型         --->定义的是int[10]类型的别名
 		typedef int (myTypeArray)[10]; //
 		myTypeArray myArray;
 		myArray[0] = 10;
@@ -26,7 +25,7 @@ void main01()
 	}
 
 	{
-		//定义一个指针数组类型 
+		//定义一个指针数组类型    ----->定义的是指向(int[10])类型指针的别名
 		typedef int (*PTypeArray)[10];  //int *p 
 
 		PTypeArray myPArray; //sizeof(int) *10
@@ -41,7 +40,7 @@ void main01()
 	}
 
 	{
-		//定义一个指向 数组类型的指针 数组类的指针
+		//定义一个指向 数组类型的指针 数组类的指针   ----->定义的是指针变量
 
 		int (*MyPointer)[10]; //变量 告诉C编译器 给我分配内存
 		MyPointer = &a;
@@ -49,10 +48,6 @@ void main01()
 		printf("a[0]: %d \n", a[0]);
 	}
 
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }
 
 
@@ -68,7 +63,7 @@ int add(int a, int b)
 	return a +b;
 }
 
-void main02()
+void main102()
 {
 	add(1, 2); //直接调用调用 //函数名就是函数的入口地址 
 
@@ -99,8 +94,5 @@ void main02()
 		MyPonterFunc(7, 8);
 
 	}
-
-
-	system("pause");
 }
 

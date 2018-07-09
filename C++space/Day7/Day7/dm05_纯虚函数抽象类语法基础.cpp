@@ -79,7 +79,7 @@ void objplay(Figure *base)
 }
 
 
-void main511()
+void main501()
 {
 
 	//Figure f; //抽象类不能被实例化
@@ -96,9 +96,8 @@ void main511()
 	objplay(&t1);
 	objplay(&s1);
 
+	base = &c1;
+
+	objplay(base);
 	//c1.getArea();
-	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

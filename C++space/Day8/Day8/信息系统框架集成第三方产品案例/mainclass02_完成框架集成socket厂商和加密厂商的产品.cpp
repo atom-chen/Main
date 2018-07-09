@@ -92,8 +92,8 @@ int main022()
 	inlen = 9;
 
 
-	CSocketProtocol *sp = NULL;
-	CEncDesProtocol *ed = NULL;
+	CSocketProtocol *sp = NULL;                    //传输基类
+	CEncDesProtocol *ed = NULL;                    //加密基类
 
 	//sp = new CSckFactoryImp1
 
@@ -108,7 +108,5 @@ int main022()
 	}
 	delete sp; //想通过父类指针 释放所有的子类对象的资源 ..
 
-	cout<<"hello..."<<endl;
-	system("pause");
 	return ret;
 }

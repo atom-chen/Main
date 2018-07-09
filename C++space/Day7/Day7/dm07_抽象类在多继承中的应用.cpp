@@ -16,7 +16,7 @@ public:
 	virtual void print() = 0;
 };
 
-class Parent
+class Parent701
 {
 public:
 	int getA()
@@ -29,7 +29,7 @@ private:
 	int a;
 };
 
-class  Child : public Parent, public Interface1, public Interface2
+class  Child : public Parent701, public Interface1, public Interface2     //只继承了一次，但是实现了多个接口---->>> OK
 {
 public:
 	virtual int add(int a, int b)
@@ -52,7 +52,7 @@ protected:
 private:
 };
 
-void main71()
+void main701()
 {
 	
 	Child c1;
@@ -63,10 +63,5 @@ void main71()
 
 	Interface2 *it2 = &c1;
 	it2->mult(3, 6);
-
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
 

@@ -2,12 +2,12 @@
 using namespace std;
 
 
-class programmer{
+class programmer1{
 public:
 	virtual float getSalary() = 0;
 };
 
-class JuniorProgrammer :public programmer{
+class JuniorProgrammer1 :public programmer1{
 public:
 	virtual float getSalary()
 	{
@@ -15,7 +15,7 @@ public:
 	}
 };
 
-class IntermediateProgrammer :public programmer{
+class IntermediateProgrammer1 :public programmer1{
 public:
 	virtual float getSalary()
 	{
@@ -23,7 +23,7 @@ public:
 	}
 };
 
-class seniorProgrammer :public programmer{
+class seniorProgrammer1 :public programmer1{
 public:
 	virtual float getSalary()
 	{
@@ -31,7 +31,7 @@ public:
 	}
 };
 
-class architect :public programmer{
+class architect1 :public programmer1{
 public:
 	virtual float getSalary()
 	{
@@ -39,13 +39,13 @@ public:
 	}
 };
 
-void main33()
+void main1()
 {
-	programmer *it;
-	JuniorProgrammer di;
-	IntermediateProgrammer zhong;
-	seniorProgrammer gao;
-	architect jiagou;
+	programmer1 *it;
+	JuniorProgrammer1 di;
+	IntermediateProgrammer1 zhong;
+	seniorProgrammer1 gao;
+	architect1 jiagou;
 	it = &zhong;
 	cout << di.getSalary() << endl;
 

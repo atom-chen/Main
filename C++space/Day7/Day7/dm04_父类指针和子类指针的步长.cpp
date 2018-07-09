@@ -5,10 +5,10 @@ using namespace std;
 //结论:
 //多态是用父类指针指向子类对象 和 父类步长++,是两个不同的概念
 
-class Parent
+class Parent401
 {
 public:
-	Parent(int a=0)
+	Parent401(int a = 0)
 	{
 		this->a = a;
 	}
@@ -24,7 +24,7 @@ private:
 
 
 //成功 ,一次偶然的成功 ,必然的失败更可怕
-class Child : public Parent
+class Child401 : public Parent401
 {
 public:
 	/*
@@ -35,7 +35,7 @@ public:
 	}
 	*/
 	
-	Child(int b = 0):Parent(0)
+	Child401(int b = 0) :Parent401(0)
 	{
 		//this->b = b;
 	}
@@ -49,22 +49,13 @@ private:
 	//int b;
 };
 
-void HowToPlay(Parent *base)
+
+void main()
 {
-	base->print(); //有多态发生  //2 动手脚  
+	Parent401 *pP = NULL;
+	Child401  *pC = NULL;
 
-}
-
-void main411()
-{
-
-	Child  c1; //定义一个子类对象 ,在这个过程中,在父类构造函数中调用虚函数print 能发生多态吗?
-	//c1.print();
-
-	Parent *pP = NULL;
-	Child  *pC = NULL;
-
-	Child  array[] = {Child(1), Child(2), Child(3)};
+	Child401  array[] = { Child401(1), Child401(2), Child401(3) };
 	pP = array;
 	pC = array;
 
@@ -72,19 +63,14 @@ void main411()
 	pC->print(); //多态发生
 
 
+	pP++;                                   //走sizeof(Parent401)
+	pC++;                                   //走sizeof(Child401)
+	pP->print();
+	pC->print(); 
+
+
 	pP++;
 	pC++;
 	pP->print();
-	pC->print(); //多态发生
-
-
-	pP++;
-	pC++;
-	pP->print();
-	pC->print(); //多态发生
-
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
+	pC->print(); 
 }

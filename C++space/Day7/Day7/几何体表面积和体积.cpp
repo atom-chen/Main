@@ -82,7 +82,7 @@ void Delete(geometry *cube)
 	delete cube;
 }
 
-void main()
+void main2()
 {
 	geometry *ge = NULL;
 	Cube *cube = new Cube(1,2,3);

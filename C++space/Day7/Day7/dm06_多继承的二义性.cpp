@@ -36,14 +36,9 @@ private:
 
 
 
-void main61()
+void main601()
 {
-	
 	 C myc;
 	 myc.c = 10;
 	 myc.b = 100;//二义性  error C2385: 对“b”的访问不明确
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

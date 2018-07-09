@@ -133,7 +133,7 @@ private:
 };
 
 //写一个框架
-int main()
+int main3()
 {
 	int ret = 0;
 	unsigned char in[4096];
@@ -158,7 +158,7 @@ int main()
 	myMainOp->setSp(sp);
 	myMainOp->setEd(ed);
 
-	ret = myMainOp->SckSendAndRec_EncDec3(in, inlen, out, &outlen);
+	ret = myMainOp->SckSendAndRec_EncDec3(in, inlen, out, &outlen);              //将编码和加密做成成员函数
 	if (ret!= 0)
 	{
 		printf("myMainOp SckSendAndRec_EncDec3() err\n ", ret);
@@ -168,7 +168,5 @@ int main()
 	delete ed;
 	delete myMainOp;
 
-	cout<<"hello..."<<endl;
-	system("pause");
 	return ret;
 }

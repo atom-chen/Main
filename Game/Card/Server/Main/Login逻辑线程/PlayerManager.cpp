@@ -23,6 +23,26 @@ void QuerySockets()
 		return;
 	}
 	SOCKET MaxSocketID=playerList.front()->GetSocket().getSOCKET();
+
+	FD_ZERO(&m_ReadSet);
+	FD_ZERO(&m_WriteSet);
+	FD_ZERO(&m_ExceptSet);
+
+	for(auto it=playerList.begin();it!=playerList.end();)
+	{
+		PlayerPtr ptr=(*it);
+		SOCKET s=ptr->GetSocket().getSOCKET();
+
+		FD_SET(s,&m_ReadSet);
+		FD_SET(s,&m_WriteSet);
+		FD_SET(s,&m_ExceptSet);
+
+		if(MaxSocketID<s)
+		{
+			MaxSocketID=s;
+		}
+		it++;
+	}
 }
 void ProcessExceptions()
 {

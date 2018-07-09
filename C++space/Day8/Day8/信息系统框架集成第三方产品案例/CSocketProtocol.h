@@ -3,7 +3,9 @@
 
 #include <iostream>
 using namespace std;
-
+/*
+Socket³éÏóÀà
+*/
 class CSocketProtocol
 {
 public:
