@@ -11,6 +11,9 @@
     <Filter Include="游戏设计模式">
       <UniqueIdentifier>{97743ddf-1866-41b0-8b04-4f935988058b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="游戏状态切换">
+      <UniqueIdentifier>{46790a2f-2d2c-4c93-afe5-b63ea8efbdb7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -18,6 +21,12 @@
     </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>游戏设计模式</Filter>
+    </ClInclude>
+    <ClInclude Include="StateController.h">
+      <Filter>游戏状态切换</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneState.h">
+      <Filter>游戏状态切换</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +41,15 @@
     </ClCompile>
     <ClCompile Include="UnitTest.cpp">
       <Filter>游戏设计模式</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoop.cpp">
+      <Filter>游戏状态切换</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneState.cpp">
+      <Filter>游戏状态切换</Filter>
+    </ClCompile>
+    <ClCompile Include="StateController.cpp">
+      <Filter>游戏状态切换</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

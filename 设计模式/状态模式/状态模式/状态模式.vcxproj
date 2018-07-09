@@ -77,13 +77,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Content.cpp" />
+    <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SceneState.cpp" />
+    <ClCompile Include="StateController.cpp" />
     <ClCompile Include="UnitTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="SceneState.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
