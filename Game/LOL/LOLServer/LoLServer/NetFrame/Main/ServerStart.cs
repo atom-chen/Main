@@ -84,35 +84,42 @@ namespace NetFrame
                e = new SocketAsyncEventArgs();
                e.Completed += new EventHandler<SocketAsyncEventArgs>(Accept_Comleted);
            }
-           else {
+           else 
+           {
                e.AcceptSocket = null;
            }
            //信号量-1
            acceptClients.WaitOne();
            bool result= server.AcceptAsync(e);
+
            //判断异步事件是否挂起  没挂起说明立刻执行完成  直接处理事件 否则会在处理完成后触发Accept_Comleted事件
-           if (!result) {
+           if (!result) 
+           {
                ProcessAccept(e);
            }
        }
 
+       /// <summary>
+       /// 接收一个客户端连接
+       /// </summary>
+       /// <param name="e"></param>
        public void ProcessAccept(SocketAsyncEventArgs e) 
        {
            //从连接对象池取出连接对象 供新用户使用
            UserToken token = pool.pop();
            token.conn = e.AcceptSocket;
-           //TODO 通知应用层 有客户端连接
-           center.ClientConnect(token);
-           //开启消息到达监听
-           StartReceive(token);
-           //释放当前异步对象
-           StartAccept(e);
+
+           center.ClientConnect(token);               //通知应用层 有客户端连接
+           StartReceive(token);                       //开启消息到达监听
+           StartAccept(e);                            //释放当前异步对象
        }
+
 
        public void Accept_Comleted(object sender, SocketAsyncEventArgs e) 
        {
            ProcessAccept(e);
        }
+
 
        public void StartReceive(UserToken token) 
        {
@@ -142,6 +149,10 @@ namespace NetFrame
            }
        }
 
+
+
+
+       //处理消息的接收
        public void ProcessReceive(SocketAsyncEventArgs e) 
        {
            UserToken token= e.UserToken as UserToken;
@@ -180,6 +191,7 @@ namespace NetFrame
                token.writed();
            }
        }
+
 
        /// <summary>
        /// 客户端断开连接

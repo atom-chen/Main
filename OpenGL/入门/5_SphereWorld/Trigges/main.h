@@ -6,7 +6,6 @@
 #include <GLMatrixStack.h>
 #include <GLGeometryTransform.h>
 #include <StopWatch.h>
-
 #include <math.h>
 #include <stdio.h>
 

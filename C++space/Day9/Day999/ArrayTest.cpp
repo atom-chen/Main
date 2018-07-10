@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 #include "Array.hpp"
-/*
+
 class Teacher{
 public:
 	Teacher(const char* name, int age)
@@ -107,7 +107,7 @@ void main1()
 
 	system("pause");
 }
-/*
+
 void main9()
 {
 	Array<int> array1(10);
@@ -126,8 +126,5 @@ void main9()
 	}
 
 	cout<<array2<<endl;
-
-	system("pause");
 	
 }
-	*/

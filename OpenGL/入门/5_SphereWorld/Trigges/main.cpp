@@ -15,7 +15,9 @@ GLTriangleBatch		sphereBatch;
 GLBatch				floorBatch;
 
 GLuint				uiTextures[3];
-void DrawSongAndDance(GLfloat yRot)		// Called to draw dancing objects
+
+//绘制sphere
+void DrawSongAndDance(GLfloat yRot)
 {
 	static GLfloat vWhite[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	static GLfloat vLightPos[] = { 0.0f, 3.0f, 0.0f, 1.0f };
@@ -80,10 +82,7 @@ void DrawSongAndDance(GLfloat yRot)		// Called to draw dancing objects
 
 void SetupRC()
 {
-	// Make sure OpenGL entry points are set
 	glewInit();
-
-	// Initialze Shader Manager
 	shaderManager.InitializeStockShaders();
 
 	glEnable(GL_DEPTH_TEST);
@@ -132,7 +131,8 @@ void SetupRC()
 		GL_LINEAR, GL_CLAMP_TO_EDGE);
 
 	// Randomly place the spheres
-	for (int i = 0; i < NUM_SPHERES; i++) {
+	for (int i = 0; i < NUM_SPHERES; i++)
+	{
 		GLfloat x = ((GLfloat)((rand() % 400) - 200) * 0.1f);
 		GLfloat z = ((GLfloat)((rand() % 400) - 200) * 0.1f);
 		spheres[i].SetOrigin(x, 0.0f, z);
@@ -144,21 +144,21 @@ void ShutdownRC(void)
 {
 	glDeleteTextures(3, uiTextures);
 }
-
-void RenderScene(void)
+void OnDrawBegin()
 {
-	static CStopWatch	rotTimer;
-	float yRot = rotTimer.GetElapsedSeconds() * 60.0f;
-
-
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	modelViewMatrix.PushMatrix();
 	M3DMatrix44f mCamera;
 	cameraFrame.GetCameraMatrix(mCamera);
 	modelViewMatrix.MultMatrix(mCamera);
+}
 
-	// Draw the world upside down
+void Draw()
+{
+	static CStopWatch	rotTimer;
+	float yRot = rotTimer.GetElapsedSeconds() * 60.0f;
+
+	//绘制倒影
 	modelViewMatrix.PushMatrix();
 	modelViewMatrix.Scale(1.0f, -1.0f, 1.0f); // Flips the Y Axis
 	modelViewMatrix.Translate(0.0f, 0.8f, 0.0f); // Scootch the world down a bit...
@@ -167,30 +167,36 @@ void RenderScene(void)
 	glFrontFace(GL_CCW);
 	modelViewMatrix.PopMatrix();
 
-	// Draw the solid ground
+	//绘制大理石地面
 	glEnable(GL_BLEND);
 	glBindTexture(GL_TEXTURE_2D, uiTextures[0]);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	static GLfloat vFloorColor[] = { 1.0f, 1.0f, 1.0f, 0.75f };
 	shaderManager.UseStockShader(GLT_SHADER_TEXTURE_MODULATE,
 		transformPipeline.GetModelViewProjectionMatrix(),
-		vFloorColor,
-		0);
-
+		vFloorColor, 0);
 	floorBatch.Draw();
+
 	glDisable(GL_BLEND);
 
-
+	//绘制物体本身
 	DrawSongAndDance(yRot);
-
+}
+void OnDrawEnd()
+{
 	modelViewMatrix.PopMatrix();
-
 
 	// Do the buffer Swap
 	glutSwapBuffers();
 
 	// Do it again
 	glutPostRedisplay();
+}
+void RenderScene(void)
+{
+	OnDrawBegin();
+	Draw();
+	OnDrawEnd();
 }
 
 

@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
-
+using namespace vector;
 #include "MyVector.cpp"
 
 //1  优化Teacher类, 属性变成 char *panme, 购置函数里面 分配内存
@@ -12,8 +12,6 @@ using namespace std;
 //5  在模板数组类中,存int char Teacher Teacher*(指针类型)
 
 //=====>stl 容器的概念 
-
-
 class Teacher
 {
 public:
@@ -34,12 +32,11 @@ public:
 	}
 private:
 	int age;
-	//char name[32];
-	char *pName2;
+	char name[32];
+	//char *pName2;
 };
 
-
-void main()
+void main1()
 {
 	Teacher t1("t1", 31), t2("t2", 32), t3("t3", 33), t4("t4", 34);
 
@@ -61,7 +58,7 @@ void main()
 
 	system("pause");
 }
-void main02()
+void main2()
 {
 	MyVector<char> myv1(10);
 	myv1[0] = 'a';
@@ -70,11 +67,9 @@ void main02()
 	myv1[3] = 'd';
 
 	cout << myv1;
-
-	system("pause");
 }
 
-void main01()
+void main3()
 {
 	MyVector<int> myv1(10);
 
@@ -93,8 +88,4 @@ void main01()
 	}
 
 	cout << myv2 << endl;
-	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
