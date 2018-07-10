@@ -5,13 +5,15 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Vector">
+      <UniqueIdentifier>{1adeeb14-1cd5-49ad-bb0b-9c1043322a2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Complex">
+      <UniqueIdentifier>{59ec66f8-3809-4712-b606-451d8f284399}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -25,12 +27,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm10_类模板中的static关键字.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyVector.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyVector_test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm01_为什么会有函数模板和基本语法.cpp">
@@ -48,25 +44,31 @@
     <ClCompile Include="dm05_模板机制剖析.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dm09_复数类_所有函数都写在类的外部(h和cpp分开).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector_test.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector.cpp">
+      <Filter>Vector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Complex.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Complex.hpp">
+      <Filter>Complex</Filter>
     </ClInclude>
-    <ClInclude Include="dm09_complex.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Complex.h">
+      <Filter>Complex</Filter>
     </ClInclude>
     <ClInclude Include="MyVector.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Complex.hpp">
-      <Filter>头文件</Filter>
+      <Filter>Vector</Filter>
     </ClInclude>
     <ClInclude Include="dm09_complex.hpp">
-      <Filter>头文件</Filter>
+      <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="MyVector.hpp">
-      <Filter>头文件</Filter>
+    <ClInclude Include="dm09_complex.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

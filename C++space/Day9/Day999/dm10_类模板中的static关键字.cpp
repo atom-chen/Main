@@ -47,7 +47,7 @@ namespace demo10
 
 
 using namespace demo10;
-void main()
+void main1001()
 {
 	AA<int> a1, a2, a3;
 	a1.m_a = 10;

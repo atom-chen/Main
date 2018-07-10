@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
-using namespace vector;
+
 #include "MyVector.cpp"
 
 //1  优化Teacher类, 属性变成 char *panme, 购置函数里面 分配内存
@@ -12,19 +12,28 @@ using namespace vector;
 //5  在模板数组类中,存int char Teacher Teacher*(指针类型)
 
 //=====>stl 容器的概念 
+
+
 class Teacher
 {
 public:
+	friend const ostream& operator<<(const ostream& out, const Teacher& teacher);
 	Teacher()
 	{
 		age = 33;
-		strcpy(name, "");
+		strcpy(this->name, "");
 	}
 
 	Teacher(char *name, int age)
 	{
 		this->age = age;
 		strcpy(this->name, name);
+	}
+	Teacher& operator=(const Teacher& other)
+	{
+		this->age = age;
+		strcpy(this->name, name);
+		return *this;
 	}
 	void printT()
 	{
@@ -36,7 +45,12 @@ private:
 	//char *pName2;
 };
 
-void main1()
+const ostream& operator<<(const ostream& out, const Teacher& teacher)
+{
+	cout << "Teacher Name:" << teacher.name << "  Age:" << teacher.age << endl;
+	return out;
+}
+void main()
 {
 	Teacher t1("t1", 31), t2("t2", 32), t3("t3", 33), t4("t4", 34);
 
@@ -52,13 +66,10 @@ void main1()
 		Teacher tmp = tArray[i];
 		tmp.printT();
 	}
+
 	cout << tArray;
-
-
-
-	system("pause");
 }
-void main2()
+void main02()
 {
 	MyVector<char> myv1(10);
 	myv1[0] = 'a';
@@ -67,9 +78,11 @@ void main2()
 	myv1[3] = 'd';
 
 	cout << myv1;
+
+	system("pause");
 }
 
-void main3()
+void main01()
 {
 	MyVector<int> myv1(10);
 
@@ -88,4 +101,8 @@ void main3()
 	}
 
 	cout << myv2 << endl;
+	
+	cout<<"hello..."<<endl;
+	system("pause");
+	return ;
 }

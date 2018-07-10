@@ -1,14 +1,13 @@
 
 #include <iostream>
 using namespace std;
-
-namespace demo9
+namespace demo09
 {
 	template <typename T>
 	class Complex
 	{
-		friend Complex<T> MySub<T>(Complex<T> &c1, Complex<T> &c2);
-		friend ostream & operator<< <T> (ostream &out, Complex &c3);
+		friend Complex<T> MySub(Complex<T> &c1, Complex<T> &c2);
+		friend ostream & operator<< <T> (ostream &out, Complex<T> &c3);    //记得在函数后面加上<T>
 
 	public:
 		Complex(T a, T b);
@@ -22,7 +21,7 @@ namespace demo9
 
 	//构造函数的实现 写在了类的外部
 	template <typename T>
-	Complex<T>::Complex(T a, T b)
+	Complex<T>::Complex<T>(T a, T b)
 	{
 		this->a = a;
 		this->b = b;
@@ -37,7 +36,7 @@ namespace demo9
 	//本质是 : 模板是两次 编译生成的 第一次生成的函数头 和第二次生成的函数头 不一样
 	//成员函数 实现 +运算符重载
 	template <typename T>
-	Complex<T>  Complex<T>::operator+ (Complex<T> &c2)
+	Complex<T>  Complex<T>::operator+(Complex<T> &c2)
 	{
 		Complex tmp(a + c2.a, b + c2.b);
 		return tmp;
@@ -60,9 +59,9 @@ namespace demo9
 		Complex<T> tmp(c1.a - c2.a, c1.b - c2.b);
 		return tmp;
 	}
-
 }
-using namespace demo9;
+
+using namespace demo09;
 void main901()
 {
 	//需要把模板类 进行具体化以后  才能定义对象  C++编译器要分配内存
@@ -75,10 +74,8 @@ void main901()
 
 	//滥用友元函数
 	{
-		Complex<int> c4 = MySub<int>(c1, c2);
-		cout << c4 << endl;
+		//Complex<int> c4 = MySub<int>(c1, c2);
+		//cout << c4 << endl;
 
 	}
-
 }
-
