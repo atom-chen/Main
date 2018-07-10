@@ -2,7 +2,8 @@
 #include "stdlib.h"
 #include "string.h"
 #include "socketclientdll.h"
-
+#pragma comment(lib,"testplatform/socketclient.lib")
+#define _CRT_SECURE_NO_WARNINGS
 //typedef int (*EncData)(unsigned char *inData,int inDataLen,unsigned char *outData,int *outDataLen,void *Ref, int RefLen);
 
 //是厂商的加密函数

@@ -11,6 +11,7 @@
 
 #define ITCAST_DEBUG_FILE_	"socketclient.log"
 #define ITCAST_MAX_STRING_LEN 		10240
+#define _CRT_SECURE_NO_WARNINGS
 
 //LevelÀà±ð
 #define IC_NO_LOG_LEVEL			0

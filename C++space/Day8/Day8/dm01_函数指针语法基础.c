@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
 //数组指针 语法 梳理
 //定义一个数组类型   
 //int a[10];//

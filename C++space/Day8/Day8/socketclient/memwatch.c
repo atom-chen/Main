@@ -405,7 +405,7 @@ static void		mwMutexTerm( void );
 static void		mwMutexLock( void );
 static void		mwMutexUnlock( void );
 #endif
-
+#define _CRT_SECURE_NO_WARNINGS
 /***********************************************************************
 ** System functions
 ***********************************************************************/
