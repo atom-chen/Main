@@ -55,4 +55,24 @@ protected:
 	fd_set m_ConnectingReadSet;
 	fd_set m_ConnectingWriteSet;
 	fd_set m_ConnectingExceptSet;
+public:
+	//预留接口
+	virtual void OnAddPlayer(PlayerPtr ptr,int32_t nResult);
+	virtual void OnDelPlayer(PlayerPtr ptr,int32_t nResult);
+	virtual void OnAddConnectingPlayer(PlayerPtr ptr,int32_t nResult);
+	virtual void OnDelConnectingPlayer(PlayerPtr ptr,int32_t nResult);		
 }
+
+
+
+class LoginPlayerManager:public PlayerManager
+{
+public:
+	LoginPlayerManager();
+	~LoginPlayerManager();
+public:
+	virtual void OnAddPlayer(PlayerPtr ptr,int32_t nResult);
+	virtual void OnDelPlayer(PlayerPtr ptr,int32_t nResult);	
+private:
+	LoginRoutine& m_rLoginRoutine;
+};

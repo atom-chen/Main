@@ -239,6 +239,8 @@ void QueryConnectingSockets()
 	timev.tv_usec=0;
 	int32_t nRet=select(static_cast<int32_t>(MaxSocketID+1),&m_ReadSet,&m_WriteSet,&m_ExceptSet,&timev);	
 }
+
+//处理连接
 void ProcessConnecting()
 {
 	for(auto it=m_ConnectPlayerList.begin();it!=m_ConnectPlayerList.end();)
@@ -271,3 +273,33 @@ void ProcessConnecting()
 		it++;
 	}	
 }
+
+
+/*--------------------------------------------------------------子类-----------------------------------------------------------------*/
+void LoginPlayerManager::OnAddPlayer(PlayerPtr ptr,int32_t nResult)
+{
+	PlayerManager::OnAddPlayer(ptr,nResult);
+
+	ClientPlayerPtr cliptr=boost::dynamic_pointer_cast<ClientPlayer,Player>(ptr);
+	cliptr->GetPlayerLoginData().SetLoginRoutine(&m_rLoginRoutine);
+
+	m_rLoginRoutine.SetCurPlayerCount(static_cast<int32_t>(m_PlayerList.size()));
+
+	//..日志
+}
+void LoginPlayerManager::OnDelPlayer(PlayerPtr ptr,int32_t nResult)
+{
+	PlayerManager::OnDelPlayer(ptr,nResult);
+
+	ClientPlayerPtr cliptr=boost::dynamic_pointer_cast<ClientPlayer,Player>(ptr);
+	cliptr->GetPlayerLoginData().SetLoginRoutine(nullptr);
+
+	m_rLoginRoutine.SetCurPlayerCount(static_cast<int32_t>(m_PlayerList.size()));
+
+	switch(cliptr->GetStatus())
+	{
+		//...各种case
+	}
+	
+	//...日志
+}	

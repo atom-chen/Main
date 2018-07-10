@@ -16,18 +16,22 @@ public:
 	Socket();
 	virtual ~Socket();
 public:
+	//创建 销毁连接
 	bool create();
 	void close();
 
 	bool connect();
 	bool connect(const char* host,uint32_t port);
 
+	//收发消息
 	uint32_t send(const void* buf,uint32_t len,uint32_t flags=0);
 	uint32_t receive(void* buf,uint32_t len,uint32_t flags=0);
 
 	uint32_t available() const;
-	SOCKET accept(struct socketaddr* addr,uint32_t *addrlen);
 
+
+	//套接字开始连接
+	SOCKET accept(struct socketaddr* addr,uint32_t *addrlen);
 	bool bind(uint32_t port);
 	bool listen();
 
@@ -35,9 +39,9 @@ public:
 	bool setLinger(uint32_t lingertime);
 	bool setReuseAddr(bool on = true);
 	bool getSocketError() const;
-	bool setNonBlocking(bool on = true);
+	bool setNonBlocking(bool on = true);                 //非阻塞（异步套接字）
 public:
-	SOCKET m_SocketID;
+	SOCKET m_SocketID;                 
 	SOCKADDR_IN m_SocketAddr;
 	char m_Host[IP_SIZE];
 	uint32_t m_Port;
