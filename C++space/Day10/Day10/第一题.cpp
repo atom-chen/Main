@@ -3,7 +3,7 @@
 #include <iomanip>
 using namespace std;
 
-void main()
+void main1()
 {
 	int i;
 	cin >> i;

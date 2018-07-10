@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 using namespace std;
 
@@ -5,7 +6,16 @@ template <typename T>
 class MyVector
 {
 
-	friend ostream & operator<< <T>(ostream &out,  const MyVector &obj);
+	friend ostream& operator<<(ostream &out, const MyVector &obj)
+	{
+		for (int i = 0; i < obj.m_len; i++)
+		{
+			out << obj.m_space[i] << " ";
+			//out << t1;
+		}
+		out << endl;
+		return out;
+	}
 public:
 	MyVector(int size = 0);  //构造函数
 	MyVector(const MyVector &obj); // 拷贝构造函数

@@ -9,7 +9,7 @@ using namespace std;
 
 //5 异常捕捉严格按照类型匹配
 
-void main()
+void main201()
 {
 	try
 	{
@@ -51,7 +51,7 @@ void myDivide(int x, int y)
 }
 
 
-void main22()
+void main202()
 {
 	myDivide(100, 0);
 	
@@ -60,7 +60,7 @@ void main22()
 	return ;
 }
 
-void main21()
+void main203()
 {
 	try
 	{
@@ -78,7 +78,4 @@ void main21()
 		cout <<  "其他未知类型异常 "<< endl;
 	}
 	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

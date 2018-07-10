@@ -23,7 +23,7 @@ private:
 	int age;
 };
 
-void main61()
+void main601()
 {
 	try
 	{
@@ -36,7 +36,6 @@ void main61()
 	}
 
 	exception e;
-	system("pause");
 }
 
 class MyException : public exception
@@ -61,7 +60,7 @@ void testMyExcept()
 {
 	throw MyException("函数异常");
 }
-void main()
+void main602()
 {
 
 	try
@@ -77,5 +76,4 @@ void main()
 		cout << "未知 类型 " << endl;
 	}
 	
-	system("pause");
 }

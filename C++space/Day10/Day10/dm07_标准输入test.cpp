@@ -15,7 +15,7 @@ using namespace std;
 */
 
 
-void main71()
+void main701()
 {
 	char	mybuf[1024];
 	int		myInt;
@@ -29,21 +29,19 @@ void main71()
 
 	cout << "myInt:" << myInt << "myLong" << myLong << "mybuf:" << mybuf << endl;
 
-	system("pause");
 }
 
 //get()
-void main72()
+void main702()
 {
 	char ch;
 	while ( (ch=cin.get() )!= EOF )
 	{
 		cout << ch << endl;
 	}
-	system("pause");
 }
 
-void main73()
+void main703()
 {
 	char a, b, c;
 
@@ -57,12 +55,10 @@ void main73()
 	cin.get(a).get(b).get(c);
 
 	cout << a << b << c;
-
-	system("pause");
 }
 
 //getline函数可以接受 空格
-void main74()
+void main704()
 {
 	char buf1[256];
 	char buf2[256];
@@ -77,7 +73,7 @@ void main74()
 	system("pause");
 }
 
-void main75()
+void main705()
 {
 	char buf1[256];
 	char buf2[256];
@@ -96,7 +92,7 @@ void main75()
 }
 
 //案例:输入的整数和字符串分开处理
-int main78() 
+int main706() 
 {
 	cout << "Please, enter a number or a word: ";
 	char c = std::cin.get();
@@ -116,6 +112,4 @@ int main78()
 		getline (cin, str); // //字符串 中间可能有空格 使用 cin.getline();
 		cout << "You entered a word: " << str << '\n';
 	}
-	system("pause");
-	return 0;
 }

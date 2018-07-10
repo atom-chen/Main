@@ -38,9 +38,21 @@ public:
 protected:
 	void QueryConnectingSockets();
 	void ProcessConnecting();
-private:
 
+private:
+	//容器操作函数
+	void Add(PlayerPtr ptr,int32_t nResult);           //操作playerList集合，从集合中增加该玩家数据，result为删除的原因
+	iterator Del(PlayerPtr ptr,int32_t nResult);       //操作playerList集合，从集合中删除该玩家数据，result为删除的原因
 protected:
 	PlayerPtrList m_PlayerList;                    //核心容器，存储当前在线所有玩家
 	PlayerPtrList m_ConnectingPlayerList;          //存储当前已建立的连接
+protected:
+	//全部set
+	fd_set m_ReadSet;
+	fd_set m_WriteSet;
+	fd_set m_ExceptSet;
+
+	fd_set m_ConnectingReadSet;
+	fd_set m_ConnectingWriteSet;
+	fd_set m_ConnectingExceptSet;
 }

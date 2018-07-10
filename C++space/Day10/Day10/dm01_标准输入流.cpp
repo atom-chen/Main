@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-void main01()
+void main101()
 {
 	char mybuf[1024];
 	int myInt;
@@ -16,7 +16,7 @@ void main01()
 	 
 }
 
-void main02()
+void main102()
 { 
 	char ch;
 	while ((ch = cin.get()) != EOF)
@@ -25,13 +25,13 @@ void main02()
 	}
 }
 
-void main03()
+void main103()
 {
 	char a, b, c;
 	cin.get(a).get(b).get(c);
 	cout<<a<<b<<c<<endl;
 }
-void main04()
+void main104()
 {
 	char buf1[256];
 	char buf2[256];
@@ -41,7 +41,7 @@ void main04()
 	cout << buf2 << endl;
 }
 
-void main06()
+void main105()
 {
 	char buf1[256];
 	char buf2[256];

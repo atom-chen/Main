@@ -12,18 +12,12 @@
     <Filter Include="Vector">
       <UniqueIdentifier>{1adeeb14-1cd5-49ad-bb0b-9c1043322a2f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Complex">
+    <Filter Include="复数">
       <UniqueIdentifier>{59ec66f8-3809-4712-b606-451d8f284399}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dm06_类模板基本语法.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dm07_复数类_所有函数都写在类的内部.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dm08_复数类_所有函数都写在类的外部(在一个cpp中).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm10_类模板中的static关键字.cpp">
@@ -44,31 +38,37 @@
     <ClCompile Include="dm05_模板机制剖析.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dm09_复数类_所有函数都写在类的外部(h和cpp分开).cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MyVector_test.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
     <ClCompile Include="MyVector.cpp">
       <Filter>Vector</Filter>
     </ClCompile>
+    <ClCompile Include="dm08_复数类_所有函数都写在类的外部(在一个cpp中).cpp">
+      <Filter>复数</Filter>
+    </ClCompile>
+    <ClCompile Include="dm07_复数类_所有函数都写在类的内部.cpp">
+      <Filter>复数</Filter>
+    </ClCompile>
+    <ClCompile Include="dm09_复数类_所有函数都写在类的外部(h和cpp分开).cpp">
+      <Filter>复数</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Complex.hpp">
-      <Filter>Complex</Filter>
+      <Filter>复数</Filter>
     </ClInclude>
     <ClInclude Include="Complex.h">
-      <Filter>Complex</Filter>
+      <Filter>复数</Filter>
     </ClInclude>
     <ClInclude Include="MyVector.h">
       <Filter>Vector</Filter>
     </ClInclude>
-    <ClInclude Include="dm09_complex.hpp">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="dm09_complex.h">
-      <Filter>源文件</Filter>
+      <Filter>复数</Filter>
+    </ClInclude>
+    <ClInclude Include="dm09_complex.cpp">
+      <Filter>复数</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

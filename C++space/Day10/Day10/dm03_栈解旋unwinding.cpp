@@ -56,7 +56,7 @@ void myDivide3() throw ()
 }
 
 
-void main()
+void main301()
 {
 	try
 	{
@@ -71,9 +71,4 @@ void main()
 	{
 		cout << " δ֪ �쳣\n" ;
 	}
-	
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

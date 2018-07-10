@@ -18,16 +18,10 @@
     <ClCompile Include="dm01_标准输入流.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="标准输出.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="文件IO.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="第一题.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dm01_类型转换.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm02_异常的基本语法.cpp">
@@ -52,6 +46,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm09_文件的读写.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="类型转换.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

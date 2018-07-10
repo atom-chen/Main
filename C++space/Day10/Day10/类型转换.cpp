@@ -27,7 +27,7 @@ void printBuf(const char *  p)
 	cout << p << endl;
 }
 
-void main()
+void main2()
 {
 	char buf[] = "aaaaaaaaafffffddd";
 
@@ -97,7 +97,7 @@ void playObj(Animal *base)
 	}
 }
 
-void main02()
+void main3()
 {
 	Dog d1;
 	Cat c1;
@@ -124,7 +124,7 @@ void main02()
 	system("pause");
 }
 
-void main01()
+void main4()
 {
 	double dpi = 3.1415926;
 
@@ -143,7 +143,4 @@ void main01()
 	cout <<"p2" << p2 << endl; //%d
 
 	//总结:通过 reinterpret_cast<>() 和 static_cast<>()把C语言的强制类型转换 都覆盖了..
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

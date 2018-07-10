@@ -4,9 +4,9 @@ using namespace std;
 #include "MyVector.h"
 
 template <typename T>
-ostream & operator<<(ostream &out,  const MyVector<T> &obj)
+ostream& operator<<(ostream& out, const MyVector<T> &obj)
 {
-	for (int i=0; i<obj.m_len; i++)
+	for (int i = 0; i < obj.m_len; i++)
 	{
 		out << obj.m_space[i] << " ";
 		//out << t1;
@@ -14,7 +14,6 @@ ostream & operator<<(ostream &out,  const MyVector<T> &obj)
 	out << endl;
 	return out;
 }
-
 
 //MyVector<int> myv1(10);
 template <typename T>

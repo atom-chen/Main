@@ -4,7 +4,7 @@ using namespace std;
 #include "fstream"
 
 
-void main91()
+void main901()
 {
 	char* fname = "c:/2aaaaaaafffaaaafff.txt";
 	ofstream fout(fname, ios::app); //建一个 输出流对象 和文件关联;  
@@ -30,9 +30,6 @@ void main91()
 	fin.close();
 	*/
 
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
 
 class Teacher
@@ -57,7 +54,7 @@ private:
 	int	 age;
 	char name[32];
 };
-void main()
+void main902()
 {
 	char* fname = "c:/11a.dat";
 	ofstream fout(fname, ios::binary); //建一个 输出流对象 和文件关联;  
@@ -84,7 +81,4 @@ void main()
 	tmp.printT();
 	
 	fin.close();
-
-	
-	system("pause");
 }

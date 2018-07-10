@@ -122,7 +122,7 @@ int MyArray::getLen()
 	return m_len;
 }
 
-void main()
+void main501()
 {
 
 	try
@@ -143,14 +143,10 @@ void main()
 	{
 	}
 
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
 
 // ²»ÍÆ¼ö
-void main51()
+void main502()
 {
 	
 	try
@@ -184,7 +180,4 @@ void main51()
 	}
 	
 
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

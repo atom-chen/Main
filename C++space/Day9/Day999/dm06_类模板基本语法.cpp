@@ -1,4 +1,10 @@
+/*
+子类从模板类继承的时候,需要让编译器知道 父类的数据类型具体是什么
+(数据类型的本质:固定大小内存块的别名)A<int>
 
+
+
+*/
 #include <iostream>
 using namespace std;
 

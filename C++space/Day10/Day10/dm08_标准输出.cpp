@@ -28,7 +28,7 @@ setprecision
 …
 */
 
-void main81()
+void main801()
 {
 	cout << "hello" << endl;
 	cout.put('h').put('e').put('l');
@@ -37,11 +37,9 @@ void main81()
 	cout.write(p, strlen(p)) << endl;
 	cout.write(p, strlen(p) - 4) << endl;
 	cout.write(p, strlen(p) + 4) << endl;
-	system("pause");
-	return ;
 }
 
-void main82()
+void main802()
 {
 	//使用类成员函数
 	cout << "<start>";
@@ -64,15 +62,11 @@ void main82()
 		<< 123
 		<< "<End>\n"
 		<< endl;
-
-
-
-	system("pause");
 }
 
 
 
-int main()
+int main803()
 {
 	int a;
 	cout<<"input a:";
@@ -94,13 +88,11 @@ int main()
 }
 
 
-int main22( )
+int main804( )
 {
 	double a=123.456,b=3.14159,c=-3214.67;
 	cout<<setiosflags(ios::fixed)<<setiosflags(ios::right)<<setprecision(2);
 	cout<<setw(10)<<a<<endl;
 	cout<<setw(10)<<b<<endl;
 	cout<<setw(10)<<c<<endl;
-	system("pause");
-	return 0;
 }

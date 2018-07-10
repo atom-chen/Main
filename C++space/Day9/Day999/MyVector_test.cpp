@@ -17,7 +17,7 @@ using namespace std;
 class Teacher
 {
 public:
-	friend const ostream& operator<<(const ostream& out, const Teacher& teacher);
+	friend ostream& operator<<(ostream& out, const Teacher& teacher);
 	Teacher()
 	{
 		age = 33;
@@ -45,12 +45,13 @@ private:
 	//char *pName2;
 };
 
-const ostream& operator<<(const ostream& out, const Teacher& teacher)
+ostream& operator<<(ostream& out, const Teacher& teacher)
 {
 	cout << "Teacher Name:" << teacher.name << "  Age:" << teacher.age << endl;
 	return out;
 }
-void main()
+
+void main1()
 {
 	Teacher t1("t1", 31), t2("t2", 32), t3("t3", 33), t4("t4", 34);
 
@@ -61,15 +62,15 @@ void main()
 	tArray[2] = t3;
 	tArray[3] = t4;
 
-	for (int i=0; i<4; i++)
-	{
-		Teacher tmp = tArray[i];
-		tmp.printT();
-	}
+	//for (int i=0; i<4; i++)
+	//{
+	//	Teacher tmp = tArray[i];
+	//	tmp.printT();
+	//}
 
 	cout << tArray;
 }
-void main02()
+void main2()
 {
 	MyVector<char> myv1(10);
 	myv1[0] = 'a';
@@ -78,11 +79,9 @@ void main02()
 	myv1[3] = 'd';
 
 	cout << myv1;
-
-	system("pause");
 }
 
-void main01()
+void main3()
 {
 	MyVector<int> myv1(10);
 
@@ -94,15 +93,6 @@ void main01()
 	cout << endl;
 
 
-	MyVector<int> myv2  = myv1;
-	for (int i=0; i<myv2.getLen(); i++)
-	{
-		cout << myv2[i] << " ";
-	}
-
+	MyVector<int> myv2 = myv1;
 	cout << myv2 << endl;
-	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

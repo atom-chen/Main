@@ -28,7 +28,7 @@
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Complex.hpp" />
     <ClInclude Include="dm09_complex.h" />
-    <ClInclude Include="dm09_complex.hpp" />
+    <ClInclude Include="dm09_complex.cpp" />
     <ClInclude Include="MyVector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

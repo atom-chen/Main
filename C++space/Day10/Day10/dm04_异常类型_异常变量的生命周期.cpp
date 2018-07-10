@@ -120,7 +120,7 @@ void my_strcpy3(char *to, char *from)
 	*to = '\0';
 }
 
-void main()
+void main401()
 {
 	int ret = 0;
 	char buf1[] = "cbbcdefg";
@@ -213,7 +213,7 @@ int my_strcpy(char *to, char *from)
 }
 
 
-void main41()
+void main401()
 {
 	int ret = 0;
 	char buf1[] = "zbcdefg";
@@ -240,7 +240,4 @@ void main41()
 	}
 	printf("buf2:%s \n", buf2);
 	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
