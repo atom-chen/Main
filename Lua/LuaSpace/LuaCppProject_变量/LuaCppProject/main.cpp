@@ -19,6 +19,7 @@ void main()
 
 	ReadArrayTable(lua);
 	ReadKVTable(lua);
+
 	ReadGlobalDataFromLua(lua);
 	lua_close(lua);
 }

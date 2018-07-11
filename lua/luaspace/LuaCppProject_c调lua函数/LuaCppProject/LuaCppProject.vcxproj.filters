@@ -4,11 +4,14 @@
     <Filter Include="luavm">
       <UniqueIdentifier>{03fc816d-4767-4ab8-80c7-583cca027ffb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main">
+    <Filter Include="main01">
       <UniqueIdentifier>{ebd5f3fd-e2da-4072-bd74-bae6f9b9a9b0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="part">
-      <UniqueIdentifier>{4c31f077-2298-4718-a6da-955ee5a3d3cb}</UniqueIdentifier>
+    <Filter Include="main02">
+      <UniqueIdentifier>{305dceea-aa68-41dc-82b7-7f62a684eee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main03">
+      <UniqueIdentifier>{4e325667-56e4-4479-abe3-b12d81e3f553}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,14 +114,14 @@
     <ClCompile Include="lzio.c">
       <Filter>luavm</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>main</Filter>
+    <ClCompile Include="main1.cpp">
+      <Filter>main01</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalData.cpp">
-      <Filter>part</Filter>
+    <ClCompile Include="main2.cpp">
+      <Filter>main02</Filter>
     </ClCompile>
-    <ClCompile Include="Function.cpp">
-      <Filter>part</Filter>
+    <ClCompile Include="main3.cpp">
+      <Filter>main03</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,16 +203,20 @@
     <ClInclude Include="lzio.h">
       <Filter>luavm</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>main</Filter>
-    </ClInclude>
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile">
       <Filter>luavm</Filter>
     </None>
-    <None Include="main.lua">
-      <Filter>main</Filter>
+    <None Include="main01.lua">
+      <Filter>main01</Filter>
+    </None>
+    <None Include="main03.lua">
+      <Filter>main03</Filter>
+    </None>
+    <None Include="main02.lua">
+      <Filter>main02</Filter>
     </None>
   </ItemGroup>
 </Project>

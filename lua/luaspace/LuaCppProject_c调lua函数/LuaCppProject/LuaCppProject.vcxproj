@@ -76,8 +76,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Function.cpp" />
-    <ClCompile Include="GlobalData.cpp" />
     <ClCompile Include="lapi.c" />
     <ClCompile Include="lauxlib.c" />
     <ClCompile Include="lbaselib.c" />
@@ -111,7 +109,9 @@
     <ClCompile Include="lutf8lib.c" />
     <ClCompile Include="lvm.c" />
     <ClCompile Include="lzio.c" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="main1.cpp" />
+    <ClCompile Include="main2.cpp" />
+    <ClCompile Include="main3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lapi.h" />
@@ -143,7 +143,9 @@
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="main.lua" />
+    <None Include="main01.lua" />
+    <None Include="main02.lua" />
+    <None Include="main03.lua" />
     <None Include="Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
