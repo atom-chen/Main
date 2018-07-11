@@ -60,10 +60,6 @@ namespace Normal
 }
 namespace provoking
 {
-	GLBatch	triangleBatch;
-	GLShaderManager	shaderManager;
-
-	GLint	myIdentityShader;
 
 	void ChangeSize(int w, int h)
 	{
@@ -186,7 +182,8 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(RenderScene);
 
 	GLenum err = glewInit();
-	if (GLEW_OK != err) {
+	if (GLEW_OK != err) 
+	{
 		fprintf(stderr, "GLEW Error: %s\n", glewGetErrorString(err));
 		return 1;
 	}
