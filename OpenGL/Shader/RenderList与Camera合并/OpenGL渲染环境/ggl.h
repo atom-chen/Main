@@ -18,8 +18,6 @@
 #include <functional>
 #include "Glm/glm.hpp"
 #include "Glm/ext.hpp"
-#include <EGL/egl.h>
-#include <gles2/gl2.h>
 #include "glfw3.h"
 #include "glfw3native.h"
 #pragma comment(lib,"opengl32.lib")

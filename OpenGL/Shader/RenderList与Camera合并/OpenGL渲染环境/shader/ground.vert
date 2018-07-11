@@ -15,9 +15,9 @@ varying vec3 V_Normal;
 
 void main()
 {
-V_Color=color;
-V_Normal=(IT_ModelMatrix*normal).xyz;
-V_Texcoord=texcoord.xy;
-V_WorldPos=(ModelMatrix*position).xyz;
-gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
+    V_Color=color;
+    V_Normal=(IT_ModelMatrix*normal).xyz;
+    V_Texcoord=texcoord.xy;
+    V_WorldPos=(ModelMatrix*position).xyz;
+    gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
 }

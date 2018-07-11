@@ -4,7 +4,7 @@
 class FogObj:public GameObject
 {
 public:
-	virtual bool Init(const char* path, const char* vertexShader = "res/fog.vert", const char* fragmentShader = "res/fog.frag");
+	virtual bool Init(const char* path, const char* vertexShader = SHADER_ROOT"fog.vert", const char* fragmentShader = SHADER_ROOT"fog.frag");
 public:
 	inline void SetFogNear(float v);
 	inline void SetFogFar(float v);

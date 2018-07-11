@@ -6,7 +6,7 @@ class LoginRoutine :public SupRoutine
 {
 private:
 	ServerSocket m_ServerScoket;
-	LoginPlayerManager m_PlayerManager;
+	LoginPlayerManager m_PlayerManager;                //角色管理器（对当前登录玩家进行管理）
 
 private:
 	LoginOnlineData m_LoginOnlineData;
@@ -32,12 +32,10 @@ public:
 	explicit LoginRoutine();
 	virtual ~LoginRoutine();
 public:
-	virtual void tick(const sol_routine_time &rt); 
 	virtual void Open();                           //启服，取数据
 	virtual void Shut();                           //停服，数据入库
 
     //存储与读取数据相关
-	void Tick_Save(const sol_routine_time& rTimeInfo);
 	void SaveData2DB();
 	void SaveData2SM();
 	
@@ -54,11 +52,16 @@ public:
 	void RemoveOfflineCacheData(sol_guid userGuid);
 
 public:
+	//每次Update数据
+	virtual void tick(const sol_routine_time &rt); 
 	void Tick_ShutDown(const sol_routine_time &rt);
 	void Tick_Accept(const sol_routine_time &rt);
 	void Tick_Transport(const sol_routine_time &rt);
 	void Tick_GlobalPacketStat(const sol_routine_time &rt);
 	void Tick_SerPlayerSaveDBInterval(const sol_routine_time &rt);
+	
+	void Tick_Save(const sol_routine_time& rTimeInfo);
+
 
 public:
 	bool IsHaveNewPlayer();
