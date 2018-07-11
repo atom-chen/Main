@@ -42,14 +42,14 @@
     <Compile Include="main\AbsHandlerCenter.cs" />
     <Compile Include="Tools\LengthEncoding.cs" />
     <Compile Include="Tools\MessageEncoding.cs" />
-    <Compile Include="Tools\SocketModel.cs" />
+    <Compile Include="Model\SocketModel.cs" />
     <Compile Include="Tools\ByteArray.cs" />
-    <Compile Include="Tools\CodingDelegate.cs" />
+    <Compile Include="Model\CodingDelegate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\SerializeUtil.cs" />
     <Compile Include="main\ServerStart.cs" />
     <Compile Include="main\UserToken.cs" />
-    <Compile Include="Tools\UserTokenPool.cs" />
+    <Compile Include="Model\UserTokenPool.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
