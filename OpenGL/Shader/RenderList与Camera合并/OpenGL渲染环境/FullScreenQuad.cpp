@@ -16,7 +16,7 @@ void FullScreenQuad::Init()
 		0, 0, 1, 0,
 		0, 0, 0, 1
 		);
-	m_Shader.Init("res/fullScreenQuad.vert", "res/fullScreenQuad.frag");
+	m_Shader.Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"fullScreenQuad.frag");
 	m_Shader.SetMatrix("ModelMatrix", identityMat);
 	m_Shader.SetMatrix("ViewMatrix", identityMat);
 	m_Shader.SetMatrix("ProjectionMatrix", identityMat);

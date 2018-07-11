@@ -35,7 +35,7 @@ void SkyBox::SetForward(const char* picPath)
 		this->m_VertexBuf[forwardIndex].SetPosition(3, -0.5f, 0.5f, -0.5f);
 		this->m_VertexBuf[forwardIndex].SetTexcoord(3, 0, 1);
 
-		m_Shader[forwardIndex].Init("res/skybox.vert", "res/skybox.frag");
+		m_Shader[forwardIndex].Init(SHADER_ROOT"skybox.vert", SHADER_ROOT"skybox.frag");
 		m_Shader[forwardIndex].SetTexture2D(picPath,0);
 	}
 }
@@ -54,7 +54,7 @@ void SkyBox::SetBack(const char* picPath)
 		this->m_VertexBuf[backIndex].SetPosition(3, 0.5f, 0.5f, 0.5f);
 		this->m_VertexBuf[backIndex].SetTexcoord(3, 0, 1);
 
-		m_Shader[backIndex].Init("res/skybox.vert", "res/skybox.frag");
+		m_Shader[backIndex].Init(SHADER_ROOT"skybox.vert", SHADER_ROOT"skybox.frag");
 		m_Shader[backIndex].SetTexture2D(picPath,0);
 	}
 }
@@ -74,7 +74,7 @@ void SkyBox::SetLeft(const char* picPath)
 		this->m_VertexBuf[leftIndex].SetPosition(3, -0.5f, 0.5f, 0.5f);
 		this->m_VertexBuf[leftIndex].SetTexcoord(3, 0, 1);
 
-		m_Shader[leftIndex].Init("res/skybox.vert", "res/skybox.frag");
+		m_Shader[leftIndex].Init(SHADER_ROOT"skybox.vert", SHADER_ROOT"skybox.frag");
 		m_Shader[leftIndex].SetTexture2D(picPath,0);
 	}
 }
@@ -93,7 +93,7 @@ void SkyBox::SetRight(const char* picPath)
 		this->m_VertexBuf[rightIndex].SetPosition(3, 0.5f, 0.5f, -0.5f);
 		this->m_VertexBuf[rightIndex].SetTexcoord(3, 0, 1);
 
-		m_Shader[rightIndex].Init("res/skybox.vert", "res/skybox.frag");
+		m_Shader[rightIndex].Init(SHADER_ROOT"skybox.vert", SHADER_ROOT"skybox.frag");
 		m_Shader[rightIndex].SetTexture2D(picPath,0);
 	}
 }
@@ -112,7 +112,7 @@ void SkyBox::SetTop(const char* picPath)
 		this->m_VertexBuf[bottomIndex].SetPosition(3, -0.5f, 0.5f, 0.5f);
 		this->m_VertexBuf[bottomIndex].SetTexcoord(3, 0, 1);
 
-		m_Shader[bottomIndex].Init("res/skybox.vert", "res/skybox.frag");
+		m_Shader[bottomIndex].Init(SHADER_ROOT"skybox.vert", SHADER_ROOT"skybox.frag");
 		m_Shader[bottomIndex].SetTexture2D(picPath,0);
 	}
 }
@@ -131,7 +131,7 @@ void SkyBox::SetBottom(const char* picPath)
 		this->m_VertexBuf[bottomIndex].SetPosition(3, -0.5f, -0.5f, -0.5f);
 		this->m_VertexBuf[bottomIndex].SetTexcoord(3, 0, 1);
 
-		m_Shader[bottomIndex].Init("res/skybox.vert", "res/skybox.frag");
+		m_Shader[bottomIndex].Init(SHADER_ROOT"skybox.vert", SHADER_ROOT"skybox.frag");
 		m_Shader[bottomIndex].SetTexture2D(picPath,0);
 	}
 }

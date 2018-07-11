@@ -8,8 +8,8 @@ bool Yewai2::Awake()
 	m_MainCamera = new Camera_1st;
 	//m_Ground.Init("res/woodfloor.tga");
 	m_Ground.Init("res/1.jpg");
-	m_box.Init("res/Sphere.obj", "res/VertexObj_Blin.vert", "res/VertexObj.frag");
-	m_Niu.Init("res/niutou.obj", "res/FragObj.vert", "res/FragObj_Blin.frag");
+	m_box.Init("res/Sphere.obj", SHADER_ROOT"VertexObj_Blin.vert", SHADER_ROOT"VertexObj.frag");
+	m_Niu.Init("res/niutou.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj_Blin.frag");
 	m_box.SetTexture2D("res/earth.bmp");
 	m_Niu.SetTexture2D("res/niutou.bmp");
 	m_Particle.Init(vec3(0, 0, 0));

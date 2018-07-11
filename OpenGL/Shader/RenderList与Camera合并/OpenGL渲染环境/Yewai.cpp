@@ -7,8 +7,8 @@ bool Yewai::Awake()
 	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
 	m_MainCamera = new Camera_3rd;
 	//m_Ground.Init("res/1.jpg");
-	m_box.Init("res/Sphere.obj", "res/VertexObj.vert", "res/VertexObj.frag");
-	m_Niu.Init("res/niutou.obj", "res/FragObj.vert", "res/FragObj.frag");
+	m_box.Init("res/Sphere.obj", SHADER_ROOT"VertexObj.vert", SHADER_ROOT"VertexObj.frag");
+	m_Niu.Init("res/niutou.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj.frag");
 	m_box.SetTexture2D("res/earth.bmp");
 	m_Niu.SetTexture2D("res/niutou.bmp");
 	m_ParticleSystem.Init(vec3(0, 0, 0));

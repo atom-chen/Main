@@ -8,7 +8,7 @@ bool Fuben::Awake()
 
 	m_MainCamera = new Camera_1st;
 	//m_Sphere.Init("res/Sphere.obj","res/VertexLightObj.vert","res/VertexLightObj.frag");
-	m_Sphere.Init("res/Sphere.obj", "res/FragObj.vert", "res/FragObj.frag");
+	m_Sphere.Init("res/Sphere.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj.frag");
 	m_Ground.Init();
 	return 1;
 }

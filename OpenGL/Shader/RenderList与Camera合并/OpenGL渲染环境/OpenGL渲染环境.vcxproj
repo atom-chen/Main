@@ -191,31 +191,6 @@
     <ClInclude Include="Yewai2.h" />
     <ClInclude Include="Zhucheng.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="res\fog.vert" />
-    <None Include="res\fog.frag" />
-    <None Include="res\FragObj_Blin.frag" />
-    <None Include="res\seawater.frag" />
-    <None Include="res\seawater.vert" />
-    <None Include="res\skyboxC.frag" />
-    <None Include="res\skyboxC.vert" />
-    <None Include="res\VertexObj_Blin.vert" />
-    <None Include="res\fullScreenQuad.vert" />
-    <None Include="res\ground.frag" />
-    <None Include="res\ground.vert" />
-    <None Include="res\FragObj.frag" />
-    <None Include="res\FragObj.vert" />
-    <None Include="res\SurroundParticle.frag" />
-    <None Include="res\SurroundParticle.vert" />
-    <None Include="res\rgbCube.frag" />
-    <None Include="res\skybox.frag" />
-    <None Include="res\skybox.vert" />
-    <None Include="res\rgbCube.vert" />
-    <None Include="res\texture.vert" />
-    <None Include="res\texture.frag" />
-    <None Include="res\VertexObj.frag" />
-    <None Include="res\VertexObj.vert" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />

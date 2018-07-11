@@ -32,7 +32,7 @@ bool Ground::Init()
 		m_VertexBuf.SetColor(2, 0.4f, 0.4f, 0.4f);
 		m_VertexBuf.SetColor(3, 0.4f, 0.4f, 0.4f);
 
-		m_Shader.Init("res/ground.vert", "res/ground.frag");
+		m_Shader.Init(SHADER_ROOT"ground.vert", SHADER_ROOT"ground.frag");
 		SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1);
 		SetDiffuseMaterial(0.6f, 0.6f, 0.6f, 1);
 		SetSpecularMaterial(0, 0, 0, 0);
@@ -68,8 +68,8 @@ bool Ground::Init(const char* picName)
 		m_VertexBuf.SetColor(1, 1, 1, 1, 1);
 		m_VertexBuf.SetColor(2, 1, 1, 1, 1);
 		m_VertexBuf.SetColor(3, 1, 1, 1, 1);
-
-		m_Shader.Init("res/ground.vert", "res/ground.frag");
+		
+		m_Shader.Init(SHADER_ROOT"ground.vert", SHADER_ROOT"ground.frag");
 		SetTexture2D(picName);
 		SetAmbientMaterial(1, 1, 1);
 		SetDiffuseMaterial(0.2f, 0.2f, 0.2f);

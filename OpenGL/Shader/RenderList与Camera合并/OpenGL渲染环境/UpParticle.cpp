@@ -71,7 +71,7 @@ void UpParticle::Init(const vec3& pos)
 		//m_VertexBuf.SetColor(i, 0.1f, 0.4f, 0.6f);
 		m_VertexBuf.SetColor(i, 1, 1, 1,0);
 	}
-	m_Shader.Init("res/UpParticle.vert", "res/UpParticle.frag");
+	m_Shader.Init(SHADER_ROOT"UpParticle.vert", SHADER_ROOT"UpParticle.frag");
 	m_Shader.SetTexture2D(ResourceManager::CreateProcedureTexture(56, ALPHA_TYPE::ALPHA_GAUSSIAN));
 }
 UpParticle::UpParticle()

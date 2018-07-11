@@ -290,24 +290,6 @@
     <Filter Include="GameDefine\SceneManager">
       <UniqueIdentifier>{fe7cab12-1f7f-4281-90b7-48d9f2d1cf44}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn">
-      <UniqueIdentifier>{8676c22f-0b07-4be3-a7aa-a66d0795cd9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Ground">
-      <UniqueIdentifier>{da50631e-1312-4826-b121-0da358d07d13}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Particle">
-      <UniqueIdentifier>{bdd2ee5b-40d8-43b0-b3c0-87b538a23356}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\2D">
-      <UniqueIdentifier>{4a7a98c1-e307-4334-a3fd-ade6fc552701}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Model">
-      <UniqueIdentifier>{c4cab224-6fdc-43be-861e-187d639c65d3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\SkyBox">
-      <UniqueIdentifier>{ccd7a86f-f642-4602-8a25-3dd70d24abee}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameDefine\SceneManager\Global">
       <UniqueIdentifier>{0ac92bef-50dc-4427-a743-8df7f0a6752c}</UniqueIdentifier>
     </Filter>
@@ -326,17 +308,11 @@
     <Filter Include="GameDefine\Scene\NotRelatedSDK\Light">
       <UniqueIdentifier>{f786e780-2e90-477e-9a38-e99320b2974c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\rgbCube">
-      <UniqueIdentifier>{0f077dc5-9edd-466d-aa3d-08ad7d639a70}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\Scene">
       <UniqueIdentifier>{aba29f75-5d18-4d65-9d39-9d7380de867b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game\main">
       <UniqueIdentifier>{0d294cd7-912a-4556-b2f2-b1ecc44ec9a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Fog">
-      <UniqueIdentifier>{e6999268-4117-436d-a32f-1072d24c2c6e}</UniqueIdentifier>
     </Filter>
     <Filter Include="GameDefine\Scene\NotRelatedSDK\Effects">
       <UniqueIdentifier>{b689c383-1865-469b-862b-3248eed506d5}</UniqueIdentifier>
@@ -356,82 +332,8 @@
     <Filter Include="GameDefine\Scene\NotRelatedSDK\SkyBox">
       <UniqueIdentifier>{941bb596-6b58-44b8-bc05-dee0da64cab7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameDefine\Scene\ShaderBuiltIn\Seawater">
-      <UniqueIdentifier>{c9557b13-c6d8-4d3b-856a-63c6027a84a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameDefine\Scene\NotRelatedSDK\Camera">
       <UniqueIdentifier>{c1e7efd2-5fb2-4036-9120-22a00049f7d4}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\ground.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Ground</Filter>
-    </None>
-    <None Include="res\ground.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Ground</Filter>
-    </None>
-    <None Include="res\texture.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\2D</Filter>
-    </None>
-    <None Include="res\texture.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\2D</Filter>
-    </None>
-    <None Include="res\fullScreenQuad.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\2D</Filter>
-    </None>
-    <None Include="res\skybox.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\SkyBox</Filter>
-    </None>
-    <None Include="res\skybox.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\SkyBox</Filter>
-    </None>
-    <None Include="res\rgbCube.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\rgbCube</Filter>
-    </None>
-    <None Include="res\rgbCube.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\rgbCube</Filter>
-    </None>
-    <None Include="res\VertexObj.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
-    </None>
-    <None Include="res\VertexObj.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
-    </None>
-    <None Include="res\FragObj.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
-    </None>
-    <None Include="res\FragObj.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
-    </None>
-    <None Include="res\FragObj_Blin.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
-    </None>
-    <None Include="res\VertexObj_Blin.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Model</Filter>
-    </None>
-    <None Include="res\fog.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Fog</Filter>
-    </None>
-    <None Include="res\fog.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Fog</Filter>
-    </None>
-    <None Include="res\seawater.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Seawater</Filter>
-    </None>
-    <None Include="res\seawater.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Seawater</Filter>
-    </None>
-    <None Include="res\skyboxC.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\SkyBox</Filter>
-    </None>
-    <None Include="res\skyboxC.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\SkyBox</Filter>
-    </None>
-    <None Include="res\SurroundParticle.frag">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Particle</Filter>
-    </None>
-    <None Include="res\SurroundParticle.vert">
-      <Filter>GameDefine\Scene\ShaderBuiltIn\Particle</Filter>
-    </None>
   </ItemGroup>
 </Project>

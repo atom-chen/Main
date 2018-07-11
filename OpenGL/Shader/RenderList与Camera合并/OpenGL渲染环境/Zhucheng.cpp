@@ -6,7 +6,7 @@ bool Zhucheng::Awake()
 {
 	m_Skybox.Init("res/front_1.bmp", "res/back_1.bmp", "res/top_1.bmp", "res/bottom_1.bmp", "res/left_1.bmp", "res/right_1.bmp");
 	m_MainCamera = new Camera_1st;
-	m_RGBCube.Init("res/Cube.obj", "res/rgbCube.vert", "res/rgbCube.frag");
+	m_RGBCube.Init("res/Cube.obj", SHADER_ROOT"rgbCube.vert", SHADER_ROOT"rgbCube.frag");
 	m_Sphere.Init("res/Sphere.obj");
 	return 1;
 }

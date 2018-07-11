@@ -22,7 +22,7 @@ bool SeaWater::Init(const char* seaTexture, const char* foamTexture, const char*
 		m_VertexBuf.SetPosition(3, size, height, -size);
 		m_VertexBuf.SetTexcoord(3, 0, rept);
 
-		m_Shader.Init("res/seawater.vert", "res/seawater.frag"); 
+		m_Shader.Init(SHADER_ROOT"seawater.vert", SHADER_ROOT"seawater.frag");
 		SetFoamTexture(foamTexture);
 		SetSeaTexture(seaTexture);
 		SetLightTexture(lightTexture);

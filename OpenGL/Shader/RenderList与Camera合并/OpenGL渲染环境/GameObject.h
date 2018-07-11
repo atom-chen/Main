@@ -6,7 +6,7 @@ class GameObject :public RenderAble_Light
 {
 public:
 	GameObject();
-	virtual bool Init(const char* path, const char* vertexShader ="res/FragObj.vert" , const char* fragmentShader = "res/FragObj.frag");
+	virtual bool Init(const char* path, const char* vertexShader = SHADER_ROOT"FragObj.vert", const char* fragmentShader = SHADER_ROOT"FragObj.frag");
 	virtual void Update(const vec3& cameraPos);
 
 	void Destory();

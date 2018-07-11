@@ -68,3 +68,5 @@ using namespace glm;
 
 #define  MOUSE_UP 120
 #define  MOUSE_DOWN 65416
+
+#define SHADER_ROOT "shader/"

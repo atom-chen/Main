@@ -33,7 +33,7 @@ void UITexture::Init(float x, float y, float width, float height, const char* ve
 	VBO_NAME.SetTexcoord(3, 1, 1);
 	VBO_NAME.SetColor(3, 1, 1, 1);
 
-	SHADER_NAME.Init("res/texture.vert", "res/texture.frag");
+	SHADER_NAME.Init(SHADER_ROOT"texture.vert", SHADER_ROOT"texture.frag");
 }
 
 void UITexture::Draw(glm::mat4& viewMatrix, glm::mat4 &ProjectionMatrix)
