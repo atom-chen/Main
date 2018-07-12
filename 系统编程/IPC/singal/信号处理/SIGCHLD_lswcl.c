@@ -4,21 +4,21 @@
 #include<unistd.h>
 #include<signal.h>
 
-void SigMask2PCB(int signal,int isMask=1,sigset_t *old=NULL)       //设置PCB信号屏蔽字的工具函数
+void SigMask2PCB(int signal,int isMask,sigset_t *old)       //设置PCB信号屏蔽字的工具函数
 {
 	if(isMask)
 	{
 		sigset_t set;
 		sigemptyset(&set);
 		sigaddset(&set,signal);
-		sigprocmask(SIGBLOCK,&set,old);
+		sigprocmask(SIG_BLOCK,&set,old);
 	}
 	else
 	{
 		sigset_t set;
 		sigfillset(&set);
 		sigdelset(&set,signal);
-		sigprocmask(UNBLOCK,&set,old);
+		sigprocmask(SIG_UNBLOCK,&set,old);
 	}
 }
 
@@ -60,7 +60,7 @@ int main()
 		exit(22);
 	}
 
-	SigMask2PCB(SIGCHLD,1);
+	SigMask2PCB(SIGCHLD,1,NULL);
 	pid = fork();
 
 	//接收输入，后结束
@@ -70,8 +70,8 @@ int main()
 		char buffer[1024];
 		dup2(fd[0],STDIN_FILENO);                            //input重定向：从pipe中读取数据
 		CatSignal(SIGCHLD,Catch);
-		SigMask2PCB(SIGCHLD,0);
-		execlp("wc","wc","-l",NULL);                        //command read from fd[0]
+		SigMask2PCB(SIGCHLD,0,NULL);
+		execlp("wc","wc",NULL);                        //command read from fd[0]
 	}
 	//触发
 	else

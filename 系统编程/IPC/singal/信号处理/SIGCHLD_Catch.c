@@ -8,6 +8,7 @@
 void DoSigchild(int signo)
 {
 	int status;
+	pid_t pid;
 	while ((pid = waitpid(0, &status, WNOHANG)) > 0)                          //这里用while，处理在执行过程中到来的全部信号
 	{
 		if (WIFEXITED(status))
@@ -21,21 +22,21 @@ void DoSigchild(int signo)
 	}
 }
 
-void SigMask2PCB(int signal,int isMask=1,sigset_t *old=NULL)                   //设置pcb屏蔽信号集 工具函数
+void SigMask2PCB(int signal,int isMask,sigset_t *old)                   //设置pcb屏蔽信号集 工具函数
 {
 	if(isMask)
 	{
 		sigset_t set;
 		sigemptyset(&set);
 		sigaddset(&set,signal);
-		sigprocmask(SIGBLOCK,&set,old);
+		sigprocmask(SIG_BLOCK,&set,old);
 	}
 	else
 	{
 		sigset_t set;
 		sigfillset(&set);
 		sigdelset(&set,signal);
-		sigprocmask(UNBLOCK,&set,old);
+		sigprocmask(SIG_UNBLOCK,&set,old);
 	}
 }
 
@@ -64,9 +65,9 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
-		SigMask2PCB(SIGCHLD,1);
+		SigMask2PCB(SIGCHLD,1,NULL);
 		signal(SIGCHLD,DoSigchild);
-		SigMask2PCB(SIGCHLD,0);
+		SigMask2PCB(SIGCHLD,0,NULL);
 		while(1)
 		{
 			printf("I am parent,my pid= %u \n",getpid());
