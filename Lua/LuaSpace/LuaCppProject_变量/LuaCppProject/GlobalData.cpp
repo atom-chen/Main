@@ -1,4 +1,6 @@
 #include "main.h"
+
+//读lua栈顶的数据
 void ReadGlobalDataFromLua(lua_State* lua)
 {
 	//--------------begin read global data from lua stack------------------------
@@ -16,6 +18,8 @@ void ReadGlobalDataFromLua(lua_State* lua)
 
 	printf("stack size= %d\n", lua_gettop(lua));//打印lua的堆栈大小
 }
+
+//往lua栈顶写数据
 void WriteGlobalDataToLua(lua_State* lua)
 {
 	printf("stack size= %d\n", lua_gettop(lua));//打印lua的堆栈大小
@@ -36,6 +40,7 @@ void WriteGlobalDataToLua(lua_State* lua)
 	lua_setglobal(lua, "e");
 }
 
+//往lua写入数组类型table
 void WriteArrayTable(lua_State* lua)
 {
 	//数组类型表
@@ -48,6 +53,7 @@ void WriteArrayTable(lua_State* lua)
 	lua_setglobal(lua, "t");
 }
 
+//读lua栈顶的数组类型table
 void ReadArrayTable(lua_State* lua)
 {
 	lua_getglobal(lua, "t");
@@ -56,6 +62,8 @@ void ReadArrayTable(lua_State* lua)
 	lua_rawgeti(lua, -2, 2);
 	printf("C Said: %d\n", lua_tointeger(lua, -1));
 }
+
+//往kv类型表写数据
 void WriteKVTable(lua_State* lua)
 {
 	//kv类型表
@@ -71,6 +79,8 @@ void WriteKVTable(lua_State* lua)
 
 	lua_setglobal(lua, "t2");
 }
+
+//读kv类型的table
 void ReadKVTable(lua_State* lua)
 {
 	lua_getglobal(lua, "t2");
@@ -82,9 +92,4 @@ void ReadKVTable(lua_State* lua)
 	lua_pushstring(lua, "y");
 	lua_gettable(lua, -3);
 	printf("c said: y is %d\n", lua_tointeger(lua, -1));
-}
-
-int TestFunction(lua_State *lua)
-{
-
 }

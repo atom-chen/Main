@@ -19,12 +19,16 @@ namespace LUA
 {
 	class LuaEnviron
 	{
-	public:
-		static void Init();
-
-
 	private:
 		static lua_State *pLuaVm;
+	public:
+		static void Init();                                      //初始化Lua虚拟机
+		static void Destroy();                                  //关闭lua虚拟机
+	public:
+		static void CallScript(std::string scriptName);          //调用lua脚本
+
+
+
 	private:
 		LuaEnviron& operator=(const LuaEnviron& other) = delete;
 		LuaEnviron()=delete;
