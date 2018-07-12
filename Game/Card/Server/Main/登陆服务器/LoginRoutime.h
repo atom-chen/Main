@@ -14,14 +14,14 @@ private:
 	LoginRoleDataPreloader m_LoginRoleDataPreloader;
 private:
 	int32_t PlayerCount;                            //当前服务器玩家人数   
-	int32_t needInitCount;                         //
-	int32_t m_ShutdownTime;                         //
+	int32_t needInitCount;                         
+	int32_t m_ShutdownTime;                         
 private:
-	int64_t SaveSerial;                            //
+	int64_t SaveSerial;                            
 	int32_t DBDataSaveTime;
 	int32_t SMDataSaveTime;                        
                      
-	shared_memort_pc sharedMemory;                //???    init->"LoginRoutine"
+	shared_memort_pc sharedMemory;                
 private:
 	RandomNameManager m_RandomNameMgr;             //随机名称的管理器
 	NewRoleLimit m_NewRoleLimit;                   //新角色限制
@@ -68,13 +68,5 @@ public:
 	bool AcceptNewPlayer();                            
 //---------------------------------------------------------------------IDIP----------------------------------------------------------------------
 public:
-	virtual void Tick_IDIP(const sol_routine_time &rt)
-
-
-public:
-	//逻辑线程间交互消息处理函数
-	virtual void HandleMsg(const ValidataAccountMsg& rMsg);
-public:
-	//IDIP消息处理函数
-    virtual void HangleMsg(const IDIP_RequireChangeValueMsg& rMsg);	
+	virtual void Tick_IDIP(const sol_routine_time &rt);
 }
