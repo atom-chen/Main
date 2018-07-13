@@ -79,9 +79,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Miner.cpp" />
+    <ClCompile Include="MinerStatus.cpp" />
     <ClCompile Include="State.Machine.cpp" />
+    <ClCompile Include="TelegramManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseGameEntity.h" />
+    <ClInclude Include="MinerStatus.h" />
+    <ClInclude Include="Position.hpp" />
     <ClInclude Include="Telegram.h" />
     <ClInclude Include="TelegramManager.h" />
     <ClInclude Include="Miner.h" />

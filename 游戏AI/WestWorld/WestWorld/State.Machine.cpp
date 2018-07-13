@@ -7,6 +7,7 @@ using namespace std;
 template<class T>
 void StateMachine<T>::Update()
 {
+	//Ö´ÐÐÈ«¾Ö×´Ì¬
 	if (this->m_pGlovalState != nullptr)
 	{
 		m_pGlovalState->Execute(m_pOnwer);
@@ -17,6 +18,7 @@ void StateMachine<T>::Update()
 		m_pCurrentState->Execute();
 	}
 }
+
 template<class T>
 void StateMachine<T>::ChangeState(State<T> *newState)
 {
@@ -28,6 +30,7 @@ void StateMachine<T>::ChangeState(State<T> *newState)
 	this->m_pCurrentState = newState;
 	m_pCurrentState->Enter(m_pOnwer);
 }
+
 template<class T>
 void StateMachine<T>::RevertToPreviousState()
 {
