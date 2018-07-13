@@ -13,7 +13,7 @@ public class Tab_Equip
 public class TabEquipManager
 {
     private static Dictionary<int, Tab_Equip> m_TabEquipDic = new Dictionary<int, Tab_Equip>();
-    public static TabEquipManager()
+    static TabEquipManager()
     {
         ReLoad();
     }

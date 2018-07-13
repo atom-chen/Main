@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
         }
     }
     private static GameManager _Instance;
+
+
     public delegate void NotReturn();
     public NotReturn m_OneMinCallBack;//一分钟回调一次
     public NotReturn OneMinCallBack

@@ -18,15 +18,15 @@ class RoleAddHandler : HandlerBase
     Role role = ParaTools.GetParameter<Role>(request.Parameters, ParameterCode.Role);
     if(role!=null)
     {
-      role.UserID=peer.LoginUser.Guid;
-      role.Level = 1;
+      role.userID=peer.LoginUser.Guid;
+      role.level = 1;
       if(peer.LoginUser==null || peer.LoginServer==null)
       {
         response.ReturnCode = (short)ReturnCode.Error;
         response.Parameters.Add((byte)ParameterCode.ErrorInfo, "未知异常");
         return;
       }
-      role.UserID = peer.LoginUser.Guid;
+      role.userID = peer.LoginUser.Guid;
       if(RoleController.Instance.CreateRole(role))
       {
         //创建成功

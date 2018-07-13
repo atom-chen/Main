@@ -71,14 +71,14 @@ public class MainUI : MonoBehaviour {
 
   public void SetEnergy(int value)
   {
-    int limit = Table_Role.GetEnergyLimit((int)PlayData.RoleData.Level);
+    int limit = Table_Role.GetEnergyLimit((int)PlayData.RoleData.level);
     m_EnergySlider.value =(float)(value / limit);
     m_EnergyLabel.text = string.Format("{0}/{1}", value, limit);
   }
 
   public void SetToughen(int value)
   {
-    uint limit = Table_Role.GetToughenLimit(PlayData.RoleData.Level);
+      uint limit = Table_Role.GetToughenLimit(PlayData.RoleData.level);
     m_ToughenSlider.value = (float)(value / limit);
     m_ToughenLabel.text = string.Format("{0}/{1}", value, limit);
   }
@@ -87,13 +87,13 @@ public class MainUI : MonoBehaviour {
   {
     //根据当前role赋值
     Role role = PlayData.RoleData;
-    m_RoleNameLabel.text = role.Name;
-    m_LevelLabel.text = role.Level.ToString();
-    m_Head.spriteName = role.HeadIcon;
-    SetToughen(role.Toughen);
-    SetEnergy(role.Energy);
-    m_YuanBaoLebel.text =role.YuanBao.ToString();
-    m_CoinLabel.text = role.Coin.ToString();
+    m_RoleNameLabel.text = role.name;
+    m_LevelLabel.text = role.level.ToString();
+    m_Head.spriteName = role.headIcon;
+    SetToughen(role.toughen);
+    SetEnergy(role.energy);
+    m_YuanBaoLebel.text =role.yuanBao.ToString();
+    m_CoinLabel.text = role.coin.ToString();
   }
 
   //点击头像

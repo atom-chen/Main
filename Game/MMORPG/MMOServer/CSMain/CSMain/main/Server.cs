@@ -17,7 +17,7 @@ namespace CSMain
   public class Server : ApplicationBase
   {
     private static Server _instance;
-    public static Server Instance
+    public static new Server Instance
     {
       get { return _instance; }
     }

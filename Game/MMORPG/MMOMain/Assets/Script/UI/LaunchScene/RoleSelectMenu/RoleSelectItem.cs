@@ -40,13 +40,13 @@ public class RoleSelectItem : MonoBehaviour {
       m_InfoBG.SetActive(false);
     }
       //女性角色
-    else if(role.Sex==true)
+    else if(role.sex==true)
     {
       m_CreateRole.gameObject.SetActive(false);
       m_SelectRole.gameObject.SetActive(true);
       m_InfoBG.SetActive(true);
-      m_LevelLabel.text = "Lv."+role.Level;
-      m_NameLabel.text = role.Name;
+      m_LevelLabel.text = "Lv."+role.level;
+      m_NameLabel.text = role.name;
       GameObject girlModel = ResourceManager.Load("Prefabs/Model/GirlShow");
       GameObject obj = NGUITools.AddChild(m_ModelTrans.gameObject, girlModel);
       m_Anima = obj.GetComponent<Animation>();
@@ -57,8 +57,8 @@ public class RoleSelectItem : MonoBehaviour {
       m_CreateRole.gameObject.SetActive(false);
       m_SelectRole.gameObject.SetActive(true);
       m_InfoBG.SetActive(true);
-      m_LevelLabel.text = "Lv." + role.Level;
-      m_NameLabel.text = role.Name;
+      m_LevelLabel.text = "Lv." + role.level;
+      m_NameLabel.text = role.name;
       GameObject boyModel = ResourceManager.Load("Prefabs/Model/BoyShow");
       GameObject obj=NGUITools.AddChild(m_ModelTrans.gameObject, boyModel);
       m_Anima = obj.GetComponent<Animation>();

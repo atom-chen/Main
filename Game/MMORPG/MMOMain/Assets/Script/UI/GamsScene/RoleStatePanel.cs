@@ -56,22 +56,22 @@ public class RoleStatePanel : MonoBehaviour
   private void UpdateInfo()
   {
     Role role = PlayData.RoleData;
-    m_HeadIcon.spriteName = role.HeadIcon;
-    m_NameLabel.text = role.Name;
-    m_LevelLabel.text = role.Level.ToString();
+    m_HeadIcon.spriteName = role.headIcon;
+    m_NameLabel.text = role.name;
+    m_LevelLabel.text = role.level.ToString();
     //m_BattleNumLabel.text
-    SetExp(role.Exp);
-    m_CoinLabel.text = role.Coin.ToString();
-    m_YuanBaoLabel.text = role.YuanBao.ToString();
-    m_EnergyLabel.text = string.Format("{0}/{1}",role.Energy.ToString(),Table_Role.GetEnergyLimit(role.Level));
-    m_ToughenLabel.text = string.Format("{0}/{1}",role.Toughen.ToString(),Table_Role.GetToughenLimit(role.Level));
+    SetExp(role.exp);
+    m_CoinLabel.text = role.coin.ToString();
+    m_YuanBaoLabel.text = role.yuanBao.ToString();
+    m_EnergyLabel.text = string.Format("{0}/{1}",role.energy.ToString(),Table_Role.GetEnergyLimit(role.level));
+    m_ToughenLabel.text = string.Format("{0}/{1}",role.toughen.ToString(),Table_Role.GetToughenLimit(role.level));
   }
   public void SetExp(int value)
   {
     Role role = PlayData.RoleData;
-    int limit = Table_Role.GetExpLimit((int)(role.Level));
+    int limit = Table_Role.GetExpLimit((int)(role.level));
     m_ExpLabel.text = string.Format("{0}/{1}", value, limit);
-    m_ExpSlider.value = (float)(role.Exp / limit);
+    m_ExpSlider.value = (float)(role.exp / limit);
   }
 
   //点击改名，直接弹出界面
@@ -114,7 +114,7 @@ public class RoleStatePanel : MonoBehaviour
     {
       int timer;
       //拿到PlayerData的值，然后做显示
-      if ((timer = PlayData.RoleData.EnergyNextRecoverTimer) != 0)
+      if ((timer = PlayData.RoleData.energyNextRecoverTimer) != 0)
       {
         int hour, min, second;
         FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
@@ -126,7 +126,7 @@ public class RoleStatePanel : MonoBehaviour
         }
       }
 
-      if ((timer = PlayData.RoleData.ToughenNextRecoverTimer) != 0)
+      if ((timer = PlayData.RoleData.toughenNextRecoverTimer) != 0)
       {
         int hour, min, second;
         FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
