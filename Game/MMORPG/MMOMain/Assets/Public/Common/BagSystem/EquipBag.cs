@@ -20,7 +20,7 @@ public partial class EquipBag
         m_EquipBag = equipBag;
     }
 
-    public Equip GetEquip(UInt64 guid)
+    public Equip GetEquipById(int guid)
     {
         foreach(Equip equip in m_EquipBag)
         {
@@ -32,7 +32,7 @@ public partial class EquipBag
         return null;
     }
 
-    public List<Equip> GetEquip(int equipTabId)
+    public List<Equip> GetEquipByTabID(int equipTabId)
     {
         List<Equip> ret = new List<Equip>();
         foreach(Equip equip in m_EquipBag)

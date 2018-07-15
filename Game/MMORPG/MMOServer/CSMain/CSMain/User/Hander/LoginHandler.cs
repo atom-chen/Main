@@ -22,7 +22,7 @@ class LoginHandler : HandlerBase
       User user = LitJson.JsonMapper.ToObject<User>(para.ToString());
       int guid = -1;
       //成功
-      if ((guid=UserController.Instance.Login(user)) != -1)
+      if ((guid=UserManager.Login(user)) != -1)
       {
         user.Guid = guid;
         peer.LoginUser = user;

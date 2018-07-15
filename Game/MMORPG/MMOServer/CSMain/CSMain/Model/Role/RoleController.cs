@@ -6,28 +6,14 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-  class RoleManager
+  class RoleController
   {
-    private static RoleManager _Instance = new RoleManager();
-
-    private RoleManager()
-    {
-
-    }
-    public static RoleManager Instance
-    {
-      get
-      {
-        return _Instance;
-      }
-    }
-
     /// <summary>
     /// 获取属于id的所有角色
     /// </summary>
     /// <param name="Id">角色id</param>
     /// <returns></returns>
-    public IList<_DBRole> GetRoleByUserID(int Id)
+    public static IList<_DBRole> GetRoleByUserID(int Id)
     {
       try
       {
@@ -48,7 +34,7 @@ namespace DB
       return null;
     }
 
-    public _DBRole GetRoleByID(int Id)
+    public static _DBRole GetRoleByID(int Id)
     {
       try
       {
@@ -82,7 +68,7 @@ namespace DB
     /// </summary>
     /// <param name="roleName"></param>
     /// <returns></returns>
-    public _DBRole GetRoleByRoleName(string roleName)
+    public static _DBRole GetRoleByRoleName(string roleName)
     {
       try
       {
@@ -110,7 +96,7 @@ namespace DB
       return null;
     }
 
-    public void InsertRole(_DBRole role)
+    public static void InsertRole(_DBRole role)
     {
       try
       {
@@ -129,7 +115,7 @@ namespace DB
       }
     }
 
-    public void UpdateRole(_DBRole role)
+    public static void UpdateRole(_DBRole role)
     {
       try
       {

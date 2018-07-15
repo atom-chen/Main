@@ -37,15 +37,16 @@ public class UserConnect : PeerBase
     {
         if (LoginUser != null)
         {
-            UserController.Instance.DonwLine(LoginUser);
+            UserManager.DonwLine(LoginUser);
             CSMain.Server.log.DebugFormat("玩家{0}下线", LoginUser.UserName);
         }
         if (LoginRole != null)
         {
-            RoleController.Instance.RoleDownLine(LoginRole);
+            RoleManager.RoleDownLine(LoginRole);
         }
     }
 
+    //消息分发函数
     protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
     {
         HandlerBase handler;

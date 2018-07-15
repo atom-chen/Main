@@ -27,7 +27,7 @@ class RoleAddHandler : HandlerBase
         return;
       }
       role.userID = peer.LoginUser.Guid;
-      if(RoleController.Instance.CreateRole(role))
+      if(RoleManager.CreateRole(role))
       {
         //创建成功
         response.ReturnCode =(short) ReturnCode.Success;

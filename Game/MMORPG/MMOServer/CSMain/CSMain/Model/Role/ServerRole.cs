@@ -249,5 +249,6 @@ public partial class Role
         }
 
     }
+
 }
 

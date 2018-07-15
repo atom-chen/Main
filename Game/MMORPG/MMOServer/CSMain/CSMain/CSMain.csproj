@@ -128,14 +128,17 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
       <Link>Public\Tools\ParameterTools.cs</Link>
     </Compile>
+    <Compile Include="Model\Bag\BagManager.cs" />
+    <Compile Include="Model\Bag\DBItem.cs" />
     <Compile Include="Model\Bag\ServerBag.cs" />
+    <Compile Include="Model\Bag\ServerItem.cs" />
     <Compile Include="Model\Role\DBRole.cs" />
     <Compile Include="Model\Role\ServerRole.cs" />
     <Compile Include="Model\ServerProperty\DBServerPropert .cs" />
     <Compile Include="Model\User\DBUser.cs" />
-    <Compile Include="Controller\RoleController.cs" />
-    <Compile Include="Controller\ServerPropertyController.cs" />
-    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\RoleManager.cs" />
+    <Compile Include="Controller\ServerPropertyManager.cs" />
+    <Compile Include="Controller\UserManager.cs" />
     <Compile Include="User\Hander\StartGameHandler.cs" />
     <Compile Include="User\Hander\EnterGameHandler.cs" />
     <Compile Include="User\Hander\HandlerBase.cs" />
@@ -143,9 +146,9 @@
     <Compile Include="User\Hander\RegisterHandler.cs" />
     <Compile Include="User\Hander\RoleAddHandler.cs" />
     <Compile Include="User\Hander\ServerListHandler.cs" />
-    <Compile Include="Model\Role\RoleManager.cs" />
-    <Compile Include="Model\ServerProperty\ServerPropertyManager.cs" />
-    <Compile Include="Model\User\UserManager.cs" />
+    <Compile Include="Model\Role\RoleController.cs" />
+    <Compile Include="Model\ServerProperty\ServerPropertyController.cs" />
+    <Compile Include="Model\User\UserController.cs" />
     <Compile Include="User\UserConnect.cs" />
     <Compile Include="Model\ServerProperty\ServerPropert.cs" />
     <Compile Include="Model\User\User.cs" />

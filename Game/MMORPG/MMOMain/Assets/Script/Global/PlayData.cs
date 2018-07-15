@@ -56,6 +56,9 @@ public class PlayData
         }
     }
 
+    /// <summary>
+    /// 客户端层面 体力恢复计时
+    /// </summary>
     private static void RoleEnergyRecover()
     {
         if (RoleData == null)

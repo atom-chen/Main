@@ -24,4 +24,8 @@ public partial class Role
     {
 
     }
+    public void BuildBag(List<Item> itemList)
+    {
+        BagInfo = new Bag(itemList);
+    }
 }

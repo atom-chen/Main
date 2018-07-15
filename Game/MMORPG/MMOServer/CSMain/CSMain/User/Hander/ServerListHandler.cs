@@ -16,7 +16,7 @@ class ServerListHandler:HandlerBase
 
   public override void OnHandlerMessage(OperationRequest request, OperationResponse response, UserConnect peer, Photon.SocketServer.SendParameters sendParameters)
   {
-    List<ServerPropert> serverList = ServerPropertyController.Instance.GetAllServerPropert();
+      List<ServerPropert> serverList = ServerPropertyManager.GetAllServerPropert();
     if(serverList!=null)
     {
       string json = LitJson.JsonMapper.ToJson(serverList);

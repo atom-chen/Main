@@ -6,37 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class RoleController
+class RoleManager
 {
-    private static RoleController _Instance = new RoleController();
-    public static RoleController Instance
-    {
-        get
-        {
-            return _Instance;
-        }
-    }
-    private RoleController()
-    {
 
-    }
-
-
-
-    //活跃玩家应该保证其所有角色都在dic中，不活跃玩家应该同步清理所有数据
-    private Dictionary<int, Role> m_OnlineRoles = new Dictionary<int, Role>();//所属UserID，角色信息
+    private static Dictionary<int, Role> m_OnlineRoles = new Dictionary<int, Role>();      //所属UserID，角色信息
 
     /// <summary>
     /// 获取某个玩家的所有角色
     /// </summary>
     /// <param name="userId">玩家ID</param>
     /// <returns>角色List</returns>
-    public List<Role> GetUserAllRole(int userId)
+    public static List<Role> GetUserAllRole(int userId)
     {
         List<Role> result = new List<Role>();
         //先在字典里找
         Role role1 = null;
-        IList<DB._DBRole> dbRoles = DB.RoleManager.Instance.GetRoleByUserID(userId);
+        IList<DB._DBRole> dbRoles = DB.RoleController.GetRoleByUserID(userId);
         if (dbRoles != null)
         {
             foreach (DB._DBRole item in dbRoles)
@@ -49,7 +34,7 @@ class RoleController
     }
 
     //创建角色
-    public bool CreateRole(Role newRole)
+    public static bool CreateRole(Role newRole)
     {
         //是否有足够的槽
         if (!IsUserCanCreateRole(newRole.userID))
@@ -57,13 +42,13 @@ class RoleController
             return false;
         }
         //是否重名
-        DB._DBRole dbRole = DB.RoleManager.Instance.GetRoleByRoleName(newRole.name);
+        DB._DBRole dbRole = DB.RoleController.GetRoleByRoleName(newRole.name);
         if (dbRole != null)
         {
             return false;
         }
         dbRole = new DB._DBRole(newRole);
-        DB.RoleManager.Instance.InsertRole(dbRole);
+        DB.RoleController.InsertRole(dbRole);
         return true;
     }
 
@@ -73,9 +58,9 @@ class RoleController
     /// </summary>
     /// <param name="userId">玩家ID</param>
     /// <returns>布尔</returns>
-    private bool IsUserCanCreateRole(int userId)
+    private static bool IsUserCanCreateRole(int userId)
     {
-        IList<DB._DBRole> dbRoleList = DB.RoleManager.Instance.GetRoleByUserID(userId);
+        IList<DB._DBRole> dbRoleList = DB.RoleController.GetRoleByUserID(userId);
         if (dbRoleList == null || dbRoleList.Count <= 1)
         {
             return true;
@@ -88,7 +73,7 @@ class RoleController
 
 
     //更新角色信息
-    public bool UpdateRoleInfo(Role role)
+    public static bool UpdateRoleInfo(Role role)
     {
         Role listRole = null;
         m_OnlineRoles.TryGetValue(role.userID, out listRole);
@@ -113,16 +98,17 @@ class RoleController
 
 
     //角色上线
-    public Role RoleOnline(Role role)
+    public static Role RoleOnline(Role role)
     {
         if (!m_OnlineRoles.ContainsKey(role.userID))
         {
             //验证数据一致性
-            DB._DBRole dbRole = DB.RoleManager.Instance.GetRoleByID(role.id);
+            DB._DBRole dbRole = DB.RoleController.GetRoleByID(role.id);
             if (role.CompareToDB(dbRole))
             {
                 role = new Role(dbRole);
-                role.Recover(dbRole);
+                role.Recover(dbRole);                                           //体力回复
+                role.BuildBag(BagManager.GetItemFromRole(role.id));                           //填充背包
                 m_OnlineRoles.Add(role.userID, role);//允许上线
                 return role;
             }
@@ -141,7 +127,7 @@ class RoleController
 
 
     //角色下线
-    public void RoleDownLine(Role role)
+    public static void RoleDownLine(Role role)
     {
         //1数据入库
         if (UpdateRoleInfo(role))
@@ -150,7 +136,7 @@ class RoleController
             DateTime now = DateTime.Now;
             dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
             CSMain.Server.log.DebugFormat("角色{0}在{1}下线", role.name, dbRole.LastDownLine);
-            DB.RoleManager.Instance.UpdateRole(dbRole);
+            DB.RoleController.UpdateRole(dbRole);
             //2从集合中移除
             m_OnlineRoles.Remove(role.userID);
         }
@@ -162,7 +148,7 @@ class RoleController
     }
 
     //改名
-    public void ReName(Role role)
+    public static void ReName(Role role)
     {
 
     }

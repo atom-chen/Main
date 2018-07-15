@@ -6,24 +6,10 @@ using System.Threading.Tasks;
 
 namespace DB
 {
-  class ServerPropertyManager
+  class ServerPropertyController
   {
-    private static ServerPropertyManager _Instance = new ServerPropertyManager();
-
-    private ServerPropertyManager()
-    {
-
-    }
-    public static ServerPropertyManager Instance
-    {
-      get
-      {
-        return _Instance;
-      }
-    }
-
     //从数据库获取全部区服的信息
-    public IList<_DBServerPropert> GetAllServer()
+    public static IList<_DBServerPropert> GetAllServer()
     {
       try
       {

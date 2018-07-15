@@ -25,7 +25,7 @@ class RegisterHandler:HandlerBase
         response.Parameters.Add((byte)ParameterCode.ErrorInfo,"未知异常");
         return;
       }
-      bool isSuccess=UserController.Instance.Register(newUser);
+      bool isSuccess=UserManager.Register(newUser);
       //成功
       if(isSuccess)
       {
