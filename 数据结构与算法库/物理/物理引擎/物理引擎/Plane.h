@@ -1,11 +1,9 @@
 #pragma once
 #include "Extern.h"
 
-class Plane
+
+struct Plane
 {
-public:
-protected:
-private:
 	float distance;
-	
+	Vector3 normal;
 };

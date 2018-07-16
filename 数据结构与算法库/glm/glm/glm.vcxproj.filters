@@ -1,24 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="StructDefine">
-      <UniqueIdentifier>{22ef4435-3df4-4b2f-affa-329e3b821feb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MathTools">
       <UniqueIdentifier>{781bcd2b-abb5-497c-a6d7-fa46b1b826aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="向量">
+      <UniqueIdentifier>{22ef4435-3df4-4b2f-affa-329e3b821feb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="欧拉角">
+      <UniqueIdentifier>{4484a3a9-e380-4352-902c-6860c06414a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="四元数">
+      <UniqueIdentifier>{aeaff89d-54ac-4cd1-b31c-016fa502b84c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vector3.h">
-      <Filter>StructDefine</Filter>
+      <Filter>向量</Filter>
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
-      <Filter>StructDefine</Filter>
+      <Filter>向量</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>向量</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EulerAngles.h">
-      <Filter>StructDefine</Filter>
+      <Filter>欧拉角</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>向量</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

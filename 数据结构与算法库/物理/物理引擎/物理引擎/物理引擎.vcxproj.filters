@@ -5,13 +5,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="碰撞体">
+    <Filter Include="Math库支持">
+      <UniqueIdentifier>{c132975a-dfa1-4169-badd-fb76aa40414c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基础结构">
+      <UniqueIdentifier>{3faf8585-9901-40c0-9cfc-dba0d2cb2d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="碰撞检测">
+      <UniqueIdentifier>{4e8a5a85-c3cc-4f32-9991-27775c1ee10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="碰撞检测\碰撞体">
       <UniqueIdentifier>{f06d8f1d-c977-4669-94e0-350fc5eccd8d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ray.h" />
-    <ClInclude Include="Extern.h" />
-    <ClInclude Include="Plane.h" />
+    <ClInclude Include="..\..\..\glm\glm\Vector3.h">
+      <Filter>Math库支持</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>基础结构</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>基础结构</Filter>
+    </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>基础结构</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCollider.h">
+      <Filter>碰撞检测\碰撞体</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollider.h">
+      <Filter>碰撞检测\碰撞体</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\glm\glm\Vector2.h">
+      <Filter>Math库支持</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>碰撞检测\碰撞体</Filter>
+    </ClInclude>
+    <ClInclude Include="CapsuleCollider.h">
+      <Filter>碰撞检测\碰撞体</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>基础结构</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetectionAlgorithm_2D.h">
+      <Filter>碰撞检测</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\glm\glm\Vector3.cpp">
+      <Filter>Math库支持</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\glm\glm\Vector2.cpp">
+      <Filter>Math库支持</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
