@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DB;
 
-public class BagManager
+public class BagController
 {
     /// <summary>
     /// 获取属于role的所有物品，返回
@@ -35,13 +35,57 @@ public class BagManager
     }
 
     /// <summary>
-    /// 添加一个新物品到数据库
+    /// 添加新物品到数据库
     /// </summary>
-    /// <param name="item"></param>
-    /// <param name="roleID"></param>
-    /// <returns></returns>
     public static bool AddItem(List<_DBItem> dbItemList)
     {
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    foreach (_DBItem dbItem in dbItemList)
+                    {
+                        session.Save(dbItem);
+                    }
+                    transction.Commit();
+                    return true;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            CSMain.Server.log.Error("AddItem       ：" + ex.Message);
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// 添加新物品到数据库
+    /// </summary>
+    public static bool AddItem(List<Item> itemList,int roleID)
+    {
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    foreach (Item item in itemList)
+                    {
+                        session.Save(new _DBItem(item,roleID));
+                    }
+                    transction.Commit();
+                    return true;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            CSMain.Server.log.Error("AddItem       ：" + ex.Message);
+        }
         return false;
     }
 
@@ -52,6 +96,7 @@ public class BagManager
     /// <returns></returns>
     public static bool UpdateItem(List<_DBItem> dbItemList)
     {
+        
         return true;
     }
 

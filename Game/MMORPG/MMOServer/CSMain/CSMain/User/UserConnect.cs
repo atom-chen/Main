@@ -37,12 +37,14 @@ public class UserConnect : PeerBase
     {
         if (LoginUser != null)
         {
-            UserManager.DonwLine(LoginUser);
+            UserManager.DownLine(LoginUser);
             CSMain.Server.log.DebugFormat("玩家{0}下线", LoginUser.UserName);
+            LoginUser = null;
         }
         if (LoginRole != null)
         {
             RoleManager.RoleDownLine(LoginRole);
+            LoginRole = null;
         }
     }
 

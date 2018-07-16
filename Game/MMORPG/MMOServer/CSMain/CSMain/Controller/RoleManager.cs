@@ -9,7 +9,28 @@ using System.Threading.Tasks;
 class RoleManager
 {
 
-    private static Dictionary<int, Role> m_OnlineRoles = new Dictionary<int, Role>();      //所属UserID，角色信息
+    private static Dictionary<int, Role> m_OnlineRoles = new Dictionary<int, Role>();      //当前在线角色 所属UserID，角色信息
+
+    public static RoleManager()
+    {
+        Server.OnTeamDown += OnServerTeamDown;
+    }
+    public static void OnServerTeamDown()
+    {
+        foreach(Role role in m_OnlineRoles.Values)
+        {
+            RoleDownLine(role);                       //让所有角色下线
+        }
+    }
+    //给所有玩家发送消息包
+    public static void SendMessageToAllRoles()
+    {
+        foreach (Role role in m_OnlineRoles.Values)
+        {
+
+
+        }
+    }
 
     /// <summary>
     /// 获取某个玩家的所有角色
@@ -19,7 +40,6 @@ class RoleManager
     public static List<Role> GetUserAllRole(int userId)
     {
         List<Role> result = new List<Role>();
-        //先在字典里找
         Role role1 = null;
         IList<DB._DBRole> dbRoles = DB.RoleController.GetRoleByUserID(userId);
         if (dbRoles != null)
@@ -108,8 +128,8 @@ class RoleManager
             {
                 role = new Role(dbRole);
                 role.Recover(dbRole);                                           //体力回复
-                role.BuildBag(BagManager.GetItemFromRole(role.id));                           //填充背包
-                m_OnlineRoles.Add(role.userID, role);//允许上线
+                role.BuildBag(BagController.GetItemFromRole(role.id));             //填充背包
+                m_OnlineRoles.Add(role.userID, role);                          //允许上线
                 return role;
             }
             else
@@ -120,7 +140,8 @@ class RoleManager
         }
         else
         {
-            //如果集合中有，则不让该角色下线
+            //如果集合中有，则让该角色下线
+            RoleDownLine(role);
             return null;
         }
     }

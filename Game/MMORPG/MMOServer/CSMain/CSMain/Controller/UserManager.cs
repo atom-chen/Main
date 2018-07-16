@@ -10,11 +10,26 @@ class UserManager
 {
     private static Dictionary<int, User> m_OnlineUser = new Dictionary<int, User>();//在线用户
 
+
+    public static UserManager()
+    {
+        CSMain.Server.OnTeamDown += OnServerTeamDown;
+    }
+
+    public static void OnServerTeamDown()
+    {
+        //所有玩家下线 数据入库
+        foreach(User user in m_OnlineUser.Values)
+        {
+            DownLine(user);
+        }
+    }
+
     //玩家登陆
     public  static int Login(User loginUser)
     {
         //去数据库取
-        _DBUser dbUser = UserController.GetUserByUserName(loginUser.UserName);
+        _DBUser dbUser = UserController.GetUserByID(loginUser.Guid);
         if (dbUser != null)
         {
             User user = new User(dbUser);
@@ -35,7 +50,7 @@ class UserManager
     }
 
     //玩家下线
-    public static void DonwLine(User user)
+    public static void DownLine(User user)
     {
         //验证合法性 TODO
         
@@ -43,7 +58,7 @@ class UserManager
         m_OnlineUser.Remove(user.Guid);
     }
 
-    //失败原因：用户名已存在
+    //注册新用户
     public static bool Register(User newUser)
     {
         _DBUser dbUser = UserController.GetUserByUserName(newUser.UserName);
@@ -60,6 +75,11 @@ class UserManager
         return true;
     }
 
+    /// <summary>
+    /// 获取一个User
+    /// </summary>
+    /// <param name="id">id</param>
+    /// <returns></returns>
     public User GetUser(int id)
     {
         User user;
@@ -69,8 +89,23 @@ class UserManager
         }
         else
         {
-            return null;
+            //去数据库取
+            _DBUser dbUser = UserController.GetUserByID(id);
+            if(dbUser!=null)
+            {
+                return new User(dbUser);
+            }
         }
+        return null;
+    }
+
+    /// <summary>
+    /// 更新一个User的数据入库
+    /// </summary>
+    /// <param name="nUser"></param>
+    public void UpdateUserInfo(User nUser)
+    {
+        UserController.UpdateUser(new _DBUser(nUser));
     }
 }
 

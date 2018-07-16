@@ -14,6 +14,18 @@ namespace DB
         public virtual int tabID { get; set; }          //在表格中的id
         public virtual int count { get; set; }         //物品数量
         public virtual int roleID { set; get; }         //所属用户id
+        public _DBItem()
+        {
+
+        }
+
+        public _DBItem(Item item,int roleID)
+        {
+            this.Id = item.guid;
+            this.tabID = item.tabID;
+            this.count = item.count;
+            this.roleID = roleID;
+        }
     }
 
     public class _DBItemMap : ClassMap<_DBItem>
