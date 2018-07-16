@@ -3,7 +3,7 @@
 #include "stdio.h"
 
 //排序
-void main01()
+void main201()
 {
 	int		i = 0,j = 0;
 	int		tmp = 0;
@@ -41,9 +41,6 @@ void main01()
 	{
 		printf("%d ", a[i]);
 	}
-
-	printf("hello...\n");
-	system("pause");
 }
 
 
@@ -56,9 +53,10 @@ void printArray(int *a, int num)
 	{
 		printf("%d ", a[i]);
 	}
+	printf("\n");
 }
 
-void sortArray(int a[7], int num)
+void sortArray(int a[7], int num)                //这里int a[7]退化为int *a
 //void sortArray(int a[], int num)
 //void sortArray(int *a, int num)
 {
@@ -66,7 +64,7 @@ void sortArray(int a[7], int num)
 	int		num2 = 0;
 
 	num2 = sizeof(a)/sizeof(a[0]);
-	printf("num:%d \n", num2);
+	printf("num1:%d,  num2:%d \n",num ,num2);
 	//实参的a 和 形参的a 的数据类型本质不一样
 	//形参中的数组 ,编译器会把它当成指针处理 这是C语言的特色
 	for(i=0; i<num; i++) 
@@ -89,7 +87,7 @@ void sortArray(int a[7], int num)
 	//形参中的数组 ,编译器会把它当成指针处理 这是C语言的特色
 	//排序 本质也剖析 
 //3 形参写在函数上,和写在函数内是一样的,只不过是具有对外的属性而已.
-void main22()
+void main202()
 {
 	int		i = 0,j = 0;
 	int		tmp = 0;
@@ -98,7 +96,6 @@ void main22()
 	num  = 7;
 
 	num = sizeof(a)/sizeof(a[0]);
-	printf("num:%d \n", num);
 
 	printf("排序之前\n");
 	printArray(a, num);
@@ -114,7 +111,4 @@ void main22()
 
 	printf("排序之后\n");
 	printArray(a, num);
-
-	printf("hello...\n");
-	system("pause");
 }

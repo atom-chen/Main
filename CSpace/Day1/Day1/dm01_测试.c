@@ -32,9 +32,3 @@ int socketclient_destory2(void **handle)
 	return 0;
 }
 
-void main()
-{
-	printf("hello...\n");
-	system("pause");
-	return ;
-}

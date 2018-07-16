@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void main81()
+void main()
 {
 	int a = 10;
 	char *p1 = 100;  //分配4个字节的内存
@@ -33,11 +33,6 @@ void main81()
 	}
 
 	printf("a:%d , p1:%d , p2: %d", sizeof(a), sizeof(p1), sizeof(p2));
-	printf("hello...\n");
-
-	
-	system("pause");
-	return ;
 }
 
 char *getStr81()
@@ -62,11 +57,9 @@ int	getABC5(char p5[10][30]); int	getABC5(char p5[10][30]);
 */
 
 
-void main()
+void main802()
 {
 	char *p = getStr81();
 	printf("p:%s \n", p);
 	*(p+2) = 'r';  //经常出现的错误 保证指针所指向的内存空间 可以被修改
-	system("pause");
-	return ;
 }

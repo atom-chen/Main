@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 
-//堆
+//分配堆内存
 char *getMem(int num)
 {
 	char *p1 = NULL;
@@ -22,16 +22,15 @@ char *getMem(int num)
 
 // 理解指针的关键,是内存. 没有内存哪里的指针 
 
-//
+//错误的行为：返回栈内存，该内存在函数退出后已经被析构
 char *getMem2()
 {
 	char buf[64]; //临时变量 栈区存放
 	strcpy(buf, "123456789");
-	//printf("buf:%s\n", buf);
 	return buf;
 }
 
-void main61()
+void main601()
 {
 	char *tmp = NULL;
 	tmp = getMem(10);
@@ -40,11 +39,10 @@ void main61()
 		return ;
 	}
 	strcpy(tmp, "111222"); //向tmp做指向的内存空间中copy数据
+	printf("getMem= %s \n", tmp);
 
-	//tmp = getMem2();
+	tmp = getMem2();
+	printf("getMem2= %s \n", tmp);
 	tmp = 0xaa11;
 
-	printf("hello..tmp:%s.\n", tmp);
-	system("pause");
-	return ;
 }
