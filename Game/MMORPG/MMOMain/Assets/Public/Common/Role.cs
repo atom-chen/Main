@@ -28,4 +28,5 @@ public partial class Role
     {
         BagInfo = new Bag(itemList);
     }
+
 }

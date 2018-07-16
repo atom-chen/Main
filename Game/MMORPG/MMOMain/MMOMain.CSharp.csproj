@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.4p1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -243,18 +245,22 @@
     <Compile Include="Assets\Script\Model\Role.cs" />
     <Compile Include="Assets\Script\Model\ServerProperty.cs" />
     <Compile Include="Assets\Script\Model\User.cs" />
-    <Compile Include="Assets\Script\Net\ControllerBase.cs" />
-    <Compile Include="Assets\Script\Net\PhotoEngine.cs" />
-    <Compile Include="Assets\Script\Net\StartMenu\AddRoleController.cs" />
-    <Compile Include="Assets\Script\Net\StartMenu\EnterGameControllr.cs" />
-    <Compile Include="Assets\Script\Net\StartMenu\LoginController.cs" />
-    <Compile Include="Assets\Script\Net\StartMenu\RegisterController.cs" />
-    <Compile Include="Assets\Script\Net\StartMenu\ServerListController.cs" />
-    <Compile Include="Assets\Script\Net\StartMenu\StartGameControllr.cs" />
-    <Compile Include="Assets\Script\Tools\Resources.cs" />
-    <Compile Include="Assets\Script\Tools\UIManager.cs" />
+    <Compile Include="Assets\Script\Handler\HandlerBase.cs" />
+    <Compile Include="Assets\Script\Global\PhotoEngine.cs" />
+    <Compile Include="Assets\Script\Handler\StartMenu\AddRoleHandler.cs" />
+    <Compile Include="Assets\Script\Handler\StartMenu\EnterGameHandler.cs" />
+    <Compile Include="Assets\Script\Handler\StartMenu\LoginHandler.cs" />
+    <Compile Include="Assets\Script\Handler\StartMenu\RegisterHandler.cs" />
+    <Compile Include="Assets\Script\Handler\StartMenu\ServerListHandler.cs" />
+    <Compile Include="Assets\Script\Handler\StartMenu\StartGameHandler.cs" />
+    <Compile Include="Assets\Script\Global\ResourcesManager\Resources.cs" />
+    <Compile Include="Assets\Script\Global\UIManager\UIInfo.cs" />
+    <Compile Include="Assets\Script\Global\UIManager\UIManager.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagController.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagList.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BattltInfo.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
-    <Compile Include="Assets\Script\UI\GamsScene\RoleStatePanel.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickRoleHead\RoleStatePanel.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\LaunchSceneLogic.cs" />
@@ -308,5 +314,6 @@
     <None Include="Assets\Public\Table\Item.txt" />
     <None Include="Assets\Public\Table\Role.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
