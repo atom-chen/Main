@@ -39,6 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\Game\Card\Client\Tools\DigitalKeyboard.cs">
+      <Link>Scripts\YM\DigitalKeyboard.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Game\Card\Client\Tools\ListWrapController.cs">
+      <Link>Scripts\YM\ListWrapController.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Game\Card\Client\Tools\OptionItem.cs">
+      <Link>Scripts\YM\OptionItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Game\Card\Client\Tools\OptionList.cs">
+      <Link>Scripts\YM\OptionList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Game\Card\Client\Tools\TabButton.cs">
+      <Link>Scripts\YM\TabButton.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Game\Card\Client\Tools\TabController.cs">
+      <Link>Scripts\YM\TabController.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Editor\ActiveAnimationEditor.cs" />
     <Compile Include="Scripts\Editor\BMFontReader.cs" />
