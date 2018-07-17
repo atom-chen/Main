@@ -213,7 +213,7 @@ int my_strcpy(char *to, char *from)
 }
 
 
-void main401()
+void main402()
 {
 	int ret = 0;
 	char buf1[] = "zbcdefg";

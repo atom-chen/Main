@@ -95,4 +95,5 @@ int main804( )
 	cout<<setw(10)<<a<<endl;
 	cout<<setw(10)<<b<<endl;
 	cout<<setw(10)<<c<<endl;
+	return 0;
 }

@@ -6,7 +6,7 @@ using namespace std;
 C风格的强制类型转换(Type Cast)很简单，不管什么类型的转换统统是：
 	TYPE b = (TYPE)a   
 	C++风格的类型转换提供了4种类型转换操作符来应对不同场合的应用。
-	　　static_cast		静态类型转换。如int转换成char
+	　　static_cast		    静态类型转换。如int转换成char
 		reinterpreter_cast	重新解释类型 
 		dynamic_cast		命名上理解是动态类型转换。如子类和父类之间的多态类型转换。
 		const_cast，		字面上理解就是去const属性。
@@ -38,7 +38,6 @@ void main2()
 
 	printBuf (myp);
 
-	system("pause");
 }
 
 
@@ -96,7 +95,17 @@ void playObj(Animal *base)
 		pCat->doThing();  //让够 做自己 特有的工作 
 	}
 }
+void playObj(Animal& base)
+{
+	Dog &dog = dynamic_cast<Dog &>(base);
+	dog.doHome(); //让够 做自己 特有的工作 
+	
 
+	Cat &cat = dynamic_cast<Cat &>(base);	//父类对象 ===> 子类对象 
+	//向下转型  
+	//把老子 转成 小子 
+	cat.doThing();  //让够 做自己 特有的工作 
+}
 void main3()
 {
 	Dog d1;
@@ -121,7 +130,8 @@ void main3()
 	playObj(&d1);
 	playObj(&c1);
 
-	system("pause");
+	//playObj(d1);  //这里会发生一个转换失败 直接报错
+
 }
 
 void main4()

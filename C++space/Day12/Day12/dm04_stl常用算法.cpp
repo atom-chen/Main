@@ -178,12 +178,9 @@ c:\program files\microsoft visual studio 10.0\vc\include\algorithm(1119):
 	transform(v2.begin(), v2.end(), v2.begin(), showElem2);
 }
 
-void main()
+void main402()
 {
 	//main41_foreach();
 	//main42_transform();
 	// main43_transform_pk_foreach();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

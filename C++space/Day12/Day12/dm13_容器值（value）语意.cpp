@@ -72,10 +72,3 @@ void main1301()
 	v1.push_back(t1); //把t1拷贝了一份 存入到容器中了....
 	
 }
-void main()
-{
-	main1301();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
-}

@@ -112,4 +112,5 @@ int main706()
 		getline (cin, str); // //字符串 中间可能有空格 使用 cin.getline();
 		cout << "You entered a word: " << str << '\n';
 	}
+	return 0;
 }

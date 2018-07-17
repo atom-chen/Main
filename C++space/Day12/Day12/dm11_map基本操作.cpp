@@ -6,13 +6,15 @@ using namespace std;
 
 
 //map元素的添加/遍历/删除基本操作
-void main1101()
+void main()
 {
 	map<int, string> map1;
 
 	//方法1
 	map1.insert(pair<int, string>(1,"teacher01") );
 	map1.insert(pair<int, string>(2,"teacher02") );
+	
+	
 
 	//方法2 
 	map1.insert(make_pair(3, "teacher04") );
@@ -25,6 +27,12 @@ void main1101()
 	//方法4
 	map1[7] = "teacher07";
 	map1[8] = "teacher08";
+
+	//在末尾添加
+	if (map1.find(3) == map1.end())
+	{
+		map1[3] = "aaa";
+	}
 	
 	//map1['z'] = "teacher08";
 
@@ -165,7 +173,4 @@ void main111111()
 	//main1101();
 	//main1102();
 	main1103();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
