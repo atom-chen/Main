@@ -10,22 +10,22 @@ public class Tab_Item
     public int id;//ID
     public string name;//NAME
     public string icon;//Icon
-    public int classType;//所属类型
-    public int infoType;//二级分类类型
+    public ITEM_FIRST classType;//所属类型
+    public ITEM_SECOND infoType;//二级分类类型
     public int level = 1;//使用等级
     public int maxCount = 1;//最大数量
     public int price;//出售价格
     public string desc;//描述
 }
 
-public class TabItem_Manager
+public class TabItemManager
 {
     private static Dictionary<int, Tab_Item> m_TabItemDic = new Dictionary<int, Tab_Item>();
-    private TabItem_Manager()
+    private TabItemManager()
     {
 
     }
-    static TabItem_Manager()
+    static TabItemManager()
     {
         ReLoad();
     }
@@ -54,11 +54,11 @@ public class TabItem_Manager
 
             //Class Type
             data = table.GetNext();
-            item.classType = Convert.ToInt32(data);
+            item.classType = (ITEM_FIRST)Convert.ToInt32(data);
 
             //sub Type
             data = table.GetNext();
-            item.infoType = Convert.ToInt32(data);
+            item.infoType = (ITEM_SECOND)Convert.ToInt32(data);
 
             //level
             data = table.GetNext();

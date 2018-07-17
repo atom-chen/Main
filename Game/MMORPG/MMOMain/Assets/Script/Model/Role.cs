@@ -32,12 +32,12 @@ public partial class Role
             OnChange();
         }
     }
+
     public uint level
     {
         get { return Level; }
         set { Level = value; OnChange(); }
     }
-
 
     public bool sex
     {
@@ -45,13 +45,11 @@ public partial class Role
         set { Sex = value; OnChange(); }
     }
 
-
     public int userID
     {
         get { return UserID; }
         set { UserID = value; OnChange(); }
     }
-
 
     public string headIcon
     {
@@ -59,13 +57,11 @@ public partial class Role
         set { HeadIcon = value; OnChange(); }
     }
 
-
     public int exp
     {
         get { return Exp; }
         set { Exp = value; OnChange(); }
     }
-
 
     public int coin
     {
@@ -73,13 +69,11 @@ public partial class Role
         set { Coin = value; OnChange(); }
     }
 
-
     public int yuanBao
     {
         get { return YuanBao; }
         set { YuanBao = value; OnChange(); }
     }
-
 
     public int energy
     {
@@ -87,19 +81,18 @@ public partial class Role
         set { Energy = value; OnChange(); }
     }
 
-
     public int toughen
     {
         get { return Toughen; }
         set { Toughen = value; OnChange(); }
     }
 
-
     public int energyNextRecoverTimer
     {
         get { return EnergyNextRecoverTimer; }
         set { EnergyNextRecoverTimer = value; }
     }
+
     public int toughenNextRecoverTimer
     {
         get { return ToughenNextRecoverTimer; }
@@ -110,6 +103,7 @@ public partial class Role
     {
         get { return BagInfo; }
     }
+
     /// <summary>
     /// 获取体力全部恢复的时间
     /// </summary>

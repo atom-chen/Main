@@ -6,28 +6,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class ServerListHandler:HandlerBase
+class ServerListHandler : HandlerBase
 {
 
-  public override OperationCode OpCode
-  {
-    get { return OperationCode.GetServer; }
-  }
-
-  public override void OnHandlerMessage(OperationRequest request, OperationResponse response, UserConnect peer, Photon.SocketServer.SendParameters sendParameters)
-  {
-      List<ServerPropert> serverList = ServerPropertyManager.GetAllServerPropert();
-    if(serverList!=null)
+    public override OperationCode OpCode
     {
-      string json = LitJson.JsonMapper.ToJson(serverList);
+        get { return OperationCode.GetServer; }
+    }
 
-      response.ReturnCode = (short)ReturnCode.Success;//状态码
-      response.Parameters.Add((byte)ParameterCode.ServerList, json);//返回的参数
-    }
-    else
+    public override void OnHandlerMessage(OperationRequest request, OperationResponse response, UserConnect peer, Photon.SocketServer.SendParameters sendParameters)
     {
-      response.ReturnCode = (short)ReturnCode.Error;
+        List<ServerPropert> serverList = ServerPropertyManager.GetAllServerPropert();
+        if (serverList != null)
+        {
+            string json = LitJson.JsonMapper.ToJson(serverList);
+
+            response.ReturnCode = (short)ReturnCode.Success;//状态码
+            response.Parameters.Add((byte)ParameterCode.ServerList, json);//返回的参数
+        }
+        else
+        {
+            response.ReturnCode = (short)ReturnCode.Error;
+        }
     }
-  }
 }
 

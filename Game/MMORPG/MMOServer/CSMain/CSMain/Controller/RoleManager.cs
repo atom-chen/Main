@@ -11,7 +11,7 @@ class RoleManager
 
     private static Dictionary<int, Role> m_OnlineRoles = new Dictionary<int, Role>();      //当前在线角色 所属UserID，角色信息
 
-    public static RoleManager()
+    static RoleManager()
     {
         Server.OnTeamDown += OnServerTeamDown;
     }
@@ -22,6 +22,7 @@ class RoleManager
             RoleDownLine(role);                       //让所有角色下线
         }
     }
+
     //给所有玩家发送消息包
     public static void SendMessageToAllRoles()
     {
@@ -106,7 +107,7 @@ class RoleManager
             }
             else
             {
-                CSMain.Server.log.Error(string.Format("玩家ID={0},角色ID={1} 和服务器数据不一致", role.userID, role.id));
+                LogManager.Error(string.Format("玩家ID={0},角色ID={1} 和服务器数据不一致", role.userID, role.id));
                 return false;
             }
         }
@@ -134,7 +135,7 @@ class RoleManager
             }
             else
             {
-                CSMain.Server.log.Debug(role.userID + "有作弊嫌疑，角色信息被修改");
+                LogManager.Debug(role.userID + "有作弊嫌疑，角色信息被修改");
                 return null;
             }
         }
@@ -156,14 +157,14 @@ class RoleManager
             DB._DBRole dbRole = new DB._DBRole(role);
             DateTime now = DateTime.Now;
             dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
-            CSMain.Server.log.DebugFormat("角色{0}在{1}下线", role.name, dbRole.LastDownLine);
+            LogManager.Debug("角色{0}在{1}下线", role.name, dbRole.LastDownLine);
             DB.RoleController.UpdateRole(dbRole);
             //2从集合中移除
             m_OnlineRoles.Remove(role.userID);
         }
         else
         {
-            CSMain.Server.log.Error(string.Format("玩家ID={0},角色ID={1} 无法正确下线", role.userID, role.id));
+            LogManager.Error(string.Format("玩家ID={0},角色ID={1} 无法正确下线", role.userID, role.id));
         }
 
     }

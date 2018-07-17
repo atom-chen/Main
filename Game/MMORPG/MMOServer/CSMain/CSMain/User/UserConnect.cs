@@ -11,16 +11,17 @@ using System.Threading.Tasks;
 
 public class UserConnect : PeerBase
 {
-    //log
-    private static readonly ILogger log = ExitGames.Logging.LogManager.GetCurrentClassLogger();
+    public delegate void UserEvent(UserConnect nUser);
+    public event UserEvent OnUserConnect;               //建立连接时调用
+    public event UserEvent OnUserDownLine;              //连接断开时调用
     //--------------------------------------------attribute---------------------------------------------------------------//
-    public User LoginUser { get; set; }//存储当前登录的user账号
+    public User LoginUser { get; set; }        //当前登录的user账号
 
     public ServerPropert LoginServer { get; set; }//当前登录服务器
 
-    public Role LoginRole { get; set; }//当前登录角色
+    public Role LoginRole { get; set; }          //当前登录角色
 
-    
+
 
     //--------------------------------------------attribute---------------------------------------------------------------//
 
@@ -30,15 +31,23 @@ public class UserConnect : PeerBase
     public UserConnect(IRpcProtocol protocol, IPhotonPeer unmanagedPeer)
         : base(protocol, unmanagedPeer)
     {
+        if(OnUserConnect!=null)
+        {
+            OnUserConnect(this);
+        }
 
     }
     //连接断开，入库
     protected override void OnDisconnect(PhotonHostRuntimeInterfaces.DisconnectReason reasonCode, string reasonDetail)
     {
+        if(OnUserDownLine!=null)
+        {
+            OnUserDownLine(this);
+        }
         if (LoginUser != null)
         {
             UserManager.DownLine(LoginUser);
-            CSMain.Server.log.DebugFormat("玩家{0}下线", LoginUser.UserName);
+            LogManager.Debug("玩家{0}下线", LoginUser.UserName);
             LoginUser = null;
         }
         if (LoginRole != null)
@@ -59,13 +68,13 @@ public class UserConnect : PeerBase
         response.Parameters = new Dictionary<byte, object>();
         if (handler != null)
         {
-            log.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
+            LogManager.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
             handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
             SendOperationResponse(response, sendParameters);
         }
         else
         {
-            log.Debug("不能解释的包 " + operationRequest.OperationCode);
+            LogManager.Error("不能解释的包 " + operationRequest.OperationCode);
         }
     }
 

@@ -29,7 +29,7 @@ public class BagController
         }
         catch (Exception ex)
         {
-            CSMain.Server.log.Error("GetItemFromRole       ：" + ex.Message);
+            LogManager.Error("GetItemFromRole       ：" + ex.Message);
         }
         return null;
     }
@@ -56,7 +56,7 @@ public class BagController
         }
         catch (Exception ex)
         {
-            CSMain.Server.log.Error("AddItem       ：" + ex.Message);
+            LogManager.Error("AddItem       ：" + ex.Message);
         }
 
         return false;
@@ -65,7 +65,7 @@ public class BagController
     /// <summary>
     /// 添加新物品到数据库
     /// </summary>
-    public static bool AddItem(List<Item> itemList,int roleID)
+    public static bool AddItem(List<Item> itemList, int roleID)
     {
         try
         {
@@ -75,7 +75,7 @@ public class BagController
                 {
                     foreach (Item item in itemList)
                     {
-                        session.Save(new _DBItem(item,roleID));
+                        session.Save(new _DBItem(item, roleID));
                     }
                     transction.Commit();
                     return true;
@@ -84,7 +84,7 @@ public class BagController
         }
         catch (Exception ex)
         {
-            CSMain.Server.log.Error("AddItem       ：" + ex.Message);
+            LogManager.Error("AddItem       ：" + ex.Message);
         }
         return false;
     }
@@ -96,7 +96,7 @@ public class BagController
     /// <returns></returns>
     public static bool UpdateItem(List<_DBItem> dbItemList)
     {
-        
+
         return true;
     }
 
@@ -106,7 +106,7 @@ public class BagController
     /// <param name="id">id</param>
     /// <param name="count">数量</param>
     /// <returns></returns>
-    public static bool RmItem(int id,int count)
+    public static bool RmItem(int id, int count)
     {
         return true;
     }
@@ -114,7 +114,7 @@ public class BagController
     private static List<Item> BuildListItem(IList<_DBItem> dbItemList)
     {
         List<Item> itemList = new List<Item>();
-        if(dbItemList==null)
+        if (dbItemList == null)
         {
             return itemList;
         }

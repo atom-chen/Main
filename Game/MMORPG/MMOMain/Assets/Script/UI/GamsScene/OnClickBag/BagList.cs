@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class BagList : MonoBehaviour {
 
-	void Start () 
+
+    //取出装备背包、物品背包里的物品信息 并展示
+    void OnEnable()
     {
-		
-	}
-	
-	void Update () 
-    {
-		
-	}
+
+    }
 }

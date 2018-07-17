@@ -128,6 +128,7 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
       <Link>Public\Tools\ParameterTools.cs</Link>
     </Compile>
+    <Compile Include="main\Log.cs" />
     <Compile Include="Model\Bag\BagController.cs" />
     <Compile Include="Model\Bag\DBItem.cs" />
     <Compile Include="Model\Bag\ServerBag.cs" />

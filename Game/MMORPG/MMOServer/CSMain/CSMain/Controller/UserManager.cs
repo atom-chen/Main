@@ -11,7 +11,7 @@ class UserManager
     private static Dictionary<int, User> m_OnlineUser = new Dictionary<int, User>();//在线用户
 
 
-    public static UserManager()
+    static UserManager()
     {
         CSMain.Server.OnTeamDown += OnServerTeamDown;
     }

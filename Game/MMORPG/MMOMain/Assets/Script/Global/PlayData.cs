@@ -13,7 +13,17 @@ public class PlayData
     private static ServerPropert m_Server;
     private static List<Role> m_RoleList;
     private static int m_RoleIndex;
-    private static Bag m_Bag;
+    private static Bag bag
+    {
+        get
+        {
+            if(RoleData!=null)
+            {
+                return RoleData.bag;
+            }
+            return null;
+        }
+    }
 
     public static User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
     public static ServerPropert ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器

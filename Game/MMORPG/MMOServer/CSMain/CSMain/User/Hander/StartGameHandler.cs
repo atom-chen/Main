@@ -34,7 +34,7 @@ class StartGameHandler : HandlerBase
         }
         else
         {
-            CSMain.Server.log.Error("收到的角色信息为空");
+            LogManager.Error("收到的角色信息为空");
         }
     }
 }

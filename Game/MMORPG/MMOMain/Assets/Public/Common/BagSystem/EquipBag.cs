@@ -57,7 +57,7 @@ public partial class EquipBag
         {
             //根据equipID从 equip表取出所属位置
             Tab_Equip tab=TabEquipManager.GetEquipByID(equip.equipID);
-            if (tab != null && tab.type == (int)type)
+            if (tab != null && tab.area == type)
             {
                 ret.Add(equip);
             }

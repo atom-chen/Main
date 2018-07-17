@@ -38,5 +38,44 @@ public partial class Bag
         return null;
     }
 
+
+    private bool AddItem(Item item)
+    {
+        Item bagItem = GetItem(item.tabID);
+        if (bagItem != null)
+        {
+            bagItem.count += item.count;
+        }
+        else
+        {
+            m_Bag.Add(item);
+        }
+        return true;
+    }
+
+    private bool DelItem(Item item)
+    {
+        Item bagItem = GetItem(item.tabID);
+        if (bagItem != null)
+        {
+            if(bagItem.count>=item.count)
+            {
+                bagItem.count -= item.count;
+                if(bagItem.count<=0)
+                {
+                    m_Bag.Remove(bagItem);
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 

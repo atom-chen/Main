@@ -32,12 +32,12 @@ namespace CSMain
             RegisteHandlers();
         }
 
-        public static readonly ILogger log = ExitGames.Logging.LogManager.GetCurrentClassLogger();            //日志
+
 
         //有玩家连接
         protected override PeerBase CreatePeer(InitRequest initRequest)
         {
-            log.Info(string.Format("获得连接{0}", initRequest.LocalIP.ToString()));
+            LogManager.Info(string.Format("获得连接{0}", initRequest.LocalIP.ToString()));
             UserConnect user = new UserConnect(initRequest.Protocol, initRequest.PhotonPeer);
             return user;
         }
@@ -49,9 +49,9 @@ namespace CSMain
             GlobalContext.Properties["Photon:ApplicationLogPath"] = Path.Combine(this.ApplicationRootPath, "log");
             GlobalContext.Properties["LogFileName"] = "TD" + this.ApplicationName;
             XmlConfigurator.ConfigureAndWatch(new FileInfo(Path.Combine(this.BinaryPath, "log4net.config")));
-            log.Info("启服成功");
-            
-            if(OnStartUp!=null)
+            LogManager.Info("启服成功");
+
+            if (OnStartUp != null)
             {
                 OnStartUp();
             }
@@ -60,11 +60,11 @@ namespace CSMain
         //关服务->将在线的所有用户的数据存入
         protected override void TearDown()
         {
-            if (OnTeamDown!=null)
+            if (OnTeamDown != null)
             {
                 OnTeamDown();
             }
-            log.Info("服务器关闭");
+            LogManager.Info("服务器关闭");
         }
 
 

@@ -26,7 +26,7 @@ class NHibernateHelper
         }
         catch (FluentConfigurationException ex)
         {
-            CSMain.Server.log.Debug(ex.Message);
+            LogManager.Debug(ex.Message);
         }
 
     }

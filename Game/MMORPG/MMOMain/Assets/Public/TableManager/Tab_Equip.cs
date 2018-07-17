@@ -7,7 +7,10 @@ using System.Text;
 public class Tab_Equip
 {
     public int id;
-    public int type;
+    public EQUIP_TYPE area;  //装备部位
+    public EQUIP_RARE rare;  //装备品质
+    public int mainAttrid;   //主属性iD
+    public int assistAttrid; //副属性id
 }
 
 public class TabEquipManager
@@ -32,9 +35,21 @@ public class TabEquipManager
             data = table.GetData();
             equip.id = Convert.ToInt32(data);
 
-            //Type
+            //装备位置
             data = table.GetNext();
-            equip.type = Convert.ToInt32(data);
+            equip.area =(EQUIP_TYPE) Convert.ToInt32(data);
+
+            //装备品质
+            data = table.GetNext();
+            equip.rare = (EQUIP_RARE)Convert.ToInt32(data);
+
+            //主属性ID
+            data = table.GetNext();
+            equip.mainAttrid = Convert.ToInt32(data);
+
+            //副属性ID
+            data = table.GetNext();
+            equip.assistAttrid = Convert.ToInt32(data);
 
             m_TabEquipDic.Add(equip.id, equip);
             table.LineDown();

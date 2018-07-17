@@ -36,13 +36,11 @@ public partial class Role
         set { Level = value;  }
     }
 
-
     public bool sex
     {
         get { return Sex; }
         set { Sex = value;  }
     }
-
 
     public int userID
     {
@@ -50,13 +48,11 @@ public partial class Role
         set { UserID = value;  }
     }
 
-
     public string headIcon
     {
         get { return HeadIcon; }
         set { HeadIcon = value;  }
     }
-
 
     public int exp
     {
@@ -64,13 +60,11 @@ public partial class Role
         set { Exp = value; }
     }
 
-
     public int coin
     {
         get { return Coin; }
         set { Coin = value; }
     }
-
 
     public int yuanBao
     {
@@ -78,26 +72,23 @@ public partial class Role
         set { YuanBao = value; }
     }
 
-
     public int energy
     {
         get { return Energy; }
         set { Energy = value; }
     }
 
-
     public int toughen
     {
         get { return Toughen; }
         set { Toughen = value;}
     }
-
-
     public int energyNextRecoverTimer
     {
         get { return EnergyNextRecoverTimer; }
         set { EnergyNextRecoverTimer = value; }
     }
+
     public int toughenNextRecoverTimer
     {
         get { return ToughenNextRecoverTimer; }
@@ -128,9 +119,10 @@ public partial class Role
         }
         catch (Exception ex)
         {
-            CSMain.Server.log.Error("Role构造报错" + ex.Message);
+            LogManager.Error("Role构造报错" + ex.Message);
         }
     }
+
     public bool CompareToRole(Role role)
     {
         if (ID == role.ID && UserID == role.UserID)
@@ -142,6 +134,7 @@ public partial class Role
             return false;
         }
     }
+
     public bool CompareToDB(DB._DBRole dbRole)
     {
         if (ID == dbRole.ID && Level == dbRole.Level && UserID == dbRole.UserID && Exp == dbRole.Exp && Coin == dbRole.Coin && YuanBao == dbRole.YuanBao)
@@ -154,6 +147,10 @@ public partial class Role
         }
     }
 
+    /// <summary>
+    /// 恢复体力
+    /// </summary>
+    /// <param name="db">DB中存储的数据原型：仅允许在玩家刚上线时调用该函数</param>
     public void Recover(DB._DBRole db)
     {
         //根据上次时间增加体力
@@ -167,7 +164,7 @@ public partial class Role
         int energyLimit = Table_Role.GetEnergyLimit((int)db.Level);
         int toughenLimit = Table_Role.GetToughenLimit((int)db.Level);
         int spend = Table_Role.GetRecoverSpendTime();
-        CSMain.Server.log.DebugFormat("{1}上次下线时间{0}", db.LastDownLine, db.Name);
+        LogManager.Debug("{1}上次下线时间{0}", db.LastDownLine, db.Name);
         int year, month, day, hour, min, second;
         FormatTools.MySQLDateTimeToString(db.LastDownLine, out year, out month, out day, out hour, out min, out second);
         NowOnLineTime = DateTime.Now;
