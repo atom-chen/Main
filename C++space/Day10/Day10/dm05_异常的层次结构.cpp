@@ -10,7 +10,7 @@ public:
 public:
 	int & operator[](int index);
 	int getLen();
-
+	//内部类
 	class eSize
 	{
 	public:
@@ -25,6 +25,7 @@ public:
 	protected:
 		int m_size;
 	};
+
 	class eNegative : public eSize
 	{
 	public:
@@ -37,6 +38,7 @@ public:
 			cout << "eNegative 类型 size:" << m_size << " ";
 		}
 	};
+
 	class eZero : public eSize
 	{
 	public:
@@ -49,6 +51,7 @@ public:
 			cout << "eZero 类型 size:" << m_size << " ";
 		}
 	};
+
 	class eTooBig : public eSize
 	{
 	public:
@@ -61,6 +64,7 @@ public:
 			cout << "eTooBig 类型 size:" << m_size << " ";
 		}
 	};
+
 	class eTooSmall : public eSize
 	{
 	public:
@@ -82,9 +86,9 @@ private:
 
 MyArray::MyArray(int len)
 {
-	if (len  < 0)
+	if (len < 0)
 	{
-		throw eNegative(len);
+		throw eNegative(len);   //自定义异常类
 	}
 	else if (len == 0)
 	{
@@ -106,7 +110,7 @@ MyArray::~MyArray()
 {
 	if (m_space != NULL)
 	{
-		delete [] m_space;
+		delete[] m_space;
 		m_space = NULL;
 		m_len = 0;
 	}
@@ -128,13 +132,13 @@ void main501()
 	try
 	{
 		MyArray a(-5);
-		for (int i=0; i<a.getLen(); i++)
+		for (int i = 0; i < a.getLen(); i++)
 		{
-			a[i] = i+1;
+			a[i] = i + 1;
 			printf("%d ", a[i]);
 		}
 	}
-	catch(MyArray::eSize &e)
+	catch (MyArray::eSize &e)
 	{
 		//cout <<  "len的大小: " << e.eSize();
 		e.printErr();
@@ -145,39 +149,38 @@ void main501()
 
 }
 
-// 不推荐
 void main502()
 {
-	
+
 	try
 	{
 		MyArray a(-5);
-		for (int i=0; i<a.getLen(); i++)
+		for (int i = 0; i < a.getLen(); i++)
 		{
-			a[i] = i+1;
+			a[i] = i + 1;
 			printf("%d ", a[i]);
 		}
 	}
-	catch(MyArray::eNegative e)
+	catch (MyArray::eNegative e)
 	{
 		cout << "eNegative 类型异常" << endl;
 	}
-	catch(MyArray::eZero e)
+	catch (MyArray::eZero e)
 	{
 		cout << "eZero 类型异常" << endl;
 	}
-	catch(MyArray::eTooBig e)
+	catch (MyArray::eTooBig e)
 	{
 		cout << "eTooBig 类型异常" << endl;
 	}
-	catch(MyArray::eTooSmall e)
+	catch (MyArray::eTooSmall e)
 	{
 		cout << "eTooSmall 类型异常" << endl;
 	}
-	
+
 	catch (...)
 	{
 	}
-	
+
 
 }

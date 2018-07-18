@@ -35,7 +35,7 @@ void main601()
 		cout << e.what() << endl;
 	}
 
-	exception e;
+	exception e;          //Òì³£»ùÀà
 }
 
 class MyException : public exception

@@ -120,7 +120,7 @@ void my_strcpy3(char *to, char *from)
 	*to = '\0';
 }
 
-void main()
+void main401()
 {
 	int ret = 0;
 	char buf1[] = "cbbcdefg";

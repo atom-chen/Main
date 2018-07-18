@@ -8,10 +8,10 @@ using namespace std;
 	cin.get() //一次只能读取一个字符
 	cin.get(一个参数) //读一个字符
 	cin.get(三个参数) //可以读字符串
-	cin.getline()
-	cin.ignore()
-	cin.peek()
-	cin.putback()
+	cin.getline()    //一次读一行
+	cin.ignore()     //跳过size个字节
+	cin.peek()      //读size个字节，但不将数据从缓冲区取出来
+	cin.putback()   
 */
 
 
@@ -57,7 +57,7 @@ void main703()
 	cout << a << b << c;
 }
 
-//getline函数可以接受 空格
+//getline函数可以接受 空格：读一行
 void main704()
 {
 	char buf1[256];
@@ -70,7 +70,6 @@ void main704()
 	cin.getline(buf2, 256);
 
 	cout << "buf1:" << buf1 << "buf2:" << buf2 << endl; 
-	system("pause");
 }
 
 void main705()
@@ -88,29 +87,31 @@ void main705()
 	cin.getline(buf2, 256);
 
 	cout << "buf1:" << buf1 << "\nbuf2:" << buf2 << endl; 
-	system("pause");
 }
 
 //案例:输入的整数和字符串分开处理
 int main706() 
 {
-	cout << "Please, enter a number or a word: ";
-	char c = std::cin.get();
+	while (1)
+	{
+		cout << "Please, enter a number or a word: ";
+		char c = std::cin.get();
 
-	if ( (c >= '0') && (c <= '9') ) //输入的整数和字符串 分开处理
-	{
-		int n; //整数不可能 中间有空格 使用cin >>n
-		cin.putback (c);
-		cin >> n;
-		cout << "You entered a number: " << n << '\n';
-	}
-	else
-	{
-		string str;
-		cin.putback (c);
-		//cin.getline(str);
-		getline (cin, str); // //字符串 中间可能有空格 使用 cin.getline();
-		cout << "You entered a word: " << str << '\n';
+		if ((c >= '0') && (c <= '9')) //输入的整数和字符串 分开处理
+		{
+			int n; //整数中间不可能有空格 可以使用cin >>n
+			cin.putback(c);
+			cin >> n;
+			cout << "You entered a number: " << n << '\n';
+		}
+		else
+		{
+			string str;
+			cin.putback(c);    //将c写回到流里
+			//cin.getline(str);
+			getline(cin, str); // 字符串 中间可能有空格 使用 cin.getline();
+			cout << "You entered a word: " << str << '\n';
+		}
 	}
 	return 0;
 }

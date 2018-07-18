@@ -18,7 +18,7 @@ void main901()
 	fout << "hello....333" << endl;
 	fout.close();
 
-	/*
+	
 	//读文件
 	ifstream fin(fname); //建立一个输入流对象 和文件关联
 	char ch;
@@ -28,8 +28,6 @@ void main901()
 		cout <<ch ;
 	}
 	fin.close();
-	*/
-
 }
 
 class Teacher
@@ -70,7 +68,7 @@ void main902()
 	fout.close();
 
 
-	//
+	
 	ifstream fin(fname); //建立一个输入流对象 和文件关联
 	Teacher tmp;
 

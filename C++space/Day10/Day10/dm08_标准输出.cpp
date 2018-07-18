@@ -28,10 +28,12 @@ setprecision
 …
 */
 
+//put:写入一个字符
+//write：写入指定长度的字节数据
 void main801()
 {
 	cout << "hello" << endl;
-	cout.put('h').put('e').put('l');
+	cout.put('h').put('e').put('l').put('\n');
 	char *p = "hello itcast";
 
 	cout.write(p, strlen(p)) << endl;
@@ -43,14 +45,12 @@ void main802()
 {
 	//使用类成员函数
 	cout << "<start>";
-	cout.width(30);
-	cout.fill('*');
-	cout.setf(ios::showbase); //#include <iomanip>
-	//cout.setf(ios::internal); //设置
+	cout.width(30);           //指定宽
+	cout.fill('*');          //用*填满缓冲区
+	cout.setf(ios::showbase);            //设置流标志位
 	cout << hex << 123 << "<End>\n";
 
 	cout << endl << endl;
-	//
 
 	//使用控制符
 	cout << "<Start>" 
@@ -71,19 +71,19 @@ int main803()
 	int a;
 	cout<<"input a:";
 	cin>>a;
-	cout<<"dec:"<<dec<<a<<endl; //以十进制形式输出整数
-	cout<<"hex:"<<hex<<a<<endl; //以十六进制形式输出整数a
-	cout<<"oct:"<<setbase(8)<<a<<endl; //以八进制形式输出整数a
-	char *pt="China"; //pt指向字符串"China"
-	cout<<setw(10)<<pt<<endl; //指定域宽为,输出字符串
-	cout<<setfill('*')<<setw(10)<<pt<<endl; //指定域宽,输出字符串,空白处以'*'填充
-	double pi=22.0/7.0; //计算pi值
+	cout<<"dec:"<<dec<<a<<endl;                //以十进制形式输出整数
+	cout<<"hex:"<<hex<<a<<endl;               //以十六进制形式输出整数a
+	cout<<"oct:"<<setbase(8)<<a<<endl;        //以八进制形式输出整数a
+	char *pt="China";                         //pt指向字符串"China"
+	cout<<setw(10)<<pt<<endl;                 //指定域宽为,输出字符串
+	cout<<setfill('*')<<setw(10)<<pt<<endl;   //指定域宽,输出字符串,空白处以'*'填充
+	double pi=22.0/7.0;                       //计算pi值
+
 	//按指数形式输出,8位小数
 	cout<<setiosflags(ios::scientific)<<setprecision(8);
-	cout<<"pi="<<pi<<endl; //输出pi值
-	cout<<"pi="<<setprecision(4)<<pi<<endl; //改为位小数
+	cout<<"pi="<<pi<<endl;                      //输出pi值
+	cout<<"pi="<<setprecision(4)<<pi<<endl;     //改为位小数
 	cout<<"pi="<<setiosflags(ios::fixed)<<pi<<endl; //改为小数形式输出
-	system("pause");
 	return 0;
 }
 
