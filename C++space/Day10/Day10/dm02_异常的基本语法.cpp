@@ -23,7 +23,6 @@ void main201()
 	{
 		cout << " 未知 类型异常" << endl;
 	}
-	system("pause");
 }
 
 
@@ -37,27 +36,18 @@ void divide(int x, int y)
 	cout << "divide结果:" << x/y<< endl;
 }
 
-void myDivide(int x, int y)
+void main202(int x, int y)
 {
 	try
 	{
 		divide(x, y);
 	}
+	//信号捕捉函数
 	catch (...)
 	{
 		cout << "我接受了 divide的异常 但是我没有处理 我向上抛出" << endl;
-		throw ;
+		throw ; //给到操作系统执行信号的默认处理动作
 	}
-}
-
-
-void main202()
-{
-	myDivide(100, 0);
-	
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
 
 void main203()
@@ -67,7 +57,7 @@ void main203()
 		//divide(10, 2);
 		//divide(100, 0);
 
-		myDivide(100, 0);
+		divide(100, 0);
 	}
 	catch (int e)
 	{

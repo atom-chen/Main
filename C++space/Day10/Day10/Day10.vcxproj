@@ -78,8 +78,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dm01_标准输入流.cpp" />
-    <ClCompile Include="类型转换.cpp" />
+    <ClCompile Include="标准输入流.cpp" />
+    <ClCompile Include="dm01_类型转换.cpp" />
     <ClCompile Include="dm02_异常的基本语法.cpp" />
     <ClCompile Include="dm03_栈解旋unwinding.cpp" />
     <ClCompile Include="dm04_异常类型_异常变量的生命周期.cpp" />

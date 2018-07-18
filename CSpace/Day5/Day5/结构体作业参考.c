@@ -104,6 +104,4 @@ void main3()
 	printf("≈≈–Ú÷Æ∫Û\n");
 	printTArray(pArray, 3);
 
-	system("pause");
-
 }

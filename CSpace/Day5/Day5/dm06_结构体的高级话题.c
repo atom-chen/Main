@@ -10,7 +10,7 @@ typedef struct AdvTeacher
 	char name[64]; //64
 	int age ;  //4
 	int p; //4
-	char *pname2;
+	char *pname2; //4
 
 }AdvTeacher;
 
@@ -30,16 +30,11 @@ void main61()
 	{
 		int offsize = (int)&(p->age);
 		printf("%d \n", offsize);
-
 	}
-	
-	printf("hello...\n");
-	system("pause");
-	return ;
 }
 
 
-void main()
+void main62()
 {
 	int i = 0;
 	AdvTeacher  t1; // & (t1.age)
@@ -59,8 +54,4 @@ void main()
 		printf("offsize2:%d \n", offsize2);
 
 	}
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }

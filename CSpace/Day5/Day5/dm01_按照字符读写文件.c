@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-
+//fputc
 void main01_fputc()
 {
 	int		i = 0;
@@ -20,15 +20,12 @@ void main01_fputc()
 
 	for (i=0; i<strlen(a); i++)
 	{
-		fputc(a[i], fp);
+		fputc(a[i], fp);              //向文件标识符写入字符c
 	}
 
 	fclose(fp);
-
-
-	return ;
 }
-
+//fgetc
 void main02_fgetc()
 {
 	int		i = 0;
@@ -46,7 +43,7 @@ void main02_fgetc()
 
 	while (!feof(fp))
 	{
-		char tempc = fgetc(fp);
+		char tempc = fgetc(fp);             //将文件标识符当前位置的字符c读到内存
 		printf("%c", tempc);
 		
 	}
@@ -55,17 +52,5 @@ void main02_fgetc()
 	{
 		fclose(fp);
 	}
-
-	return ;
 }
 
-
-void main11()
-{
-	//main01_fputc();
-	main02_fgetc();
-	printf("hello...\n");
-	system("pause");
-	return ;
-
-}

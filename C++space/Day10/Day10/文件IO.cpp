@@ -7,7 +7,7 @@ void main93923213()
 {
 	char *fname = "c:/2.txt";
 	ofstream fout(fname);//输出流
-	fout << "hello Changyou"<<endl;
+	fout << "hello Perfect"<<endl;
 	fout.close();
 
 	//建一个输出流管道

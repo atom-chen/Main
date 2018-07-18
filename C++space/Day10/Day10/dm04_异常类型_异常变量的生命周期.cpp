@@ -3,9 +3,9 @@
 using namespace std;
 
 
-//传统的错误处理机制
+//--------------------------------------------------C++ 处理异常新机制：信号-------------------------------------
 //throw int类型异常
-void my_strcpy1(char *to, char *from)
+void my_strcpy1(char *to, char *from) throw(...)
 {
 	if (from == NULL)
 	{
@@ -32,7 +32,7 @@ void my_strcpy1(char *to, char *from)
 
 //传统的错误处理机制
 //throw char*类型异常
-void my_strcpy2(char *to, char *from)
+void my_strcpy2(char *to, char *from) throw(char*)
 {
 	if (from == NULL)
 	{
@@ -43,7 +43,7 @@ void my_strcpy2(char *to, char *from)
 		throw "目的buf出错";
 	}
 
-	//copy是的 场景检查
+	//copy 场景检查
 	if (*from == 'a')
 	{
 		throw "copy过程出错"; //copy时出错
@@ -95,21 +95,21 @@ void my_strcpy3(char *to, char *from)
 		throw BadDestType();
 	}
 
-	//copy是的 场景检查
+	//copy 场景检查
 	if (*from == 'a')
 	{
 		printf("开始 BadProcessType类型异常 \n");
-		throw BadProcessType(); //会不会产生一个匿名对象?
+		throw BadProcessType(); //抛变量 会不会产生一个匿名对象?
 	}
 
 	if (*from == 'b')
 	{
-		throw &(BadProcessType()); //会不会产生一个匿名对象?
+		throw &(BadProcessType()); //抛引用 会不会产生一个匿名对象?
 	}
 
 	if (*from == 'c')
 	{
-		throw new BadProcessType; //会不会产生一个匿名对象?
+		throw new BadProcessType; //抛堆变量的指针 会不会产生一个匿名对象?
 	}
 	while (*from != '\0')
 	{
@@ -120,7 +120,7 @@ void my_strcpy3(char *to, char *from)
 	*to = '\0';
 }
 
-void main401()
+void main()
 {
 	int ret = 0;
 	char buf1[] = "cbbcdefg";
@@ -150,40 +150,33 @@ void main401()
 	{
 		cout << " BadDestType 类型异常" << endl;
 	}
-	//结论1: 如果 接受异常的时候 使用一个异常变量,则copy构造异常变量.  
-	/*
-	catch( BadProcessType e) //是把匿名对象copy给e 还是e还是那个匿名对象
-	{
-		cout << " BadProcessType 类型异常" << endl;
-	}
-	*/
-	//结论2: 使用引用的话 会使用throw时候的那个对象
-	//catch( BadProcessType &e) //是把匿名对象copy给e 还是e还是那个匿名对象
+	//结论1: 如果 接受异常的时候 使用一个异常变量,则用抛出来的变量copy构造异常变量.  
+	//catch( BadProcessType e) 
 	//{
 	//	cout << " BadProcessType 类型异常" << endl;
 	//}
 
+	//结论2: 使用引用的话 会使用throw时候的那个对象，直接将抛出来的变量的地址 给到这里的引用
+	catch (BadProcessType &e)
+	{
+		cout << " BadProcessType 类型异常" << endl;
+	}
+
 	//结论3: 指针可以和引用/元素写在一块 但是引用/元素不能写在一块
-	catch( BadProcessType *e) //是把匿名对象copy给e 还是e还是那个匿名对象
+	catch( BadProcessType *e) 
 	{
 		cout << " BadProcessType 类型异常" << endl;
 		delete e;
 	}
 	
 	//结论4: 类对象时, 使用引用比较合适 
-
-	// --
 	catch (...)
 	{
 		cout << "未知 类型异常" << endl;
 	}
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
 
-
+//-------------------------------------------------传统：检查返回值------------------------------------------
 //传统的错误处理机制
 int my_strcpy(char *to, char *from)
 {
@@ -212,7 +205,7 @@ int my_strcpy(char *to, char *from)
 	return 0;
 }
 
-
+//一般的出错处理方式:检查返回值
 void main402()
 {
 	int ret = 0;
@@ -239,5 +232,4 @@ void main402()
 		}
 	}
 	printf("buf2:%s \n", buf2);
-	
 }

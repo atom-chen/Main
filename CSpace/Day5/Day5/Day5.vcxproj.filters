@@ -18,9 +18,6 @@
     <ClCompile Include="dm01_按照字符读写文件.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dm01_强化训练考试.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dm02_按照行读写文件.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="结构体作业参考.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dm04_强化训练考试.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

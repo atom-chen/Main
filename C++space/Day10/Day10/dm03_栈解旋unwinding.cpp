@@ -9,21 +9,18 @@ public:
 	{
 		this->a = a;
 		this->b = b;
-		cout << "构造函数do \n";
 	}
 	~Test3()
 	{
-		cout << "析构函数do \n";
 	}
 private:
 	int a;
 	int b;
 };
 
-void myDivide() throw (int, char, char *)
+void myDivide() throw (int, char, char *)            //在函数声明后面加throw 表示这个函数可能抛出这些类型的异常
 {
 	Test3 t1(1, 2), t2(3, 4);
-	cout << "myDivide ...要发生异常\n" ;
 	//throw Test3;
 	throw 1;
 }
@@ -33,12 +30,10 @@ void myDivide() throw (int, char, char *)
 void myDivide1() throw (int, char, char *)
 {
 	Test3 t1(1, 2), t2(3, 4);
-	cout << "myDivide ...要发生异常\n" ;
-	//throw Test3;
-	throw 1;
+	//throw Test3;  //error：只能抛出指定类型的异常
 }
 
-//不写,可以抛出任何类型
+//不写 或throw(...),可以抛出任何类型
 void myDivide2() 
 {
 	Test3 t1(1, 2), t2(3, 4);

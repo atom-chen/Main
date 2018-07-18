@@ -38,7 +38,7 @@ void main51()
 
 	//t1 copy t2
 
-	copyTeacher(&t2, &t1);
+	copyTeacher(&t2, &t1);          //Ö´ÐÐÉî¿½±´
 
 	if (t1.pname2 != NULL)
 	{
@@ -51,8 +51,4 @@ void main51()
 		free(t2.pname2);
 		t2.pname2 = NULL;
 	}
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }

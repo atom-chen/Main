@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dm01_标准输入流.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="文件IO.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -48,7 +45,10 @@
     <ClCompile Include="dm09_文件的读写.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="类型转换.cpp">
+    <ClCompile Include="dm01_类型转换.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="标准输入流.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

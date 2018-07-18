@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+//operator>>  和  operator<<
 void main101()
 {
 	char mybuf[1024];
@@ -16,6 +17,7 @@ void main101()
 	 
 }
 
+//cin.get 获取下一个字符c
 void main102()
 { 
 	char ch;
@@ -31,6 +33,8 @@ void main103()
 	cin.get(a).get(b).get(c);
 	cout<<a<<b<<c<<endl;
 }
+
+//cin.getline(to,size) 获取一行字符
 void main104()
 {
 	char buf1[256];
@@ -41,6 +45,8 @@ void main104()
 	cout << buf2 << endl;
 }
 
+//cin.ignore(size) 丢弃输入流中的20个字节
+//cin.peek():读下一个int 但不会把这个值从缓冲区中取出来
 void main105()
 {
 	char buf1[256];

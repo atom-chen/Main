@@ -26,7 +26,7 @@ void main21_fputs()
 	}
 	*/
 
-	fputs(a, fp);
+	fputs(a, fp);            //把字符串a写入到fp的文件指针
 
 	fclose(fp);
 
@@ -62,7 +62,6 @@ void main22_fgets()
 	//3 内存打包 (把内存首地址 + 内存的长度)
 	while (!feof(fp))
 	{
-		//_Check_return_opt_ _CRTIMP char * __cdecl fgets(_Out_z_cap_(_MaxCount) char * _Buf, _In_ int _MaxCount, _Inout_ FILE * _File);
 		char *p = fgets(buf, 1024, fp);  //C 函数库 会 一行一行的copy数据 到buf指针所指的内存空间中 并且变成C风格的字符串
 		if (p == NULL)
 		{
@@ -77,15 +76,4 @@ End:
 	}
 
 	return ;
-}
-
-
-void main2211()
-{
-	//main21_fputs();
-	main22_fgets();
-	printf("hello...\n");
-	system("pause");
-	return ;
-
 }

@@ -36,13 +36,13 @@ void main_fwrite()
 		//_Check_return_opt_ _CRTIMP size_t __cdecl 
 		//	fwrite(_In_count_x_(_Size*_Count) const void * _Str, _In_ size_t _Size, _In_ size_t _Count, _Inout_ FILE * _File);
 		//函数参数
-		//_Str : 从内存块的开始
-		//_Size  //内存打包技术
+		//_Str : from
+		//_Size  大小
 		//_Count 写多少次
-		//_File : 写入到 文件指针 所指向的文件中
+		//_File : to
 
 		//函数的返回值 
-		myN = fwrite( &tArray[i],sizeof(Teacher) , 1, fp);
+		myN = fwrite( &tArray[i],sizeof(Teacher) , 1, fp);            //往fp写from指向内存的连续size个字节，写一次
 
 		//myN 判断 有没有写满  磁盘
 
@@ -73,11 +73,7 @@ void main_fread()
 	}
 	for (i=0; i<3; i++)
 	{
-		//_Check_return_opt_ _CRTIMP size_t __cdecl 
-		// fread(_Out_bytecap_x_(_ElementSize*_Count) void * _DstBuf, _In_ size_t _ElementSize, _In_ size_t _Count, _Inout_ FILE * _File);
-		myN  = fread(&tArray[i], sizeof(Teacher), 1, fp);
-		//函数的返回值 
-		//myN = fwrite( &tArray[i],sizeof(Teacher) , 1, fp);
+		myN  = fread(&tArray[i], sizeof(Teacher), 1, fp);             //将fp的size字节数据读到to指针，读1次
 
 		//myN 判断 有没有写满  磁盘
 
@@ -95,13 +91,4 @@ void main_fread()
 		fclose(fp);
 	}
 
-}
-
-void main()
-{
-	//main_fwrite();
-	main_fread();
-	printf("hello...\n");
-	system("pause");
-	return ;
 }
