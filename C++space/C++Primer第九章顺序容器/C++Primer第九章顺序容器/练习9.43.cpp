@@ -2,9 +2,9 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
+
 bool replace_String(string &s, const string& oldVal, const string& newVal);
-int main()
+int main943()
 {
 	string s("woaic++");
 	string oldVal("c++");
@@ -33,4 +33,3 @@ bool replace_String(string &s,const string& oldVal, const string& newVal)
 	return true;
 	
 }
-*/

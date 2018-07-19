@@ -5,10 +5,9 @@ using namespace std;
 
 void findLong(const string& str)
 {
-	//abcdefghijklmnopqrstuvwxyz
-	
+
 }
-int main()
+int main949()
 {
 	return 0;
 }

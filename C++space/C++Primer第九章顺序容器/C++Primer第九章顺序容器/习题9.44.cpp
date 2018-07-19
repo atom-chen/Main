@@ -2,13 +2,14 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
+
 bool replace_String(string &s, const string& oldVal, const string& newVal);
-int main()
+
+int main44()
 {
 	string s("woaic++");
 	string oldVal("c++");
-	string newVal("guoyue");
+	string newVal("wife");
 	replace_String(s, oldVal, newVal);
 	cout << s << endl;
 	return 0;
@@ -30,4 +31,3 @@ bool replace_String(string &s, const string& oldVal, const string& newVal)
 	return 1;
 
 }
-*/

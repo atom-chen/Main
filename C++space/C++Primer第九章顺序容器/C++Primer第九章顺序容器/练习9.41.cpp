@@ -2,8 +2,8 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
-int main()
+
+int main941()
 {
 	vector<char> v1;
 	v1.push_back('a');
@@ -15,4 +15,3 @@ int main()
 	cout<<s<<endl;
 	return 0;
 }
-*/

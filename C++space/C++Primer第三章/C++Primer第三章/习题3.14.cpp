@@ -2,8 +2,8 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
-int main()
+
+int main314()
 {
 	vector<int> v1;
 	int x;
@@ -13,4 +13,3 @@ int main()
 	}
 
 }
-*/

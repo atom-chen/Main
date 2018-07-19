@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
+
 string& addBE(string &name, const string &b, const string &B, const string &e, const string &E)
 {
 	string s(B);
@@ -13,7 +13,7 @@ string& addBE(string &name, const string &b, const string &B, const string &e, c
 	name.insert(name.size(), s);
 	return name;
 }
-int main()
+int main946()
 {
 	string name("Jimmy");
 	string b("Mr.");
@@ -22,4 +22,3 @@ int main()
 
 	return 0;
 }
-*/

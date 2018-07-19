@@ -117,7 +117,7 @@ void main205()
 		offindex = s1.find("wbm", offindex); 
 	}
 
-	//案例2  把小写wbm===>WBM
+	//案例2  把小写wbm===>WBM  replace(pos,size,src)
 
 	string s3 = "aaa  bbb ccc";
 	s3.replace(0, 3, "AAA");
@@ -127,16 +127,21 @@ void main205()
 	while (offindex != string::npos)
 	{
 		cout << "offindex:" << offindex << endl;
-		s1.replace(offindex,3, "WBM");
+		s1.replace(offindex,3, "WBM");                      //将找到的wbm的index开始数3个字节 替换为 WBM
 		offindex = offindex + 1;
-		offindex = s1.find("wbm", offindex); //
+		offindex = s1.find("wbm", offindex); 
 	}
 
-	cout << "s1替换后的结果: " << s1 << endl;
+	//案例3 assign
+	s3.assign(s1);
+	cout << "s3替换后的结果: " << s3 << endl;
+
+	s3.assign(3, 'aaa');
+	cout << "s3替换后的结果: " << s3 << endl;
 }
 
 
-//截断（区间删除）和插入
+//erase 截断（区间删除）   和   insert 插入
 void main206()
 {
 	//区间删除
@@ -159,6 +164,7 @@ void main206()
 	cout << s2 << endl;
 }
 
+//对字符串批处理
 void main207()
 {
 	string s1 = "AAAbbb";
@@ -171,10 +177,34 @@ void main207()
 
 }
 
+//比较
 void main208()
 {
 	string s1 = "aaaaaa";
-
 	string s2 = "aaaaab";
+	const char* c3 = "aaaaab";
 
+	int ret = s1.compare(s2);
+	cout << "s1 = " << s1 << " s2 = " << s2 <<"    ret = "<< ret<<endl;
+
+	ret = s1.compare(2,s1.size()-2,s2);    //从2开始的s1.size()-2个字符
+	cout << "s1 = " << s1 << " s2 = " << s2 << "    ret = " << ret << endl;
+
+	ret = s1.compare(2, s1.size() - 2, s2,2,s2.size()-2);    //从2开始的s1.size()-2个字符 VS 从2开始的s2 size-2个字符
+	cout << "s1 = " << s1 << " s2 = " << s2 << "    ret = " << ret << endl;
+
+	ret = s1.compare(c3);
+	cout << "s1 = " << s1 << " c3 = " << string(c3) << "    ret = " << ret << endl;
+}
+
+//子串 substr
+void main209()
+{
+	string s1 = "hello world!";
+
+	string sub1 = s1.substr(0, 5);
+	cout << "sub1 = " << sub1 << endl;
+
+	string sub2 = s1.substr(1, 2);
+	cout << "sub2 = " << sub2 << endl;
 }

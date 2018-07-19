@@ -3,8 +3,8 @@
 #include<vector>
 #include<cctype>
 using namespace std;
-/*
-int main()
+
+int main310()
 {
 	string s1;
 	getline(cin, s1);
@@ -16,7 +16,7 @@ int main()
 			cout << a;
 		}
 	}
-	cout<<endl;
+	cout << endl;
 	return 0;
+
 }
-*/

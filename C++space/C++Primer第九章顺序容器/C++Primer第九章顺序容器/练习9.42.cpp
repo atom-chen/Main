@@ -2,8 +2,8 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
-int main()
+
+int main942()
 {
 	string s;
 	vector<char> v1;
@@ -21,4 +21,3 @@ int main()
 	cout<<s<<endl;
 	return 0;
 }
-*/

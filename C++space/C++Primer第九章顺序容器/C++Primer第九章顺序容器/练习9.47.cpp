@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
+
 void findNum_of_first(const string& str)
 {
 	//找到每个数字
@@ -50,7 +50,7 @@ void findchar_of_first(const string& str)
 		cout << str.at(pos);
 		pos--;
 	}
-}/*
+}
 void findchar_of_last(const string& str)
 {
 	//找到每个数字
@@ -67,10 +67,9 @@ void findchar_of_last(const string& str)
 		pos++;
 	}
 }
-int main()
+int main947()
 {
 	string s("ab2c3d7R4E6");
 	findchar_of_last(s);
 	return 0;
 }
-*/

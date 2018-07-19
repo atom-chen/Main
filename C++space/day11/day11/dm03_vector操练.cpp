@@ -2,9 +2,17 @@
 #include <iostream>
 using namespace std;
 #include "vector"
+//工具函数
+void printV(vector<int> &v)
+{
+	for (int i = 0; i < v.size(); i++)
+	{
+		cout << v[i] << " ";
+	}
+}
 
 //数组元素的 添加和删除
-void main31()
+void main301()
 {
 	vector<int> v1;
 
@@ -30,52 +38,47 @@ void main31()
 }
 
 //vector的初始化
-void main32()
+void main302()
 {
-	vector<int> v1;
+	vector<int> v1;              //默认构造
 	v1.push_back(1);
 	v1.push_back(3);
 	v1.push_back(5);
 	v1.push_back(7);
 
-	vector<int> v2 = v1;  //对象初始化
+	vector<int> v2 = v1;  //拷贝构造
 
-	vector<int> v3(v1.begin(), v1.begin()+2 );
+	vector<int> v3(v1.begin(), v1.begin()+2 );     //通过迭代器构造
+
+	vector<int> v4{ 0, 2, 5, 8, 2 };              //通过初值列表构造
+
+	v4 = { 3, 3, 5, 6, 98 };
+
+	vector<int> v5(10, 1);                      //构造一个size=10的容器 其内部的值均为1
 }
 
-void printV(vector<int> &v)
-{
-	for (int i=0; i<v.size(); i++)
-	{
-		cout << v[i] << " ";
-	}
-}
+
 
 //vector的遍历 通过数组的方式 
-void main33()
+void main303()
 {
-	vector<int> v1(10);   //提前把内存准备好
+	vector<int> v1(10);   //提前把内存准备好，其内部的值均为随机值
 
 	for (int i=0; i<10; i++)
 	{
 		v1[i] = i + 1;
 	}
 
-// 	for (int i=0; i<10; i++)
-// 	{
-// 		printf("%d ", v1[i]);
-// 	}
-
 	printV(v1);
 
 }
 
 //push_back的强化记忆
-void main34() 
+void main() 
 {
 	vector<int> v1(10);   //提前把内存准备好
-	v1.push_back(100);
-	v1.push_back(200);
+	v1.push_back(100);    //在尾部插入-> index=10
+	v1.push_back(200);    //index = 11
 	cout << "size: " << v1.size() << endl;
 	printV(v1);
 }
@@ -90,12 +93,12 @@ void main34()
 
 //2 迭代器的种类
 /*
-typedef iterator pointer;
-typedef const_iterator const_pointer;
-typedef _STD reverse_iterator<iterator> reverse_iterator;
-typedef _STD reverse_iterator<const_iterator> const_reverse_iterator;
+typedef iterator pointer;                                                        正向迭代器
+typedef const_iterator const_pointer;                                            const迭代器
+typedef _STD reverse_iterator<iterator> reverse_iterator;                        逆向迭代器
+typedef _STD reverse_iterator<const_iterator> const_reverse_iterator;           const逆向迭代器
 */
-void main35()
+void main305()
 {
 	vector<int> v1(10);   
 	for (int i=0; i<10; i++)
@@ -118,7 +121,7 @@ void main35()
 }
 
 //vector  删除
-void main36()
+void main306()
 {
 	vector<int> v1(10);   
 	for (int i=0; i<10; i++)
@@ -158,5 +161,17 @@ void main36()
 	v1.insert(v1.begin(), 100);
 	v1.insert(v1.end(), 200);
 	printV(v1);
+}
 
+//reserve 设置内部数组大小
+void main307()
+{
+	vector<int> v1;
+	v1.reserve(50);
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+		cout << "插入" << i << "，此时=" << v1.capacity() << "。v1.size()=" << v1.size() << "  v1地址为" <<
+			&v1 << endl;
+	}
 }

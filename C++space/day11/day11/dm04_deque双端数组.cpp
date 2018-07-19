@@ -44,10 +44,3 @@ void main41()
 		cout << "没有找到值为-33的元素" << endl;
 	}
 }
-void main444()
-{
-	main41();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
-}

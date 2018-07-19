@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
+
 string myStrCat(const vector<string>& v1...)
 {
 	string str;
@@ -16,7 +16,7 @@ string myStrCat(const vector<string>& v1...)
 	}
 	return str;
 }
-int main()
+int main305()
 {
 	vector<string> v1;
 
@@ -29,4 +29,3 @@ int main()
 	cout << myStrCat(v1);
 	return 0;
 }
-*/

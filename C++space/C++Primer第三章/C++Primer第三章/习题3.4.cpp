@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
+
 bool Compare(const string& s1, const string& s2)
 {
 	if (s1 > s2)
@@ -38,7 +38,7 @@ bool CompareSize(const string& s1, const string& s2)
 		return 1;
 	}
 }
-int main()
+int main304()
 {
 	string s1, s2;
 	cout << "ÇëÊäÈëÁ½¸ö×Ö·û´®"<<endl;
@@ -47,4 +47,3 @@ int main()
 
 	return 0;
 }
-*/

@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="string.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="vectorTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dm01_stl容器算法迭代器入门.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -42,9 +36,6 @@
     <ClCompile Include="dm07_list模型.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dm08_优先级队列priority_queue.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dm08_优先级队列priority_queue基本操作.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -55,6 +46,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm10_multiset基本操练.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="优先级队列priority_queue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

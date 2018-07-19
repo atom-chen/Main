@@ -2,8 +2,8 @@
 #include<string>
 #include<vector>
 using namespace std;
-/*
-int main()
+
+int main306()
 {
 	string s1;
 	getline(cin, s1);
@@ -15,4 +15,3 @@ int main()
 	cout << s1 << endl;
 	return 0;
 }
-*/
