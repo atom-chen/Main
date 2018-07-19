@@ -160,15 +160,3 @@ void main36()
 	printV(v1);
 
 }
-void main333()
-{
-	//main31();
-	//main32();
-	//main33();
-	//main34();
-	//main35();
-	main36();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
-}

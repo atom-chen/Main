@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #include "set"
+#include <xfunctional>
 
 //1 集合 有序(默认从小到大) 唯一 (红黑二叉树 这种数据结构的变体) 
 void main91()
@@ -145,15 +146,3 @@ int main94()
 	return 0;
 }
 
-
-
-void main()
-{
-	//main91();
-	//main92();
-	//main93();
-	main94();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
-}

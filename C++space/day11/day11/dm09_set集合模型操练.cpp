@@ -2,12 +2,13 @@
 #include <iostream>
 using namespace std;
 #include "set"
+#include <xfunctional>
 
 //1 集合 元素唯一 自动排序(默认情况下 是从小到大) 不能按照[]方式插入元素 
 // 红黑树  
 
 //set元素的添加/遍历/删除基本操作
-void main91()
+void main901()
 {
 	set<int>  set1;
 	
@@ -36,7 +37,7 @@ void main91()
 }
 
 //2 对基本的数据类型 set能自动的排序 
-void main92()
+void main902()
 {
 	set<int> set1;  
 	set<int, less<int>> set2;   //默认情况下是这样 

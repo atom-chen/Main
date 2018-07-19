@@ -1,4 +1,4 @@
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
 
@@ -31,12 +31,4 @@ void main1001()
 		cout << *it << " ";
 		set1.erase(it);
 	}
-}
-
-void main()
-{
-	main1001();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

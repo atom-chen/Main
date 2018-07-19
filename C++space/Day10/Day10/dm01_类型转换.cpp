@@ -20,8 +20,8 @@ void printBuf(const char *  p)
 	//p[0] = 'Z';
 	char *p1 = NULL;
 	//程序员 要清楚的知道 变量:转换之前是什么类型 ,转换之后是什么类型
-	//const char * ===> char * //把只读属性 去掉
-	p1 = const_cast<char *>(p);
+
+	p1 = const_cast<char *>(p);                  //const char * ===> char * //把只读属性 去掉
 
 	p1[0] = 'Z' ;  //通过p1 去修改了内存空间
 	cout << p << endl;
@@ -115,17 +115,16 @@ void main3()
 
 	pBase = &d1;
 
-	pBase = static_cast<Animal *>(&d1); //让C++编译在编译的时候进行 类型检查 
+	pBase = static_cast<Animal *>(&d1);                  //让C++编译在编译的时候进行 类型检查 
 
 	//强制类型转换 
 	pBase = reinterpret_cast<Animal *>(&d1); 
 	
 	{
 		Tree t1;
-		//pBase = static_cast<Animal *>(&t1); // C++编译器会做类型检查
-		pBase = reinterpret_cast<Animal *>(&t1);  //reinterpret_cast 重新解释 ....强制类转换的味道
+		//pBase = static_cast<Animal *>(&t1); //err: C++编译器会做类型检查，不符合则报错
+		pBase = reinterpret_cast<Animal *>(&t1);       //reinterpret_cast 重新解释 ....强制类转换的味道，强行用Animal*的内存模型解释&t1
 	}
-	//
 
 	playObj(&d1);
 	playObj(&c1);

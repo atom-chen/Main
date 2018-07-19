@@ -1,0 +1,10 @@
+Id	Description	MainMaxHPAdd	MainMaxHPPercent	MainMaxHPFinal	MainAttackAdd	MainAttackPercent	MainAttackFinal	MainDefenceAdd	MainDefencePercent	MainDefenceFinal	MainSpeedAdd	MainSpeedPercent	MainSpeedFinal	MainCritChanceAdd	MainCritEffectAdd	MainImpactChanceAdd	MainImpactResistAdd	AttachMaxHPAdd	AttachMaxHPPercent	AttachMaxHPFinal	AttachAttackAdd	AttachAttackPercent	AttachAttackFinal	AttachDefenceAdd	AttachDefencePercent	AttachDefenceFinal	AttachSpeedAdd	AttachSpeedPercent	AttachSpeedFinal	AttachCritChanceAdd	AttachCritEffectAdd	AttachImpactChanceAdd	AttachImpactResistAdd
+INT	STRING	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT	INT
+#MAX_ID=4096;MAX_RECORD=16;TableType=Hash;																																	
+#Id	描述（程序不读）	主属性血上限权重	主属性血上限百分比权重	主属性血上限最终百分比权重	主属性攻击权重	主属性攻击百分比权重	主属性攻击最终百分比权重	主属性防御权重	主属性防御百分比权重	主属性防御最终百分比权重	主属性速度权重	主属性速度百分比权重	主属性速度最终百分比权重	主属性暴击率权重	主属性暴击效果权重	主属性效果命中权重	主属性效果减免权重	附加属性血上限权重	附加属性血上限百分比权重	附加属性血上限最终百分比权重	附加属性攻击权重	附加属性攻击百分比权重	附加属性攻击最终百分比权重	附加属性防御权重	附加属性防御百分比权重	附加属性防御最终百分比权重	附加属性速度权重	附加属性速度百分比权重	附加属性速度最终百分比权重	附加属性暴击率权重	附加属性暴击效果权重	附加属性效果命中权重	附加属性效果减免权重
+1		0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	150	150	0	150	150	0	150	150	0	20	0	0	20	20	18	22
+2		15	15	0	15	15	0	15	15	0	8	0	0	0	0	0	0	150	150	0	150	150	0	150	150	0	20	0	0	20	20	18	22
+3		0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	150	150	0	150	150	0	150	150	0	20	0	0	20	20	18	22
+4		15	15	0	15	15	0	15	15	0	0	0	0	0	0	4	6	150	150	0	150	150	0	150	150	0	20	0	0	20	20	18	22
+5		1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	150	150	0	150	150	0	150	150	0	20	0	0	20	20	18	22
+6		15	15	0	15	15	0	15	15	0	0	0	0	6	4	0	0	150	150	0	150	150	0	150	150	0	20	0	0	20	20	18	22

@@ -2,8 +2,9 @@
 #include <iostream>
 using namespace std;
 #include "queue"
+#include <xfunctional>
 
-void main81()
+void main801()
 {
 	priority_queue<int> p1 ; //默认情况下 是 最大值优先级队列 
 	priority_queue<int , vector<int>, less<int>> p2; //提前定义好的预定义函数  谓词
@@ -39,12 +40,4 @@ void main81()
 		p3.pop();
 	}
 
-}
-
-void main888()
-{
-	main81();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

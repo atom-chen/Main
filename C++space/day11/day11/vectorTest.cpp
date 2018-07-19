@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-void main()
+void main1()
 {
 	vector<int> v1;
 	v1.reserve(50);

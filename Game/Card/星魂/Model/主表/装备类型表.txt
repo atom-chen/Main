@@ -1,0 +1,24 @@
+Id	Description	Name	Pic	Shadow	Background	GainId
+INT	STRING	STRING	STRING	STRING	STRING	INT
+#MAX_ID=4096;MAX_RECORD=4096;TableType=Hash;						
+#ID	ÃèÊö£¨³ÌĞò²»¶Á£©	·ÖÀàÃû×Ö	Ç¿»¯½çÃæ´óÍ¼	¼ôÓ°	±³¾°ÃèÊö	»ñµÃÍ¾¾¶ID
+1	½ÇÄ¾òÔ	½ÇÄ¾òÔ	T_StarSoul_17	Card_Shadow_1	±³¾°ÃèÊö1	13
+2	¿º½ğÁú	¿º½ğÁú	T_StarSoul_11	Card_Shadow_1	±³¾°ÃèÊö2	13
+3	ØµÍÁºÑ	ØµÍÁºÑ	T_StarSoul_14	Card_Shadow_1	±³¾°ÃèÊö3	-1
+4	Î²»ğ»¢	Î²»ğ»¢	T_StarSoul_04	Card_Shadow_1	±³¾°ÃèÊö4	13
+5	»şË®±ª	»şË®±ª	T_StarSoul_16	Card_Shadow_1	±³¾°ÃèÊö5	13
+6	¾®Ä¾áí	¾®Ä¾áí	T_StarSoul_13	Card_Shadow_1	±³¾°ÃèÊö6	14
+7	¹í½ğÑò	¹í½ğÑò	T_StarSoul_15	Card_Shadow_1	±³¾°ÃèÊö7	13
+8	ÁøÍÁâ¯	ÁøÍÁâ¯	T_StarSoul_12	Card_Shadow_1	±³¾°ÃèÊö8	14
+9	Òí»ğÉß	Òí»ğÉß	T_StarSoul_02	Card_Shadow_1	±³¾°ÃèÊö9	-1
+10	éôË®ò¾	éôË®ò¾	T_StarSoul_01	Card_Shadow_1	±³¾°ÃèÊö10	-1
+11	¿üÄ¾ÀÇ	¿üÄ¾ÀÇ	T_StarSoul_09	Card_Shadow_1	±³¾°ÃèÊö11	13
+12	Â¦½ğ¹·	Â¦½ğ¹·	T_StarSoul_07	Card_Shadow_1	±³¾°ÃèÊö12	-1
+13	Î¸ÍÁïô	Î¸ÍÁïô	T_StarSoul_03	Card_Shadow_1	±³¾°ÃèÊö13	-1
+14	õş»ğºï	õş»ğºï	T_StarSoul_05	Card_Shadow_1	±³¾°ÃèÊö14	-1
+15	²ÎË®Ô³	²ÎË®Ô³	T_StarSoul_18	Card_Shadow_1	±³¾°ÃèÊö15	-1
+16	¶·Ä¾â³	¶·Ä¾â³	T_StarSoul_20	Card_Shadow_1	±³¾°ÃèÊö16	13
+17	Å£½ğÅ£	Å£½ğÅ£	T_StarSoul_10	Card_Shadow_1	±³¾°ÃèÊö17	14
+18	Å®ÍÁòğ	Å®ÍÁòğ	T_StarSoul_08	Card_Shadow_1	±³¾°ÃèÊö18	14
+19	ÊÒ»ğÖí	ÊÒ»ğÖí	T_StarSoul_06	Card_Shadow_1	±³¾°ÃèÊö19	14
+20	±ÚË®Ø…	±ÚË®Ø…	T_StarSoul_19	Card_Shadow_1	±³¾°ÃèÊö20	-1

@@ -1,0 +1,10 @@
+Id	Description	AttachWeight1	AttachWeight2	AttachWeight3	AttachWeight4	SellStonePercent
+INT	STRING	INT	INT	INT	INT	INT
+#MAX_ID=4096;MAX_RECORD=16;TableType=Hash;						
+#星等	描述（程序不读）	出生1条附加属性权重	出生2条附加属性权重	出生3条附加属性权重	出生4条附加属性权重	出售获得强化石概率x100
+1		100	0	0	0	0
+2		90	10	0	0	0
+3		60	30	10	0	2
+4		30	50	20	0	15
+5		0	70	20	10	40
+6		0	40	40	20	100

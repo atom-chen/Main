@@ -1,0 +1,20 @@
+Id	Description	AttrRandom1	AttrRandom2	AttrRandom3	AttrRandom4	AttrRandom5	AttrRandom6
+INT	STRING	INT	INT	INT	INT	INT	INT
+#MAX_ID=4096;MAX_RECORD=128;TableType=Hash;							
+#强化等级	描述（程序不读）	1星属性增长随机Id（对应QuartzAttrRandom表）	2星属性增长随机Id（对应QuartzAttrRandom表）	3星属性增长随机Id（对应QuartzAttrRandom表）	4星属性增长随机Id（对应QuartzAttrRandom表）	5星属性增长随机Id（对应QuartzAttrRandom表）	6星属性增长随机Id（对应QuartzAttrRandom表）
+0	出生	101	201	301	401	501	601
+1	强化+1	102	202	302	402	502	602
+2	强化+2	103	203	303	403	503	603
+3	强化+3	104	204	304	404	504	604
+4	强化+4	105	205	305	405	505	605
+5	强化+5	106	206	306	406	506	606
+6	强化+6	107	207	307	407	507	607
+7	强化+7	108	208	308	408	508	608
+8	强化+8	109	209	309	409	509	609
+9	强化+9	110	210	310	410	510	610
+10	强化+10	111	211	311	411	511	611
+11	强化+11	112	212	312	412	512	612
+12	强化+12	113	213	313	413	513	613
+13	强化+13	114	214	314	414	514	614
+14	强化+14	115	215	315	415	515	615
+15	强化+15	116	216	316	416	516	616

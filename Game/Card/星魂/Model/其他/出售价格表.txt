@@ -1,0 +1,10 @@
+Id	Description	BaseCoin
+INT	STRING	INT
+#MAX_ID=4096;MAX_RECORD=16;TableType=Hash;		
+#星等	描述（程序不读）	出售基础金币
+1		500
+2		1000
+3		2000
+4		3000
+5		5000
+6		10000

@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 #include "queue"
+#include <xfunctional>
 
 void main81()
 {
@@ -35,11 +36,4 @@ void main81()
 		cout << p2.top() << " ";
 		p2.pop();
 	}
-}
-void main()
-{
-	main81();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

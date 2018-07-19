@@ -1,11 +1,11 @@
-
+#define _SCL_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
 #include "string"
 #include "algorithm"
 
 //string的初始化
-void main21()
+void main201()
 {
 	string s1 = "aaaa";
 	string s2("bbbb");
@@ -19,7 +19,7 @@ void main21()
 }
 
 //string的 遍历
-void main22()
+void main202()
 {
 	string s1 = "abcdefg";
 
@@ -37,6 +37,7 @@ void main22()
 	}
 	cout << endl;
 
+	//3 at函数 和 operator[] 的区别  -> 是否允许Catch
 	try
 	{
 		for (int i=0; i<s1.length() + 3; i++)
@@ -50,56 +51,55 @@ void main22()
 	}
 
 	cout << "at之后" << endl;
-	/*
-	try
-	{
-		for (int i=0; i<s1.length() + 3; i++)
-		{
-			cout << s1[i] << " "; //出现错误 不向外面抛出异常 引起程序的中断
-		}
-	}
-	catch ( ... )
-	{
-		cout << "发生异常\n" ;
-	}
-	*/
+	
+	//try
+	//{
+	//	for (int i=0; i<s1.length() + 3; i++)
+	//	{
+	//		cout << s1[i] << " "; //出现错误 不向外面抛出异常，直接引起程序的中断 -》 因为operator[]函数不会对下标做检查
+	//	}
+	//}
+	//catch ( ... )
+	//{
+	//	cout << "发生异常\n" ;
+	//}
+	
 	
 }
 
 //字符指针和string的转换
-void main23()
+void main203()
 {
 	string s1 = "aaabbbb";
 
-	//1 s1===>char *
-	//printf("s1:%s \n", s1.c_str());
+	printf("s1:%s \n", s1.c_str());        //1 s1===>char *
 
-	//2 char *====>sting 
-
+	string s2("aaabbb");               	//2 char *====>sting 
 
 	//3 s1的内容 copy buf中
-	//char buf1[128] = {0};
-	//s1.copy(buf1, 3, 0);  //注意 只给你copy3个字符 不会变成C风格的字符串
-	//cout << "buf1:" << buf1 << endl; 
+	char buf1[128] = {0};
+	s1.copy(buf1, 3, 0);  //将0开始的3个字符 拷贝到buf1所指向的内存。注意 只给你copy3个字符 不会变成C风格的字符串
+	cout << "buf1:" << buf1 << endl; 
 }
 
 //字符串的 连接
-void main24()
+void main204()
 {
 	string s1 = "aaa";
 	string s2 = "bbb";
-	s1 = s1 + s2;
+	s1 = s1 + s2;           //拼接法1 operator+
 	cout << "s1:" << s1 << endl;
+
 
 	string s3 = "333";
 	string s4 = "444";
-	s3.append(s4);
+	s3.append(s4);    	    //拼接法2 append函数
 	cout << "s3:" << s3 << endl;
 }
 
 
 //字符串的查找和替换
-void main25()
+void main205()
 {
 	string s1 = "wbm hello wbm 111  wbm 222  wbm 333 ";
 	//			 ▲
@@ -114,7 +114,7 @@ void main25()
 	{
 		cout << "offindex:" << offindex << endl;
 		offindex = offindex + 1;
-		offindex = s1.find("wbm", offindex); //wang bao ming 
+		offindex = s1.find("wbm", offindex); 
 	}
 
 	//案例2  把小写wbm===>WBM
@@ -133,13 +133,13 @@ void main25()
 	}
 
 	cout << "s1替换后的结果: " << s1 << endl;
-
 }
 
 
 //截断（区间删除）和插入
-void main26()
+void main206()
 {
+	//区间删除
 	string s1 = "hello1 hello2 hello1";
 	string::iterator it = find(s1.begin(), s1.end(), 'l');
 	if (it != s1.end() )
@@ -152,19 +152,17 @@ void main26()
 	cout << "s1全部删除:" << s1 << endl;
 	cout << "s1长度 " << s1.length() << endl;
 
+	//区间插入
 	string s2 = "BBB";
-
-	s2.insert(0, "AAA"); // 头插法
-	s2.insert(s2.length(), "CCC");
-
+	s2.insert(0, "AAA");             // 头插法
+	s2.insert(s2.length(), "CCC");   //  尾插法
 	cout << s2 << endl;
 }
 
-void main27()
+void main207()
 {
 	string s1 = "AAAbbb";
-	//1函数的入口地址 2函数对象 3预定义的函数对象
-	transform(s1.begin(), s1.end(),s1.begin(), toupper);
+	transform(s1.begin(), s1.end(),s1.begin(), toupper);      //1函数的入口地址 2函数对象 3函数指 ---->>> 将[begin,end)区间内的元素，经过函数处理后放到to
 	cout << "s1" << s1 << endl;
 
 	string s2 = "AAAbbb";
@@ -173,17 +171,10 @@ void main27()
 
 }
 
-
-void main2222()
+void main208()
 {
-	//main21();
-	//main22();
-	//main23();
-	//main24();
-	//main25();
-	//main26();
-	main27();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
+	string s1 = "aaaaaa";
+
+	string s2 = "aaaaab";
+
 }
