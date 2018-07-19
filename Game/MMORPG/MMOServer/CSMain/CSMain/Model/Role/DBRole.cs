@@ -20,7 +20,7 @@ namespace DB
         public virtual int YuanBao { get; set; }
         public virtual int Energy { get; set; }
         public virtual int Toughen { get; set; }
-        public virtual string LastDownLine { get; set; }
+        public virtual string LastDownLine { get; set; }      
 
         public _DBRole()
         {

@@ -99,6 +99,11 @@ public partial class Role
     {
         get { return BagInfo; }
     }
+
+    public EquipBag equipBag
+    {
+        get { return m}
+    }
     public Role(DB._DBRole db)
     {
         try

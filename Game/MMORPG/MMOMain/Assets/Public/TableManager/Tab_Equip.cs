@@ -11,6 +11,8 @@ public class Tab_Equip
     public EQUIP_RARE rare;  //装备品质
     public int mainAttrid;   //主属性iD
     public int assistAttrid; //副属性id
+    public int needLevel;    //装备等级
+    public int itemId;       //在Item表的ID
 }
 
 public class TabEquipManager
@@ -50,6 +52,14 @@ public class TabEquipManager
             //副属性ID
             data = table.GetNext();
             equip.assistAttrid = Convert.ToInt32(data);
+
+            //装备等级
+            data = table.GetNext();
+            equip.needLevel = Convert.ToInt32(data);
+
+            //ItemID
+            data = table.GetNext();
+            equip.itemId = Convert.ToInt32(data);
 
             m_TabEquipDic.Add(equip.id, equip);
             table.LineDown();

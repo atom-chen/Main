@@ -17,9 +17,10 @@ public partial class EquipBag
 
     public EquipBag(List<Equip> equipBag)
     {
-        m_EquipBag = equipBag;
+        m_EquipBag = new List<Equip>(equipBag);
     }
 
+    //根据id取出某个装备
     public Equip GetEquipById(int guid)
     {
         foreach(Equip equip in m_EquipBag)
@@ -32,6 +33,7 @@ public partial class EquipBag
         return null;
     }
 
+    //取出一类装备
     public List<Equip> GetEquipByTabID(int equipTabId)
     {
         List<Equip> ret = new List<Equip>();

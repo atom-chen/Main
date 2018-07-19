@@ -77,14 +77,14 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Drug.cs">
       <Link>Public\Common\BagSystem\Drug.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Equip.cs">
-      <Link>Public\Common\BagSystem\Equip.cs</Link>
-    </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\EquipBag.cs">
-      <Link>Public\Common\BagSystem\EquipBag.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Item.cs">
       <Link>Public\Common\BagSystem\Item.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\Equip.cs">
+      <Link>Public\Common\Equip\Equip.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\EquipBag.cs">
+      <Link>Public\Common\Equip\EquipBag.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role.cs">
       <Link>Public\Common\Role.cs</Link>
@@ -133,6 +133,9 @@
     <Compile Include="Model\Bag\DBItem.cs" />
     <Compile Include="Model\Bag\ServerBag.cs" />
     <Compile Include="Model\Bag\ServerItem.cs" />
+    <Compile Include="Model\Equip\DBEquip.cs" />
+    <Compile Include="Model\Equip\ServerEquip.cs" />
+    <Compile Include="Model\Equip\ServerEquipBag.cs" />
     <Compile Include="Model\Role\DBRole.cs" />
     <Compile Include="Model\Role\ServerRole.cs" />
     <Compile Include="Model\ServerProperty\DBServerPropert .cs" />
