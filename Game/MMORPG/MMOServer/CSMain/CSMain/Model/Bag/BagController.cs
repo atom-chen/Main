@@ -96,7 +96,24 @@ public class BagController
     /// <returns></returns>
     public static bool UpdateItem(List<_DBItem> dbItemList)
     {
-
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    foreach(_DBItem db in dbItemList)
+                    {
+                        session.Update(db);
+                    }
+                    transction.Commit();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LogManager.Error("UpdateRole       ：" + ex.Message);
+        }
         return true;
     }
 
@@ -111,6 +128,8 @@ public class BagController
         return true;
     }
 
+
+    //将IList转换为List
     private static List<Item> BuildListItem(IList<_DBItem> dbItemList)
     {
         List<Item> itemList = new List<Item>();

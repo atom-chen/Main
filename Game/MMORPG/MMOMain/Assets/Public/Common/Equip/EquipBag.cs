@@ -20,6 +20,16 @@ public partial class EquipBag
         m_EquipBag = new List<Equip>(equipBag);
     }
 
+    //添加一个装备到背包
+    public void AddEquipToBag(Equip equip)
+    {
+        if(equip!=null)
+        {
+            m_EquipBag.Add(equip);
+        }
+
+    }
+
     //根据id取出某个装备
     public Equip GetEquipById(int guid)
     {

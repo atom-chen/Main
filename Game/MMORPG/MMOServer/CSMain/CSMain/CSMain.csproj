@@ -86,6 +86,9 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\EquipBag.cs">
       <Link>Public\Common\Equip\EquipBag.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\EquipInfo.cs">
+      <Link>Public\Common\Equip\EquipInfo.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role.cs">
       <Link>Public\Common\Role.cs</Link>
     </Compile>
@@ -94,6 +97,9 @@
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\User.cs">
       <Link>Public\Common\User.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Config.cs">
+      <Link>Public\Define\Config.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Define.cs">
       <Link>Public\Define\Define.cs</Link>
@@ -134,6 +140,7 @@
     <Compile Include="Model\Bag\ServerBag.cs" />
     <Compile Include="Model\Bag\ServerItem.cs" />
     <Compile Include="Model\Equip\DBEquip.cs" />
+    <Compile Include="Model\Equip\EquipController.cs" />
     <Compile Include="Model\Equip\ServerEquip.cs" />
     <Compile Include="Model\Equip\ServerEquipBag.cs" />
     <Compile Include="Model\Role\DBRole.cs" />

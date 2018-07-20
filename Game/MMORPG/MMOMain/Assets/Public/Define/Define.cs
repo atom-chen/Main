@@ -24,14 +24,14 @@ public enum ITEM_SECOND
 public enum EQUIP_TYPE
 {
     INVALID = -1,
-    HELM = 0,
-    CLOTH = 1,
-    WEAPON = 2,
-    SHOES = 3,
-    NECKLACE = 4,
-    BRACELET = 5,
-    RING = 6,
-    WING = 7,
+    HELM = 0,           //头
+    CLOTH = 1,          //甲
+    WEAPON = 2,         //武器
+    SHOES = 3,          //鞋
+    NECKLACE = 4,       //项链
+    BRACELET = 5,       //手镯
+    RING = 6,           //戒指
+    WING = 7,           //翅膀
 }
 
 //属性类型
@@ -72,6 +72,6 @@ public enum INFO_TYPE
 class Define
 {
     public const int _INVALID_ID = (0);
-    public const int _MAX_STRENGTHEN_ = (15);
+    public const int _MAX_STRENGTHEN_ = (15);    //最大强化等级
 }
 

@@ -97,13 +97,19 @@ public partial class Role
 
     public Bag bag
     {
-        get { return BagInfo; }
+        get { return mBag; }
     }
 
     public EquipBag equipBag
     {
-        get { return m}
+        get { return this.mEquipBag; }
     }
+
+    public EquipInfo equipInfo
+    {
+        get { return mEquipInfo; }
+    }      
+
     public Role(DB._DBRole db)
     {
         try
@@ -128,17 +134,6 @@ public partial class Role
         }
     }
 
-    public bool CompareToRole(Role role)
-    {
-        if (ID == role.ID && UserID == role.UserID)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
     public bool CompareToDB(DB._DBRole dbRole)
     {

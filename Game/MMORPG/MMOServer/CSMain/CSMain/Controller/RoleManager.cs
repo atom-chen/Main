@@ -127,9 +127,7 @@ class RoleManager
             DB._DBRole dbRole = DB.RoleController.GetRoleByID(role.id);
             if (role.CompareToDB(dbRole))
             {
-                role = new Role(dbRole);
-                role.Recover(dbRole);                                           //体力回复
-                role.BuildBag(BagController.GetItemFromRole(role.id));             //填充背包
+                role = BuildRole(dbRole);
                 m_OnlineRoles.Add(role.userID, role);                          //允许上线
                 return role;
             }
@@ -154,13 +152,16 @@ class RoleManager
         //1数据入库
         if (UpdateRoleInfo(role))
         {
-            DB._DBRole dbRole = new DB._DBRole(role);
-            DateTime now = DateTime.Now;
-            dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
-            LogManager.Debug("角色{0}在{1}下线", role.name, dbRole.LastDownLine);
-            DB.RoleController.UpdateRole(dbRole);
-            //2从集合中移除
+            //role信息
+            DB._DBRole db = BuildDBRole(role);
+            DB.RoleController.UpdateRole(db);
             m_OnlineRoles.Remove(role.userID);
+
+            //物品背包 TODO
+
+
+            //装备背包 TODO
+            
         }
         else
         {
@@ -174,5 +175,37 @@ class RoleManager
     {
 
     }
+
+    //根据DB信息构建角色内存信息
+    private static Role BuildRole(DB._DBRole db)
+    {
+        Role role = new Role(db);
+        role.Recover(db);                                           //体力回复
+        role.BuildBag(BagController.GetItemFromRole(db.ID));             //填充背包
+
+        //装备：先填充身上穿的
+        List<Equip> equipList = EquipController.GetEquipFromRole(role.id);
+        foreach(Equip equip in equipList)
+        {
+            if(db.IsEquip(equip.guid))
+            {
+                role.FuncEquip(equip);
+                equipList.Remove(equip);
+            }
+        }
+        role.BuildEquipBag(equipList);                              //剩下的放入到装备背包
+
+        return role;
+    }
+
+    private static DB._DBRole BuildDBRole(Role role)
+    {
+        DB._DBRole dbRole = new DB._DBRole(role);
+        DateTime now = DateTime.Now;
+        dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
+        LogManager.Debug("角色{0}在{1}下线", role.name, dbRole.LastDownLine);
+        return dbRole;
+    }
+
 }
 

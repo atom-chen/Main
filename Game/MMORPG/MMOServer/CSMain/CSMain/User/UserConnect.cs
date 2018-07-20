@@ -31,7 +31,7 @@ public class UserConnect : PeerBase
     public UserConnect(IRpcProtocol protocol, IPhotonPeer unmanagedPeer)
         : base(protocol, unmanagedPeer)
     {
-        if(OnUserConnect!=null)
+        if (OnUserConnect != null)
         {
             OnUserConnect(this);
         }
@@ -40,7 +40,7 @@ public class UserConnect : PeerBase
     //连接断开，入库
     protected override void OnDisconnect(PhotonHostRuntimeInterfaces.DisconnectReason reasonCode, string reasonDetail)
     {
-        if(OnUserDownLine!=null)
+        if (OnUserDownLine != null)
         {
             OnUserDownLine(this);
         }

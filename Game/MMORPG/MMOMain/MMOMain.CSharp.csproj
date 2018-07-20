@@ -225,9 +225,11 @@
     <Compile Include="Assets\Public\Common\Equip\Equip.cs" />
     <Compile Include="Assets\Public\Common\Equip\EquipBag.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Item.cs" />
+    <Compile Include="Assets\Public\Common\Equip\EquipInfo.cs" />
     <Compile Include="Assets\Public\Common\Role.cs" />
     <Compile Include="Assets\Public\Common\ServerPropert.cs" />
     <Compile Include="Assets\Public\Common\User.cs" />
+    <Compile Include="Assets\Public\Define\Config.cs" />
     <Compile Include="Assets\Public\Define\Define.cs" />
     <Compile Include="Assets\Public\Define\OperationCode.cs" />
     <Compile Include="Assets\Public\Define\ParameterCode.cs" />
