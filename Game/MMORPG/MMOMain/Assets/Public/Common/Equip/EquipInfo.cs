@@ -57,5 +57,10 @@ public class EquipInfo
         }
         return null;
     }
+
+    public Equip[] GetArray()
+    {
+        return mEquipArray;
+    }
 }
 

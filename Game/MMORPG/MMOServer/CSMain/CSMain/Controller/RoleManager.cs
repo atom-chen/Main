@@ -156,11 +156,8 @@ class RoleManager
             DB._DBRole db = BuildDBRole(role);
             DB.RoleController.UpdateRole(db);
             m_OnlineRoles.Remove(role.userID);
-
-            //物品背包 TODO
-
-
-            //装备背包 TODO
+            //物品信息入库
+            SaveBag2DB(role);
             
         }
         else
@@ -205,6 +202,12 @@ class RoleManager
         dbRole.LastDownLine = now.ToString("yyyy-MM-dd HH:mm:ss");//将当前时间作为下线时间
         LogManager.Debug("角色{0}在{1}下线", role.name, dbRole.LastDownLine);
         return dbRole;
+    }
+
+    private static void SaveBag2DB(Role role)
+    {
+        BagController.UpdateItem(role.bag.GetList(),role.id);         //物品信息入库
+        EquipController.UpdateEquip(role.equipInfo.GetArray(), role.id);  //装备背包入库
     }
 
 }

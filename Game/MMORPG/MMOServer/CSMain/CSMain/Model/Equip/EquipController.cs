@@ -40,5 +40,72 @@ public class EquipController
         }
         return ret;
     }
+
+    //更新装备信息
+    public static bool UpdateEquip(Equip equip,int roleId)
+    {
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    session.Update(new _DBEquip(equip,roleId));
+                    transction.Commit();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LogManager.Error("UpdateRole       ：" + ex.Message);
+        }
+        return true;
+    }
+
+    //更新身上穿的装备
+    public static bool UpdateEquip(Equip[] equipArr,int roleId)
+    {
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    foreach (Equip equip in equipArr)
+                    {
+                        session.Update(new _DBEquip(equip,roleId));
+                    }
+                    transction.Commit();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LogManager.Error("UpdateRole       ：" + ex.Message);
+        }
+        return true;
+    }
+
+    //往数据库写入一个新装备
+    public static bool AddEquip(Equip equip, int roleID)
+    {
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    session.Save(new _DBEquip(equip, roleID));
+                    transction.Commit();
+                    return true;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LogManager.Error("AddItem       ：" + ex.Message);
+        }
+        return false;
+    }
 }
 

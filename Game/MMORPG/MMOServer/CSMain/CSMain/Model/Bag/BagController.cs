@@ -118,6 +118,34 @@ public class BagController
     }
 
     /// <summary>
+    /// 更新物品信息
+    /// </summary>
+    /// <param name="dbItemList"></param>
+    /// <returns></returns>
+    public static bool UpdateItem(List<Item> itemList,int roleId)
+    {
+        try
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transction = session.BeginTransaction())
+                {
+                    foreach (Item item in itemList)
+                    {
+                        session.Update(new _DBItem(item,roleId));
+                    }
+                    transction.Commit();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LogManager.Error("UpdateRole       ：" + ex.Message);
+        }
+        return true;
+    }
+
+    /// <summary>
     /// 删除物品
     /// </summary>
     /// <param name="id">id</param>

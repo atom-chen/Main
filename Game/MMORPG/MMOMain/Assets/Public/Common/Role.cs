@@ -14,16 +14,16 @@ public partial class Role
     private int Exp;                              //经验
     private int Coin;                            //金币
     private int YuanBao;                        //元宝
-    private int Energy;                         //体力
-    private int Toughen;                       //历练数
-    private Bag mBag;                          //背包信息
-    private EquipBag mEquipBag;               //装备背包
-    private EquipInfo mEquipInfo;              //当前已装备
+    private int Energy;                               //体力
+    private int Toughen;                             //历练数
+    private Bag mBag;                                  //背包信息
+    private EquipBag mEquipBag;                           //装备背包
+    private EquipInfo mEquipInfo=new EquipInfo();       //当前已装备
     private int EnergyNextRecoverTimer;     //距离下次恢复的时间(秒)
     private int ToughenNextRecoverTimer;    //距离下次恢复的时间(秒)
     public Role()
     {
-
+        
     }
     public bool CompareToRole(Role role)
     {
@@ -44,7 +44,8 @@ public partial class Role
 
     public void BuildEquipBag(List<Equip> equipList)
     {
-
+        //将数据存入到装备背包
+        mEquipBag = new EquipBag(equipList);
     }
 
     //穿上一件装备，若有卸下装备则放入到装备背包

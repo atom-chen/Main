@@ -77,5 +77,28 @@ public partial class Bag
             return false;
         }
     }
+
+    public int Size
+    {
+        get
+        {
+            return m_Bag.Count;
+        }
+    }
+
+    public Item GetItemByIndex(int index)
+    {
+        if(index<m_Bag.Count)
+        {
+            return m_Bag[index];
+        }
+        return null; 
+    }
+
+    public List<Item> GetList()
+    {
+        return m_Bag;
+    }
+    
 }
 
