@@ -9,22 +9,10 @@ using System.Text;
 
 public class PlayData
 {
-    private static User m_User;
-    private static ServerPropert m_Server;
-    private static List<Role> m_RoleList;
+    private static User m_User=new User();
+    private static ServerPropert m_Server=new ServerPropert();
+    private static List<Role> m_RoleList=new List<Role>();
     private static int m_RoleIndex;
-    private static Bag bag
-    {
-        get
-        {
-            if(RoleData!=null)
-            {
-                return RoleData.bag;
-            }
-            return null;
-        }
-    }
-
     public static User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
     public static ServerPropert ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器
     public static List<Role> RoleList { get { return m_RoleList; } set { m_RoleList = value; } }  //用户下的角色列表
@@ -53,8 +41,8 @@ public class PlayData
         }
     }
 
-    public delegate void de();
-    public static de OnRoleInfoChange;//角色信息改变的回调
+    public delegate void RoleEvent();
+    public static event RoleEvent OnRoleInfoChange;//角色信息改变的回调
     private static void OnChange()
     {
         if (OnRoleInfoChange != null)

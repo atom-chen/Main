@@ -13,5 +13,10 @@ public partial class Item
     {
 
     }
+
+    public Tab_Item GetTabItem()
+    {
+        return TabItemManager.GetItemByID(tabID);
+    }
 }
 

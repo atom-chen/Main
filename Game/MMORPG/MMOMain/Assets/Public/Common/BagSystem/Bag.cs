@@ -19,14 +19,24 @@ public partial class Bag
         m_Bag = itemList;
     }
 
-
+    public Item GetItemById(int id)
+    {
+        foreach (Item item in m_Bag)
+        {
+            if (item.guid == id)
+            {
+                return item;
+            }
+        }
+        return null;
+    }
 
     /// <summary>
     /// 集合中是否有该id的物品
     /// </summary>
     /// <param name="tabId">物品tabID</param>
     /// <returns></returns>
-    public Item GetItem(int tabId)
+    public Item GetItemByTabId(int tabId)
     {
         foreach(Item item in m_Bag)
         {
@@ -41,7 +51,7 @@ public partial class Bag
 
     private bool AddItem(Item item)
     {
-        Item bagItem = GetItem(item.tabID);
+        Item bagItem = GetItemByTabId(item.tabID);
         if (bagItem != null)
         {
             bagItem.count += item.count;
@@ -55,7 +65,7 @@ public partial class Bag
 
     private bool DelItem(Item item)
     {
-        Item bagItem = GetItem(item.tabID);
+        Item bagItem = GetItemByTabId(item.tabID);
         if (bagItem != null)
         {
             if(bagItem.count>=item.count)

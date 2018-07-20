@@ -76,5 +76,10 @@ public partial class EquipBag
         }
         return ret;
     }
+
+    public int Size
+    {
+        get { return m_EquipBag.Count; }
+    }
 }
 

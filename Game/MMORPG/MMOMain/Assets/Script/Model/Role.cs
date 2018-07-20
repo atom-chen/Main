@@ -101,7 +101,20 @@ public partial class Role
 
     public Bag bag
     {
-        get { return BagInfo; }
+        get { return mBag; }
+    }
+
+    public EquipBag equipBag
+    {
+        get
+        {
+            return mEquipBag;
+        }
+    }
+
+    public EquipInfo equipInfo
+    {
+        get { return mEquipInfo; }
     }
 
     /// <summary>

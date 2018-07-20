@@ -6,15 +6,4 @@ public class BagController : MonoBehaviour {
 
     public BagList m_BagList;
     public BattltInfo m_BattleInfo;
-
-	void Start () 
-    {
-		
-	}
-	
-
-	void Update () 
-    {
-		
-	}
 }
