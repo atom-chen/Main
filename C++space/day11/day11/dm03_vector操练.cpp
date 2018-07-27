@@ -74,7 +74,7 @@ void main303()
 }
 
 //push_back的强化记忆
-void main() 
+void main304() 
 {
 	vector<int> v1(10);   //提前把内存准备好
 	v1.push_back(100);    //在尾部插入-> index=10
