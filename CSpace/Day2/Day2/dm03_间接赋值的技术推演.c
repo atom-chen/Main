@@ -25,12 +25,12 @@ int  getFileLen(int *p)
 int  getFileLen3(int b)
 {
 	int  i = 0;
-	b = 100;//  p的值是a的地址 *a的地址间接修改a的值
+	b = 100;
 }
 
 
 //1级指针的技术推演
-void main32()
+void main302()
 {
 	int a = 10;  //条件1  定义了两个变量(实参 另外一个变量是形参p)
 	int *p = NULL;
@@ -52,11 +52,6 @@ void main32()
 	printf("getFileLen后 a: %d \n", a);
 	getFileLen3(a);
 	printf("getFileLen3后 a: %d \n", a);
-
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }
 
 void getMem(char **p2)
@@ -101,9 +96,6 @@ void main33()
 	printf("p1:%d \n", p1);
 
 
-
-	system("pause");
-	return ;
 }
 
 
@@ -158,7 +150,6 @@ int  main35()
 
 
 	printf("p1:%d \n", p1);
-	system("pause");
 	return ret;
 }
 

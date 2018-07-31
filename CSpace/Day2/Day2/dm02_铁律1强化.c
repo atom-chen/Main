@@ -3,36 +3,28 @@
 #include <string.h>
 #include <stdio.h>
 
-void main01()
+void main201()
 {
 
 	char *p1 = NULL;
 
-	strcpy(p1, "abcdefg");
-	printf("hello...\n");
-	system("pause");
-	return ;
+	strcpy(p1, "abcdefg");          //往空指针指向的内存写值 段错误
 }
 
-void main02()
+void main202()
 {
 
 	char *p1 = NULL;
 	p1 = 0x00077;
 
-	strcpy(p1, "abcdefg");
-	printf("hello...\n");
-	system("pause");
-	return ;
+	strcpy(p1, "abcdefg");        //段错误：往不可写的内存内写值
 }
 
-void main22()
+void main203()
 {
 	char	buf[128]; //c可以在栈上分配内存
 	int		i; 
 	int     j = 0;
-
-	char	*p2 = NULL; //c可以在栈上分配内存
 
 	char *p1 = NULL;
 
@@ -45,6 +37,8 @@ void main22()
 		p1 = buf[i];
 	}
 
+
+	char	*p2 = NULL;
 	p2 = (char *)malloc(100);
 	strcpy(p2, "abcdefg1212333333333311");
 
@@ -53,10 +47,6 @@ void main22()
 		p1 = p2+i;
 		printf("%c ", *p1);
 	}
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }
 
 

@@ -74,9 +74,9 @@ int main(int argc, char const *argv[])
 
 
 
-	if(safe_ret != NULL)
+	if(pRet != NULL)
 	{
-	    free(safe_ret);
-	    safe_ret=NULL;		
+	    free(pRet);
+	    pRet=NULL;		
 	}	
 }

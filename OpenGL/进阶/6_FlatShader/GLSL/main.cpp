@@ -16,7 +16,6 @@ GLint   locColor;
 
 void SetupRC(void)
 {
-	// Background
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 	glEnable(GL_DEPTH_TEST);
@@ -24,7 +23,6 @@ void SetupRC(void)
 
 	viewFrame.MoveForward(4.0f);
 
-	// Make the torus
 	gltMakeTorus(torusBatch, .80f, 0.25f, 52, 26);
 
 	flatShader = gltLoadShaderPairWithAttributes("FlatShader.vp", "FlatShader.fp", 1, GLT_ATTRIBUTE_VERTEX, "vVertex");
@@ -33,19 +31,16 @@ void SetupRC(void)
 	locColor = glGetUniformLocation(flatShader, "vColorValue");
 }
 
-// Cleanup
 void ShutdownRC(void)
 {
 
 }
 
 
-// Called to draw scene
 void RenderScene(void)
 {
 	static CStopWatch rotTimer;
 
-	// Clear the window and the depth buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	modelViewMatrix.PushMatrix(viewFrame);
@@ -69,11 +64,9 @@ void RenderScene(void)
 
 void ChangeSize(int w, int h)
 {
-	// Prevent a divide by zero
 	if (h == 0)
 		h = 1;
 
-	// Set Viewport to window dimensions
 	glViewport(0, 0, w, h);
 
 	viewFrustum.SetPerspective(35.0f, float(w) / float(h), 1.0f, 100.0f);
@@ -82,8 +75,6 @@ void ChangeSize(int w, int h)
 	transformPipeline.SetMatrixStacks(modelViewMatrix, projectionMatrix);
 }
 
-///////////////////////////////////////////////////////////////////////////////
-// Main entry point for GLUT based programs
 int main(int argc, char* argv[])
 {
 	gltSetWorkingDirectory(argv[0]);
@@ -96,7 +87,8 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(RenderScene);
 
 	GLenum err = glewInit();
-	if (GLEW_OK != err) {
+	if (GLEW_OK != err) 
+	{
 		fprintf(stderr, "GLEW Error: %s\n", glewGetErrorString(err));
 		return 1;
 	}

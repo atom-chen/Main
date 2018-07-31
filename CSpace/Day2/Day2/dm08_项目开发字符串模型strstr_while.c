@@ -93,7 +93,7 @@ int getCount(char *mystr /*in*/, char *sub /*in*/,int *ncount)
 	return ret;
 }
 
-int main()
+int main803()
 {
 	int ret = 0;
 	char *p = "abcd111122abcd3333322abcd3333322qqq"; 
@@ -114,5 +114,4 @@ int main()
 		return ret;
 	}
 	printf("count:%d \n", count);
-	system("pause");
 }

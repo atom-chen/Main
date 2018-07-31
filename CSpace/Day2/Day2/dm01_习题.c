@@ -11,7 +11,7 @@
 //造成释放的时候 通过if (p1 != NULL)
 
 //避免方法： 1）定义指针的时候 初始化成nuLL 2）释放指针所指向的内存空间后，把指针重置成NULL。
-void main11()
+void main101()
 {
 
 	char  *p1 = NULL;
@@ -36,8 +36,4 @@ void main11()
 	{
 		free(p1);
 	}
-
-	printf("hello...\n");
-	system("pause");
-	return ;
 }
