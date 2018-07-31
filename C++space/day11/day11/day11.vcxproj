@@ -88,7 +88,6 @@
     <ClCompile Include="优先级队列priority_queue.cpp" />
     <ClCompile Include="dm08_优先级队列priority_queue基本操作.cpp" />
     <ClCompile Include="dm09_set基本操作_大小_自定义类型排序_查找和对组.cpp" />
-    <ClCompile Include="dm09_set集合模型操练.cpp" />
     <ClCompile Include="dm10_multiset基本操练.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -12,20 +12,20 @@ void printD(deque<int> &d)
 		cout << *it << " ";
 	}
 }
-void main41()
+void main401()
 {
 	deque<int> d1;
-	d1.push_back(1);
+	d1.push_back(1);            //尾插
 	d1.push_back(3);
 	d1.push_back(5);
 
-	d1.push_front(-11);
+	d1.push_front(-11);        //头插
 	d1.push_front(-33);
 	d1.push_front(-55);
 	cout << endl;
 
-	cout << "头部元素:" << d1.front() <<endl;
-	cout << "尾部元素:" << d1.back() << endl;
+	cout << "头部元素:" << d1.front() <<endl;    //-55
+	cout << "尾部元素:" << d1.back() << endl;    //5
 	printD(d1);
 
 	d1.pop_front();

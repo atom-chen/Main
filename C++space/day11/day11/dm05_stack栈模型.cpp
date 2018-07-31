@@ -5,7 +5,7 @@ using namespace std;
 
 //栈模型 
 //栈的算法 和 数据类型的分离
-void main51()
+void main501()
 {
 	stack<int> s;
 
@@ -39,7 +39,7 @@ public:
 
 };
 
-void main52()
+void main502()
 {
 	Teacher t1, t2, t3;
 	t1.age = 31;
@@ -59,7 +59,7 @@ void main52()
 	}
 }
 
-void main53()
+void main503()
 {
 	Teacher t1, t2, t3;
 	t1.age = 31;
@@ -76,14 +76,4 @@ void main53()
 		p->printT();
 		s.pop();
 	}
-}
-
-void main555()
-{
-	//main51();
-	//main52();
-	main53();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

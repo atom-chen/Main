@@ -22,7 +22,7 @@ void main301()
 	v1.push_back(5);
 	cout << "length:" << v1.size() <<endl;
 
-	cout << "头部元素" << v1.front() << endl;
+	cout << "头部元素" << v1.front() <<"    尾部元素" <<v1.back()<<endl;
 
 
 	//修改 头部元素
@@ -79,7 +79,7 @@ void main304()
 	vector<int> v1(10);   //提前把内存准备好
 	v1.push_back(100);    //在尾部插入-> index=10
 	v1.push_back(200);    //index = 11
-	cout << "size: " << v1.size() << endl;
+	cout << "size: " << v1.size() << endl;         //12
 	printV(v1);
 }
 

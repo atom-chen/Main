@@ -42,9 +42,6 @@
     <ClCompile Include="dm09_set基本操作_大小_自定义类型排序_查找和对组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dm09_set集合模型操练.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dm10_multiset基本操练.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

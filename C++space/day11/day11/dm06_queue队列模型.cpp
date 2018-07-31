@@ -6,7 +6,7 @@ using namespace std;
 
 
 //队列中基本数据类型
-void main61()
+void main601()
 {
 	queue<int>  q;
 	q.push(1);
@@ -38,7 +38,7 @@ public:
 	}
 };
 
-void main62()
+void main602()
 {
 	Teacher t1, t2, t3;
 	t1.age = 31;
@@ -56,7 +56,7 @@ void main62()
 		q.pop();
 	}
 }
-void main63()
+void main603()
 {
 	Teacher t1, t2, t3;
 	t1.age = 31;
@@ -73,14 +73,4 @@ void main63()
 		tmp->printT();
 		q.pop();
 	}
-}
-
-void main666()
-{
-	//main61();
-	//main62();
-	main63();
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }
