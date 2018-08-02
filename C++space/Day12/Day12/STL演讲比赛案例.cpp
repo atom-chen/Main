@@ -146,8 +146,4 @@ void main()
 	speech_contest_draw(v3);
 	speech_contest(2, v3, mapSpeaker, v4);
 	speech_contest_print(2, v4, mapSpeaker);
-
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

@@ -24,9 +24,6 @@
     <ClCompile Include="dm03_strl容器算法迭代器设计理念.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dm04_stl常用算法.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dm11_map基本操作.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -34,6 +31,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="dm13_容器值（value）语意.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dm04_stl常用算法1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dm05_stl常用算法2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="STL演讲比赛案例.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

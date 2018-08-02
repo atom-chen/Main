@@ -79,10 +79,12 @@
     <ClCompile Include="dm01_函数对象和谓词.cpp" />
     <ClCompile Include="dm02_预定义函数对象和函数适配器.cpp" />
     <ClCompile Include="dm03_strl容器算法迭代器设计理念.cpp" />
-    <ClCompile Include="dm04_stl常用算法.cpp" />
+    <ClCompile Include="dm04_stl常用算法1.cpp" />
+    <ClCompile Include="dm05_stl常用算法2.cpp" />
     <ClCompile Include="dm11_map基本操作.cpp" />
     <ClCompile Include="dm12_multimap基本案例.cpp" />
     <ClCompile Include="dm13_容器值（value）语意.cpp" />
+    <ClCompile Include="STL演讲比赛案例.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

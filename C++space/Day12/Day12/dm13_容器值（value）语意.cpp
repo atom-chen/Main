@@ -64,7 +64,7 @@ private:
 	int		m_age;
 };
 
-void main()
+void main1301()
 {
 	Teacher t1("t1", 31);
 	t1.printT();
