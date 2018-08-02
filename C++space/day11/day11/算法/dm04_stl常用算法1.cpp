@@ -119,14 +119,15 @@ void main42_transform()
 }
 
 
-//一般情况下：for_each所使用的函数对象，参数是引用，没有返回值
-//transform所使用的函数对象，参数一般不使用引用，而是还有返回值
+
 int showElem2(int n)
 {
 	cout << n << " ";
 	return n;
 }
 
+//一般情况下：for_each所使用的函数对象，参数是引用，没有返回值
+//transform所使用的函数对象，参数一般不使用引用，而是还有返回值
 void main43_transform_pk_foreach()
 {
 	vector<int> v1;

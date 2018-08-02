@@ -48,7 +48,7 @@ void FuncShowElemt2(int &t)
 }
 
 //函数对象 定义 ;  函数对象和普通函数的异同 
-void main101()
+void main01()
 {
 	int a = 10;
 	ShowElemt<int> showElemt;
@@ -62,7 +62,7 @@ void main101()
 //函数对象的好处
 // for_each算法中, 函数对象做函数参数
 // for_each算法中, 函数对象当返回值
-void main102()
+void main02()
 {
 	vector<int> v1;
 	v1.push_back(1);
@@ -106,7 +106,7 @@ private:
 };
 
 //一元谓词     find_if返回值是一个迭代器 
-void main103()
+void main03()
 {
 	vector<int> v2;
 	for (int i=10; i<33; i++)
@@ -145,7 +145,7 @@ public:
 
 
 //二元函数对象 和二元谓词          transform 把运算结果的 迭代器的开始位置 返回出来 
-void main104()
+void main04()
 {
 	//v1 v2 ==> v3
 	vector<int> v1, v2;
@@ -176,7 +176,7 @@ bool MyCompare(const int &a, const int &b)
 }
 
 //main05(); //二元函数对象 和二元谓词
-void main105()
+void main05()
 {
 	vector<int> v1(10);
 
@@ -213,7 +213,7 @@ struct CompareNoCase
 
 
 //二元谓词在set集合中的应用
-void  main106()
+void  main06()
 {
 	set<string> set1;
 	set1.insert("bbb");

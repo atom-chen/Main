@@ -11,7 +11,6 @@ using namespace std;
 #include "iterator"  //输出流迭代器的头文件
 #include<numeric>
 
-
 void printV(vector<int> &v);
 
 
@@ -40,6 +39,7 @@ void main44_adjacent_find()
 	v1.push_back(3);
 	v1.push_back(5);
 
+	//查找相邻的重复元素
 	vector<int>::iterator it =  adjacent_find(v1.begin(), v1.end() );
 	if (it == v1.end())
 	{
@@ -55,8 +55,8 @@ void main44_adjacent_find()
 }
 
 // 0 1  2  3 ......n-1
-//二分法 1K = 1024  10次  速度快
-
+//二分法 1K = 1024  10次  速度快    
+//在有序序列中查找value,找到返回true.重载的版本实用指定的比较函数对象或函数指针来判断相等
 void main45_binary_search()
 {
 	vector<int> v1;
@@ -139,6 +139,7 @@ void main47_find_findif()
 	cout << "*it2:" << *it2 << endl; 
 }
 
+//merge 合并
 void main_merge()
 {
 	vector<int> v1;
@@ -155,7 +156,7 @@ void main_merge()
 	v3.resize(v1.size() + v2.size() );
 
 	merge(v1.begin(), v1.end(), v2.begin(), v2.end(), v3.begin() );
-
+	
 	printV(v3);
 }
 
@@ -210,6 +211,7 @@ void main_sort()
 
 }
 
+//_random_shuffle() 对指定范围内的元素随机调整次序。重载版本输入一个随机数产生操作
 void main_random_shuffle()
 {
 	vector<int> v1;
@@ -226,6 +228,7 @@ void main_random_shuffle()
 	cout << "str: " << str << endl;
 }
 
+//_reverse 将指定范围内元素重新反序排序
 void main_reverse()
 {
 	vector<int> v1;
@@ -237,6 +240,7 @@ void main_reverse()
 	printV(v1);
 }
 
+//_copy 将集合1的数据拷贝到集合2
 void main52_copy()
 {
 	vector<int> v1;
@@ -261,7 +265,9 @@ bool great_equal_5(int &n)
 	}
 	return false;
 }
-void main53_replace_replaceif()
+
+//_replace_replaceif 替换
+void main_replace_replaceif()
 {
 	vector<int> v1;
 	v1.push_back(1);
@@ -269,15 +275,17 @@ void main53_replace_replaceif()
 	v1.push_back(5);
 	v1.push_back(7);
 	v1.push_back(3);
-	replace(v1.begin(), v1.end(), 3, 8);
-
+	replace(v1.begin(), v1.end(), 3, 8);    //把8替换成8      
+	printV(v1);
+	cout << endl;
 	// >=5
-	replace_if(v1.begin(), v1.end(), great_equal_5, 1);
+	replace_if(v1.begin(), v1.end(), great_equal_5, 1);       //把大于5的替换为1
 
 	printV(v1);
 
 }
 
+//swap:交换v1 v2的值
 void main54_swap()
 {
 	vector<int> v1;
@@ -291,21 +299,23 @@ void main54_swap()
 	v2.push_back(6);
 	
 
-	swap(v1, v2);
+	swap(v1, v2);    
 	printV(v1);
 
 }
 
+//accumulate 求和
 void main55_accumulate()
 {
 	vector<int> v1;
 	v1.push_back(1);
 	v1.push_back(3);
 	v1.push_back(5);
-	int tmp = accumulate(v1.begin(), v1.end(), 100);
+	int tmp = accumulate(v1.begin(), v1.end(), 100);       //对v1进行求和，初值为100
 	cout << tmp << endl;
 }
 
+//fill 填充
 void main56_fill()
 {
 	vector<int> v1;
@@ -313,17 +323,22 @@ void main56_fill()
 	v1.push_back(3);
 	v1.push_back(5);
 
-	fill(v1.begin(), v1.end(), 8);
+	fill(v1.begin(), v1.end(), 8);     //将v1里面的数据全变为8
 	printV(v1);
 	
 }
 
-void main57_union()
+//_union : 构造一个有序序列，包含两个序列中所有的不重复元素。重载版本使用自定义的比较操作
+void main_union()
 {
 	vector<int> v1;
 	v1.push_back(1);
+	v1.push_back(1);
 	v1.push_back(3);
 	v1.push_back(5);
+	v1.push_back(2);
+	v1.push_back(4);
+	v1.push_back(6);
 
 	vector<int> v2;
 	v2.push_back(2);

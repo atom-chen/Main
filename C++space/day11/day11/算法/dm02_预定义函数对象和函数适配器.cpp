@@ -14,7 +14,7 @@ using namespace std;
 //实现了 数据类型 和算法的分离 ===》通过函数对象技术实现的。。。。
 
 //思考：怎么样知道 plus<type> 是两个参数
-void main201()
+void main11()
 {
 	plus<int> intAdd;
 	int x = 10;
@@ -75,7 +75,7 @@ private:
 
 
 //函数适配器 bind2nd
-void main202()
+void main12()
 {
 	vector<int> v1;
 	for (int i = 0; i < 10; i++)

@@ -114,7 +114,7 @@ int speech_contest_print(int index, vector<int> &v, map<int, Speaker> &mapSpeake
 	return 0;
 };
 
-void main()
+void main1()
 {
 	//容器的设计 
 	map<int, Speaker>	mapSpeaker; //参加比赛的选手

@@ -3,13 +3,8 @@
 using namespace std;
 #include "vector"
 //工具函数
-void printV(vector<int> &v)
-{
-	for (int i = 0; i < v.size(); i++)
-	{
-		cout << v[i] << " ";
-	}
-}
+void printV(vector<int> &v);
+
 
 //数组元素的 添加和删除
 void main301()
