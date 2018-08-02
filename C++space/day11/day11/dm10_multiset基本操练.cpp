@@ -4,6 +4,7 @@ using namespace std;
 
 #include "set"
 
+//¿ÉÖØ¸´µÄset
 void main1001()
 {
 	multiset<int> set1;

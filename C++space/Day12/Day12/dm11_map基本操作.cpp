@@ -6,7 +6,7 @@ using namespace std;
 
 
 //map元素的添加/遍历/删除基本操作
-void main()
+void main1101()
 {
 	map<int, string> map1;
 
@@ -43,12 +43,18 @@ void main()
 	}
 	cout << "遍历结束" << endl;
 
+
 	//容器元素的删除
 	while (!map1.empty())
 	{
 		map<int, string>::iterator it = map1.begin();
 		cout << it->first << "\t" << it->second << endl;
 		map1.erase(it);
+	}
+	for (map<int, string>::iterator it = map1.begin(); it != map1.end();)
+	{
+		cout << it->first << "\t" << it->second << endl;
+		it = map1.erase(it);
 	}
 }
 
@@ -59,7 +65,7 @@ void main1102()
 {
 	map<int, string> map1;
 
-	//typedef pair<iterator, bool> _Pairib;
+	//检查返回值
 
 	//方法1
 	pair<map<int, string>::iterator, bool>  mypair1 =  map1.insert(pair<int, string>(1,"teacher01") );
@@ -84,7 +90,7 @@ void main1102()
 	pair<map<int, string>::iterator, bool>  mypair6 =  map1.insert(map<int, string>::value_type(5, "teacher55") );
 	if (mypair6.second != true)
 	{
-		cout << "key 5 插入失败" << endl;
+		cout << "key 6 插入失败" << endl;
 	}
 	else
 	{
@@ -107,29 +113,14 @@ void main1102()
 void main1103()
 {
 	map<int, string> map1;
-
-	//方法1
 	map1.insert(pair<int, string>(1,"teacher01") );
 	map1.insert(pair<int, string>(2,"teacher02") );
-
-	//方法2 
 	map1.insert(make_pair(3, "teacher04") );
 	map1.insert(make_pair(4, "teacher05") );
-
-	//方法3 
 	map1.insert(map<int, string>::value_type(5, "teacher05") );
 	map1.insert(map<int, string>::value_type(6, "teacher06") );
-
-	//方法4
 	map1[7] = "teacher07";
 	map1[8] = "teacher08";
-
-	//容器的遍历
-	for (map<int, string>::iterator it = map1.begin(); it!=map1.end(); it++ )
-	{
-		cout << it->first << "\t" << it->second << endl;
-	}
-	cout << "遍历结束" << endl;
 
 	//map的查找 //异常处理
 	map<int, string>::iterator it2 = map1.find(100);
@@ -146,7 +137,6 @@ void main1103()
 	pair<map<int, string>::iterator , map<int, string>::iterator> mypair = map1.equal_range(5); //返回两个迭代器 形成一个 pair
 	//第一个迭代器 >= 5的 位置 
 	//第一个迭代器 = 5的 位置 
-
 	if (mypair.first == map1.end() )
 	{
 		cout << "第一个迭代器 >= 5的 位置 不存在" << endl;
@@ -155,7 +145,6 @@ void main1103()
 	{
 		cout << mypair.first->first << "\t" << mypair.first->second << endl;
 	}
-
 	//使用第二个迭代器
 	if (mypair.second == map1.end() )
 	{
@@ -165,12 +154,4 @@ void main1103()
 	{
 		cout << mypair.second->first << "\t" << mypair.second->second << endl;
 	}
-
-
-}
-void main111111()
-{
-	//main1101();
-	//main1102();
-	main1103();
 }

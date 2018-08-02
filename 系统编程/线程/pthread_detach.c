@@ -36,7 +36,7 @@ int main(void)
 	sleep(5);
 	while (1) 
 	{
-		err = pthread_join(tid, &tret);
+		err = pthread_join(tid, &tret);              //线程被分离，join无效
         printf("-------------err= %d\n", err);
 		if (err != 0)
 			fprintf(stderr, "thread_join error: %s\n", strerror(err));

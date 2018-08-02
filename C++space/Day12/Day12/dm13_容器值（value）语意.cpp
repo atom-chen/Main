@@ -26,6 +26,7 @@ public:
 	//Teacher t2 = t1;
 	Teacher(const Teacher &obj)
 	{
+		cout << "Teacher拷贝构造函数被调用" << endl;
 		m_pname = new char[strlen(obj.m_pname)+1];
 		strcpy(m_pname, obj.m_pname);
 		m_age = obj.m_age;
@@ -63,12 +64,11 @@ private:
 	int		m_age;
 };
 
-void main1301()
+void main()
 {
 	Teacher t1("t1", 31);
 	t1.printT();
 
 	vector<Teacher> v1;
 	v1.push_back(t1); //把t1拷贝了一份 存入到容器中了....
-	
 }

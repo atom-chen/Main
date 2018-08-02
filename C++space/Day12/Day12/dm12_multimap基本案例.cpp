@@ -80,19 +80,14 @@ void main1201()
 void main1202()
 {
 	Person p1, p2, p3, p4, p5;
-
 	p1.name = "王1";
 	p1.age = 31;
-
 	p2.name = "王2";
 	p2.age = 32;
-
 	p3.name = "张3";
 	p3.age = 33;
-
 	p4.name = "张4";
 	p4.age = 34;
-
 	p5.name = "赵5";
 	p5.age = 35;
 
@@ -124,14 +119,4 @@ void main1202()
 	{
 		cout << it->first << "\t" << it->second.name << endl;
 	}
-
-
-}
-
-void main1212()
-{
-	//main1201();
-	main1202();
-	system("pause");
-	return ;
 }

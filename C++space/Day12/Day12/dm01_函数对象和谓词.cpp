@@ -30,7 +30,7 @@ public:
 	}
 protected:
 private:
-	int n;
+	int n;  //调用状态：计数
 };
 
 
@@ -48,12 +48,11 @@ void FuncShowElemt2(int &t)
 }
 
 //函数对象 定义 ;  函数对象和普通函数的异同 
-//
-void main01()
+void main101()
 {
 	int a = 10;
 	ShowElemt<int> showElemt;
-	showElemt(a); //函数对象的()的执行 很像一个函数 //仿函数
+	showElemt(a); //函数对象的operator()的执行 很像一个函数 //仿函数
 
 	FuncShowElemt<int>(a);
 	FuncShowElemt2(a);
@@ -63,30 +62,20 @@ void main01()
 //函数对象的好处
 // for_each算法中, 函数对象做函数参数
 // for_each算法中, 函数对象当返回值
-void main02()
+void main102()
 {
 	vector<int> v1;
 	v1.push_back(1);
 	v1.push_back(3);
 	v1.push_back(5);
 
-	for_each(v1.begin(), v1.end(), ShowElemt<int>()); //匿名函数对象 匿名仿函数
+	for_each(v1.begin(), v1.end(), ShowElemt<int>()); //使用匿名函数对象 匿名仿函数
 	cout << endl;
 	for_each(v1.begin(), v1.end(), FuncShowElemt2); //通过回调函数  谁使用for_each 谁去填写回调函数的入口地址
 
 
 	ShowElemt<int> show1;
 	//函数对象 做函数参数 
-	/*
-		template<class _InIt,
-		class _Fn1> inline
-			_Fn1 for_each(_InIt _First, _InIt _Last, _Fn1 _Func)
-		{	// perform function for each element
-			_DEBUG_RANGE(_First, _Last);
-			_DEBUG_POINTER(_Func);
-			return (_For_each(_Unchecked(_First), _Unchecked(_Last), _Func));
-		}
-	*/
 	//1 for_each算法的 函数对象的传递 是元素值传递 ,不是引用传递
 	for_each(v1.begin(), v1.end(), show1);
 	show1.printN();
@@ -116,7 +105,8 @@ private:
 	T divisor;
 };
 
-void main03()
+//一元谓词     find_if返回值是一个迭代器 
+void main103()
 {
 	vector<int> v2;
 	for (int i=10; i<33; i++)
@@ -127,20 +117,6 @@ void main03()
 	IsDiv<int> myDiv(a);
 
 	//find_if(v2.begin(), v2.end(), myDiv );
-
-	/*
-	template<class _InIt,
-	class _Pr> inline
-		_InIt find_if(_InIt _First, _InIt _Last, _Pr _Pred)
-	{	// find first satisfying _Pred
-		_DEBUG_RANGE(_First, _Last);
-		_DEBUG_POINTER(_Pred);
-		return (_Rechecked(_First,
-			_Find_if(_Unchecked(_First), _Unchecked(_Last), _Pred)));
-	}
-	//find_if返回值是一个迭代器 
-	//要点: 分清楚 stl算法返回的值是迭代器 还是 谓词（函数对象） 是stl算法入门的重要点
-	*/
 
 	vector<int>::iterator it;
 	it = find_if(v2.begin(), v2.end(), IsDiv<int>(a) );
@@ -167,7 +143,9 @@ public:
 	}
 };
 
-void main04()
+
+//二元函数对象 和二元谓词          transform 把运算结果的 迭代器的开始位置 返回出来 
+void main104()
 {
 	//v1 v2 ==> v3
 	vector<int> v1, v2;
@@ -182,28 +160,7 @@ void main04()
 
 	v3.resize(10);
 
-	/*
-	template<class _InIt1,
-	class _InIt2,
-	class _OutIt,
-	class _Fn2> inline
-		_OutIt transform(_InIt1 _First1, _InIt1 _Last1,
-		_InIt2 _First2, _OutIt _Dest, _Fn2 _Func)
-	{	// transform [_First1, _Last1) and [_First2, ...) with _Func
-		_DEBUG_RANGE(_First1, _Last1);
-		_DEBUG_POINTER(_Dest);
-		_DEBUG_POINTER(_Func);
-		if (_First1 != _Last1)
-			return (_Transform2(_Unchecked(_First1), _Unchecked(_Last1),
-			_First2, _Dest, _Func,
-			_Is_checked(_Dest)));
-		return (_Dest);
-	}
-
-	//transform 把运算结果的 迭代器的开始位置 返回出来 
-	*/
-
-	transform(v1.begin(), v1.end(), v2.begin(), v3.begin(), SumAdd<int>() );
+	transform(v1.begin(), v1.end(), v2.begin(), v3.begin(), SumAdd<int>() );     //二元transform:将v1和v2对应位置调用SumAdd，结果放到v3
 
 	for (vector<int>::iterator it=v3.begin(); it!=v3.end(); it++ )
 	{
@@ -218,7 +175,8 @@ bool MyCompare(const int &a, const int &b)
 	return a < b; //从小到大
 }
 
-void main05()
+//main05(); //二元函数对象 和二元谓词
+void main105()
 {
 	vector<int> v1(10);
 
@@ -228,10 +186,6 @@ void main05()
 		v1[i] = tmp;
 	}
 
-	for (vector<int>::iterator it=v1.begin(); it!=v1.end(); it++ )
-	{
-		cout << *it <<" ";
-	}
 	cout << endl;
 	for_each(v1.begin(), v1.end(), FuncShowElemt2);
 	cout << endl;
@@ -247,16 +201,19 @@ struct CompareNoCase
 	{
 		string str1_ ;
 		str1_.resize(str1.size() );
-		transform(str1.begin(), str1.end(), str1_.begin(), tolower ); //预定义函数对象 
+		transform(str1.begin(), str1.end(), str1_.begin(), tolower ); //一元transform,将str1的所有字符 转换为小写，放到temp1
 
 		string str2_ ;
 		str2_.resize(str2.size() );
-		transform(str2.begin(), str2.end(), str2_.begin(), tolower ); //预定义函数对象 
+		transform(str2.begin(), str2.end(), str2_.begin(), tolower ); //一元transform,将str2的所有字符 转换为大写，放到temp2
 
 		return (str1_ < str2_); // 从小到大进行排序
 	}
 };
-void  main06()
+
+
+//二元谓词在set集合中的应用
+void  main106()
 {
 	set<string> set1;
 	set1.insert("bbb");
@@ -272,7 +229,7 @@ void  main06()
 		cout << " 查找到 aaa " << endl;
 	}
 
-	set<string, CompareNoCase> set2;
+	set<string, CompareNoCase> set2;           //带谓词的set
 	set2.insert("bbb");
 	set2.insert("aaa");
 	set2.insert("ccc");
@@ -287,18 +244,4 @@ void  main06()
 		cout << " 不区分大小的的查找  查找到 aaa " << endl;
 	}
 
-}
-
-void main1111()
-{
-	//main01(); //函数对象基本概念
-	//main02(); //函数对象的好处 函数对象做函数参数 函数对象做返回值
-
-	//main03(); //一元谓词
-	//main04(); //二元函数对象 和二元谓词
-	//main05(); //二元函数对象 和二元谓词
-	main06(); //二元谓词在set集合中的应用
-	cout<<"hello..."<<endl;
-	system("pause");
-	return ;
 }

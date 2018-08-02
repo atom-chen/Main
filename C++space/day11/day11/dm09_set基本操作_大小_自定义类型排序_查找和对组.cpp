@@ -173,12 +173,15 @@ int main()
 		set1.insert(i);
 	}
 
-	set<int>::iterator it1 =  set1.lower_bound(5); //大于等于5迭代器
-	set<int>::iterator it2 =  set1.upper_bound(5); //大于5的迭代器
+	set<int>::iterator it1 =  set1.lower_bound(5); //小于等于5迭代器
+	set<int>::iterator it2 =  set1.upper_bound(5); //大于等于5的迭代器
 
 	//通过迭代器进行元素的操作
 	cout<<"it1 "<<*it1<<" "<<"it2 "<<*it2<<endl;
 
+	//它返回一对迭代器i和j，其中i是在不破坏次序的前提下，value可插入的第一个位置（亦即lower_bound），
+	//j则是在不破坏次序的前提下，value可插入的最后一个位置（亦即upper_bound），
+	//因此，[i,j)内的每个元素都等同于value，而且[i,j)是[first,last)之中符合此一性质的最大子区间
 	pair <set<int>::iterator, set<int>::iterator> pairIt = set1.equal_range(5);
 
 	set<int>::iterator it3 = pairIt.first; //获取第一个
