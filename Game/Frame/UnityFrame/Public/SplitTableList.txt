@@ -1,0 +1,5 @@
+MisDictionary.txt
+StrDictionary.txt
+Impact.txt
+SkillEx.txt
+CommonItem.txt

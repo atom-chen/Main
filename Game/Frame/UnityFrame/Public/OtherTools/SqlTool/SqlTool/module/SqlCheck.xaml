@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SqlTool.module.SqlCheck"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SqlTool.module"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1100" Height="700">
+    <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+        <Button x:Name="oldselect" Content="{DynamicResource str_old_create_script}" FontSize="15" HorizontalAlignment="Left" Margin="73,122,0,0" VerticalAlignment="Top" Width="132" Height="28" Click="oldselect_Click"/>
+        <TextBox x:Name="oldpath" HorizontalAlignment="Left" Height="28" Margin="234,122,0,0" TextWrapping="Wrap" Text="" FontSize="15" IsReadOnly="True" VerticalAlignment="Top" Width="758"/>
+        <Button x:Name="newselect" Content="{DynamicResource str_new_create_script}" FontSize="15" HorizontalAlignment="Left" Margin="73,183,0,0" VerticalAlignment="Top" Width="132" Height="28" Click="newselect_Click"/>
+        <TextBox x:Name="newpath" HorizontalAlignment="Left" Height="28" Margin="234,183,0,0" TextWrapping="Wrap" Text="" FontSize="15" IsReadOnly="True" VerticalAlignment="Top" Width="758"/>
+        <Button x:Name="geupdate" Content="{DynamicResource str_generate_update}" FontSize="15" HorizontalAlignment="Left" Margin="860,235,0,0" VerticalAlignment="Top" Width="132" Height="29" Click="geupdate_Click"/>
+        <Button x:Name="gecheck" Content="{DynamicResource str_generate_check}" FontSize="15" HorizontalAlignment="Left" Margin="860,332,0,0" VerticalAlignment="Top" Width="132" Height="29" Click="gecheck_Click"/>
+        <TextBlock x:Name="resultmsg" HorizontalAlignment="Left" Background="AntiqueWhite"  Margin="73,401,0,0" TextWrapping="Wrap" Text="" FontSize="14" VerticalAlignment="Top" Width="919" Height="206"/>
+        <Button x:Name="upselect" Content="{DynamicResource str_update_script}" FontSize="15" HorizontalAlignment="Left" Margin="73,290,0,0" VerticalAlignment="Top" Width="132" Height="28" Click="upselect_Click"/>
+        <TextBox x:Name="uppath" HorizontalAlignment="Left" Height="28" Margin="234,290,0,0" TextWrapping="Wrap" Text="" FontSize="15" IsReadOnly="True" VerticalAlignment="Top" Width="758"/>
+        <TextBox x:Name="toversion" HorizontalAlignment="Left" Height="28" Margin="708,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="613,238,0,440" TextWrapping="Wrap" Text="{DynamicResource str_up_to_version}" VerticalAlignment="Top" Height="22" Width="80"/>
+        <TextBox x:Name="fromversion" HorizontalAlignment="Left" Height="28" Margin="477,235,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="363,238,0,0" TextWrapping="Wrap" Text="{DynamicResource str_up_from_version}" VerticalAlignment="Top" Height="22" Width="98" RenderTransformOrigin="-1.65,0.636"/>
+    </Grid>
+</UserControl>

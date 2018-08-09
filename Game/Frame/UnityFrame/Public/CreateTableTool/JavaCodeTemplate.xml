@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--Inner descript ${N} =\n ${L} =< ${R} = '>' ${C} =>'&'-->
+
+  <descript>//Auto Created by Robot, Don't try to Modify</descript>
+
+  <import>
+	package config;${N}
+	
+	import java.io.*;${N}
+	import java.util.*;${N}
+  </import>
+
+  
+  <classhead>
+  
+    public  class Tab_${CodeName}${N}{${N}
+    private static final String TAB_FILE_DATA = "Table/${FileName}";${N}
+    
+	
+    ${N}${FULLENUM}${N}
+   
+    public static String GetInstanceFile(){return TAB_FILE_DATA; }${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <single>
+    private  ${type}  m_${Variable};${N}
+	public  ${type} Get${Variable}(){return m_${Variable};};${N}
+  </single>
+  <repeat>
+  	public 		int get${Variable}Count() { return ${COUNT}; } ${N}
+    private   ${type}[]  m_${Variable} = new ${type}[${COUNT}];${N}
+    public    ${type} Get${Variable}byIndex(int idx)
+    {${N}
+    if(idx${R}=0 ${C}${C} idx${L}${COUNT}) return m_${Variable}[idx];${N}
+    return ${defaultvalue};${N}
+    }${N}
+  </repeat>
+
+
+  <inittable>
+    public static boolean LoadTable(HashMap${L}Integer, List${L}Object${R} ${R} _tab) throws IOException${N}
+    {${N}
+    if(!TableManager.ReaderPList(GetInstanceFile(),new TheSerializable(),_tab))${N}
+    {${N}
+	return false;${N}
+    }${N}
+    return true;${N}
+    }${N}
+	${N}
+	${N}
+	static class TheSerializable implements  TableManager.Serializable{${N}
+    public  void Serialize(String[] valuesList,int skey,HashMap${L}Integer, List${L}Object${R} ${R} _hash)throws FileNotFoundException${N}
+    {${N}
+    if ((int)MAX_RECORD!=valuesList.length)${N}
+    {${N}
+    //throw new java.io.FileNotFoundException( ${N}
+	//String.format( ${N}
+	//"Load %s error as CodeSize:%d not Equal DataSize:%d", ${N}
+	//GetInstanceFile(),${N}
+	//MAX_RECORD, ${N}
+	//valuesList.length${N}
+	//));${N}
+    }${N}
+    
+    Tab_${CodeName} _values = new Tab_${CodeName}();${N}
+    ${FULLREADER}${N}
+	
+if (_hash.containsKey(skey))${N}
+{${N}
+	List${L} Object${R} tList =_hash.get(skey);${N}
+	tList.add(_values);${N}
+}${N}
+else${N}
+{${N}
+	List${L}Object${R} tList = new ArrayList${L}Object${R}();${N}
+	tList.add(_values); ${N}
+	_hash.put(skey, (List${L}Object>)tList);${N}
+}${N}
+
+    }${N}
+	
+  </inittable>
+
+  
+
+  <tail>${N}}${N}}${N}</tail>
+</plist>

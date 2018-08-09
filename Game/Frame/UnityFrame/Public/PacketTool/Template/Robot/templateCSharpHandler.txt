@@ -1,0 +1,10 @@
+using UnityEngine;
+using System.Collections;
+using ProtobufPacket;
+
+public class $name$_Handler
+{
+    public static void ReceivePacket(Robot curRobot, $name$ packet)
+    {
+    }
+}

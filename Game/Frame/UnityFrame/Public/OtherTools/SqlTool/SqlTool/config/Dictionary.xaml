@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="str_main_sql_check">升级检查脚本生成</sys:String>
+    <sys:String x:Key="str_main_format_convert">格式化转换</sys:String>
+    <sys:String x:Key="str_utility_resource_not_found">{错误!无法找到指定字典资源}</sys:String>
+    <sys:String x:Key="str_utility_resource_null">{错误!字典资源符号为空}</sys:String>
+    <sys:String x:Key="str_old_create_script">旧的建库脚本</sys:String>
+    <sys:String x:Key="str_new_create_script">新的建库脚本</sys:String>
+    <sys:String x:Key="str_update_script">升级脚本</sys:String>
+    <sys:String x:Key="str_generate_update">生成升级脚本</sys:String>
+    <sys:String x:Key="str_generate_check">生成检查脚本</sys:String>
+    <sys:String x:Key="str_old_script_need">请选择旧的建库脚本</sys:String>
+    <sys:String x:Key="str_new_script_need">请选择新的建库脚本</sys:String>
+    <sys:String x:Key="str_from_version_need">请输入升级前版本号</sys:String>
+    <sys:String x:Key="str_to_version_need">请输入升级后的版本号</sys:String>
+    <sys:String x:Key="str_up_script_need">请选择升级脚本脚本</sys:String>
+    <sys:String x:Key="str_check_version_err">获取升级版本号错误，请检查升级脚本</sys:String>
+    <sys:String x:Key="str_check_parse_err">升级脚本解析错误，在第{0}行</sys:String>
+    <sys:String x:Key="str_check_table_err">升级脚本解析错误，表{0}未解析到有效的列</sys:String>
+    <sys:String x:Key="str_check_table_success">升级脚本检查脚本已生成，路径：{0}</sys:String>
+    <sys:String x:Key="str_up_to_version">TO VERSION:</sys:String>
+    <sys:String x:Key="str_up_from_version">FROM VERSION:</sys:String>
+    <sys:String x:Key="str_procedure_param">存储过程参数输入</sys:String>
+    <sys:String x:Key="str_format_str">格式化字符串转换输出</sys:String>
+    <sys:String x:Key="str_procedure_param_need">请输入存储过程的参数</sys:String>
+    <sys:String x:Key="str_procedure_param_err">存储过程的参数解析错误：{0}</sys:String>
+    <sys:String x:Key="str_procedure_param_convert_over">格式化转换完成</sys:String>
+    <sys:String x:Key="str_up_table_parse_err">建库脚本{0}的表解析错误，行：{1}</sys:String>
+    <sys:String x:Key="str_up_table_index_err">建库脚本{0}的索引{1}解析错误，找不到对应的表{2}，行：{3}</sys:String>
+    <sys:String x:Key="str_up_table_old_over">旧的建库脚本解析完毕</sys:String>
+    <sys:String x:Key="str_up_table_old_err">旧的建库脚本解析错误</sys:String>
+    <sys:String x:Key="str_up_table_new_over">新的建库脚本解析完毕</sys:String>
+    <sys:String x:Key="str_up_table_new_err">新的建库脚本解析错误</sys:String>
+    <sys:String x:Key="str_up_table_dbname_err">没有解析到数据库的名字</sys:String>
+    <sys:String x:Key="str_up_table_aid_err">表{0}新加了自增列aid,但是aid不是主键</sys:String>
+    <sys:String x:Key="str_up_table_filename_err">升级脚本名字解析错误</sys:String>
+    <sys:String x:Key="str_up_table_file_generate_err">升级脚本生成失败</sys:String>
+    <sys:String x:Key="str_up_table_file_generate_success">生成升级脚本成功，升级脚本路径：{0}</sys:String>
+
+</ResourceDictionary>

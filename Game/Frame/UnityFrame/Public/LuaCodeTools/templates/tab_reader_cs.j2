@@ -1,0 +1,57 @@
+//!!Generate Code,do not edit!!
+
+using XLua;
+using Games.Table;
+
+[LuaCallCSharp]
+public class LuaTabReader
+{
+    {% for tab in tabs %}
+    /////   Tab_{{tab.name}}
+    //
+    public struct Lua_Tab_{{tab.name}}
+    {
+        //C#版本辅助用，用struct来避免gc，但是没法表示load失败（struct不可能空），因此使用这个变量
+        public bool failed;
+        {% for col in tab.colums -%}
+        {% if col.is_list -%}
+        public LuaTable {{col.name}}; //{{col.comment}}
+        {% else -%}
+        public {{col.type}} {{col.name}};   //{{col.comment}}
+        {% endif -%}
+        {% endfor %}
+    }
+
+    public static Lua_Tab_{{tab.name}} C_Get{{tab.name}}(int id)
+    {
+        Tab_{{tab.name}} tab = TableManager.Get{{tab.name}}ByID(id,0);
+        if (tab == null)
+        {
+            var tmp = new Lua_Tab_{{tab.name}}();
+            tmp.failed = true;
+            return tmp;
+        }
+        Lua_Tab_{{tab.name}} item = new Lua_Tab_{{tab.name}}()
+        {
+            {% for col in tab.colums -%}
+            {% if not col.is_list -%}
+            {{col.name}} = tab.{{col.name}},
+            {% endif -%}
+            {% endfor %}
+        };
+
+        {% for col in tab.colums -%}
+        {%- if col.is_list -%}
+        item.{{col.name}} = GameManager.L.NewTable();
+        for (int i=0; i < tab.get{{col.name}}Count(); i++)
+        {
+            item.{{col.name}}.Set(i+1,tab.Get{{col.name}}byIndex(i));
+        }
+        {%- endif -%}
+        {% endfor %}
+
+        return item;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+    {% endfor %}
+}

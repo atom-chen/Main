@@ -1,0 +1,16 @@
+#include "Public.h"
+#include "Player/Player/Player.h"
+$beginrepeat$
+#include "Packet/Packet/$name$_PAK.h"
+  
+uint32_t Packets::$name$_PAKHandler::Execute( Packets::$name$_PAK* pPacket, Player* pPlayer )
+{
+	__SOL_TRACE
+	SOL_ASSERT(pPacket, "");
+	SOL_ASSERT(pPlayer, "");
+	return pPlayer->HandlePacket(pPacket->m_PacketData);
+	SOL_TRACE__
+	return PACKET_EXE_ERROR ; 
+}
+
+$endrepeat$

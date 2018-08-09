@@ -1,0 +1,181 @@
+#include "Public.h"
+$fileName_begin$
+#include "$fileName$.h"
+$fileName_end$
+$pakInc_begin$
+#include "Packet/Packet/PacketDefine.h"
+$pakInc_end$
+$msgInc_begin$
+#include "Routine/RoutineMsg.h"
+$msgInc_end$
+$routineInc_begin$
+#include "Routine/Routine.h"
+$routineInc_end$
+$reflushInc_begin$
+#if defined(_GAMESERVER_)
+#include "Container/GameInterface_Container.h"
+#endif
+$reflushInc_end$
+
+$fileName_begin$
+#define FILE_$fileDefine$	"./Config/$fileName$.ini"
+
+
+$fileName$ g$fileName$;
+
+void Init$fileName$(void)
+{
+	__SOL_TRACE
+
+	g$fileName$.Load();
+$fileName_end$
+
+$pakReset_begin$
+	Packets::ResetDisablePacket(gGameConfig.m_nDisPakId0, gGameConfig.m_nDisPakId1, gGameConfig.m_nDisPakId2, gGameConfig.m_nDisPakId3, gGameConfig.m_nDisPakId4, 
+					gGameConfig.m_nDisPakId5, gGameConfig.m_nDisPakId6, gGameConfig.m_nDisPakId7, gGameConfig.m_nDisPakId8, gGameConfig.m_nDisPakId9);
+$pakReset_end$
+
+$msgReset_begin$
+	ResetDisableMsg(gGameConfig.m_nDisMsgId0, gGameConfig.m_nDisMsgId1, gGameConfig.m_nDisMsgId2, gGameConfig.m_nDisMsgId3, gGameConfig.m_nDisMsgId4, 
+					gGameConfig.m_nDisMsgId5, gGameConfig.m_nDisMsgId6, gGameConfig.m_nDisMsgId7, gGameConfig.m_nDisMsgId8, gGameConfig.m_nDisMsgId9);
+$msgReset_end$
+
+$routineReset_begin$
+	ResetDisableRoutine(gGameConfig.m_nDisRoutineId0, gGameConfig.m_nDisRoutineId1, gGameConfig.m_nDisRoutineId2, gGameConfig.m_nDisRoutineId3, gGameConfig.m_nDisRoutineId4, 
+					gGameConfig.m_nDisRoutineId5, gGameConfig.m_nDisRoutineId6, gGameConfig.m_nDisRoutineId7, gGameConfig.m_nDisRoutineId8, gGameConfig.m_nDisRoutineId9);
+$routineReset_end$
+
+$fileName_begin$
+	solar::_disk_log("Load$fileName$ OK ...");
+	SOL_TRACE__
+}
+void Reload$fileName$(void)
+{
+	__SOL_TRACE
+
+	g$fileName$.ReLoad();
+$fileName_end$
+
+$pakReset_begin$
+	Packets::ResetDisablePacket(gGameConfig.m_nDisPakId0, gGameConfig.m_nDisPakId1, gGameConfig.m_nDisPakId2, gGameConfig.m_nDisPakId3, gGameConfig.m_nDisPakId4, 
+					gGameConfig.m_nDisPakId5, gGameConfig.m_nDisPakId6, gGameConfig.m_nDisPakId7, gGameConfig.m_nDisPakId8, gGameConfig.m_nDisPakId9);
+$pakReset_end$
+
+$msgReset_begin$
+	ResetDisableMsg(gGameConfig.m_nDisMsgId0, gGameConfig.m_nDisMsgId1, gGameConfig.m_nDisMsgId2, gGameConfig.m_nDisMsgId3, gGameConfig.m_nDisMsgId4, 
+					gGameConfig.m_nDisMsgId5, gGameConfig.m_nDisMsgId6, gGameConfig.m_nDisMsgId7, gGameConfig.m_nDisMsgId8, gGameConfig.m_nDisMsgId9);
+$msgReset_end$
+
+$routineReset_begin$
+	ResetDisableRoutine(gGameConfig.m_nDisRoutineId0, gGameConfig.m_nDisRoutineId1, gGameConfig.m_nDisRoutineId2, gGameConfig.m_nDisRoutineId3, gGameConfig.m_nDisRoutineId4, 
+					gGameConfig.m_nDisRoutineId5, gGameConfig.m_nDisRoutineId6, gGameConfig.m_nDisRoutineId7, gGameConfig.m_nDisRoutineId8, gGameConfig.m_nDisRoutineId9);
+$routineReset_end$
+
+$reflushBroad_begin$
+#if defined(_GAMESERVER_)
+	ContainerInterface::BroadCastReloadGameConfig();
+#endif
+$reflushBroad_end$
+
+$fileName_begin$
+	solar::_disk_log("Reload$fileName$ OK ...");
+	SOL_TRACE__
+}
+const $fileName$ & _$fileName$(void)
+{
+	return	g$fileName$;
+}
+
+void $fileName$::CleanUp()
+$fileName_end$
+{
+	__SOL_TRACE
+
+$default_begin$
+	$var_name$ = $default$;
+$default_end$
+	
+	SOL_TRACE__
+}
+$fileName_begin$
+void $fileName$::Load()
+{
+	__SOL_TRACE
+	
+	sol_ini_file ini;
+	SOL_ASSERT(ini.open(FILE_$fileDefine$),"There is no $fileName$.ini");
+$fileName_end$	
+
+$load_begin$
+
+$int32_begin$
+	SOL_ASSERT(ini.read_int32("$domian$","$name$",$var_name$),"$name$");
+$int32_end$
+
+$int64_begin$
+	SOL_ASSERT(ini.read_int64("$domian$","$name$",$var_name$),"$name$");
+$int64_end$
+
+$uint_begin$
+	SOL_ASSERT(ini.read_uint32("$domian$","$name$",$var_name$),"$name$");
+$uint_end$
+
+$bool_begin$
+	SOL_ASSERT(ini.read_bool("$domian$","$name$",$var_name$),"$name$");
+$bool_end$
+
+$float_begin$
+	SOL_ASSERT(ini.read_float("$domian$","$name$",$var_name$),"$name$");
+$float_end$
+
+$char_begin$
+	SOL_ASSERT(ini.read_text("$domian$","$name$",$var_name$),"$name$");
+$char_end$
+
+$load_end$
+
+	SOL_TRACE__
+}
+
+$fileName_begin$
+void $fileName$::ReLoad()
+{
+	__SOL_TRACE
+
+	sol_ini_file ini;
+	SOL_ASSERT(ini.open(FILE_$fileDefine$),"There is no $fileName$.ini");
+$fileName_end$
+	
+	solar::string<128> temp;
+
+$reload_begin$
+
+$int32_begin$
+	SOL_ASSERT(ini.read_int32("$domian$","$name$",$var_name$),"$name$");
+$int32_end$
+
+$int64_begin$
+	SOL_ASSERT(ini.read_int64("$domian$","$name$",$var_name$),"$name$");
+$int64_end$
+
+$uint_begin$
+	SOL_ASSERT(ini.read_uint32("$domian$","$name$",$var_name$),"$name$");
+$uint_end$
+
+$bool_begin$
+	SOL_ASSERT(ini.read_bool("$domian$","$name$",$var_name$),"$name$");
+$bool_end$
+
+$float_begin$
+	SOL_ASSERT(ini.read_float("$domian$","$name$",$var_name$),"$name$");
+$float_end$
+
+$char_begin$
+	SOL_ASSERT(ini.read_text("$domian$","$name$",temp),"$name$");
+	if($var_name$ != temp)	{ $var_name$ = temp;}		
+$char_end$
+
+$reload_end$
+
+	SOL_TRACE__
+}

@@ -1,0 +1,62 @@
+#include "Public.h"
+#include "PacketDefine.h"
+namespace Packets
+{
+	using PacketInfo = std::tuple<PacketName, bool, bool>;
+	solar::array<PacketInfo, PACKET_MAX> g_PacketInfoArray;
+	class PacketInfoArrayAutoInit
+	{
+	public:
+		PacketInfoArrayAutoInit(void)
+		{
+			g_PacketInfoArray[PACKET_NONE] = std::make_tuple(PacketName("PACKET_NONE"), false, false);
+$beginrepeat$
+			g_PacketInfoArray[PACKET_$name$_PAK] = std::make_tuple(PacketName("$name$_PAK"), $isxor$, false);
+$endrepeat$
+		}
+	}_piaai;
+	
+	const PacketName & GetPacketName(uint16_t packetid)
+	{
+		if (packetid > PACKET_NONE && packetid < PACKET_MAX)
+		{
+			return std::get<0>(g_PacketInfoArray[packetid]);
+		}
+		return std::get<0>(g_PacketInfoArray[PACKET_NONE]);
+	}
+	
+	bool GetIsCryptoPacket(uint16_t packetid)
+	{
+		if (packetid > PACKET_NONE && packetid < PACKET_MAX)
+		{
+			return std::get<1>(g_PacketInfoArray[packetid]);
+		}
+		return false;
+	}
+	
+	bool GetIsDisablePacket(uint16_t packetid)
+	{
+		if (packetid > PACKET_NONE && packetid < PACKET_MAX)
+		{
+			return std::get<2>(g_PacketInfoArray[packetid]);
+		}
+		return false;
+	}
+	
+	void ResetDisablePacket(int32_t id0, int32_t id1, int32_t id2, int32_t id3, int32_t id4, int32_t id5, int32_t id6, int32_t id7, int32_t id8, int32_t id9)
+	{
+		solar::array<bool, PACKET_MAX> values;
+		for (int32_t i = 0; i < PACKET_MAX; i++) { values[i] = false; }
+		if (id0 > PACKET_NONE && id0 < PACKET_MAX) { values[id0] = true; }
+		if (id1 > PACKET_NONE && id1 < PACKET_MAX) { values[id1] = true; }
+		if (id2 > PACKET_NONE && id2 < PACKET_MAX) { values[id2] = true; }
+		if (id3 > PACKET_NONE && id3 < PACKET_MAX) { values[id3] = true; }
+		if (id4 > PACKET_NONE && id4 < PACKET_MAX) { values[id4] = true; }
+		if (id5 > PACKET_NONE && id5 < PACKET_MAX) { values[id5] = true; }
+		if (id6 > PACKET_NONE && id6 < PACKET_MAX) { values[id6] = true; }
+		if (id7 > PACKET_NONE && id7 < PACKET_MAX) { values[id7] = true; }
+		if (id8 > PACKET_NONE && id8 < PACKET_MAX) { values[id8] = true; }
+		if (id9 > PACKET_NONE && id9 < PACKET_MAX) { values[id9] = true; }
+		for (int32_t i = 0; i < PACKET_MAX; i++) { std::get<2>(g_PacketInfoArray[i]) = values[i]; }
+	}
+}

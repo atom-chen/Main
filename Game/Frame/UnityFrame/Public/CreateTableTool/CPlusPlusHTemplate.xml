@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--替换关系为 ${N} =\n ${L} ='<' ${R} ='>' ${C}='&'-->
+
+  <descript>/*Auto Created by Robot, Don't try to Modify*/</descript>
+
+  <import>
+  #pragma once${N}${N}
+  #include "sol_table.h"${N}
+  </import>
+  
+  <classhead>
+
+    class Table_${CodeName}${N}
+    {${N}
+    public:${N}
+      enum _ID${N}
+      {${N}
+      ${FULLENUM}
+      };${N}
+      ${N}
+    public:${N}
+	bool load(const solar::table_file ${C}rDB, int32_t nRow);${N}
+	${N}
+	public:${N}
+	static const char * file_path(void);${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <single>
+    private:${N}
+      ${type}  m_${Variable};${N}
+    public:${N}
+      ${type1} Get${Variable}() const { return m_${Variable}${StringVariable}; }${N}
+  </single>
+  <repeat>
+  	public:${N}
+  	int32_t get${Variable}Count() const { return ${COUNT}; } ${N}
+    private:${N}
+    ${type} m_${Variable}[${COUNT}];${N}
+    public:${N}
+    ${type1} Get${Variable}byIndex(int32_t idx) const ${N}
+    {${N}
+    if(idx${R}=0 ${C}${C} idx${L}${COUNT}) return m_${Variable}[idx]${StringVariable};${N}
+    return ${defaultvalue};${N}
+    }${N}
+  </repeat>
+
+  <inittable>
+   };${N}
+   ${N}
+
+   TABLE_ENTITY_DECL(Table_${CodeName});${N}
+
+  </inittable>
+
+
+  <tail></tail>
+</plist>

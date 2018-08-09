@@ -1,0 +1,20 @@
+#pragma once
+#include "Public.h"
+
+namespace Packets
+{
+	enum PACKET_DEFINE
+	{
+		PACKET_NONE,
+$beginrepeat$
+		PACKET_$name$_PAK = $id$,
+$endrepeat$
+		PACKET_MAX,
+	};
+	
+	using PacketName = solar::string<256>;
+	const PacketName & GetPacketName(uint16_t packetid);
+	bool GetIsCryptoPacket(uint16_t packetid);
+	bool GetIsDisablePacket(uint16_t packetid);
+	void ResetDisablePacket(int32_t id0, int32_t id1, int32_t id2, int32_t id3, int32_t id4, int32_t id5, int32_t id6, int32_t id7, int32_t id8, int32_t id9);
+}

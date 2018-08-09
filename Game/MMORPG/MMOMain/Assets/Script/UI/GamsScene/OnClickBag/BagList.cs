@@ -6,17 +6,17 @@ public class BagList : MonoBehaviour
 {
     public UIWrapContent m_Wrap;
 
-
     void OnEnable()
     {
         InitWindow();
+    }
+
+    void Start()
+    {
         m_Wrap.onInitializeItem += OnWrapSlide;
 
     }
-    void OnDisable()
-    {
-        m_Wrap.onInitializeItem -= OnWrapSlide;
-    }
+
 
 
     /// <summary>

@@ -1,0 +1,13 @@
+#include "Public.h"
+#include "Player/Player/Player.h"
+$beginrepeat$
+#include "$name$_PAK.h"
+ 
+uint32_t Packets::$name$_PAK::Execute(Player* pPlayer)
+{
+	__SOL_TRACE
+	return $name$_PAKHandler::Execute(this,pPlayer);
+	SOL_TRACE__
+	return PACKET_EXE_ERROR;
+}
+$endrepeat$

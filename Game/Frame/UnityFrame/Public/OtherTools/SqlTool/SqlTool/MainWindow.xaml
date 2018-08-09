@@ -1,0 +1,10 @@
+﻿<Window x:Class="SqlTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:SqlTool.module"
+        x:Name="WindowMain" Height="740" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <TabControl x:Name="FunctionListTab" HorizontalAlignment="Left" Height="712" VerticalAlignment="Top" Width="1194" SelectionChanged="TabItemSelect"/>
+
+    </Grid>
+</Window>

@@ -53,7 +53,6 @@ class UserManager
     public static void DownLine(User user)
     {
         //验证合法性 TODO
-        
         UserController.UpdateUser(new _DBUser(user));
         m_OnlineUser.Remove(user.Guid);
     }

@@ -1,0 +1,44 @@
+#include "Public.h"
+#include "Config/Config.h"
+$fileName_begin$
+#include "Config/$fileName$.h"
+$fileName_end$
+
+void InitConfig(void)
+{
+	__SOL_TRACE
+
+$fileName_begin$
+	Init$fileName$();
+$fileName_end$
+
+	SOL_TRACE__
+}
+
+void ReloadConfig(void)
+{
+	__SOL_TRACE
+
+$fileName_begin$
+	Reload$fileName$();
+$fileName_end$	
+
+	SOL_TRACE__
+}
+
+void ReloadConfig(const char *szConfigName)
+{
+	__SOL_TRACE
+	if( szConfigName == nullptr)
+	{
+		return;
+	}
+$fileName_begin$
+	if(strcmp(szConfigName,"$fileName$") == 0)
+	{
+		Reload$fileName$();
+		return;
+	}
+$fileName_end$	
+	SOL_TRACE__
+}

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plist>
+  <!--Inner descript ${N} =\n ${L} =< ${R} = '>'-->
+  
+  <descript>//Auto Created by Robot, Don't try to Modify</descript>
+  
+  <import>
+    package config;${N}
+	${N}
+	import java.io.*;${N}
+	import java.util.*;${N}
+	import java.util.Map.Entry;${N}
+  </import>
+  
+  
+  <classhead>
+   
+ 
+ public class TableManager${N}
+{${N}
+${N}
+	public interface Serializable ${N}
+	{${N}
+		public void Serialize(String[] valuesList, int skey, HashMap${L}Integer, List${L}Object${R}${R} _hash) throws FileNotFoundException;${N}
+	}${N}
+	${N}
+	private static boolean IsNullOrEmpty(String str)${N}
+	{${N}
+		 if (str == null || str.length() == 0)${N}
+         {${N}
+             return true;${N}
+         }${N}
+		 return false;${N}
+	}${N}${N}
+	
+     private static String[] MySplit(String str, String[] nTypeList, String regix)${N}
+     {${N}
+          if (IsNullOrEmpty(str))${N}
+         {${N}
+             return null;${N}
+         }${N}
+         String[] content = new String[nTypeList.length];${N}
+         int nIndex = 0;${N}
+         int nstartPos = 0;${N}
+         while (nstartPos &lt;= str.length())${N}
+         {${N}
+             int nsPos = str.indexOf(regix, nstartPos);${N}
+             if (nsPos &lt; 0)${N}
+             {${N}
+                 String lastdataString = str.substring(nstartPos);${N}
+                 if ((lastdataString == null || lastdataString.length() == 0) &amp;&amp; nTypeList[nIndex].toLowerCase() != "String")${N}
+                 {${N}
+                     content[nIndex++] = "--";${N}
+                 }${N}
+                 else${N}
+                 {${N}
+                     content[nIndex++] = lastdataString;${N}
+                 }${N}
+                 break;${N}
+             }${N}
+             else${N}
+             {${N}
+                 if (nstartPos == nsPos)${N}
+                 {${N}
+                     if (nTypeList[nIndex].toLowerCase() != "String")${N}
+                     {${N}
+                         content[nIndex++] = "--";${N}
+                     }${N}
+                     else${N}
+                     {${N}
+                         content[nIndex++] = "";${N}
+                     }${N}
+                 }${N}
+                 else${N}
+                 {${N}
+                     content[nIndex++] = str.substring(nstartPos, nsPos);${N}
+                 }${N}
+                 nstartPos = nsPos + 1;${N}
+             }${N}
+         }${N}
+         return content;${N}
+     }${N}
+ private static String m_Key="";${N}
+ private static String[] m_Value;${N}	 
+ public static boolean ReaderPList(String xmlFile, Serializable serializable, HashMap${L}Integer, List${L}Object${R} ${R} _hash)throws IOException  ${N}
+ {${N}
+ String[] list= xmlFile.split("\\."); ${N}
+ String relTablePath = list[0].substring(6);${N}
+ List${L}String${R} alldataRow = new ArrayList${L}String${R}();${N}
+            int readIndex = 0;${N}
+            while (true)${N}
+            {${N}
+                String subName = "";${N}
+                if (readIndex > 0)${N}
+                {${N}
+                    subName = "-" + readIndex;${N}
+                }${N}
+			${N}				
+			String tableFilePath = "./table/" + relTablePath + subName + ".txt";${N}
+			StringBuilder allData = new StringBuilder();${N}
+			File file = new File(tableFilePath);${N}
+			if (file.isFile()  &amp;&amp;  file.exists()) { ${N}
+				try(BufferedReader bufferedReader = new BufferedReader(new FileReader(file)))${N}
+				{${N}
+					String lineTxt = null;${N}
+					while ((lineTxt = bufferedReader.readLine()) != null)${N}
+					{${N}
+						alldataRow.add(lineTxt);${N}
+					}${N}
+				}${N}
+			}${N}
+			else${N}
+			{${N}
+				break;${N}
+			}${N}
+
+                readIndex++;${N}
+            }${N}
+ //skip fort three${N}
+           int skip = 0;${N}
+           String[] typeList = null;${N}
+           for(String line : alldataRow)${N}
+           {${N}
+           	int nKey = -1;${N}
+               if (skip == 1)${N}
+               {${N}
+                   String sztemp = line;${N}
+                   if (sztemp.length() ${R}= 1)${N}
+                   {${N}
+                       if (sztemp.charAt(sztemp.length() - 1) == '\r')${N}
+                       {${N}
+                           sztemp = sztemp.replaceAll("\r+$", "");${N}
+                       }${N}
+                   }${N}
+                   typeList = line.split("\t");${N}
+                   m_Value = new String[typeList.length];${N}
+                   ++skip;${N}
+                   continue;${N}
+               }${N}
+
+               if (++skip ${L} 4) continue;${N}
+               if (IsNullOrEmpty(line)) continue;${N}
+				if(line.charAt(0) == '#')continue;${N}
+               String szlinetemp = line;${N}
+               if (szlinetemp.length() ${R}= 1)${N}
+               {${N}
+                   if (szlinetemp.charAt(szlinetemp.length() - 1) == '\r')${N}
+                   {${N}
+                       szlinetemp = szlinetemp.replaceAll("\r+$", "");${N}
+                   }${N}
+               }${N}
+               String[] strCol = MySplit(szlinetemp, typeList, "\t");${N}
+               if (strCol.length == 0) continue;${N}
+               String skey = strCol[0];${N}
+               String[] valuesList = new String[strCol.length];${N}${N}
+              
+               if (IsNullOrEmpty(skey) || skey.equals("--"))${N}
+               {${N}
+                   skey = m_Key;${N}
+                   nKey = Integer.parseInt(skey);		${N}
+                   valuesList[0] = skey;${N}
+                   for (int i = 1; i ${L} strCol.length; ++i)${N}
+                   {${N}
+                       if (IsNullOrEmpty(strCol[i]) || strCol[i]=="--")${N}
+                       {
+                           valuesList[i] = m_Value[i];${N}
+                       }${N}
+                       else${N}
+                       {${N}
+                           valuesList[i] = strCol[i];${N}
+                           m_Value[i] = strCol[i];${N}
+                       }${N}
+                   }${N}${N}
+               }
+               else${N}
+               {${N}
+                   m_Key = skey;                   ${N}
+                   nKey = Integer.parseInt(skey);		${N}
+                    ${N}
+                   for (int i = 0; i ${L} strCol.length; ++i)${N}${N}
+                   {
+                       if (strCol[i] == "--")${N}
+                       {${N}
+                           valuesList[i] = "0";${N}
+                           m_Value[i] = "0";${N}
+                       }${N}
+                       else${N}
+                       {${N}
+                           valuesList[i] = strCol[i];${N}
+                           m_Value[i] = strCol[i];${N}
+                       }${N}
+                   }${N}
+               }${N}
+ serializable.Serialize(valuesList, nKey, _hash);${N}
+ }${N}
+ return true;${N}
+ }${N}
+    public static int ConvertToInt32(String value)${N}
+    {${N}
+        if (value.length() ${R}= 1)${N}
+        {${N}
+            if (value.charAt(0) == '*')${N}
+            {${N}
+                String temp_String = value.substring(1);${N}
+                return Integer.parseInt(temp_String);${N}
+            }${N}
+        }${N}
+        return Integer.parseInt(value);${N}
+    }${N}
+    public static long ConvertToInt64(String value)${N}
+    {${N}
+        if (value.length() ${R}= 1)${N}
+        {${N}
+            if (value.charAt(0) == '*')${N}
+            {${N}
+                String temp_String = value.substring(1);${N}
+                return Long.parseLong(temp_String);${N}
+            }${N}
+        }${N}
+        return Long.parseLong(value);${N}
+    }${N}
+    public static float ConvertToSingle(String value)${N}
+    {${N}
+        if (value.length() ${R}= 1)${N}
+        {${N}
+            if (value.charAt(0) == '*')${N}
+            {${N}
+                String temp_String = value.substring(1);${N}
+                return Float.parseFloat(temp_String);${N}
+            }${N}
+        }${N}
+        return Float.parseFloat(value);${N}
+    }${N}
+  </classhead>
+
+  <!--This below is Body-->
+  <managerdata>    
+	 private static HashMap${L}Integer, List${L}Tab_${CodeName}${R} ${R} g_${CodeName} = new HashMap${L}Integer, List${L}Tab_${CodeName}${R} ${R}();
+	${N} public static boolean InitTable_${CodeName}()throws IOException ${N}
+ {${N}
+      g_${CodeName}.clear();${N}
+      HashMap${L}Integer, List${L}Object${R} ${R} tmps = new HashMap${L}Integer, List${L}Object${R} ${R}();${N}
+      if (!Tab_${CodeName}.LoadTable(tmps)) return false;${N}
+		for (Iterator${L}Entry${L}Integer, List${L}Object${R}${R}${R} it = tmps.entrySet().iterator(); it.hasNext();) 
+		{${N}
+		List${L}Tab_${CodeName}${R} values = new ArrayList${L}Tab_${CodeName}${R}();${N}
+		Entry${L}Integer, List${L}Object${R}${R} e = it.next();${N}
+		List${L}Object${R} tmpList = e.getValue();${N}
+        for (int i = tmpList.size() - 1; i >= 0; i--) ${N}
+		{${N}
+			 values.add((Tab_${CodeName})tmpList.get(i));${N}
+		}${N} 		  
+     g_${CodeName}.put(e.getKey(), values);${N}
+	 
+      }${N}
+      return true;${N}
+ }${N}
+ </managerdata>
+
+  <initsingle>
+    bRet ${C}= InitTable_${CodeName}();${N}
+  </initsingle>
+  
+  <inittable>  
+    public  boolean InitTable()throws IOException ${N}
+    {${N}
+	boolean bRet=true;${N}
+    ${FULLINIT}${N}
+	return bRet;${N}
+    }${N}
+  </inittable>
+
+  <manageropt>
+    public static List${L}Tab_${CodeName}${R}  Get${CodeName}ByID(int nKey)${N}
+    {${N}
+    if( g_${CodeName}.containsKey(nKey))${N}
+    {${N}
+    return g_${CodeName}.get(nKey);${N}
+    }${N}
+    return null;${N}
+    }${N}
+    
+	 public static Tab_${CodeName}  Get${CodeName}ByID(int nKey, int nIndex)${N}
+    {${N}
+    if( g_${CodeName}.containsKey(nKey))${N}
+    {${N}
+	if(nIndex${R}=0 ${C}${C} nIndex${L}g_${CodeName}.get(nKey).size())${N}
+    return g_${CodeName}.get(nKey).get(nIndex);${N}
+    }${N}
+    return null;${N}
+    }${N}
+
+
+	public static  HashMap${L}Integer, List${L}Tab_${CodeName}${R} ${R}  Get${CodeName}()${N}
+	{${N}
+	return g_${CodeName};${N}
+	}${N}
+  </manageropt>
+
+  <tail>${N}}${N}</tail>
+  </plist>
+  
