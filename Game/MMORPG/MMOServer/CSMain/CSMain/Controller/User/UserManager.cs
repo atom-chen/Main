@@ -102,7 +102,7 @@ class UserManager
     /// 更新一个User的数据入库
     /// </summary>
     /// <param name="nUser"></param>
-    public void UpdateUserInfo(User nUser)
+    private void UpdateUserInfo(User nUser)
     {
         UserController.UpdateUser(new _DBUser(nUser));
     }

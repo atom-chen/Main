@@ -158,7 +158,6 @@
     <Compile Include="Assets\NGUI\Scripts\Interaction\UIToggledComponents.cs" />
     <Compile Include="Assets\NGUI\Scripts\Interaction\UIToggledObjects.cs" />
     <Compile Include="Assets\NGUI\Scripts\Interaction\UIWidgetContainer.cs" />
-    <Compile Include="Assets\NGUI\Scripts\Interaction\UIWrapContent.cs" />
     <Compile Include="Assets\NGUI\Scripts\Internal\ActiveAnimation.cs" />
     <Compile Include="Assets\NGUI\Scripts\Internal\AnimationOrTween.cs" />
     <Compile Include="Assets\NGUI\Scripts\Internal\BMFont.cs" />
@@ -183,6 +182,7 @@
     <Compile Include="Assets\NGUI\Scripts\Internal\UIRect.cs" />
     <Compile Include="Assets\NGUI\Scripts\Internal\UISnapshotPoint.cs" />
     <Compile Include="Assets\NGUI\Scripts\Internal\UIWidget.cs" />
+    <Compile Include="Assets\NGUI\Scripts\ListWrapController.cs" />
     <Compile Include="Assets\NGUI\Scripts\Tweening\AnimatedAlpha.cs" />
     <Compile Include="Assets\NGUI\Scripts\Tweening\AnimatedColor.cs" />
     <Compile Include="Assets\NGUI\Scripts\Tweening\SpringPosition.cs" />
@@ -218,6 +218,7 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+    <Compile Include="Assets\NGUI\Scripts\UIWrapContent.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Bag.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Drug.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Item.cs" />
@@ -260,9 +261,10 @@
     <Compile Include="Assets\Script\Model\User.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagController.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagEquipItem.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagEquipTips.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagItem.cs" />
-    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagList.cs" />
-    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BattltInfo.cs" />
+    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagItemTips.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickRoleHead\RoleStatePanel.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />

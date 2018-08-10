@@ -10,6 +10,11 @@ public partial class EquipBag
 {
     private List<Equip> m_EquipBag;
 
+
+    public List<Equip> GetList()
+    {
+        return m_EquipBag;
+    }
     public EquipBag()
     {
         m_EquipBag = new List<Equip>();

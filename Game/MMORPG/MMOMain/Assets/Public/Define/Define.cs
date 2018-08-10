@@ -71,7 +71,7 @@ public enum INFO_TYPE
 
 class Define
 {
-    public const int _INVALID_ID = (0);
+    public const int _INVALID_ID = (-1);
     public const int _MAX_STRENGTHEN_ = (15);    //最大强化等级
 }
 

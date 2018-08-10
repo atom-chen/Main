@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BagItem : MonoBehaviour {
-    private ITEM_FIRST type;
-    private int id;
+public class BagItem : MonoBehaviour 
+{
     private UILabel m_Num;
     private UISprite m_Icon;
+
+    public BagController.BagItemModel m_Data; 
 	void Start () 
     {
         Transform tr = transform.Find("NUM");
@@ -21,40 +22,28 @@ public class BagItem : MonoBehaviour {
         }
 	}
 
-    public void Init(ITEM_FIRST type,int id)
+    public void Init(BagController.BagItemModel data)
     {
-        this.type=type;
-        this.id=id;
-        //根据ID取物品
-        switch(type)
+        if(data == null)
         {
-            case ITEM_FIRST.DRUG:
-                Item item = PlayData.RoleData.bag.GetItemByTabId(id);
-                if(item!=null)
-                {
-                    m_Num.text = item.count.ToString();
-                    m_Num.gameObject.SetActive(true);
-                    Tab_Item tabItem = item.GetTabItem();
-                    if (tabItem != null)
-                    {
-                        m_Icon.spriteName = tabItem.icon;
-                    }
-                }
-                break;
-            case ITEM_FIRST.EQUIP:
-                Equip equip = PlayData.RoleData.equipBag.GetEquipById(id);
-                m_Num.gameObject.SetActive(false);
-                if(equip!=null)
-                {
-                    Tab_Item tabItem = equip.GetTabItem();
-                    if(tabItem!=null)
-                    {
-                        m_Icon.spriteName = tabItem.icon;
-                    }
-                }
-                break;
+            this.gameObject.SetActive(false);
         }
+        this.gameObject.SetActive(true);
+        this.m_Data = data;
+        Tab_Item tabItem = TabItemManager.GetItemByID(data.itemId);
+        if(tabItem!=null)
+        {
+            m_Icon.spriteName = tabItem.icon;
+        }
+        m_Num.text = data.count.ToString();
     }
 	
+    public void OnClickItem()
+    {
+        if(BagController.Instance!=null)
+        {
+            BagController.Instance.HandleOnItemClick(this);
+        }
+    }
     
 }

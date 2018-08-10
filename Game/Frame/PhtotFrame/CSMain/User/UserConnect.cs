@@ -15,7 +15,6 @@ public class UserConnect : PeerBase
     public event UserEvent OnUserConnect;               //建立连接时调用
     public event UserEvent OnUserDownLine;              //连接断开时调用
     //--------------------------------------------attribute---------------------------------------------------------------//
-    public User LoginUser { get; set; }        //当前登录的user账号
 
 
 
@@ -42,19 +41,16 @@ public class UserConnect : PeerBase
             OnUserDownLine(this);
         }
     }
-
+    OperationResponse response = new OperationResponse();
     //消息分发函数
     protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
     {
         HandlerBase handler;
         Server.Instance.handlers.TryGetValue(operationRequest.OperationCode, out handler);//尝试去获取一个处理该operation的Handler
-
-        OperationResponse response = new OperationResponse();
         response.OperationCode = operationRequest.OperationCode;
         response.Parameters = new Dictionary<byte, object>();
         if (handler != null)
         {
-            LogManager.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
             handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
             SendOperationResponse(response, sendParameters);
         }
