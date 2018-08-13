@@ -248,9 +248,11 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
     <None Include="Assets\Public\Table\Equip.txt" />
+    <None Include="Assets\Public\Table\EquipAttachAttr.txt" />
     <None Include="Assets\Public\Table\EquipAttr.txt" />
     <None Include="Assets\Public\Table\Item.txt" />
     <None Include="Assets\Public\Table\Role.txt" />
+    <None Include="Assets\Public\Table\StrDictionary.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

@@ -39,20 +39,23 @@ public enum EQUIP_TYPE
 public enum ATTR_TYPE
 {
     INVALID = -1,
-    DAMAGE = 0,
-    HP = 1,
+    POWER = 1,       //力量
+    AGILITY = 2,     //敏捷
+    SPIRIT = 3,     //精神力
+    HP = 4,         //生命
+    WAKAN = 5,      //灵力
 }
 
 //装备稀有度
 public enum EQUIP_RARE
 {
     INVALID=-1,
-    C=0,       //灰色
-    B=1,       //绿色
-    A=2,       //蓝色
+    C=0,       //白色
+    B=1,       //黄色
+    A=2,       //黑色
     S=3,      //紫色
-    SS=4,     //金色
-    SSS=5,    //红色
+    SS=4,     //红色
+    SSS=5,    //金色
 }
 
 //角色信息类型
