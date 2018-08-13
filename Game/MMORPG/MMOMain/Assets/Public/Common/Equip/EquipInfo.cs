@@ -7,16 +7,18 @@ using System.Text;
 public class EquipInfo
 {
     private Equip[] mEquipArray;
+    public Equip Weapon { get { return mEquipArray[(int)EQUIP_TYPE.WEAPON]; } }
+    public Equip Shuko { get { return mEquipArray[(int)EQUIP_TYPE.SHUKO]; } }
+    public Equip Cloth { get { return mEquipArray[(int)EQUIP_TYPE.CLOTH]; } }
+    public Equip Helm { get { return mEquipArray[(int)EQUIP_TYPE.HELM]; } }
+    public Equip Trousers { get { return mEquipArray[(int)EQUIP_TYPE.TROUSERS]; } }
+    public Equip Shoes { get { return mEquipArray[(int)EQUIP_TYPE.SHOES]; } }
+    public Equip Ring { get { return mEquipArray[(int)EQUIP_TYPE.RING]; } }
+    public Equip Wing { get { return mEquipArray[(int)EQUIP_TYPE.WING]; } }
+
     public EquipInfo()
     {
-        if(Config.EquipMaxCount>0)
-        {
-            mEquipArray = new Equip[Config.EquipMaxCount];
-        }
-        else
-        {
-            mEquipArray = new Equip[1];
-        }
+        mEquipArray = new Equip[(int)EQUIP_TYPE.MAX];
     }
 
     //穿上装备

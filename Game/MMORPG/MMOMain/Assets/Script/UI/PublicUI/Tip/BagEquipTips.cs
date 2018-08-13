@@ -33,8 +33,12 @@ public class BagEquipTips : MonoBehaviour
     }
     public static void Show(Equip equipData)
     {
+        if (equipData == null)
+        {
+            return;
+        }
         m_EquipData = equipData;
-        
+        UIManager.ShowUI(UIInfo.ShowEquip);
     }
 
     void OnEnable()

@@ -8,7 +8,6 @@ public class Config
 {
     private static string ConfigFilePath = "";     //配置文件路径
 
-    public static int EquipMaxCount;                      //装备最大数量
     public static int Max_Strengthen = (15);    //最大强化等级
 
     //读配置文件

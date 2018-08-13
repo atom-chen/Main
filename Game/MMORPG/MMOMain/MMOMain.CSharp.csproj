@@ -262,9 +262,7 @@
     <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagController.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagEquipItem.cs" />
-    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagEquipTips.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagItem.cs" />
-    <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagItemTips.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickRoleHead\RoleStatePanel.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />
@@ -278,6 +276,8 @@
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerListLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\StartMenu.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\SceneLoading.cs" />
+    <Compile Include="Assets\Script\UI\PublicUI\Tip\BagEquipTips.cs" />
+    <Compile Include="Assets\Script\UI\PublicUI\Tip\BagItemTips.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\TipItem.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\Tips.cs" />
   </ItemGroup>

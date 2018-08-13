@@ -24,14 +24,15 @@ public enum ITEM_SECOND
 public enum EQUIP_TYPE
 {
     INVALID = -1,
-    HELM = 0,           //头
-    CLOTH = 1,          //甲
-    WEAPON = 2,         //武器
-    SHOES = 3,          //鞋
-    NECKLACE = 4,       //项链
-    BRACELET = 5,       //手镯
+    WEAPON = 0,         //武器
+    SHUKO = 1,       //护手
+    CLOTH = 2,          //甲
+    HELM = 3,           //头
+    TROUSERS = 4,       //裤子
+    SHOES = 5,          //鞋
     RING = 6,           //戒指
     WING = 7,           //翅膀
+    MAX
 }
 
 //属性类型

@@ -9,25 +9,28 @@ public class BagItemTips : MonoBehaviour
     public UILabel m_Desc;
     public UILabel m_BatchLabel;
 
-    private BagController.BagItemModel m_Data;
-    public void Show(BagController.BagItemModel data)
+    private static BagController.BagItemModel m_Data;
+    public static void Show(BagController.BagItemModel data)
     {
         m_Data = data;
         if (data == null)
         {
             return;
         }
-        this.gameObject.SetActive(true);
-        Tab_Item tabItem = TabItemManager.GetItemByID(data.itemId);
+        UIManager.ShowUI(UIInfo.ShowItem);
+    }
+    
+    void OnEnable()
+    {
+        Tab_Item tabItem = TabItemManager.GetItemByID(m_Data.itemId);
         if (tabItem != null)
         {
             m_Name.text = tabItem.name;
             m_Icon.spriteName = tabItem.icon;
             m_Desc.text = tabItem.desc;
-            m_BatchLabel.text = string.Format("批量使用({0})", data.count);
+            m_BatchLabel.text = string.Format("批量使用({0})", m_Data.count);
         }
     }
-    
     public void OnClickUse()
     {
         //todo 使用物品
@@ -41,6 +44,6 @@ public class BagItemTips : MonoBehaviour
     public void OnClickMask()
     {
         m_Data = null;
-        this.gameObject.SetActive(false);
+        UIManager.CloseUI(UIInfo.ShowItem);
     }
 }

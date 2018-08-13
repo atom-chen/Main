@@ -27,5 +27,7 @@ public class UIInfo
     public static UIInfoData RoleStatus = new UIInfoData("RoleState", UIType.POP);
     public static UIInfoData LoadingUI = new UIInfoData("Loading", UIType.MESSAGE);
     public static UIInfoData BagUI = new UIInfoData("Knapsack", UIType.POP);
+    public static UIInfoData ShowEquip = new UIInfoData("EquipTips", UIType.MESSAGE);
+    public static UIInfoData ShowItem = new UIInfoData("ItemTips", UIType.MESSAGE);
 }
 

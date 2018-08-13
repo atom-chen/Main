@@ -87,28 +87,43 @@ public class UIManager
             return null;
         }
         GameObject obj=null;
-        switch (info._UIType)
+        //如果已经打开，则关闭再打开
+        if(m_ActiveUIDic.TryGetValue(info.UIPath,out obj))
         {
-            case UIType.POP:
-                obj= CreateUI(info.UIPath, PopUI);
-                obj.layer = PopUI.gameObject.layer;
-                break;
-            case UIType.MESSAGE:
-                obj = CreateUI(info.UIPath, MessageUI);
-                obj.layer = MessageUI.gameObject.layer;
-                break;
-            case UIType.TIPS:
-                obj = CreateUI(info.UIPath, TipsUI);
-                obj.layer = TipsUI.gameObject.layer;
-                break;
+            obj.SetActive(false);
+            obj.SetActive(true);
+        }
+        else
+        {
+            switch (info._UIType)
+            {
+                case UIType.POP:
+                    obj = CreateUI(info.UIPath, PopUI);
+                    obj.layer = PopUI.gameObject.layer;
+                    break;
+                case UIType.MESSAGE:
+                    obj = CreateUI(info.UIPath, MessageUI);
+                    obj.layer = MessageUI.gameObject.layer;
+                    break;
+                case UIType.TIPS:                    //TIP不做管理
+                    obj = CreateUI(info.UIPath, TipsUI);
+                    obj.layer = TipsUI.gameObject.layer;
+                    return obj;
+            }
+            m_ActiveUIDic.Add(info.UIPath, obj);
         }
         return obj;
     }
     
     public static void CloseUI(UIInfoData info)
     {
-        
+        GameObject obj = null;
+        if(m_ActiveUIDic.TryGetValue(info.UIPath,out obj))
+        {
+            GameObject.Destroy(obj);
+            m_ActiveUIDic.Remove(info.UIPath);
+        }
     }
 
-    private Dictionary<string, GameObject> m_ActiveUI = new Dictionary<string, GameObject>();
+    private static Dictionary<string, GameObject> m_ActiveUIDic = new Dictionary<string, GameObject>();
 }

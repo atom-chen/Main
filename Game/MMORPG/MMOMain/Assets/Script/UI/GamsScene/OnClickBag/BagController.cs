@@ -13,8 +13,21 @@ public class BagController : MonoBehaviour
     private static BagController _ins;
     public static BagController Instance{get { return _ins; }}
 
-    public ListWrapController m_Wrap;
+    public BagEquipItem m_Weapon;
+    public BagEquipItem m_Shuku;
+    public BagEquipItem m_Cloth;
+    public BagEquipItem m_Head;
+    public BagEquipItem m_Trousers;
+    public BagEquipItem m_Shoes;
+    public BagEquipItem m_Ring;
+    public BagEquipItem m_Wing;
 
+    public UILabel m_DamageLabel;
+    public UILabel m_LefeLabel;
+    public UISlider m_ExpSlider;
+    public UILabel m_ExpLabel;
+
+    public ListWrapController m_Wrap;
     private List<Item> m_ItemList;
     private List<Equip> m_EquipList;
     void Awake()
@@ -30,10 +43,6 @@ public class BagController : MonoBehaviour
         InitWindow();
     }
 
-    void Start()
-    {
-
-    }
 
     /// <summary>
     /// 从Player中取出装备背包和物品背包显示
@@ -44,6 +53,20 @@ public class BagController : MonoBehaviour
         RefreshBag();
     }
 
+    //左侧装备
+    void RefreshBattleInfo()
+    {
+        m_Weapon.Refresh(PlayData.RoleData.equipInfo.Weapon);
+        m_Shuku.Refresh(PlayData.RoleData.equipInfo.Shuko);
+        m_Cloth.Refresh(PlayData.RoleData.equipInfo.Cloth);
+        m_Head.Refresh(PlayData.RoleData.equipInfo.Helm);
+        m_Trousers.Refresh(PlayData.RoleData.equipInfo.Trousers);
+        m_Shoes.Refresh(PlayData.RoleData.equipInfo.Shoes);
+        m_Wing.Refresh(PlayData.RoleData.equipInfo.Wing);
+        m_Ring.Refresh(PlayData.RoleData.equipInfo.Ring);
+        //m_DamageLabel.text= PlayData.RoleData.
+    }
+
     //右侧背包
     void RefreshBag()
     {
@@ -52,10 +75,7 @@ public class BagController : MonoBehaviour
         m_Wrap.InitList(m_ItemList.Count + m_EquipList.Count, OnWrapSlide);
     }
 
-    void RefreshBattleInfo()
-    {
 
-    }
 
 
 
@@ -135,12 +155,15 @@ public class BagController : MonoBehaviour
         {
             return;
         }
-        //m_ItemTips.Show(item.m_Data);
+        UIManager.CloseUI(UIInfo.ShowEquip);
+        BagItemTips.Show(item.m_Data);
     }
 
     public void HandleOnEquipClick(BagEquipItem equip)
     {
         //m_ItemTips.OnClickMask();
-        
+        //BagEquipTips.Show(equip.);
+        UIManager.CloseUI(UIInfo.ShowItem);
+        BagEquipTips.Show(equip.EquipData);
     }
 }
