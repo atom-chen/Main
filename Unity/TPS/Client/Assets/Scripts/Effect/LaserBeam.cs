@@ -12,7 +12,7 @@ public class LaserBeam : MonoBehaviour
     {
         tr = transform;
         m_LineRender = this.GetComponent<LineRenderer>();
-        m_LineRender.useWorldSpace = false;
+        m_LineRender.useWorldSpace = true;
         m_LineRender.enabled = false;
         m_LineRender.startWidth = 0.3f;
         m_LineRender.endWidth = 0.01f;
@@ -29,7 +29,7 @@ public class LaserBeam : MonoBehaviour
     void OnFire(Transform firPos)
     {
         m_LineRender.SetPosition(0, firPos.position);
-        m_LineRender.SetPosition(1, firPos.InverseTransformPoint(new Ray(firPos.position + (Vector3.up * 0.02f), firPos.forward).GetPoint(100.0f)));
+        m_LineRender.SetPosition(1, firPos.InverseTransformPoint(new Ray(firPos.position, firPos.forward).GetPoint(100.0f)));
         StartCoroutine(ShowLaserBeam());
     }
 

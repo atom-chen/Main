@@ -92,21 +92,21 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Barrel.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\BulletPool.cs" />
-    <Compile Include="Assets\Scripts\FireController.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\LaserBeam.cs" />
-    <Compile Include="Assets\Scripts\MainCamera.cs" />
-    <Compile Include="Assets\Scripts\MonstPool.cs" />
-    <Compile Include="Assets\Scripts\Monster.cs" />
-    <Compile Include="Assets\Scripts\MyGizmo.cs" />
-    <Compile Include="Assets\Scripts\ParticalPool.cs" />
-    <Compile Include="Assets\Scripts\PerformanceManager.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Wall.cs" />
+    <Compile Include="Assets\Scripts\Effect\LaserBeam.cs" />
+    <Compile Include="Assets\Scripts\Effect\MyGizmo.cs" />
+    <Compile Include="Assets\Scripts\Effect\ParticalPool.cs" />
+    <Compile Include="Assets\Scripts\GameManager\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager\MainCamera.cs" />
+    <Compile Include="Assets\Scripts\GameManager\PerformanceManager.cs" />
+    <Compile Include="Assets\Scripts\Monster\Barrel.cs" />
+    <Compile Include="Assets\Scripts\Monster\MonstPool.cs" />
+    <Compile Include="Assets\Scripts\Monster\Monster.cs" />
+    <Compile Include="Assets\Scripts\Monster\Wall.cs" />
+    <Compile Include="Assets\Scripts\Player\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Player\BulletPool.cs" />
+    <Compile Include="Assets\Scripts\Player\FireController.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
