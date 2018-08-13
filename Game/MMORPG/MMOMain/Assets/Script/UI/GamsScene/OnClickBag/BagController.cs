@@ -14,8 +14,6 @@ public class BagController : MonoBehaviour
     public static BagController Instance{get { return _ins; }}
 
     public ListWrapController m_Wrap;
-    public BagItemTips m_ItemTips;
-    public BagEquipTips m_EquipTips;
 
     private List<Item> m_ItemList;
     private List<Equip> m_EquipList;
@@ -137,12 +135,12 @@ public class BagController : MonoBehaviour
         {
             return;
         }
-        m_ItemTips.Show(item.m_Data);
+        //m_ItemTips.Show(item.m_Data);
     }
 
     public void HandleOnEquipClick(BagEquipItem equip)
     {
-        m_ItemTips.OnClickMask();
+        //m_ItemTips.OnClickMask();
         
     }
 }

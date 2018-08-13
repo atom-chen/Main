@@ -92,7 +92,6 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Scripts\Effect\LaserBeam.cs" />
     <Compile Include="Assets\Scripts\Effect\MyGizmo.cs" />
     <Compile Include="Assets\Scripts\Effect\ParticalPool.cs" />
     <Compile Include="Assets\Scripts\GameManager\AudioManager.cs" />
@@ -106,6 +105,7 @@
     <Compile Include="Assets\Scripts\Player\Bullet.cs" />
     <Compile Include="Assets\Scripts\Player\BulletPool.cs" />
     <Compile Include="Assets\Scripts\Player\FireController.cs" />
+    <Compile Include="Assets\Scripts\Player\LaserBeam.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>

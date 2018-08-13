@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class LaserBeam : MonoBehaviour
 {
-    private Transform tr;
     private LineRenderer m_LineRender;
-    private RaycastHit m_Hit;
 
     void Start()
     {
-        tr = transform;
         m_LineRender = this.GetComponent<LineRenderer>();
         m_LineRender.useWorldSpace = true;
         m_LineRender.enabled = false;
@@ -29,19 +26,19 @@ public class LaserBeam : MonoBehaviour
     void OnFire(Transform firPos)
     {
         m_LineRender.SetPosition(0, firPos.position);
-        m_LineRender.SetPosition(1, firPos.InverseTransformPoint(new Ray(firPos.position, firPos.forward).GetPoint(100.0f)));
+        m_LineRender.SetPosition(1, new Ray(firPos.position, firPos.forward).GetPoint(100.0f));
         StartCoroutine(ShowLaserBeam());
     }
 
     void OnHit(Transform firPos,RaycastHit ray)
     {
-        m_LineRender.SetPosition(1, firPos.InverseTransformPoint(ray.point));
+        m_LineRender.SetPosition(1,ray.point);
     }
 
     IEnumerator ShowLaserBeam()
     {
         m_LineRender.enabled = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         m_LineRender.enabled = false;
     }
 }

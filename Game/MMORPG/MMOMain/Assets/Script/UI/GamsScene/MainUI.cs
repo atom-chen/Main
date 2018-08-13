@@ -101,7 +101,7 @@ public class MainUI : MonoBehaviour
     //点击头像
     private void OnClickHead()
     {
-        UIManager.CreateUI("RoleState", UIManager.PopUI);
+        UIManager.ShowUI(UIInfo.RoleStatus);
     }
 
     //点击增加体力
@@ -161,6 +161,6 @@ public class MainUI : MonoBehaviour
     //点击背包
     private void OnClickBag()
     {
-
+        UIManager.ShowUI(UIInfo.BagUI);
     }
 }

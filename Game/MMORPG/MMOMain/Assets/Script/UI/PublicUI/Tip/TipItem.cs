@@ -15,7 +15,7 @@ public class TipItem : MonoBehaviour
     IEnumerator DestoryTip()
     {
         yield return new WaitForSeconds(2.0f);
-        Destroy(this.gameObject);
+        UIManager.CloseUI(UIInfo.NoticeTips);
         Tips.OnItemDestory(this);
     }
 }
