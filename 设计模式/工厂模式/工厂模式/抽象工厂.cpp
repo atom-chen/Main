@@ -66,7 +66,7 @@ public:
 };
 
 
-void main()
+void main3()
 {
 	FruitFactory *factory = NULL;
 	Fruit *fruit = NULL;

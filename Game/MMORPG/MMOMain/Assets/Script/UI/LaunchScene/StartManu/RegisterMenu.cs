@@ -50,12 +50,11 @@ public class RegisterMenu : MonoBehaviour
     }
     private void Register(string userName, string passWord)
     {
-        User user = new User() { UserName = userName, PassWord = MD5Tools.GetMD5(passWord) };
+        User user = new User() { UserName = userName, PassWord = passWord };
 
-        string json = ParaTools.GetJson<User>(user);
-        Dictionary<byte, object> dic = new Dictionary<byte, object>();
-        dic.Add((byte)ParameterCode.User, json);
-        PhotoEngine.Instance.SendRequest(OperationCode.Register, dic);
+        CG_REGISTER_PAK pak = new CG_REGISTER_PAK();
+        pak._User = user;
+        pak.SendPak();
     }
 
 

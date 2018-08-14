@@ -41,16 +41,13 @@ class EnterGameHandler : HandlerBase
         {
             response.ReturnCode = (short)ReturnCode.Error;
         }
-        //server信息
-        Tab_Server server = ParaTools.GetParameter<Tab_Server>(request.Parameters, ParameterCode.Server);
-        if (server != null)
-        {
-            peer.LoginServerId = server.id;
-            //拿到该玩家所有角色信息
-            List<Role> roleList = RoleManager.GetUserAllRole(peer.LoginUser.Guid);
-            //传回去
-            response.Parameters.Add((byte)ParameterCode.RoleList, ParaTools.GetJson<List<Role>>(roleList));
-        }
+
+        //拿到该玩家所有角色信息
+        List<Role> roleList = RoleManager.GetUserAllRole(peer.LoginUser.Guid);
+        //传回去
+        response.Parameters.Add((byte)ParameterCode.RoleList, ParaTools.GetJson<List<Role>>(roleList));
+
+        peer.SendOperationResponse(response, sendParameters);
     }
 }
 

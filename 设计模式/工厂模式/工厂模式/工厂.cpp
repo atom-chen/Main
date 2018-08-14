@@ -1,13 +1,15 @@
 #include<iostream>
 #include <string>
 using namespace std;
-/*
-class Fruit{
+
+class Fruit
+{
 public:
 	virtual void shoname() = 0;
 };
 
-class Apple :public Fruit{
+class Apple :public Fruit
+{
 public:
 	virtual void shoname()
 	{
@@ -17,7 +19,8 @@ private:
 
 };
 
-class Pear :public Fruit{
+class Pear :public Fruit
+{
 public:
 	virtual void shoname()
 	{
@@ -26,30 +29,34 @@ public:
 private:
 
 };
-class FruitFactory{
+
+class FruitFactory
+{
 public:
 	virtual Fruit* Create() = 0;
 };
 
-class PearFactory: public FruitFactory{
+class PearFactory : public FruitFactory
+{
 	virtual Fruit* Create()
 	{
 		return new Pear;
 	}
 };
 
-class appleFactory : public FruitFactory{
+class appleFactory : public FruitFactory
+{
 	virtual Fruit* Create()
 	{
 		return new Apple;
 	}
 };
 
-void main()
+void main2()
 {
 	FruitFactory *factory = new PearFactory;
 	Fruit *fruit = NULL;
-	fruit=factory->Create();
+	fruit = factory->Create();
 	fruit->shoname();
 
 	factory = new appleFactory;
@@ -57,4 +64,3 @@ void main()
 	fruit->shoname();
 
 }
-*/

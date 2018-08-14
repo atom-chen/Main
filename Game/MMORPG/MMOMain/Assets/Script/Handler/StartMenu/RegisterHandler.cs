@@ -33,7 +33,11 @@ public class RegisterHandler : HandlerBase
     }
 }
 
-public class CG_REGISTER_PAK
+public partial class CG_REGISTER_PAK
 {
+    public void SendPak()
+    {
+        PhotoEngine.Instance.SendRequest(OperationCode.Register, dic);
+    }
 
 }

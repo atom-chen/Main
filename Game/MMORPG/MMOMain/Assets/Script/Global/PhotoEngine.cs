@@ -4,6 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct MsgPair
+{
+    public OperationCode opCode;
+    public Dictionary<byte, object> parameters;
+    public MsgPair(OperationCode code,Dictionary<byte, object> para)
+    {
+        opCode = code;
+        parameters = para;
+    }
+}
 public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
 {
     private static string m_IPAddres = "";
@@ -17,12 +27,6 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
     PhotonPeer peer;
     private StatusCode m_State = new StatusCode();//当前状态
 
-    private Dictionary<byte, HandlerBase> controllers = new Dictionary<byte, HandlerBase>();//逻辑模块集合
-
-    public delegate void OnConnectStateChange();
-    public event OnConnectStateChange OnConnectSuccess;//成功连接后的事件
-    public event OnConnectStateChange OnConnectBreak;//连接断开后的事件
-
     void Awake()
     {
         _Instance = this;
@@ -30,60 +34,35 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void Update()
+    void FixelUpdate()
     {
+        if(m_State ==StatusCode.Connect &&  m_Cache.Count>0)
+        {
+            MsgPair pair = m_Cache.Dequeue();
+            SendRequest(pair.opCode, pair.parameters);
+        }
         if (peer != null)
         {
             peer.Service();
         }
     }
-
-    //注册Handler
-    public void RegisterController(OperationCode opCode, HandlerBase controller)
-    {
-        controllers.Add((byte)opCode, controller);
-    }
-
-    //注销Handler
-    public void UnRegisterController(OperationCode opCode)
-    {
-        controllers.Remove((byte)opCode);
-    }
-
-
+//----------------------------------------------事件相关 begin------------------------------------------
+    public delegate void OnConnectStateChange();
+    public event OnConnectStateChange OnConnectSuccess;//成功连接后的事件
+    public event OnConnectStateChange OnConnectBreak;//连接断开后的事件
     public void DebugReturn(DebugLevel level, string message)
     {
 
     }
 
-    //发一个OperationCode消息
-    public void SendRequest(OperationCode opCode, Dictionary<byte, object> parameters)
-    {
-        Debug.Log("发一个" + opCode + "包到服务器");
-        peer.OpCustom((byte)opCode, parameters, true);
-    }
-
-
     public void OnEvent(EventData eventData)
     {
 
     }
+//----------------------------------------------事件相关 end------------------------------------------
 
 
-    public void OnOperationResponse(OperationResponse operationResponse)
-    {
-        Debug.Log(string.Format("收到包{0}", (OperationCode)operationResponse.OperationCode));
-        HandlerBase controller;
-        controllers.TryGetValue(operationResponse.OperationCode, out controller);
-        if (controller != null)
-        {
-            controller.OnOperationResponse(operationResponse);//将消息转发到对应Handler
-        }
-        else
-        {
-            Debug.Log("Receive a unknown response . OperationCode :" + operationResponse.OperationCode);
-        }
-    }
+//------------------------------------------------连接相关 begin--------------------------------
 
     public void OnStatusChanged(StatusCode statusCode)
     {
@@ -128,9 +107,9 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
         }
     }
 
-    public static void TryConnect(Tab_Server server)
+    private void TryConnect(Tab_Server server)
     {
-        if (server == null) return;
+        if (server == null || _Instance == null) return;
         m_IPAddres = string.Format("{0:{1}", server.ipAddress, server.port.ToString());
         m_AppName = server.appName;
         _Instance.StartCoroutine(_Instance.TryConnect());
@@ -144,5 +123,51 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
             yield return new WaitForSeconds(3);
         }
     }
+ //------------------------------------------------连接相关 end--------------------------------
 
+//----------------------------------------------消息相关 begin------------------------------------------
+    private Dictionary<byte, HandlerBase> controllers = new Dictionary<byte, HandlerBase>();//逻辑模块集合
+    private Queue<MsgPair> m_Cache = new Queue<MsgPair>();
+
+    public void OnOperationResponse(OperationResponse operationResponse)
+    {
+        Debug.Log(string.Format("收到包{0}", (OperationCode)operationResponse.OperationCode));
+        HandlerBase controller;
+        controllers.TryGetValue(operationResponse.OperationCode, out controller);
+        if (controller != null)
+        {
+            controller.OnOperationResponse(operationResponse);//将消息转发到对应Handler
+        }
+        else
+        {
+            Debug.Log("Receive a unknown response . OperationCode :" + operationResponse.OperationCode);
+        }
+    }
+
+    //发一个OperationCode消息
+    public void SendRequest(OperationCode opCode, Dictionary<byte, object> parameters)
+    {
+        if (m_State == StatusCode.Connect)
+        {
+            peer.OpCustom((byte)opCode, parameters, true);
+        }
+        else
+        {
+            TryConnect(PlayData.ServerData);
+            m_Cache.Enqueue(new MsgPair(opCode, parameters));
+        }
+    }
+    //注册Handler
+    public void RegisterController(OperationCode opCode, HandlerBase controller)
+    {
+        controllers.Add((byte)opCode, controller);
+    }
+
+    //注销Handler
+    public void UnRegisterController(OperationCode opCode)
+    {
+        controllers.Remove((byte)opCode);
+    }
+//----------------------------------------------消息相关 end------------------------------------------
 }
+

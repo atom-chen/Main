@@ -9,34 +9,27 @@ using System.Text;
 
 public class PlayData
 {
-    private static User m_User=new User();
+    private static User m_User = new User();
     private static Tab_Server m_Server = new Tab_Server();
-    private static List<Role> m_RoleList=new List<Role>();
-    private static int m_RoleIndex;
+
     public static User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
     public static Tab_Server ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器
-    public static List<Role> RoleList { get { return m_RoleList; } set { m_RoleList = value; } }  //用户下的角色列表
+    public static List<Role> RoleList { get { return m_User.RoleList; } set { m_User.RoleList = value; } }  //用户下的角色列表
 
     //当前登录角色
     public static Role RoleData
     {
-        get { return m_RoleList[m_RoleIndex]; }
+        get { return m_User.RoleData; }
         set
         {
             //将其它角色的委托去除
-            for (int i = 0; i < m_RoleList.Count; i++)
+            for (int i = 0; i < m_User.RoleList.Count; i++)
             {
-                if (m_RoleList[i].id == value.id)
-                {
-                    m_RoleList[i] = value;
-                    m_RoleList[i].OnInfoChange += OnChange;
-                    m_RoleIndex = i;
-                }
-                else
-                {
-                    m_RoleList[i].OnInfoChange -= OnChange;
-                }
+                RoleList[i].OnInfoChange -= OnChange;
             }
+            RoleData = value;
+            RoleData.OnInfoChange += OnChange;
+            GameManager.Instance.OneSecondCallBack -= RoleEnergyRecover;
             GameManager.Instance.OneSecondCallBack += RoleEnergyRecover;
         }
     }
@@ -47,10 +40,7 @@ public class PlayData
     {
         if (OnRoleInfoChange != null)
         {
-            foreach (Action item in OnRoleInfoChange.GetInvocationList())
-            {
-                item();
-            }
+            OnRoleInfoChange();
         }
     }
 

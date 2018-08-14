@@ -78,9 +78,13 @@ public class StartMenu : MonoBehaviour
             Tips.ShowTip("请选择服务器");
             return;
         }
+        if(PlayData.UserData==null)
+        {
+            Tips.ShowTip("请输入账号和密码");
+        }
         //发包
         CG_ENTER_GAME_PAK pak = new CG_ENTER_GAME_PAK();
-        pak.Server = PlayData.ServerData;
+        pak._User = PlayData.UserData;
         pak.SendPak();
     }
 

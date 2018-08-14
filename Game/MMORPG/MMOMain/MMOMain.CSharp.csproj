@@ -221,6 +221,10 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\NGUI\Scripts\UIWrapContent.cs" />
+    <Compile Include="Assets\Public\CG_PAK\CG_ADD_ROLE.cs" />
+    <Compile Include="Assets\Public\CG_PAK\CG_ENTER_GAME.cs" />
+    <Compile Include="Assets\Public\CG_PAK\CG_REGISTER_USER.cs" />
+    <Compile Include="Assets\Public\CG_PAK\CG_START_GAME.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Bag.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Drug.cs" />
     <Compile Include="Assets\Public\Common\BagSystem\Item.cs" />

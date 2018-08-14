@@ -1,7 +1,7 @@
 #include<iostream>
 #include <string>
 using namespace std;
-/*
+
 class Fruit{
 public:
 	virtual void shoname() = 0;
@@ -42,10 +42,9 @@ public:
 		}
 	}
 };
-void main()
+void main1()
 {
 	Factory *factor = new Factory;
-	Fruit *fruit=factor->Create("pear");
+	Fruit *fruit = factor->Create("pear");
 	fruit->shoname();
 }
-*/

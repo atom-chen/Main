@@ -27,19 +27,8 @@ public class AddRoleHandler : HandlerBase
     }
 }
 
-public class CG_ADD_ROLE_PAK
+public partial class CG_ADD_ROLE_PAK
 {
-    Dictionary<byte, object> dic = new Dictionary<byte, object>();
-
-    public Role _Role
-    {
-        set
-        {
-            string json = LitJson.JsonMapper.ToJson(value);
-            Dictionary<byte, object> dic = new Dictionary<byte, object>();
-            dic.Add((byte)ParameterCode.User, json);
-        }
-    }
     public void SendPak()
     {
         PhotoEngine.Instance.SendRequest(OperationCode.RoleAdd, dic);
