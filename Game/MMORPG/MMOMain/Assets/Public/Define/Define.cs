@@ -12,20 +12,20 @@ public enum ITEM_FIRST
     DRUG = 0,//物品
     EQUIP = 1,//装备
 }
-//二级分类
-public enum ITEM_SECOND
-{
-    INVALID = -1,
-    DEFAULT = 0,//默认
-    MEDICINE = 1,//药品
-}
 
+public enum BATTLE_TYPE
+{
+    CONTROL = 1, //控制系
+    STORM = 2,   //强攻系
+    QUICK = 3,   //敏攻系
+    ASSIST = 4,  //辅助系
+}
 //装备部位
 public enum EQUIP_TYPE
 {
     INVALID = -1,
     WEAPON = 0,         //武器
-    SHUKO = 1,       //护手
+    SHUKO = 1,          //护手
     CLOTH = 2,          //甲
     HELM = 3,           //头
     TROUSERS = 4,       //裤子
@@ -42,7 +42,7 @@ public enum ATTR_TYPE
     POWER = 1,       //力量
     AGILITY = 2,     //敏捷
     SPIRIT = 3,     //精神力
-    HP = 4,         //生命
+    LIFE = 4,         //生命
     WAKAN = 5,      //灵力
 }
 
@@ -50,12 +50,12 @@ public enum ATTR_TYPE
 public enum EQUIP_RARE
 {
     INVALID=-1,
-    C=0,       //白色
-    B=1,       //黄色
-    A=2,       //黑色
-    S=3,      //紫色
-    SS=4,     //红色
-    SSS=5,    //金色
+    C=0,       //白色 十年
+    B=1,       //黄色 百年
+    A = 2,     //紫色 千年
+    S=3,      //黑色 万年
+    SS=4,     //红色 十万年
+    SSS=5,    //金色 神品
 }
 
 //角色信息类型

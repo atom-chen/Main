@@ -1,2 +1,3 @@
-ï»¿IDï¼ˆç¬¬ä¸€è¡Œä¸è¯»ï¼‰	åç§°	Icon	ClassType	SubType	Level	MaxCount	Price	Desc
-1	é‡‘ç–®è¯		0	1	0	99	200	ç”Ÿå‘½å›žå¤400
+ID	Ãû³Æ	Atlas	Icon	Type 0±³°üÎïÆ· 1×°±¸	Price ³öÊÛ¼Û¸ñ	Desc
+1	½ð´¯Ò©			0	400	ÉúÃü»Ø¸´400
+2	ÇàÍ­½£			1	-1	Ò»°ãÎäÆ÷

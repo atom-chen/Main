@@ -13,6 +13,10 @@ public class Tab_Equip
     public int assistAttrid; //副属性id
     public int needLevel;    //装备等级
     public int itemId;       //在Item表的ID
+    //needExp=a(x^2)+bx+c
+    public int a;
+    public int b;
+    public int c;
 }
 
 public class TabEquipManager
@@ -25,44 +29,63 @@ public class TabEquipManager
 
     public static void ReLoad()
     {
-        m_TabEquipDic.Clear();
-        ReadTableTools table = new ReadTableTools("Equip.txt");
-        //将每个元组构造成Tab_Item，添加到表格
-        while (!table.IsTupleEnd())
+        try
         {
-            string data;
-            Tab_Equip equip = new Tab_Equip();
+            m_TabEquipDic.Clear();
+            ReadTableTools table = new ReadTableTools("Equip.txt");
+            //将每个元组构造成Tab_Item，添加到表格
+            while (!table.IsTupleEnd())
+            {
+                string data;
+                Tab_Equip equip = new Tab_Equip();
 
-            //ID
-            data = table.GetData();
-            equip.id = Convert.ToInt32(data);
+                //ID
+                data = table.GetData();
+                equip.id = Convert.ToInt32(data);
 
-            //装备位置
-            data = table.GetNext();
-            equip.area =(EQUIP_TYPE) Convert.ToInt32(data);
+                //装备位置
+                data = table.GetNext();
+                equip.area = (EQUIP_TYPE)Convert.ToInt32(data);
 
-            //装备品质
-            data = table.GetNext();
-            equip.rare = (EQUIP_RARE)Convert.ToInt32(data);
+                //装备品质
+                data = table.GetNext();
+                equip.rare = (EQUIP_RARE)Convert.ToInt32(data);
 
-            //主属性ID
-            data = table.GetNext();
-            equip.mainAttrid = Convert.ToInt32(data);
+                //主属性ID
+                data = table.GetNext();
+                equip.mainAttrid = Convert.ToInt32(data);
 
-            //副属性ID
-            data = table.GetNext();
-            equip.assistAttrid = Convert.ToInt32(data);
+                //副属性ID
+                data = table.GetNext();
+                equip.assistAttrid = Convert.ToInt32(data);
 
-            //装备等级
-            data = table.GetNext();
-            equip.needLevel = Convert.ToInt32(data);
+                //装备等级
+                data = table.GetNext();
+                equip.needLevel = Convert.ToInt32(data);
 
-            //ItemID
-            data = table.GetNext();
-            equip.itemId = Convert.ToInt32(data);
+                //ItemID
+                data = table.GetNext();
+                equip.itemId = Convert.ToInt32(data);
 
-            m_TabEquipDic.Add(equip.id, equip);
-            table.LineDown();
+                //a
+                data = table.GetNext();
+                equip.a = Convert.ToInt32(data);
+
+                //b
+                data = table.GetNext();
+                equip.b = Convert.ToInt32(data);
+
+                //c
+                data = table.GetNext();
+                equip.c = Convert.ToInt32(data);
+
+                m_TabEquipDic.Add(equip.id, equip);
+                table.LineDown();
+            }
+        }
+        catch(Exception)
+        {
+
         }
     }
 

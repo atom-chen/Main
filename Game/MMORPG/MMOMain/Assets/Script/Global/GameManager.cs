@@ -34,10 +34,6 @@ public class GameManager : MonoBehaviour
     {
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        //Load表格
-        TabEquipAttrManager.ReLoad();
-        TabItemManager.ReLoad();
-        TabEquipManager.ReLoad();
     }
     void Start()
     {

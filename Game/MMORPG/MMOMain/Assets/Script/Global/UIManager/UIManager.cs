@@ -80,7 +80,7 @@ public class UIManager
     }
 
     public delegate void OpenUIEvent(object para);
-    public static GameObject ShowUI(UIInfoData info,OpenUIEvent openUIEvent = null,object para = null)
+    public static GameObject ShowUI(UIInfoData info)
     {
         if(info == null)
         {

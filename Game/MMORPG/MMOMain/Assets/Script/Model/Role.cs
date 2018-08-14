@@ -123,7 +123,7 @@ public partial class Role
     /// <returns></returns>
     public int GetEnergyAllRecoverTimer()
     {
-        int baseTimer = (Table_Role.GetEnergyLimit((int)Level) - Energy - 1) * Table_Role.GetRecoverSpendTime();
+        int baseTimer = (Table_RoleManager.GetEnergyLimit((int)Level) - Energy - 1) * Table_RoleManager.GetRecoverSpendTime();
         return baseTimer <= 0 ? 0 : baseTimer + EnergyNextRecoverTimer;
     }
     /// <summary>
@@ -131,7 +131,7 @@ public partial class Role
     /// </summary>
     public int GetToughenAllRecoverTimer()
     {
-        int baseTimer = (Table_Role.GetToughenLimit((int)Level) - Toughen - 1) * Table_Role.GetRecoverSpendTime();
+        int baseTimer = (Table_RoleManager.GetToughenLimit((int)Level) - Toughen - 1) * Table_RoleManager.GetRecoverSpendTime();
         return baseTimer <= 0 ? 0 : baseTimer + ToughenNextRecoverTimer;
     }
 

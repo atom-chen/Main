@@ -9,11 +9,9 @@ public class Tab_Item
 {
     public int id;//ID
     public string name;//NAME
+    public string atlas;//图集名称
     public string icon;//Icon
     public ITEM_FIRST classType;//所属类型
-    public ITEM_SECOND infoType;//二级分类类型
-    public int level = 1;//使用等级
-    public int maxCount = 1;//最大数量
     public int price;//出售价格
     public string desc;//描述
 }
@@ -32,53 +30,54 @@ public class TabItemManager
     
     public static void ReLoad()
     {
-        m_TabItemDic.Clear();
-        ReadTableTools table = new ReadTableTools("Item.txt");
-        //将每个元组构造成Tab_Item，添加到表格
-        while (!table.IsTupleEnd())
+        try
         {
-            string data;
-            Tab_Item item = new Tab_Item();
+            m_TabItemDic.Clear();
+            ReadTableTools table = new ReadTableTools("Item.txt");
+            //将每个元组构造成Tab_Item，添加到表格
+            while (!table.IsTupleEnd())
+            {
+                string data;
+                Tab_Item item = new Tab_Item();
 
-            //ID
-            data = table.GetData();
-            item.id = Convert.ToInt32(data);
+                //ID
+                data = table.GetData();
+                item.id = Convert.ToInt32(data);
 
-            //Name
-            data = table.GetNext();
-            item.name = data;
+                //Name
+                data = table.GetNext();
+                item.name = data;
 
-            //Icon
-            data = table.GetNext();
-            item.icon = data;
+                //Icon
+                data = table.GetNext();
+                item.atlas = data;
 
-            //Class Type
-            data = table.GetNext();
-            item.classType = (ITEM_FIRST)Convert.ToInt32(data);
+                //Icon
+                data = table.GetNext();
+                item.icon = data;
 
-            //sub Type
-            data = table.GetNext();
-            item.infoType = (ITEM_SECOND)Convert.ToInt32(data);
+                //Class Type
+                data = table.GetNext();
+                item.classType = (ITEM_FIRST)Convert.ToInt32(data);
 
-            //level
-            data = table.GetNext();
-            item.level = Convert.ToInt32(data);
 
-            //max count
-            data = table.GetNext();
-            item.maxCount = Convert.ToInt32(data);
+                //Price
+                data = table.GetNext();
+                item.price = Convert.ToInt32(data);
 
-            //Price
-            data = table.GetNext();
-            item.price = Convert.ToInt32(data);
+                //desc
+                data = table.GetNext();
+                item.desc = data;
 
-            //desc
-            data = table.GetNext();
-            item.desc = data;
-
-            m_TabItemDic.Add(item.id, item);
-            table.LineDown();
+                m_TabItemDic.Add(item.id, item);
+                table.LineDown();
+            }
         }
+        catch(Exception)
+        {
+
+        }
+
     }
     public static Tab_Item GetItemByID(int id)
     {

@@ -72,14 +72,14 @@ public class MainUI : MonoBehaviour
 
     public void SetEnergy(int value)
     {
-        int limit = Table_Role.GetEnergyLimit((int)PlayData.RoleData.level);
+        int limit = Table_RoleManager.GetEnergyLimit((int)PlayData.RoleData.level);
         m_EnergySlider.value = (float)(value / limit);
         m_EnergyLabel.text = string.Format("{0}/{1}", value, limit);
     }
 
     public void SetToughen(int value)
     {
-        uint limit = Table_Role.GetToughenLimit(PlayData.RoleData.level);
+        uint limit = Table_RoleManager.GetToughenLimit(PlayData.RoleData.level);
         m_ToughenSlider.value = (float)(value / limit);
         m_ToughenLabel.text = string.Format("{0}/{1}", value, limit);
     }

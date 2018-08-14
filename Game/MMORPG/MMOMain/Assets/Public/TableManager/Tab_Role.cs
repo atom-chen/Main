@@ -4,7 +4,27 @@ using System.Linq;
 using System.Text;
 
 
-class Table_Role
+public class Tab_Role
+{
+    public BATTLE_TYPE _Type;
+
+    public int basePower;
+    public int upPower;
+
+    public int baseAgility;
+    public int upAgility;
+
+    public int baseSpirit;
+    public int upSpirit;
+
+    public int baseLife;
+    public int upLife;
+
+    public int baseWakan;
+    public int upWakan;
+}
+
+class Table_RoleManager
 {
     //获取体力上限
     public static int GetEnergyLimit(int level)

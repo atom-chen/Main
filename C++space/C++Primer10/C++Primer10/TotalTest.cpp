@@ -36,12 +36,3 @@ void main04()
 {
 
 }
-
-
-int main()
-{
-	//main01();
-	//main02();
-	//main03();
-	return 0;
-}
