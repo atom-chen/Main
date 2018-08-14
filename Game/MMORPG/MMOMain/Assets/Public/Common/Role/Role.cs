@@ -18,7 +18,11 @@ public partial class Role
     private int Toughen;                             //历练数
     private Bag mBag;                                  //背包信息
     private EquipBag mEquipBag;                           //装备背包
+
     private EquipInfo mEquipInfo=new EquipInfo();       //当前已装备
+    private BATTLE_TYPE mBattleType;                    //战斗类型
+    private RoleAttribute mRoleAttr;                   //主角属性点
+
     private int EnergyNextRecoverTimer;     //距离下次恢复的时间(秒)
     private int ToughenNextRecoverTimer;    //距离下次恢复的时间(秒)
     public Role()

@@ -33,3 +33,7 @@ class LoginHandler : HandlerBase
     }
 }
 
+public class CG_LOGIN_PAK
+{
+
+}

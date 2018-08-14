@@ -20,7 +20,7 @@ class RoleAddHandler : HandlerBase
         {
             role.userID = peer.LoginUser.Guid;
             role.level = 1;
-            if (peer.LoginUser == null || peer.LoginServer == null)
+            if (peer.LoginUser == null)
             {
                 response.ReturnCode = (short)ReturnCode.Error;
                 response.Parameters.Add((byte)ParameterCode.ErrorInfo, "未知异常");

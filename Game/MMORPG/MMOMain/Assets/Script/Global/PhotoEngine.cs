@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
 {
-    private const string m_IPAddres = "192.168.2.102:4530";
-    private const string m_AppName = "MMOServer";
+    private static string m_IPAddres = "";
+    private static string m_AppName = "";
     private static PhotoEngine _Instance;
     public static PhotoEngine Instance
     {
@@ -27,8 +27,6 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
     {
         _Instance = this;
         peer = new PhotonPeer(this, ConnectionProtocol.Tcp);
-        StartCoroutine(TryConnectLocal());
-        StartCoroutine(TryConnect());
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -120,16 +118,22 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
                         Debug.Log(ex.Message);
                     }
                 }
-                StartCoroutine(TryConnectLocal());
                 StartCoroutine(TryConnect());
                 break;
             default:
                 //尝试连接本地
                 Tips.ShowTip("连接状态异常");
-                StartCoroutine(TryConnectLocal());
                 StartCoroutine(TryConnect());
                 break;
         }
+    }
+
+    public static void TryConnect(Tab_Server server)
+    {
+        if (server == null) return;
+        m_IPAddres = string.Format("{0:{1}", server.ipAddress, server.port.ToString());
+        m_AppName = server.appName;
+        _Instance.StartCoroutine(_Instance.TryConnect());
     }
 
     IEnumerator TryConnect()
@@ -141,12 +145,4 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
         }
     }
 
-    IEnumerator TryConnectLocal()
-    {
-        while (m_State != StatusCode.Connect)
-        {
-            peer.Connect("127.0.0.1:4530", m_AppName);
-            yield return new WaitForSeconds(3);
-        }
-    }
 }

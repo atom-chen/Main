@@ -125,8 +125,8 @@ public partial class Role
             this.YuanBao = db.YuanBao;
             this.Energy = db.Energy;
             this.Toughen = db.Toughen;
-            EnergyNextRecoverTimer = Table_Role.GetRecoverSpendTime();
-            ToughenNextRecoverTimer = Table_Role.GetRecoverSpendTime();
+            EnergyNextRecoverTimer = TableRoleManager.GetRecoverSpendTime();
+            ToughenNextRecoverTimer = TableRoleManager.GetRecoverSpendTime();
         }
         catch (Exception ex)
         {
@@ -161,9 +161,9 @@ public partial class Role
             return;
         }
         DateTime NowOnLineTime = DateTime.Now;//本次上线时间
-        int energyLimit = Table_Role.GetEnergyLimit((int)db.Level);
-        int toughenLimit = Table_Role.GetToughenLimit((int)db.Level);
-        int spend = Table_Role.GetRecoverSpendTime();
+        int energyLimit = TableRoleManager.GetEnergyLimit((int)db.Level);
+        int toughenLimit = TableRoleManager.GetToughenLimit((int)db.Level);
+        int spend = TableRoleManager.GetRecoverSpendTime();
         LogManager.Debug("{1}上次下线时间{0}", db.LastDownLine, db.Name);
         int year, month, day, hour, min, second;
         FormatTools.MySQLDateTimeToString(db.LastDownLine, out year, out month, out day, out hour, out min, out second);

@@ -26,3 +26,17 @@ public class EnterGameHandler : HandlerBase
         }
     }
 }
+
+public class CG_ENTER_GAME_PAK
+{
+    Dictionary<byte, object> dic = new Dictionary<byte, object>();
+
+    public Tab_Server Server
+    {
+        set { dic.Add((byte)ParameterCode.Server, ParaTools.GetJson<Tab_Server>(value)); }
+    }
+    public void SendPak()
+    {
+        PhotoEngine.Instance.SendRequest(OperationCode.EnterGame, dic);
+    }
+}

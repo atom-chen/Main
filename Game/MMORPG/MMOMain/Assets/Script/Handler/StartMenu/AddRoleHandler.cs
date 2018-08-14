@@ -26,3 +26,23 @@ public class AddRoleHandler : HandlerBase
         }
     }
 }
+
+public class CG_ADD_ROLE_PAK
+{
+    Dictionary<byte, object> dic = new Dictionary<byte, object>();
+
+    public User _User
+    {
+        set
+        {
+            value.PassWord = MD5Tools.GetMD5(value.PassWord);
+            string json = LitJson.JsonMapper.ToJson(value);
+            Dictionary<byte, object> dic = new Dictionary<byte, object>();
+            dic.Add((byte)ParameterCode.User, json);
+        }
+    }
+    public void SendPak()
+    {
+        PhotoEngine.Instance.SendRequest(OperationCode.RoleAdd, dic);
+    }
+}

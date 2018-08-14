@@ -14,9 +14,9 @@ public partial class Bag
     /// 增加新物品
     /// </summary>
     /// <param name="item"></param>
-    public bool AddItem(Item item)
+    public bool TryAddItem(Item item)
     {
-        Item bagItem = GetItem(item.tabID);
+        Item bagItem = GetItemById(item.tabID);
         //如果集合中已经有该道具
         if (bagItem != null)
         {
@@ -57,7 +57,7 @@ public partial class Bag
     /// </summary>
     public Item DeleteItem(int tabID,int count=1)
     {
-        Item item = GetItem(tabID);
+        Item item = GetItemById(tabID);
         if (item != null)
         {
             if (item.count >= count)

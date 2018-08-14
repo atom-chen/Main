@@ -10,11 +10,11 @@ using System.Text;
 public class PlayData
 {
     private static User m_User=new User();
-    private static ServerPropert m_Server=new ServerPropert();
+    private static Tab_Server m_Server = new Tab_Server();
     private static List<Role> m_RoleList=new List<Role>();
     private static int m_RoleIndex;
     public static User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
-    public static ServerPropert ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器
+    public static Tab_Server ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器
     public static List<Role> RoleList { get { return m_RoleList; } set { m_RoleList = value; } }  //用户下的角色列表
 
     //当前登录角色

@@ -89,11 +89,11 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\EquipInfo.cs">
       <Link>Public\Common\Equip\EquipInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role.cs">
-      <Link>Public\Common\Role.cs</Link>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role\Role.cs">
+      <Link>Public\Common\Role\Role.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\ServerPropert.cs">
-      <Link>Public\Common\ServerPropert.cs</Link>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role\RoleAttribute.cs">
+      <Link>Public\Common\Role\RoleAttribute.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\User.cs">
       <Link>Public\Common\User.cs</Link>
@@ -116,14 +116,23 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\ReadTableTools.cs">
       <Link>Public\TableManager\ReadTableTools.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Table_Role.cs">
-      <Link>Public\TableManager\Table_Role.cs</Link>
-    </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Equip.cs">
       <Link>Public\TableManager\Tab_Equip.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_EquipAttachAttr.cs">
+      <Link>Public\TableManager\Tab_EquipAttachAttr.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_EquipAttr.cs">
+      <Link>Public\TableManager\Tab_EquipAttr.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Item.cs">
       <Link>Public\TableManager\Tab_Item.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Role.cs">
+      <Link>Public\TableManager\Tab_Role.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Server.cs">
+      <Link>Public\TableManager\Tab_Server.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\FormatTools.cs">
       <Link>Public\Tools\FormatTools.cs</Link>
@@ -145,10 +154,8 @@
     <Compile Include="Model\Equip\ServerEquipBag.cs" />
     <Compile Include="Model\Role\DBRole.cs" />
     <Compile Include="Model\Role\ServerRole.cs" />
-    <Compile Include="Model\ServerProperty\DBServerPropert .cs" />
     <Compile Include="Model\User\DBUser.cs" />
     <Compile Include="Controller\Role\RoleManager.cs" />
-    <Compile Include="Controller\ServerPropertyManager.cs" />
     <Compile Include="Controller\User\UserManager.cs" />
     <Compile Include="User\Hander\StartGameHandler.cs" />
     <Compile Include="User\Hander\EnterGameHandler.cs" />
@@ -156,12 +163,9 @@
     <Compile Include="User\Hander\LoginHandler.cs" />
     <Compile Include="User\Hander\RegisterHandler.cs" />
     <Compile Include="User\Hander\RoleAddHandler.cs" />
-    <Compile Include="User\Hander\ServerListHandler.cs" />
     <Compile Include="Controller\Role\RoleController.cs" />
-    <Compile Include="Model\ServerProperty\ServerPropertyController.cs" />
     <Compile Include="Controller\User\UserController.cs" />
     <Compile Include="User\UserConnect.cs" />
-    <Compile Include="Model\ServerProperty\ServerPropert.cs" />
     <Compile Include="Model\User\User.cs" />
     <Compile Include="main\sqlHelper\MySQLInfo.cs" />
     <Compile Include="main\Server.cs" />

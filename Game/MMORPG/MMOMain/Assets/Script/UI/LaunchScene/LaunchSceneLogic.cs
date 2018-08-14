@@ -22,7 +22,6 @@ public class LaunchSceneLogic : MonoBehaviour
         m_EnterGameController = this.GetComponent<EnterGameHandler>();
         m_LoginController = this.GetComponent<LoginHandler>();
         m_RegisterController = this.GetComponent<RegisterHandler>();
-        m_ServerListController = this.GetComponent<ServerListHandler>();
     }
     void OnEnable()
     {
@@ -33,7 +32,6 @@ public class LaunchSceneLogic : MonoBehaviour
     private EnterGameHandler m_EnterGameController;
     private LoginHandler m_LoginController;
     private RegisterHandler m_RegisterController;
-    private ServerListHandler m_ServerListController;
 
 
     public GameObject m_StartMenu;

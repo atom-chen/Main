@@ -227,8 +227,8 @@
     <Compile Include="Assets\Public\Common\Equip\Equip.cs" />
     <Compile Include="Assets\Public\Common\Equip\EquipBag.cs" />
     <Compile Include="Assets\Public\Common\Equip\EquipInfo.cs" />
-    <Compile Include="Assets\Public\Common\Role.cs" />
-    <Compile Include="Assets\Public\Common\ServerPropert.cs" />
+    <Compile Include="Assets\Public\Common\Role\Role.cs" />
+    <Compile Include="Assets\Public\Common\Role\RoleAttribute.cs" />
     <Compile Include="Assets\Public\Common\User.cs" />
     <Compile Include="Assets\Public\Define\Config.cs" />
     <Compile Include="Assets\Public\Define\Define.cs" />
@@ -242,6 +242,7 @@
     <Compile Include="Assets\Public\TableManager\Tab_EquipAttr.cs" />
     <Compile Include="Assets\Public\TableManager\Tab_Item.cs" />
     <Compile Include="Assets\Public\TableManager\Tab_Role.cs" />
+    <Compile Include="Assets\Public\TableManager\Tab_Server.cs" />
     <Compile Include="Assets\Public\Tools\FormatTools.cs" />
     <Compile Include="Assets\Public\Tools\MD5Tools.cs" />
     <Compile Include="Assets\Public\Tools\ParameterTools.cs" />
@@ -257,11 +258,9 @@
     <Compile Include="Assets\Script\Handler\StartMenu\EnterGameHandler.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\LoginHandler.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\RegisterHandler.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\ServerListHandler.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\StartGameHandler.cs" />
     <Compile Include="Assets\Script\Model\Bag.cs" />
     <Compile Include="Assets\Script\Model\Role.cs" />
-    <Compile Include="Assets\Script\Model\ServerProperty.cs" />
     <Compile Include="Assets\Script\Model\User.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagController.cs" />
@@ -324,6 +323,7 @@
     <None Include="Assets\Public\Table\EquipAttr.txt" />
     <None Include="Assets\Public\Table\Item.txt" />
     <None Include="Assets\Public\Table\Role.txt" />
+    <None Include="Assets\Public\Table\Server.txt" />
     <None Include="Assets\Public\Table\StrDictionary.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />

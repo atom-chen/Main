@@ -32,3 +32,8 @@ public class RegisterHandler : HandlerBase
         }
     }
 }
+
+public class CG_REGISTER_PAK
+{
+
+}

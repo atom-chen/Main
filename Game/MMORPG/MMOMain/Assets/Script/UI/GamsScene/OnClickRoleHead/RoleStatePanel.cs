@@ -63,13 +63,13 @@ public class RoleStatePanel : MonoBehaviour
         SetExp(role.exp);
         m_CoinLabel.text = role.coin.ToString();
         m_YuanBaoLabel.text = role.yuanBao.ToString();
-        m_EnergyLabel.text = string.Format("{0}/{1}", role.energy.ToString(), Table_RoleManager.GetEnergyLimit(role.level));
-        m_ToughenLabel.text = string.Format("{0}/{1}", role.toughen.ToString(), Table_RoleManager.GetToughenLimit(role.level));
+        m_EnergyLabel.text = string.Format("{0}/{1}", role.energy.ToString(), TableRoleManager.GetEnergyLimit(role.level));
+        m_ToughenLabel.text = string.Format("{0}/{1}", role.toughen.ToString(), TableRoleManager.GetToughenLimit(role.level));
     }
     public void SetExp(int value)
     {
         Role role = PlayData.RoleData;
-        int limit = Table_RoleManager.GetExpLimit((int)(role.level));
+        int limit = TableRoleManager.GetExpLimit((int)(role.level));
         m_ExpLabel.text = string.Format("{0}/{1}", value, limit);
         m_ExpSlider.value = (float)(role.exp / limit);
     }

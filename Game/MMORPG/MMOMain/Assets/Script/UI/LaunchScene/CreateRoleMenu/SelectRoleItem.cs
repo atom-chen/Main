@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectRoleItem : MonoBehaviour {
+public class SelectRoleItem : MonoBehaviour 
+{
 
 }

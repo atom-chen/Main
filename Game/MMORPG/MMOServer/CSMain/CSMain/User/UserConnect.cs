@@ -17,7 +17,7 @@ public class UserConnect : PeerBase
     //--------------------------------------------attribute---------------------------------------------------------------//
     public User LoginUser { get; set; }        //当前登录的user账号
 
-    public ServerPropert LoginServer { get; set; }//当前登录服务器
+    public int LoginServerId { get; set; }//当前登录服务器
 
     public Role LoginRole { get; set; }          //当前登录角色
 
