@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class CG_ADD_ROLE_FACTORY
+public class CG_ADD_ROLE_FACTORY:CG_FactoryBase
 {
-    private static Queue<CG_ADD_ROLE_PAK> m_Queue = new Queue<CG_ADD_ROLE_PAK>();
-    static CG_ADD_ROLE_FACTORY()
+    private Queue<CG_ADD_ROLE_PAK> m_Queue = new Queue<CG_ADD_ROLE_PAK>();
+    CG_ADD_ROLE_FACTORY()
     {
         for(int i=0;i<100;i++)
         {
@@ -16,14 +16,24 @@ public class CG_ADD_ROLE_FACTORY
             m_Queue.Enqueue(pak);
         }
     }
-    public static CG_ADD_ROLE_PAK GetPak()
+
+    public  override CG_PAK_BASE GetPak()
     {
         return m_Queue.Dequeue();
     }
 
-    public static void GCPak(CG_ADD_ROLE_PAK pak)
+    public override OperationCode OpCode
     {
-        m_Queue.Enqueue(pak);
+        get { return OperationCode.RoleAdd; }
+    }
+
+    public override void GCPak(CG_PAK_BASE pak)
+    {
+        CG_ADD_ROLE_PAK temp = pak as CG_ADD_ROLE_PAK;
+        if (temp != null)
+        {
+            m_Queue.Enqueue(temp);
+        }
     }
 }
 

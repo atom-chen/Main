@@ -71,6 +71,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_ADD_ROLE.cs">
+      <Link>Model\CG_PAK\CG_ADD_ROLE.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_ENTER_GAME.cs">
+      <Link>Model\CG_PAK\CG_ENTER_GAME.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_REGISTER_USER.cs">
+      <Link>Model\CG_PAK\CG_REGISTER_USER.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_START_GAME.cs">
+      <Link>Model\CG_PAK\CG_START_GAME.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Bag.cs">
       <Link>Public\Common\BagSystem\Bag.cs</Link>
     </Compile>
@@ -157,13 +169,21 @@
     <Compile Include="Model\User\DBUser.cs" />
     <Compile Include="Controller\Role\RoleManager.cs" />
     <Compile Include="Controller\User\UserManager.cs" />
-    <Compile Include="User\Hander\StartGameHandler.cs" />
-    <Compile Include="User\Hander\EnterGameHandler.cs" />
-    <Compile Include="User\Hander\HandlerBase.cs" />
-    <Compile Include="User\Hander\RegisterHandler.cs" />
-    <Compile Include="User\Hander\RoleAddHandler.cs" />
+    <Compile Include="Model\User\User_PAK.cs" />
+    <Compile Include="User\Factory\CG_ADD_ROLE_FACTORY.cs" />
+    <Compile Include="User\Factory\CG_ENTER_GAME_FACTORY.cs" />
+    <Compile Include="User\Factory\CG_REGISTER_USER_FACTORY.cs" />
+    <Compile Include="User\Factory\CG_START_GAME_FACTORY.cs" />
+    <Compile Include="User\Factory\CG_FactoryBase.cs" />
     <Compile Include="Controller\Role\RoleController.cs" />
     <Compile Include="Controller\User\UserController.cs" />
+    <Compile Include="User\Hander\CG_PAK_BASE.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="User\Hander\SERVER_CG_REGISTER_USER.cs" />
+    <Compile Include="User\Hander\SERVER_CG_ENTER_GAME.cs" />
+    <Compile Include="User\Hander\SERVER_CG_START_GAME.cs" />
+    <Compile Include="User\Hander\SERVER_CG_ADD_ROLE.cs" />
     <Compile Include="User\UserConnect.cs" />
     <Compile Include="Model\User\User.cs" />
     <Compile Include="main\sqlHelper\MySQLInfo.cs" />

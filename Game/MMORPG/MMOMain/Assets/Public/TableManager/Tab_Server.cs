@@ -22,7 +22,10 @@ public class Tab_Server
 public class TabServerManager
 {
     private static List<Tab_Server> m_ServerList = new List<Tab_Server>();
-    public static List<Tab_Server> ServerList { get { return m_ServerList; } }
+    public static List<Tab_Server> GetServerList()
+    {
+         return m_ServerList; 
+    }
     static TabServerManager()
     {
         ReLoad();

@@ -25,7 +25,7 @@ namespace CSMain
         public static event ServerEvent OnStartUp;
         public static event ServerEvent OnTeamDown;
 
-        public Dictionary<byte, HandlerBase> handlers = new Dictionary<byte, HandlerBase>();             //byte表示OperationCode
+        public Dictionary<byte, CG_FactoryBase> handlers = new Dictionary<byte, CG_FactoryBase>();             //byte表示OperationCode
         public Server()
         {
             _instance = this;
@@ -70,11 +70,11 @@ namespace CSMain
 
         void RegisteHandlers()
         {
-            //用反射机制注册所有HandlerBase
-            Type[] types = Assembly.GetAssembly(typeof(HandlerBase)).GetTypes();
+            //用反射机制注册所有Factory
+            Type[] types = Assembly.GetAssembly(typeof(CG_FactoryBase)).GetTypes();
             foreach (var type in types)
             {
-                if (type.FullName.EndsWith("Handler"))
+                if (type.FullName.EndsWith("FACTORY"))
                 {
                     Activator.CreateInstance(type);
                 }

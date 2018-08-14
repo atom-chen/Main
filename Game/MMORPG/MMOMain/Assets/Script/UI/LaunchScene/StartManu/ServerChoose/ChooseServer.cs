@@ -8,7 +8,7 @@ public class ChooseServer : MonoBehaviour
     public Transform m_CurServerTrans;
     void OnEnable()
     {
-        SetServerList(TabServerManager.ServerList, PlayData.ServerData);
+        SetServerList(TabServerManager.GetServerList(), PlayData.ServerData);
     }
     public void SetServerList(List<Tab_Server> serverList, Tab_Server curServer)
     {

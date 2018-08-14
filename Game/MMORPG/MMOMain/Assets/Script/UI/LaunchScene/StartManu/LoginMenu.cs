@@ -39,6 +39,10 @@ public class LoginMenu : MonoBehaviour
         user.PassWord = passWord;
 
         PlayData.UserData = user;
+        if(StartMenu.Instance!=null)
+        {
+            StartMenu.Instance.HandleOnUserInputCommit();
+        }
     }
 
     //点击注册

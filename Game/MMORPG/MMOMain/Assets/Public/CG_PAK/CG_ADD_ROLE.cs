@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public partial class CG_ADD_ROLE_PAK
+public partial class CG_ADD_ROLE_PAK 
 {
-    Dictionary<byte, object> dic = new Dictionary<byte, object>();
-
+    private Dictionary<byte, object> dic = new Dictionary<byte, object>();
     public Role _Role
     {
         set { dic.Add((byte)ParameterCode.Role, ParaTools.GetJson<Role>(value)); }

@@ -135,7 +135,7 @@ public partial class Role
     }
 
 
-    private bool CompareToDB(DB._DBRole dbRole)
+    public bool CompareToDB(DB._DBRole dbRole)
     {
         if (ID == dbRole.ID && Level == dbRole.Level && UserID == dbRole.UserID && Exp == dbRole.Exp && Coin == dbRole.Coin && YuanBao == dbRole.YuanBao)
         {
@@ -151,7 +151,7 @@ public partial class Role
     /// 恢复体力
     /// </summary>
     /// <param name="db">DB中存储的数据原型：仅允许在玩家刚上线时调用该函数</param>
-    private void Recover(DB._DBRole db)
+    public void Recover(DB._DBRole db)
     {
         //根据上次时间增加体力
         if (db.LastDownLine == null)

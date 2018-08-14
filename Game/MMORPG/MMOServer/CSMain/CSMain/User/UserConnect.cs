@@ -58,23 +58,23 @@ public class UserConnect : PeerBase
     //消息分发函数
     protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
     {
-        //问题：如何拿到正确的工厂、正确的包
-
-        //HandlerBase handler;
-        //Server.Instance.handlers.TryGetValue(operationRequest.OperationCode, out handler);//尝试去获取一个处理该operation的Handler
-
-        //OperationResponse response = new OperationResponse();
-        //response.OperationCode = operationRequest.OperationCode;
-        //response.Parameters = new Dictionary<byte, object>();
-        //if (handler != null)
-        //{
-        //    LogManager.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
-        //    handler.OnHandlerMessage(operationRequest, response, this, sendParameters);
-        //}
-        //else
-        //{
-        //    LogManager.Error("不能解释的包 " + operationRequest.OperationCode);
-        //}
+        CG_FactoryBase factory;
+        Server.Instance.handlers.TryGetValue(operationRequest.OperationCode, out factory);//尝试去获取一个处理该operation的Handler
+        if(factory!=null)
+        {
+            CG_PAK_BASE pak = factory.GetPak();
+            pak.SetDic(operationRequest.Parameters);
+            if (pak != null)
+            {
+                LogManager.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
+                pak.Handle(LoginUser);
+            }
+            else
+            {
+                LogManager.Error("不能解释的包 " + operationRequest.OperationCode);
+            }
+            //回收
+            factory.GCPak(pak);
+        }
     }
-
 }

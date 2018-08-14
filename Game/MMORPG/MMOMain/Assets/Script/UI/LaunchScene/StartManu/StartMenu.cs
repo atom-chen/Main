@@ -112,6 +112,8 @@ public class StartMenu : MonoBehaviour
         m_LoginMenu.gameObject.SetActive(false);
         m_RegisterMenu.gameObject.SetActive(false);
         m_ChooseServer.gameObject.SetActive(false);
+        m_CurUserLabel.text = PlayData.UserData == null ? "" : PlayData.UserData.UserName;
+        m_CurServerLabel.text = PlayData.ServerData == null ? "" : PlayData.ServerData.name;
     }
 
     public void LoginSuccessed(User user)
@@ -133,4 +135,9 @@ public class StartMenu : MonoBehaviour
         }
     }
 
+    public void HandleOnUserInputCommit()
+    {
+        InitUI();
+    }
+    
 }

@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class CG_ENTER_GAME_FACTORY
+public class CG_ENTER_GAME_FACTORY:CG_FactoryBase
 {
-    private static Queue<CG_ENTER_GAME_PAK> m_Queue = new Queue<CG_ENTER_GAME_PAK>();
-    static CG_ENTER_GAME_FACTORY()
+    public override OperationCode OpCode
+    {
+        get { return OperationCode.EnterGame; }
+    }
+    private  Queue<CG_ENTER_GAME_PAK> m_Queue = new Queue<CG_ENTER_GAME_PAK>();
+    CG_ENTER_GAME_FACTORY()
     {
         for (int i = 0; i < 100; i++)
         {
@@ -15,13 +19,17 @@ public class CG_ENTER_GAME_FACTORY
             m_Queue.Enqueue(pak);
         }
     }
-    public static CG_ENTER_GAME_PAK GetPak()
+    public override CG_PAK_BASE GetPak()
     {
         return m_Queue.Dequeue();
     }
 
-    public static void GCPak(CG_ENTER_GAME_PAK pak)
+    public override void GCPak(CG_PAK_BASE pak)
     {
-        m_Queue.Enqueue(pak);
+        CG_ENTER_GAME_PAK temp = pak as CG_ENTER_GAME_PAK;
+        if (temp != null)
+        {
+            m_Queue.Enqueue(temp);
+        }
     }
 }

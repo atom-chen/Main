@@ -29,7 +29,7 @@ public class StartGameHandler : HandlerBase
 
 }
 
-public class CG_START_GAME_PAK
+public partial class CG_START_GAME_PAK
 {
     public void SendPak()
     {
