@@ -38,9 +38,7 @@ public class LoginMenu : MonoBehaviour
         user.UserName = userName;
         user.PassWord = passWord;
 
-        CG_ADD_ROLE_PAK pak = new CG_ADD_ROLE_PAK();
-        pak._User = user;
-        pak.SendPak();
+        PlayData.UserData = user;
     }
 
     //点击注册

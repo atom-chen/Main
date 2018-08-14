@@ -61,12 +61,13 @@ public class CreateRoleLogic : MonoBehaviour
     private void OnCommitClick()
     {
         //提交姓名到服务器
-        Dictionary<byte, object> dic = new Dictionary<byte, object>();
         Role role = new Role();
         role.name = m_RoleName.value;
         role.sex = m_Index == 1 ? true : false;
-        dic.Add((byte)ParameterCode.Role, ParaTools.GetJson<Role>(role));
-        PhotoEngine.Instance.SendRequest(OperationCode.RoleAdd, dic);
+
+        CG_ADD_ROLE_PAK pak = new CG_ADD_ROLE_PAK();
+        pak._Role = role;
+        pak.SendPak();
     }
 
     //点击退出

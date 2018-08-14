@@ -160,7 +160,6 @@
     <Compile Include="User\Hander\StartGameHandler.cs" />
     <Compile Include="User\Hander\EnterGameHandler.cs" />
     <Compile Include="User\Hander\HandlerBase.cs" />
-    <Compile Include="User\Hander\LoginHandler.cs" />
     <Compile Include="User\Hander\RegisterHandler.cs" />
     <Compile Include="User\Hander\RoleAddHandler.cs" />
     <Compile Include="Controller\Role\RoleController.cs" />

@@ -256,7 +256,6 @@
     <Compile Include="Assets\Script\Handler\HandlerBase.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\AddRoleHandler.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\EnterGameHandler.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\LoginHandler.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\RegisterHandler.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\StartGameHandler.cs" />
     <Compile Include="Assets\Script\Model\Bag.cs" />

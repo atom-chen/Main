@@ -20,7 +20,6 @@ public class LaunchSceneLogic : MonoBehaviour
     {
         m_AddRoleController = this.GetComponent<AddRoleHandler>();
         m_EnterGameController = this.GetComponent<EnterGameHandler>();
-        m_LoginController = this.GetComponent<LoginHandler>();
         m_RegisterController = this.GetComponent<RegisterHandler>();
     }
     void OnEnable()
@@ -30,7 +29,6 @@ public class LaunchSceneLogic : MonoBehaviour
 
     private AddRoleHandler m_AddRoleController;
     private EnterGameHandler m_EnterGameController;
-    private LoginHandler m_LoginController;
     private RegisterHandler m_RegisterController;
 
 

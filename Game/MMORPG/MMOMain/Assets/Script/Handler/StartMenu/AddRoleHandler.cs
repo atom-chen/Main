@@ -31,11 +31,10 @@ public class CG_ADD_ROLE_PAK
 {
     Dictionary<byte, object> dic = new Dictionary<byte, object>();
 
-    public User _User
+    public Role _Role
     {
         set
         {
-            value.PassWord = MD5Tools.GetMD5(value.PassWord);
             string json = LitJson.JsonMapper.ToJson(value);
             Dictionary<byte, object> dic = new Dictionary<byte, object>();
             dic.Add((byte)ParameterCode.User, json);
