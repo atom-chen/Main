@@ -14,8 +14,8 @@ public class RegisterMenu : MonoBehaviour
     void Start()
     {
         m_Register.onClick.Add(new EventDelegate(OnRegisterClick));
-        m_CancelRegister.onClick.Add(new EventDelegate(StartMenu.Instance.OnUserNameClick));
-        m_Exit.onClick.Add(new EventDelegate(StartMenu.Instance.InitUI));
+        m_CancelRegister.onClick.Add(new EventDelegate(LaunchSceneLogic.Instance.OnUserNameClick));
+        m_Exit.onClick.Add(new EventDelegate(LaunchSceneLogic.Instance.InitUI));
     }
     void OnEnable()
     {

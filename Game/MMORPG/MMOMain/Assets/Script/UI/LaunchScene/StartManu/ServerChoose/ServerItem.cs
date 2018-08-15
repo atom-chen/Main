@@ -34,6 +34,6 @@ public class ServerItem : MonoBehaviour
 
     private void OnClickItem()
     {
-        StartMenu.Instance.SetCurServer(m_ServerProperty);
+        LaunchSceneLogic.Instance.HandleOnChooseServer(m_ServerProperty);
     }
 }

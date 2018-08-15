@@ -112,7 +112,7 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
         if (server == null || _Instance == null) return;
         m_IPAddres = string.Format("{0:{1}", server.ipAddress, server.port.ToString());
         m_AppName = server.appName;
-        _Instance.StartCoroutine(_Instance.TryConnect());
+        StartCoroutine(TryConnect());
     }
 
     IEnumerator TryConnect()
@@ -126,21 +126,19 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
  //------------------------------------------------连接相关 end--------------------------------
 
 //----------------------------------------------消息相关 begin------------------------------------------
-    private Dictionary<byte, HandlerBase> controllers = new Dictionary<byte, HandlerBase>();//逻辑模块集合
+    private Dictionary<byte, GC_PAK_BASE> m_PakDic = new Dictionary<byte, GC_PAK_BASE>();//逻辑模块集合
     private Queue<MsgPair> m_Cache = new Queue<MsgPair>();
 
+    //收到消息
     public void OnOperationResponse(OperationResponse operationResponse)
     {
-        Debug.Log(string.Format("收到包{0}", (OperationCode)operationResponse.OperationCode));
-        HandlerBase controller;
-        controllers.TryGetValue(operationResponse.OperationCode, out controller);
-        if (controller != null)
+        switch(operationResponse.OperationCode)
         {
-            controller.OnOperationResponse(operationResponse);//将消息转发到对应Handler
-        }
-        else
-        {
-            Debug.Log("Receive a unknown response . OperationCode :" + operationResponse.OperationCode);
+            case (byte)OperationCode.EnterGame: GC_ENTER_GAME_RET_PAK pak = new GC_ENTER_GAME_RET_PAK(); pak._Response = operationResponse; PlayData.ReceivePacket(pak); break;
+            case (byte)OperationCode.Register: GC_REGISTER_USER_RET_PAK pak2 = new GC_REGISTER_USER_RET_PAK(); pak2._Response = operationResponse; PlayData.ReceivePacket(pak2); break;
+            case (byte)OperationCode.RoleAdd: GC_ROLE_ADD_RET_PAK pak3 = new GC_ROLE_ADD_RET_PAK(); pak3._Response = operationResponse; PlayData.ReceivePacket(pak3); break;
+            case (byte)OperationCode.StartGame: GC_START_GAME_RET_PAK pak4 = new GC_START_GAME_RET_PAK(); pak4._Response = operationResponse; PlayData.ReceivePacket(pak4); break;
+            default: Debug.Log("Receive a unknown response . OperationCode :" + operationResponse.OperationCode); break;
         }
     }
 
@@ -157,17 +155,18 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
             m_Cache.Enqueue(new MsgPair(opCode, parameters));
         }
     }
-    //注册Handler
-    public void RegisterController(OperationCode opCode, HandlerBase controller)
-    {
-        controllers.Add((byte)opCode, controller);
-    }
 
     //注销Handler
     public void UnRegisterController(OperationCode opCode)
     {
-        controllers.Remove((byte)opCode);
+        m_PakDic.Remove((byte)opCode);
     }
+
+    public void RegisterController(OperationCode opCode, GC_PAK_BASE controller)
+    {
+        m_PakDic.Add((byte)opCode, controller);
+    }
+
 //----------------------------------------------消息相关 end------------------------------------------
 }
 

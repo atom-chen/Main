@@ -19,15 +19,18 @@ public partial class Role
     private Bag mBag;                                  //背包信息
     private EquipBag mEquipBag;                           //装备背包
 
-    private EquipInfo mEquipInfo=new EquipInfo();       //当前已装备
+    private EquipInfo mEquipInfo = new EquipInfo();       //当前已装备
     private BATTLE_TYPE mBattleType;                    //战斗类型
     private RoleAttribute mRoleAttr;                   //主角属性点
 
     private int EnergyNextRecoverTimer;     //距离下次恢复的时间(秒)
     private int ToughenNextRecoverTimer;    //距离下次恢复的时间(秒)
-    public Role()
+    //创建新角色
+    public Role(string name,bool sex,int userId = Define._INVALID_ID)
     {
-        
+        this.UserID = userId;
+        this.Name = name;
+        this.Sex = sex;
     }
     public bool CompareToRole(Role role)
     {
@@ -55,8 +58,8 @@ public partial class Role
     //穿上一件装备，若有卸下装备则放入到装备背包
     public void FuncEquip(Equip equip)
     {
-        Equip old=mEquipInfo.FuncEquip(equip);
-        if(old!=null)
+        Equip old = mEquipInfo.FuncEquip(equip);
+        if (old != null)
         {
             mEquipBag.AddEquipToBag(old);
         }

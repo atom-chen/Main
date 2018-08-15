@@ -1,3 +1,3 @@
-ID	Ãû³Æ	Atlas	Icon	Type 0±³°üÎïÆ· 1×°±¸	Price ³öÊÛ¼Û¸ñ	Desc
-1	½ð´¯Ò©			0	400	ÉúÃü»Ø¸´400
-2	ÇàÍ­½£			1	-1	Ò»°ãÎäÆ÷
+ID	åç§°	Atlas	Icon	Type 0èƒŒåŒ…ç‰©å“ 1è£…å¤‡	Price å‡ºå”®ä»·æ ¼	Desc
+1	é‡‘ç–®è¯			0	400	ç”Ÿå‘½å›žå¤400
+2	é’é“œå‰‘			1	-1	ä¸€èˆ¬æ­¦å™¨

@@ -8,10 +8,8 @@ public class ChooseServer : MonoBehaviour
     public Transform m_CurServerTrans;
     void OnEnable()
     {
-        SetServerList(TabServerManager.GetServerList(), PlayData.ServerData);
-    }
-    public void SetServerList(List<Tab_Server> serverList, Tab_Server curServer)
-    {
+        List<Tab_Server> serverList = TabServerManager.GetServerList();
+        Tab_Server curServer = PlayData.ServerData;
         for (int i = 0; i < m_CurServerTrans.childCount; i++)
         {
             Destroy(m_CurServerTrans.GetChild(i).gameObject);

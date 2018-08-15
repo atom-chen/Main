@@ -9,7 +9,7 @@ public partial class CG_ENTER_GAME_PAK
 
     public User _User
     {
-        set { dic.Add((byte)ParameterCode.User, ParaTools.GetJson<User>(value)); }
+        set { dic.Remove((byte)ParameterCode.User); dic.Add((byte)ParameterCode.User, ParaTools.GetJson<User>(value)); }
         get { return ParaTools.GetParameter<User>(dic, ParameterCode.User); }
     }
 }

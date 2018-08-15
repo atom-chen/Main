@@ -15,9 +15,9 @@ public class UserConnect : PeerBase
     public event UserEvent OnUserConnect;               //建立连接时调用
     public event UserEvent OnUserDownLine;              //连接断开时调用
     //--------------------------------------------attribute---------------------------------------------------------------//
-    public User LoginUser { get; set; }        //当前登录的user账号
+    private User m_LoginUser;
+    public User LoginUser { get { return m_LoginUser; } set { m_LoginUser = value; } }        //当前登录的user账号
 
-    public Role LoginRole { get{return LoginUser.RoleData;} set{ LoginUser.RoleData=value;} }          //当前登录角色
 
 
 
@@ -33,7 +33,8 @@ public class UserConnect : PeerBase
         {
             OnUserConnect(this.LoginUser);
         }
-
+        m_LoginUser = new User();
+        m_LoginUser._Connect = this;
     }
     //连接断开，入库
     protected override void OnDisconnect(PhotonHostRuntimeInterfaces.DisconnectReason reasonCode, string reasonDetail)
@@ -44,14 +45,14 @@ public class UserConnect : PeerBase
         }
         if (LoginUser != null)
         {
+            if (LoginUser.RoleData != null)
+            {
+                RoleManager.RoleDownLine(LoginUser.RoleData);
+                LoginUser.RoleData = null;
+            }
             UserManager.DownLine(LoginUser);
             LogManager.Debug("玩家{0}下线", LoginUser.UserName);
             LoginUser = null;
-        }
-        if (LoginRole != null)
-        {
-            RoleManager.RoleDownLine(LoginRole);
-            LoginRole = null;
         }
     }
 

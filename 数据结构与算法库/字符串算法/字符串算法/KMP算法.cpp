@@ -24,11 +24,13 @@ int KMP(const string &fu, const string &zi, int pos=0)
 			}
 		}
 		//若此时失配->退回前一个数的匹配有几个相等
-		else if(j>0){
+		else if(j>0)
+		{
 			j = next[j - 1];
 		}
 		//若退回开头了还在失配->i直接后移
-		else{
+		else
+		{
 			i++;
 		}
 	}

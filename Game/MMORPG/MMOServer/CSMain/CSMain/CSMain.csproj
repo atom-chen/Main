@@ -108,7 +108,7 @@
       <Link>Public\Common\Role\RoleAttribute.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\User.cs">
-      <Link>Public\Common\User.cs</Link>
+      <Link>User\User.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Config.cs">
       <Link>Public\Define\Config.cs</Link>
@@ -124,6 +124,21 @@
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Define\ReturnCode.cs">
       <Link>Public\Define\ReturnCode.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_ENTER_GAME_RET_PAK.cs">
+      <Link>Public\GC_PAK\GC_ENTER_GAME_RET_PAK.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_PAK_BASE.cs">
+      <Link>Public\GC_PAK\GC_PAK_BASE.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_REGISTER_USER_RET_PAK.cs">
+      <Link>Public\GC_PAK\GC_REGISTER_USER_RET_PAK.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_ROLE_ADD_RET_PAK.cs">
+      <Link>Public\GC_PAK\GC_ROLE_ADD_RET_PAK.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_START_GAME_RET_PAK.cs">
+      <Link>Public\GC_PAK\GC_START_GAME_RET_PAK.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\ReadTableTools.cs">
       <Link>Public\TableManager\ReadTableTools.cs</Link>
@@ -169,7 +184,8 @@
     <Compile Include="Model\User\DBUser.cs" />
     <Compile Include="Controller\Role\RoleManager.cs" />
     <Compile Include="Controller\User\UserManager.cs" />
-    <Compile Include="Model\User\User_PAK.cs" />
+    <Compile Include="User\Hander\SERVERGC_PAK_BASE.cs" />
+    <Compile Include="User\User_PAK.cs" />
     <Compile Include="User\Factory\CG_ADD_ROLE_FACTORY.cs" />
     <Compile Include="User\Factory\CG_ENTER_GAME_FACTORY.cs" />
     <Compile Include="User\Factory\CG_REGISTER_USER_FACTORY.cs" />
@@ -177,7 +193,7 @@
     <Compile Include="User\Factory\CG_FactoryBase.cs" />
     <Compile Include="Controller\Role\RoleController.cs" />
     <Compile Include="Controller\User\UserController.cs" />
-    <Compile Include="User\Hander\CG_PAK_BASE.cs">
+    <Compile Include="User\Hander\SERVERCG_PAK_BASE.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="User\Hander\SERVER_CG_REGISTER_USER.cs" />

@@ -30,7 +30,7 @@ public class RoleSelectLogic : MonoBehaviour
     }
     void OnEnable()
     {
-        m_Exit.onClick.Add(new EventDelegate(LaunchSceneLogic.Instance.SwitchToStartMenu));
+        m_Exit.onClick.Add(new EventDelegate(LaunchSceneLogic.Instance.InitUI));
     }
     public void Init(List<Role> role)
     {

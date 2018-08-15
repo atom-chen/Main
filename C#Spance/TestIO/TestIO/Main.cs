@@ -27,10 +27,42 @@ namespace TestIO
                 }
             }
         }
+
+        private static List<string> FormatDescContent(string content)
+        {
+            int startIndex = 0;
+            List<string> ret = new List<string>();
+            char[] cArr = content.ToCharArray();
+            for (int i = 0; i < cArr.Length - 1; i++)
+            {
+                if (cArr[i] == '#')
+                {
+                    if (cArr[i + 1] == 'r')
+                    {
+                        string str = new string(cArr, startIndex, i - startIndex);
+                        ret.Add(str);
+                        i += 2;                 //越过#r
+                        startIndex = i;
+                    }
+                }
+            }
+            ret.Add(new string(cArr, startIndex, cArr.Length  - startIndex));
+            return ret;
+        }
         public static void Main(string[] args)
         {
-            InitPeopleList();
-
+            string aa = "我是#r参数1;";
+            List<string> ret=FormatDescContent(aa);
+            foreach(string temp in ret)
+            {
+                Console.WriteLine(temp);
+            }
+            aa = "我是参数1;";
+            ret = FormatDescContent(aa);
+            foreach (string temp in ret)
+            {
+                Console.WriteLine(temp);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 /// </summary>
 /// 
 
-public class PlayData
+public partial class PlayData
 {
     private static User m_User = new User();
     private static Tab_Server m_Server = new Tab_Server();

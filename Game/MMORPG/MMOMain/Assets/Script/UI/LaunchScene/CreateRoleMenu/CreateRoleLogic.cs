@@ -61,9 +61,7 @@ public class CreateRoleLogic : MonoBehaviour
     private void OnCommitClick()
     {
         //提交姓名到服务器
-        Role role = new Role();
-        role.name = m_RoleName.value;
-        role.sex = m_Index == 1 ? true : false;
+        Role role = new Role(m_RoleName.value, m_Index == 1 ? true : false);
 
         CG_ADD_ROLE_PAK pak = new CG_ADD_ROLE_PAK();
         pak._Role = role;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 /*
- * User模型
+ * User模型:应用层
  */
 
 public partial class User
@@ -38,6 +38,13 @@ public partial class User
     public User()
     {
 
+    }
+
+    public void CopyFrom(User pak)
+    {
+        this.UserName = pak.UserName;
+        this.PassWord = pak.PassWord;
+        this.Guid = pak.Guid;
     }
 }
 
