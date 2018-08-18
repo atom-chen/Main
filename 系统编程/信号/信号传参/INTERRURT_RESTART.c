@@ -14,14 +14,13 @@ int main(int argc, char const *argv[])
 	sigaction act;
 	act.sa_sigaction=CatchInfo;
 	act.sa_flag=SA_SIGINFO | SIG_RESTART;
-	sigfillset(&(act.sa_mask));
+	sigfillset(&(act.sa_mask));             //阻塞所有信号
 	sigaction(SIGINT,&act,NULL);
 
 	int ret;
 	char buffer[1024];
 	while(ret=read(STDIN_FILENO,buffer,1024))
 	{
-
 		printf("console said:%s\n",buffer);
 	}
 	if(ret==-1)

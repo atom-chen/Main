@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <unistd.h>
-
+//子进程父进程计数
 pid_t pid;
-int data=0;
+int data=0;    //全局计数器
 void ParentCatch(int signal)
 {
 	kill(pid,SIGUSR1);

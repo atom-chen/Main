@@ -4,6 +4,9 @@
 #include<unistd.h>
 #include<signal.h>
 
+//处理signal信号，模拟waitpid
+
+
 void SigMask2PCB(int signal,int isMask,sigset_t *old)       //设置PCB信号屏蔽字的工具函数
 {
 	if(isMask)
@@ -60,7 +63,7 @@ int main()
 		exit(22);
 	}
 
-	SigMask2PCB(SIGCHLD,1,NULL);
+	SigMask2PCB(SIGCHLD,1,NULL);              //先阻塞sigchld信号
 	pid = fork();
 
 	//接收输入，后结束
@@ -70,15 +73,15 @@ int main()
 		char buffer[1024];
 		dup2(fd[0],STDIN_FILENO);                            //input重定向：从pipe中读取数据
 		CatSignal(SIGCHLD,Catch);
-		SigMask2PCB(SIGCHLD,0,NULL);
+		SigMask2PCB(SIGCHLD,0,NULL);                //解除对子进程死亡信号的屏蔽
 		execlp("wc","wc",NULL);                        //command read from fd[0]
 	}
-	//触发
+	//触发SIGCHLD
 	else
 	{
 		sleep(1);
 		close(fd[0]);
-	    dup2(fd[1],STDOUT_FILENO);                           //输出重定向
+	    dup2(fd[1],STDOUT_FILENO);                           //输出重定向，将向控制台的输出到管道中
 	    execlp("ls","ls",NULL);
 	}
 }

@@ -19,15 +19,26 @@ void*  si_addr;
 int si_band; 
 int si_fd; 
 };
+
+
+typedef union sigval {
+
+               int  sival_int;
+
+               void *sival_ptr;
+
+}sigval_t;
 */
 
+//若传值，则可以接收
+//若传指针，则不同进程不能接收（不同进程的0-4G互相独立）
 void CatchInfo(int signal, siginfo_t *info, void *data)
 {
 	if(info!=NULL)
 	{
-		printf("si_value=%s\n",saval_t);
+		printf("int=%s\n",info->si_value.sival_int);
 	}
-	printf("%s\n",(char*)data);
+	printf("%s\n",(char*)info->si_value.sival_ptr);
 }
 
 int main(int argc, char const *argv[])
@@ -42,23 +53,25 @@ int main(int argc, char const *argv[])
 	sigaction(SIG_USR1,&act,NULL);
 
 	//给自己发送信号
-	sigval para=9;
-	sigqueue(pid,SIG_USR1,para);
+	union sigval para;
+	para.sival_int = 9;
+	sigqueue(pid,SIG_USR1,para);       //传值
 
 	char buf[12];
 	strcpy(buf,"aaaaaaa");
-	sigval pPara=buf;
-	sigqueue(pid,SIG_USR1,pPara);	
+	para.sival_ptr = buf;                  //传指针
+	sigqueue(pid,SIG_USR1,para);	
 
 
-	pid=fork();
+	pid = fork();
 	if(pid>0)
 	{
+	    para.sival_int = 9;
 		//给子进程发个信号
 	    sigqueue(pid,SIG_USR1,para);
 
-	    sigval=buf;
-	    sigqueue(pid,SIG_USR1,pPara);		
+	    para.sival_ptr = buf;                  
+	    sigqueue(pid,SIG_USR1,para);		
 	}
 	while(1)
 	{
