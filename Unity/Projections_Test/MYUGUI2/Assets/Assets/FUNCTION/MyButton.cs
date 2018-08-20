@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Button : MonoBehaviour {
+public class MyButton : MonoBehaviour {
     public Texture btnTexture;                                                  //声明一个2D纹理图片    
     void OnGUI()
     {                                                               //声明OnGUI方法
