@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
+        
     }
     void Start()
     {
@@ -41,10 +42,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(MinLoop());
     }
 
-    void Update()
-    {
-
-    }
 
     //全局
     IEnumerator SecondLoop()

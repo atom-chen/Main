@@ -73,6 +73,12 @@ public enum INFO_TYPE
     TOUGHEN,
 }
 
+public enum SCENE_CODE
+{
+    LAUNCH = 0,
+    MAIN = 1,
+}
+
 class Define
 {
     public const int _INVALID_ID = (-1);

@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager
+public class UIManager :MonoBehaviour
 {
+    private static Transform m_BaseUI;
+    public static Transform BaseUI
+    {
+        get
+        {
+            if (m_PopUI == null)
+            {
+                m_PopUI = GameObject.Find("BaseUIRoot").transform;
+            }
+            return m_PopUI;
+        }
+    }
     private static Transform m_PopUI;
     public static Transform PopUI
     {
         get
         {
-            if (m_PopUI == null || !m_PopUI.gameObject.activeInHierarchy)
+            if (m_PopUI == null)
             {
                 m_PopUI = GameObject.Find("PopUIRoot").transform;
             }
@@ -23,7 +35,7 @@ public class UIManager
     {
         get
         {
-            if (m_MessageUI == null || !m_MessageUI.gameObject.activeInHierarchy)
+            if (m_MessageUI == null)
             {
                 m_MessageUI = GameObject.Find("MessageUIRoot").transform;
             }
@@ -36,7 +48,7 @@ public class UIManager
     {
         get
         {
-            if (m_TipsUI == null || !m_TipsUI.gameObject.activeInHierarchy)
+            if (m_TipsUI == null)
             {
                 m_TipsUI = GameObject.Find("TipUIRoot").transform;
             }
@@ -44,6 +56,7 @@ public class UIManager
         }
     }
 
+    
     
     /// <summary>
     /// 在某个父物体下创建一个UI
@@ -126,4 +139,9 @@ public class UIManager
     }
 
     private static Dictionary<string, GameObject> m_ActiveUIDic = new Dictionary<string, GameObject>();
+
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 }

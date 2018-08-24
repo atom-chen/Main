@@ -19,17 +19,17 @@ public class ServerItem : MonoBehaviour
                 mDrag.scrollView = scrollView;
             }
         }
+        UIButton btn = this.GetComponent<UIButton>();
+        if (btn != null)
+        {
+            btn.onClick.Add(new EventDelegate(OnClickItem));
+        }
     }
 
     public void InitItem(Tab_Server server)
     {
         m_ServerNameLabel.text = server.name;
         m_ServerProperty = server;
-        UIButton btn = this.GetComponent<UIButton>();
-        if (btn != null)
-        {
-            btn.onClick.Add(new EventDelegate(OnClickItem));
-        }
     }
 
     private void OnClickItem()

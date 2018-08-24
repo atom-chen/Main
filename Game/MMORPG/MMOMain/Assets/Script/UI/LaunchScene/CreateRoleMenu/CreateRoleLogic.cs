@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreateRoleLogic : MonoBehaviour
 {
-    public SelectRoleItem[] m_Roles;
+    public GameObject[] m_Roles;
     private int m_Index = 0;
 
     public UIInput m_RoleName;

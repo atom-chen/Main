@@ -48,19 +48,23 @@ public class TabServerManager
                 server.id = Convert.ToInt32(data);
 
                 //name
-                data = table.GetData();
+                data = table.GetNext();
                 server.name = data;
 
                 //ip
-                data = table.GetData();
+                data = table.GetNext();
                 server.ipAddress = data;
 
                 //port
-                data = table.GetData();
+                data = table.GetNext();
                 server.port = Convert.ToInt32(data);
 
+                //appName
+                data = table.GetNext();
+                server.appName = data;
+
                 //maxConnect
-                data = table.GetData();
+                data = table.GetNext();
                 server.maxConnect = Convert.ToInt32(data);
 
                 m_ServerList.Add(server);

@@ -75,63 +75,63 @@ public class TabEquipAttachManager
                 attr.attrType = (ATTR_TYPE)Convert.ToInt32(data);
 
                 //C
-                data = table.GetData();
+                data = table.GetNext();
                 attr.CBase_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.CBase_Upper = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.CUp_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.CUp_Upper = Convert.ToInt32(data);
 
                 //B
-                data = table.GetData();
+                data = table.GetNext();
                 attr.BBase_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.BBase_Upper = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.BUp_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.BUp_Upper = Convert.ToInt32(data);
 
                 //A
-                data = table.GetData();
+                data = table.GetNext();
                 attr.ABase_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.ABase_Upper = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.AUp_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.AUp_Upper = Convert.ToInt32(data);
 
                 //S
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SBase_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SBase_Upper = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SUp_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SUp_Upper = Convert.ToInt32(data);
 
                 //SS
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSBase_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSBase_Upper = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSUp_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSUp_Upper = Convert.ToInt32(data);
 
                 //SS
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSSBase_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSSBase_Upper = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSSUp_Floor = Convert.ToInt32(data);
-                data = table.GetData();
+                data = table.GetNext();
                 attr.SSSUp_Upper = Convert.ToInt32(data);
 
 

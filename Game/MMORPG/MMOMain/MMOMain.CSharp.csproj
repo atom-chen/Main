@@ -261,6 +261,8 @@
     <Compile Include="Assets\Script\Global\PlayData.cs" />
     <Compile Include="Assets\Script\Global\Player_PAK.cs" />
     <Compile Include="Assets\Script\Global\ResourcesManager\Resources.cs" />
+    <Compile Include="Assets\Script\Global\SceneManager\SceneMgr.cs" />
+    <Compile Include="Assets\Script\Global\SceneManager\StartScene.cs" />
     <Compile Include="Assets\Script\Global\UIManager\UIInfo.cs" />
     <Compile Include="Assets\Script\Global\UIManager\UIManager.cs" />
     <Compile Include="Assets\Script\Handler\StartMenu\AddRoleHandler.cs" />
@@ -277,7 +279,6 @@
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagItem.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickRoleHead\RoleStatePanel.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\CreateRoleLogic.cs" />
-    <Compile Include="Assets\Script\UI\LaunchScene\CreateRoleMenu\SelectRoleItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\LaunchSceneLogic.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\RoleSelectMenu\RoleSelectItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\RoleSelectMenu\RoleSelectLogic.cs" />
@@ -285,7 +286,7 @@
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ChooseServer.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerListLogic.cs" />
-    <Compile Include="Assets\Script\UI\PublicUI\SceneLoading.cs" />
+    <Compile Include="Assets\Script\Global\SceneManager\SceneLoading.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\BagEquipTips.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\BagItemTips.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\TipItem.cs" />
