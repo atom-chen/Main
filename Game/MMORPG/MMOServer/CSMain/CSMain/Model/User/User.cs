@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /*
- * User模型
+ * 服务器User模型
  */
 
 public partial class User

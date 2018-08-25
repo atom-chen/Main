@@ -8,7 +8,7 @@ public class Tips
 
     public static void ShowTip(string tip)
     {
-        GameObject obj = UIManager.ShowUI(UIInfo.NoticeTips);
+        GameObject obj = UIManager.ShowUI(UIInfo.TipsUI);
         obj.transform.localPosition += new Vector3(0, m_Tips.Count * 45, 0);
         if (obj != null)
         {

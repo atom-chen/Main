@@ -261,6 +261,7 @@
     <Compile Include="Assets\Script\Global\PlayData.cs" />
     <Compile Include="Assets\Script\Global\Player_PAK.cs" />
     <Compile Include="Assets\Script\Global\ResourcesManager\Resources.cs" />
+    <Compile Include="Assets\Script\Global\SceneManager\MainScene.cs" />
     <Compile Include="Assets\Script\Global\SceneManager\SceneMgr.cs" />
     <Compile Include="Assets\Script\Global\SceneManager\StartScene.cs" />
     <Compile Include="Assets\Script\Global\UIManager\UIInfo.cs" />

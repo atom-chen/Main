@@ -21,7 +21,10 @@ public class SceneLoading : MonoBehaviour
         nextSceneID = (int)scene;
         if(!UIManager.ShowUI(UIInfo.LoadingUI))
         {
-            loadSceneEvent(false, scene, para);
+            if(loadSceneEvent!=null)
+            {
+                loadSceneEvent(false, scene, para);
+            }
             return;
         }
         _LoadSceneEvent = loadSceneEvent;
@@ -31,6 +34,7 @@ public class SceneLoading : MonoBehaviour
     void OnEnable()
     {
         StartCoroutine(Loading(nextSceneID));
+        SetValue(0);
     }
     IEnumerator Loading(int nextSceneID)
     {
@@ -40,20 +44,17 @@ public class SceneLoading : MonoBehaviour
             yield return new WaitForSeconds(m_Timer);
             SetValue(m_Slider.value + UnityEngine.Random.RandomRange(0.01f, 0.1f));
         }
-        _LoadSceneEvent(true, (SCENE_CODE)nextSceneID, _EventPara);
+        if (_LoadSceneEvent != null)
+        {
+            _LoadSceneEvent(true, (SCENE_CODE)nextSceneID, _EventPara);
+        }
         UIManager.CloseUI(UIInfo.LoadingUI);
     }
 
-    void OnEnable()
-    {
-        SetValue(0);
-    }
-
+    //设置加载总时间
     public void SetValue(float value)
     {
         m_Slider.value = value;
         m_Label.text = Math.Min(Math.Round(value, 3), 1) * 100 + "%";
     }
-
-    //设置加载总时间
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 public enum UIType
 {
-    BASE,
+    BASE,         //0 底层UI
     POP,          //1，遮挡
     MESSAGE,     //2，不互斥，遮挡
     TIPS,         //3，不互斥，不遮挡

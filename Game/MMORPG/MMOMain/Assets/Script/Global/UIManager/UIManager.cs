@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+public delegate void OnLoadUIFinish(bool success,object para);
 public class UIManager :MonoBehaviour
 {
     private static Transform m_BaseUI;
@@ -93,13 +93,13 @@ public class UIManager :MonoBehaviour
     }
 
     public delegate void OpenUIEvent(object para);
-    public static GameObject ShowUI(UIInfoData info)
+    public static GameObject ShowUI(UIInfoData info,OnLoadUIFinish loadUIEvent = null,object para = null)
     {
         if(info == null)
         {
             return null;
         }
-        GameObject obj=null;
+        GameObject obj = null;
         //如果已经打开，则关闭再打开
         if(m_ActiveUIDic.TryGetValue(info.UIPath,out obj))
         {
@@ -110,24 +110,43 @@ public class UIManager :MonoBehaviour
         {
             switch (info._UIType)
             {
+                case UIType.BASE:
+                    obj = CreateUI(info.UIPath, BaseUI);
+                    if(obj!=null)
+                    {
+                        obj.layer = BaseUI.gameObject.layer;
+                    }
+                    break;
                 case UIType.POP:
                     obj = CreateUI(info.UIPath, PopUI);
-                    obj.layer = PopUI.gameObject.layer;
+                    if(obj!=null)
+                    {
+                        obj.layer = PopUI.gameObject.layer;
+                    }
                     break;
                 case UIType.MESSAGE:
                     obj = CreateUI(info.UIPath, MessageUI);
-                    obj.layer = MessageUI.gameObject.layer;
+                    if(obj!=null)
+                    {
+                        obj.layer = MessageUI.gameObject.layer;
+                    }
                     break;
                 case UIType.TIPS:                    //TIP不做管理
                     obj = CreateUI(info.UIPath, TipsUI);
-                    obj.layer = TipsUI.gameObject.layer;
+                    if(obj!=null)
+                    {
+                        obj.layer = TipsUI.gameObject.layer;
+                    }
                     return obj;
             }
             m_ActiveUIDic.Add(info.UIPath, obj);
         }
         return obj;
     }
-    
+    public static GameObject OpenUI(UIInfoData info, OnLoadUIFinish loadUIEvent = null, object para = null)
+    {
+        return ShowUI(info,loadUIEvent,para);
+    }
     public static void CloseUI(UIInfoData info)
     {
         GameObject obj = null;

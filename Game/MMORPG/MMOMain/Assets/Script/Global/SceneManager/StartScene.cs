@@ -11,7 +11,7 @@ class StartScene:SceneBase
         get { return SCENE_CODE.LAUNCH; }
     }
 
-    private StartScene()
+    public StartScene()
     {
         SceneMgr.RegisterScene(this);
     }

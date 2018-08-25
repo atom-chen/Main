@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
     {
         _Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        
+        if(SceneMgr.m_CurScene == null)
+        {
+            Debug.LogError("StartScene == null!");
+        }
     }
     void Start()
     {

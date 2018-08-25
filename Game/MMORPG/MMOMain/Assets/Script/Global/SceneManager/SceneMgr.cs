@@ -34,6 +34,13 @@ class SceneMgr
                 Activator.CreateInstance(type);
             }
         }
+
+        SceneBase startScene = GetScene(SCENE_CODE.LAUNCH);
+        m_CurScene = startScene;
+        if(startScene!=null)
+        {
+            startScene.OnLoadScene();
+        }
     }
 
     public static void LoadScene(SCENE_CODE scene)
@@ -43,7 +50,29 @@ class SceneMgr
     }
     private static void OnLoadSceneFinish(bool success,SCENE_CODE scene,object para)
     {
-        
+        if(success)
+        {
+            if(m_CurScene!=null)
+            {
+                m_CurScene.OnCloseScene();
+            }
+            SceneBase nextScene = GetScene(scene);
+            if (nextScene!=null)
+            {
+                m_CurScene = nextScene;
+                nextScene.OnLoadScene();
+            }
+        }
+    }
+
+    private static SceneBase GetScene(SCENE_CODE scene)
+    {
+        SceneBase nextScene = null;
+        if (m_SceneDir.TryGetValue(scene, out nextScene))
+        {
+            return nextScene;
+        }
+        return null;
     }
 }
 

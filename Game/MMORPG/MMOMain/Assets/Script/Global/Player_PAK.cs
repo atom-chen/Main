@@ -51,7 +51,7 @@ public partial class PlayData
         Role role = pak._Role;
         PlayData.RoleData = role;
         //切换场景
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        SceneMgr.LoadScene(SCENE_CODE.MAIN);
     }
 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BagItemTips : MonoBehaviour
 {
-    public UILabel m_Name;
+    public UILabel m_NameLabel;
     public UISprite m_Icon;
     public UILabel m_Desc;
     public UILabel m_BatchLabel;
@@ -25,7 +25,7 @@ public class BagItemTips : MonoBehaviour
         Tab_Item tabItem = TabItemManager.GetItemByID(m_Data.itemId);
         if (tabItem != null)
         {
-            m_Name.text = tabItem.name;
+            m_NameLabel.text = tabItem.name;
             m_Icon.spriteName = tabItem.icon;
             m_Desc.text = tabItem.desc;
             m_BatchLabel.text = string.Format("批量使用({0})", m_Data.count);
