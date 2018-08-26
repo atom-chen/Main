@@ -72,16 +72,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_ADD_ROLE.cs">
-      <Link>Model\CG_PAK\CG_ADD_ROLE.cs</Link>
+      <Link>Public\CG_PAK\CG_ADD_ROLE.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_ENTER_GAME.cs">
-      <Link>Model\CG_PAK\CG_ENTER_GAME.cs</Link>
+      <Link>Public\CG_PAK\CG_ENTER_GAME.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_REGISTER_USER.cs">
-      <Link>Model\CG_PAK\CG_REGISTER_USER.cs</Link>
+      <Link>Public\CG_PAK\CG_REGISTER_USER.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_START_GAME.cs">
-      <Link>Model\CG_PAK\CG_START_GAME.cs</Link>
+      <Link>Public\CG_PAK\CG_START_GAME.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Bag.cs">
       <Link>Public\Common\BagSystem\Bag.cs</Link>
@@ -108,7 +108,7 @@
       <Link>Public\Common\Role\RoleAttribute.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Common\User.cs">
-      <Link>User\User.cs</Link>
+      <Link>Public\Common\User.cs</Link>
     </Compile>
     <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Config.cs">
       <Link>Public\Define\Config.cs</Link>
@@ -170,7 +170,23 @@
     <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
       <Link>Public\Tools\ParameterTools.cs</Link>
     </Compile>
-    <Compile Include="main\Log.cs" />
+    <Compile Include="Connect\Factory\CG_ADD_ROLE_FACTORY.cs" />
+    <Compile Include="Connect\Factory\CG_ENTER_GAME_FACTORY.cs" />
+    <Compile Include="Connect\Factory\CG_FactoryBase.cs" />
+    <Compile Include="Connect\Factory\CG_REGISTER_USER_FACTORY.cs" />
+    <Compile Include="Connect\Factory\CG_START_GAME_FACTORY.cs" />
+    <Compile Include="Connect\Hander\SERVERCG_PAK_BASE.cs" />
+    <Compile Include="Connect\Hander\SERVERGC_PAK_BASE.cs" />
+    <Compile Include="Connect\Hander\SERVER_CG_ADD_ROLE.cs" />
+    <Compile Include="Connect\Hander\SERVER_CG_ENTER_GAME.cs" />
+    <Compile Include="Connect\Hander\SERVER_CG_REGISTER_USER.cs" />
+    <Compile Include="Connect\Hander\SERVER_CG_START_GAME.cs" />
+    <Compile Include="Connect\main\Log.cs" />
+    <Compile Include="Connect\main\Server.cs" />
+    <Compile Include="Connect\main\sqlHelper\MySQLInfo.cs" />
+    <Compile Include="Connect\main\sqlHelper\NHibernateHelper.cs" />
+    <Compile Include="Connect\UserConnect.cs" />
+    <Compile Include="Connect\User_PAK.cs" />
     <Compile Include="Controller\Role\Bag\ItemController.cs" />
     <Compile Include="Model\Bag\DBItem.cs" />
     <Compile Include="Model\Bag\ServerBag.cs" />
@@ -184,28 +200,10 @@
     <Compile Include="Model\User\DBUser.cs" />
     <Compile Include="Controller\Role\RoleManager.cs" />
     <Compile Include="Controller\User\UserManager.cs" />
-    <Compile Include="User\Hander\SERVERGC_PAK_BASE.cs" />
-    <Compile Include="User\User_PAK.cs" />
-    <Compile Include="User\Factory\CG_ADD_ROLE_FACTORY.cs" />
-    <Compile Include="User\Factory\CG_ENTER_GAME_FACTORY.cs" />
-    <Compile Include="User\Factory\CG_REGISTER_USER_FACTORY.cs" />
-    <Compile Include="User\Factory\CG_START_GAME_FACTORY.cs" />
-    <Compile Include="User\Factory\CG_FactoryBase.cs" />
     <Compile Include="Controller\Role\RoleController.cs" />
     <Compile Include="Controller\User\UserController.cs" />
-    <Compile Include="User\Hander\SERVERCG_PAK_BASE.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="User\Hander\SERVER_CG_REGISTER_USER.cs" />
-    <Compile Include="User\Hander\SERVER_CG_ENTER_GAME.cs" />
-    <Compile Include="User\Hander\SERVER_CG_START_GAME.cs" />
-    <Compile Include="User\Hander\SERVER_CG_ADD_ROLE.cs" />
-    <Compile Include="User\UserConnect.cs" />
     <Compile Include="Model\User\User.cs" />
-    <Compile Include="main\sqlHelper\MySQLInfo.cs" />
-    <Compile Include="main\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="main\sqlHelper\NHibernateHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="log4net.config">
