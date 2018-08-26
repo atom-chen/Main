@@ -21,7 +21,7 @@ public partial class User
     //获取当前登陆角色
     public Role RoleData    
     {
-        get { if (m_RoleIndex > m_RoleList.Count) return null; return m_RoleList[m_RoleIndex]; }
+        get { if (m_RoleIndex >= m_RoleList.Count) return null; return m_RoleList[m_RoleIndex]; }
         set
         {
             for (int i = 0; i < m_RoleList.Count; i++)

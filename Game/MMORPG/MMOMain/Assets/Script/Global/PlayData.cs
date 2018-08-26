@@ -9,8 +9,8 @@ using System.Text;
 
 public partial class PlayData
 {
-    private static User m_User = new User();
-    private static Tab_Server m_Server = new Tab_Server();
+    private static User m_User;
+    private static Tab_Server m_Server;
 
     public static User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
     public static Tab_Server ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器

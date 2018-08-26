@@ -35,7 +35,7 @@ void* ProducerMain(void* para)
 		}
 		//加锁 往公共区域放入请求
 		pthread_mutex_lock(&mutex);
-		foreach(auto it = buffer.begin();it!=buffer.end();it++)
+		for(auto it = buffer.begin();it!=buffer.end();it++)
 		{
 			cache.push(*it);
 		}
@@ -55,14 +55,14 @@ void* ConsumerMain(void* para)
 		pthread_mutex_lock(&mutex);
 		while(cache.empty())                     //如果为空，就wait
 		{
-			pthread_cond_wait(&cond);
+			pthread_cond_wait(&cond,&mutex);
 		}
 		//不为空 并且wait成功 才会执行到这里
 		Message msg = cache.front();
 		cache.pop();
 		pthread_mutex_unlock(&mutex);	
 		
-		printf("receive a package,sender = %u msgid = %U\n",msg.sender,msg.msgid);
+		printf("receive a package,sender = %u msgid = %u\n",msg.sender,msg.msgId);
 		sleep(rand() % 8);
 	}
 	return NULL;
@@ -79,10 +79,10 @@ int main(int argc, char const *argv[])
 	}
 
 	//join
-	pthread_join(pid);
+	pthread_join(pid,NULL);
 	for(int i = 0;i<CONSUMER_COUNT;i++)
 	{
-	    pthread_join(cid[i]);		
+	    pthread_join(cid[i],NULL);		
 	}	
 	return 0;
 }

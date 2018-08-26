@@ -10,11 +10,11 @@ public class UIManager :MonoBehaviour
     {
         get
         {
-            if (m_PopUI == null)
+            if (m_BaseUI == null)
             {
-                m_PopUI = GameObject.Find("BaseUIRoot").transform;
+                m_BaseUI = GameObject.Find("BaseUIRoot").transform;
             }
-            return m_PopUI;
+            return m_BaseUI;
         }
     }
     private static Transform m_PopUI;
@@ -56,6 +56,13 @@ public class UIManager :MonoBehaviour
         }
     }
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        BaseUI.gameObject.SetActive(false);
+        PopUI.gameObject.SetActive(false);
+        MessageUI.gameObject.SetActive(false);    
+    }
     
     
     /// <summary>
@@ -64,7 +71,7 @@ public class UIManager :MonoBehaviour
     /// <param name="path"></param>
     /// <param name="parent"></param>
     /// <returns></returns>
-    private static GameObject CreateUI(string path, Transform parent = null)
+    private static GameObject CreateUI(string path, Transform parent)
     {
         GameObject asset = ResourceManager.Load("Prefabs/UI/" + path);
         if(asset==null)
@@ -93,53 +100,58 @@ public class UIManager :MonoBehaviour
     }
 
     public delegate void OpenUIEvent(object para);
-    public static GameObject ShowUI(UIInfoData info,OnLoadUIFinish loadUIEvent = null,object para = null)
+    public static GameObject ShowUI(UIInfoData info, OnLoadUIFinish loadUIEvent = null, object para = null)
     {
-        if(info == null)
+        if (info == null)
         {
             return null;
         }
-        GameObject obj = null;
-        //如果已经打开，则关闭再打开
-        if(m_ActiveUIDic.TryGetValue(info.UIPath,out obj))
+        GameObject obj = GetActiveUI(info);
+        if(obj !=null)
         {
-            obj.SetActive(false);
             obj.SetActive(true);
+            return obj;
         }
-        else
+        switch (info._UIType)
         {
-            switch (info._UIType)
-            {
-                case UIType.BASE:
-                    obj = CreateUI(info.UIPath, BaseUI);
-                    if(obj!=null)
-                    {
-                        obj.layer = BaseUI.gameObject.layer;
-                    }
-                    break;
-                case UIType.POP:
-                    obj = CreateUI(info.UIPath, PopUI);
-                    if(obj!=null)
-                    {
-                        obj.layer = PopUI.gameObject.layer;
-                    }
-                    break;
-                case UIType.MESSAGE:
-                    obj = CreateUI(info.UIPath, MessageUI);
-                    if(obj!=null)
-                    {
-                        obj.layer = MessageUI.gameObject.layer;
-                    }
-                    break;
-                case UIType.TIPS:                    //TIP不做管理
-                    obj = CreateUI(info.UIPath, TipsUI);
-                    if(obj!=null)
-                    {
-                        obj.layer = TipsUI.gameObject.layer;
-                    }
-                    return obj;
-            }
-            m_ActiveUIDic.Add(info.UIPath, obj);
+            case UIType.BASE:
+                obj = CreateUI(info.UIPath, BaseUI);
+                if (obj != null)
+                {
+                    obj.layer = BaseUI.gameObject.layer;
+                    obj.SetActive(true);
+                }
+                m_BaseUIDic.Add(info.UIPath, obj);
+                BaseUI.gameObject.SetActive(true);
+                break;
+            case UIType.POP:
+                obj = CreateUI(info.UIPath, PopUI);
+                if (obj != null)
+                {
+                    obj.layer = PopUI.gameObject.layer;
+                    obj.SetActive(true);
+                }
+                m_PopUIDic.Add(info.UIPath, obj);
+                PopUI.gameObject.SetActive(true);
+                break;
+            case UIType.MESSAGE:
+                obj = CreateUI(info.UIPath, MessageUI);
+                if (obj != null)
+                {
+                    obj.layer = MessageUI.gameObject.layer;
+                    obj.SetActive(true);
+                }
+                m_MessageUIDic.Add(info.UIPath, obj);
+                MessageUI.gameObject.SetActive(true);
+                break;
+            case UIType.TIPS:                    //TIP不做管理
+                obj = CreateUI(info.UIPath, TipsUI);
+                if (obj != null)
+                {
+                    obj.layer = TipsUI.gameObject.layer;
+                    obj.SetActive(true);
+                }
+                return obj;
         }
         return obj;
     }
@@ -149,18 +161,46 @@ public class UIManager :MonoBehaviour
     }
     public static void CloseUI(UIInfoData info)
     {
-        GameObject obj = null;
-        if(m_ActiveUIDic.TryGetValue(info.UIPath,out obj))
+        GameObject obj = GetActiveUI(info);
+        Destroy(obj);
+        if(m_BaseUIDic.Count <= 0)
         {
-            GameObject.Destroy(obj);
-            m_ActiveUIDic.Remove(info.UIPath);
+            BaseUI.gameObject.SetActive(false);
+        }
+        if (m_PopUIDic.Count <= 0)
+        {
+            PopUI.gameObject.SetActive(false);
+        }
+        if (m_MessageUIDic.Count <= 0)
+        {
+            MessageUI.gameObject.SetActive(false);
         }
     }
 
-    private static Dictionary<string, GameObject> m_ActiveUIDic = new Dictionary<string, GameObject>();
-
-    void Awake()
+    public static GameObject GetActiveUI(UIInfoData info)
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (info == null)
+        {
+            return null;
+        }
+        GameObject obj = null;
+        switch (info._UIType)
+        {
+            case UIType.BASE:
+                m_BaseUIDic.TryGetValue(info.UIPath, out obj);
+                break;
+            case UIType.POP:
+                m_PopUIDic.TryGetValue(info.UIPath, out obj);
+                break;
+            case UIType.MESSAGE:
+                m_MessageUIDic.TryGetValue(info.UIPath, out obj);
+                break;
+        }
+        return obj;
     }
+
+    private static Dictionary<string, GameObject> m_BaseUIDic = new Dictionary<string, GameObject>();
+    private static Dictionary<string, GameObject> m_PopUIDic = new Dictionary<string, GameObject>();
+    private static Dictionary<string, GameObject> m_MessageUIDic = new Dictionary<string, GameObject>();
+
 }

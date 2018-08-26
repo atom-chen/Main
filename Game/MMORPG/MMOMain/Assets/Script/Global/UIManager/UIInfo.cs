@@ -25,13 +25,15 @@ public class UIInfoData
 public class UIInfo
 {
     public static UIInfoData _MainUI = new UIInfoData("mainPanel", UIType.BASE);
-    public static UIInfoData LaunchUI = new UIInfoData("StartPanel", UIType.BASE);
+    public static UIInfoData LaunchUI = new UIInfoData("StartPanel", UIType.POP);
 
-    public static UIInfoData TipsUI = new UIInfoData("tip", UIType.TIPS);
     public static UIInfoData RoleStatus = new UIInfoData("RoleState", UIType.POP);
-    public static UIInfoData LoadingUI = new UIInfoData("Loading", UIType.MESSAGE);
     public static UIInfoData BagUI = new UIInfoData("Knapsack", UIType.POP);
+
+    public static UIInfoData LoadingUI = new UIInfoData("Loading", UIType.MESSAGE);
     public static UIInfoData ShowEquip = new UIInfoData("EquipTips", UIType.MESSAGE);
     public static UIInfoData ShowItem = new UIInfoData("ItemTips", UIType.MESSAGE);
+
+    public static UIInfoData TipsUI = new UIInfoData("tip", UIType.TIPS);
 }
 
