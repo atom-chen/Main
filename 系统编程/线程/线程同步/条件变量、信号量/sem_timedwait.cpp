@@ -10,27 +10,28 @@ using namespace std;
 #define CONSUMER_COUNT 5
 #define MAX 500
 
-typedef struct 
-{
-	int sender;
-	int msgId;
-}Message;
-
 sem_t boxSem;
 sem_t itemSem;
-queue<Message> cache;
+queue<string> cache;
 //生产者：产生数据
 void* ProducerMain(void* para)
 {
+	string str;
+	struct timespec abs_timeout;
 	while(1)
 	{
-		sem_wait(&boxSem);
-		Message msg;
-		msg.sender = rand() % 999999;
-		msg.msgId = rand() % 1000;
-		cache.push(msg);
-		sem_post(&itemSem);
-		sleep(rand() % 2);		
+		abs_timeout.tv_sec = time(NULL) + 1;
+		abs_timeout.tv_nesc = 0;
+		if(sem_timedwait(&boxSem,&abs_timeout) != 0)
+		{
+			printf("%s\n","容器大小不足!");
+			continue;
+		}
+		//接受输入，写入到公共数据区
+		cin>>str;
+		cout<<endl;
+		cache.push(str);
+		sem_post(&itemSem);	
 	}
 	return NULL;
 } 
@@ -38,19 +39,20 @@ void* ProducerMain(void* para)
 //消费者：处理数据
 void* ConsumerMain(void* para)
 {
+	struct timespec abs_timeout;
 	while(1)
 	{
-		sem_wait(&itemSem);
-		if(cache.empty())
+		abs_timeout.tv_sec = time(NULL) + 1;
+		abs_timeout.tv_nesc = 0;
+		if(sem_timedwait(&itemSem,&abs_timeout)!= 0)              //检测公共数据区有没有数据，没有则打印hello world
 		{
-			perror("data exception!");
-			exit(-1);
+			printf("system said: %s\n","hello world!");
+			continue;
 		}
-		Message msg = cache.front();
+		string str = cache.front();
 		cache.pop();
 		sem_post(&boxSem);
-		printf("receive a package,sender = %u msgid = %u\n",msg.sender,msg.msgId);
-		sleep(rand() % 2);
+		cout<<"client said: "<<str<<endl;
 	}
 	return NULL;
 } 
