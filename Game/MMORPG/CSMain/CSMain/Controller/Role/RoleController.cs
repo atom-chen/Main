@@ -17,9 +17,9 @@ namespace DB
         {
             try
             {
-                using (var session = NHibernateHelper.OpenSession())
+                using (NHibernate.ISession session = NHibernateHelper.OpenSession())
                 {
-                    using (var transction = session.BeginTransaction())
+                    using (NHibernate.ITransaction transction = session.BeginTransaction())
                     {
                         var servers = session.QueryOver<_DBRole>().Where(role => role.UserID == Id);
                         transction.Commit();

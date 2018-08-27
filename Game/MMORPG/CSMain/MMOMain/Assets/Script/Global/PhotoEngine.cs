@@ -34,7 +34,7 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void FixelUpdate()
+    void FixedUpdate()
     {
         if(m_State ==StatusCode.Connect &&  m_Cache.Count>0)
         {
@@ -109,8 +109,9 @@ public class PhotoEngine : MonoBehaviour, IPhotonPeerListener
 
     private void TryConnect(Tab_Server server)
     {
-        if (server == null || _Instance == null) return;
-        m_IPAddres = string.Format("{0:{1}", server.ipAddress, server.port.ToString());
+        if (server == null || _Instance == null) 
+            return;
+        m_IPAddres = string.Format("{0}:{1}", server.ipAddress, server.port.ToString());
         m_AppName = server.appName;
         StartCoroutine(TryConnect());
     }

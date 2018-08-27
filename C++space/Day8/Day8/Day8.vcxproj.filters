@@ -59,6 +59,9 @@
     <ClCompile Include="socketclient\socketclient.c">
       <Filter>socketclient_src</Filter>
     </ClCompile>
+    <ClCompile Include="dm03_函数指针做函数参数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="信息系统框架集成第三方产品案例\CEncDesProtocol.h">

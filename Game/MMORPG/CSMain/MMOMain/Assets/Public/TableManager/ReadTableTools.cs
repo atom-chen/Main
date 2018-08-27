@@ -1,8 +1,10 @@
-﻿using System;
+﻿#define CLIENT
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+
 
 namespace Public.TableManager
 {
@@ -14,8 +16,11 @@ namespace Public.TableManager
         private List<string>[] m_Datas;//所有字段组成的二维数组：每一维表示一个元组
         int row = 0;//当前该行的第几个数据
         int line = 0;//当前读到第几行
-        private static string TablePathRoot = System.IO.Directory.GetCurrentDirectory()+"\\Assets\\Public\\Table\\";
-
+#if SERVER
+        public static string TablePathRoot = System.IO.Directory.GetCurrentDirectory()+"\\MMOMain\\Assets\\Public\\Table\\";
+#elif CLIENT
+         public static string TablePathRoot = System.IO.Directory.GetCurrentDirectory()+"\\Assets\\Public\\Table\\";
+#endif
         /// <summary>
         /// 有几个元组
         /// </summary>

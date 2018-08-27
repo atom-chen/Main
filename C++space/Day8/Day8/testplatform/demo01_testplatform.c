@@ -15,7 +15,7 @@ int myEncData(unsigned char *inData,int inDataLen,unsigned char *outData,int *ou
 	return 0;
 }
 
-int main()
+int main1()
 {
 	int				rv = 0;
 	void			*handle = NULL;

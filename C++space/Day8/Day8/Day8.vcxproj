@@ -76,6 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dm03_函数指针做函数参数.cpp" />
     <ClCompile Include="dm01_函数指针语法基础.c" />
     <ClCompile Include="dm02_函数指针做函数参数的思想剖析.c" />
     <ClCompile Include="socketclient\itcastlog.c" />

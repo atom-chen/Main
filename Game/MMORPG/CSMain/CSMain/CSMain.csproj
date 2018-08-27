@@ -71,103 +71,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_ADD_ROLE.cs">
+    <Compile Include="..\MMOMain\Assets\Public\CG_PAK\CG_ADD_ROLE.cs">
       <Link>Public\CG_PAK\CG_ADD_ROLE.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_ENTER_GAME.cs">
+    <Compile Include="..\MMOMain\Assets\Public\CG_PAK\CG_ENTER_GAME.cs">
       <Link>Public\CG_PAK\CG_ENTER_GAME.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_REGISTER_USER.cs">
+    <Compile Include="..\MMOMain\Assets\Public\CG_PAK\CG_REGISTER_USER.cs">
       <Link>Public\CG_PAK\CG_REGISTER_USER.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\CG_PAK\CG_START_GAME.cs">
+    <Compile Include="..\MMOMain\Assets\Public\CG_PAK\CG_START_GAME.cs">
       <Link>Public\CG_PAK\CG_START_GAME.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Bag.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\BagSystem\Bag.cs">
       <Link>Public\Common\BagSystem\Bag.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Drug.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\BagSystem\Drug.cs">
       <Link>Public\Common\BagSystem\Drug.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\BagSystem\Item.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\BagSystem\Item.cs">
       <Link>Public\Common\BagSystem\Item.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\Equip.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\Equip\Equip.cs">
       <Link>Public\Common\Equip\Equip.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\EquipBag.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\Equip\EquipBag.cs">
       <Link>Public\Common\Equip\EquipBag.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Equip\EquipInfo.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\Equip\EquipInfo.cs">
       <Link>Public\Common\Equip\EquipInfo.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role\Role.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\Role\Role.cs">
       <Link>Public\Common\Role\Role.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\Role\RoleAttribute.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\Role\RoleAttribute.cs">
       <Link>Public\Common\Role\RoleAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Common\User.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Common\User.cs">
       <Link>Public\Common\User.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Config.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Define\Config.cs">
       <Link>Public\Define\Config.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\Define.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Define\Define.cs">
       <Link>Public\Define\Define.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\OperationCode.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Define\OperationCode.cs">
       <Link>Public\Define\OperationCode.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\ParameterCode.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Define\ParameterCode.cs">
       <Link>Public\Define\ParameterCode.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Define\ReturnCode.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Define\ReturnCode.cs">
       <Link>Public\Define\ReturnCode.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_ENTER_GAME_RET_PAK.cs">
+    <Compile Include="..\MMOMain\Assets\Public\GC_PAK\GC_ENTER_GAME_RET_PAK.cs">
       <Link>Public\GC_PAK\GC_ENTER_GAME_RET_PAK.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_PAK_BASE.cs">
+    <Compile Include="..\MMOMain\Assets\Public\GC_PAK\GC_PAK_BASE.cs">
       <Link>Public\GC_PAK\GC_PAK_BASE.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_REGISTER_USER_RET_PAK.cs">
+    <Compile Include="..\MMOMain\Assets\Public\GC_PAK\GC_REGISTER_USER_RET_PAK.cs">
       <Link>Public\GC_PAK\GC_REGISTER_USER_RET_PAK.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_ROLE_ADD_RET_PAK.cs">
+    <Compile Include="..\MMOMain\Assets\Public\GC_PAK\GC_ROLE_ADD_RET_PAK.cs">
       <Link>Public\GC_PAK\GC_ROLE_ADD_RET_PAK.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\GC_PAK\GC_START_GAME_RET_PAK.cs">
+    <Compile Include="..\MMOMain\Assets\Public\GC_PAK\GC_START_GAME_RET_PAK.cs">
       <Link>Public\GC_PAK\GC_START_GAME_RET_PAK.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\ReadTableTools.cs">
-      <Link>Public\TableManager\ReadTableTools.cs</Link>
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\StrDictionary.cs">
+      <Link>Public\TableManager\StrDictionary.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Equip.cs">
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\Tab_Equip.cs">
       <Link>Public\TableManager\Tab_Equip.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_EquipAttachAttr.cs">
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\Tab_EquipAttachAttr.cs">
       <Link>Public\TableManager\Tab_EquipAttachAttr.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_EquipAttr.cs">
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\Tab_EquipAttr.cs">
       <Link>Public\TableManager\Tab_EquipAttr.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Item.cs">
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\Tab_Item.cs">
       <Link>Public\TableManager\Tab_Item.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Role.cs">
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\Tab_Role.cs">
       <Link>Public\TableManager\Tab_Role.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\TableManager\Tab_Server.cs">
+    <Compile Include="..\MMOMain\Assets\Public\TableManager\Tab_Server.cs">
       <Link>Public\TableManager\Tab_Server.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\FormatTools.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Tools\FormatTools.cs">
       <Link>Public\Tools\FormatTools.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\MD5Tools.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Tools\MD5Tools.cs">
       <Link>Public\Tools\MD5Tools.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
+    <Compile Include="..\MMOMain\Assets\Public\Tools\ParameterTools.cs">
       <Link>Public\Tools\ParameterTools.cs</Link>
     </Compile>
     <Compile Include="Connect\Factory\CG_ADD_ROLE_FACTORY.cs" />
@@ -188,6 +188,7 @@
     <Compile Include="Connect\UserConnect.cs" />
     <Compile Include="Connect\User_PAK.cs" />
     <Compile Include="Controller\MainController\DBManager.cs" />
+    <Compile Include="Controller\ReadTableTools.cs" />
     <Compile Include="Controller\Role\Bag\ItemController.cs" />
     <Compile Include="Model\Bag\DBItem.cs" />
     <Compile Include="Model\Bag\ServerBag.cs" />

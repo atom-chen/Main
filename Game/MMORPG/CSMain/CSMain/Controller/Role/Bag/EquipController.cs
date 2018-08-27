@@ -42,7 +42,7 @@ public class EquipController
     }
 
     //更新装备信息
-    public static bool UpdateEquip(Equip equip,int roleId)
+    public static void UpdateEquip(Equip equip,int roleId)
     {
         try
         {
@@ -59,11 +59,10 @@ public class EquipController
         {
             LogManager.Error("UpdateRole       ：" + ex.Message);
         }
-        return true;
     }
 
     //更新身上穿的装备
-    public static bool UpdateEquip(Equip[] equipArr,int roleId)
+    public static void UpdateEquip(Equip[] equipArr,int roleId)
     {
         try
         {
@@ -83,11 +82,10 @@ public class EquipController
         {
             LogManager.Error("UpdateRole       ：" + ex.Message);
         }
-        return true;
     }
 
     //往数据库写入一个新装备
-    public static bool AddEquip(Equip equip, int roleID)
+    public static void AddEquip(Equip equip, int roleID)
     {
         try
         {
@@ -97,7 +95,6 @@ public class EquipController
                 {
                     session.Save(new _DBEquip(equip, roleID));
                     transction.Commit();
-                    return true;
                 }
             }
         }
@@ -105,7 +102,6 @@ public class EquipController
         {
             LogManager.Error("AddItem       ：" + ex.Message);
         }
-        return false;
     }
 }
 

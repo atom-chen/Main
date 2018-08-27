@@ -1,5 +1,4 @@
-﻿
-using CSMain;
+﻿using CSMain;
 using ExitGames.Logging;
 using Photon.SocketServer;
 using PhotonHostRuntimeInterfaces;

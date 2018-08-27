@@ -37,7 +37,7 @@ public class BagController
     /// <summary>
     /// 添加新物品到数据库
     /// </summary>
-    public static bool AddItem(List<_DBItem> dbItemList)
+    public static void AddItem(List<_DBItem> dbItemList)
     {
         try
         {
@@ -50,7 +50,6 @@ public class BagController
                         session.Save(dbItem);
                     }
                     transction.Commit();
-                    return true;
                 }
             }
         }
@@ -58,14 +57,12 @@ public class BagController
         {
             LogManager.Error("AddItem       ：" + ex.Message);
         }
-
-        return false;
     }
 
     /// <summary>
     /// 添加新物品到数据库
     /// </summary>
-    public static bool AddItem(List<Item> itemList, int roleID)
+    public static void AddItem(List<Item> itemList, int roleID)
     {
         try
         {
@@ -78,7 +75,6 @@ public class BagController
                         session.Save(new _DBItem(item, roleID));
                     }
                     transction.Commit();
-                    return true;
                 }
             }
         }
@@ -86,7 +82,6 @@ public class BagController
         {
             LogManager.Error("AddItem       ：" + ex.Message);
         }
-        return false;
     }
 
     /// <summary>
@@ -94,7 +89,7 @@ public class BagController
     /// </summary>
     /// <param name="dbItemList"></param>
     /// <returns></returns>
-    public static bool UpdateItem(List<_DBItem> dbItemList)
+    public static void UpdateItem(List<_DBItem> dbItemList)
     {
         try
         {
@@ -114,7 +109,6 @@ public class BagController
         {
             LogManager.Error("UpdateRole       ：" + ex.Message);
         }
-        return true;
     }
 
     /// <summary>
@@ -122,7 +116,7 @@ public class BagController
     /// </summary>
     /// <param name="dbItemList"></param>
     /// <returns></returns>
-    public static bool UpdateItem(List<Item> itemList,int roleId)
+    public static void UpdateItem(List<Item> itemList,int roleId)
     {
         try
         {
@@ -142,7 +136,6 @@ public class BagController
         {
             LogManager.Error("UpdateRole       ：" + ex.Message);
         }
-        return true;
     }
 
     /// <summary>
@@ -151,9 +144,8 @@ public class BagController
     /// <param name="id">id</param>
     /// <param name="count">数量</param>
     /// <returns></returns>
-    public static bool RmItem(int id, int count)
+    public static void RmItem(int id, int count)
     {
-        return true;
     }
 
 
