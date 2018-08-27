@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 public class CG_ADD_ROLE_FACTORY:CG_FactoryBase
 {
     private Queue<CG_ADD_ROLE_PAK> m_Queue = new Queue<CG_ADD_ROLE_PAK>();
-    CG_ADD_ROLE_FACTORY()
+    public CG_ADD_ROLE_FACTORY()
     {
         for(int i=0;i<100;i++)
         {

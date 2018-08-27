@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-public class CG_START_GAME_FACTORY : CG_FactoryBase
+public class CG_REGISTER_USER_FACTORY : CG_FactoryBase
 {
     public override OperationCode OpCode
     {
-        get { return OperationCode.StartGame; }
+        get { return OperationCode.Register; }
     }
-    private  Queue<CG_START_GAME_PAK> m_Queue = new Queue<CG_START_GAME_PAK>();
-    CG_START_GAME_FACTORY()
+    private  Queue<CG_REGISTER_PAK> m_Queue = new Queue<CG_REGISTER_PAK>();
+    public CG_REGISTER_USER_FACTORY()
     {
-        for(int i=0;i<100;i++)
+        for (int i = 0; i < 100; i++)
         {
-            CG_START_GAME_PAK pak = new CG_START_GAME_PAK();
+            CG_REGISTER_PAK pak = new CG_REGISTER_PAK();
             m_Queue.Enqueue(pak);
         }
     }
@@ -27,11 +26,10 @@ public class CG_START_GAME_FACTORY : CG_FactoryBase
 
     public override void GCPak(CG_PAK_BASE pak)
     {
-        CG_START_GAME_PAK temp = pak as CG_START_GAME_PAK;
-        if (temp!=null)
+        CG_REGISTER_PAK temp = (CG_REGISTER_PAK)pak;
+        if(temp!=null)
         {
             m_Queue.Enqueue(temp);
         }
     }
 }
-

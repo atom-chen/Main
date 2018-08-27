@@ -14,7 +14,7 @@ namespace Public.TableManager
         private List<string>[] m_Datas;//所有字段组成的二维数组：每一维表示一个元组
         int row = 0;//当前该行的第几个数据
         int line = 0;//当前读到第几行
-        private const string TablePathRoot = "F:\\Space2\\Space\\Game\\MMORPG\\MMOMain\\Assets\\Public\\Table\\";
+        private static string TablePathRoot = System.IO.Directory.GetCurrentDirectory()+"\\Assets\\Public\\Table\\";
 
         /// <summary>
         /// 有几个元组
@@ -55,7 +55,6 @@ namespace Public.TableManager
                     m_Datas[i - 1].Add(data[j]);
                 }
             }
-
         }
 
         //获取当前游标所指位置的数据

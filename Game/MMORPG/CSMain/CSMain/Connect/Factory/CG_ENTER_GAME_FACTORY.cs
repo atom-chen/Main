@@ -11,7 +11,7 @@ public class CG_ENTER_GAME_FACTORY:CG_FactoryBase
         get { return OperationCode.EnterGame; }
     }
     private  Queue<CG_ENTER_GAME_PAK> m_Queue = new Queue<CG_ENTER_GAME_PAK>();
-    CG_ENTER_GAME_FACTORY()
+    public CG_ENTER_GAME_FACTORY()
     {
         for (int i = 0; i < 100; i++)
         {

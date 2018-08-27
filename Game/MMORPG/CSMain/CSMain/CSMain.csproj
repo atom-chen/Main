@@ -187,6 +187,7 @@
     <Compile Include="Connect\main\sqlHelper\NHibernateHelper.cs" />
     <Compile Include="Connect\UserConnect.cs" />
     <Compile Include="Connect\User_PAK.cs" />
+    <Compile Include="Controller\MainController\DBManager.cs" />
     <Compile Include="Controller\Role\Bag\ItemController.cs" />
     <Compile Include="Model\Bag\DBItem.cs" />
     <Compile Include="Model\Bag\ServerBag.cs" />
