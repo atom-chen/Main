@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FA634A72-73EB-4796-AECD-E372BA1100EB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBProgress</RootNamespace>
+    <AssemblyName>DBProgress</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\..\packages\FluentNHibernate.Net35.1.5.3.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CSMain\Model\Bag\DBItem.cs">
+      <Link>Model\DBItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSMain\Model\Equip\DBEquip.cs">
+      <Link>Model\DBEquip.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSMain\Model\Role\DBRole.cs">
+      <Link>Model\DBRole.cs</Link>
+    </Compile>
+    <Compile Include="..\..\CSMain\Model\User\DBUser.cs">
+      <Link>Model\DBUser.cs</Link>
+    </Compile>
+    <Compile Include="Connect\Define\DB_Define.cs" />
+    <Compile Include="Connect\Define\DB2Main.cs" />
+    <Compile Include="Connect\DBReceiveMsg.cs" />
+    <Compile Include="Connect\Define\DB_DB2Main.cs" />
+    <Compile Include="Connect\Define\DM_MsgBase.cs" />
+    <Compile Include="Connect\DMMsg\DM_UserConn.cs" />
+    <Compile Include="Connect\DMMsg\DM_UserMsg.cs" />
+    <Compile Include="Connect\DMMsg\DM_RoleMsg.cs" />
+    <Compile Include="Connect\IPCMain.cs" />
+    <Compile Include="Connect\MDMsg\ItemMsg.cs" />
+    <Compile Include="Connect\MDMsg\MD_LoginMsg.cs" />
+    <Compile Include="Connect\Define\Main2DB.cs" />
+    <Compile Include="Connect\Define\MD_MsgBase.cs" />
+    <Compile Include="Connect\MDMsg\MD_RegisterMsg.cs" />
+    <Compile Include="Connect\MDMsg\MD_RoleAddMsg.cs" />
+    <Compile Include="Controller\ControllerBase.cs" />
+    <Compile Include="Tools\LogManager.cs" />
+    <Compile Include="Controller\EquipController.cs" />
+    <Compile Include="Controller\ItemController.cs" />
+    <Compile Include="Model\Mapping.cs" />
+    <Compile Include="Tools\MySQLInfo.cs" />
+    <Compile Include="Tools\NHibernateHelper.cs" />
+    <Compile Include="Controller\RoleController.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

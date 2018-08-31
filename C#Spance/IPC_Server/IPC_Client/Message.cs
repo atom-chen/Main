@@ -26,15 +26,13 @@ namespace MessageObject
     {
         public static Queue<string> qMessage { get; set; } //使用消息队列储存消息
 
-        public string SendMessage(string message)
+        public void SendMessage(string message)
         {
             if (qMessage == null)
             {
                 qMessage = new Queue<string>();
             }
             qMessage.Enqueue(message);
-
-            return message;
         }
     }
 }

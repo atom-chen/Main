@@ -25,14 +25,14 @@ namespace IPC_Client
         //}
         static void Main(string[] args)
         {
-            RemoteObject objRemoteObject = ConnectServer();
-            Send(objRemoteObject);
+            ConnectServer();
+            Send();
         }
-        private static void Send(RemoteObject objRemoteObject)
+        static RemoteObject objRemoteObject;
+        private static void Send()
         {
             while (true)
             {
-                Console.WriteLine("please input message...");
                 string message = Console.ReadLine();
                 try
                 {
@@ -44,12 +44,11 @@ namespace IPC_Client
                 }
             }
         }
-        private static RemoteObject ConnectServer()
+        private static void ConnectServer()
         {
             IpcClientChannel channel = new IpcClientChannel();
             ChannelServices.RegisterChannel(channel, false);
-            RemoteObject objRemoteObject = (RemoteObject)Activator.GetObject(typeof(RemoteObject), "ipc://ServerChannel/RemoteObject");
-            return objRemoteObject;
+            objRemoteObject = (RemoteObject)Activator.GetObject(typeof(RemoteObject), "ipc://ServerChannel/RemoteObject");
         }
     }
 }

@@ -40,12 +40,6 @@ public partial class User
 
     }
 
-    public void CopyFrom(User pak)
-    {
-        this.UserName = pak.UserName;
-        this.PassWord = pak.PassWord;
-        this.Guid = pak.Guid;
-    }
 }
 
 
