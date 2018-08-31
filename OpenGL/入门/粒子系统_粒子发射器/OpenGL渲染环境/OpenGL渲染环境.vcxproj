@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{45F480AE-575C-4438-9137-2B82F1B65F1B}</ProjectGuid>
+    <ProjectGuid>{D5FC7C49-C594-4E9E-AFCE-6F0D8758C770}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>VanillaParticleImprove</RootNamespace>
+    <RootNamespace>OpenGL渲染环境</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\LibInclude\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Space\OpenGL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -52,13 +53,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -79,35 +81,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="button.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="displaylist.h" />
-    <ClInclude Include="ground.h" />
-    <ClInclude Include="ImageSprite.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="objmodel.h" />
-    <ClInclude Include="particle.h" />
-    <ClInclude Include="skybox.h" />
-    <ClInclude Include="soil.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="utils.h" />
-    <ClInclude Include="vector3f.h" />
-    <ClInclude Include="vertexData.h" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Utlis.cpp" />
+    <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="button.cpp" />
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="displaylist.cpp" />
-    <ClCompile Include="ground.cpp" />
-    <ClCompile Include="ImageSprite.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="objmodel.cpp" />
-    <ClCompile Include="particle.cpp" />
-    <ClCompile Include="skybox.cpp" />
-    <ClCompile Include="texture.cpp" />
-    <ClCompile Include="utils.cpp" />
-    <ClCompile Include="vector3f.cpp" />
-    <ClCompile Include="vertexData.cpp" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="ggl.h" />
+    <ClInclude Include="Ground.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Mathf.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="Pixel.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SkyBox.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

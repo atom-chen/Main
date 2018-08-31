@@ -5,15 +5,22 @@
 
 bool Shader::Init(const char* vertShaderPath, const char* fragmentShaderPath)
 {
+	char temp[128];
+	memset(temp, 0, 128);
+	strcat(temp, SHADER_ROOT);
+	strcat(temp,vertShaderPath);
 	int32_t nFileSize = 0;
-	const char* vertexShaderCode =(char*) LoadFileContent(vertShaderPath,nFileSize);
+	const char* vertexShaderCode = (char*)LoadFileContent(temp, nFileSize);
 	ASSERT_PTR_BOOL(vertexShaderCode);
 	GLuint vsShader = CompileShader(GL_VERTEX_SHADER, vertexShaderCode);
 	delete vertexShaderCode;
 	ASSERT_INT_BOOL(vsShader);
 	printf("%s∂¡»°≥…π¶\r\n", vertShaderPath);
 
-	const char* fragmentShaderCode = (char*)LoadFileContent(fragmentShaderPath, nFileSize);
+	memset(temp, 0, 128);
+	strcat(temp, SHADER_ROOT);
+	strcat(temp, fragmentShaderPath);
+	const char* fragmentShaderCode = (char*)LoadFileContent(temp, nFileSize);
 	ASSERT_PTR_BOOL(fragmentShaderCode);
 	GLuint fsShader = CompileShader(GL_FRAGMENT_SHADER, fragmentShaderCode);
 	delete fragmentShaderCode;

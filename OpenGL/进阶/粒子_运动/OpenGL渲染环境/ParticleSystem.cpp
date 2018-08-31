@@ -80,7 +80,7 @@ void ParticleSystem::Init(const vec3& position)
 		m_VertexBuf.SetColor(i, 0.1f, 0.4f, 0.6f);
 		m_VertexBuf.SetPosition(i, 2 * cosf(float(i)*8.0f*3.14f / 180.0f), 0, 2 * sinf(float(i)*8.0f*3.14f / 180.0f));
 	}
-	m_Shader.Init("res/particle.vert", "res/particle.frag");
+	m_Shader.Init("particle.vert", "particle.frag");
 	m_Shader.SetTexture2D(m_Texture);
 }
 

@@ -211,7 +211,7 @@ INT WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	texture=Texture::LoadTexture("res/earth.bmp");
 	ground.Init();
 	model.Init("res/Sphere.obj");
-	skybox.Init("res/skybox");
+	skybox.Init("res/");
 	glClearColor(0.1f,0.4f,0.6f,1.0f);//set "clear color" for background
 	//show window
 	ShowWindow(hwnd, SW_SHOW);

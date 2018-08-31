@@ -187,12 +187,12 @@ bool Model::Init(const char* path, const char* vertexShader, const char* fragmen
 		}
 		else
 		{
-			m_Shader.Init(vertexShader, "res/obj.frag");
+			m_Shader.Init(vertexShader, "obj.frag");
 		}
 	}
 	else
 	{
-		m_Shader.Init("res/obj.vert", "res/obj.frag");
+		m_Shader.Init("obj.vert", "obj.frag");
 	}
 	m_Shader.SetVec4("U_LightPos", 0, 1, 1, 0);
 	m_Shader.SetVec4("U_LightAmbient", 1, 1, 1, 1);

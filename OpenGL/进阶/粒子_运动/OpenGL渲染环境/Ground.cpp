@@ -57,7 +57,7 @@ bool Ground::Init()
 		}
 	}
 	
-	m_Shader.Init("res/ground.vert", "res/ground.frag");
+	m_Shader.Init("ground.vert", "ground.frag");
 	m_Shader.SetVec4("U_LightPos", 0, 0, 1, 0);
 	m_Shader.SetVec4("U_LightAmbient", 0.25f, 0.25f, 0.25f, 1);
 	m_Shader.SetVec4("U_LightDiffuse", 0.25f, 0.25f, 0.25f, 1);

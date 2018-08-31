@@ -99,14 +99,4 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Library Include="soil.lib">
-      <Filter>源文件</Filter>
-    </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="test.txt">
-      <Filter>源文件</Filter>
-    </Text>
-  </ItemGroup>
 </Project>
