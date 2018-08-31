@@ -83,6 +83,13 @@ static public class NGUITools
         //如果游戏中音效关闭了，这里也不播放
         //Edit by Lijia
         //2016-09-19
+		if (null != GameManager.SoundManager)
+		{
+			if (GameManager.SoundManager.EnableSFX == false || GameManager.SoundManager.m_sfxVolume <= 0.001f)
+			{
+				return null;
+			}
+		}
 
 		float time = RealTime.time;
 		if (mLastClip == clip && mLastTimestamp + 0.1f > time) return null;
@@ -119,11 +126,12 @@ static public class NGUITools
 
 			if (mListener != null && mListener.enabled && NGUITools.GetActive(mListener.gameObject))
 			{
-
+				if (null != GameManager.SoundManager && null != GameManager.SoundManager.m_UISoundSource)
+				{
 					#if UNITY_4_3 || UNITY_4_5 || UNITY_4_6
 					AudioSource source = mListener.audio;
 					#else
-                    AudioSource source = new AudioSource(); //GameManager.SoundManager.m_UISoundSource;
+					AudioSource source = GameManager.SoundManager.m_UISoundSource;
 					#endif
 					if (source == null) source = mListener.gameObject.AddComponent<AudioSource>();
 					#if !UNITY_FLASH
@@ -132,6 +140,7 @@ static public class NGUITools
 					#endif
 					source.PlayOneShot(clip, volume);
 					return source;
+				}
 			}
 		}
 		return null;
@@ -1409,7 +1418,7 @@ static public class NGUITools
 		}
 		catch (System.Exception ex)
 		{
-			//LogModule.ErrorLog(ex.Message);
+			LogModule.ErrorLog(ex.Message);
 			return false;
 		}
 

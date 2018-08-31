@@ -47,6 +47,7 @@ Shader "Unlit/Transparent Colored ZWrite"
 				float4 vertex : SV_POSITION;
 				half2 texcoord : TEXCOORD0;
 				fixed4 color : COLOR;
+				fixed gray : TEXCOORD3;
 			};
 
 			v2f o;
@@ -56,22 +57,18 @@ Shader "Unlit/Transparent Colored ZWrite"
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.texcoord = v.texcoord;
 				o.color = v.color;
+				o.gray = dot(v.color, fixed4(1, 0, 0, 0));
 				return o;
 			}
 
 			fixed4 frag(v2f IN) : COLOR
 			{
-				fixed4 col;
-				if (IN.color.r < 0.001 && IN.color.g > 0.001)
-				{
-					col = tex2D(_MainTex, IN.texcoord);
-					fixed grey = dot(col.rgb, fixed3(0.299, 0.587, 0.114));
-					col.rgb = fixed3(grey, grey, grey);
-				}
-				else 
-				{	
-					col = tex2D(_MainTex, IN.texcoord) * IN.color;
-				}
+				fixed4 col = tex2D(_MainTex, IN.texcoord);
+
+				col.rgb = lerp(col.rgb * IN.color
+					, dot(col.rgb, fixed3(0.299, 0.587, 0.114) / (IN.color.g * 0.5 + 0.5) * IN.color.b)
+					, step(IN.gray, 0.001));
+				col.a *= IN.color.a;
 				return col;
 			}
 			ENDCG

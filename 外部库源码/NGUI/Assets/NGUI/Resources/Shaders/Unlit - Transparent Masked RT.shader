@@ -75,10 +75,12 @@ Shader "Unlit/Transparent Masked RT"
 				fixed light = dot(col.rgb, fixed3(0.299, 0.587, 0.114));
 				col.a = col.a * 0.5 + 0.5;
 
-				col *= IN.color;
 				col.a *= tex2D(_Mask, IN.texcoord1).a;
+				col.a *= IN.color.a;
 
-				col.rgb = lerp(col.rgb, light, step(IN.gray, 0.001));
+				col.rgb = lerp(col.rgb * IN.color
+					, dot(col.rgb, fixed3(0.299, 0.587, 0.114) / (IN.color.g * 0.5 + 0.5) * IN.color.b)
+					, step(IN.gray, 0.001));
 
 				return col;
 			}

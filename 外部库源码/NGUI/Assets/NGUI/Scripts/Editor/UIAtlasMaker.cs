@@ -573,7 +573,7 @@ public class UIAtlasMaker : EditorWindow
 #if !UNITY_4_1 && !UNITY_4_0 && !UNITY_3_5
 			if (!AssetDatabase.IsOpenForEdit(newPath, StatusQueryOptions.UseCachedIfPossible))
 			{
-				//LogModule.ErrorLog(newPath + " is not editable. Did you forget to do a check out?");
+				LogModule.ErrorLog(newPath + " is not editable. Did you forget to do a check out?");
 				return false;
 			}
 #endif
@@ -610,11 +610,7 @@ public class UIAtlasMaker : EditorWindow
 			// Update the atlas texture
 			if (newTexture)
 			{
-				if (tex == null)
-                {
-
-                }
-                    //LogModule.ErrorLog("Failed to load the created atlas saved as " + newPath);
+				if (tex == null) LogModule.ErrorLog("Failed to load the created atlas saved as " + newPath);
 				else atlas.spriteMaterial.mainTexture = tex;
 				ReleaseSprites(sprites);
 				

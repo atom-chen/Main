@@ -81,7 +81,7 @@ public class UIPlayTween : MonoBehaviour
 	[HideInInspector][SerializeField] GameObject eventReceiver;
 	[HideInInspector][SerializeField] string callWhenFinished;
 
-	UITweener[] mTweens;
+	public UITweener[] mTweens;
 	bool mStarted = false;
 	int mActive = 0;
 	bool mActivated = false;

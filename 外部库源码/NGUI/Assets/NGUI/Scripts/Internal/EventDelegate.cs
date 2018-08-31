@@ -375,7 +375,7 @@ public class EventDelegate
 				}
 				catch (System.Exception ex)
 				{
-					//LogModule.ErrorLog("Failed to bind " + type + "." + mMethodName + "\n" +  ex.Message);
+					LogModule.ErrorLog("Failed to bind " + type + "." + mMethodName + "\n" +  ex.Message);
 					return;
 				}
  #else // NETFX_CORE
@@ -402,13 +402,13 @@ public class EventDelegate
 
 				if (mMethod == null)
 				{
-					//LogModule.ErrorLog("Could not find method '" + mMethodName + "' on " + mTarget.GetType());
+					LogModule.ErrorLog("Could not find method '" + mMethodName + "' on " + mTarget.GetType());
 					return;
 				}
 				
 				if (mMethod.ReturnType != typeof(void))
 				{
-					//LogModule.ErrorLog(mTarget.GetType() + "." + mMethodName + " must have a 'void' return type.");
+					LogModule.ErrorLog(mTarget.GetType() + "." + mMethodName + " must have a 'void' return type.");
 					return;
 				}
 
@@ -560,7 +560,7 @@ public class EventDelegate
 							msg += ", " + mParameters[i].type;
 					}
 					msg += "\n";
-					//LogModule.ErrorLog(msg);
+					LogModule.ErrorLog(msg);
 				}
 
 				// Clear the parameters so that references are not kept
@@ -637,7 +637,8 @@ public class EventDelegate
 					}
 					catch (System.Exception ex)
 					{
-
+						if (ex.InnerException != null) LogModule.ErrorLog(ex.InnerException.Message);
+						else LogModule.ErrorLog(ex.Message);
 					}
 #else
 					del.Execute();

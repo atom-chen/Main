@@ -68,10 +68,13 @@ Shader "Unlit/Transparent Masked"
 				
 			fixed4 frag (v2f IN) : COLOR
 			{
-				fixed4 col = tex2D(_MainTex, IN.texcoord) * IN.color;
+				fixed4 col = tex2D(_MainTex, IN.texcoord);
 				col.a *= tex2D(_Mask, IN.texcoord1).a;
 
-				col.rgb = lerp(col.rgb, dot(col.rgb, fixed3(0.299, 0.587, 0.114)), step(IN.gray, 0.001));
+				col.rgb = lerp(col.rgb * IN.color
+					, dot(col.rgb, fixed3(0.299, 0.587, 0.114) / (IN.color.g * 0.5 + 0.5) * IN.color.b)
+					, step(IN.gray, 0.001));
+				col.a *= IN.color.a;
 
 				return col;
 			}

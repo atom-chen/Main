@@ -324,7 +324,7 @@ public class UIDrawCall : MonoBehaviour
 			}
 			else if (mClipCount != 0)
 			{
-				//LogModule.ErrorLog(shaderName + " shader doesn't have a clipped shader version for " + mClipCount + " clip regions");
+				LogModule.ErrorLog(shaderName + " shader doesn't have a clipped shader version for " + mClipCount + " clip regions");
 			}
 		}
 		else
@@ -373,7 +373,7 @@ public class UIDrawCall : MonoBehaviour
 		else if (mRenderer.sharedMaterial != mDynamicMat)
 		{
 #if UNITY_EDITOR
-			//LogModule.ErrorLog("Hmm... This point got hit!");
+			LogModule.ErrorLog("Hmm... This point got hit!");
 #endif
 			mRenderer.sharedMaterials = new Material[] { mDynamicMat };
 		}
@@ -492,7 +492,7 @@ public class UIDrawCall : MonoBehaviour
 			{
 				mTriangles = 0;
 				if (mFilter.mesh != null) mFilter.mesh.Clear();
-				//LogModule.ErrorLog("Too many vertices on one panel: " + verts.size);
+				LogModule.ErrorLog("Too many vertices on one panel: " + verts.size);
 			}
 
 			if (mRenderer == null) mRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -509,7 +509,7 @@ public class UIDrawCall : MonoBehaviour
 		else
 		{
 			if (mFilter.mesh != null) mFilter.mesh.Clear();
-			//LogModule.ErrorLog("UIWidgets must fill the buffer with 4 vertices per quad. Found " + count);
+			LogModule.ErrorLog("UIWidgets must fill the buffer with 4 vertices per quad. Found " + count);
 		}
 
 		verts.Clear();

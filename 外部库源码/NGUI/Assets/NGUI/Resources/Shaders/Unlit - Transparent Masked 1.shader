@@ -77,12 +77,15 @@ Shader "Hidden/Unlit/Transparent Masked 1"
 				float2 factor = (float2(1.0, 1.0) - abs(IN.worldPos)) * _ClipArgs0;
 			
 				// Sample the texture
-				half4 col = tex2D(_MainTex, IN.texcoord) * IN.color;
+				half4 col = tex2D(_MainTex, IN.texcoord);
 				col.a *= clamp( min(factor.x, factor.y), 0.0, 1.0);
 				col.a *= tex2D(_Mask, IN.texcoord1).a;
 
-				col.rgb = lerp(col.rgb, dot(col.rgb, fixed3(0.299, 0.587, 0.114)), step(IN.gray, 0.001));
-				
+				col.rgb = lerp(col.rgb * IN.color
+					, dot(col.rgb, fixed3(0.299, 0.587, 0.114) / (IN.color.g * 0.5 + 0.5) * IN.color.b)
+					, step(IN.gray, 0.001));
+				col.a *= IN.color.a;
+
 				return col;
 			}
 			ENDCG

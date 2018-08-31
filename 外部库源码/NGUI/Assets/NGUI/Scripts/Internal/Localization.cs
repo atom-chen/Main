@@ -379,6 +379,7 @@ public static class Localization
 			}
 			catch (System.Exception ex)
 			{
+				LogModule.ErrorLog("Unable to add '" + key + "' to the Localization dictionary.\n" + ex.Message);
 			}
 		}
 	}
@@ -480,7 +481,7 @@ public static class Localization
 
 		if (mLanguages == null)
 		{
-			//LogModule.ErrorLog("No localization data present");
+			LogModule.ErrorLog("No localization data present");
 			return null;
 		}
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using Games;
+using Games;
 using UnityEngine;
 
 public class DynamicChooseMenu : MonoBehaviour
@@ -49,40 +49,40 @@ public class DynamicChooseMenu : MonoBehaviour
         }
     }
 
-    //public void AddItem(string szName, object param, bool bDefault)
-    //{
-    //    var item = AssetManager.InstantiateObjToParent(m_ChooseItem, m_ItemGrid.transform, m_ItemIndex.ToString());
-    //    if (item == null)
-    //    {
-    //        return;
-    //    }
+    public void AddItem(string szName, object param, bool bDefault)
+    {
+        var item = AssetManager.InstantiateObjToParent(m_ChooseItem, m_ItemGrid.transform, m_ItemIndex.ToString());
+        if (item == null)
+        {
+            return;
+        }
 
-    //    var itemLogic = item.GetComponent<DynamicChooseItem>();
-    //    if (itemLogic == null)
-    //    {
-    //        return;
-    //    }
+        var itemLogic = item.GetComponent<DynamicChooseItem>();
+        if (itemLogic == null)
+        {
+            return;
+        }
 
-    //    itemLogic.Init(szName, param, this);
+        itemLogic.Init(szName, param, this);
 
-    //    m_ItemGrid.repositionNow = true;
+        m_ItemGrid.repositionNow = true;
 
-    //    if (bDefault)
-    //    {
-    //        m_CurItemLabel.text = szName;
-    //        m_CurParam = param;
-    //    }
+        if (bDefault)
+        {
+            m_CurItemLabel.text = szName;
+            m_CurParam = param;
+        }
 
-    //    m_ItemIndex += 1;
-    //}
+        m_ItemIndex += 1;
+    }
 
-    //public void CleanUp()
-    //{
-    //    m_CurItemLabel.text = "";
-    //    Utils.CleanGrid(m_ItemGrid.gameObject);
+    public void CleanUp()
+    {
+        m_CurItemLabel.text = "";
+        Utils.CleanGrid(m_ItemGrid.gameObject);
 
-    //    m_ItemIndex = 0;
-    //}
+        m_ItemIndex = 0;
+    }
 
     public void OnCurClick()
     {

@@ -107,7 +107,7 @@ static public class NGUIMenu
 		{
 			Selection.activeGameObject = NGUISettings.AddSprite(go).gameObject;
 		}
-		//else LogModule.DebugLog("You must select a game object first.");
+		else LogModule.DebugLog("You must select a game object first.");
 	}
 
 	[MenuItem("NGUI/Create/Label &#l", false, 6)]
@@ -119,7 +119,7 @@ static public class NGUIMenu
 		{
 			Selection.activeGameObject = NGUISettings.AddLabel(go).gameObject;
 		}
-		//else LogModule.DebugLog("You must select a game object first.");
+		else LogModule.DebugLog("You must select a game object first.");
 	}
 
 	[MenuItem("NGUI/Create/Texture &#t", false, 6)]
@@ -131,7 +131,7 @@ static public class NGUIMenu
 		{
 			Selection.activeGameObject = NGUISettings.AddTexture(go).gameObject;
 		}
-		//else LogModule.DebugLog("You must select a game object first.");
+		else LogModule.DebugLog("You must select a game object first.");
 	}
 
 	[MenuItem("NGUI/Create/Unity 2D Sprite &#d", false, 6)]
@@ -139,7 +139,7 @@ static public class NGUIMenu
 	{
 		GameObject go = NGUIEditorTools.SelectedRoot(true);
 		if (go != null) Selection.activeGameObject = NGUISettings.Add2DSprite(go).gameObject;
-		//else LogModule.DebugLog("You must select a game object first.");
+		else LogModule.DebugLog("You must select a game object first.");
 	}
 
 	[MenuItem("NGUI/Create/Widget &#w", false, 6)]
@@ -151,7 +151,7 @@ static public class NGUIMenu
 		{
 			Selection.activeGameObject = NGUISettings.AddWidget(go).gameObject;
 		}
-		//else LogModule.DebugLog("You must select a game object first.");
+		else LogModule.DebugLog("You must select a game object first.");
 	}
 
 	[MenuItem("NGUI/Create/", false, 6)]
@@ -239,7 +239,7 @@ static public class NGUIMenu
 			for (int i = 0; i < Selection.gameObjects.Length; ++i)
 				Selection.gameObjects[i].AddMissingComponent<T>();
 		}
-		//else LogModule.DebugLog("You must select a game object first.");
+		else LogModule.DebugLog("You must select a game object first.");
 	}
 
 	static bool Exists<T> () where T : Component
@@ -257,7 +257,7 @@ static public class NGUIMenu
 			for (int i = 0; i < Selection.gameObjects.Length; ++i)
 				NGUITools.AddWidgetCollider(Selection.gameObjects[i]);
 		}
-		//else LogModule.DebugLog("You must select a game object first, such as your button.");
+		else LogModule.DebugLog("You must select a game object first, such as your button.");
 	}
 
 	//[MenuItem("NGUI/Attach/Anchor", false, 7)]

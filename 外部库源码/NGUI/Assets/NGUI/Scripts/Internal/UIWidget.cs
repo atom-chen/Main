@@ -1100,11 +1100,11 @@ public class UIWidget : UIRect
 #if UNITY_EDITOR
 		if (GetComponent<UIPanel>() != null)
 		{
-			//LogModule.ErrorLog("Widgets and panels should not be on the same object! Widget must be a child of the panel.");
+			LogModule.ErrorLog("Widgets and panels should not be on the same object! Widget must be a child of the panel.");
 		}
 		else if (!Application.isPlaying && GetComponents<UIWidget>().Length > 1)
 		{
-			//LogModule.ErrorLog("You should not place more than one widget on the same object. Weird stuff will happen!");
+			LogModule.ErrorLog("You should not place more than one widget on the same object. Weird stuff will happen!");
 		}
 #endif
 		CreatePanel();

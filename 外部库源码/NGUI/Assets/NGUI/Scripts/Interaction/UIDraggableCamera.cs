@@ -76,7 +76,7 @@ public class UIDraggableCamera : MonoBehaviour
 
 		if (rootForBounds == null)
 		{
-			//LogModule.ErrorLog(NGUITools.GetHierarchy(gameObject) + " needs the 'Root For Bounds' parameter to be set");
+			LogModule.ErrorLog(NGUITools.GetHierarchy(gameObject) + " needs the 'Root For Bounds' parameter to be set");
 			enabled = false;
 		}
 	}

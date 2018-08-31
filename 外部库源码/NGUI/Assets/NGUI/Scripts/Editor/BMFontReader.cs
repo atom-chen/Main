@@ -69,6 +69,8 @@ public static class BMFontReader
 
 					if (len > 9 && GetInt(split[9]) > 0)
 					{
+						LogModule.ErrorLog("Your font was exported with more than one texture. Only one texture is supported by NGUI.\n" +
+							"You need to re-export your font, enlarging the texture's dimensions until everything fits into just one texture.");
 						break;
 					}
 
@@ -88,9 +90,11 @@ public static class BMFontReader
 							glyph.advance	= GetInt(split[8]);
 							glyph.channel	= channel;
 						}
+						else LogModule.DebugLog("Char: " + split[1] + " (" + id + ") is NULL");
 					}
 					else
 					{
+						LogModule.ErrorLog("Unexpected number of entries for the 'char' field (" + name + ", " + split.Length + "):\n" + line);
 						break;
 					}
 				}
@@ -110,6 +114,8 @@ public static class BMFontReader
 					}
 					else
 					{
+						LogModule.ErrorLog("Unexpected number of entries for the 'kerning' field (" +
+							name + ", " + split.Length + "):\n" + line);
 						break;
 					}
 				}
@@ -129,12 +135,14 @@ public static class BMFontReader
 
 						if (pages != 1)
 						{
-							//LogModule.ErrorLog("Font '" + name + "' must be created with only 1 texture, not " + pages);
+							LogModule.ErrorLog("Font '" + name + "' must be created with only 1 texture, not " + pages);
 							break;
 						}
 					}
 					else
 					{
+						LogModule.ErrorLog("Unexpected number of entries for the 'common' field (" +
+							name + ", " + split.Length + "):\n" + line);
 						break;
 					}
 				}

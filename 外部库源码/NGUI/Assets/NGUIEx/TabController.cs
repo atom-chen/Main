@@ -28,7 +28,7 @@ public class TabController : MonoBehaviour
 
     public delegate bool TabWillChangeDelegate(TabButton curButton);
     public TabWillChangeDelegate delTabWillChange = null;
-    private List<TabButton> tabs; 
+    private List<TabButton> tabs = new List<TabButton>(); 
 
     void Awake()
     {
@@ -51,7 +51,6 @@ public class TabController : MonoBehaviour
         }
 
         inited = true;
-        tabs = new List<TabButton>();
 
         _tabRootTrans = tabRoot != null ? tabRoot.transform : transform;
 
@@ -170,6 +169,12 @@ public class TabController : MonoBehaviour
         }
 
         return tabs[index];
+    }
+
+    public int GetTabCount()
+    {
+        if (tabs == null) return 0;
+        return tabs.Count;
     }
 
     public int GetTabButtonIndex(TabButton tab)

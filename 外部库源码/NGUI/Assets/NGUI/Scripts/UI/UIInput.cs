@@ -794,7 +794,7 @@ public class UIInput : MonoBehaviour
 
               if (gameObject.name == "InstInput")
                 {
-                    //LogModule.DebugLog(" gameObject.name " + gameObject.name  + ":" + text);
+                    LogModule.DebugLog(" gameObject.name " + gameObject.name  + ":" + text);
                 }
 			}
 		}

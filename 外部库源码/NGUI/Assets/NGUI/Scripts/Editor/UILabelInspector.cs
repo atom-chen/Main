@@ -223,7 +223,7 @@ public class UILabelInspector : UIWidgetInspector
                 if(spUseDic.boolValue)
                 {
                     SerializedProperty spDicID = NGUIEditorTools.DrawProperty("DicID", serializedObject, "mDicID", GUILayout.Width(200f));
-                    //text = StrDictionary.GetDicByID(spDicID.intValue);
+                    text = StrDictionary.GetDicByID(spDicID.intValue);
                     text = EditorGUI.TextArea(rect, text, style);
                     sp.stringValue = text;
                 }
@@ -333,6 +333,10 @@ GUILayout.Width(95f));
             if (spForceColor.boolValue)
             {
                 SerializedProperty textsp = serializedObject.FindProperty("mText");
+                if (textsp != null)
+                {
+                    textsp.stringValue = Games.Utils.ParseForceColor(textsp.stringValue);
+                }
             }
 
             GUILayout.BeginHorizontal();

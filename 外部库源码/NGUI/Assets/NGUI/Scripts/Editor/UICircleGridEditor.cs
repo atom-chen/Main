@@ -6,7 +6,8 @@
 using UnityEngine;
 using UnityEditor;
 
-
+[CanEditMultipleObjects]
+[CustomEditor(typeof(UICircleGrid), true)]
 public class UICircleGridEditor : UIWidgetContainerEditor
 {
     public override void OnInspectorGUI()

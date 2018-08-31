@@ -256,7 +256,8 @@ public class PropertyReference
 		// Can we set the value?
 		if (!Convert(ref value))
 		{
-
+			if (Application.isPlaying)
+				LogModule.ErrorLog("Unable to convert " + value.GetType() + " to " + GetPropertyType());
 		}
 		else if (mField != null)
 		{
@@ -324,11 +325,13 @@ public class PropertyReference
 #else // Everything below = no reflection support
 	public object Get ()
 	{
+		LogModule.ErrorLog("Reflection is not supported on this platform");
 		return null;
 	}
 
 	public bool Set (object value)
 	{
+		LogModule.ErrorLog("Reflection is not supported on this platform");
 		return false;
 	}
 

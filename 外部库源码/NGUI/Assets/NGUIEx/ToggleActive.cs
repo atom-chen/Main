@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using Games;
+using Games.GlobeDefine;
 
 public class ToggleActive : MonoBehaviour
 {

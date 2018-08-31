@@ -36,7 +36,7 @@ public class TweenVolume : UITweener
 
 					if (mSource == null)
 					{
-						//LogModule.ErrorLog("TweenVolume needs an AudioSource to work with");
+						LogModule.ErrorLog("TweenVolume needs an AudioSource to work with");
 						enabled = false;
 					}
 				}

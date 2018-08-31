@@ -426,7 +426,7 @@ static public class FreeType
 
 		if (FT_Init_FreeType(out lib) != 0)
 		{
-			//LogModule.ErrorLog("Failed to initialize FreeType");
+			LogModule.ErrorLog("Failed to initialize FreeType");
 			return null;
 		}
 
@@ -437,7 +437,7 @@ static public class FreeType
 		{
 			if (FT_New_Face(lib, fileName, 0, out face) != 0)
 			{
-				//LogModule.ErrorLog("Unable to use the chosen font (FT_New_Face).");
+				LogModule.ErrorLog("Unable to use the chosen font (FT_New_Face).");
 			}
 			else
 			{
@@ -481,7 +481,7 @@ static public class FreeType
 
 		if (FT_Init_FreeType(out lib) != 0)
 		{
-			//LogModule.ErrorLog("Failed to initialize FreeType");
+			LogModule.ErrorLog("Failed to initialize FreeType");
 			return false;
 		}
 
@@ -490,11 +490,11 @@ static public class FreeType
 
 		if (!File.Exists(fileName))
 		{
-			//LogModule.ErrorLog("Unable to use the chosen font.");
+			LogModule.ErrorLog("Unable to use the chosen font.");
 		}
 		else if (FT_New_Face(lib, fileName, faceIndex, out face) != 0)
 		{
-			//LogModule.ErrorLog("Unable to use the chosen font (FT_New_Face).");
+			LogModule.ErrorLog("Unable to use the chosen font (FT_New_Face).");
 		}
 		else
 		{

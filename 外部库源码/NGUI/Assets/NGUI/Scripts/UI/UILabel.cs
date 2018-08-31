@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using System.Text.RegularExpressions;
+using Games.Table;
 using Alignment = NGUIText.Alignment;
 
 [ExecuteInEditMode]
@@ -370,8 +371,14 @@ public class UILabel : UIWidget
             }
             else if (mText != value)
             {
-
-                mText = value;
+                if (mForceColor)
+                {
+                    mText = Games.Utils.ParseForceColor(value);
+                }
+                else
+                {
+                    mText = value;
+                }
 
                 if (mSupportDictSymbol)
                 {
@@ -1291,6 +1298,11 @@ public class UILabel : UIWidget
     {
         base.OnStart();
 
+        if (mUseDicTable && mDicID >= 0)
+        {
+            text = StrDictionary.GetDicByID(mDicID);
+        }
+
         // Legacy support
         if (mLineWidth > 0f)
         {
@@ -2180,7 +2192,7 @@ public class UILabel : UIWidget
         while ((mUseSymbol && mSymbolAtlas != null && mText.Contains("&")) ||
             (mPraseLink && mLinkItem != null && mText.Contains("<a,") && mText.Contains(",a>")))
         {
-            int symbolindex = mText.IndexOf("&");
+            int symbolindex = mText.IndexOf('&');
             int linkindex = mText.IndexOf("<a,");
 
             if (symbolindex != -1 && linkindex == -1)
@@ -2250,7 +2262,7 @@ public class UILabel : UIWidget
                         }
                         else
                         {
-                            mSymbolList[i].transform.localPosition = new Vector3(mTempVerts[nIdx].x - mSymbolList[i].width / 3, mTempVerts[nIdx].y - mSymbolList[i].height / 4, 0);
+                            mSymbolList[i].transform.localPosition = new Vector3(mTempVerts[nIdx].x - mSymbolList[i].width / 3, mTempVerts[nIdx].y - mSymbolList[i].height / 3, 0);
                         }
                     }                  
                     //Debug.Log("vtemp " + nIdx + ", " + mTempVerts[nIdx] + "," + mTempVerts[nIdx+1]);
@@ -2269,7 +2281,7 @@ public class UILabel : UIWidget
         }
 
         // 与符号'&'作为表情标识
-        int index = mText.IndexOf("&");
+        int index = mText.IndexOf('&');
         bool bRet = false;
         bool isOther = false;
         // 与符号'&'后1-6位均作为表情名字来识别 若字数少的先被识别 则会进入下一个表情的识别
@@ -2327,6 +2339,17 @@ public class UILabel : UIWidget
                         sprite.pivot = Pivot.Center;
                         sprite.depth = depth + 1;
 
+                        {
+                            //增加可点击 Lijianpeng
+                            //这个表情商店专属的功能还是尽早分出去吧。。。
+                            UIButton Btn = sprite.gameObject.AddComponent<UIButton>();
+                            BigEmojClickable Clickable = sprite.gameObject.AddComponent<BigEmojClickable>();
+                            Clickable.m_SpName = sprite.spriteName;
+                            EventDelegate.Add(Btn.onClick, Clickable.OnClick);
+                            BoxCollider BC = sprite.gameObject.AddComponent<BoxCollider>();
+                            Vector3 Size = new Vector3(width, sprite.height);
+                            BC.size = Size;
+                        }
 
                         UISpriteAnimation UIani = sprite.gameObject.AddComponent<UISpriteAnimation>();//NGUI自带的切换sprite
                         if (UIani == null)
@@ -2399,6 +2422,7 @@ public class UILabel : UIWidget
                         }
                         catch (Exception e)
                         {
+                            LogModule.DebugLog("The corresponding node was not found");
                             throw e;
                         }
                         mProcessedText = "";

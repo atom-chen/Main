@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Games;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -155,7 +156,8 @@ public class TabButton : MonoBehaviour
         {
             return;
         }
-        GameObject go = null; //Resources.Load<GameObject>(TargetObjcetRes);
+
+        GameObject go = AssetManager.InstantiateObjToParent(TargetObjcetRes, m_TargetParent.transform,TargetObjcetRes.name);
         if (go == null)
         {
             return;
@@ -207,6 +209,10 @@ public class TabButton : MonoBehaviour
     {
         if (m_disabled)
         {
+            if (false == string.IsNullOrEmpty(m_DisabledNotice))
+            {
+                Utils.CenterNotice(m_DisabledNotice);
+            }
 
             if (delOnDisableClick != null)
             {

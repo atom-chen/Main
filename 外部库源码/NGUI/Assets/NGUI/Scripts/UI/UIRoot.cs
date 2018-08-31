@@ -319,7 +319,7 @@ public class UIRoot : MonoBehaviour
 		if (param == null)
 		{
 			// More on this: http://answers.unity3d.com/questions/55194/suggested-workaround-for-sendmessage-bug.html
-			//LogModule.ErrorLog("SendMessage is bugged when you try to pass 'null' in the parameter field. It behaves as if no parameter was specified.");
+			LogModule.ErrorLog("SendMessage is bugged when you try to pass 'null' in the parameter field. It behaves as if no parameter was specified.");
 		}
 		else
 		{

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityToolbag;
 
 public class StateGroup : MonoBehaviour
 {
@@ -15,6 +16,18 @@ public class StateGroup : MonoBehaviour
         public GameObject[] activeGo;
 
         public StateGroup mgr { get; set; }
+
+        public void Init()
+        {
+            foreach (var change in colorChange)
+            {
+                change.Init();
+            }
+            foreach (var spriteChange in spriteChanges)
+            {
+                spriteChange.Init();
+            }
+        }
 
         public void Enter()
         {
@@ -81,9 +94,16 @@ public class StateGroup : MonoBehaviour
 
         private Color orgColor;
 
+        public void Init()
+        {
+            if (widget != null)
+            {
+                orgColor = widget.color;
+            }
+        }
+
         public void Enter()
         {
-            orgColor = widget.color;
             widget.color = color;
         }
 
@@ -100,9 +120,16 @@ public class StateGroup : MonoBehaviour
         public string spriteName;
         private string orgSpriteName;
 
+        public void Init()
+        {
+            if (sprite != null)
+            {
+                orgSpriteName = sprite.spriteName;
+            }
+        }
+
         public void Enter()
         {
-            orgSpriteName = sprite.spriteName;
             sprite.spriteName = spriteName;
         }
 
@@ -111,7 +138,7 @@ public class StateGroup : MonoBehaviour
             sprite.spriteName = orgSpriteName;
         }
     }
-
+    [Reorderable]
     public Group[] states;
     public int startState = 0;
     public Group currState { get; private set; }
@@ -121,6 +148,10 @@ public class StateGroup : MonoBehaviour
     void Awake()
     {
         InitActiveGos();
+        foreach (var @group in states)
+        {
+            group.Init();
+        }
     }
 
     private void InitActiveGos()

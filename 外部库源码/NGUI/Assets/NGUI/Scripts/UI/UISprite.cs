@@ -318,7 +318,7 @@ public class UISprite : UIBasicSprite
 
 				if (mSprite == null)
 				{
-					//LogModule.ErrorLog(mAtlas.name + " seems to have a null sprite!");
+					LogModule.ErrorLog(mAtlas.name + " seems to have a null sprite!");
 					return null;
 				}
 				mSpriteName = mSprite.name;

@@ -844,7 +844,7 @@ public class UIPopupList : UIWidgetContainer
 
 			if (source == null)
 			{
-				//LogModule.ErrorLog("Popup list needs a source object...");
+				LogModule.ErrorLog("Popup list needs a source object...");
 				return;
 			}
 

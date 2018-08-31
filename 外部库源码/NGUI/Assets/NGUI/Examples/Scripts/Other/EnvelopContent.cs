@@ -34,11 +34,11 @@ public class EnvelopContent : MonoBehaviour
 	{
 		if (targetRoot == transform)
 		{
-			//LogModule.ErrorLog("Target Root object cannot be the same object that has Envelop Content. Make it a sibling instead.");
+			LogModule.ErrorLog("Target Root object cannot be the same object that has Envelop Content. Make it a sibling instead.");
 		}
 		else if (NGUITools.IsChild(targetRoot, transform))
 		{
-			//LogModule.ErrorLog("Target Root object should not be a parent of Envelop Content. Make it a sibling instead.");
+			LogModule.ErrorLog("Target Root object should not be a parent of Envelop Content. Make it a sibling instead.");
 		}
 		else
 		{

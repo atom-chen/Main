@@ -226,20 +226,71 @@ public class ListWrapController : MonoBehaviour
             return;
         }
 
+        //数据小于等于一页最大显示数，不动
+        int nPageShowNum = GetPageShowNum();
+        if (nPageShowNum <= 0)
+            return;
+
+        //数据小于一页，不动
+        if (m_ItemCount < nPageShowNum) //等于时，可能最后条显示不全 需要上拉/右拉
+            return;
+
         if (index >= m_ItemCount)
             index = m_ItemCount - 1;
 
         if (index < 0)
             index = 0;
 
-        int childCount = m_WrapContent.GetChildCount();
-        if (childCount == 0)
+        int nPageShowLine = nPageShowNum / m_WrapContent.column;
+        int centerLine = (index / m_WrapContent.column) - Mathf.CeilToInt(nPageShowLine * 0.5f) + 1;
+        centerLine = Math.Max(0, centerLine);
+
+        MoveScrollView(index, centerLine, nPageShowNum, immediate, bStrictCenter);
+    }
+
+    public void SetPageByItemIndex(int index, bool immediate, bool bStrictCenter = false)
+    {
+        if (m_WrapContent.column == 0)
         {
             return;
         }
-        if (m_WrapContent.itemSize ==0)
-        {
+
+        //数据小于等于一页最大显示数，不动
+        int nPageShowNum = GetPageShowNum();
+        if (nPageShowNum <= 0)
             return;
+
+        //数据小于一页，不动
+        if (m_ItemCount < nPageShowNum) //等于时，可能最后条显示不全 需要上拉/右拉
+            return;
+
+        if (index >= m_ItemCount)
+            index = m_ItemCount - 1;
+
+        if (index < 0)
+            index = 0;
+
+        int moveLine = index / m_WrapContent.column;
+        moveLine = Math.Max(0, moveLine);
+
+        MoveScrollView(index, moveLine, nPageShowNum, immediate, bStrictCenter);
+    }
+
+    int GetPageShowNum()
+    {
+        if (m_WrapContent.column == 0)
+        {
+            return 0;
+        }
+
+        int childCount = m_WrapContent.GetChildCount();
+        if (childCount == 0)
+        {
+            return 0;
+        }
+        if (m_WrapContent.itemSize == 0)
+        {
+            return 0;
         }
         //数据小于等于一页最大显示数，不动
         int nPageShowNum = 0;//一页能显示的数量
@@ -247,76 +298,65 @@ public class ListWrapController : MonoBehaviour
             nPageShowNum = Mathf.CeilToInt(m_UIScrollView.panel.width / m_WrapContent.itemSize) * m_WrapContent.column;
         else
             nPageShowNum = Mathf.CeilToInt(m_UIScrollView.panel.height / m_WrapContent.itemHeight) * m_WrapContent.column;
-        nPageShowNum = Math.Min(childCount,nPageShowNum);
-        if (nPageShowNum <= 0)
-            return;
-        //数据小于一页，不动
-        if (m_ItemCount < nPageShowNum) //等于时，可能最后条显示不全 需要上拉/右拉
-            return;
-        
-        int halfNum = Mathf.CeilToInt(nPageShowNum * 0.5f * m_WrapContent.column);
-        int centerIndex = index - halfNum + 1;
-        centerIndex = Math.Max(0,centerIndex);
+        nPageShowNum = Math.Min(childCount, nPageShowNum);
 
-        float offset = 0f; 
+        return nPageShowNum;
+    }
+
+    void MoveScrollView(int nMoveIndex, int nMoveLine, int nPageShowNum, bool immediate, bool bStrictCenter)
+    {
+        if (m_WrapContent.column == 0)
+        {
+            return;
+        }
+
+        float offset = 0f;
         if (false == bStrictCenter)
         {
             //定位到最后半页 最后条数据对齐最下/最右 以免显示不全
             //eg: 实际能显示下3条半数据，数据有4条，定位到最后条数据时，最后条数据显示不全
-            if (m_ItemCount - index <= nPageShowNum / 2)
+            if (m_ItemCount - nMoveIndex <= nPageShowNum / 2)
             {
                 offset = Mathf.CeilToInt(m_UIScrollView.panel.height / m_WrapContent.itemHeight) * m_WrapContent.itemHeight - m_UIScrollView.panel.height;
             }
             //数据多余一页的，保证最后页数据铺满，不出现最后个数据出现在中间，后半页空白的情况
-            centerIndex = Mathf.Clamp(centerIndex, 0, m_ItemCount - nPageShowNum);
-
+            nMoveLine = Mathf.Clamp(nMoveLine, 0, (m_ItemCount - nPageShowNum) / m_WrapContent.column);
         }
-
-        Vector3 localOffset = new Vector3(0f, 0f, 0f);
-
-        //Vector3[] corners = m_UIScrollView.panel.worldCorners;
-        //Vector3 panelCenter = (corners[2] + corners[0]) * 0.5f;
 
         m_UIScrollView.DisableSpring();
 
-        //Vector3 cc = panelTrans.InverseTransformPoint(panelCenter);
-
+        Vector3 localOffset = new Vector3(0f, 0f, 0f);
         if (m_UIScrollView.movement == UIScrollView.Movement.Horizontal)
         {
-            localOffset.x = -centerIndex * m_WrapContent.itemSize / m_WrapContent.column -offset; 
-            
+            localOffset.x = -nMoveLine * m_WrapContent.itemSize - offset;
         }
         else
         {
-            localOffset.y = centerIndex * m_WrapContent.itemHeight / m_WrapContent.column +offset;
+            localOffset.y = nMoveLine * m_WrapContent.itemHeight + offset;
         }
 
-        //localOffset -= cc;
-
-        // Offset shouldn't occur if blocked
         if (!m_UIScrollView.canMoveHorizontally) localOffset.x = 0;
         if (!m_UIScrollView.canMoveVertically) localOffset.y = 0;
         localOffset.z = 0f;
 
-        //移动过去
         if (immediate)
         {
             //修正item总数大于wrapCountent.childCount的2倍时，单次跳转超过 wrapCountent.GetChildCount * 1.5，显示不正确
             //scrollview move前，预设值wrapcontent items坐标，保证能切到指定项
-            m_WrapContent.SetItemOnPage(centerIndex);
+            m_WrapContent.SetItemOnPage(nMoveLine);
 
-            //现在不需要了，直接出发move，panel会自动出发onMove，触发刷新
-
-            m_UIScrollView.RestrictWithinBounds(true);
+            //直接出发move，panel会自动出发onMove，触发刷新
+            m_UIScrollView.ResetPosition();
             m_UIScrollView.MoveRelative(localOffset);
             m_UIScrollView.InvalidateBounds();
+            m_UIScrollView.RestrictWithinBounds(true);
             UpdateAllItem();
         }
         else
         {
             // Spring the panel to this calculated position
-           SpringPanel.Begin(m_UIScrollView.panel.cachedGameObject
-                , m_StartPos + localOffset, 13f).strength = 8f;
+            SpringPanel.Begin(m_UIScrollView.panel.cachedGameObject
+                 , m_StartPos + localOffset, 13f).strength = 8f;
         }
     }
 }

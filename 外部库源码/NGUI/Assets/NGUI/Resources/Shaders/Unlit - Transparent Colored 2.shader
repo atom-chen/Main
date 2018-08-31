@@ -79,8 +79,12 @@ Shader "Hidden/Unlit/Transparent Colored 2"
 
 			half4 frag (v2f IN) : COLOR
 			{
-				fixed4 col = tex2D(_MainTex, IN.texcoord) * IN.color;
-				col.rgb = lerp(col.rgb, dot(col.rgb, fixed3(0.299, 0.587, 0.114)), step(IN.gray, 0.001));
+				fixed4 col = tex2D(_MainTex, IN.texcoord);
+
+				col.rgb = lerp(col.rgb * IN.color.rgb
+					, dot(col.rgb, fixed3(0.299, 0.587, 0.114) / (IN.color.g * 0.5 + 0.5) * IN.color.b)
+					, step(IN.gray,0.001));
+				col.a *= IN.color.a;
 
 				// First clip region
 				float2 factor = (float2(1.0, 1.0) - abs(IN.worldPos.xy)) * _ClipArgs0.xy;

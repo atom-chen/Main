@@ -56,7 +56,7 @@ public class NGUIDebug : MonoBehaviour
 	static void LogString (string text)
 	{
 #if UNITY_EDITOR
-        //LogModule.DebugLog(text);
+        LogModule.DebugLog(text);
 #else
 		if (Application.isPlaying)
 		{
@@ -64,6 +64,7 @@ public class NGUIDebug : MonoBehaviour
 			mLines.Add(text);
 			CreateInstance();
 		}
+		else LogModule.DebugLog(text);
 #endif
     }
 
