@@ -1,14 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Tools.h"
 
 //将tga文件读取到显存
 bool LoadTGATexture(const char *szFileName, GLenum minFilter, GLenum magFilter, GLenum wrapMode)
 {
+	char buff[128];
+	memset(buff, 0, 128);
+	strcat(buff, "res//");
+	strcat(buff, szFileName);
 	GLbyte *pBits;
 	int nWidth, nHeight, nComponents;
 	GLenum eFormat;
 
 	// Read the texture bits
-	pBits = gltReadTGABits(szFileName, &nWidth, &nHeight, &nComponents, &eFormat);
+	pBits = gltReadTGABits(buff, &nWidth, &nHeight, &nComponents, &eFormat);
 	if (pBits == NULL)
 		return false;
 

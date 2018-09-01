@@ -41,10 +41,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\LibInclude\include\freeglut;E:\LibInclude\include\gltools;$(IncludePath)</IncludePath>
+	<ReferencePath>F:\Space\OpenGL\lib;$(ReferencePath)</ReferencePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>F:\Space\OpenGL\lib;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>true</LinkIncremental>
+    <ReferencePath>F:\Space\OpenGL\lib;$(ReferencePath)</ReferencePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>F:\Space\OpenGL\lib;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

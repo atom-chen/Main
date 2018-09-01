@@ -21,7 +21,7 @@ GLfloat             viewZ = -65.0f;
 
 
 GLuint texture[TEXTURE_COUNT];
-const char* szTextureFiles[TEXTURE_COUNT] = { "brick.tga", "floor.tga", "ceiling.tga" };
+const char* szTextureFiles[TEXTURE_COUNT] = { "res//brick.tga", "res//floor.tga", "res//ceiling.tga" };
 
 
 M3DMatrix44f		shadowMatrix;
