@@ -10,8 +10,8 @@ uniform mat4	mvpMatrix;
 // Incoming per vertex
 in vec4 vVertex;
 
-void main(void) 
-    { 
+void main(void)
+{
     // This is pretty much it, transform the geometry
     gl_Position = mvpMatrix * vVertex;
-    }
+}

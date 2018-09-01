@@ -14,9 +14,9 @@ varying vec4 V_WorldPos;
 varying vec2 V_Texcoord;
 void main()
 {
-V_Color=color;
-V_Normal=IT_ModelMatrix*normal;
-V_WorldPos=ModelMatrix*position;
-V_Texcoord=texcoord.xy;
-gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
+    V_Color=color;
+    V_Normal=IT_ModelMatrix*normal;
+    V_WorldPos=ModelMatrix*position;
+    V_Texcoord=texcoord.xy;
+    gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
 }

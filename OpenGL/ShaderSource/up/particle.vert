@@ -10,8 +10,8 @@ varying vec4 V_Color;
 
 void main()
 {
-V_Color=color;
-gl_PointSize=20.0;
-vec4 pos=vec4(position.x+normal.x,position.y+normal.y,position.z+normal.z,1.0);
-gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*pos;
+    V_Color=color;
+    gl_PointSize=20.0;
+    vec4 pos=vec4(position.x+normal.x,position.y+normal.y,position.z+normal.z,1.0);
+    gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*pos;
 }

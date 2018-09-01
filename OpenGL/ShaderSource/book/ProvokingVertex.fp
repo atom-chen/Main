@@ -8,6 +8,6 @@ out vec4 vFragColor;
 flat in vec4 vVaryingColor;
 
 void main(void)
-   { 
-   vFragColor = vVaryingColor;
-   }
+{
+    vFragColor = vVaryingColor;
+}

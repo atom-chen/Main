@@ -11,7 +11,7 @@ varying vec4 V_Texcoord;
 
 void main()
 {
-V_Color=color;
-V_Texcoord=texcoord;
-gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
+    V_Color=color;
+    V_Texcoord=texcoord;
+    gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
 }

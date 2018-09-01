@@ -19,25 +19,25 @@ varying vec3 V_Normal;
 
 gl_LightSourceParameters Init()
 {
-gl_LightSourceParameters light;
-return light;
+	gl_LightSourceParameters light;
+	return light;
 }
 
 void main()
 {
-vec4 color=(0.0,0.0,0.0,0.0);
-vec4 ambientColor=U_LightAmbient*U_AmbientMaterial;
+	vec4 color=(0.0,0.0,0.0,0.0);
+	vec4 ambientColor=U_LightAmbient*U_AmbientMaterial;
 
-float diffuseConstant=1.0;
-float diffuseLinear=0.0;
-float diffuseQuadric=0.0;
-vec3 L=normalize(U_LightPos.xyz-V_WorldPos);
-float distance=length(L);
-float attenuation=1.0/(diffuseConstant+diffuseLinear*distance+distance*distance*diffuseQuadric);
-vec3 N=normalize(V_Normal.xyz);
-float diffuseIntensity=max(0.0,dot(L,N));
-vec4 diffuseColor=U_LightDiffuse*U_DiffuseMaterial*diffuseIntensity*attenuation*4.0;
+	float diffuseConstant=1.0;
+	float diffuseLinear=0.0;
+	float diffuseQuadric=0.0;
+	vec3 L=normalize(U_LightPos.xyz-V_WorldPos);
+	float distance=length(L);
+	float attenuation=1.0/(diffuseConstant+diffuseLinear*distance+distance*distance*diffuseQuadric);
+	vec3 N=normalize(V_Normal.xyz);
+	float diffuseIntensity=max(0.0,dot(L,N));
+	vec4 diffuseColor=U_LightDiffuse*U_DiffuseMaterial*diffuseIntensity*attenuation*4.0;
 
-color=ambientColor+diffuseColor;
-gl_FragColor=color*V_Color;
+	color=ambientColor+diffuseColor;
+	gl_FragColor=color*V_Color;
 }
