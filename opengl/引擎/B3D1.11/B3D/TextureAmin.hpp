@@ -28,10 +28,10 @@ public:
     virtual void    loadTexture()
     {
         //1 获取图片格式
-        FREE_IMAGE_FORMAT fifmt = FreeImage_GetFileType("data/image/a.png", 0);
+        FREE_IMAGE_FORMAT fifmt = FreeImage_GetFileType("res/data/image/a.png", 0);
 
         //2 加载图片
-        FIBITMAP    *dib = FreeImage_Load(fifmt, "data/image/a.png",0);
+        FIBITMAP    *dib = FreeImage_Load(fifmt, "res/data/image/a.png",0);
 
         //3 转化为rgba 色
         dib     =   FreeImage_ConvertTo32Bits(dib);

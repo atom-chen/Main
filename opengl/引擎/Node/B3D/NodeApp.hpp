@@ -309,7 +309,7 @@ public:
             CELLNode&   node    =   _arNodes[i];
             node.update(false);
 
-            if (!_frustum.cubeInFrustum(node._aabb._minimum,node._aabb._maximum))
+			if (!_frustum.cubeInFrustum(node._aabb._minimum, node._aabb._maximum))
             {
                 continue;
             }

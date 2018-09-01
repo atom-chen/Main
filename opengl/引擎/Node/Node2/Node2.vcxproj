@@ -41,6 +41,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>F:\Space\OpenGL\lib;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ReferencePath>F:\Space\OpenGL\lib;$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -83,15 +86,12 @@
   <ItemGroup>
     <ClInclude Include="CELL3RDCamera.hpp" />
     <ClInclude Include="CELLFrameEvent.hpp" />
-    <ClInclude Include="CELLMath.hpp" />
     <ClInclude Include="CELLModel.hpp" />
     <ClInclude Include="CELLNode.hpp" />
     <ClInclude Include="CELLRenderable.hpp" />
     <ClInclude Include="CELLShader.hpp" />
-    <ClInclude Include="CELLTimestamp.hpp" />
     <ClInclude Include="CELLWinApp.hpp" />
     <ClInclude Include="NodeApp.hpp" />
-    <ClInclude Include="rapidxml.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

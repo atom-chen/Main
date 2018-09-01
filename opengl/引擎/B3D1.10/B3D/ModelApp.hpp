@@ -157,7 +157,7 @@ public:
         _camera3rd.calcDir();
         _camera3rd.setUp(float3(0,1,0));
 
-        _model.load("data/model/MouseMesh.sm");
+        _model.load("res/data/model/MouseMesh.sm");
 
     }
     /**

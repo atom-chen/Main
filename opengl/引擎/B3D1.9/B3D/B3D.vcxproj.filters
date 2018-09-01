@@ -28,13 +28,7 @@
     <ClInclude Include="CELL3RDCamera.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
-    <ClInclude Include="CELLMath.hpp">
-      <Filter>资源文件</Filter>
-    </ClInclude>
     <ClInclude Include="CELLShader.hpp">
-      <Filter>资源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CELLTimestamp.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
     <ClInclude Include="CELLWinApp.hpp">

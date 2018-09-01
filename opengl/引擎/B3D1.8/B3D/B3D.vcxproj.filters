@@ -25,13 +25,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OffscreenApp - 副本.hpp">
-      <Filter>资源文件</Filter>
-    </ClInclude>
     <ClInclude Include="OffscreenApp.hpp">
-      <Filter>资源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="CELLMath.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
     <ClInclude Include="CELLShader.hpp">

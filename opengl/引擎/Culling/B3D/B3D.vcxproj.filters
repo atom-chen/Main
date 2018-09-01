@@ -28,9 +28,6 @@
     <ClInclude Include="CELL3RDCamera.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
-    <ClInclude Include="CELLMath.hpp">
-      <Filter>资源文件</Filter>
-    </ClInclude>
     <ClInclude Include="CELLModel.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
@@ -44,9 +41,6 @@
       <Filter>资源文件</Filter>
     </ClInclude>
     <ClInclude Include="ModelApp.hpp">
-      <Filter>资源文件</Filter>
-    </ClInclude>
-    <ClInclude Include="rapidxml.hpp">
       <Filter>资源文件</Filter>
     </ClInclude>
   </ItemGroup>

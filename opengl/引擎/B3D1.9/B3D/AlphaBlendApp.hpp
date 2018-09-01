@@ -153,9 +153,9 @@ public:
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         //glBlendFunc((GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA))
-        _textureId  =   loadTexture("woodfloor.tga");
-        _texGround  =   loadTexture("1.jpg");
-        _texGrass   =   loadTexture("data/image/grass.png");
+        _textureId  =   loadTexture("res//woodfloor.tga");
+        _texGround  =   loadTexture("res//1.jpg");
+        _texGrass   =   loadTexture("res//grass.png");
 
         _camera3rd.setRadius(50);
         _camera3rd.perspective(45.0f, float(_winWidth) / float(_winHeight), 0.1f, 100000.0f);

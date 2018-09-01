@@ -15,13 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CELL3RDCamera.hpp" />
-    <ClInclude Include="CELLMath.hpp" />
     <ClInclude Include="CELLModel.hpp" />
     <ClInclude Include="CELLShader.hpp" />
-    <ClInclude Include="CELLTimestamp.hpp" />
     <ClInclude Include="CELLWinApp.hpp" />
     <ClInclude Include="ModelApp.hpp" />
-    <ClInclude Include="rapidxml.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{94240F26-1B8A-4FAD-A001-75F19880B6DF}</ProjectGuid>
@@ -53,6 +50,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetExt>.exe</TargetExt>
+    <IncludePath>F:\Space\OpenGL\lib;$(IncludePath)</IncludePath>
+    <ReferencePath>F:\Space\OpenGL\lib;$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

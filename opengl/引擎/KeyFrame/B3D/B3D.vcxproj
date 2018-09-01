@@ -11,9 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CELLMath.hpp" />
     <ClInclude Include="CELLShader.hpp" />
-    <ClInclude Include="CELLTimestamp.hpp" />
     <ClInclude Include="CELLWinApp.hpp" />
     <ClInclude Include="Skin1App.hpp" />
   </ItemGroup>
@@ -50,6 +48,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetExt>.exe</TargetExt>
+    <IncludePath>F:\Space\OpenGL\lib;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ReferencePath>F:\Space\OpenGL\lib;$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
