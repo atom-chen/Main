@@ -25,7 +25,7 @@ void SetupRC(void)
 
 	gltMakeTorus(torusBatch, .80f, 0.25f, 52, 26);
 
-	flatShader = gltLoadShaderPairWithAttributes("FlatShader.vp", "FlatShader.fp", 1, GLT_ATTRIBUTE_VERTEX, "vVertex");
+	flatShader = gltLoadShaderPairWithAttributes("ShaderSource\\book\\FlatShader.vp", "ShaderSource\\book\\FlatShader.fp", 1, GLT_ATTRIBUTE_VERTEX, "vVertex");
 
 	locMVP = glGetUniformLocation(flatShader, "mvpMatrix");
 	locColor = glGetUniformLocation(flatShader, "vColorValue");

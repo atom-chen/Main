@@ -57,9 +57,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Space\OpenGL\lib;E:\LibInclude\include;$(IncludePath)</IncludePath>
-    <ReferencePath>C:\Space\OpenGL\lib;$(ReferencePath)</ReferencePath>
-    <LibraryPath>C:\Space\OpenGL\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Space\OpenGL\lib;C:\Space\OpenGL\lib;E:\LibInclude\include;$(IncludePath)</IncludePath>
+    <ReferencePath>F:\Space\OpenGL\lib;$(ReferencePath)</ReferencePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

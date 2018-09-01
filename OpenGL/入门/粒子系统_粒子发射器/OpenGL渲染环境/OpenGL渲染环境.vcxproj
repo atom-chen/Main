@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\LibInclude\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Space\OpenGL\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Space\OpenGL\lib;E:\LibInclude\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Space\OpenGL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

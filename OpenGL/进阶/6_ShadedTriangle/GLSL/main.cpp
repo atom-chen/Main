@@ -34,7 +34,7 @@ namespace Normal
 		triangleBatch.CopyColorData4f(vColors);
 		triangleBatch.End();
 
-		myIdentityShader = gltLoadShaderPairWithAttributes("ShadedIdentity.vp", "ShadedIdentity.fp", 2,
+		myIdentityShader = gltLoadShaderPairWithAttributes("ShaderSource\\book\\ShadedIdentity.vp", "ShaderSource\\book\\ShadedIdentity.fp", 2,
 			GLT_ATTRIBUTE_VERTEX, "vVertex", GLT_ATTRIBUTE_COLOR, "vColor");
 	}
 
