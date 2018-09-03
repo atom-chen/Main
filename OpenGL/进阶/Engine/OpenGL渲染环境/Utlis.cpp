@@ -23,3 +23,31 @@ unsigned char* DecodeBMP(unsigned char* bmpFileData, int& width, int& height)
 	}
 	return nullptr;
 }
+
+
+//读一个文件 返回其在内存中的指针、文件长度
+bool LoadFileContent(const char* path, int& filesize, char* content)
+{
+	if (content == nullptr)
+	{
+		return 0;
+	}
+	filesize = 0;
+	FILE* pFile = fopen(path, "rb");
+	//按二进制打开文件，只读
+	if (pFile)
+	{
+		fseek(pFile, 0, SEEK_END);//移动到文件尾
+		int nLen = ftell(pFile);
+		if (nLen > 0)
+		{
+			rewind(pFile);//移到文件头部
+			fread(content, sizeof(unsigned char), nLen, pFile);
+			content[nLen] = '\0';
+			filesize = nLen;
+		}
+		fclose(pFile);
+		return 1;
+	}
+	return 0;
+}
