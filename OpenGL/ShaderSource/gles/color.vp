@@ -1,0 +1,12 @@
+precision lowp float;
+uniform   mat4 _MVP;
+attribute vec3 _position;
+attribute vec4 _color;
+varying   vec4 _outColor;
+
+void main()
+{
+    vec4    pos =   vec4(_position.x,_position.y,_position.z,1);
+    gl_Position =   _MVP * pos;
+	_outColor   =   _color;
+}
