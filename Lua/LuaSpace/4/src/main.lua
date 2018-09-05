@@ -1,4 +1,4 @@
---=
+ï»¿--=
 a="hello".."world";
 b,c=10,2*2;
 --print(a,b,c);
@@ -10,30 +10,30 @@ a,b,c=0;
 a,b=10,20,30;
 --print(a,b);
 
---¾Ö²¿±äÁ¿
+--å±€éƒ¨å˜é‡
 x=10;
-local i=1;--iËäÈ»ÊÇ¾Ö²¿±äÁ¿£¬µ«ÊÇÉúÃüÖÜÆÚ»¹Ã»½áÊø
+local i=1;--iè™½ç„¶æ˜¯å±€éƒ¨å˜é‡ï¼Œä½†æ˜¯ç”Ÿå‘½å‘¨æœŸè¿˜æ²¡ç»“æŸ
 while i<=10 do
-local x=i*2;
+	local x=i*2;
 --print(x);
 i=i+1;
 end;
 
 if i>20 then
-local x=20;
+	local x=20;
 --print(x+2);
 else
 --print(x);
 end;
 
---ÏÔÊ½¿ØÖÆ³ÌĞò¿é
+--æ˜¾å¼æ§åˆ¶ç¨‹åºå—
 do
 local a2=2*a;
 local d=(b^2-4*a*2)^(1/2);
 x1=(-b+d)/a2;
 x2=(-b-d)/a2;
 end;
---print(a2,d);--´ËÊ±a2,dÉúÃüÖÜÆÚÒÑ¾­½áÊø
+--print(a2,d);--æ­¤æ—¶a2,dç”Ÿå‘½å‘¨æœŸå·²ç»ç»“æŸ
 --print(x1,x2);
 --print(i);
 
@@ -46,29 +46,29 @@ local a;
 end;
 --print(a,b);
 
---¿ØÖÆ½á¹¹
+--æ§åˆ¶ç»“æ„
 if a<0 then
-a=0;
-end;
+	a=0;
+	end;
 --print(a);
 
 --[[if(a<b) then 
 return a 
 else return b 
-end;]]
+	end;]]
 
-local op="+";
-local r=0;
-if op=="+" then
-r=a+b;
-elseif op=="-" then
-r=a-b;
-elseif op=="*" then
-r=a*b;
-elseif op=="/" then
-r=a/b;
-else error("???");
-end
+	local op="+";
+	local r=0;
+	if op=="+" then
+		r=a+b;
+		elseif op=="-" then
+			r=a-b;
+			elseif op=="*" then
+				r=a*b;
+				elseif op=="/" then
+					r=a/b;
+					else error("???");
+					end
 --print("r="..r);
 
 a={1,2,3,4,5};
@@ -82,15 +82,15 @@ end;
 --[[
 repeat
 line=io.read();
-until line~=""--ÎªÕæÊ±½áÊø
+until line~=""--ä¸ºçœŸæ—¶ç»“æŸ
 print(line);
 ]]
 
 local sqr=x/2
 repeat
-sqr=(sqr+x/sqr)/2;
-local error=math.abs(sqr^2-x);
-until error<x/10000;--ÈÔÈ»¿ÉÒÔ·ÃÎÊlocal error
+	sqr=(sqr+x/sqr)/2;
+	local error=math.abs(sqr^2-x);
+until error<x/10000;--ä»ç„¶å¯ä»¥è®¿é—®local error
 
 --for
 for i=1,10 do 
@@ -98,36 +98,36 @@ for i=1,10 do
 end
 
 for i=1,math.huge do
-if 0.3*i^3-20*i^2 -500>=0 then
+	if 0.3*i^3-20*i^2 -500>=0 then
 --print(i);
 break;
 end
 end
 
 for i=1,10 do --print(i) 
-end;
-max=i;
---print(max); ´ËÊ±max=6 ÊÇÈ«¾Ö±äÁ¿i
+	end;
+	max=i;
+--print(max); æ­¤æ—¶max=6 æ˜¯å…¨å±€å˜é‡i
 
---ÕÒµ½aÖĞµÚÒ»¸öĞ¡ÓÚ0µÄÊıµÄÏÂ±ê
+--æ‰¾åˆ°aä¸­ç¬¬ä¸€ä¸ªå°äº0çš„æ•°çš„ä¸‹æ ‡
 a={1,2,3,4,5,9,9,0,2,3,2,-2};
 local found=nil;
 for i=1,#a do
-if a[i]<0 then
-found=i;break;
-end;end;
+	if a[i]<0 then
+		found=i;break;
+		end;end;
 --print("a["..found.."]="..a[found]);
 
---·ºĞÍfor
---ipairs()£º±éÀúÊı×é
+--æ³›å‹for
+--ipairs()ï¼šéå†æ•°ç»„
 for i,v in ipairs(a)do 
 --print(v)
 end;
 
---tableÔªËØµÄpairs
+--tableå…ƒç´ çš„pairs
 revDays={["sunday"]=1,["Monday"]=2,["Tuesday"]=3,["Wednesday"]=4,["Thursday"]=5,["Friday"]=6,["Saturday"]=7};
 for k,v in pairs(revDays)
-do  print(revDays[k]);
+	do  print(revDays[k]);
 end
 
 

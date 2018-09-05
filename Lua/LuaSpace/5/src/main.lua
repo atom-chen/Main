@@ -1,5 +1,5 @@
---print(8*9,9/8);--Óï¾ä
-a=math.sin(3)+math.cos(10);--±í´ïÊ½
+ï»¿--print(8*9,9/8);--è¯­å¥
+a=math.sin(3)+math.cos(10);--è¡¨è¾¾å¼
 --print(a);
 
 --dofile 'a.lua';
@@ -22,15 +22,15 @@ f(3);f(3,4);f(3,4,5);
 
 count=0;
 function incCount(n)
-n=n or 1;--or:µ±µÚÒ»¸öÎªÕæÊ±·µ»ØµÚÒ»¸ö
+n=n or 1;--or:å½“ç¬¬ä¸€ä¸ªä¸ºçœŸæ—¶è¿”å›ç¬¬ä¸€ä¸ª
 count=count+n;
 end;
 incCount(19);
 --print(count);
 
---¶àÖØ·µ»ØÖµ
+--å¤šé‡è¿”å›å€¼
 s,e=string.find("hello lua!","lua");
---print("¿ªÊ¼ÓÚ"..s.."½áÊøÓÚ"..e);
+--print("å¼€å§‹äº"..s.."ç»“æŸäº"..e);
 
 function maxinum(a)
 local maxIndex=1;
@@ -42,26 +42,26 @@ maxVal=val;
 end;end;
 return maxIndex,maxVal;
 end;
---print(maxinum(a));--½«´òÓ¡Á½¸öÖµ
+--print(maxinum(a));--å°†æ‰“å°ä¸¤ä¸ªå€¼
 
 function foo1() end;
-function foo2() return "a" end;--·µ»ØÒ»¸öÖµ
-function foo3() return "a","b" end;--·µ»ØÁ½¸öÖµ
---Èç¹ûº¯Êıµ÷ÓÃ½öÓĞ£¬Ôò¾¡¿ÉÄÜ²¹³ä
+function foo2() return "a" end;--è¿”å›ä¸€ä¸ªå€¼
+function foo3() return "a","b" end;--è¿”å›ä¸¤ä¸ªå€¼
+--å¦‚æœå‡½æ•°è°ƒç”¨ä»…æœ‰ï¼Œåˆ™å°½å¯èƒ½è¡¥å……
 x,y=foo3()
 --print(x,y);
-x=foo3();--y±»¶ªÆú
+x=foo3();--yè¢«ä¸¢å¼ƒ
 --print(x);
 x,y,z=10,foo3();
 --print(x,y,z);
 
---ÓÃnil²¹·µ»ØÖµ²î
+--ç”¨nilè¡¥è¿”å›å€¼å·®
 x,y=foo1();
 --print(x,y);
 x,y=foo2();
 --print(x,y);
 
---Èç¹û²»ÊÇ×îºóÒ»¸öÔªËØ£¬ÔòÖ»²úÉúÒ»¸ö·µ»ØÖµ
+--å¦‚æœä¸æ˜¯æœ€åä¸€ä¸ªå…ƒç´ ï¼Œåˆ™åªäº§ç”Ÿä¸€ä¸ªè¿”å›å€¼
 x,y=foo3(),20;
 --print(x,y);
 x,y=foo1(),20,30;
@@ -69,11 +69,11 @@ x,y=foo1(),20,30;
 
 --print(foo1());
 --print(foo2());
---print(foo3());--·µ»ØÖµÈ«²¿´«ÈëÍâ²¿µ÷ÓÃ
+--print(foo3());--è¿”å›å€¼å…¨éƒ¨ä¼ å…¥å¤–éƒ¨è°ƒç”¨
 --print(foo3(),1);
---print(foo3().."x");--³öÏÖÔÚ±í´ïÊ½ÖĞ£¬·µ»ØÖµÊıÁ¿±»µ÷ÕûÎª1
+--print(foo3().."x");--å‡ºç°åœ¨è¡¨è¾¾å¼ä¸­ï¼Œè¿”å›å€¼æ•°é‡è¢«è°ƒæ•´ä¸º1
 
---table¹¹ÔìÊ½½ÓÊÕËùÓĞ·µ»ØÖµ
+--tableæ„é€ å¼æ¥æ”¶æ‰€æœ‰è¿”å›å€¼
 t1={foo1()};
 t2={foo2()};
 t3={foo3()};
@@ -82,10 +82,10 @@ for k,v in pairs(t4) do
 --print(t4[k]);
 end;
 
---½«º¯Êıµ÷ÓÃ·ÅÔÚÒ»¶ÔÔ²À¨ºÅÖĞ£¬ÆÈÊ¹ËûÖ»·µ»ØÒ»¸öÖµ
+--å°†å‡½æ•°è°ƒç”¨æ”¾åœ¨ä¸€å¯¹åœ†æ‹¬å·ä¸­ï¼Œè¿«ä½¿ä»–åªè¿”å›ä¸€ä¸ªå€¼
 --print((foo3()));
 
---unpack:½ÓÊÕÒ»¸öÊı×é×÷Îª²ÎÊı£¬²¢´ÓÏÂ±ê1¿ªÊ¼·µ»ØÊı×éËùÓĞÔªËØ
+--unpack:æ¥æ”¶ä¸€ä¸ªæ•°ç»„ä½œä¸ºå‚æ•°ï¼Œå¹¶ä»ä¸‹æ ‡1å¼€å§‹è¿”å›æ•°ç»„æ‰€æœ‰å…ƒç´ 
 --print(unpack(t4));
 a,b=unpack(t4);
 --print(a,b);
@@ -97,13 +97,13 @@ a={"hello","c++"};
 
 function unpack(t,i)
 i=i or 1
-if t[i] then return t[i],unpack(t,i+1);--Ö»Òª²»Îªnil»òÕßfalse¾Í²»»á²úÉú·µ»ØÖµ
+if t[i] then return t[i],unpack(t,i+1);--åªè¦ä¸ä¸ºnilæˆ–è€…falseå°±ä¸ä¼šäº§ç”Ÿè¿”å›å€¼
 end; end;
 
---±ä³¤²ÎÊı
+--å˜é•¿å‚æ•°
 function add(...)
 local s=0;
-for i,v in ipairs{...} do--ÓÃ...·ÃÎÊ
+for i,v in ipairs{...} do--ç”¨...è®¿é—®
 s=s+v;
 end;
 return s;

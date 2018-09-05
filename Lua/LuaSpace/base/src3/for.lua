@@ -1,8 +1,8 @@
-for i=1,3,1 do
+ï»¿for i=1,3,1 do
 print(i)
 end
 
-for i=1,3 do   --Ê¡ÂÔ²½³¤
+for i=1,3 do   --çœç•¥æ­¥é•¿
 print(i)
 end
 

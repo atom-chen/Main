@@ -1,11 +1,11 @@
-require "Tools" --Òıutils°ü
+ï»¿require "Tools" --å¼•utilsåŒ…
 
-local file,err=io.open("luaFileStreamTest.txt","rb")   --wb:´ò¿ªÄ£Ê½Îª¶ş½øÖÆ£¬¸²¸Ç£¬Ğ´
+local file,err=io.open("luaFileStreamTest.txt","rb")   --wb:æ‰“å¼€æ¨¡å¼ä¸ºäºŒè¿›åˆ¶ï¼Œè¦†ç›–ï¼Œå†™
 if(not err) then
-local fileSize=file:seek("end") --°ÑÎÄ¼şÖ¸ÕëÒÆµ½ÎÄ¼şµÄÄ©Î²£¬²¢ÇÒ·µ»Ø´ËÊ±ÎÄ¼şÖ¸ÕëµÄÎ»ÖÃ
+local fileSize=file:seek("end") --æŠŠæ–‡ä»¶æŒ‡é’ˆç§»åˆ°æ–‡ä»¶çš„æœ«å°¾ï¼Œå¹¶ä¸”è¿”å›æ­¤æ—¶æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®
 print(fileSize)
 
-file:seek("set",0) --½«ÎÄ¼şÖ¸ÕëÒÆµ½0ºÅÎ»ÖÃ£¨Í·²¿)
+file:seek("set",0) --å°†æ–‡ä»¶æŒ‡é’ˆç§»åˆ°0å·ä½ç½®ï¼ˆå¤´éƒ¨)
 local buffer=file:read("*a")
 print(buffer)
 file:close()

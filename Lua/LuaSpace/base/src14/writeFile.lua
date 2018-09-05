@@ -1,13 +1,13 @@
-require "Tools" --Òıutils°ü
+ï»¿require "Tools" --å¼•utilsåŒ…
 
-local file,err=io.open("luaFileStreamTest.txt","wb")   --wb:´ò¿ªÄ£Ê½Îª¶ş½øÖÆ£¬¸²¸Ç£¬Ğ´
+local file,err=io.open("luaFileStreamTest.txt","wb")   --wb:æ‰“å¼€æ¨¡å¼ä¸ºäºŒè¿›åˆ¶ï¼Œè¦†ç›–ï¼Œå†™
 if(not err) then
-file:write("Lua fileStream Test¸²¸ÇĞ´\n")
+file:write("Lua fileStream Testè¦†ç›–å†™\n")
 file:close()
 end
 
-local file,err=io.open("luaFileStreamTest.txt","ab")   --wb:´ò¿ªÄ£Ê½Îª¶ş½øÖÆ£¬×·¼Ó£¬Ğ´
+local file,err=io.open("luaFileStreamTest.txt","ab")   --wb:æ‰“å¼€æ¨¡å¼ä¸ºäºŒè¿›åˆ¶ï¼Œè¿½åŠ ï¼Œå†™
 if(not err) then
-file:write("Lua fileStream Test2×·¼ÓĞ´\n")
+file:write("Lua fileStream Test2è¿½åŠ å†™\n")
 file:close()
 end

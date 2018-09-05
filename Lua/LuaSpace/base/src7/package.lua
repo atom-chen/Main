@@ -1,4 +1,4 @@
-require "Tools" --Òıutils°ü
+ï»¿require "Tools" --å¼•utilsåŒ…
 print(Tools);
-print(Tools.add(1,2));--µ÷ÓÃ°üÄÚµÄÈ«¾Öº¯Êı
+print(Tools.add(1,2));--è°ƒç”¨åŒ…å†…çš„å…¨å±€å‡½æ•°
 

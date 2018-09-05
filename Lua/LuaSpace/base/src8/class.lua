@@ -1,17 +1,17 @@
-Player={}--¶¨ÒåÒ»¸öÀà
+ï»¿Player={}--å®šä¹‰ä¸€ä¸ªç±»
 Player.__index=Player;
 
-function Player.New()--Àà·½·¨
+function Player.New()--ç±»æ–¹æ³•
 	local obj={name="default"}
-setmetatable(obj,Player)--ÔÚÕâÀï£¬obj±ä³ÉÁËPlayer¶ÔÏó
+setmetatable(obj,Player)--åœ¨è¿™é‡Œï¼Œobjå˜æˆäº†Playerå¯¹è±¡
 return obj
 end
 
 
-function Player:Speak()--³ÉÔ±º¯Êı
-	print(self.name.."Ëµ»°");
+function Player:Speak()--æˆå‘˜å‡½æ•°
+	print(self.name.."è¯´è¯");
 end
 
-local player=Player.New();--µ÷ÓÃÀàstaticº¯Êı-¡·ÄÃµ½obj
-player:Speak();--µ÷ÓÃ³ÉÔ±º¯Êı,Ïàµ±ÓÚobjµ÷ÓÃspeak·½·¨  µ«ÊÇ±íÀïÃ»ÓĞSpeak·½·¨£¬È»ºóluaĞéÄâ»ú¾Í»ØÈ¥²éÕÒÕâ¸ö±íµÄmetatable£¨Ò²¾ÍÊÇPlayer£©µÄindex·½·¨ÒªÕâ¸öº¯Êı
+local player=Player.New();--è°ƒç”¨ç±»staticå‡½æ•°-ã€‹æ‹¿åˆ°obj
+player:Speak();--è°ƒç”¨æˆå‘˜å‡½æ•°,ç›¸å½“äºobjè°ƒç”¨speakæ–¹æ³•  ä½†æ˜¯è¡¨é‡Œæ²¡æœ‰Speakæ–¹æ³•ï¼Œç„¶åluaè™šæ‹Ÿæœºå°±å›å»æŸ¥æ‰¾è¿™ä¸ªè¡¨çš„metatableï¼ˆä¹Ÿå°±æ˜¯Playerï¼‰çš„indexæ–¹æ³•è¦è¿™ä¸ªå‡½æ•°
 player.Speak(player)

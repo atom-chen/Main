@@ -1,8 +1,8 @@
-a=1 --È«¾Öa
-local b=2--Õâ¸öÊÇlocal.luaÎÄ¼şÀïµÄb
+ï»¿a=1 --å…¨å±€a
+local b=2--è¿™ä¸ªæ˜¯local.luaæ–‡ä»¶é‡Œçš„b
 
 function New()
-local obj={name="faker",age=22,isFriane=false}  --Newº¯ÊıÕâÊÇ¾Ö²¿±äÁ¿
+local obj={name="faker",age=22,isFriane=false}  --Newå‡½æ•°è¿™æ˜¯å±€éƒ¨å˜é‡
 a=3;
 b=4;
 return obj;
@@ -10,5 +10,5 @@ end
 
 entity=New();
 
---obj.name="waht" --·ÃÎÊÊ§°Ü
+--obj.name="waht" --è®¿é—®å¤±è´¥
 print(a)

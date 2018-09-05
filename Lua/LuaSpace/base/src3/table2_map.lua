@@ -1,6 +1,6 @@
-a={x=1,y=2,z=3}
+ï»¿a={x=1,y=2,z=3}
 
-for k,v in pairs(a) do--kvĞÍtableÒªÓÃkvÈ¥±éÀú
+for k,v in pairs(a) do--kvå‹tableè¦ç”¨kvå»éå†
 print(k,v)
 end
 
@@ -8,7 +8,7 @@ for k,v in pairs(a) do
 print(k,a[k])
 end
 
-print(a.x)  --Í¨¹ıkeyÈ¡value
+print(a.x)  --é€šè¿‡keyå–value
 
-print(a["x"]) --Í¨¹ıÏÂ±êÈ¡value
+print(a["x"]) --é€šè¿‡ä¸‹æ ‡å–value
 

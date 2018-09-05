@@ -1,5 +1,5 @@
-print(8*9,9/8);--Óï¾ä
-a=math.sin(3)+math.cos(10);--±í´ïÊ½
+ï»¿print(8*9,9/8);--è¯­å¥
+a=math.sin(3)+math.cos(10);--è¡¨è¾¾å¼
 print(a);
 
 --dofile 'a.lua';

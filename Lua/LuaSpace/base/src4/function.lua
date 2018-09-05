@@ -1,9 +1,9 @@
-function foo()
-print("fooº¯Êý±»µ÷ÓÃ");
+ï»¿function foo()
+print("fooå‡½æ•°è¢«è°ƒç”¨");
 end
 
 function add(a,b)
-print("addº¯Êý±»µ÷ÓÃ");
+print("addå‡½æ•°è¢«è°ƒç”¨");
 return a+b;
 end
 

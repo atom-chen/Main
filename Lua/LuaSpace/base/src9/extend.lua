@@ -1,23 +1,23 @@
-Player={}--»ùÀà
+ï»¿Player={}--åŸºç±»
 Player.__index=Player;
 
-function Player.New()--Àà·½·¨
+function Player.New()--ç±»æ–¹æ³•
 	local obj={name="default"}
-setmetatable(obj,Player)--ÔÚÕâÀï£¬obj±ä³ÉÁËPlayer¶ÔÏó
+setmetatable(obj,Player)--åœ¨è¿™é‡Œï¼Œobjå˜æˆäº†Playerå¯¹è±¡
 return obj
 end
 
 
-function Player:Speak()--³ÉÔ±º¯Êı
-	print(self.name.."Ëµ»°");
+function Player:Speak()--æˆå‘˜å‡½æ•°
+	print(self.name.."è¯´è¯");
 end
 
 
 LaoWang={}--
 LaoWang.__index=LaoWang;
-setmetatable(LaoWang,Player)--ÈÃlaowang³ÉÎªPlayerµÄ×ÓÀà
+setmetatable(LaoWang,Player)--è®©laowangæˆä¸ºPlayerçš„å­ç±»
 
-function LaoWang.New()--×ÓÀà³õÊ¼»¯º¯Êı
+function LaoWang.New()--å­ç±»åˆå§‹åŒ–å‡½æ•°
 	local obj={name="laowang"}
 	setmetatable(obj,LaoWang)
 	return obj;
