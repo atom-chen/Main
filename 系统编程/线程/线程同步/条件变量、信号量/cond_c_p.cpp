@@ -14,7 +14,43 @@ typedef struct
 	int sender;
 	int msgId;
 }Message;
-
+class CondLock
+{
+private:
+	pthread_mutex_t mutex;
+	pthread_cond_t cond;
+	queue<Message> cache;
+public:
+	CondLock()
+	{
+		pthread_cond_init(&cond,NULL);
+		pthread_mutex_init(&mutex,NULL);
+	}
+	~CondLock()
+	{
+		pthread_cond_destroy(&cond);
+		pthread_mutex_destroy(&mutex);		
+	}
+public:
+	void Post(const Message& msg)
+	{
+		pthread_mutex_lock(&mutex);
+		cache.push(msg);
+		pthread_mutex_unlock(&mutex);
+		pthread_cond_signal(&cond);                  //通知消费者线程处理请求  
+	}
+	Message Wait()
+	{
+		pthread_mutex_lock(&mutex);
+		while(cache.empty())                     //如果为空，就wait
+		{
+			pthread_cond_wait(&cond,&mutex);
+		}
+		Message msg = cache.front();
+		cache.pop();
+		return msg;
+	}
+} 
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 queue<Message> cache;
