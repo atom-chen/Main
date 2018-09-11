@@ -1,11 +1,11 @@
-Tools={}  --定义一个包，可以对代码进行总结归纳
+锘縏ools={}  --瀹氫箟涓�涓寘锛屽彲浠ュ浠ｇ爜杩涜鎬荤粨褰掔撼
 
-function Tools.add(a,b)   --属于utils包的函数
-return a+b;
+function Tools.add(a,b)   --灞炰簬utils鍖呯殑鍑芥暟
+	return a+b;
 end
 
 function Tools.PrintTable(a)
-for k,v in pairs(a) do
-print("key=",k,"value=",v)
-end
+	for k,v in pairs(a) do
+		print("key=",k,"value=",v)
+	end
 end

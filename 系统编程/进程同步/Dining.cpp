@@ -2,24 +2,34 @@
 #include <stdlib.h>
 #include <iostream>
 #include <unistd.h>
-#include <pthread.h>
 #include <queue>
 using namespace std;
 
 #define COUNT 5
 #define TOTAL 10000
+#define FILE_NAME "mt_test"
+#define SIZE sizeof(pthread_mutex_t)*COUNT
 typedef struct 
 {
 	int sender;
 	int msgId;
 }Message;
-
-queue<Message> cache;
-pthread_mutex_t lockArr[COUNT];
-
-void* RoutinueMain(void* para)
+void printStatus(int status)
 {
-	int index = (int)para;
+	if(WIFEXITED(status))
+	{
+		printf("exit code=%d\n",WEXITSTATUS(status));
+	}
+	else if(WIFSIGNALED(status))
+	{
+		printf("err code=%d\n",WTERMSIG(status));
+	}
+}
+queue<Message> cache;
+pthread_mutex_t* lockArr;
+
+void ProgressMain(int index)
+{
 	while(!cache.empty())
 	{
 	    //0 - 3这四个孩子先获取+1的锁
@@ -36,8 +46,6 @@ void* RoutinueMain(void* para)
 					cache.pop();
 					pthread_mutex_unlock(lockArr + index);
 					pthread_mutex_unlock(lockArr + index + 1);
-					printf("routinue %u receive msg,Sender = %u ,msgid = %u\n",index,msg.sender,msg.msgId);
-					sleep(rand() % 5);
 				}
 				//对左手边的锁加锁失败，则放弃右手边的锁
 				else
@@ -60,8 +68,6 @@ void* RoutinueMain(void* para)
 					cache.pop();
 					pthread_mutex_unlock(lockArr + index);
 					pthread_mutex_unlock(lockArr);
-					printf("routinue %u receive msg,Sender = %u ,msgid = %u\n",index,msg.sender,msg.msgId);
-					sleep(rand() % 5);
 				}
 				//对左手边的锁加锁失败，则放弃右手边的锁
 				else
@@ -75,12 +81,31 @@ void* RoutinueMain(void* para)
 }
 int main(int argc, char const *argv[])
 {
-	pthread_t tid[COUNT];
+	//mmap
+	int fd = open(FILE_NAME,O_CREAT | O_RDWR, 0777);
+	if(fd < 0)
+	{
+		perror("open file error!");
+		exit(-1);
+	}
+	ftruncate(fd,SIZE);
+	lockArr = mmap(NULL,SIZE,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+	if(lockArr == MAP_FAILED || lockArr == NULL)
+	{
+		perror("mmap error!");
+		exit(-1);
+	}
+	close(fd);
 	//准备5把锁
+	pthread_mutexattr_t attr;	
+	pthread_mutexattr_init(&attr);
+	pthread_mutexattr_setpshared(&attr,PTHREAD_PROCESS_SHARED);
 	for(int i = 0;i<COUNT;i++)
 	{
-		pthread_mutex_init(lockArr+i,NULL);
+		pthread_mutex_init(lockArr+i,attr);
 	}
+
+
 	//准备数据
 	for(int i = 0;i<TOTAL;i++)
 	{
@@ -89,16 +114,25 @@ int main(int argc, char const *argv[])
 		msg.msgId = i;
 		cache.push(msg);
 	}
-	//5个线程
+	//5个进程
+	pid_t pid[COUNT];	
 	for(int i = 0;i<COUNT;i++)
 	{
-		pthread_create(tid+i,NULL,RoutinueMain,(void*)i);
+		pid[i] = fork();
+		if(pid[i] == 0)
+		{
+			ProgressMain(i);
+			return;
+		}
 	}
 
 	//回收
 	for(int i = 0;i<COUNT;i++)
 	{
-		pthread_join(tid[i],NULL);
+		int status;
+		waitpid(pid[i],&status,0);
+		printf("%d is delete:",pid);
+		printStatus(status);
 	}
 	for(int i = 0;i<COUNT;i++)
 	{

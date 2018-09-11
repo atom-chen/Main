@@ -1,23 +1,23 @@
-require "Tools" --Òıutils°ü
+ï»¿require "Tools" --å¼•utilsåŒ…
 
-print(os.time());  --´ÓÄ³Ò»Ê±¿ÌÖÁ½ñµÄÃëÊı
+print(os.time());  --ä»æŸä¸€æ—¶åˆ»è‡³ä»Šçš„ç§’æ•°
 
-print(os.time({year=2018,month=5,day=23}));  --µ½¸ÃÊ±¿ÌÎªÖ¹µÄÃëÊı
+print(os.time({year=2018,month=5,day=23}));  --åˆ°è¯¥æ—¶åˆ»ä¸ºæ­¢çš„ç§’æ•°
 
 print(os.time({year=2018,month=5,day=23,hour=11})); 
 
-print(os.clock()) --·µ»Øµ±³ÌĞò¿ªÊ¼µ½º¯Êıµ÷ÓÃÏûºÄµÄÊ±¼ä
+print(os.clock()) --è¿”å›å½“ç¨‹åºå¼€å§‹åˆ°å‡½æ•°è°ƒç”¨æ¶ˆè€—çš„æ—¶é—´
 
---time·µ»ØµÄ×Ö·ûÎÒÃÇ¿´²»¶®£¬ĞèÒªÓÃdateÀà½øĞĞ¸ñÊ½»¯
+--timeè¿”å›çš„å­—ç¬¦æˆ‘ä»¬çœ‹ä¸æ‡‚ï¼Œéœ€è¦ç”¨dateç±»è¿›è¡Œæ ¼å¼åŒ–
 ---------------------------------------date Begin------------------------------------------
-local t=os.date("*t",os.time()) --ÄÃµ½µ±Ç°Ê±¼äµÄpair
+local t=os.date("*t",os.time()) --æ‹¿åˆ°å½“å‰æ—¶é—´çš„pair
 Tools.PrintTable(t)
 
-t=os.date("%a",os.time()) --ÄÃµ½µ±Ç°ĞÇÆÚµÄ¼òĞ´
+t=os.date("%a",os.time()) --æ‹¿åˆ°å½“å‰æ˜ŸæœŸçš„ç®€å†™
 print("\n",t)
 
-t=os.date("%A",os.time()) --ÄÃµ½µ±Ç°ĞÇÆÚµÄÈ«³Ì
+t=os.date("%A",os.time()) --æ‹¿åˆ°å½“å‰æ˜ŸæœŸçš„å…¨ç¨‹
 print("\n",t)
 
-t=os.date("%Y-%m-%d",os.time()) --±ê¼ÇµÄ×éºÏ
+t=os.date("%Y-%m-%d",os.time()) --æ ‡è®°çš„ç»„åˆ
 print("\n",t)
