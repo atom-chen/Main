@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int main(int argc, char const *argv[])
 {
@@ -12,20 +13,20 @@ int main(int argc, char const *argv[])
 	int fd = open(argv[1],O_RDWR);
 	if(fd < 0)
 	{
-		perror("filename error!")
+		perror("filename error!");
 		exit(-1);
 	}
 	struct flock mlock;
-	mlock.l_type = F_WRLOCK;
-	mlock.l_where = F_SET;
+	mlock.l_type = F_WRLCK;
+	mlock.l_whence = SEEK_SET;
 	mlock.l_start = 0;
 	mlock.l_len = 0;
 
 	fcntl(fd,F_SETLKW,&mlock);
-	printf("lock file %s\n",agrv[1]);
+	printf("lock file %s\n",argv[1]);
 	sleep(20);
 
-	mlock.l_type = F_UNLOCK;
+	mlock.l_type = F_UNLCK;
 	fcntl(fd,F_SETLKW,&mlock);
 	printf("un flock file %s\n",argv[1]);
 	close(fd);

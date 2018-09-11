@@ -21,7 +21,7 @@ void* ProducerMain(void* para)
 	while(1)
 	{
 		abs_timeout.tv_sec = time(NULL) + 1;
-		abs_timeout.tv_nesc = 0;
+		abs_timeout.tv_nsec = 0;
 		if(sem_timedwait(&boxSem,&abs_timeout) != 0)
 		{
 			printf("%s\n","容器大小不足!");
@@ -42,8 +42,8 @@ void* ConsumerMain(void* para)
 	struct timespec abs_timeout;
 	while(1)
 	{
-		abs_timeout.tv_sec = time(NULL) + 1;
-		abs_timeout.tv_nesc = 0;
+		abs_timeout.tv_sec = time(NULL) + 5;
+		abs_timeout.tv_nsec = 0;
 		if(sem_timedwait(&itemSem,&abs_timeout)!= 0)              //检测公共数据区有没有数据，没有则打印hello world
 		{
 			printf("system said: %s\n","hello world!");

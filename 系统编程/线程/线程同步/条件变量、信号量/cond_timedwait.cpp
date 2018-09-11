@@ -57,7 +57,7 @@ void* ConsumerMain(void* para)
 		while(cache.empty())                     //如果为空，就wait。如果不为空，则直接往下执行
 		{
 			abstime.tv_sec = time(NULL) + 1;
-			abstime.tv_nesc = 0;
+			abstime.tv_nsec = 0;
 			if(pthread_cond_timedwait(&cond,&mutex,&abstime)!= 0)         //形参：绝对时间
 			{
 				printf("%s\n","没等到消息 我去做其他事了！");
