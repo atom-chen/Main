@@ -1,24 +1,24 @@
-Player={}--»ùÀà
+ï»¿Player={}--åŸºç±»
 Player.__index=Player;
 
-function Player.New()--¹¹Ôì·½·¨
+function Player.New()--æ„é€ æ–¹æ³•
 local obj={name="default"}
-setmetatable(obj,Player)--ÔÚÕâÀï£¬obj±ä³ÉÁËPlayer¶ÔÏó
+setmetatable(obj,Player)--åœ¨è¿™é‡Œï¼Œobjå˜æˆäº†Playerå¯¹è±¡
 return obj
 end
 
-function Player.__eq(a,b)--ÖØÔØ==
-print("µ÷ÓÃPlayer.a==b");
+function Player.__eq(a,b)--é‡è½½==
+print("è°ƒç”¨Player.a==b");
 return true
 end
 
-function Player.__lt(a,b)--ÖØÔØ<
-print("µ÷ÓÃPlayer.a<b");
+function Player.__lt(a,b)--é‡è½½<
+print("è°ƒç”¨Player.a<b");
 return a
 end
 
-function Player.__le(a,b)--ÖØÔØ<=
-print("µ÷ÓÃPlayer.a<=b");
+function Player.__le(a,b)--é‡è½½<=
+print("è°ƒç”¨Player.a<=b");
 return a
 end
 

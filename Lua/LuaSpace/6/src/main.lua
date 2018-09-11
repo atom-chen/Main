@@ -1,7 +1,7 @@
---[[a={p=print};
+ï»¿--[[a={p=print};
 print(type(a));
 print(type(a.p));
-a.p("hello world!"); --a.pÒıÓÃa
+a.p("hello world!"); --a.på¼•ç”¨a
 
 print=math.sin;
 a.p(print(1));
@@ -17,7 +17,7 @@ end;
 network={{name="grauna",IP="210.26.30.34"},{name="arraial",IP="210.26.30.23"},{name="lua",IP="210.26.23.12"},
 {name="derain",IP="210.26.23.20"}};
 --MyPrint(network);
---print("ÅÅĞòºó")
+--print("æ’åºå")
 table.sort(network,function(a,b) return (a.name>b.name) end);
 --MyPrint(network);
 function boolean(a,b) return (a>b) end;
@@ -31,11 +31,11 @@ c=derivative(math.sin);
 --print(math.cos(10),c(10));
 
 
---±ÕºÏº¯Êı
---ĞèÇó£º°´Äê¼¶À´¶ÔĞÕÃûÅÅĞò
-names={"Peter","Paul","Mary"};--Êı×é
-grade={Mary=10,Paul=7,Peter=8};--MaryÊÇkey,10ÊÇvalue
---table.sort(names,function(a,b) return grade[a]>grade[b] end);--Èç¹ûÄê¼¶a´óÓÚÄê¼¶b ½«½»»»ĞÕÃûµÄÎ»ÖÃ
+--é—­åˆå‡½æ•°
+--éœ€æ±‚ï¼šæŒ‰å¹´çº§æ¥å¯¹å§“åæ’åº
+names={"Peter","Paul","Mary"};--æ•°ç»„
+grade={Mary=10,Paul=7,Peter=8};--Maryæ˜¯key,10æ˜¯value
+--table.sort(names,function(a,b) return grade[a]>grade[b] end);--å¦‚æœå¹´çº§aå¤§äºå¹´çº§b å°†äº¤æ¢å§“åçš„ä½ç½®
 --print(names[3]);
 --print(grade["Mary"]);
 
@@ -59,7 +59,7 @@ do local odlSin=math.sin
 local k=math.pi/180;
 math.sin=function(x) return oldSin(x*k) end end;
 
---·ÇÈ«¾ÖµÄº¯Êı
+--éå…¨å±€çš„å‡½æ•°
 Lib={};
 Lib.foo=function(x,y) return x+y end;
 Lib.goo=function(x,y) return x-y end;

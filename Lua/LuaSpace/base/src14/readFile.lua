@@ -1,13 +1,13 @@
-require "Tools" --Òıutils°ü
+ï»¿require "Tools" --å¼•utilsåŒ…
 
-local file,err=io.open("luaFileStreamTest.txt","rb")   --wb:´ò¿ªÄ£Ê½Îª¶ş½øÖÆ£¬¸²¸Ç£¬Ğ´
+local file,err=io.open("luaFileStreamTest.txt","rb")   --wb:æ‰“å¼€æ¨¡å¼ä¸ºäºŒè¿›åˆ¶ï¼Œè¦†ç›–ï¼Œå†™
 if(not err) then
-local buffer=file:read("*a") -- a=all°ÑÎÄ¼şÒ»´ÎĞÔ¶Á³öÀ´
+local buffer=file:read("*a") -- a=allæŠŠæ–‡ä»¶ä¸€æ¬¡æ€§è¯»å‡ºæ¥
 print(buffer)
 file:close()
 end
 
-local file,err=io.open("luaFileStreamTest.txt","rb")   --wb:´ò¿ªÄ£Ê½Îª¶ş½øÖÆ£¬¸²¸Ç£¬Ğ´
+local file,err=io.open("luaFileStreamTest.txt","rb")   --wb:æ‰“å¼€æ¨¡å¼ä¸ºäºŒè¿›åˆ¶ï¼Œè¦†ç›–ï¼Œå†™
 if(not err) then
 local buffer=file:read("*l") --l=line
 print(buffer)

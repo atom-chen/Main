@@ -1,5 +1,5 @@
-function xFoo(...)
-local args={...}--ËùÓĞ²ÎÊı¶¼µ½ÁËargsÕâ¸ö±íÀïÃæ
+ï»¿function xFoo(...)
+local args={...}--æ‰€æœ‰å‚æ•°éƒ½åˆ°äº†argsè¿™ä¸ªè¡¨é‡Œé¢
 for i,v in ipairs(args) do
 print(i,v)
 end

@@ -1,14 +1,14 @@
---·µ»ØtÖĞÃ¿Ò»¸öÔªËØÖµµÄµü´ú
+ï»¿--è¿”å›tä¸­æ¯ä¸€ä¸ªå…ƒç´ å€¼çš„è¿­ä»£
 function values(t) 
 local i=0 return function() 
 i=i+1; return t[i] end end;
 
 t={10,20,30};
 iter=values(t);
---Ê¹ÓÃ
+--ä½¿ç”¨
 --[[
 while(true) do
-local temp=iter();--Ã¿Ö´ĞĞÒÀ´ÎÈ¡³öÏÂÒ»¸öÔªËØ,ÒòÎªi»á±£Áô
+local temp=iter();--æ¯æ‰§è¡Œä¾æ¬¡å–å‡ºä¸‹ä¸€ä¸ªå…ƒç´ ,å› ä¸ºiä¼šä¿ç•™
 if(temp==nil) then break end;
 print(temp);
 end;

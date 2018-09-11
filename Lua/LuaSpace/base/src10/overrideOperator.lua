@@ -1,44 +1,44 @@
-Player={}--»ùÀà
+ï»¿Player={}--åŸºç±»
 Player.__index=Player;
 
-function Player.New()--¹¹Ôì·½·¨
+function Player.New()--æ„é€ æ–¹æ³•
 local obj={name="default"}
-setmetatable(obj,Player)--ÔÚÕâÀï£¬obj±ä³ÉÁËPlayer¶ÔÏó
+setmetatable(obj,Player)--åœ¨è¿™é‡Œï¼Œobjå˜æˆäº†Playerå¯¹è±¡
 return obj
 end
 
-function Player.__add(a,b)--ÖØÔØ+
-print("µ÷ÓÃPlayer.a+b");
+function Player.__add(a,b)--é‡è½½+
+print("è°ƒç”¨Player.a+b");
 return a
 end
 
-function Player.__sub(a,b)--ÖØÔØ-
-print("µ÷ÓÃPlayer.a-b");
+function Player.__sub(a,b)--é‡è½½-
+print("è°ƒç”¨Player.a-b");
 return a
 end
 
-function Player.__mul(a,b)--ÖØÔØ*
-print("µ÷ÓÃPlayer.a*b");
+function Player.__mul(a,b)--é‡è½½*
+print("è°ƒç”¨Player.a*b");
 return a
 end
 
-function Player.__div(a,b)--ÖØÔØ/
-print("µ÷ÓÃPlayer.a/b");
+function Player.__div(a,b)--é‡è½½/
+print("è°ƒç”¨Player.a/b");
 return a
 end
 
-function Player.__unm(a)--ÖØÔØÈ¡¸ºÖµ
-print("µ÷ÓÃPlayer.-a");
+function Player.__unm(a)--é‡è½½å–è´Ÿå€¼
+print("è°ƒç”¨Player.-a");
 return a
 end
 
-function Player.__pow(a,n)--ÖØÔØn´ÎÃİ
-print("µ÷ÓÃPlayer.a^n");
+function Player.__pow(a,n)--é‡è½½næ¬¡å¹‚
+print("è°ƒç”¨Player.a^n");
 return a
 end
 
-function Player.__concat(a,n)--ÖØÔØ×Ö·û´®Æ´½Ó
-print("µ÷ÓÃPlayer.a..n");
+function Player.__concat(a,n)--é‡è½½å­—ç¬¦ä¸²æ‹¼æ¥
+print("è°ƒç”¨Player.a..n");
 return a
 end
 

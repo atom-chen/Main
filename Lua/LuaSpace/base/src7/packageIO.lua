@@ -1,3 +1,3 @@
-local m=require "io" --Òıio°ü
+ï»¿local m=require "io" --å¼•ioåŒ…
 print(m)
-m.write("hello lua")--µ÷ÓÃ°üÄÚµÄÈ«¾Öº¯Êı
+m.write("hello lua")--è°ƒç”¨åŒ…å†…çš„å…¨å±€å‡½æ•°

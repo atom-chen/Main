@@ -1,6 +1,6 @@
-a={5,4,3,2,1}
+ï»¿a={5,4,3,2,1}
 
-for i,v in ipairs(a) do --Êı×éµü´úÆ÷
+for i,v in ipairs(a) do --æ•°ç»„è¿­ä»£å™¨
 print(i,v)
 end
 
@@ -8,7 +8,7 @@ for i,v in ipairs(a) do
 print(i,a[i])
 end
 
-for k,v in pairs(a) do  --pairµü´úÆ÷
+for k,v in pairs(a) do  --pairè¿­ä»£å™¨
 print(k,v)
 end
 
@@ -16,4 +16,4 @@ for k,v in pairs(a) do
 print(k,a[k])
 end
 
-print("table size=",table.getn(a)); --»ñÈ¡Êı×éÀàĞÍtable³¤¶È
+print("table size=",table.getn(a)); --è·å–æ•°ç»„ç±»å‹tableé•¿åº¦

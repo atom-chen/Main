@@ -1,16 +1,16 @@
-require "Tools" --Òıutils°ü
+ï»¿require "Tools" --å¼•utilsåŒ…
 a={}
 
-a.x=100--²åÖµkv·½Ê½1
-a["y"]=200--²åÈëkv·½Ê½2
+a.x=100--æ’å€¼kvæ–¹å¼1
+a["y"]=200--æ’å…¥kvæ–¹å¼2
 Tools.PrintTable(a)
 
 print();
 a={1,2,3}
-table.insert(a,1,4) --Íù±íÖĞ²åÈëÊı¾İ£¬²åÈëvalµ½posµÄÎ»ÖÃ
-table.insert(a,6) --Íù±íÖĞ²åÈëÊı¾İ£¬²åÈëvalµ½±íµÄÄ©Î²
+table.insert(a,1,4) --å¾€è¡¨ä¸­æ’å…¥æ•°æ®ï¼Œæ’å…¥valåˆ°posçš„ä½ç½®
+table.insert(a,6) --å¾€è¡¨ä¸­æ’å…¥æ•°æ®ï¼Œæ’å…¥valåˆ°è¡¨çš„æœ«å°¾
 Tools.PrintTable(a)
 
 print();
-table.remove(a,5)--ÒÆ³ıposÎ»ÖÃÉÏµÄÊıÖµ
+table.remove(a,5)--ç§»é™¤posä½ç½®ä¸Šçš„æ•°å€¼
 Tools.PrintTable(a)

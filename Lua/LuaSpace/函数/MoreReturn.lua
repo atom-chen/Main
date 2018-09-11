@@ -1,4 +1,4 @@
-function f(a,b)
+ï»¿function f(a,b)
 	print("input",a,b)
 	return a or b
 end
@@ -7,11 +7,11 @@ function foo1() end;
 
 function foo2() 
 	return "a" 
-end;--·µ»ØÒ»¸öÖµ
+end;--è¿”å›žä¸€ä¸ªå€¼
 
 function foo3() 
 	return "a","b" 
-end;--·µ»ØÁ½¸öÖµ
+end;--è¿”å›žä¸¤ä¸ªå€¼
 
 a=f(3);
 print(a);
@@ -22,15 +22,15 @@ print(a);
 a=f(3,4,5);
 print(a);
 
-count=0; --È«¾Ö¼ÆÊýÆ÷
+count=0; --å…¨å±€è®¡æ•°å™¨
 function incCount(a)
-	n=n or 1 --dafault parameter = 1,·ÀÖ¹Êµ²ÎÎªnil
+	n=n or 1 --dafault parameter = 1,é˜²æ­¢å®žå‚ä¸ºnil
 	count=count+n
 end
 incCount(9);
 print("count=",count);
 
---¶àÖØ·µ»ØÖµ
+--å¤šé‡è¿”å›žå€¼
 s,e=string.find("hello lua!","lua");
 print("s=",s,"    e=",e);
 
@@ -47,24 +47,24 @@ function maxinum(a)
 	return maxIndex,maxVal;
 end;
 
-print("maxinum ret=",maxinum(a));--½«´òÓ¡Á½¸öÖµ->´ËÊ±aÊÇÒ»¸ötable
+print("maxinum ret=",maxinum(a));--å°†æ‰“å°ä¸¤ä¸ªå€¼->æ­¤æ—¶aæ˜¯ä¸€ä¸ªtable
 
---Èô·µ»ØÖµ±È×óÖµ¶à£¬Ôò¶à³öÀ´µÄ·µ»ØÖµ±»¶ªÆú	
+--è‹¥è¿”å›žå€¼æ¯”å·¦å€¼å¤šï¼Œåˆ™å¤šå‡ºæ¥çš„è¿”å›žå€¼è¢«ä¸¢å¼ƒ	
 a,b,c=10,string.find("hello lua!","lua");
 print("s=",a,"e=",b,"c=",c);
-x=foo3();--y±»¶ªÆú
+x=foo3();--yè¢«ä¸¢å¼ƒ
 print("x=foo3(),x=",x);
 
---µ±·µ»ØÖµÊýÁ¿²»¹»£¬Ôò»á½Óµ½nil
+--å½“è¿”å›žå€¼æ•°é‡ä¸å¤Ÿï¼Œåˆ™ä¼šæŽ¥åˆ°nil
 a,b,c,d=10,string.find("hello lua!","lua");		
 print("s=",a,"e=",b,"c=",c,"d=",d);
 
---µ±º¯Êýµ÷ÓÃ²»ÊÇ×îºóÒ»¸ö,Ö»²úÉúÒ»¸öÖµ
+--å½“å‡½æ•°è°ƒç”¨ä¸æ˜¯æœ€åŽä¸€ä¸ª,åªäº§ç”Ÿä¸€ä¸ªå€¼
 x,y=foo3(),20;
 print("x,y=foo3(),x=",x,"y=",y);
-x,y=foo1(),20,30;--foo1·µ»Ønil
+x,y=foo1(),20,30;--foo1è¿”å›žnil
 print("x,y=foo1(),x=",x,"y=",y);
 
---Èô½«·µ»ØÖµÓÃ×÷º¯Êýµ÷ÓÃ
-print("foo3()=",foo3());--·µ»ØÖµÈ«²¿´«ÈëÍâ²¿µ÷ÓÃ£¨Ö»ÓÐÒ»¸öÐÎ²Î£©
-print(foo3().."x");--²»Ö¹Ò»¸öÐÎ²Î£¬·µ»ØÖµÊýÁ¿±»µ÷ÕûÎª1
+--è‹¥å°†è¿”å›žå€¼ç”¨ä½œå‡½æ•°è°ƒç”¨
+print("foo3()=",foo3());--è¿”å›žå€¼å…¨éƒ¨ä¼ å…¥å¤–éƒ¨è°ƒç”¨ï¼ˆåªæœ‰ä¸€ä¸ªå½¢å‚ï¼‰
+print(foo3().."x");--ä¸æ­¢ä¸€ä¸ªå½¢å‚ï¼Œè¿”å›žå€¼æ•°é‡è¢«è°ƒæ•´ä¸º1
