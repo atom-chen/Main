@@ -209,7 +209,8 @@ public class RollNoticeManager : MonoBehaviour
             else
             {
                 // 系统公告可能比较长，需要按长度缩放一下显示时间
-                m_ShowingNotice.EndTime = Time.time + m_ShowingNotice.Content.Length / 2.0f;
+                string content = StrDictionary.GetServerDictionaryFormatString(m_ShowingNotice.Content);
+                m_ShowingNotice.EndTime = Time.time + content.Length / 2.0f;
                 ShowMarquee(m_ShowingNotice);
             }
         }

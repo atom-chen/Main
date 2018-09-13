@@ -44,7 +44,11 @@ public class CoolDownManager : MonoBehaviour
 		}
         //跨天检测
         m_DiffDayChecker.Tick();
-
+        //帮会邀请过期检测
+        if (GameManager.PlayerDataPool.GuildData != null)
+        {
+            GameManager.PlayerDataPool.GuildData.Tick();
+        }
     }
 
     void FixedUpdate()

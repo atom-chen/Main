@@ -132,7 +132,7 @@ public class ScreenOrientationManager : MonoBehaviour
             return false;
         }
 
-        if (MainUI.Ins != null && MainUI.Ins.IsPlayingUnlockEffect)
+        if (FunctionOpenController.Ins != null && FunctionOpenController.Ins.IsPlayingUnlockEffect)
         {
             return false;
         }
@@ -272,7 +272,7 @@ public class ScreenOrientationManager : MonoBehaviour
         if (ObjManager.MainPlayer != null)
         {
             ObjManager.MainPlayer.PlayEffect(GlobeVar.ROLETOUCH_EFFECT_ENTER);
-            ObjManager.MainPlayer.CameraFaceTo();
+            //ObjManager.MainPlayer.CameraFaceTo();
         }
 
         if (RoleTouchController.Instance == null)

@@ -350,7 +350,7 @@ public class SoundManager : MonoBehaviour
     private float m_BGMPauseTime = 0.5f;
     private float m_BGMPauseVolume = 1;//GlobeVar.INVALID_ID;
 
-    private float m_TVVolume = 1;
+    //private float m_TVVolume;
 
     private bool m_NeedRecoverBGM = false;
     private bool m_NeedRecoverSFX = false;
@@ -667,19 +667,30 @@ public class SoundManager : MonoBehaviour
         GameManager.SoundManager.PlaySoundEffectAtPos(nSoundID, playingPos, ObjManager.MainPlayer != null ? ObjManager.MainPlayer.Position : playingPos);
     }
 
-    public void OnTVSoundEffectPlay()
-    {
-        m_TVVolume = m_BGAudioSource.m_AudioSource.volume;
-        m_BGAudioSource.m_AudioSource.volume = m_TVVolume * 0.7f;
-    }
+    // 删除原本代码里的减弱, 通过配表实现
+    //public void OnTVSoundEffectPlay()
+    //{
+    //    float tvBgVol = PlayerPreferenceData.BGMVol;//m_BGAudioSource.m_AudioSource.volume;
 
-    public void OnTVSoundEffectRecover()
-    {
-        m_BGAudioSource.m_AudioSource.volume = m_TVVolume;
-    }
+    //    // 不能控制当前背景音是否在暂停或fade, 所以从表中取
+    //    var tab = TableManager.GetSoundsByID(m_BGAudioSource.m_uID, 0);
+    //    if (tab != null)
+    //    {
+    //        tvBgVol *= tab.Volume;
+    //    }
+    //    m_TVVolume = tvBgVol;
+    //    m_BGAudioSource.m_AudioSource.volume = m_TVVolume * 0.7f;
+    //    Debug.LogErrorFormat("tv bgm vol {0}, id {1} @ OnTVSoundEffectPlay", m_BGAudioSource.m_AudioSource.volume, m_BGAudioSource.m_uID);
+    //}
 
-	//根绝某个音乐配置的概率，确认是否播放
-	private bool IsSoundPlayByRate(int nSoundID)
+    //public void OnTVSoundEffectRecover()
+    //{
+    //    m_BGAudioSource.m_AudioSource.volume = m_TVVolume;
+    //    Debug.LogErrorFormat("tv bgm vol {0}, id {1} @ OnTVSoundEffectRecover", m_BGAudioSource.m_AudioSource.volume, m_BGAudioSource.m_uID);
+    //}
+
+    //根绝某个音乐配置的概率，确认是否播放
+    private bool IsSoundPlayByRate(int nSoundID)
 	{
         Tab_Sounds _tabSound = TableManager.GetSoundsByID(nSoundID, 0);
 		if (null == _tabSound)
@@ -764,6 +775,7 @@ public class SoundManager : MonoBehaviour
             LogModule.WarningLog("::OnPlayBGMWithFade:: param is null !!");
             return;
         }
+
         if (m_BGAudioSource != null && m_BGAudioSource.m_AudioSource != null && bgSoundClip != null)
         {
             // 更新上次播放记录
@@ -779,6 +791,8 @@ public class SoundManager : MonoBehaviour
                 {
                     return;
                 }
+
+
                 m_fadeOutTime = param.m_fadeOutTime;
                 m_fadeInTime = param.m_fadeInTime;
                 m_fadeOutTimer = 0;
@@ -939,7 +953,6 @@ public class SoundManager : MonoBehaviour
 
         if (nSoundID < 0)
         {
-            LogModule.ErrorLog("PlayRealSound id < 0");
             return;
         }
 
@@ -1312,7 +1325,6 @@ public class SoundManager : MonoBehaviour
         {
             if (soundClip.Audioclip == null)
             {
-                LogModule.ErrorLog("PlaySoundEffect soundClip.Audioclip is null");
                 return;
             }
 

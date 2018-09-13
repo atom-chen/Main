@@ -28,13 +28,14 @@ public class StoryPlayerController : MonoBehaviour
 	public GameObject m_LeftFakeTop;		//左侧半身像的TopUI
 	public GameObject m_RightFakeDecorate;	//右侧半身像周围的装饰
 	public GameObject m_RightFakeTop;       //右侧半身像的TopUI
+    public GameObject m_BGObj;
 
     public GameObject m_BtnSkip;
 
-    public StoryExInfoController m_LeftExInfo;
-    public StoryExInfoController m_RightExInfo;
-    private Vector3 m_LeftFakeObjScale=Vector3.one;
-    private Vector3 m_RightFakeObjScale=Vector3.one;
+    public StoryExInfoController m_ExInfo;
+    private static Vector3 m_LeftFakeObjScale = Vector3.one;
+    private static Vector3 m_RightFakeObjScale = Vector3.one;
+
     private bool m_bIsPause = false;
     public bool IsPause
     {
@@ -45,6 +46,12 @@ public class StoryPlayerController : MonoBehaviour
         set
         {
             m_bIsPause = value;
+            //通知story模块暂停
+            if (GameManager.storyManager != null)
+            {
+                GameManager.storyManager.IsPause = value;
+
+            }
         }
     }
     private bool m_bIsInStoryRoleShow = false;
@@ -63,6 +70,10 @@ public class StoryPlayerController : MonoBehaviour
     private float m_fStoryShowTime = -1.0f;    //本次剧情的播放时间
     private float m_fStoryLifeTime = 0.0f;      //本次剧情的持续时间
     private bool m_bForceAutoPlay = false;//是否强制自动播放
+    public bool IsAutoPlay
+    {
+        get { return m_bForceAutoPlay; }
+    }
 
     bool m_Finished = false;
 
@@ -75,6 +86,7 @@ public class StoryPlayerController : MonoBehaviour
     void Awake()
     {
         m_Instance = this;
+        m_ExInfo.gameObject.SetActive(false);
     }
 
 
@@ -96,13 +108,15 @@ public class StoryPlayerController : MonoBehaviour
         // 为避免服务器没返回消息这边事件结束发了其他消息影响剧情流程, 一旦点了skip就停止更新本事件
         if (GameManager.storyManager!=null && GameManager.storyManager.SkipMode)
             return;
-
+        if (m_bIsPause)
+        {
+            return;
+        }
         if (m_fStoryShowTime > 0.0f && m_fStoryLifeTime > 0.0f)
         {
-            if ((m_bForceAutoPlay || PlayerPreferenceData.AutoPlayDialog ) && Time.time - m_fStoryShowTime >= m_fStoryLifeTime)
+            if ((m_bForceAutoPlay || PlayerPreferenceData.AutoPlayDialog ) && Time.time - m_fStoryShowTime +  StoryRoleShow.KeepTime >= m_fStoryLifeTime)
             {
-                m_bIsUserSkip = false;
-                PlayNext();
+                PlayNext(true);
             }
         }
     }
@@ -175,8 +189,10 @@ public class StoryPlayerController : MonoBehaviour
         m_ContentTE.ResetToBeginning();
 
         // 是否可跳过
-        m_BtnSkip.SetActive(m_TabContent.IsCanSkip == 0);
-        m_bForceAutoPlay = (m_TabContent.IsCanSkip == 2);
+        m_BtnSkip.SetActive(m_TabContent.IsCanSkip == (int)STORY_SKIP_MODE.NORM_SHOW_BTN || 
+            m_TabContent.IsCanSkip == (int)STORY_SKIP_MODE.FORCE_NEXT_SHOW_SKIP);
+        m_bForceAutoPlay = (m_TabContent.IsCanSkip == (int)STORY_SKIP_MODE.FORCE_NEXT_NOT_SHOW_SKIP || 
+            m_TabContent.IsCanSkip == (int)STORY_SKIP_MODE.FORCE_NEXT_SHOW_SKIP);
 
         //显示说话人
         //首先当SpeakerName不为空的时候显示SpeakerName
@@ -253,8 +269,6 @@ public class StoryPlayerController : MonoBehaviour
             m_fStoryLifeTime = m_TabContent.LifeTime;
         }
     }
-    public static string m_recordData = "";
-    public bool m_bIsUserSkip = true;
 
     private void RefreshExInfo()
     {
@@ -265,31 +279,49 @@ public class StoryPlayerController : MonoBehaviour
         Tab_StoryRoleShow tabRoleShow = TableManager.GetStoryRoleShowByID(m_TabContent.ExInfoID, 0);
         //检查是否需要roleshow
         //0 左边 1 右边。如果都不是则按正常处理
-        if (tabRoleShow == null || tabRoleShow.Area != 0 && tabRoleShow.Area != 1)
+        if (tabRoleShow == null || tabRoleShow.Area != 0 && tabRoleShow.Area != 1 || m_ExInfo.IsHideing)
         {
             RefreshFakeObj();
             return;
         }
-        FakeRtInstance ins;
+        //如果左右对不上，取消增强展示
+        switch(tabRoleShow.Area)
+        {
+            case 0:
+                if (m_TabContent.LeftSpeakerID == GlobeVar.INVALID_ID)
+                {
+                    RefreshFakeObj();
+                    return;
+                }
+                break;
+            case 1:
+                if (m_TabContent.RightSpeakerID == GlobeVar.INVALID_ID)
+                {
+                    RefreshFakeObj();
+                    return;
+                }
+                break;
+        }
+        FakeRtInstance ins = null;
+        //检查完毕 增强展示
         switch (tabRoleShow.Area)
         {
             case 0://左
                 //左边做特殊显示，由ExInfo脚本触发显示
                 ins = m_FakeList[0];
                 ins.Refresh(GlobeVar.INVALID_ID, null);
-                RefreshFakeObj(m_TabContent.RightSpeakerID, m_TabContent.RightHead, m_TabContent.RightHeadAnim, 1);//右边按照表格显示
-                m_LeftExInfo.gameObject.SetActive(true);
-                m_LeftExInfo.ShowRoleExInfo(tabRoleShow);
+                RefreshFakeObj(m_TabContent.RightSpeakerID, m_TabContent.RightCustomFake, m_TabContent.RightHead, m_TabContent.RightHeadAnim, 1);//右边按照表格显示
+                m_ExInfo.ShowRoleExInfo(tabRoleShow);
                 break;
             case 1://右
-                RefreshFakeObj(m_TabContent.LeftSpeakerID, m_TabContent.LeftHead, m_TabContent.LeftHeadAnim, 0);//左边按照表格显示
+                RefreshFakeObj(m_TabContent.LeftSpeakerID, m_TabContent.LeftCustomFake, m_TabContent.LeftHead, m_TabContent.LeftHeadAnim, 0);//左边按照表格显示
                 //右边做特殊显示，由ExInfo脚本触发显示
                 ins = m_FakeList[1];
                 ins.Refresh(GlobeVar.INVALID_ID, null);
-                m_RightExInfo.gameObject.SetActive(true);
-                m_RightExInfo.ShowRoleExInfo(tabRoleShow);
+                m_ExInfo.ShowRoleExInfo(tabRoleShow);
                 break;
         }
+
     }
 
     /// <summary>
@@ -297,47 +329,50 @@ public class StoryPlayerController : MonoBehaviour
     /// </summary>
     void ResetExInfoState()
     {
+        if (m_FakeList.Length < 2)
+        {
+            return;
+        }
+
         m_FakeList[0].SetScale(m_LeftFakeObjScale);
         m_FakeList[1].SetScale(m_RightFakeObjScale);
         m_LeftFakeObjScale = Vector3.one;
         m_RightFakeObjScale = Vector3.one;
-        m_LeftExInfo.gameObject.SetActive(false);
-        m_RightExInfo.gameObject.SetActive(false);
+        if(m_ExInfo.gameObject.activeSelf)
+        {
+            m_ExInfo.ExInfoFadeOut();
+        }
+        SetContentTEActive(true);
     }
 
 
 
     //播放下一段
-    public void PlayNext()
-    {        
+    public void PlayNext(bool isAuto=false)
+    {   //已经受过一次影响，将其置0
+        if (!isAuto)
+        {
+            PlatformHelper.RecordEvent("剧情小跳");
+        }
+        StoryRoleShow.KeepTime = 0;     
         if (null == m_StoryContent)
         {
             LogModule.ErrorLog("ShowNextDialog StoryContent is null");
             return;
         }
 
-        MsdkReportData.RecordStoryData(m_nStoryID, m_bIsUserSkip);
-
-        m_bIsUserSkip = true;
-        //把所有UI展开
-        if(m_LeftExInfo.gameObject.activeSelf)
-        {
-            m_LeftExInfo.SetExInfoEnd();
-        }
-        else if(m_RightExInfo.gameObject.activeSelf)
-        {
-            m_RightExInfo.SetExInfoEnd();
-        }
         //如果打字机效果还没有结束，则点击之后先结束效果，将文字全部显示
         //否则跳过这句话
-        if (m_ContentTE.isActive)
+        if (m_ContentTE.isActive || m_ExInfo.Active)
         {  
             m_ContentTE.Finish();
+            if(m_ExInfo.Active)
+            {
+                m_ExInfo.SetExInfoEnd();
+            }
         }
-        //如果当前不处于暂停
-        else if(!m_bIsPause)
+        else 
         {
-            m_nCurStep++;
             //如果本次没有触发过RoleShow
             if (m_TabContent != null && !m_bIsInStoryRoleShow)
             {
@@ -348,17 +383,14 @@ public class StoryPlayerController : MonoBehaviour
                     if (tabRoleShow != null && tabRoleShow.Area == 2)
                     {
                         m_bIsInStoryRoleShow = true;
-                        StoryRoleShow.tabRoleShow = tabRoleShow;
-                        UIManager.ShowUI(UIInfo.StoryRoleShow);
-                        //通知story模块暂停
-                        if (GameManager.storyManager != null)
-                        {
-                            GameManager.storyManager.IsPause = true;
-                            return;
-                        }
+                        SetContentTEActive(false);
+                        StoryRoleShow.Show(tabRoleShow);
+                        IsPause = true;
+                        return;
                     }   
                 }
             }
+            m_nCurStep++;
             m_bIsInStoryRoleShow = false;
             if (m_nCurStep <= 0 || m_nCurStep >= m_StoryContent.Count)
             {
@@ -377,13 +409,11 @@ public class StoryPlayerController : MonoBehaviour
 	{
         if (m_Finished)
             return;
-
         //如果有事件，则事件结束
         if (null != m_Event)
-		{
-			m_Event.Leave();
-		}
-
+        {
+            m_Event.Leave();
+        }
         m_nLastStoryID = m_nStoryID;
         StartCoroutine(DelayCloseUI());
 
@@ -393,8 +423,8 @@ public class StoryPlayerController : MonoBehaviour
     // 剧情大跳
     public void Skip()
     {
-        MsdkReportData.RecordStoryData(m_nStoryID, m_bIsUserSkip);
-
+        string eventName = string.Format("[{0},{1}]", GameManager.PlayerDataPool.m_nStoryLine, GameManager.PlayerDataPool.m_nStroyID);
+        PlatformHelper.RecordEvent("剧情大跳" + eventName);
         if (m_Event == null)
         {
             Finish();
@@ -433,7 +463,6 @@ public class StoryPlayerController : MonoBehaviour
     IEnumerator DelayCloseUI()
     {
         yield return new WaitForSeconds(0.2f);
-
         if (m_nLastStoryID == m_nStoryID)
         {
             //上次对话剧情ID和本次相同，表示还没有更换剧情，直接关闭
@@ -452,22 +481,23 @@ public class StoryPlayerController : MonoBehaviour
         {
             if(fakeIndex==0)
             {
-                RefreshFakeObj(m_TabContent.LeftSpeakerID, m_TabContent.LeftHead, m_TabContent.LeftHeadAnim, 0);
+                RefreshFakeObj(m_TabContent.LeftSpeakerID, m_TabContent.LeftCustomFake, m_TabContent.LeftHead, m_TabContent.LeftHeadAnim, 0);
                 if(0<m_FakeList.Length)
                 {
                     m_LeftFakeObjScale = m_FakeList[0].GetScale();
                     m_FakeList[0].SetScale(scale);
+
+
                 }
             }
             else if(fakeIndex==1)
             {
-                RefreshFakeObj(m_TabContent.RightSpeakerID, m_TabContent.RightHead, m_TabContent.RightHeadAnim, 1);
+                RefreshFakeObj(m_TabContent.RightSpeakerID, m_TabContent.RightCustomFake, m_TabContent.RightHead, m_TabContent.RightHeadAnim, 1);
                 if (1 < m_FakeList.Length)
                 {
                     m_RightFakeObjScale = m_FakeList[1].GetScale();
                     m_FakeList[1].SetScale(scale);
                 }
-
             }
         }
     }
@@ -477,11 +507,11 @@ public class StoryPlayerController : MonoBehaviour
         if (m_TabContent == null)
             return;
 
-        RefreshFakeObj(m_TabContent.LeftSpeakerID, m_TabContent.LeftHead, m_TabContent.LeftHeadAnim, 0);
-        RefreshFakeObj(m_TabContent.RightSpeakerID, m_TabContent.RightHead, m_TabContent.RightHeadAnim, 1);
+        RefreshFakeObj(m_TabContent.LeftSpeakerID, m_TabContent.LeftCustomFake, m_TabContent.LeftHead, m_TabContent.LeftHeadAnim, 0);
+        RefreshFakeObj(m_TabContent.RightSpeakerID, m_TabContent.RightCustomFake, m_TabContent.RightHead, m_TabContent.RightHeadAnim, 1);
     }
 
-    int GetFake(int speakerId, ref AvatarLoadInfo outLoadInfo)
+    int GetFake(int speakerId, int customFake, ref AvatarLoadInfo outLoadInfo)
     {
         if (speakerId == GlobeVar.INVALID_ID)
             return speakerId;
@@ -495,6 +525,7 @@ public class StoryPlayerController : MonoBehaviour
         //SceneNpc支持-9000~-9003的特殊主角id
         if (speakerId == GlobeVar.MAIN_PLAYER_SP_ID && GameManager.storyManager != null && GameManager.storyManager.CurStoryTable != null)
         {
+            // 如果Story表中是-9999
             int storychar = GameManager.storyManager.CurStoryTable.StoryModel;
             if (storychar == GlobeVar.MAIN_PLAYER_SP_ID)
             {
@@ -517,28 +548,55 @@ public class StoryPlayerController : MonoBehaviour
                 outLoadInfo = ObjManager.MainPlayer.OrgAvatarInfo;
                 return _charModel.StoryFakeObjID;
             }
+            // 如果Story表中是-9000~-9002
+            int heroid = Utils.GetSpecialHeroID(storychar);
+            if (heroid != GlobeVar.INVALID_ID)
+            {
+                outLoadInfo = new AvatarLoadInfo();
+                outLoadInfo.m_BodyId = Utils.GetModelByHeroId(heroid);
+                outLoadInfo.LoadDyeColor(Utils.GetRealDyeColorId(storychar));
+                if (customFake != GlobeVar.INVALID_ID)
+                {
+                    return customFake;
+                }
+                Tab_CharModel _charModel = TableManager.GetCharModelByID(outLoadInfo.m_BodyId, 0);
+                if (null == _charModel)
+                    return GlobeVar.INVALID_ID;
+                return _charModel.StoryFakeObjID;
+            }
+            // 如果Story表中是普通charmodelid
+            if (customFake != GlobeVar.INVALID_ID)
+                return customFake;
+            Tab_CharModel storyModel = TableManager.GetCharModelByID(storychar, 0);
+            if (null == storyModel)
+                return GlobeVar.INVALID_ID;
+            return storyModel.StoryFakeObjID;
         }
         else
         {
             Tab_SceneNpc tabSceneNpc = TableManager.GetSceneNpcByID(speakerId, 0);
             if (tabSceneNpc != null)
             {
-                int realChar = Utils.GetRealCharModel(tabSceneNpc.DataID);
+                int realChar = Utils.GetRealCharModel(tabSceneNpc.GetDataIDbyIndex(0));
                 
                 // CharModel表用的模型资源和Fake表用的模型资源可能不一样, ccb2.5临时这样处理一下, 策划说后续会跟进, 改成一样的
-                bool isSpecialChar = (tabSceneNpc.DataID == GlobeVar.MAIN_PLAYER_SP_ID ||
-                                      Utils.GetSpecialHeroID(tabSceneNpc.DataID) != GlobeVar.INVALID_ID);
+                bool isSpecialChar = (tabSceneNpc.GetDataIDbyIndex(0) == GlobeVar.MAIN_PLAYER_SP_ID ||
+                                      Utils.GetSpecialHeroID(tabSceneNpc.GetDataIDbyIndex(0)) != GlobeVar.INVALID_ID);
                 if (isSpecialChar)
                 {
                     outLoadInfo = new AvatarLoadInfo();
                     outLoadInfo.m_BodyId = realChar;
 
-                    int realColor = Utils.GetRealDyeColorId(tabSceneNpc.DataID);
+                    int realColor = Utils.GetRealDyeColorId(tabSceneNpc.GetDataIDbyIndex(0));
                     Tab_DyeColor tabColor = TableManager.GetDyeColorByID(realColor, 0);
                     if (tabColor != null)
                     {
                         outLoadInfo.LoadDyeColor(realColor);
-                    }    
+                    }
+                    if (customFake != GlobeVar.INVALID_ID)
+                    {
+                        return customFake;
+                    }
                 }
                 else
                 {
@@ -557,7 +615,7 @@ public class StoryPlayerController : MonoBehaviour
     }
 
     //showFlag: 0暗，1亮，-1不显示
-    void RefreshFakeObj(int speakerID, int showFlag, int anim, int fakeIdx)
+    void RefreshFakeObj(int speakerID, int customFake, int showFlag, int anim, int fakeIdx)
     {
         if (fakeIdx >= m_FakeList.Length)
             return;
@@ -576,10 +634,24 @@ public class StoryPlayerController : MonoBehaviour
         {
             //显示FakeObj
             AvatarLoadInfo info = null;
-            int nFakeObjID = (-1 == showFlag ? GlobeVar.INVALID_ID : GetFake(speakerID, ref info));
+            int nFakeObjID = (-1 == showFlag ? GlobeVar.INVALID_ID : GetFake(speakerID, customFake, ref info));
 
             //根据info是否为空来确认是否需要加载染色信息
             ins.Refresh(nFakeObjID, info);
+        }
+    }
+
+    public void SetContentTEActive(bool active)
+    {
+        m_ContentTE.gameObject.SetActive(active);
+        m_LeftFakeTop.SetActive(active);
+        m_RightFakeTop.SetActive(active);
+        m_BGObj.SetActive(active);
+        if(!active && m_FakeList.Length >= 2)
+        {
+            m_BtnSkip.SetActive(false);
+            m_FakeList[0].Refresh(GlobeVar.INVALID_ID, null);
+            m_FakeList[1].Refresh(GlobeVar.INVALID_ID, null);
         }
     }
 }
