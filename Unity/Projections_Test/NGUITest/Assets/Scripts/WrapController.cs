@@ -14,7 +14,7 @@ public class WrapController : MonoBehaviour {
         {
             m_Data[i] = i.ToString();
         }
-        m_WrapContent.minIndex = -(m_Data.Length)+1;
+        m_WrapContent.minIndex = 1- m_Data.Length;
         m_WrapContent.maxIndex = 0;
         m_WrapContent.enabled = true;
     }
@@ -25,7 +25,7 @@ public class WrapController : MonoBehaviour {
         EmailItem emailItem = obj.GetComponent<EmailItem>();
         if(emailItem!=null)
         {
-            emailItem.InitEmailItem("", dataIndex.ToString(), DateTime.Now.ToString());
+            emailItem.InitEmailItem("", (-dataIndex).ToString(), DateTime.Now.ToString());
         }
     }
 }

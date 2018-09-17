@@ -222,8 +222,8 @@
     <Compile Include="Assets\Scripts\Mail\EmailItem.cs" />
     <Compile Include="Assets\Scripts\Mail\EmailUI.cs" />
     <Compile Include="Assets\Scripts\SkillCD.cs" />
+    <Compile Include="Assets\Scripts\Text.cs" />
     <Compile Include="Assets\Scripts\WrapController.cs" />
-    <Compile Include="Assets\Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
