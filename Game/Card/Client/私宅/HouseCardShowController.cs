@@ -47,7 +47,13 @@ public class HouseCardShowController : MonoBehaviour
                 m_BagRoot.SetActive(false);
                 m_KongKongRuYe.SetActive(true);
             }
-            m_Num.text = GameManager.PlayerDataPool.YardData.ProtoYard.CardList.Count.ToString();
+
+            if (GameManager.PlayerDataPool.YardData.ProtoYard != null &&
+                GameManager.PlayerDataPool.YardData.ProtoYard.CardList != null)
+            {
+                m_Num.text = GameManager.PlayerDataPool.YardData.ProtoYard.CardList.Count.ToString();
+            }
+            
             m_Wrap.InitList(m_CardList.Count, OnUpdateCardItem, false);
         }
 

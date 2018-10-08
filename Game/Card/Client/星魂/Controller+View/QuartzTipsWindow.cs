@@ -4,10 +4,11 @@ using System.Collections;
 using Games.Table;
 using Games.GlobeDefine;
 using Games;
+using ProtobufPacket;
+using System.Collections.Generic;
 
 //星魂信息tips View
 public class QuartzTipsWindow : MonoBehaviour {
-
     public enum TipsType
     {
         Invalid,
@@ -21,7 +22,6 @@ public class QuartzTipsWindow : MonoBehaviour {
     public UISprite m_StarIcon;
     public UILabel m_NameLabel;
     public UILabel m_LevelLabel;
-    public UISprite m_SlotIcon;
     public QuartzTipsAttrItem m_MainAttr;
     public QuartzTipsAttrItem[] m_AttachAttr;
     public UILabel m_OrbalLabel;
@@ -33,11 +33,23 @@ public class QuartzTipsWindow : MonoBehaviour {
     public GameObject m_UnEquipBtn;
     public UIGrid m_BtnGrid;
     public GameObject m_EquipedIcon;
-    public UISprite m_BGSprite;
+    public StateGroup m_LockSprite;
+    public StateGroup m_ThrowSprite;
+    public GameObject m_ShareObj;
 
     private Quartz m_Quartz = null;
     private TipsType m_TipsType = TipsType.Invalid;
     private Card m_Card = null;
+
+    void Awake()
+    {
+        GameManager.PlayerDataPool.OnQuartzFlagChange += OnQuartzUpdate;
+    }
+
+    void OnDestroy()
+    {
+        GameManager.PlayerDataPool.OnQuartzFlagChange -= OnQuartzUpdate;
+    }
 
     void OnDisable()
     {
@@ -61,6 +73,11 @@ public class QuartzTipsWindow : MonoBehaviour {
         m_TipsType = type;
         m_Card = card;
 
+        Refresh();
+    }
+
+    private void Refresh()
+    {
         if (m_StrengthenBtn != null)
         {
             m_StrengthenBtn.SetActive(m_TipsType == TipsType.Bag || m_TipsType == TipsType.Equiped);
@@ -73,15 +90,41 @@ public class QuartzTipsWindow : MonoBehaviour {
         {
             m_UnEquipBtn.SetActive(m_TipsType == TipsType.Equiped);
         }
+        if (m_LockSprite != null && m_ThrowSprite != null)
+        {
+            m_LockSprite.gameObject.SetActive(m_TipsType != TipsType.Info);
+            m_ThrowSprite.gameObject.SetActive(m_TipsType != TipsType.Info);
+            //如果是已锁定
+            if (m_Quartz.IsLock())
+            {
+                m_LockSprite.ChangeState(0);
+                m_ThrowSprite.ChangeState(2);
+            }
+            //如果是未锁定 已弃置
+            else if (m_Quartz.IsThrow())
+            {
+                m_LockSprite.ChangeState(1);
+                m_ThrowSprite.ChangeState(0);
+            }
+            //未锁定 未弃置
+            else
+            {
+                m_LockSprite.ChangeState(1);
+                m_ThrowSprite.ChangeState(1);
+            }
+        }
         if (m_BtnGrid != null)
         {
             m_BtnGrid.Reposition();
         }
+        if (m_ShareObj!=null)
+        {
+            m_ShareObj.SetActive(m_Quartz.Star >= GlobeVar._GameConfig.m_nShareQuartzNeedStar && (m_TipsType == TipsType.Bag || m_TipsType == TipsType.Equiped));
+        }
 
         m_QuartzIcon.spriteName = m_Quartz.GetListIcon();
-        m_SlotIcon.spriteName = QuartzTool.GetQuartzSlotTypeIcon(m_Quartz.GetSlotType());
         m_StarIcon.spriteName = QuartzTool.GetQuartzStarIconName(m_Quartz.Star);
-        m_NameLabel.text = m_Quartz.GetName();
+        m_NameLabel.text = m_Quartz.GetFullName();
         m_LevelLabel.gameObject.SetActive(m_Quartz.Strengthen > 0);
         m_LevelLabel.text = StrDictionary.GetClientDictionaryString("#{5160}", m_Quartz.Strengthen);
         m_MainAttr.Init(m_Quartz.MainAttr.RefixType, m_Quartz.MainAttr.AttrValue);
@@ -122,7 +165,16 @@ public class QuartzTipsWindow : MonoBehaviour {
             m_EquipedIcon.SetActive(m_TipsType == TipsType.Compared);
         }
     }
-
+    
+    private void OnQuartzUpdate(Quartz quartz)
+    {
+        if(quartz == null || m_Quartz == null ||quartz.Guid != m_Quartz.Guid)
+        {
+            return;
+        }
+        m_Quartz = quartz;
+        Refresh();
+    }
     //点击强化
     public void OnStrenthenClick()
     {
@@ -230,6 +282,70 @@ public class QuartzTipsWindow : MonoBehaviour {
             CardOrbmentWindow.Instance.OnTipsCloseClick();
         }
     }
+
+    public void OnClickLock()
+    {
+        if(m_Quartz == null)
+        {
+            return;
+        }
+        if(m_Quartz.IsLock())
+        {
+            CG_QUARTZ_UNLOCK_PAK pak = new CG_QUARTZ_UNLOCK_PAK();
+            pak.data.QuartzGuid = m_Quartz.Guid;
+            pak.SendPacket();
+        }
+        else
+        {
+            CG_QUARTZ_LOCK_PAK pak = new CG_QUARTZ_LOCK_PAK();
+            pak.data.QuartzGuid = m_Quartz.Guid;
+            pak.SendPacket();
+        }
+    }
+
+    public void OnClickThrow()
+    {
+        if (m_Quartz == null)
+        {
+            return;
+        }
+        if(m_Quartz.IsLock())
+        {
+            //已锁定的无法弃置
+            return;
+        }
+        if (m_Quartz.IsThrow())
+        {
+            CG_QUARTZ_UNTHROW_PAK pak = new CG_QUARTZ_UNTHROW_PAK();
+            pak.data.QuartzGuid = m_Quartz.Guid;
+            pak.SendPacket();
+        }
+        else
+        {
+            CG_QUARTZ_THROW_PAK pak = new CG_QUARTZ_THROW_PAK();
+            pak.data.QuartzGuid = m_Quartz.Guid;
+            pak.SendPacket();
+        }
+    }
+
+    public void OnClickShare()
+    {
+        ShareController.Show(m_Quartz);
+        //关闭Tips
+        if(QuartzTipsController.Instance!=null)
+        {
+            QuartzTipsController.Instance.OnCloseClick();
+        }
+        else if(CardOrbmentWindow.Instance!=null)
+        {
+            CardOrbmentWindow.Instance.OnTipsCloseClick();
+        }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
     void UpdateTutorialOnTipsShow()
     {
         if (TutorialRoot.IsGroupStep(TutorialGroup.QuartzEquip, 10))

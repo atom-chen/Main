@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Games.GlobeDefine;
 using Games.Table;
 using UnityEngine;
+using Games;
 
 public class QuartzSetRecommendWindow : MonoBehaviour
 {
     private const string RareSpriteName = "Card_quality";//稀有度SpriteName前缀
-    public UISprite m_CardShow;
+    public UITexture m_CardShow;
     public UILabel m_CardName;          //名称：类别
     public UILabel m_CardIntroduce;     //推荐理由
     public UISprite m_RareFrame;        //稀有度边框
@@ -34,7 +35,7 @@ public class QuartzSetRecommendWindow : MonoBehaviour
         //左边
         if (tCard.getHeadIconCount() >= 1)
         {
-            m_CardShow.spriteName = tCard.GetHeadIconbyIndex(0);
+            m_CardShow.mainTexture = Utils.LoadFuLingIconTecture(tCard.GetHeadIconbyIndex(0));
         }
         string attr = "";
         switch (tCard.BattleType)

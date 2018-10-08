@@ -9,7 +9,8 @@ public class QuartzSetRecommendItem : MonoBehaviour
 {
     public UITexture m_ClassPic;
     public UILabel m_NameLabel;             
-    public UILabel m_AttrLabel;             
+    public UILabel m_AttrLabel;
+    public GameObject m_JumpBtn;      
 
     private int m_SetId = GlobeVar.INVALID_ID;
     private GameObject mParentWin;
@@ -37,6 +38,8 @@ public class QuartzSetRecommendItem : MonoBehaviour
 
         m_AttrLabel.text = "";
         m_AttrLabel.text += QuartzTool.GetFormatSetAttr_Recomand(tSet);
+
+        m_JumpBtn.SetActive(UIBattleEnd.s_EndFlag != UIBattleEnd.ENUM_ENDFLAG.OPENUI_FULINGLU);
     }
 
     public void OnJumpClick()

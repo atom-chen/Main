@@ -9,6 +9,7 @@
 using Games;
 using Games.GlobeDefine;
 using Games.Table;
+using ProtobufPacket;
 using UnityEngine;
 
 public class DropQuartzTips : MonoBehaviour {
@@ -37,11 +38,27 @@ public class DropQuartzTips : MonoBehaviour {
     {
         m_Instace = this;
     }
-    public static void Show(ulong quartzGuid)
+    public static void Show(_QUARTZ pbQuartz)
     {
-        UIManager.ShowUI(UIInfo.StarTips,Init, quartzGuid);
+        if(pbQuartz == null)
+        {
+            return;
+        }
+        UIManager.ShowUI(UIInfo.StarTips, InitByPB, pbQuartz);
+    }    public static void Show(ulong quartzGuid)
+    {
+        UIManager.ShowUI(UIInfo.StarTips, InitByGuid, quartzGuid);
     }
-    public static void Init(bool success,object param)
+    static void InitByPB(bool success,object para)
+    {
+        if (success == false || m_Instace == null)
+        {
+            return;
+        }
+        _QUARTZ quartz = para as _QUARTZ;
+        m_Instace.InitTips(quartz);
+    }
+    static void InitByGuid(bool success,object param)
     {
         if (success == false|| m_Instace == null)
         {
@@ -50,7 +67,17 @@ public class DropQuartzTips : MonoBehaviour {
         ulong quartzGuid = (ulong)param;
          m_Instace.InitTips(quartzGuid);
     }
-    public void InitTips(ulong quartzGuid)
+    void InitTips(_QUARTZ pbQuartz)
+    {
+        if(pbQuartz == null)
+        {
+            return;
+        }
+        Quartz quartz = new Quartz();
+        quartz.BuildFromProtoQuartz(pbQuartz);
+        Refresh(quartz);
+    }
+    void InitTips(ulong quartzGuid)
     {
         if (GameManager.PlayerDataPool.PlayerQuartzBag==null)
         {
@@ -58,24 +85,30 @@ public class DropQuartzTips : MonoBehaviour {
         }
 
         m_Quartz = GameManager.PlayerDataPool.PlayerQuartzBag.GetQuartz(quartzGuid);
-        if (m_Quartz==null)
+        Refresh(m_Quartz);
+    }
+
+    public void Refresh(Quartz nQuartz)
+    {
+        if (nQuartz == null)
         {
             return;
         }
-        m_QuartzIcon.spriteName = m_Quartz.GetListIcon();
-        m_SlotIcon.spriteName = QuartzTool.GetQuartzSlotTypeIcon(m_Quartz.GetSlotType());
-        m_StarIcon.spriteName = QuartzTool.GetQuartzStarIconName(m_Quartz.Star);
-        m_NameLabel.text = m_Quartz.GetName();
-        m_LevelLabel.gameObject.SetActive(m_Quartz.Strengthen > 0);
-        m_LevelLabel.text = StrDictionary.GetClientDictionaryString("#{5160}", m_Quartz.Strengthen);
-        m_MainAttr.Init(m_Quartz.MainAttr.RefixType, m_Quartz.MainAttr.AttrValue);
-        for (int i = 0; i < m_AttachAttr.Length && i < m_Quartz.AttachAttr.Length; i++)
+        m_Quartz = nQuartz;
+        m_QuartzIcon.spriteName = nQuartz.GetListIcon();
+        m_SlotIcon.spriteName = QuartzTool.GetQuartzSlotTypeIcon(nQuartz.GetSlotType());
+        m_StarIcon.spriteName = QuartzTool.GetQuartzStarIconName(nQuartz.Star);
+        m_NameLabel.text = nQuartz.GetFullName();
+        m_LevelLabel.gameObject.SetActive(nQuartz.Strengthen > 0);
+        m_LevelLabel.text = StrDictionary.GetClientDictionaryString("#{5160}", nQuartz.Strengthen);
+        m_MainAttr.Init(nQuartz.MainAttr.RefixType, nQuartz.MainAttr.AttrValue);
+        for (int i = 0; i < m_AttachAttr.Length && i < nQuartz.AttachAttr.Length; i++)
         {
-            m_AttachAttr[i].InitAttach(m_Quartz.AttachAttr[i].RefixType, m_Quartz.AttachAttr[i].AttrValue);
+            m_AttachAttr[i].InitAttach(nQuartz.AttachAttr[i].RefixType, nQuartz.AttachAttr[i].AttrValue);
         }
 
         m_SetAttrLabel.text = "";
-        int nClassId = m_Quartz.GetClassId();
+        int nClassId = nQuartz.GetClassId();
         foreach (var pair in TableManager.GetQuartzSet())
         {
             if (pair.Value == null || pair.Value.Count < 1)

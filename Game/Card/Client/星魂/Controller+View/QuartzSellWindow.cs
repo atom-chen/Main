@@ -74,7 +74,7 @@ public class QuartzSellWindow : MonoBehaviour
                 continue;
             }
 
-            if (QuartzTool.GetQuartzStarColor(quartz.Star) >= (int)COLOR.ORANGE)
+            if (QuartzTool.GetQuartzStarColor(quartz.Star) >= (int)COLOR.PURPLE)
             {
                 MessageBoxController.OpenOKCancel(6203, -1, SellOK);
                 return;

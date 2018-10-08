@@ -60,15 +60,21 @@ public class QuartzClassItem : MonoBehaviour {
     {
         if (m_Count <= 0)
         {
-            if (QuartzEquipWindow.Instance != null && QuartzEquipWindow.Instance.GetChooseSlotType() == GlobeVar.INVALID_ID)
+            Tab_QuartzClass tClass = TableManager.GetQuartzClassByID(m_ClassId, 0);
+            if(tClass == null)
             {
-                Utils.CenterNotice(7990);
+                return;
             }
-            else
-            {
-                Utils.CenterNotice(8005);
-            }
+            ItemGain.ItemGainJumpByGainId(tClass.GainId);
+            //if (QuartzEquipWindow.Instance != null && QuartzEquipWindow.Instance.GetChooseSlotType() == GlobeVar.INVALID_ID)
+            //{
 
+            //    Utils.CenterNotice(7990);
+            //}
+            //else
+            //{
+            //    Utils.CenterNotice(8005);
+            //}
             return;
         }
 

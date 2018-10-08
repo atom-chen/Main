@@ -4,7 +4,6 @@ using Games.GlobeDefine;
 
 public class QuartzItem : MonoBehaviour {
 
-    public UISprite m_SlotTypeSprite;
     public UISprite m_QuartzIcon;
     public UILabel m_StrengthenLabel;
     public UISprite m_StarIcon;
@@ -35,7 +34,6 @@ public class QuartzItem : MonoBehaviour {
 
         m_Quartz = quartz;
 
-        m_SlotTypeSprite.spriteName = QuartzTool.GetQuartzSlotTypeIcon(m_Quartz.GetSlotType());
         m_QuartzIcon.spriteName = m_Quartz.GetListIcon();
 	    m_StrengthenLabel.text = string.Format("+{0}", m_Quartz.Strengthen);
 	    m_StarIcon.spriteName = QuartzTool.GetQuartzStarIconName(m_Quartz.Star);

@@ -328,13 +328,13 @@ public partial class HouseScene : RealTimeScene
         if (skin == null)
             return;
 
-        GameObject res = AssetManager.LoadResource(skin.NavRes) as GameObject;
+        GameObject res = AssetManager.LoadResource("Prefab/" + skin.NavRes) as GameObject;
         if (res == null)
         {
             LogModule.WarningLog("cannot load HouseNavRoot");
             return;
         }
-        GameObject navRoot = Instantiate(res, Vector3.zero, Quaternion.identity) as GameObject;
+        GameObject navRoot = AssetManager.InstantiateObjToParent(res,null);
         if (navRoot == null)
         {
             LogModule.WarningLog("Load HouseNavRoot Failed");
@@ -365,13 +365,13 @@ public partial class HouseScene : RealTimeScene
         if (skin == null)
             return;
 
-        GameObject res = AssetManager.LoadResource(skin.PosRes) as GameObject;
+        GameObject res = AssetManager.LoadResource("Prefab/" + skin.PosRes) as GameObject;
         if (res == null)
         {
             LogModule.WarningLog("cannot load HousePos");
             return;
         }
-        GameObject root = Instantiate(res, Vector3.zero, Quaternion.identity) as GameObject;
+        GameObject root = AssetManager.InstantiateObjToParent(res, null);
         if (root == null)
         {
             LogModule.WarningLog("Load HousePos Failed");

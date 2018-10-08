@@ -31,7 +31,7 @@ public class HouseChangeSkinItem : MonoBehaviour
             return;
         }
         this.gameObject.SetActive(true);
-        m_PriceLabel.text = tabHouseSkin.Price.ToString();
+        m_PriceLabel.text = Utils.GetPriceStr((int)SpecialItemID.BindYuanbao, tabHouseSkin.Price);
         m_PreviewObj.SetActive(false);     //默认不允许预览
         //如果是当前场景，则选中
         if (GameManager.RunningScene == m_TabHouse.SceneClass)

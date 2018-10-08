@@ -320,22 +320,22 @@ public class QuartzEquipWindow : MonoBehaviour
     public void HandleTipsCloseClick()
     {
         // 取消选中
-        m_ChooseSlotItem = null;
-        for (int i = 0; i < m_QuartzSlotItem.Length; i++)
-        {
-            m_QuartzSlotItem[i].UpdateChoose(false);
-        }
-
-        if (m_PreviewCard != null && m_PreviewCard.IsValid())
-        {
-            m_PreviewCard.CleanUp();
-            InitOrbmentAttr(m_Card);
-        }
-
         //如果出现了反勾选行为，则通知星魂背包重置
         if (OrbmentController.Instance != null)
         {
-            OrbmentController.Instance.HandleChooseSlotChange();
+            bool bIsCancelChoose = m_ChooseSlotItem != null;
+            m_ChooseSlotItem = null;
+            OrbmentController.Instance.HandleChooseSlotChange(bIsCancelChoose);
+            for (int i = 0; i < m_QuartzSlotItem.Length; i++)
+            {
+                m_QuartzSlotItem[i].UpdateChoose(false);
+            }
+
+            if (m_PreviewCard != null && m_PreviewCard.IsValid())
+            {
+                m_PreviewCard.CleanUp();
+                InitOrbmentAttr(m_Card);
+            }
         }
     }
 

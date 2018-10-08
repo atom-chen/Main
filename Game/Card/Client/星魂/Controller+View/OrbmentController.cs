@@ -67,7 +67,8 @@ public class OrbmentController : MonoBehaviour
     public UILabel m_CoinLabel;
     public UILabel m_StrengthenStoneLabel;
     public UIWidget m_QuartzListWidget;
-    public GameObject m_NoQuartzObject;
+    public GameObject m_NoQuartzObject_Class;
+    public GameObject m_NoQuartzObject_Pos;
     public UILabel m_QuartzTabCountLabel;            //当前tab分页筛选出的星魂数量 
     public GameObject m_QuartzSellObj;
     public UILabel m_QuartzWholeCountLabel;         //总数量
@@ -75,6 +76,9 @@ public class OrbmentController : MonoBehaviour
     public GameObject m_PlayerResourcesObj;           //金币 星尘面板父物体
 
     public UISprite m_BGSprite;
+
+    public GameObject[] m_hideGoList;   //隐藏跳转的gameobject列表
+
     //pos
 
     //set
@@ -172,6 +176,8 @@ public class OrbmentController : MonoBehaviour
         m_QuartzPosClassToggle.onToggle = OnQuartzPosClassToggle;                   //位置/类别
         m_DownUpSortToggle.onToggle = OnDownUpSortToggle;
         m_QuartzSortOption.delOnOptionItemChoose = OnQuartzSortOptionChoose;        //排序规则
+        m_QuartzSortOption.delOnOptionClick = OnClickSortOpList ;
+        m_QuartzStarFilterTab.delOnOptionClick = OnClickStarOpList;
         m_QuartzStarFilterTab.delOnOptionItemChoose = OnQuartzStarOptionChoose;
         m_QuartzSlotTypeTab.delTabChanged = OnQuartzSlotTypeTabChanged;             //槽位筛选项 1/2/3/4/5/6
         m_QuartzSellTab.delTabChanged = OnQuartzSellTypeTabChanged;                 //焚星界面切换Tab后调
@@ -211,6 +217,8 @@ public class OrbmentController : MonoBehaviour
             ConvenientNoticeController.Instance.gameObject.SetActive(false);
         }
         m_QuartzItemObjCount = m_QuartzListWrap.transform.childCount;
+
+        RefreshUIForHideGo();
     }
 
     void OnDisable()
@@ -327,7 +335,8 @@ public class OrbmentController : MonoBehaviour
 
         m_ChooseClassId = GlobeVar.INVALID_ID;
         m_ChooseQuartzGuid = GlobeVar.INVALID_GUID;
-
+        m_NoQuartzObject_Class.SetActive(false);
+        m_SellGuidList.Clear();
         //观星
         if (tab.name == "Tab01-Star")
         {
@@ -336,7 +345,6 @@ public class OrbmentController : MonoBehaviour
             m_QuartzSortOption.SetDefaultOption("Option1-Star");
             m_QuartzStarFilterTab.SetDefaultOption("-1");
             UpdateOptionGrid();
-
             //显示观星界面的筛选项
             m_QuartzPosClassToggle.gameObject.SetActive(true);
             m_QuartzPosClassToggle.Refresh(1);           //默认选择 pos
@@ -367,14 +375,7 @@ public class OrbmentController : MonoBehaviour
             m_IsChooseAll = false;
         }
 
-        if (m_QuartzSortOption.IsOptionOpen())
-        {
-            m_QuartzSortOption.CloseOption();
-        }
-        if (m_QuartzStarFilterTab.IsOptionOpen())
-        {
-            m_QuartzStarFilterTab.CloseOption();
-        }
+        CloseOpList();
 
         if (m_QuartzTips.IsShow())
         {
@@ -396,7 +397,9 @@ public class OrbmentController : MonoBehaviour
             m_QuartzListWindow.SetActive(false);
             m_QuartzSetListWindow.SetActive(true);
             m_QuartzSlotTypeObject.SetActive(false);
-            m_NoQuartzObject.SetActive(false);
+
+            m_NoQuartzObject_Class.SetActive(false);
+            m_NoQuartzObject_Pos.SetActive(false);
 
             m_QuartzListGrid.transform.localPosition = QuartzListWindowPos_Class;
             m_QuartzListPanel.baseClipRegion = QuartzListPanelRange_Class;
@@ -412,7 +415,7 @@ public class OrbmentController : MonoBehaviour
             m_QuartzListWindow.SetActive(true);
             m_QuartzSetListWindow.SetActive(false);
             m_QuartzSlotTypeObject.SetActive(true);
-
+            m_NoQuartzObject_Class.SetActive(false);
             m_QuartzListGrid.transform.localPosition = QuartzListWindowPos_SlotType;
             m_QuartzListPanel.baseClipRegion = QuartzListPanelRange_SlotType;
             m_BGSprite.height = BG_Small_Height;
@@ -473,7 +476,7 @@ public class OrbmentController : MonoBehaviour
         {
             return;
         }
-
+        m_QuartzPosClassToggle.Refresh(0, false, false);
         m_ChooseQuartzGuid = GlobeVar.INVALID_GUID;
         m_ChooseClassId = nClassId;
 
@@ -500,7 +503,36 @@ public class OrbmentController : MonoBehaviour
     //从具体类型的星宿 返回到星宿预览
     public void OnReturnClassClick()
     {
-        m_QuartzPosClassToggle.Refresh(0);  //选择 类别
+        m_ChooseClassId = GlobeVar.INVALID_ID;
+        m_ChooseQuartzGuid = GlobeVar.INVALID_GUID;
+        m_OptionSortObj.SetActive(false);
+        m_QuartzClassTitle.SetActive(true);
+        m_QuartzListWindow.SetActive(false);
+        m_QuartzSetListWindow.SetActive(true);
+        m_QuartzSlotTypeObject.SetActive(false);
+        m_NoQuartzObject_Class.SetActive(false);
+
+        m_QuartzListGrid.transform.localPosition = QuartzListWindowPos_Class;
+        m_QuartzListPanel.baseClipRegion = QuartzListPanelRange_Class;
+        m_BGSprite.height = BG_Big_Height;
+        InitQuartzSetList(false);
+
+        m_ReturnQuartzClass.SetActive(false);
+
+        if (m_QuartzSortOption.IsOptionOpen())
+        {
+            m_QuartzSortOption.CloseOption();
+        }
+        if (m_QuartzStarFilterTab.IsOptionOpen())
+        {
+            m_QuartzStarFilterTab.CloseOption();
+        }
+
+        if (m_QuartzTips.IsShow())
+        {
+            m_QuartzTips.DirectCloseTips();
+        }
+        m_QuartzPosClassToggle.Refresh(0, false, false);  //选择 类别
     }
 
     //----------------------------------------------------------筛选、排序 begin---------------------------------------------
@@ -526,7 +558,6 @@ public class OrbmentController : MonoBehaviour
         {
             m_QuartzTips.OnCloseClick();
         }
-
         if (m_QuartzPosClassToggle.Index == 0 && m_ChooseClassId != GlobeVar.INVALID_ID)
         {
             InitQuartzList_Class(true);
@@ -540,31 +571,21 @@ public class OrbmentController : MonoBehaviour
     //1 2 3 4 5 6 变化
     public void OnQuartzSlotTypeTabChanged(TabButton tab)
     {
+        if (m_QuartzStarFilterTab.IsOptionOpen())
+        {
+            m_QuartzStarFilterTab.CloseOption();
+        }
+        if (m_QuartzSortOption.IsOptionOpen())
+        {
+            m_QuartzSortOption.CloseOption();
+        }
         if (m_QuartzPosClassToggle.Index == 1)
         {
             InitQuartzList_Bag(true);
-
-            if (m_QuartzSortOption.IsOptionOpen())
-            {
-                m_QuartzSortOption.CloseOption();
-            }
-            if (m_QuartzStarFilterTab.IsOptionOpen())
-            {
-                m_QuartzStarFilterTab.CloseOption();
-            }
         }
         else if (m_QuartzPosClassToggle.Index == 0 && m_ChooseClassId != GlobeVar.INVALID_ID)
         {
             InitQuartzList_Class(true);
-
-            if (m_QuartzSortOption.IsOptionOpen())
-            {
-                m_QuartzSortOption.CloseOption();
-            }
-            if (m_QuartzStarFilterTab.IsOptionOpen())
-            {
-                m_QuartzStarFilterTab.CloseOption();
-            }
         }
 
         //取消选中
@@ -621,7 +642,25 @@ public class OrbmentController : MonoBehaviour
         else if (item.name == "Option3-RecentlyGet")
         {
             //当选择 时间排序时，隐藏升降序 默认降序
+            m_QuartzStarFilterTab.SetDefaultOption("-1");   //默认选到全部
             m_DownUpSortToggle.Index = 0;
+        }
+        else if(item.name == "Option2-Level")
+        {
+            m_QuartzStarFilterTab.ChooseOption("-1");   //默认选到全部
+            if (m_ShowQuartzBag)
+            {
+                InitQuartzList_Bag(true);
+            }
+            else
+            {
+                InitQuartzList_Class(true);
+            }
+
+            if (m_QuartzTips.IsShow())
+            {
+                m_QuartzTips.OnCloseClick();
+            }
         }
     }
 
@@ -631,9 +670,29 @@ public class OrbmentController : MonoBehaviour
         m_QuartzStarFilterTab.gameObject.SetActive(m_QuartzSortOption.GetCurOptionName() == "Option1-Star");
         m_DownUpSortToggle.gameObject.SetActive(m_QuartzSortOption.GetCurOptionName() != "Option3-RecentlyGet");
 
-        m_OptionGrid.repositionNow = true; //筛选项重排序
+
+        m_OptionGrid.Reposition();
+        if (m_QuartzSortOption.IsOptionOpen())
+        {
+            m_QuartzSortOption.CloseOption();
+        }
+        if (m_QuartzStarFilterTab.IsOptionOpen())
+        {
+            m_QuartzStarFilterTab.CloseOption();
+        }
     }
 
+    void CloseOpList()
+    {
+        if (m_QuartzStarFilterTab.IsOptionOpen())
+        {
+            m_QuartzStarFilterTab.CloseOption();
+        }
+        if (m_QuartzSortOption.IsOptionOpen())
+        {
+            m_QuartzSortOption.CloseOption();
+        }
+    }
     //选择一个稀有度后被调用
     void OnQuartzStarOptionChoose(OptionItem item)
     {
@@ -641,11 +700,7 @@ public class OrbmentController : MonoBehaviour
         {
             m_QuartzTips.OnCloseClick();
         }
-        if (m_QuartzStarFilterTab.IsOptionOpen())
-        {
-            m_QuartzStarFilterTab.CloseOption();
-        }
-
+        CloseOpList();
         if (m_ShowQuartzBag)
         {
             InitQuartzList_Bag(true);
@@ -796,14 +851,15 @@ public class OrbmentController : MonoBehaviour
 
             if (bResetPostion || m_QuartzList.Count <= m_QuartzItemObjCount)
             {
-                m_QuartzListScroll.ResetPosition();
+                m_QuartzListWrap.InitList(m_QuartzList.Count, OnUpdateQuartzItem);
+                //m_QuartzListScroll.ResetPosition();
             }
         }
 
         m_QuartzTabCountLabel.text = StrDictionary.GetDicByID(8007, m_QuartzList.Count.ToString());
         m_QuartzTabCountLabel.gameObject.SetActive(false);
         m_QuartzTabCountLabel.gameObject.SetActive(true);
-        m_NoQuartzObject.SetActive(m_QuartzList.Count <= 0);
+        m_NoQuartzObject_Class.SetActive(m_QuartzList.Count <= 0);
 
         m_ShowQuartzBag = false;
         m_ShowSellList = false;
@@ -888,14 +944,15 @@ public class OrbmentController : MonoBehaviour
 
             if (bResetPosition || m_QuartzList.Count <= m_QuartzItemObjCount)
             {
-                m_QuartzListScroll.ResetPosition();
+                m_QuartzListWrap.InitList(m_QuartzList.Count, OnUpdateQuartzItem);
+                //m_QuartzListScroll.ResetPosition();
             }
         }
 
         m_QuartzTabCountLabel.text = StrDictionary.GetDicByID(8007, m_QuartzList.Count.ToString());
         m_QuartzTabCountLabel.gameObject.SetActive(false);
         m_QuartzTabCountLabel.gameObject.SetActive(true);
-        m_NoQuartzObject.SetActive(m_QuartzList.Count <= 0);
+        m_NoQuartzObject_Pos.SetActive(m_QuartzList.Count <= 0);
 
         m_ShowQuartzBag = true;
         m_ShowSellList = false;
@@ -931,14 +988,15 @@ public class OrbmentController : MonoBehaviour
 
             if (bResetPostion || m_QuartzList.Count <= m_QuartzItemObjCount)
             {
-                m_QuartzListScroll.ResetPosition();
+                m_QuartzListWrap.InitList(m_QuartzList.Count, OnUpdateQuartzItem);
+               // m_QuartzListScroll.ResetPosition();
             }
         }
 
         m_QuartzTabCountLabel.text = StrDictionary.GetDicByID(8007, m_QuartzList.Count.ToString());
         m_QuartzTabCountLabel.gameObject.SetActive(false);
         m_QuartzTabCountLabel.gameObject.SetActive(true);
-        m_NoQuartzObject.SetActive(m_QuartzList.Count <= 0);
+        m_NoQuartzObject_Pos.SetActive(m_QuartzList.Count <= 0);
 
         m_ShowQuartzBag = false;
         m_ShowSellList = true;
@@ -1038,6 +1096,11 @@ public class OrbmentController : MonoBehaviour
         {
             return;
         }
+        if( item.Quartz == null)
+        {
+            return;
+        }
+        CloseOpList();
         //如果在观星界面
         if (m_QuartzOpTab.GetHighlightTab().name == "Tab01-Star")
         {
@@ -1090,8 +1153,12 @@ public class OrbmentController : MonoBehaviour
             }
             else
             {
+                m_QuartzTips.Show(item.Quartz, QuartzTipsWindow.TipsType.Bag);
+                if(item.Quartz.IsLock())
+                {
+                    return;
+                }
                 m_SellGuidList.Add(item.GetGuid());
-                m_QuartzTips.Show(item.Quartz, QuartzTipsWindow.TipsType.Info);
             }
 
             item.UpdateSellChoose(m_SellGuidList.Contains(item.GetGuid()));
@@ -1100,15 +1167,6 @@ public class OrbmentController : MonoBehaviour
             {
                 QuartzSellWindow.Instance.HandleQuartzItemClick();
             }
-        }
-
-        if (m_QuartzSortOption.IsOptionOpen())
-        {
-            m_QuartzSortOption.CloseOption();
-        }
-        if (m_QuartzStarFilterTab.IsOptionOpen())
-        {
-            m_QuartzStarFilterTab.CloseOption();
         }
     }
 
@@ -1201,6 +1259,22 @@ public class OrbmentController : MonoBehaviour
         m_PlayerResourcesObj.SetActive(true);
     }
 
+    void OnClickSortOpList()
+    {
+        if (m_QuartzStarFilterTab.IsOptionOpen())
+        {
+            m_QuartzStarFilterTab.CloseOption();
+        }
+    }
+
+    void OnClickStarOpList()
+    {
+        if (m_QuartzSortOption.IsOptionOpen())
+        {
+            m_QuartzSortOption.CloseOption();
+        }
+    }
+
     //关闭星魂界面，返回符灵界面
     public void OnCloseClick()
     {
@@ -1215,6 +1289,15 @@ public class OrbmentController : MonoBehaviour
         }
     }
 
+    public void OnClickJump()
+    {
+        Tab_QuartzClass tClass = TableManager.GetQuartzClassByID(m_ChooseClassId, 0);
+        if (tClass == null)
+        {
+            return;
+        }
+        ItemGain.ItemGainJumpByGainId(tClass.GainId,null,true);
+    }
     public void HandleTipClose()
     {
         m_QuartzTips.OnCloseClick();
@@ -1268,7 +1351,7 @@ public class OrbmentController : MonoBehaviour
                 }
                 else if (m_ShowSellList)
                 {
-                    InitQuartzList_Sell();
+                    InitQuartzList_Sell(true);
                 }
                 else
                 {
@@ -1303,7 +1386,7 @@ public class OrbmentController : MonoBehaviour
                 }
                 else if (m_ShowSellList)
                 {
-                    InitQuartzList_Sell();
+                    InitQuartzList_Sell(true);
                 }
                 else
                 {
@@ -1416,19 +1499,32 @@ public class OrbmentController : MonoBehaviour
             m_SellGuidList.Clear();
 
             m_IsChooseAll = false;
+            m_QuartzListWrap.UpdateAllItem();
+
+            //更新价格
+            if (QuartzSellWindow.Instance != null)
+            {
+                QuartzSellWindow.Instance.HandleQuartzItemClick();
+            }
         }
         else
         {
             //全选
             m_SellGuidList.Clear();
-            for (int i = 0; i < m_QuartzList.Count; i++)
+            MessageBoxController.OpenOKCancel(8433, 8431,OnSellAllThrow,OnSellAllOK,8432,7748);
+        }
+    }
+
+    private void OnSellAllOK()
+    {
+        for (int i = 0; i < m_QuartzList.Count; i++)
+        {
+            if(!m_QuartzList[i].IsLock())
             {
                 m_SellGuidList.Add(m_QuartzList[i].Guid);
             }
 
-            m_IsChooseAll = true;
         }
-
         m_QuartzListWrap.UpdateAllItem();
 
         //更新价格
@@ -1436,6 +1532,26 @@ public class OrbmentController : MonoBehaviour
         {
             QuartzSellWindow.Instance.HandleQuartzItemClick();
         }
+        m_IsChooseAll = true;
+    }
+
+    private void OnSellAllThrow()
+    {
+        for (int i = 0; i < m_QuartzList.Count; i++)
+        {
+            if(m_QuartzList[i].IsThrow() && !m_QuartzList[i].IsLock())
+            {
+                m_SellGuidList.Add(m_QuartzList[i].Guid);
+            }
+        }
+        m_QuartzListWrap.UpdateAllItem();
+
+        //更新价格
+        if (QuartzSellWindow.Instance != null)
+        {
+            QuartzSellWindow.Instance.HandleQuartzItemClick();
+        }
+        m_IsChooseAll = true;
     }
 
     public void OnClickStrengthenPlus()
@@ -1454,6 +1570,7 @@ public class OrbmentController : MonoBehaviour
         {
             m_QuartzTips.OnCloseClick();
         }
+        CloseOpList();
     }
 
     public void HandleSetRecommendClick()
@@ -1462,6 +1579,7 @@ public class OrbmentController : MonoBehaviour
         {
             m_QuartzTips.OnCloseClick();
         }
+        CloseOpList();
     }
 
     #region 系统消耗时长
@@ -1511,7 +1629,7 @@ public class OrbmentController : MonoBehaviour
         {
             if (m_FirstQuartzItemLogic != null)
             {
-                TutorialRoot.ShowTutorial(TutorialGroup.QuartzEquip, 10, m_FirstQuartzItemLogic.gameObject, ClassItemWidth, ClassItemHeight);
+                TutorialRoot.ShowTutorial(TutorialGroup.QuartzEquip, 10, m_FirstQuartzItemLogic.m_QuartzIcon.gameObject, m_FirstQuartzItemLogic.m_QuartzIcon.width, m_FirstQuartzItemLogic.m_QuartzIcon.height);
             }
             else
             {
@@ -1532,7 +1650,7 @@ public class OrbmentController : MonoBehaviour
         {
             if (m_FirstQuartzItemLogic != null)
             {
-                TutorialRoot.ShowTutorial(TutorialGroup.QuartzEquip, 13, m_FirstQuartzItemLogic.gameObject, ClassItemWidth, ClassItemHeight);
+                TutorialRoot.ShowTutorial(TutorialGroup.QuartzEquip, 13, m_FirstQuartzItemLogic.m_QuartzIcon.gameObject, m_FirstQuartzItemLogic.m_QuartzIcon.width, m_FirstQuartzItemLogic.m_QuartzIcon.height);
             }
             else
             {
@@ -1555,7 +1673,7 @@ public class OrbmentController : MonoBehaviour
         {
             if (m_FirstQuartzItemLogic != null)
             {
-                TutorialRoot.ShowTutorial(TutorialGroup.QuartzSuit, 6, m_FirstQuartzItemLogic.gameObject, ClassItemWidth, ClassItemHeight);
+                TutorialRoot.ShowTutorial(TutorialGroup.QuartzSuit, 6, m_FirstQuartzItemLogic.m_QuartzIcon.gameObject, m_FirstQuartzItemLogic.m_QuartzIcon.width, m_FirstQuartzItemLogic.m_QuartzIcon.height);
             }
             else
             {
@@ -1568,4 +1686,18 @@ public class OrbmentController : MonoBehaviour
         }
     }
 
+    //隐藏跳转btn
+    public void RefreshUIForHideGo()
+    {
+        if (null != m_hideGoList)
+        {
+            for (int i = 0; i < m_hideGoList.Length; ++i)
+            {
+                if (m_hideGoList[i] != null)
+                {
+                    m_hideGoList[i].SetActive(UIBattleEnd.s_EndFlag != UIBattleEnd.ENUM_ENDFLAG.OPENUI_FULINGLU);
+                }
+            }
+        }
+    }
 }

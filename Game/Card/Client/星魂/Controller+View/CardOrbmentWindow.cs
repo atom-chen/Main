@@ -18,6 +18,7 @@ public class CardOrbmentWindow : MonoBehaviour
 
     public UILabel[] m_SetAttr;
     public UITable m_SetAttrGrid;
+    public UIScrollView m_AttrSV;
 
     public UIButton m_OpenOrbmentUIBtn;                    //中间的Btn
     public UISprite m_TutorialOrbmentBtnSprite;   
@@ -149,6 +150,8 @@ public class CardOrbmentWindow : MonoBehaviour
             }
         }
         m_SetAttrGrid.Reposition();
+        //重置ScrollView
+        m_AttrSV.ResetPosition();
     }
 
 
