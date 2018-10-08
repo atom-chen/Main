@@ -1,7 +1,0 @@
-Id	Desc	Area	Name	CV	Desc1	Desc2	Desc3
-INT	STRING	INT	STRING	STRING	STRING	STRING	STRING
-#MAX_ID=256;MAX_RECORD=256;TableType=Hash;							
-#字典号	描述（程序不读）	0=左 1=右边 2=特写	角色名称	声优名称	参数1	参数2	参数3
-1	测试用	0	奇怪君	有名的人	我是参数1	我是参数2	我是参数3
-2	测试用	1	UZI	ADCarry	我是参数1	我是参数2	我是参数3
-3	测试用	2	Mlxg	凶狠的人	我是参数1	我是参数2	我是参数3

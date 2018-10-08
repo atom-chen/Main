@@ -140,6 +140,18 @@ public class StoryPlayerController : MonoBehaviour
         ResetDialogTime();
     }
 
+    private float mEnterStorySpeed = 1f;
+
+    private float EnterStorySpeed
+    {
+        get { return mEnterStorySpeed; }
+        set
+        {
+            mEnterStorySpeed = value;
+            //Debug.LogFormat("enter speed {0}", mEnterStorySpeed);
+        }
+    }
+
     public bool InitUI(int nStoryID, StoryEvent_Dialog sEvent)
     {
         CleanUp();
@@ -153,6 +165,9 @@ public class StoryPlayerController : MonoBehaviour
             UIManager.CloseUI(UIInfo.StoryPlayer);
             return false;
         }
+
+        EnterStorySpeed = Time.timeScale;
+        Time.timeScale = 1;
 
         for (int i = 0; i < m_FakeList.Length; ++i)
         {
@@ -415,6 +430,10 @@ public class StoryPlayerController : MonoBehaviour
             m_Event.Leave();
         }
         m_nLastStoryID = m_nStoryID;
+
+        Time.timeScale = EnterStorySpeed;
+        EnterStorySpeed = 1f;
+
         StartCoroutine(DelayCloseUI());
 
         m_Finished = true;
@@ -574,20 +593,20 @@ public class StoryPlayerController : MonoBehaviour
         }
         else
         {
-            Tab_SceneNpc tabSceneNpc = TableManager.GetSceneNpcByID(speakerId, 0);
-            if (tabSceneNpc != null)
+            Tab_StoryNpc tabStoryNpc = TableManager.GetStoryNpcByID(speakerId, 0);
+            if (tabStoryNpc != null)
             {
-                int realChar = Utils.GetRealCharModel(tabSceneNpc.GetDataIDbyIndex(0));
+                int realChar = Utils.GetRealCharModel(tabStoryNpc.CharModelId);
                 
                 // CharModel表用的模型资源和Fake表用的模型资源可能不一样, ccb2.5临时这样处理一下, 策划说后续会跟进, 改成一样的
-                bool isSpecialChar = (tabSceneNpc.GetDataIDbyIndex(0) == GlobeVar.MAIN_PLAYER_SP_ID ||
-                                      Utils.GetSpecialHeroID(tabSceneNpc.GetDataIDbyIndex(0)) != GlobeVar.INVALID_ID);
+                bool isSpecialChar = (tabStoryNpc.CharModelId == GlobeVar.MAIN_PLAYER_SP_ID ||
+                                      Utils.GetSpecialHeroID(tabStoryNpc.CharModelId) != GlobeVar.INVALID_ID);
                 if (isSpecialChar)
                 {
                     outLoadInfo = new AvatarLoadInfo();
                     outLoadInfo.m_BodyId = realChar;
 
-                    int realColor = Utils.GetRealDyeColorId(tabSceneNpc.GetDataIDbyIndex(0));
+                    int realColor = Utils.GetRealDyeColorId(tabStoryNpc.DyeColorID);
                     Tab_DyeColor tabColor = TableManager.GetDyeColorByID(realColor, 0);
                     if (tabColor != null)
                     {
@@ -654,4 +673,55 @@ public class StoryPlayerController : MonoBehaviour
             m_FakeList[1].Refresh(GlobeVar.INVALID_ID, null);
         }
     }
+
+    #region share
+    public void OnClickShare()
+    {
+        ShareWindowControllor.Show(OnShareBegin, OnShareEnd, ShareWindowControllor.SHARECAMERA.SCREEN, ShareWindowControllor.ENUM_SHARETYPE.ENUM_SHARETYPE_STORY);
+    }
+
+    public GameObject[] m_shareHideList;
+    private bool[] m_isVisibleShareObjs;
+    private bool[] m_isVisibleShareObjs_Controller;
+    private void OnShareBegin()
+    {
+        if (null != m_shareHideList && m_shareHideList.Length > 0)
+        {
+            if (null == m_isVisibleShareObjs)
+            {
+                m_isVisibleShareObjs = new bool[m_shareHideList.Length];
+            }
+
+            for (int i = 0; i < m_shareHideList.Length; ++i)
+            {
+                if (m_shareHideList[i] != null)
+                {
+                    m_isVisibleShareObjs[i] = m_shareHideList[i].activeSelf;
+                    if (m_isVisibleShareObjs[i])
+                    {
+                        m_shareHideList[i].SetActive(false);
+                    }
+                }
+                else
+                {
+                    m_isVisibleShareObjs[i] = false;
+                }
+            }
+        }
+    }
+
+    private void OnShareEnd()
+    {
+        if (null != m_shareHideList && m_shareHideList.Length > 0)
+        {
+            for (int i = 0; i < m_isVisibleShareObjs.Length; ++i)
+            {
+                if (m_isVisibleShareObjs[i] && null != m_shareHideList[i])
+                {
+                    m_shareHideList[i].SetActive(true);
+                }
+            }
+        }
+    }
+    #endregion
 }
