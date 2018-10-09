@@ -1,0 +1,26 @@
+attribute vec3 _position;
+attribute vec3 _normal;
+attribute vec2 _uv;
+
+uniform mat4 _mv;
+uniform mat4 _project;
+uniform mat3 _normalMat;
+uniform vec3 _ambientColor;
+
+uniform vec3 _lightDirection;
+uniform vec3 _diffuseColor;
+
+
+varying vec2 vTextureCoord;
+varying vec3 vLightWeighting;
+
+void main(void)
+{
+    gl_Position = _project * _mv * vec4(_position, 1.0);
+    vTextureCoord = _uv;
+
+    vec3 tNormal = _normalMat * _normal;
+    ///得到2者夹角的余弦指 截取到[0,1]
+    float NdotL = max(dot(tNormal, _lightDirection), 0.0);
+    vLightWeighting = _ambientColor + _diffuseColor * NdotL;
+}
