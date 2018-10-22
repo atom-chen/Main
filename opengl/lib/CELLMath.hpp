@@ -5790,11 +5790,10 @@ namespace CELL
             }
             return true;
         }
-
-        bool    cubeInFrustum(tvec3<T> vmIn,tvec3<T> vMax) const
-        {
-            return  cubeInFrustum(vmIn.x,vMax.x,vmIn.y,vMax.y,vmIn.z,vMax.z);
-        }
+		bool    cubeInFrustum(const tvec3<T> maxiNum,const tvec3<T> miniNum) const
+		{
+			return cubeInFrustum(miniNum.x, maxiNum.x, miniNum.y, maxiNum.y, miniNum.z, maxiNum.z);
+		}
         bool    cubeInFrustum(T minX,T maxX,T minY,T maxY,T minZ,T maxZ) const
         {
             for (int i = 0; i < 6; i++)
