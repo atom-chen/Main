@@ -20,7 +20,7 @@ public class HouseMainUI : UIControllerBase<HouseMainUI>
     public UIEventTrigger m_SizhaiSkin;
     public UIEventTrigger m_FriendList;
     public UIEventTrigger m_GoHome;
-
+    public GameObject m_NoteRedPoint;
     public GameObject m_SizhaiMainUIRedPoint;
     private bool m_bHiding = false;               //默认打开
     bool isMine = false;
@@ -34,6 +34,7 @@ public class HouseMainUI : UIControllerBase<HouseMainUI>
     public UISprite m_TutorialProduceBtn;
 
     public UILabel m_OwnerName;
+    public GameObject m_btnChangeSkin;
 
     void Awake()
     {
@@ -206,6 +207,11 @@ public class HouseMainUI : UIControllerBase<HouseMainUI>
         HouseRelationRoot.Open();
     }
 
+    public void OnNoteClick()
+    {
+        HouseNoteController.Show();
+    }
+
     public void OnOpenRelaxAnimWindowClick()
     {
         RelaxAnimController.ShowRelaxAnim();
@@ -255,6 +261,7 @@ public class HouseMainUI : UIControllerBase<HouseMainUI>
         {
             m_FulingLuRedPoint.SetActive(GameManager.PlayerDataPool.IsCardBagRedShow());
             m_ProduceRedPoint.SetActive(GameManager.PlayerDataPool.IsYardProdRedShow());
+            m_btnChangeSkin.SetActive(TutorialManager.IsFunctionUnlock((int)FunctionUnlockId.HouseChangeSkin));
 
             m_SizhaiMainUIRedPoint.SetActive(m_FulingLuRedPoint.activeSelf || m_ProduceRedPoint.activeSelf);
         }
@@ -265,6 +272,7 @@ public class HouseMainUI : UIControllerBase<HouseMainUI>
 
             m_SizhaiMainUIRedPoint.SetActive(false);
         }
+        m_NoteRedPoint.SetActive(GameManager.PlayerDataPool.IsYardNoteRedPoint());
     }
 
 

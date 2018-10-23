@@ -16,9 +16,8 @@ using System.Linq;
 using ProtobufPacket;
 using Games;
 using Games.Table;
-//using UnityEditorInternal;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
 public partial class HouseScene : RealTimeScene
 {
@@ -53,7 +52,28 @@ public partial class HouseScene : RealTimeScene
     {
         get { return mYard; }
     }
-
+    public string YardName
+    {
+        get
+        {
+            if (mYard != null)
+            {
+                return mYard.yardName;
+            }
+            return "";
+        }
+    }
+    public string YardSignature
+    {
+        get
+        {
+            if (mYard != null)
+            {
+                return mYard.personSignature;
+            }
+            return "";
+        }
+    }
     private HouseNavigatorManager mNavManager;
 
     private Transform mCamStartTrans;
@@ -191,8 +211,36 @@ public partial class HouseScene : RealTimeScene
         return null;
     }
 
+#region static data
     private static int PreviewModel_ReturnScene = GlobeVar.INVALID_ID;    //预览模式需要返回的原场景
     private static int TVId = GlobeVar.INVALID_ID;
+    
+    public enum HouseNpcType
+    {
+        None, Story,
+    }
+    // 进入场景后是否向某个npc寻路, 因为每个皮肤配置的npc不同, 所以外部只指定类型, 进入私宅后由内部决定具体寻路方式
+    public static HouseNpcType sMoveToNpc = HouseNpcType.None; 
+    // 第一次完成剧情(实际判断: 完成次数为1, 且奖励未领)
+    public static bool sFirstFinishStory = false;
+
+    // 进入私宅场景时是否重设玩家位置
+    static bool sResetPlayerPos = false;
+    // 进入私宅场景时玩家的位置
+    static Vector3 sPlayerPos;
+    static Quaternion sPlayerRot;
+    // 缓存进入私宅场景时玩家的trans
+    public static void CachePlayerTrans(bool reset, Vector3 pos, Quaternion rot)
+    {
+        if (sResetPlayerPos == reset)
+            return;
+        sResetPlayerPos = reset;
+        sPlayerPos = pos;
+        sPlayerRot = rot;
+    }
+
+    #endregion
+
     //播放私宅TV
     public static void PlayTV(Tab_HouseSkin tabHouseSkin)
     {
@@ -203,8 +251,9 @@ public partial class HouseScene : RealTimeScene
         PreviewModel_ReturnScene = GameManager.RunningScene;        //记录原场景
         TVId = tabHouseSkin.PreviewCamTVID;                        //记录TVID
         //切换场景
-        GameManager.EnterGameScene(tabHouseSkin.SceneClass, true);
+        GameManager.EnterGameScene(Yard.GetSceneClassID(tabHouseSkin, GlobeVar.YARD_MAX_LEVEL), true);
     }
+    
     //私宅TV播放结束，场景回退
     public void OnTVPlayFinish(object oParam)
     {
@@ -215,6 +264,7 @@ public partial class HouseScene : RealTimeScene
         PreviewModel_ReturnScene = GlobeVar.INVALID_ID;
         TVId = GlobeVar.INVALID_ID;
     }
+
     public override void OnEnterScene(bool bSameSceneResource)
     {
         base.OnEnterScene(bSameSceneResource);
@@ -229,10 +279,15 @@ public partial class HouseScene : RealTimeScene
 
         LoadScene(GameManager.PlayerDataPool.YardData.ProtoYard);
 
+        if (Yard.Instance != null)
+        {
+            CreateStoryNpc(Yard.Instance.VisitingCard);
+        }
         CreateProdNpc();
+        CreateMessageBoardNpc();
         RefreshProdNpcState();
         RefreshStealNpc();
-
+        RefreshMessageBoardNpcState();
         if (GameManager.InputManager != null)
         {
             GameManager.InputManager.onClickObj = OnClickObj;
@@ -241,16 +296,20 @@ public partial class HouseScene : RealTimeScene
 
         Yard.msDelOnYardSync += OnYardSync;
         Yard.msDelOnYardCardUpdated += OnYardCardUpdated;
+        Yard.msDelOnSyncVisitingCard += OnSyncVisitingCard;
 
         mMode = HouseMode.NORMAL;
+
+        TryToRefixPlayerTrans();
+        TryToTraceNpc();
     }
     
     public override void OnLeaveScene()
     {
         Yard.msDelOnYardSync -= OnYardSync;
         Yard.msDelOnYardCardUpdated -= OnYardCardUpdated;
+        Yard.msDelOnSyncVisitingCard -= OnSyncVisitingCard;
 
-        GameManager.CameraManager.IsDragLock = false;
         if (ObjManager.MainPlayer != null)
         {
             ObjManager.MainPlayer.EventMove = true;
@@ -268,10 +327,12 @@ public partial class HouseScene : RealTimeScene
         mCards.Clear();
         
         UnloadNavManager();
+        CleanTracing();
     }
 
     const float UPDATE_TIME = 1f;
     private float mUpdateTimer = UPDATE_TIME;
+    private const float StealPlayAnimationTime = 1.0f;
     void FixedUpdate()
     {
         if (!InMode(HouseMode.NORMAL))
@@ -283,6 +344,7 @@ public partial class HouseScene : RealTimeScene
             mUpdateTimer = UPDATE_TIME;
             RefreshProdNpcState();
             RefreshStealNpc();
+            RefreshMessageBoardNpcState();
         }
     }
 
@@ -328,13 +390,7 @@ public partial class HouseScene : RealTimeScene
         if (skin == null)
             return;
 
-        GameObject res = AssetManager.LoadResource("Prefab/" + skin.NavRes) as GameObject;
-        if (res == null)
-        {
-            LogModule.WarningLog("cannot load HouseNavRoot");
-            return;
-        }
-        GameObject navRoot = AssetManager.InstantiateObjToParent(res,null);
+        GameObject navRoot = AssetManager.LoadObj(skin.NavRes);
         if (navRoot == null)
         {
             LogModule.WarningLog("Load HouseNavRoot Failed");
@@ -365,13 +421,7 @@ public partial class HouseScene : RealTimeScene
         if (skin == null)
             return;
 
-        GameObject res = AssetManager.LoadResource("Prefab/" + skin.PosRes) as GameObject;
-        if (res == null)
-        {
-            LogModule.WarningLog("cannot load HousePos");
-            return;
-        }
-        GameObject root = AssetManager.InstantiateObjToParent(res, null);
+        GameObject root = AssetManager.LoadObj(skin.PosRes);
         if (root == null)
         {
             LogModule.WarningLog("Load HousePos Failed");
@@ -430,6 +480,14 @@ public partial class HouseScene : RealTimeScene
         }
     }
 
+    void OnSyncVisitingCard(int cardid)
+    {
+        if (Yard.Instance != null)
+        {
+            CreateStoryNpc(Yard.Instance.VisitingCard);
+        }
+    }
+
     System.Collections.IEnumerator IntimacyCardShowBubble()
     {
         if (mIntimacyObjCard == null)
@@ -458,57 +516,7 @@ public partial class HouseScene : RealTimeScene
         }
     }
 
-    //收到礼物 播放特效
-    public void HandleCardReceiveGift(GC_CARD_INTIMACY_UPDATE_VIEW pak)
-    {
-        if(mIntimacyObjCard == null)
-        {
-            return;
-        }
-        SceneCardInfo sceneCard = GetSceneCardInfo(mIntimacyObjCard);
-        if( sceneCard== null || sceneCard.card == null)
-        {
-            return;
-        }
-        Tab_CardExtend tabCardEx = TableManager.GetCardExtendByID(CardTool.GetCardDefaultExtendId(mIntimacyObjCard.CardId), 0);
-        if(tabCardEx==null)
-        {
-            return;
-        }
-        string tips = "";
-        INTIMACY_GIFT_LIKE likeDegree = IntimacyTools.GetGiftItemLikeLevel(sceneCard.card, pak.itemID); //sceneCard.card.GetIntimacyGiftLike(pak.itemID);       //拿到喜好等级
-        tips = IntimacyTools.GetReceiveGiftTips((int)likeDegree);
-        switch(likeDegree)
-        {
-            case INTIMACY_GIFT_LIKE.FAVORITE:
-                mIntimacyObjCard.PlayAnim(tabCardEx.FavoriteAnimation);
-                if (!GameManager.SoundManager.IsRealSoundPlaying() || tabCardEx.FavoriteSound != GameManager.SoundManager.GetCurRealSoundId())
-                {
-                    GameManager.SoundManager.PlayRealSound(tabCardEx.FavoriteSound);
-                }
 
-                break;
-            case INTIMACY_GIFT_LIKE.NORMAL:
-                mIntimacyObjCard.PlayAnim(tabCardEx.NormalAnimation);
-                if (!GameManager.SoundManager.IsRealSoundPlaying() || tabCardEx.NormalSound != GameManager.SoundManager.GetCurRealSoundId())
-                {
-                    GameManager.SoundManager.PlayRealSound(tabCardEx.NormalSound);
-                }
-                break;
-            case INTIMACY_GIFT_LIKE.DISLIKE:
-                mIntimacyObjCard.PlayAnim(tabCardEx.DislikeAnimation);
-                if (!GameManager.SoundManager.IsRealSoundPlaying() || tabCardEx.DislikeSound != GameManager.SoundManager.GetCurRealSoundId())
-                {
-                    GameManager.SoundManager.PlayRealSound(tabCardEx.DislikeSound);
-                }
-                break;
-        }
-        if (!String.IsNullOrEmpty(tips))
-        {
-            mIntimacyObjCard.Bubble(tips);
-        }
-        m_LastReceiveGift = Time.time;
-    }
     #region SceneOp
     private void SetPlayerVisible(bool v)
     {
@@ -839,6 +847,194 @@ public partial class HouseScene : RealTimeScene
         }
     }
 
+    void CreateStoryNpc(int cardid)
+    {
+        if (!Yard.IsCurOwner(LoginData.user.guid))
+            return;
+
+        Tab_HouseSkin skin = GetCurSkin();
+        if (skin == null)
+            return;
+
+        // 通过cardid判断, 而不是model
+        // 如果传入cardid==-1则仅删除
+        Obj_NPC obj = ObjManager.GetObjNPCBySceneNPCID(skin.StoryNpc);
+        if (obj != null)
+        {
+            var oldmisc = obj.GetComponent<NPCMiscCardStory>();
+            if (oldmisc == null || oldmisc.cardId != cardid)
+                ObjManager.RemoveObj(obj);
+            else
+                return;
+        }
+
+        if (cardid == GlobeVar.INVALID_ID)
+            return;
+        
+        // get npc info
+        Tab_SceneNpc tabnpc = TableManager.GetSceneNpcByID(skin.StoryNpc, 0);
+        if (tabnpc == null)
+            return;
+
+        // get real card model
+        Tab_Card tabcard = TableManager.GetCardByID(cardid, 0);
+        if (tabcard == null)
+            return;
+        Tab_CardSkinData tabcardskin = TableManager.GetCardSkinDataByID(tabcard.DefaultSkin, 0);
+        if (tabcardskin == null)
+            return;
+
+        //创建NPC
+        Obj_Init_Data info = new Obj_Init_Data();
+        info.m_CreatePos = new Vector3(tabnpc.PosX, 0.0f, tabnpc.PosZ);
+        info.m_CreateRot = new Vector3(0.0f, tabnpc.FaceDirection, 0.0f);
+        info.m_nModelID = tabcardskin.CharModelId;
+        info.m_bShowNameBoard = tabnpc.HeadFlag != GlobeVar.INVALID_ID;
+        info.m_nDyeColorId = tabnpc.DyeColorID;
+        Obj_NPC npc = ObjManager.CreateNPC(info, string.Format("Story_{0}", skin.StoryNpc));
+
+        if (npc == null)
+            return;
+
+        npc.CanBeSelect = true;
+        npc.SceneNPCID = skin.StoryNpc;
+        npc.FocusMaxDistance = tabnpc.HelloRange;
+        npc.FaceToSelecter = (tabnpc.HelloFaceTo != -1 && tabnpc.HelloRange > 0);
+
+        if (tabnpc.RandomAnim != -1)
+        {
+            npc.PlayRandomAnim(tabnpc.RandomAnim);
+        }
+
+        int miscid = GetStoryMisc(cardid);
+        if (miscid != GlobeVar.INVALID_ID)
+        {
+            var misc = npc.AddNpcMisc(miscid) as NPCMiscCardStory;
+            if (misc == null)
+            {
+                LogModule.ErrorLogFormat("invalid misc id {0} @ scene npc {1} house skin {2}", miscid, tabnpc.Id, skin.Id);
+                return;
+            }
+            misc.cardId = cardid;
+        }
+    }
+
+    void CreateMessageBoardNpc()
+    {
+        Tab_HouseSkin skin = GetCurSkin();
+        if (skin == null)
+            return;
+
+        //如果已经创建 返回
+        Obj_NPC obj = GetMessageBoardNpc();
+        if (obj != null)
+            return;
+
+        Tab_SceneNpc tabnpc = TableManager.GetSceneNpcByID(skin.MessageBoardNpc, 0);
+        if (tabnpc == null)
+            return;
+
+        Tab_RoleBaseAttr tabroleBase = TableManager.GetRoleBaseAttrByID(Utils.GetNPCDataIDByEnv(tabnpc), 0);
+        if (tabroleBase == null)
+            return;
+
+        //创建NPC
+        Obj_Init_Data info = new Obj_Init_Data();
+        info.m_CreatePos = new Vector3(tabnpc.PosX, 0.0f, tabnpc.PosZ);
+        info.m_CreateRot = new Vector3(0.0f, tabnpc.FaceDirection, 0.0f);
+        info.m_nModelID = tabroleBase.CharModelID;
+        info.m_bShowNameBoard = tabnpc.HeadFlag != GlobeVar.INVALID_ID;
+        info.m_nDyeColorId = tabnpc.DyeColorID;
+        Obj_NPC npc = ObjManager.CreateNPC(info, string.Format("MessageBoard_{0}", skin.MessageBoardNpc));
+
+        if (npc == null)
+            return;
+
+        npc.CanBeSelect = true;
+        npc.SceneNPCID = skin.ProdNpc;
+        npc.FocusMaxDistance = tabnpc.HelloRange;
+        npc.FaceToSelecter = (tabnpc.HelloFaceTo != -1 && tabnpc.HelloRange > 0);
+        // 回调跟npc一起销毁了, 不用注销
+        npc.onMainPlayerMoveToNpcDone = OnClickMessageBoardNpc;
+    }
+    public Obj_NPC GetMessageBoardNpc()
+    {
+        Tab_HouseSkin skin = GetCurSkin();
+        if (skin == null)
+        {
+            LogModule.ErrorLogFormat("house skin {0} not found", mYard.SkinId);
+            return null;
+        }
+
+        return ObjManager.GetObjNPCBySceneNPCID(skin.MessageBoardNpc);
+    }
+
+    void RefreshMessageBoardNpcState()
+    {
+        if (mYard == null)
+            return;
+
+        Obj_NPC npc = GetMessageBoardNpc();
+        if (npc == null)
+            return;
+
+        //如果有留言
+        if(IsOwner(LoginData.user.guid) && IsNoteRedPoint())
+        {
+            npc.BoardState = MissionBoardState.MISSION_CANCOMPLETED;
+        }
+        else
+        {
+            npc.BoardState = MissionBoardState.MISSION_NONE;
+        }
+
+    }
+
+    void TryToRefixPlayerTrans()
+    {
+        var player = ObjManager.MainPlayer;
+        if (sResetPlayerPos && player != null)
+        {
+            player.ObjTransform.position = sPlayerPos;
+            player.ObjTransform.rotation = sPlayerRot;
+        }
+        CachePlayerTrans(false, Vector3.zero, Quaternion.identity);
+    }
+
+    public void TryToTraceNpc()
+    {
+        switch (sMoveToNpc)
+        {
+            case HouseNpcType.None:
+                break;
+            case HouseNpcType.Story:
+                var skin = GetCurSkin();
+                if (skin == null)
+                    break;
+                
+                var npc = ObjManager.GetObjNPCBySceneNPCID(skin.StoryNpc);
+                if (npc == null || ObjManager.MainPlayer == null)
+                    break;
+                
+                var misc = npc.GetComponent<NPCMiscCardStory>();
+                if (misc != null)
+                    misc.firstFinish = sFirstFinishStory;
+                
+                LogModule.DebugLogFormat("about to trace npc {0}", sMoveToNpc);
+                ObjManager.MainPlayer.MoveTo(npc, -1, (int)CHAR_ANIM_ID.Run);
+                break;
+        }
+
+        CleanTracing();
+    }
+
+    static public void CleanTracing()
+    {
+        LogModule.DebugLogFormat("about to clear tracing info");
+        sFirstFinishStory = false;
+        sMoveToNpc = HouseNpcType.None;
+    }
+
     #endregion
 
     #region Input
@@ -858,6 +1054,19 @@ public partial class HouseScene : RealTimeScene
 
     private SceneCardInfo mTarget;
 
+    private bool bAcceptInput = true;
+    public bool AcceptInput
+    {
+        get
+        {
+            return bAcceptInput;
+        }
+        set
+        {
+            bAcceptInput = value;
+            JoyStickController.ShowRocker(value);
+        }
+    }
     public Obj_Card Target { get { return mTarget == null ? null : mTarget.objCard; } }
     public Card TargetCard { get { return mTarget == null ? null : mTarget.card; } }
 
@@ -879,7 +1088,10 @@ public partial class HouseScene : RealTimeScene
 
         if (mYard == null)
             return true;
-
+        if(!AcceptInput)
+        {
+            return true;
+        }
         var prod = mYard.YardProd;
         if (IsOwner(LoginData.user.guid))
         {
@@ -907,6 +1119,26 @@ public partial class HouseScene : RealTimeScene
         return true;
     }
 
+    bool OnClickMessageBoardNpc(Obj_NPC target)
+    {
+        if (ObjManager.MainPlayer != null && ObjManager.MainPlayer.IsInRelaxAnim())
+        {
+            Utils.CenterNotice(7009);
+            return true;
+        }
+
+        if (!InMode(HouseMode.NORMAL))
+            return true;
+        if (!AcceptInput)
+        {
+            return true;
+        }
+        HouseNoteController.Show();
+        
+
+        return true;
+    }
+
     bool OnClickStealNpc(Obj_NPC target)
     {
         if (ObjManager.MainPlayer != null && ObjManager.MainPlayer.IsInRelaxAnim())
@@ -920,7 +1152,10 @@ public partial class HouseScene : RealTimeScene
 
         if (mYard == null || target == null)
             return true;
-
+        if (!AcceptInput)
+        {
+            return true;
+        }
         var prod = mYard.YardProd;
         if (!IsOwner(LoginData.user.guid) && prod.ProdId > 0 && prod.FinishTime <= GameManager.ServerAnsiTime)
         {
@@ -938,20 +1173,42 @@ public partial class HouseScene : RealTimeScene
                 int npc = skin.GetStealNpcbyIndex(i);
                 if (npc != GlobeVar.INVALID_ID && npc == target.SceneNPCID)
                 {
-                    Yard.SendSteal(i);
+                    AcceptInput = false;
+                    StartCoroutine(DeltaToSteal(i));
                     return true;
                 }
             }
         }
-        
+        //是主人的话 直接打开UI
+        else if (IsOwner(LoginData.user.guid))
+        {
+            if (prod == null || prod.ProdId <= 0)
+            {
+                HouseProducePrepear.Open();
+            }
+            else
+            {
+                HouseProducing.Open();
+            }
+        }
         return true;
+    }
+
+    IEnumerator DeltaToSteal(int idx)
+    {
+        yield return new WaitForSeconds(StealPlayAnimationTime);
+        Yard.SendSteal(idx);
+        AcceptInput = true;
     }
 
     bool OnClickObj(Obj_Char c, RaycastHit hit, bool isDoubleClick)
     {
         if (ObjManager.MainPlayer != null && ObjManager.MainPlayer.IsInRelaxAnim())
             return true;
-
+        if (!AcceptInput)
+        {
+            return true;
+        }
         switch (mMode)
         {
             case HouseMode.EDIT:
@@ -976,7 +1233,10 @@ public partial class HouseScene : RealTimeScene
         {
             return false;
         }
-
+        if (!AcceptInput)
+        {
+            return true;
+        }
         //判断主角是否创建
         if (null == ObjManager.MainPlayer)
         {
@@ -991,7 +1251,7 @@ public partial class HouseScene : RealTimeScene
         {
             return false;
         }
-
+        
         if (!InMode(HouseMode.NORMAL))
             return false;
 
@@ -1043,7 +1303,10 @@ public partial class HouseScene : RealTimeScene
     {
         if (!InMode(HouseMode.NORMAL) || obj == null)
             return false;
-
+        if (!AcceptInput)
+        {
+            return true;
+        }
         if (obj.IsPlayer() && !obj.IsMainPlayer())
         {
             if (ObjManager.MainPlayer != null)
@@ -1113,22 +1376,16 @@ public partial class HouseScene : RealTimeScene
     {
         if (!InMode(HouseMode.NORMAL))
             return false;
-
+        if (!AcceptInput)
+        {
+            return true;
+        }
         Obj_NPC npc = obj as Obj_NPC;
         if (npc == null)
             return false;
 
         if (npc.CanBeSelect)
         {
-            //特殊处理，在RayCastAll的时候，只选择有任务的NPC
-            //因为在这个情况下，未选中的时候会有一个RaycastAllFailed进行兜底处理
-            if (GameManager.storyManager.StoryMode && GameManager.InputManager.isRaycastAll)
-            {
-                if (npc.GetStoryEvent() == null)
-                {
-                    return false;
-                }
-            }
             //广播出去
             npc.SendMessage("OnClick", hit, SendMessageOptions.DontRequireReceiver);
         }
@@ -1153,6 +1410,30 @@ public partial class HouseScene : RealTimeScene
     #endregion
 
     #region Utils
+
+    public bool IsNoteRedPoint()
+    {
+        if (mYard == null || mYard.messageBoard == null)
+        {
+            return false;
+        }
+        foreach(var note in mYard.messageBoard.wonderfulNoteData)
+        {
+            if(HouseTool.IsNoteNew(note))
+            {
+                return true;
+            }
+        }
+        foreach (var note in mYard.messageBoard.noteData)
+        {
+            if (HouseTool.IsNoteNew(note))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public bool PositionOnNavMesh(Vector3 pos)
     {
         NavMeshHit navHit;
@@ -1176,6 +1457,75 @@ public partial class HouseScene : RealTimeScene
         return skin;
     }
 
+    public List<_YardNote> GetSortedNote()
+    {
+        List<_YardNote> ret = new List<_YardNote>();
+        if(mYard == null || mYard.messageBoard == null )
+        {
+            return ret;
+        }
+        if(mYard.messageBoard.wonderfulNoteData!=null)
+        {
+            for (int i = 0; i < mYard.messageBoard.wonderfulNoteData.Count; i++)
+            {
+                ret.Add(mYard.messageBoard.wonderfulNoteData[i]);
+            }
+        }
+        if(mYard.messageBoard.noteData!=null)
+        {
+            for (int i = 0; i < mYard.messageBoard.noteData.Count; i++)
+            {
+                ret.Add(mYard.messageBoard.noteData[i]);
+            }
+        }
+        return ret;
+    }
+
+    public List<_YardNote> GetWonderFulNotes()
+    {
+        List<_YardNote> ret = new List<_YardNote>();
+        if (mYard == null || mYard.messageBoard == null)
+        {
+            return ret;
+        }
+        if (mYard.messageBoard.wonderfulNoteData != null)
+        {
+            for (int i = 0; i < mYard.messageBoard.wonderfulNoteData.Count; i++)
+            {
+                ret.Add(mYard.messageBoard.wonderfulNoteData[i]);
+            }
+        }
+        return ret;
+    }
+    
+    public ulong GetOwnerIcon()
+    {
+        if(mYard == null)
+        {
+            return GlobeVar.INVALID_GUID;
+        }
+        return mYard.OwnerIcon;
+    }
+
+    public bool IsWonderFulNote(ulong guid)
+    {
+        if (mYard == null || mYard.messageBoard == null)
+        {
+            return false;
+        }
+        if (mYard.messageBoard.wonderfulNoteData != null)
+        {
+            for (int i = 0; i < mYard.messageBoard.wonderfulNoteData.Count; i++)
+            {
+                if(mYard.messageBoard.wonderfulNoteData[i].guid == guid)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public Obj_NPC GetProdNpc()
     {
         Tab_HouseSkin skin = GetCurSkin();
@@ -1188,7 +1538,8 @@ public partial class HouseScene : RealTimeScene
         return ObjManager.GetObjNPCBySceneNPCID(skin.ProdNpc);
     }
 
-    static public Vector3 GetScreenPos(Vector3 objPos)
+
+    public static Vector3 GetScreenPos(Vector3 objPos)
     {
         var cam = GameManager.CameraManager.MainCamera;
         if (cam == null)
@@ -1201,7 +1552,7 @@ public partial class HouseScene : RealTimeScene
         return screenPos;
     }
 
-    static public bool ScreenPos2WorldSpace(Vector3 mousePos, float dist, out Vector3 finalPosition)
+    public static bool ScreenPos2WorldSpace(Vector3 mousePos, float dist, out Vector3 finalPosition)
     {
         var cam = GameManager.CameraManager.MainCamera;
         if (cam == null)
@@ -1233,9 +1584,106 @@ public partial class HouseScene : RealTimeScene
         finalPosition = Vector3.zero;
         return false;
     }
+
+    public static int GetStoryMisc(int cardid)
+    {
+        if (cardid == GlobeVar.INVALID_ID)
+            return GlobeVar.INVALID_ID;
+        var table = TableManager.GetCardVisiting();
+        foreach (var list in table.Values)
+        {
+            var item = list[0];
+            if (item.CardID == cardid)
+            {
+                return item.MiscID;
+            }
+        }
+        return GlobeVar.INVALID_ID;
+    }
     #endregion
 
-    
+    #region Handle
+
+    //收到礼物 播放特效
+    public void HandleCardReceiveGift(GC_CARD_INTIMACY_UPDATE_VIEW pak)
+    {
+        if (mIntimacyObjCard == null)
+        {
+            return;
+        }
+        SceneCardInfo sceneCard = GetSceneCardInfo(mIntimacyObjCard);
+        if (sceneCard == null || sceneCard.card == null)
+        {
+            return;
+        }
+        Tab_CardExtend tabCardEx = TableManager.GetCardExtendByID(CardTool.GetCardDefaultExtendId(mIntimacyObjCard.CardId), 0);
+        if (tabCardEx == null)
+        {
+            return;
+        }
+        string tips = "";
+        INTIMACY_GIFT_LIKE likeDegree = IntimacyTools.GetGiftItemLikeLevel(sceneCard.card, pak.itemID); //sceneCard.card.GetIntimacyGiftLike(pak.itemID);       //拿到喜好等级
+        tips = IntimacyTools.GetReceiveGiftTips((int)likeDegree);
+        switch (likeDegree)
+        {
+            case INTIMACY_GIFT_LIKE.FAVORITE:
+                mIntimacyObjCard.PlayAnim(tabCardEx.FavoriteAnimation);
+                if (!GameManager.SoundManager.IsRealSoundPlaying() || tabCardEx.FavoriteSound != GameManager.SoundManager.GetCurRealSoundId())
+                {
+                    GameManager.SoundManager.PlayRealSound(tabCardEx.FavoriteSound);
+                }
+
+                break;
+            case INTIMACY_GIFT_LIKE.NORMAL:
+                mIntimacyObjCard.PlayAnim(tabCardEx.NormalAnimation);
+                if (!GameManager.SoundManager.IsRealSoundPlaying() || tabCardEx.NormalSound != GameManager.SoundManager.GetCurRealSoundId())
+                {
+                    GameManager.SoundManager.PlayRealSound(tabCardEx.NormalSound);
+                }
+                break;
+            case INTIMACY_GIFT_LIKE.DISLIKE:
+                mIntimacyObjCard.PlayAnim(tabCardEx.DislikeAnimation);
+                if (!GameManager.SoundManager.IsRealSoundPlaying() || tabCardEx.DislikeSound != GameManager.SoundManager.GetCurRealSoundId())
+                {
+                    GameManager.SoundManager.PlayRealSound(tabCardEx.DislikeSound);
+                }
+                break;
+        }
+        if (!String.IsNullOrEmpty(tips))
+        {
+            mIntimacyObjCard.Bubble(tips);
+        }
+        m_LastReceiveGift = Time.time;
+    }
+    public delegate void NoteEvent();
+    public static event NoteEvent OnNoteUpdate;
+    public void HandlePacket(GC_YARD_NOTE_SYNC packet)
+    {
+        if (mYard == null)
+        {
+            return;
+        }
+        mYard.messageBoard = packet.info;
+        if (OnNoteUpdate != null)
+        {
+            OnNoteUpdate();
+        }
+    }
+    public void HandlePacket(GC_YARD_NAME_SIGNATURE_SYNC packet)
+    {
+        if (mYard == null)
+        {
+            return;
+        }
+        mYard.yardName = packet.yardName;
+        mYard.personSignature = packet.yardSignature;
+        if (OnNoteUpdate != null)
+        {
+            OnNoteUpdate();
+        }
+    }
+    #endregion
+
 
     //public bool HasEditorTarget { get { return mEditTarget != null && mEditTarget.Valid(); } }
 
@@ -1332,4 +1780,30 @@ public partial class HouseScene : RealTimeScene
     //        mLastMousePosition = pos;
     //    }
     //}
+}
+public class HouseTool
+{
+    public static bool IsNoteNew(_YardNote note)
+    {
+        int ret = 1;
+        ret = ret << (int)GlobeVar.YardNoteFlag.ISREAD;
+        ret = ret & note.yardNoteFlag;
+        return ret <= 0;
+    }
+    public static HouseScene GetHouseScene()
+    {
+        HouseScene hs = GameManager.CurScene as HouseScene;
+        return hs;
+    }
+
+    public static bool IsWonderfulNote(ulong guid)
+    {
+        HouseScene hs = GetHouseScene();
+        if(hs!=null)
+        {
+            return hs.IsWonderFulNote(guid);
+        }
+        return false;
+    }
+
 }

@@ -25,19 +25,21 @@ public class HouseChangeSkinItem : MonoBehaviour
     public void Refresh(Tab_HouseSkin tabHouseSkin)
     {
         m_TabHouse = tabHouseSkin;
-        if(tabHouseSkin == null)
+        if(tabHouseSkin == null || Yard.Instance == null)
         {
             this.gameObject.SetActive(false);
             return;
         }
+        
         this.gameObject.SetActive(true);
         m_PriceLabel.text = Utils.GetPriceStr((int)SpecialItemID.BindYuanbao, tabHouseSkin.Price);
         m_PreviewObj.SetActive(false);     //默认不允许预览
         //如果是当前场景，则选中
-        if (GameManager.RunningScene == m_TabHouse.SceneClass)
+        var curSkin = Yard.GetCurSkin();
+        if (curSkin != null && curSkin.Id == tabHouseSkin.Id)
         {
             m_UnLockTexture.gameObject.SetActive(true);
-            m_UnLockTexture.mainTexture = Utils.LoadTexture(tabHouseSkin.Icon);
+            AssetManager.SetTexture(m_UnLockTexture, tabHouseSkin.Icon);
             m_LockTexture.gameObject.SetActive(false);
 
             m_ChooseObj.SetActive(true);
@@ -48,7 +50,7 @@ public class HouseChangeSkinItem : MonoBehaviour
         else if (GameManager.PlayerDataPool.YardData.IsSkinUnlocked(m_TabHouse.Id))
         {
             m_UnLockTexture.gameObject.SetActive(true);
-            m_UnLockTexture.mainTexture = Utils.LoadTexture(tabHouseSkin.Icon);
+            AssetManager.SetTexture(m_UnLockTexture, tabHouseSkin.Icon);
             m_LockTexture.gameObject.SetActive(false);
 
             m_ChooseObj.SetActive(false);
@@ -59,7 +61,7 @@ public class HouseChangeSkinItem : MonoBehaviour
         else
         {
             m_UnLockTexture.gameObject.SetActive(false);
-            m_LockTexture.mainTexture = Utils.LoadTexture(tabHouseSkin.Icon);
+            AssetManager.SetTexture(m_LockTexture, tabHouseSkin.Icon);
             m_LockTexture.gameObject.SetActive(true);
 
             m_ChooseObj.SetActive(false);
@@ -73,8 +75,9 @@ public class HouseChangeSkinItem : MonoBehaviour
     //预览
     public void OnClickPreview()
     {
+        var curSkin = Yard.GetCurSkin();
         //如果是正在使用的场景，不给任何反应
-        if (m_TabHouse ==null || GameManager.RunningScene == m_TabHouse.SceneClass || GameManager.PlayerDataPool.YardData.IsSkinUnlocked(m_TabHouse.Id))
+        if (curSkin == null || m_TabHouse == null || curSkin.Id == m_TabHouse.Id || GameManager.PlayerDataPool.YardData.IsSkinUnlocked(m_TabHouse.Id))
         {
             Utils.CenterNotice(7948);
             return;
@@ -90,7 +93,8 @@ public class HouseChangeSkinItem : MonoBehaviour
             return;
         }
         //如果是正在使用的场景，不给任何反应
-        if (GameManager.RunningScene == m_TabHouse.SceneClass)
+        var curSkin = Yard.GetCurSkin();
+        if (curSkin == null || curSkin.Id == m_TabHouse.Id)
         {
             Utils.CenterNotice(7948);
             return;
@@ -118,7 +122,8 @@ public class HouseChangeSkinItem : MonoBehaviour
             return;
         }
         //如果是正在使用的场景，不给任何反应
-        if (GameManager.RunningScene == m_TabHouse.SceneClass)
+        var curSkin = Yard.GetCurSkin();
+        if (curSkin == null || curSkin.Id == m_TabHouse.Id)
         {
             Utils.CenterNotice(7948);
             return;
@@ -145,7 +150,8 @@ public class HouseChangeSkinItem : MonoBehaviour
             return;
         }
         //如果是正在使用的场景，不给任何反应
-        if(GameManager.RunningScene  == m_TabHouse.SceneClass)
+        var curSkin = Yard.GetCurSkin();
+        if (curSkin == null || curSkin.Id == m_TabHouse.Id)
         {
 
         }

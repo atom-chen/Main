@@ -95,7 +95,7 @@ public class HouseRelationItem : MonoBehaviour
         
     }
 
-    public void OnLoadIconFinish(Texture texture)
+    public void OnLoadIconFinish(bool bSucc, string textureName)
     {
         if (this == null)
             return;
