@@ -1,9 +1,0 @@
--- Generate Code,do not edit
-
---{{enum.comment}}
-local t = {
-    {% for item in enum.cases -%}
-        {{ item.name }} = {{ item.value }}, -- {{item.comment}}
-    {% endfor %}
-}
-return t
