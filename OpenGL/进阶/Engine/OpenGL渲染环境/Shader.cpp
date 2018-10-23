@@ -18,7 +18,7 @@ bool Shader::Init(const char* vertShaderPath, const char* fragmentShaderPath)
 	m_ColorLocation = glGetAttribLocation(m_Program, m_ColorName.c_str());
 	m_NormalLocation = glGetAttribLocation(m_Program, m_NormalName.c_str());
 	m_TexcoordLocation = glGetAttribLocation(m_Program, m_TexcoordName.c_str());
-
+	
 	return 1;
 }
 void Shader::Destory()

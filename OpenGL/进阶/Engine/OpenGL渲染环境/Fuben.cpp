@@ -6,7 +6,7 @@ bool Fuben::Awake()
 {
 	m_Skybox.Init("res/front_3.bmp", "res/back_3.bmp", "res/top_3.bmp", "res/bottom_3.bmp", "res/left_3.bmp", "res/right_3.bmp");
 
-	m_MainCamera = new Camera_1st;
+	m_MainCamera = new Camera;
 	//m_Sphere.Init("res/Sphere.obj","res/VertexLightObj.vert","res/VertexLightObj.frag");
 	m_Sphere.Init("res/Sphere.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj.frag");
 	m_Ground.Init();

@@ -25,7 +25,6 @@ private:
 	std::map<string, GLuint> m_Buffer;
 	std::vector<GLenum> m_DrawBuffer;
 
-
 	unsigned m_Width = 0;
 	unsigned m_Height = 0;
 };

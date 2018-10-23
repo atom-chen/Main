@@ -37,5 +37,5 @@ private:
 	void SystemOnDrawOver();
 	void SystemDesrory();
 protected:
-	Camera_1st *m_MainCamera;
+	Camera *m_MainCamera;
 };

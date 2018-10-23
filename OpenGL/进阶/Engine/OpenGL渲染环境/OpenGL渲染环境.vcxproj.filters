@@ -124,6 +124,12 @@
     <ClCompile Include="RenderList.cpp">
       <Filter>GameDefine\Scene\NotRelatedSDK\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="Fuben2.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Gauss.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -269,6 +275,12 @@
     </ClInclude>
     <ClInclude Include="RenderList.h">
       <Filter>GameDefine\Scene\NotRelatedSDK\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Fuben2.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Gauss.h">
+      <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

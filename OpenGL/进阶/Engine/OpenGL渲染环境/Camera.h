@@ -4,10 +4,10 @@
 #include "RenderAble.h"
 #include "RenderList.h"
 
-class Camera_1st
+class Camera
 {
 public:
-	Camera_1st();
+	Camera();
 public:
 	virtual void Update();
 	virtual void Draw();
@@ -63,7 +63,7 @@ protected:
 };
 
 
-class Camera_3rd:public Camera_1st
+class Camera_3rd:public Camera
 {
 public:
 	Camera_3rd();

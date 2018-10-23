@@ -5,7 +5,7 @@
 bool SceneSea::Awake()
 {
 	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
-	m_MainCamera = new Camera_1st;
+	m_MainCamera = new Camera;
 	return 1;
 }
 

@@ -6,15 +6,18 @@
 
 FrameBuffer::FrameBuffer()
 {
-	glGenFramebuffers(1, &m_Fbo);
+
 }
 FrameBuffer::~FrameBuffer()
 {
-	glDeleteFramebuffers(1, &this->m_Fbo);
+	glDeleteFramebuffers(1, &m_Fbo);
 }
-
-void FrameBuffer::AttachColorBuffer(const char* bufferName, GLenum attachment,const unsigned& width, const unsigned& height)
+void FrameBuffer::AttachColorBuffer(const char* bufferName, GLenum attachment, const unsigned& width, const unsigned& height)
 {
+	if (m_Fbo <= _INVALID_ID_)
+	{
+		glGenFramebuffers(1, &m_Fbo);
+	}
 	GLuint colorBuffer;
 	glBindFramebuffer(GL_FRAMEBUFFER, m_Fbo);
 
@@ -31,6 +34,10 @@ void FrameBuffer::AttachColorBuffer(const char* bufferName, GLenum attachment,co
 
 void FrameBuffer::AttachDepthBuffer(const char* bufferName, const unsigned& width, const unsigned& height)//AttchÉî¶È»º³åÇø
 {
+	if (m_Fbo <= _INVALID_ID_)
+	{
+		glGenFramebuffers(1, &m_Fbo);
+	}
 	glBindFramebuffer(GL_FRAMEBUFFER, m_Fbo);
 
 	GLuint depthMap = ResourceManager::CreateTexture2D(nullptr, width, height, GL_DEPTH_COMPONENT, GL_FLOAT);

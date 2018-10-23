@@ -17,7 +17,6 @@ public:
 	void MoveToBottom(bool isMove);
 	void SetMoveSpeed(float speed);
 protected:
-	//模型的材质
 	bool m_IsMoveToLeft, m_IsMoveToRight, m_IsMoveToTop, m_IsMoveToBottom;
 	float m_MoveSpeed = 5;
 	string m_ModelName;

@@ -119,18 +119,6 @@
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="res\ground.frag" />
-    <None Include="res\ground.vert" />
-    <None Include="res\obj.frag" />
-    <None Include="res\obj.vert" />
-    <None Include="res\particle.frag" />
-    <None Include="res\particle.vert" />
-    <None Include="res\skybox.frag" />
-    <None Include="res\skybox.vert" />
-    <None Include="res\texture.vert" />
-    <None Include="res\texture.frag" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />

@@ -35,7 +35,7 @@ public:
 		INIT_TEST_VOID
 			m_Shader.SetTexture2D(path, isRepeat, nameInShader);
 	}
-	inline void SetTexture2D(GLuint texture, const char* nameInShader = "U_Texture_1");
+	void SetTexture2D(GLuint texture, const char* nameInShader = "U_Texture_1");
 	inline void SetVec4(const char* nameInShader, const vec4& vec);
 	void SetVec4(const char* nameInShader, float x, float y, float z, float w);
 	void SetFloat(const char* nameInShader, float value);

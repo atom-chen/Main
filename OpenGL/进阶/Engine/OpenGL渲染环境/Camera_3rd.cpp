@@ -2,7 +2,7 @@
 #include "Time.h"
 
 
-Camera_3rd::Camera_3rd() :Camera_1st(), m_Distance(0,2,0)
+Camera_3rd::Camera_3rd() :Camera(), m_Distance(0,2,0)
 {
 	m_Radius = 20;
 }

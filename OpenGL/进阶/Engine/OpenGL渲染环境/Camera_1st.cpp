@@ -2,12 +2,12 @@
 #include "ggl.h"
 #include "Time.h"
 
-Camera_1st::Camera_1st() :m_Position(4, 4, 4), m_ViewCenter(0, 0, -1), m_Up(0, 1, 0), m_ViewportWidget(WINDOW_WIDTH), m_ViewportHeight(WINDOW_HEIGHT)
+Camera::Camera() :m_Position(4, 4, 4), m_ViewCenter(0, 0, -1), m_Up(0, 1, 0), m_ViewportWidget(WINDOW_WIDTH), m_ViewportHeight(WINDOW_HEIGHT)
 {
 	m_ViewMatrix = glm::lookAt(this->m_Position, this->m_ViewCenter, this->m_Up);
 	this->m_ProjectionMatrix = glm::perspective(this->m_Radius, this->m_ViewportWidget / this->m_ViewportHeight, this->m_Near, this->m_Far);//设置投影矩阵
 }
-void Camera_1st::SetViewPortSize(float width, float height, int xStart, int yStart)
+void Camera::SetViewPortSize(float width, float height, int xStart, int yStart)
 {
 	this->m_ViewportWidget = width;
 	this->m_ViewportHeight = height;
@@ -15,22 +15,22 @@ void Camera_1st::SetViewPortSize(float width, float height, int xStart, int ySta
 	m_ViewportYStart = yStart;
 	this->m_ProjectionMatrix = glm::perspective(this->m_Radius, width / height, this->m_Near, this->m_Far);//设置投影矩阵
 }
-void Camera_1st::InsertToRenderList(RenderAble* render)
+void Camera::InsertToRenderList(RenderAble* render)
 {
 	m_RenderList.InsertToRenderList(render);
 }
-void Camera_1st::InsertToRenderList(const RenderDomain& render)
+void Camera::InsertToRenderList(const RenderDomain& render)
 {
 	m_RenderList.InsertToRenderList(render);
 }
-void Camera_1st::Draw()
+void Camera::Draw()
 {
 	m_RenderList.Clip(this->m_ViewportXStart,m_ViewportYStart,m_ViewportWidget,m_ViewportHeight);
 	m_RenderList.Draw(this->m_ViewMatrix,this->m_ProjectionMatrix);
 }
 
 
-void Camera_1st::Update()
+void Camera::Update()
 {
 	float frameTime = Time::DeltaTime();
 	//通过前方的方向向量移动，方向为视点-当前位置
@@ -67,34 +67,34 @@ void Camera_1st::Update()
 	m_Frustum.loadFrustum(translate(m_Position)*m_ViewMatrix*m_ProjectionMatrix);
 }
 
-void Camera_1st::MoveToLeft(bool isMove)
+void Camera::MoveToLeft(bool isMove)
 {
 	m_IsMoveToLeft = isMove;
 }
-void Camera_1st::MoveToRight(bool isMove)
+void Camera::MoveToRight(bool isMove)
 {
 	m_IsMoveToRight = isMove;
 }
-void Camera_1st::MoveToTop(bool isMove)
+void Camera::MoveToTop(bool isMove)
 {
 	m_IsMoveToTop = isMove;
 }
-void Camera_1st::MoveToBottom(bool isMove)
+void Camera::MoveToBottom(bool isMove)
 {
 	m_IsMoveToBottom = isMove;
 }
-void Camera_1st::SetMoveSpeed(float speed)
+void Camera::SetMoveSpeed(float speed)
 {
 	this->m_MoveSpeed = speed;
 }
-void  Camera_1st::MoveToFront()
+void  Camera::MoveToFront()
 {
 	vec3 forwardDirection = glm::normalize(m_ViewCenter - m_Position);
 	vec3 delta = forwardDirection*0.1f*m_MoveSpeed;
 	m_Position += delta;
 	m_ViewCenter += delta;
 }
-void  Camera_1st::MoveToBack()
+void  Camera::MoveToBack()
 {
 	vec3 forwardDirection = glm::normalize(m_ViewCenter - m_Position);
 	vec3 delta = forwardDirection*0.1f*m_MoveSpeed;
@@ -103,7 +103,7 @@ void  Camera_1st::MoveToBack()
 }
 
 
-void Camera_1st::Pitch(float angle) 
+void Camera::Pitch(float angle) 
 {
 	vec3 viewDirection = m_ViewCenter - m_Position;
 	viewDirection = glm::normalize(viewDirection);
@@ -111,11 +111,11 @@ void Camera_1st::Pitch(float angle)
 	rightDirection=glm::normalize(rightDirection);
 	RotateView(angle, rightDirection.x, rightDirection.y, rightDirection.z);
 }
-void Camera_1st::Yaw(float angle)
+void Camera::Yaw(float angle)
 {
 	RotateView(angle, m_Up.x, m_Up.y, m_Up.z);
 }
-void Camera_1st::RotateView(float angle, float x, float y, float z) {
+void Camera::RotateView(float angle, float x, float y, float z) {
 	vec3 viewDirection =  m_ViewCenter - m_Position;
 	vec3 newDirection(0.0f, 0.0f, 0.0f);
 	float C = cosf(angle);

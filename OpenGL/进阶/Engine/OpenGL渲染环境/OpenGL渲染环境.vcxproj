@@ -108,8 +108,10 @@
     <ClCompile Include="Fog.cpp" />
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="Fuben.cpp" />
+    <ClCompile Include="Fuben2.cpp" />
     <ClCompile Include="FullScreenQuad.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="Gauss.cpp" />
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="RenderAble_Light.cpp" />
     <ClCompile Include="SceneSea.cpp" />
@@ -152,8 +154,10 @@
     <ClInclude Include="FrameBuffer.h" />
     <ClInclude Include="Frustum.hpp" />
     <ClInclude Include="Fuben.h" />
+    <ClInclude Include="Fuben2.h" />
     <ClInclude Include="FullScreenQuad.h" />
     <ClInclude Include="GamaMain.h" />
+    <ClInclude Include="Gauss.h" />
     <ClInclude Include="GlobalState.h" />
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="RenderAble_Light.h" />

@@ -5,7 +5,7 @@
 class FullScreenQuad:public RenderAble
 {
 public:
-	void Init();
+	void Init(const char* vertShader = SHADER_ROOT"fullScreenQuad.vert", const char* fragShader = SHADER_ROOT"fullScreenQuad.frag");
 	void Draw();
 	void DrawToLeftTop();
 	void DrawToRightTop();

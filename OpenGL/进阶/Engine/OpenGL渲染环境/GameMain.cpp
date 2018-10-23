@@ -5,6 +5,8 @@
 #include "Fuben.h"
 #include "Yewai2.h"
 #include "SceneSea.h"
+#include "Fuben2.h"
+#include "Gauss.h"
 
 
 
@@ -14,12 +16,14 @@ void GameLogic::Start()
 	Scene *yewai = new Yewai;
 	Scene *yewai2 = new Yewai2;
 	Scene *fuben = new Fuben;
-	Scene* sea = new SceneSea;
+	Scene* fuben2 = new Fuben2;
+	Scene* gau = new GaussScene;
 	SceneManager::AddScene("main", zhucheng);
 	SceneManager::AddScene("yewai", yewai);
 	SceneManager::AddScene("yewai2", yewai2);
 	SceneManager::AddScene("fuben", fuben);
-	SceneManager::AddScene("sea", sea);
+	SceneManager::AddScene("fuben2", fuben2);
+	SceneManager::AddScene("gauss", gau);
 	SceneManager::LoadScene("main");
 	EngineBehavior ::Start();
 }
@@ -47,7 +51,10 @@ void GameLogic::Event(UINT message, WPARAM wParam, LPARAM lParam)
 			SceneManager::LoadScene("fuben");
 			break;
 		case '5':
-			SceneManager::LoadScene("sea");
+			SceneManager::LoadScene("fuben2");
+			break;
+		case '6':
+			SceneManager::LoadScene("gauss");
 			break;
 		default:
 			break;

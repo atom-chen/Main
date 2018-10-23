@@ -25,7 +25,7 @@ gl_LightSourceParameters Init()
 
 void main()
 {
-	vec4 color=(0.0,0.0,0.0,0.0);
+	vec4 color=vec4(0.0,0.0,0.0,0.0);
 	vec4 ambientColor=U_LightAmbient*U_AmbientMaterial;
 
 	float diffuseConstant=1.0;

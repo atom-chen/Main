@@ -5,7 +5,7 @@
 bool Yewai2::Awake()
 {
 	m_Skybox.Init("res/front_2.bmp", "res/back_2.bmp", "res/top_2.bmp", "res/bottom_2.bmp", "res/left_2.bmp", "res/right_2.bmp");
-	m_MainCamera = new Camera_1st;
+	m_MainCamera = new Camera;
 	//m_Ground.Init("res/woodfloor.tga");
 	m_Ground.Init("res/1.jpg");
 	m_box.Init("res/Sphere.obj", SHADER_ROOT"VertexObj_Blin.vert", SHADER_ROOT"VertexObj.frag");
