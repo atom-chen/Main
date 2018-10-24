@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.4p1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -256,24 +254,27 @@
     <Compile Include="Assets\Public\Tools\MD5Tools.cs" />
     <Compile Include="Assets\Public\Tools\ParameterTools.cs" />
     <Compile Include="Assets\Resources\Model\Boy\scripts\characterRotate.cs" />
-    <Compile Include="Assets\Script\Global\GameManager.cs" />
-    <Compile Include="Assets\Script\Global\PhotoEngine.cs" />
     <Compile Include="Assets\Script\Global\PlayData.cs" />
     <Compile Include="Assets\Script\Global\Player_PAK.cs" />
-    <Compile Include="Assets\Script\Global\ResourcesManager\Resources.cs" />
-    <Compile Include="Assets\Script\Global\SceneManager\MainScene.cs" />
-    <Compile Include="Assets\Script\Global\SceneManager\SceneMgr.cs" />
-    <Compile Include="Assets\Script\Global\SceneManager\StartScene.cs" />
-    <Compile Include="Assets\Script\Global\UIManager\UIInfo.cs" />
-    <Compile Include="Assets\Script\Global\UIManager\UIManager.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\AddRoleHandler.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\EnterGameHandler.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\GC_PAK_BASE.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\RegisterHandler.cs" />
-    <Compile Include="Assets\Script\Handler\StartMenu\StartGameHandler.cs" />
+    <Compile Include="Assets\Script\Global\Utils.cs" />
+    <Compile Include="Assets\Script\Handler\CG_ADD_ROLE_PAK.cs" />
+    <Compile Include="Assets\Script\Handler\CG_ENTER_GAME_PAK.cs" />
+    <Compile Include="Assets\Script\Handler\CG_REGISTER_PAK.cs" />
+    <Compile Include="Assets\Script\Handler\CG_START_GAME_PAK.cs" />
+    <Compile Include="Assets\Script\Handler\GC_PAK_BASE.cs" />
+    <Compile Include="Assets\Script\Manager\CallBackManager.cs" />
+    <Compile Include="Assets\Script\Manager\GameManager.cs" />
+    <Compile Include="Assets\Script\Manager\NetManager.cs" />
+    <Compile Include="Assets\Script\Manager\ResourcesManager\ResourcesManager.cs" />
+    <Compile Include="Assets\Script\Manager\SceneManager\SceneLoading.cs" />
+    <Compile Include="Assets\Script\Manager\SceneManager\SceneMgr.cs" />
+    <Compile Include="Assets\Script\Manager\UIManager\UIInfo.cs" />
+    <Compile Include="Assets\Script\Manager\UIManager\UIManager.cs" />
     <Compile Include="Assets\Script\Model\Bag.cs" />
     <Compile Include="Assets\Script\Model\Role.cs" />
     <Compile Include="Assets\Script\Model\User.cs" />
+    <Compile Include="Assets\Script\Scene\MainScene.cs" />
+    <Compile Include="Assets\Script\Scene\StartScene.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\MainUI.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagController.cs" />
     <Compile Include="Assets\Script\UI\GamsScene\OnClickBag\BagEquipItem.cs" />
@@ -287,7 +288,6 @@
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ChooseServer.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerItem.cs" />
     <Compile Include="Assets\Script\UI\LaunchScene\StartManu\ServerChoose\ServerListLogic.cs" />
-    <Compile Include="Assets\Script\Global\SceneManager\SceneLoading.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\BagEquipTips.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\BagItemTips.cs" />
     <Compile Include="Assets\Script\UI\PublicUI\Tip\TipItem.cs" />
@@ -330,6 +330,7 @@
     <None Include="Assets\Public\Table\Equip.txt" />
     <None Include="Assets\Public\Table\EquipAttachAttr.txt" />
     <None Include="Assets\Public\Table\EquipAttr.txt" />
+    <None Include="Assets\Public\Table\GameConfig.txt" />
     <None Include="Assets\Public\Table\Item.txt" />
     <None Include="Assets\Public\Table\Role.txt" />
     <None Include="Assets\Public\Table\Server.txt" />

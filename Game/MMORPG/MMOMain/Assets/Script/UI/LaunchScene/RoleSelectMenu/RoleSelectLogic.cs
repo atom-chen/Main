@@ -70,10 +70,10 @@ public class RoleSelectLogic : MonoBehaviour
     //进入游戏
     private void OnClickEnterGame()
     {
-        if (m_NowIndex < PlayData.RoleList.Count)
+        if (m_NowIndex < GameManager.PlayerData.RoleList.Count)
         {
             //发送进入游戏的包
-            Role role = PlayData.RoleList[m_NowIndex];
+            Role role = GameManager.PlayerData.RoleList[m_NowIndex];
             CG_START_GAME_PAK pak = new CG_START_GAME_PAK();
             pak._Role = role;
             pak.SendPak();

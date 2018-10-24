@@ -11,12 +11,11 @@ public partial class PlayData
         if(pak.Success)
         {
             //返回到选服
-            Tips.ShowTip("注册成功，已为您登录");
-            //if (StartMenu.Instance != null)
-            //{
-            //    User user = ParaTools.GetParameter<User>(response.Parameters, ParameterCode.User);
-            //    StartMenu.Instance.LoginSuccessed(user);
-            //}
+            Tips.ShowTip("注册成功");
+            if (LaunchSceneLogic.Instance != null)
+            {
+                LaunchSceneLogic.Instance.HandlePackage(pak);
+            }
         }
         else
         {
@@ -26,17 +25,11 @@ public partial class PlayData
 
     public static void ReceivePacket(GC_ENTER_GAME_RET_PAK pak)
     {
-        //解析角色信息
-        List<Role> roleList = pak.RoleList;
-        //LaunchSceneLogic.Instance.SetRoleList(roleList);
+        GameManager.PlayerData = new PlayData();
+        GameManager.PlayerData.RoleList = pak._User.RoleList;
         Tips.ShowTip("登录成功");
 
         //User信息
-        //if (StartMenu.Instance != null)
-        //{
-        //    User user = ParaTools.GetParameter<User>(response.Parameters, ParameterCode.User);
-        //    StartMenu.Instance.LoginSuccessed(user);
-        //}
     }
 
     public static void ReceivePacket(GC_ROLE_ADD_RET_PAK pak)
@@ -49,7 +42,7 @@ public partial class PlayData
     {
         //解析角色信息
         Role role = pak._Role;
-        PlayData.RoleData = role;
+        GameManager.PlayerData.RoleData = role;
         //切换场景
         SceneMgr.LoadScene(SCENE_CODE.MAIN);
     }

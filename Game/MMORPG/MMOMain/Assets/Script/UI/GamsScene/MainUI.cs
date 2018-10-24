@@ -63,23 +63,23 @@ public class MainUI : MonoBehaviour
     void OnEnable()
     {
         UpdateRoleInfo();
-        PlayData.OnRoleInfoChange += UpdateRoleInfo;
+        GameManager.PlayerData.OnRoleInfoChange += UpdateRoleInfo;
     }
     void OnDisable()
     {
-        PlayData.OnRoleInfoChange -= UpdateRoleInfo;
+        GameManager.PlayerData.OnRoleInfoChange -= UpdateRoleInfo;
     }
 
     public void SetEnergy(int value)
     {
-        int limit = TableRoleManager.GetEnergyLimit((int)PlayData.RoleData.level);
+        int limit = TableRoleManager.GetEnergyLimit((int)GameManager.PlayerData.RoleData.level);
         m_EnergySlider.value = (float)(value / limit);
         m_EnergyLabel.text = string.Format("{0}/{1}", value, limit);
     }
 
     public void SetToughen(int value)
     {
-        uint limit = TableRoleManager.GetToughenLimit(PlayData.RoleData.level);
+        uint limit = TableRoleManager.GetToughenLimit(GameManager.PlayerData.RoleData.level);
         m_ToughenSlider.value = (float)(value / limit);
         m_ToughenLabel.text = string.Format("{0}/{1}", value, limit);
     }
@@ -88,7 +88,7 @@ public class MainUI : MonoBehaviour
     public void UpdateRoleInfo()
     {
         //根据当前role赋值
-        Role role = PlayData.RoleData;
+        Role role = GameManager.PlayerData.RoleData;
         m_RoleNameLabel.text = role.name;
         m_LevelLabel.text = role.level.ToString();
         m_Head.spriteName = role.headIcon;

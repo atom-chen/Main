@@ -38,7 +38,15 @@ public class LaunchSceneLogic : MonoBehaviour
     public UILabel m_CurUserLabel;
     public UILabel m_CurServerLabel;
 
+    public GameObject m_WaitServerObj;
 
+    private string mCurUserName = "";
+    private string mCurPassword = "";
+    private Tab_Server mCurServer = null;
+    public Tab_Server CurServer
+    {
+        get { return mCurServer; }
+    }
     void OnEnable()
     {
         InitUI();
@@ -61,8 +69,8 @@ public class LaunchSceneLogic : MonoBehaviour
         m_LoginObj.SetActive(false);
         m_RegisterMenu.gameObject.SetActive(false);
         m_ChooseServer.gameObject.SetActive(false);
-        m_CurUserLabel.text = PlayData.UserData == null ? "点击登录" : PlayData.UserData.UserName;
-        m_CurServerLabel.text = PlayData.ServerData == null ? "请选择服务器" : PlayData.ServerData.name;
+        m_CurUserLabel.text = string.IsNullOrEmpty(mCurUserName) == null ? "点击登录" : mCurUserName;
+        m_CurServerLabel.text = mCurServer == null ? "请选择服务器" : mCurServer.name;
     }
 
     //角色选择界面
@@ -84,7 +92,7 @@ public class LaunchSceneLogic : MonoBehaviour
     }
 
 
-    //点击登录
+    //点击确认
     private void OnClickLogin()
     {
         if (m_UserName.value.Length <= 3)
@@ -97,11 +105,9 @@ public class LaunchSceneLogic : MonoBehaviour
             Tips.ShowTip("密码输入不正确");
             return;
         }
-        User user = new User();
-        user.UserName = m_UserName.value;
-        user.PassWord = m_Password.value;
-
-        PlayData.UserData = user;              //将账号信息保存下来
+        //将账号信息保存下来
+        mCurUserName = m_UserName.value;
+        mCurPassword = m_Password.value;         
         InitUI();
     }
     //点击用户名
@@ -111,6 +117,8 @@ public class LaunchSceneLogic : MonoBehaviour
         m_LoginObj.SetActive(true);
         m_RegisterMenu.gameObject.SetActive(false);
         m_ChooseServer.gameObject.SetActive(false);
+        m_UserName.value = mCurUserName;
+        m_Password.value = mCurPassword;
     }
 
     //点击服务器列表
@@ -124,19 +132,23 @@ public class LaunchSceneLogic : MonoBehaviour
     //点击进入游戏
     public void OnEnterGameClick()
     {
-        if (PlayData.ServerData == null)
+        if (mCurServer == null)
         {
             Tips.ShowTip("请选择服务器");
             return;
         }
-        if (PlayData.UserData == null)
+        if (string.IsNullOrEmpty(mCurUserName))
         {
             Tips.ShowTip("请输入账号和密码");
+            return;
         }
         //发包
         CG_ENTER_GAME_PAK pak = new CG_ENTER_GAME_PAK();
-        pak._User = PlayData.UserData;
+        pak._User = new User();
+        pak._User.UserName = mCurUserName;
+        pak._User.PassWord = mCurPassword;
         pak.SendPak();
+        m_WaitServerObj.SetActive(true);
     }
 
 
@@ -149,31 +161,39 @@ public class LaunchSceneLogic : MonoBehaviour
         m_ChooseServer.gameObject.SetActive(false);
     }
 
-
-    public void HandlePackageRegister(GC_REGISTER_USER_RET_PAK package)
+    //注册成功  缓存所注册的账号信息
+    public void HandlePackage(GC_REGISTER_USER_RET_PAK package)
     {
+        m_WaitServerObj.SetActive(false);
         if(package.Success)
         {
             User user = package._User;
             if (user != null)
             {
-                PlayData.UserData = user;
-                m_CurUserLabel.text = user.UserName;
+                mCurUserName = user.UserName;
+                mCurPassword = user.PassWord;
+                InitUI();
             }
-            InitUI();
-        }
-        else
-        {
-
         }
     }
 
+    public void HandlePackage(GC_ENTER_GAME_RET_PAK pak)
+    {
+        m_WaitServerObj.SetActive(false);
+        if(pak.Success)
+        {
+            m_StartObj.SetActive(false);
+            m_SelectRoleMenu.SetActive(true);
+        }
+
+    }
+
+    //选择了一个服务器
     public void HandleOnChooseServer(Tab_Server server)
     {
         if (server != null)
         {
-            PlayData.ServerData = server;
-            m_CurServerLabel.text = server.name;
+            mCurServer = server;
             InitUI();
         }
     }

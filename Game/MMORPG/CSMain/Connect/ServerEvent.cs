@@ -19,11 +19,6 @@ namespace CSMain
         public static event ServerEvent OnTeamDown;
 
 
-        public Server()
-        {
-            InitServer();
-        }
-
 
         //有玩家连接
         protected override PeerBase CreatePeer(InitRequest initRequest)
@@ -46,6 +41,7 @@ namespace CSMain
             {
                 OnStartUp();
             }
+            Init();
         }
 
         //关服务->将在线的所有用户的数据存入

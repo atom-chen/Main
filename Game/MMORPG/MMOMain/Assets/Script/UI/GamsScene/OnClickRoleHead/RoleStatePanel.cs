@@ -44,19 +44,19 @@ public class RoleStatePanel : MonoBehaviour
     void OnEnable()
     {
         UpdateInfo();
-        PlayData.OnRoleInfoChange += UpdateInfo;
+        GameManager.PlayerData.OnRoleInfoChange += UpdateInfo;
         m_ReNamePanel.SetActive(false);
         //开启携程
         StartCoroutine(ShowRecoverData());
     }
     void OnDisable()
     {
-        PlayData.OnRoleInfoChange -= UpdateInfo;
+        GameManager.PlayerData.OnRoleInfoChange -= UpdateInfo;
     }
 
     private void UpdateInfo()
     {
-        Role role = PlayData.RoleData;
+        Role role = GameManager.PlayerData.RoleData;
         m_HeadIcon.spriteName = role.headIcon;
         m_NameLabel.text = role.name;
         m_LevelLabel.text = role.level.ToString();
@@ -68,7 +68,7 @@ public class RoleStatePanel : MonoBehaviour
     }
     public void SetExp(int value)
     {
-        Role role = PlayData.RoleData;
+        Role role = GameManager.PlayerData.RoleData;
         int limit = TableRoleManager.GetExpLimit((int)(role.level));
         m_ExpLabel.text = string.Format("{0}/{1}", value, limit);
         m_ExpSlider.value = (float)(role.exp / limit);
@@ -115,24 +115,24 @@ public class RoleStatePanel : MonoBehaviour
         {
             int timer;
             //拿到PlayerData的值，然后做显示
-            if ((timer = PlayData.RoleData.energyNextRecoverTimer) != 0)
+            if ((timer = GameManager.PlayerData.RoleData.energyNextRecoverTimer) != 0)
             {
                 int hour, min, second;
                 FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
                 m_EnergyRecoverAll.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());
-                if ((timer = PlayData.RoleData.GetEnergyAllRecoverTimer()) != 0)
+                if ((timer = GameManager.PlayerData.RoleData.GetEnergyAllRecoverTimer()) != 0)
                 {
                     FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
                     m_EnergyRecoverNext.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());
                 }
             }
 
-            if ((timer = PlayData.RoleData.toughenNextRecoverTimer) != 0)
+            if ((timer = GameManager.PlayerData.RoleData.toughenNextRecoverTimer) != 0)
             {
                 int hour, min, second;
                 FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
                 m_ToughenRecoverAll.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());
-                if ((timer = PlayData.RoleData.GetToughenAllRecoverTimer()) != 0)
+                if ((timer = GameManager.PlayerData.RoleData.GetToughenAllRecoverTimer()) != 0)
                 {
                     FormatTools.GetTimeFromInt(timer, out hour, out min, out second);
                     m_ToughenRecoverNext.text = string.Format("{0}:{1}:{2}", hour < 10 ? "0" + hour : hour.ToString(), min < 10 ? "0" + min : min.ToString(), second < 10 ? "0" + second : second.ToString());

@@ -12,20 +12,20 @@ namespace CSMain
 {
     public partial class Server
     {
-        public static Dictionary<byte, CG_FactoryBase> handlers = new Dictionary<byte, CG_FactoryBase>();             //byte表示OperationCode
+        public static Dictionary<byte, CG_FactoryBase> mFactaryDic = new Dictionary<byte, CG_FactoryBase>();             //byte表示OperationCode
         private static List<RoutinueBase> routinues = new List<RoutinueBase>();
         public static Main2DB _IPC2DB;
         public static DB2Main _IPC2Main;
-        private void InitServer()
+
+        public void Init()
         {
             RegisteHandlers();
             RegisteRoutinue();
             ConnectToIPC();
-            Thread tMain = new Thread(MainLoop);
-            Thread tMain1 = new Thread(MainLoop);
-            Thread tMain2 = new Thread(MainLoop);
-            Thread tMain3 = new Thread(MainLoop);
-            Thread tMain4 = new Thread(MainLoop);
+            for(int i = 0;i<100;i++)
+            {
+                Thread tMain = new Thread(MainLoop);
+            }
         }
         void RegisteHandlers()
         {
@@ -35,9 +35,14 @@ namespace CSMain
             {
                 if (type.FullName.EndsWith("FACTORY"))
                 {
-                    Activator.CreateInstance(type);
+                    CG_FactoryBase obj = Activator.CreateInstance(type) as CG_FactoryBase;
+                    if(obj!=null)
+                    {
+                        mFactaryDic.Add((byte)obj.OpCode, obj);
+                    }
                 }
             }
+            LogManager.Log("Factory Size ={0}", mFactaryDic.Count.ToString());
         }
 
         void RegisteRoutinue()
@@ -59,12 +64,20 @@ namespace CSMain
         }
 
         //建立IPC连接
-        public void ConnectToIPC()
+        void ConnectToIPC()
         {
             IpcClientChannel channel = new IpcClientChannel();
             ChannelServices.RegisterChannel(channel, false);
             _IPC2DB = (Main2DB)Activator.GetObject(typeof(Main2DB), "ipc://MainDB/Main2DB");
             _IPC2Main = (DB2Main)Activator.GetObject(typeof(DB2Main), "ipc://MainDB/DB2Main");
+            if(_IPC2DB!=null && _IPC2Main!=null)
+            {
+                LogManager.Debug("IPC建立成功!");
+            }
+            else
+            {
+                LogManager.Debug("IPC建立失败!");
+            }
         }
 
         public void MainLoop()

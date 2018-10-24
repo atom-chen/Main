@@ -12,5 +12,5 @@ public enum OperationCode : byte
     EnterGame,//进入游戏
     RoleAdd,//添加角色
     StartGame,//开始游戏
-    USERROUTINUE_MAX,
+    MAX,
 }

@@ -9,7 +9,12 @@ public class ChooseServer : MonoBehaviour
     void OnEnable()
     {
         List<Tab_Server> serverList = TabServerManager.GetServerList();
-        Tab_Server curServer = PlayData.ServerData;
+
+        Tab_Server curServer = null;
+        if(LaunchSceneLogic.Instance!=null)
+        {
+            curServer = LaunchSceneLogic.Instance.CurServer;
+        }
         for (int i = 0; i < m_CurServerTrans.childCount; i++)
         {
             Destroy(m_CurServerTrans.GetChild(i).gameObject);

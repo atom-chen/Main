@@ -56,22 +56,22 @@ public class BagController : MonoBehaviour
     //左侧装备
     void RefreshBattleInfo()
     {
-        m_Weapon.Refresh(PlayData.RoleData.equipInfo.Weapon);
-        m_Shuku.Refresh(PlayData.RoleData.equipInfo.Shuko);
-        m_Cloth.Refresh(PlayData.RoleData.equipInfo.Cloth);
-        m_Head.Refresh(PlayData.RoleData.equipInfo.Helm);
-        m_Trousers.Refresh(PlayData.RoleData.equipInfo.Trousers);
-        m_Shoes.Refresh(PlayData.RoleData.equipInfo.Shoes);
-        m_Wing.Refresh(PlayData.RoleData.equipInfo.Wing);
-        m_Ring.Refresh(PlayData.RoleData.equipInfo.Ring);
+        m_Weapon.Refresh(GameManager.PlayerData.RoleData.equipInfo.Weapon);
+        m_Shuku.Refresh(GameManager.PlayerData.RoleData.equipInfo.Shuko);
+        m_Cloth.Refresh(GameManager.PlayerData.RoleData.equipInfo.Cloth);
+        m_Head.Refresh(GameManager.PlayerData.RoleData.equipInfo.Helm);
+        m_Trousers.Refresh(GameManager.PlayerData.RoleData.equipInfo.Trousers);
+        m_Shoes.Refresh(GameManager.PlayerData.RoleData.equipInfo.Shoes);
+        m_Wing.Refresh(GameManager.PlayerData.RoleData.equipInfo.Wing);
+        m_Ring.Refresh(GameManager.PlayerData.RoleData.equipInfo.Ring);
         //m_DamageLabel.text= PlayData.RoleData.
     }
 
     //右侧背包
     void RefreshBag()
     {
-        m_ItemList = PlayData.RoleData.bag.GetList();
-        m_EquipList = PlayData.RoleData.equipBag.GetList();
+        m_ItemList = GameManager.PlayerData.RoleData.bag.GetList();
+        m_EquipList = GameManager.PlayerData.RoleData.equipBag.GetList();
         m_Wrap.InitList(m_ItemList.Count + m_EquipList.Count, OnWrapSlide);
     }
 

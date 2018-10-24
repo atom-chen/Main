@@ -56,8 +56,10 @@ public class Connect : PeerBase
     //消息分发函数
     protected override void OnOperationRequest(OperationRequest operationRequest, SendParameters sendParameters)
     {
+        LogManager.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : 
+            string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
         CG_FactoryBase factory;
-        Server.handlers.TryGetValue(operationRequest.OperationCode, out factory);//尝试去获取一个处理该operation的Handler
+        Server.mFactaryDic.TryGetValue(operationRequest.OperationCode, out factory);//尝试去获取一个处理该operation的Handler
         if(factory!=null)
         {
             CG_PAK_BASE pak = factory.GetPak();
@@ -69,7 +71,6 @@ public class Connect : PeerBase
                     pak.SenderId = m_LoginUser.Guid;
                 }
                 pak.SenderIp = this.LocalIP;
-               LogManager.Info(string.Format("收到来自{0}:{1}的   {2}包", this.LocalIP, LoginUser == null ? "" : string.Format("ID={0},Name={1}", LoginUser.Guid, LoginUser.UserName), (OperationCode)operationRequest.OperationCode));
                  //如果是登录包或注册包
                 switch(factory.OpCode)
                 {
@@ -88,7 +89,7 @@ public class Connect : PeerBase
                         }
                         break;
                 }
-                if (factory.OpCode < OperationCode.USERROUTINUE_MAX)
+                if (factory.OpCode < OperationCode.MAX)
                 {
                     UserRoutinue.ReceiveCGPak(pak);
                 }

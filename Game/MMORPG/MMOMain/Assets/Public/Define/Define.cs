@@ -75,8 +75,8 @@ public enum INFO_TYPE
 
 public enum SCENE_CODE
 {
-    LAUNCH = 0,
-    MAIN = 1,
+    LAUNCH = 1,
+    MAIN = 2,
 }
 
 class Define

@@ -9,15 +9,15 @@ using System.Text;
 
 public partial class PlayData
 {
-    private static User m_User;
-    private static Tab_Server m_Server;
+    private User m_User;
+    private Tab_Server m_Server;
 
-    public static User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
-    public static Tab_Server ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器
-    public static List<Role> RoleList { get { return m_User.RoleList; } set { m_User.RoleList = value; } }  //用户下的角色列表
+    public User UserData { get { return m_User; } set { m_User = value; } } //当前用户信息
+    public Tab_Server ServerData { get { return m_Server; } set { m_Server = value; } } //当前登录服务器
+    public List<Role> RoleList { get { return m_User.RoleList; } set { m_User.RoleList = value; } }  //用户下的角色列表
 
     //当前登录角色
-    public static Role RoleData
+    public Role RoleData
     {
         get { return m_User.RoleData; }
         set
@@ -29,14 +29,14 @@ public partial class PlayData
             }
             RoleData = value;
             RoleData.OnInfoChange += OnChange;
-            GameManager.Instance.OneSecondCallBack -= RoleEnergyRecover;
-            GameManager.Instance.OneSecondCallBack += RoleEnergyRecover;
+            CallBackManager.OneSecondCallBack -= RoleEnergyRecover;
+            CallBackManager.OneSecondCallBack += RoleEnergyRecover;
         }
     }
 
     public delegate void RoleEvent();
-    public static event RoleEvent OnRoleInfoChange;//角色信息改变的回调
-    private static void OnChange()
+    public event RoleEvent OnRoleInfoChange;//角色信息改变的回调
+    private void OnChange()
     {
         if (OnRoleInfoChange != null)
         {
@@ -47,7 +47,7 @@ public partial class PlayData
     /// <summary>
     /// 客户端层面 体力恢复计时
     /// </summary>
-    private static void RoleEnergyRecover()
+    private void RoleEnergyRecover()
     {
         if (RoleData == null)
         {

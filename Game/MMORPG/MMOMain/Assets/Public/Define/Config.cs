@@ -6,7 +6,7 @@ using System.Text;
 
 public class Config
 {
-    private static string ConfigFilePath = "";     //配置文件路径
+    private static string ConfigFilePath = "GameConfig.txt";     //配置文件路径
 
     public static int Max_Strengthen = (15);    //最大强化等级
 
