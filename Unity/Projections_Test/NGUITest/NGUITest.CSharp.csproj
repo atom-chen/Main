@@ -223,6 +223,7 @@
     <Compile Include="Assets\Scripts\Mail\EmailUI.cs" />
     <Compile Include="Assets\Scripts\SkillCD.cs" />
     <Compile Include="Assets\Scripts\Text.cs" />
+    <Compile Include="Assets\Scripts\UIAnimationController.cs" />
     <Compile Include="Assets\Scripts\WrapController.cs" />
   </ItemGroup>
   <ItemGroup>
