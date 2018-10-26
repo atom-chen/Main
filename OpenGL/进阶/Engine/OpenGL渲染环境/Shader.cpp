@@ -246,6 +246,10 @@ void Shader::Bind(const float *M, const float* V, const float *P, const float *I
 			glBindTexture(GL_TEXTURE_2D, it->second.texture);
 		}
 	}
+	else
+	{
+		SetTexture2D(DEFAULT_TEXTURE2D);
+	}
 	if (m_mUniformCubeMap.size() > 0)
 	{
 		for (auto it = m_mUniformCubeMap.begin(); it != m_mUniformCubeMap.end(); it++)

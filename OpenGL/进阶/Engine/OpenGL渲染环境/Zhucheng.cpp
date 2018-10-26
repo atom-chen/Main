@@ -7,6 +7,7 @@ bool Zhucheng::Awake()
 	m_Skybox.Init("res/front_1.bmp", "res/back_1.bmp", "res/top_1.bmp", "res/bottom_1.bmp", "res/left_1.bmp", "res/right_1.bmp");
 	m_MainCamera = new Camera;
 	m_RGBCube.Init("res/Cube.obj", SHADER_ROOT"rgbCube.vert", SHADER_ROOT"rgbCube.frag");
+	m_GrayCube.Init("res/Cube.obj", SHADER_ROOT"rgbCube.vert", SHADER_ROOT"gray.frag");
 	m_Sphere.Init("res/Sphere.obj", SHADER_ROOT"fog.vert", SHADER_ROOT"fog.frag");
 	return 1;
 }
@@ -22,6 +23,7 @@ void Zhucheng::Start()
 	m_Sphere.SetExp(0.5f);
 	m_Sphere.SetMoveSpeed(2);
 
+	m_GrayCube.SetPosition(3, 0, -3);
 	m_MainCamera->SetTarget(&m_Sphere.GetPosition());
 }
 
@@ -30,6 +32,7 @@ void Zhucheng::Update()
 	m_Skybox.Update(m_MainCamera->GetPosition());
 	m_RGBCube.Update(m_MainCamera->GetPosition());
 	m_Sphere.Update(m_MainCamera->GetPosition());
+	m_GrayCube.Update(m_MainCamera->GetPosition());
 }
 void Zhucheng::OnDrawBegin()
 {
@@ -39,6 +42,7 @@ void Zhucheng::Draw3D()
 {
 	m_RGBCube.Draw();
 	m_Sphere.Draw();
+	m_GrayCube.Draw();
 }
 
 void Zhucheng::Draw2D()
@@ -50,6 +54,7 @@ void Zhucheng::OnDesrory()
 	m_RGBCube.Destory();
 	m_Sphere.Destory();
 	m_Skybox.Destory();
+	m_GrayCube.Destory();
 }
 
 void Zhucheng::OnKeyDown(char KeyCode)//按下键盘时调用

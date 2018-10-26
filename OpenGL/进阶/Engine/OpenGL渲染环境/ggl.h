@@ -68,3 +68,5 @@ using namespace glm;
 #define  MOUSE_DOWN 65416
 
 #define SHADER_ROOT "ShaderSource/shader/"
+
+#define DEFAULT_TEXTURE2D "res/default.png"

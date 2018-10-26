@@ -33,4 +33,5 @@ private:
 	SkyBoxC m_Skybox;
 	GameObject m_RGBCube;
 	FogObj m_Sphere;
+	GameObject m_GrayCube;
 };

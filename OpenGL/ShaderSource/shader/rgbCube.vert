@@ -15,5 +15,6 @@ varying vec4 V_Texcoord;
 void main()
 {
     V_Color=vec4(position.x+0.5,position.y+0.5,position.z+0.5,1.0);//将变成彩色
+	V_Texcoord = texcoord;
     gl_Position=ProjectionMatrix*ViewMatrix*ModelMatrix*position;
 }
