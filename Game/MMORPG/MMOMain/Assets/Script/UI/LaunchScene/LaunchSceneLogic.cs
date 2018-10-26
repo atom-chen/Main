@@ -142,6 +142,7 @@ public class LaunchSceneLogic : MonoBehaviour
             Tips.ShowTip("请输入账号和密码");
             return;
         }
+        GameManager.NetManager.TryConnect(mCurServer);
         //发包
         CG_ENTER_GAME_PAK pak = new CG_ENTER_GAME_PAK();
         pak._User = new User();

@@ -101,7 +101,7 @@ public class NetManager : MonoBehaviour, IPhotonPeerListener
         }
     }
 
-    private void TryConnect(Tab_Server server)
+    public void TryConnect(Tab_Server server)
     {
         if (server == null) 
             return;

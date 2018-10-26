@@ -42,7 +42,7 @@ public class SceneLoading : MonoBehaviour
         while (m_Slider.value < 1)
         {
             yield return new WaitForSeconds(m_Timer);
-            SetValue(m_Slider.value + UnityEngine.Random.RandomRange(0.1f, 0.5f));
+            SetValue(m_Slider.value + UnityEngine.Random.Range(0.1f, 0.5f));
         }
         if (_LoadSceneEvent != null)
         {

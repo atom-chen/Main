@@ -30,6 +30,7 @@ public:
 	static float GetViewHidth();
 	static void SetViewPort(float width,float height);
 
+	static void DrawCommit();
 public:
 	static void SetBlendState(AlphaBlendInfo info);
 	inline static AlphaBlendInfo GetBlendState()

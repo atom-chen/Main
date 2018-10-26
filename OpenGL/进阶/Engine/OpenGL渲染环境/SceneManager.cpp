@@ -86,7 +86,13 @@ void SceneManager::ReSetScene()
 		m_CurScene->Start();
 	}
 }
-
+void SceneManager::DrawCommit()
+{
+	if (m_CurScene != nullptr && m_CurScene->m_MainCamera != nullptr)
+	{
+		m_CurScene->SystemDraw3D();
+	}
+}
 void SceneManager::Update()
 {
 	Time::SetDeltaTime();

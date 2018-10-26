@@ -1,6 +1,7 @@
 #include "FrameBuffer.h"
 #include "Utils.h"
 #include "Resource.h"
+#include "SceneManager.h"
 
 
 
@@ -78,6 +79,7 @@ void FrameBuffer::Begin()
 
 void FrameBuffer::End()
 {
+	SceneManager::DrawCommit();
 	glBindFramebuffer(GL_FRAMEBUFFER, _INVALID_ID_);
 }
 
