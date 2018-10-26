@@ -30,4 +30,8 @@ private:
 	SkyBoxC m_Skybox;
 	GameObject m_Sphere;
 	GameObject m_Sphere2;
+
+	GameObject m_Sphere3;
+	DirectionLight m_Direction;
+	Ground m_Ground;
 };

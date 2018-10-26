@@ -8,9 +8,7 @@ bool Yewai2::Awake()
 	m_MainCamera = new Camera;
 	//m_Ground.Init("res/woodfloor.tga");
 	m_Ground.Init("res/1.jpg");
-	m_box.Init("res/Sphere.obj", SHADER_ROOT"VertexObj_Blin.vert", SHADER_ROOT"VertexObj.frag");
 	m_Niu.Init("res/niutou.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj_Blin.frag");
-	m_box.SetTexture2D("res/earth.bmp");
 	m_Niu.SetTexture2D("res/niutou.bmp");
 	m_Particle.Init(vec3(0, 0, 0));
 	return 1;
@@ -37,10 +35,8 @@ void Yewai2::Start()
 	m_PointLight.SetRotate(90, 0, 0);
 
 	m_MainCamera->SetTarget(&m_Niu.GetPosition());
-	m_box.SetPosition(0, 0, -5);
 	m_Niu.SetPosition(-2, 0, -4);
 	m_Niu.SetScale(0.01f, 0.01f, 0.01f);
-	m_box.SetLight_1(m_DirectionLight);
 	m_Niu.SetLight_1(m_DirectionLight);
 	m_Ground.SetLight_1(m_SpotLight);
 	m_Niu.SetRotate(0, 90, 0);
@@ -51,9 +47,7 @@ void Yewai2::Update()
 {
 	m_Skybox.Update(m_MainCamera->GetPosition());
 	m_Particle.Update();
-	m_box.Update(m_MainCamera->GetPosition());
 	m_Niu.Update(m_MainCamera->GetPosition());
-	m_box.SetRotate(0, m_BoxRotateY++, 0);
 }
 void Yewai2::OnDrawBegin()
 {
@@ -63,7 +57,6 @@ void Yewai2::OnDrawBegin()
 void Yewai2::Draw3D()
 {
 	m_Particle.Draw();
-	m_box.Draw();
 	m_Niu.Draw();
 }
 
@@ -73,7 +66,6 @@ void Yewai2::Draw2D()
 void Yewai2::OnDesrory()
 {
 	m_Niu.Destory();
-	m_box.Destory();
 	m_Ground.Destory();
 	m_Particle.Destory();
 	m_Skybox.Destory();

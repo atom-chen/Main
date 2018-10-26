@@ -28,8 +28,4 @@ public:
 protected:
 private:
 	SkyBoxC m_Skybox;
-	GameObject m_Sphere;
-	DirectionLight m_Direction;
-	Ground m_Ground;
-	float m_LightRotate = 0;
 };

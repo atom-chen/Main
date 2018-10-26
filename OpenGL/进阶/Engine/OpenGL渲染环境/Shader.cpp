@@ -181,7 +181,7 @@ void Shader::SetMatrix(const char* nameInShader, const glm::mat4& matrix)
 		it->second.value = matrix;
 	}
 }
-void Shader::SetCueMap(const char* front, const char* back, const char* top, const char* bottom, const char* left, const char* right, const char* nameInShader)
+void Shader::SetCubeMap(const char* front, const char* back, const char* top, const char* bottom, const char* left, const char* right, const char* nameInShader)
 {
 	string name(nameInShader);
 	auto it = m_mUniformCubeMap.find(name);

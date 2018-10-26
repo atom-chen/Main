@@ -31,7 +31,6 @@ protected:
 private:
 	SkyBoxC m_Skybox;
 	Ground m_Ground;
-	GameObject m_box;
 	GameObject m_Niu;
 	SurroundParticle m_Particle;
 	DirectionLight m_DirectionLight;

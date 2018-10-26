@@ -9,14 +9,27 @@ bool Fuben2::Awake()
 	m_MainCamera = new Camera;
 	m_Sphere.Init("res/Sphere.obj", SHADER_ROOT"reflection.vert", SHADER_ROOT"refract.frag");
 	m_Sphere2.Init("res/Sphere.obj", SHADER_ROOT"reflection.vert", SHADER_ROOT"reflection.frag");
+	m_Sphere3.Init("res/Sphere.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj.frag");
 	return 1;
 }
 
 void Fuben2::Start()
 {
 	SceneManager::SetClearColor(vec4(0, 0, 0, 1));
-	m_Sphere.GetShader().SetCueMap("res/front_3.bmp", "res/back_3.bmp", "res/top_3.bmp", "res/bottom_3.bmp", "res/left_3.bmp", "res/right_3.bmp");
-	m_Sphere2.GetShader().SetCueMap("res/front_3.bmp", "res/back_3.bmp", "res/top_3.bmp", "res/bottom_3.bmp", "res/left_3.bmp", "res/right_3.bmp");
+	m_Sphere.GetShader().SetCubeMap("res/front_3.bmp", "res/back_3.bmp", "res/top_3.bmp", "res/bottom_3.bmp", "res/left_3.bmp", "res/right_3.bmp");
+	m_Sphere2.GetShader().SetCubeMap("res/front_3.bmp", "res/back_3.bmp", "res/top_3.bmp", "res/bottom_3.bmp", "res/left_3.bmp", "res/right_3.bmp");
+
+	m_Direction.SetAmbientColor(0.1f, 0.1f, 0.1f, 1.0f);
+	m_Direction.SetDiffuseColor(0.1f, 0.2f, 1.0f, 1.0f);
+	m_Direction.SetSpecularColor(0.1f, 0.9f, 0.9f, 1.0f);
+	m_Direction.SetPosition(0, 1, 0);
+	m_Direction.SetRotate(0, 0, 90);
+
+	m_Sphere3.SetPosition(0, 0, 1);
+	m_Sphere3.SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1.0f);
+	m_Sphere3.SetDiffuseMaterial(0.3f, 0.3f, 0.3f, 1.0f);
+	m_Sphere3.SetSpecularMaterial(1, 1, 1, 1.0f);
+	m_Sphere3.SetLight_1(m_Direction);
 }
 
 void Fuben2::Update()
@@ -24,6 +37,7 @@ void Fuben2::Update()
 	m_Skybox.Update(m_MainCamera->GetPosition());
 	m_Sphere.Update(m_MainCamera->GetPosition());
 	m_Sphere2.Update(m_MainCamera->GetPosition());
+	m_Sphere3.Update(m_MainCamera->GetPosition());
 }
 void Fuben2::OnDrawBegin()
 {
@@ -33,6 +47,7 @@ void Fuben2::Draw3D()
 {
 	m_Sphere.Draw();
 	m_Sphere2.Draw();
+	m_Sphere3.Draw();
 }
 
 void Fuben2::Draw2D()
@@ -44,6 +59,7 @@ void Fuben2::OnDesrory()
 	m_Sphere.Destory();
 	m_Skybox.Destory();
 	m_Sphere2.Destory();
+	m_Sphere3.Destory();
 }
 
 void Fuben2::OnKeyDown(char KeyCode)//按下键盘时调用
@@ -95,6 +111,7 @@ void Fuben2::OnKeyUp(char KeyCode)//松开键盘时被调用
 		break;
 	case 'D':
 		m_Sphere.MoveToRight(0);
+		break;
 	case VK_UP:
 		m_Sphere2.MoveToTop(0);
 		break;

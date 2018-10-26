@@ -47,7 +47,6 @@ protected:
 public:
 	void Bind(const float *M, const float* V, const float *P,const float *IT=nullptr);
 
-
 public:
 	inline const GLuint GetProgram() const{ return m_Program; };
 
@@ -71,7 +70,7 @@ public:
 	inline void SetVec4(const char* nameInShader, const vec4& vec){ SetVec4(nameInShader, vec.x, vec.y, vec.z, vec.w); }
 	void SetFloat(const char* nameInShader, float value);
 	void SetMatrix(const char* nameInShader,const glm::mat4& matrix);
-	void SetCueMap(const char* front, const char* back, const char* top, const char* bottom, const char* left, const char* right, const char* nameInShader="U_Texture_CubeMap");
+	void SetCubeMap(const char* front, const char* back, const char* top, const char* bottom, const char* left, const char* right, const char* nameInShader="U_Texture_CubeMap");
 private:
 	GLuint m_Program;
 	//常规选项

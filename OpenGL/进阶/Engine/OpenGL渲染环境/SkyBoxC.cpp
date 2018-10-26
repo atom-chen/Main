@@ -11,7 +11,7 @@ bool SkyBoxC::Init(const char* forwardPath, const char* backPath, const char* to
 		{
 			m_ModelName = "res/Cube.obj";
 			m_Shader.Init(vertexShader, fragShader);
-			m_Shader.SetCueMap(forwardPath, backPath, topPath, bottomPath, leftPath, rightPath);
+			m_Shader.SetCubeMap(forwardPath, backPath, topPath, bottomPath, leftPath, rightPath);
 			m_Options.DepthTest = 0;
 			m_Options.DrawType = DRAW_TRIANGLES;
 			return 1;
