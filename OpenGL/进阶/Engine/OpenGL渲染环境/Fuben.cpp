@@ -4,23 +4,38 @@
 
 bool Fuben::Awake()
 {
-	m_Skybox.Init("res/front_3.bmp", "res/back_3.bmp", "res/top_3.bmp", "res/bottom_3.bmp", "res/left_3.bmp", "res/right_3.bmp");
+	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
 
 	m_MainCamera = new Camera;
 
+	m_Sphere.Init("res/Sphere.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"DirectionHDR.frag");
+	m_Sphere.SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1.0f);
+	m_Sphere.SetDiffuseMaterial(0.4f, 0.4f, 0.4f, 1.0f);
+	m_Sphere.SetSpecularMaterial(1, 1, 1, 1);
+
+	m_DR.SetAmbientColor(0.1f,0.1f,0.1f,1.0f);
+	m_DR.SetDiffuseColor(0.8f, 0.8f, 0.8f, 1.0f);
+	m_DR.SetSpecularColor(1, 1, 1, 1);
+
+	m_Fbo.AttachColorBuffer("color", GL_COLOR_ATTACHMENT0, m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	m_Fbo.AttachColorBuffer("hdr", GL_COLOR_ATTACHMENT1, m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	m_Fbo.AttachDepthBuffer("depth", m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	m_Fbo.Finish();
 	return 1;
 }
 
 void Fuben::Start()
 {
 	SceneManager::SetClearColor(vec4(0, 0, 0, 1));
+	m_Sphere.SetPosition(0, 0, 0);
 
-
+	m_Sphere.SetLight_1(m_DR);
 }
 
 void Fuben::Update()
 {
 	m_Skybox.Update(m_MainCamera->GetPosition());
+	m_Sphere.Update(m_MainCamera->GetPosition());
 }
 void Fuben::OnDrawBegin()
 {
@@ -28,7 +43,15 @@ void Fuben::OnDrawBegin()
 }
 void Fuben::Draw3D()
 {
+	m_Fbo.Begin();
+	m_Sphere.Draw();
+	m_Fbo.End();
 
+	m_FSQ.SetTexture2D(m_Fbo.GetBuffer("color"));
+	m_FSQ.DrawToLeftTop();
+	m_MainCamera->Draw();
+	m_FSQ.SetTexture2D(m_Fbo.GetBuffer("hdr"));
+	m_FSQ.DrawToRightBottom();
 }
 
 void Fuben::Draw2D()
@@ -38,6 +61,8 @@ void Fuben::Draw2D()
 void Fuben::OnDesrory()
 {
 	m_Skybox.Destory();
+	m_Sphere.Destory();
+	m_FSQ.Destory();
 }
 
 void Fuben::OnKeyDown(char KeyCode)//按下键盘时调用

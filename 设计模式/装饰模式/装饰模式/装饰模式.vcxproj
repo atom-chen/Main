@@ -78,7 +78,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="装饰模式.cpp" />
+    <ClCompile Include="装饰.hpp" />
+    <ClCompile Include="主体.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="主体.h" />
+    <ClInclude Include="装饰.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,8 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="装饰模式.cpp">
+    <ClCompile Include="主体.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="装饰.hpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="装饰.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="主体.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

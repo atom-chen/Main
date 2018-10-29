@@ -21,6 +21,7 @@ void main()
 	kernal[1]=2;
 	kernal[2]=1;
 	int idx = 0;
+	//遍历周围的9个点
 	for(int y = 0;y<coreSize;y++)
 	{
 		for(int x = 0;x<coreSize;x++)

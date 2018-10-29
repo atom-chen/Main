@@ -7,6 +7,7 @@
 #include "Ground.h"
 #include "SkyBox.h"
 #include "SkyBoxC.h"
+#include "FullScreenQuad.h"
 
 
 class Fuben :public Scene
@@ -27,5 +28,9 @@ public:
 	virtual void OnMouseWheel(int direction);
 protected:
 private:
-	SkyBoxC m_Skybox;
+	SkyBox m_Skybox;
+	GameObject m_Sphere;
+	DirectionLight m_DR;
+	FrameBuffer m_Fbo;
+	FullScreenQuad m_FSQ;
 };
