@@ -17,7 +17,7 @@ void RenderAble::Draw()
 		SceneManager::DrawGameObject(this);
 	}
 }
-void RenderAble::Destory()
+void RenderAble::Destroy()
 {
 	INIT_TEST_VOID;
 	m_IsInit = 0;

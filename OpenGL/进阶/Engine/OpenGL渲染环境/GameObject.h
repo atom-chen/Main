@@ -9,7 +9,7 @@ public:
 	virtual bool Init(const char* path, const char* vertexShader = SHADER_ROOT"FragObj.vert", const char* fragmentShader = SHADER_ROOT"FragObj.frag");
 	virtual void Update(const vec3& cameraPos);
 
-	void Destory();
+	void Destroy();
 public:
 	void MoveToLeft(bool isMove);
 	void MoveToRight(bool isMove);

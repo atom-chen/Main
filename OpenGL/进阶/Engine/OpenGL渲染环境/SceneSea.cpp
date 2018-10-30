@@ -36,7 +36,7 @@ void SceneSea::Draw2D()
 }
 void SceneSea::OnDesrory()
 {
-	m_Skybox.Destory();
+	m_Skybox.Destroy();
 
 
 

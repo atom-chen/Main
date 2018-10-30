@@ -65,10 +65,10 @@ void Yewai2::Draw2D()
 }
 void Yewai2::OnDesrory()
 {
-	m_Niu.Destory();
-	m_Ground.Destory();
-	m_Particle.Destory();
-	m_Skybox.Destory();
+	m_Niu.Destroy();
+	m_Ground.Destroy();
+	m_Particle.Destroy();
+	m_Skybox.Destroy();
 }
 
 void Yewai2::OnKeyDown(char KeyCode)//按下键盘时调用

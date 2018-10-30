@@ -144,12 +144,8 @@ void main()
 {
     vec4 color=GetLight1Color();
 	//r>1.0 说明太亮了
-	if(color.r > 1.0)
+	if(color.r <= 1.0)
 	{
-		gl_FragData[1] = color;            	//多目标渲染
-	}
-	else
-	{
-		gl_FragData[0] = color;
+		gl_FragColor = color;            	
 	}
 }

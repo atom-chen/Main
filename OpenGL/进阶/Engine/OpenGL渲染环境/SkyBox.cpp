@@ -156,7 +156,7 @@ void SkyBox::Draw()
 		}
 	}
 }
-void SkyBox::Destory()
+void SkyBox::Destroy()
 {
 	if (m_IsInit)
 	{

@@ -17,7 +17,7 @@ public:
 
 	void Update(const vec3& cameraPos);
 	void Draw();//绘制天空盒
-	void Destory();
+	void Destroy();
 protected:
 private:
 	VertexBuffer m_VertexBuf[6];//6个面,顺序前后上下左右

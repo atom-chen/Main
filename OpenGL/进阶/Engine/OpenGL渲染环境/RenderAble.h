@@ -50,7 +50,7 @@ public:
 	void SetScale(const vec3& scale);
 
 	virtual void Draw();
-	virtual void Destory();
+	virtual void Destroy();
 private:
 	void UpdateTransform();
 

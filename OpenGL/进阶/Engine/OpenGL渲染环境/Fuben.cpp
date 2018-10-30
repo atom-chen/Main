@@ -16,42 +16,93 @@ bool Fuben::Awake()
 	m_DR.SetAmbientColor(0.1f,0.1f,0.1f,1.0f);
 	m_DR.SetDiffuseColor(0.8f, 0.8f, 0.8f, 1.0f);
 	m_DR.SetSpecularColor(1, 1, 1, 1);
+	m_DR.SetPosition(0, 1, 0);
 
 	m_Fbo.AttachColorBuffer("color", GL_COLOR_ATTACHMENT0, m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
 	m_Fbo.AttachColorBuffer("hdr", GL_COLOR_ATTACHMENT1, m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
 	m_Fbo.AttachDepthBuffer("depth", m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
 	m_Fbo.Finish();
+
+	m_FSQ.Init();
+	m_Sphere.SetPosition(0, 0, 0);
+	m_Sphere.SetLight_1(m_DR);
+
 	return 1;
 }
 
 void Fuben::Start()
 {
 	SceneManager::SetClearColor(vec4(0, 0, 0, 1));
-	m_Sphere.SetPosition(0, 0, 0);
 
-	m_Sphere.SetLight_1(m_DR);
+	m_Sphere2.Init("res/Sphere.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"hdr.frag");
+	m_Sphere2.SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1.0f);
+	m_Sphere2.SetDiffuseMaterial(0.4f, 0.4f, 0.4f, 1.0f);
+	m_Sphere2.SetSpecularMaterial(1, 1, 1, 1);
+	m_Sphere2.SetLight_1(m_DR);
+
+	ldrFbo.AttachColorBuffer("color", GL_COLOR_ATTACHMENT0, m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	hdrFbo.AttachColorBuffer("color", GL_COLOR_ATTACHMENT1, m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	ldrFbo.AttachDepthBuffer("depth", m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	hdrFbo.AttachDepthBuffer("depth", m_MainCamera->GetWidth(), m_MainCamera->GetHeight());
+	ldrFbo.Finish();
+	hdrFbo.Finish();
+
+	ldrShader.Init(SHADER_ROOT"FragObj.vert", SHADER_ROOT"ldr.frag");
+	ldrShader.SetVec4("U_AmbientMaterial", 0.1f, 0.1f, 0.1f, 1.0f);
+	ldrShader.SetVec4("U_DiffuseMaterial", 0.4f, 0.4f, 0.4f, 1.0f);
+	ldrShader.SetVec4("U_SpecularMaterial", 1, 1, 1, 1);
+	ldrShader.SetVec4("U_Light1_Dir", vec4(m_DR.GetRotate(), 0));
+	ldrShader.SetVec4("U_Light1_Ambient", m_DR.GetAmbientColor());
+	ldrShader.SetVec4("U_Light1_Diffuse", m_DR.GetDiffuseColor());
+	ldrShader.SetVec4("U_Light1_Specular", m_DR.GetSpecularColor());
+	ldrShader.SetVec4("U_Light1_Opt", 1, 0, 0, 32);
 }
 
 void Fuben::Update()
 {
 	m_Skybox.Update(m_MainCamera->GetPosition());
 	m_Sphere.Update(m_MainCamera->GetPosition());
+	m_Sphere2.Update(m_MainCamera->GetPosition());
+	
 }
 void Fuben::OnDrawBegin()
 {
 	m_Skybox.Draw();
-}
-void Fuben::Draw3D()
-{
+
 	m_Fbo.Begin();
-	m_Sphere.Draw();
+	m_Sphere.Draw();           //因为FBO有两个颜色缓冲区，按照DirectionHDR.frag的代码 会将过亮的颜色写到hdr缓冲区
 	m_Fbo.End();
 
+	//多目标渲染
 	m_FSQ.SetTexture2D(m_Fbo.GetBuffer("color"));
 	m_FSQ.DrawToLeftTop();
 	m_MainCamera->Draw();
 	m_FSQ.SetTexture2D(m_Fbo.GetBuffer("hdr"));
+	m_FSQ.DrawToRightTop();      //右边高光
+	m_MainCamera->Draw();
+}
+void Fuben::Draw3D()
+{
+	//单目标渲染需要渲染两次
+	hdrFbo.Begin();
+	m_Sphere2.Draw();
+	hdrFbo.End();
+
+	Shader temp = (m_Sphere2.GetShader());
+	m_Sphere2.GetShader() = ldrShader;
+
+	ldrFbo.Begin();
+	m_Sphere2.Draw();
+	ldrFbo.End();
+
+	m_FSQ.SetTexture2D(ldrFbo.GetBuffer("color"));
+	m_FSQ.DrawToLeftBottom();
+	m_MainCamera->Draw();
+	m_FSQ.SetTexture2D(hdrFbo.GetBuffer("color"));
 	m_FSQ.DrawToRightBottom();
+	m_MainCamera->Draw();
+
+	m_Sphere2.GetShader() = temp;
 }
 
 void Fuben::Draw2D()
@@ -60,9 +111,9 @@ void Fuben::Draw2D()
 }
 void Fuben::OnDesrory()
 {
-	m_Skybox.Destory();
-	m_Sphere.Destory();
-	m_FSQ.Destory();
+	m_Skybox.Destroy();
+	m_Sphere.Destroy();
+	m_FSQ.Destroy();
 }
 
 void Fuben::OnKeyDown(char KeyCode)//按下键盘时调用

@@ -56,10 +56,10 @@ void Fuben2::Draw2D()
 }
 void Fuben2::OnDesrory()
 {
-	m_Sphere.Destory();
-	m_Skybox.Destory();
-	m_Sphere2.Destory();
-	m_Sphere3.Destory();
+	m_Sphere.Destroy();
+	m_Skybox.Destroy();
+	m_Sphere2.Destroy();
+	m_Sphere3.Destroy();
 }
 
 void Fuben2::OnKeyDown(char KeyCode)//按下键盘时调用

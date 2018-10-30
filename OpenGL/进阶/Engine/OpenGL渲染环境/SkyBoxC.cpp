@@ -23,10 +23,10 @@ void SkyBoxC::Update(const vec3& cameraPos)
 {
 	SetPosition(cameraPos);
 }
-void SkyBoxC::Destory()
+void SkyBoxC::Destroy()
 {
 	INIT_TEST_VOID
-	RenderAble::Destory();
+	RenderAble::Destroy();
 	ResourceManager::RemoveModel(m_ModelName);
 	m_IsInit = 0;
 }

@@ -51,10 +51,10 @@ void Zhucheng::Draw2D()
 }
 void Zhucheng::OnDesrory()
 {
-	m_RGBCube.Destory();
-	m_Sphere.Destory();
-	m_Skybox.Destory();
-	m_GrayCube.Destory();
+	m_RGBCube.Destroy();
+	m_Sphere.Destroy();
+	m_Skybox.Destroy();
+	m_GrayCube.Destroy();
 }
 
 void Zhucheng::OnKeyDown(char KeyCode)//按下键盘时调用

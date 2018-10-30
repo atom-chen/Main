@@ -29,10 +29,10 @@ bool GameObject::Init(const char* path, const char* vertexShader, const char* fr
 	}
 	return 0;
 }
-void GameObject::Destory()
+void GameObject::Destroy()
 {
   INIT_TEST_VOID
-	RenderAble::Destory();
+	RenderAble::Destroy();
 	ResourceManager::RemoveModel(m_ModelName);
 	m_IsInit = 0;
 }

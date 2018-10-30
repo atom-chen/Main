@@ -33,4 +33,9 @@ private:
 	DirectionLight m_DR;
 	FrameBuffer m_Fbo;
 	FullScreenQuad m_FSQ;
+
+	//Õ®”√
+	GameObject m_Sphere2;
+	FrameBuffer hdrFbo,ldrFbo;
+	Shader ldrShader;
 };
