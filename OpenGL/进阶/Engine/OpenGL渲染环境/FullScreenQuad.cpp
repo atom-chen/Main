@@ -1,7 +1,6 @@
 #include "FullScreenQuad.h"
 #include "SceneManager.h"
 
-
 void FullScreenQuad::Init(const char* vertShader, const char* fragShader)
 {
 	if (m_IsInit)
@@ -25,9 +24,11 @@ void FullScreenQuad::Init(const char* vertShader, const char* fragShader)
 	m_Shader.SetMatrix("ModelMatrix", identityMat);
 	m_Shader.SetMatrix("ViewMatrix", identityMat);
 	m_Shader.SetMatrix("ProjectionMatrix", identityMat);
+	this->SetColor(COLOR_WHITE);
 }
 void FullScreenQuad::Draw()
 {
+	INIT_TEST_VOID
 	m_VertexBuf.SetPosition(0, -1, -1, 0);
 	m_VertexBuf.SetPosition(1, 1, -1, 0);
 	m_VertexBuf.SetPosition(2, -1, 1, 0);
@@ -36,6 +37,7 @@ void FullScreenQuad::Draw()
 }
 void FullScreenQuad::DrawToLeftTop()
 {
+	INIT_TEST_VOID
 	m_VertexBuf.SetPosition(0, -1, 0, -1);
 	m_VertexBuf.SetPosition(1, 0, 0, -1);
 	m_VertexBuf.SetPosition(2, -1, 1, -1);
@@ -44,6 +46,7 @@ void FullScreenQuad::DrawToLeftTop()
 }
 void FullScreenQuad::DrawToLeftBottom()
 {
+	INIT_TEST_VOID
 	m_VertexBuf.SetPosition(0, -1, -1, -1);
 	m_VertexBuf.SetPosition(1, 0, -1, -1);
 	m_VertexBuf.SetPosition(2, -1, 0, -1);
@@ -52,6 +55,7 @@ void FullScreenQuad::DrawToLeftBottom()
 }
 void FullScreenQuad::DrawToRightTop()
 {
+	INIT_TEST_VOID
 	m_VertexBuf.SetPosition(0, 0, 0, -1);
 	m_VertexBuf.SetPosition(1, 1, 0, -1);
 	m_VertexBuf.SetPosition(2, 0, 1, -1);
@@ -61,6 +65,7 @@ void FullScreenQuad::DrawToRightTop()
 
 void FullScreenQuad::DrawToRightBottom()
 {
+	INIT_TEST_VOID
 	m_VertexBuf.SetPosition(0, 0, -1, -1);
 	m_VertexBuf.SetPosition(1, 1, -1, -1);
 	m_VertexBuf.SetPosition(2, 0, 0, -1);

@@ -8,6 +8,9 @@ bool Fuben::Awake()
 
 	m_MainCamera = new Camera;
 
+	mCombineFSQ.Init(SHADER_ROOT"fullScreenQuad.vert", "ShaderSource/up/texture.frag");
+	mCombinefsq.Init(SHADER_ROOT"fullScreenQuad.vert", "ShaderSource/up/texture.frag");
+
 	m_Sphere.Init("res/Sphere.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"DirectionHDR.frag");
 	m_Sphere.SetAmbientMaterial(0.1f, 0.1f, 0.1f, 1.0f);
 	m_Sphere.SetDiffuseMaterial(0.4f, 0.4f, 0.4f, 1.0f);
@@ -26,7 +29,8 @@ bool Fuben::Awake()
 	m_FSQ.Init();
 	m_Sphere.SetPosition(0, 0, 0);
 	m_Sphere.SetLight_1(m_DR);
-
+	mCombinefsq.SetTexture2D(m_Fbo.GetBuffer("color"));
+	mCombinefsq.SetTexture2D(m_Fbo.GetBuffer("hdr"), "U_Texture_2");
 	return 1;
 }
 
@@ -56,6 +60,10 @@ void Fuben::Start()
 	ldrShader.SetVec4("U_Light1_Diffuse", m_DR.GetDiffuseColor());
 	ldrShader.SetVec4("U_Light1_Specular", m_DR.GetSpecularColor());
 	ldrShader.SetVec4("U_Light1_Opt", 1, 0, 0, 32);
+
+	mCombineFSQ.SetTexture2D(ldrFbo.GetBuffer("color"));
+	mCombineFSQ.SetTexture2D(hdrFbo.GetBuffer("color"),"U_Texture_2");
+
 }
 
 void Fuben::Update()
@@ -80,6 +88,9 @@ void Fuben::OnDrawBegin()
 	m_FSQ.SetTexture2D(m_Fbo.GetBuffer("hdr"));
 	m_FSQ.DrawToRightTop();      //右边高光
 	m_MainCamera->Draw();
+
+	mCombinefsq.DrawToLeftTop();
+	m_MainCamera->Draw();
 }
 void Fuben::Draw3D()
 {
@@ -103,6 +114,8 @@ void Fuben::Draw3D()
 	m_MainCamera->Draw();
 
 	m_Sphere2.GetShader() = temp;
+
+	mCombineFSQ.DrawToRightTop();
 }
 
 void Fuben::Draw2D()
@@ -114,6 +127,7 @@ void Fuben::OnDesrory()
 	m_Skybox.Destroy();
 	m_Sphere.Destroy();
 	m_FSQ.Destroy();
+	m_Sphere2.Destroy();
 }
 
 void Fuben::OnKeyDown(char KeyCode)//按下键盘时调用

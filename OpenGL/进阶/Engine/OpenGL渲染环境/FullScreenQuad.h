@@ -11,6 +11,16 @@ public:
 	void DrawToRightTop();
 	void DrawToLeftBottom();
 	void DrawToRightBottom();
+	void SetColor(const vec4& color)
+	{
+		INIT_TEST_VOID
+			m_VertexBuf.SetColor(0, color);
+		m_VertexBuf.SetColor(1, color);
+		m_VertexBuf.SetColor(2, color);
+		m_VertexBuf.SetColor(3, color);
+	}
+public:
+
 protected:
 private:
 };

@@ -38,4 +38,6 @@ private:
 	GameObject m_Sphere2;
 	FrameBuffer hdrFbo,ldrFbo;
 	Shader ldrShader;
+
+	FullScreenQuad mCombineFSQ,mCombinefsq;
 };

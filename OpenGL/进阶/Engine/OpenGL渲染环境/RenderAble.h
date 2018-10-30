@@ -17,7 +17,7 @@ protected:
 	virtual ~RenderAble();
 public:
 	void SetEnable(bool isDraw){ this->m_IsDraw = isDraw; }
-	bool OnEnable(){ return this->m_IsDraw; }
+	bool IsEnable(){ return this->m_IsDraw; }
 	VertexBuffer& GetVertexBuffer(){ return m_VertexBuf; }
 	Shader& GetShader(){ return m_Shader; }
 	mat4& GetModelMatrix(){ return m_ModelMatrix; }

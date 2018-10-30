@@ -79,9 +79,9 @@ void VertexBuffer::SetColor(const int& index, const float& r, const float& g, co
 	}
 	m_Vertex[index].SetColor(r, g, b, a);
 }
-inline void VertexBuffer::SetColor(const int& index, const vec4& color)
+void VertexBuffer::SetColor(const int& index, const vec4& color)
 {
-	this->SetPosition(index, color.x, color.y, color.z, color.w);
+	this->SetColor(index, color.x, color.y, color.z, color.w);
 }
 
 void VertexBuffer::SetNormal(const int& index, const float& x, const float& y, const float& z, const float& w)

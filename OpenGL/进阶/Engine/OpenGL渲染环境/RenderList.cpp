@@ -30,7 +30,7 @@ void RenderList::Draw(const mat4 &viewMatrix, const mat4 &projectionMatrix)
 	for (int i = 0; i < m_RendList.size(); i++)
 	{
 		RenderAble* render = m_RendList[i];
-		if (render->OnEnable())
+		if (render->IsEnable())
 		{
 			render->GetVertexBuffer().Begin();
 			{
