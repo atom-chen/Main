@@ -101,6 +101,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BloomScene.cpp" />
     <ClCompile Include="Camera_1st.cpp" />
     <ClCompile Include="Camera_3rd.cpp" />
     <ClCompile Include="Direction.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="Zhucheng.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BloomScene.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="DirectionLight.h" />

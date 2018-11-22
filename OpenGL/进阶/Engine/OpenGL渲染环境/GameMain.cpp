@@ -7,6 +7,7 @@
 #include "SceneSea.h"
 #include "Fuben2.h"
 #include "Gauss.h"
+#include "BloomScene.h"
 
 
 
@@ -18,12 +19,14 @@ void GameLogic::Start()
 	Scene *fuben = new Fuben;
 	Scene* fuben2 = new Fuben2;
 	Scene* gau = new GaussScene;
+	Scene* bloom = new BloomScene;
 	SceneManager::AddScene("main", zhucheng);
 	SceneManager::AddScene("yewai", yewai);
 	SceneManager::AddScene("yewai2", yewai2);
 	SceneManager::AddScene("fuben", fuben);
 	SceneManager::AddScene("fuben2", fuben2);
 	SceneManager::AddScene("gauss", gau);
+	SceneManager::AddScene("bloom", bloom);
 	SceneManager::LoadScene("main");
 	EngineBehavior ::Start();
 }
@@ -55,6 +58,9 @@ void GameLogic::Event(UINT message, WPARAM wParam, LPARAM lParam)
 			break;
 		case '6':
 			SceneManager::LoadScene("gauss");
+			break;
+		case '7':
+			SceneManager::LoadScene("bloom");
 			break;
 		default:
 			break;

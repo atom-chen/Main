@@ -130,6 +130,9 @@
     <ClCompile Include="Gauss.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="BloomScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -280,6 +283,9 @@
       <Filter>Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Gauss.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BloomScene.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
