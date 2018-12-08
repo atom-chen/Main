@@ -82,6 +82,17 @@ void Shader::SetTexture2D(const char* imagePath, bool isRepeat, const char* name
 			{
 				m_mUniformTextures.insert(std::pair<string, UniformTexture>(nameInShader, texture));
 			}
+			else
+			{
+				Debug("读取图片失败,name = %s\n", imagePath);
+			}
+		}
+		else
+		{
+			if (strcmp(nameInShader, "U_Texture_1") != 0)
+			{
+				Debug("读取Location失败,name = %s\n", nameInShader);
+			}
 		}
 	}
 	//如果存在，则认为想要替换图片

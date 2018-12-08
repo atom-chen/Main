@@ -5,7 +5,10 @@
 bool BloomScene::Awake()
 {
 	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
-	m_MainCamera = new Camera;
+	if (m_MainCamera == nullptr)
+	{
+		m_MainCamera = new Camera;
+	}
 
 	m_Light.Init(RES_ROOT"Sphere.obj",SHADER_ROOT"light_render.vert",SHADER_ROOT"light_render.frag");
 	m_FSQ.Init();

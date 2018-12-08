@@ -9,7 +9,10 @@
 */
 void Scene::InsertToRenderList(RenderAble* render)
 {
-	m_MainCamera->InsertToRenderList(render);
+	if (render != nullptr)
+	{
+		m_MainCamera->InsertToRenderList(render);
+	}
 }
 void Scene::InsertToRenderList(const RenderDomain& render)
 {

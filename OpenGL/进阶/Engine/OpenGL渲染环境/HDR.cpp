@@ -1,12 +1,15 @@
-#include "Fuben.h"
+#include "HDR.h"
 #include "Time.h"
 
 
-bool Fuben::Awake()
+bool HDRScene::Awake()
 {
 	m_Skybox.Init("res/front.bmp", "res/back.bmp", "res/top.bmp", "res/bottom.bmp", "res/left.bmp", "res/right.bmp");
 
-	m_MainCamera = new Camera;
+	if (m_MainCamera == nullptr)
+	{
+		m_MainCamera = new Camera;
+	}
 
 	mCombineFSQ.Init(SHADER_ROOT"fullScreenQuad.vert", "ShaderSource/up/texture.frag");
 	mCombinefsq.Init(SHADER_ROOT"fullScreenQuad.vert", "ShaderSource/up/texture.frag");
@@ -34,7 +37,7 @@ bool Fuben::Awake()
 	return 1;
 }
 
-void Fuben::Start()
+void HDRScene::Start()
 {
 	SceneManager::SetClearColor(vec4(0, 0, 0, 1));
 
@@ -66,14 +69,14 @@ void Fuben::Start()
 
 }
 
-void Fuben::Update()
+void HDRScene::Update()
 {
 	m_Skybox.Update(m_MainCamera->GetPosition());
 	m_Sphere.Update(m_MainCamera->GetPosition());
 	m_Sphere2.Update(m_MainCamera->GetPosition());
 	
 }
-void Fuben::OnDrawBegin()
+void HDRScene::OnDrawBegin()
 {
 	m_Skybox.Draw();
 
@@ -92,7 +95,7 @@ void Fuben::OnDrawBegin()
 	mCombinefsq.DrawToLeftTop();
 	m_MainCamera->Draw();
 }
-void Fuben::Draw3D()
+void HDRScene::Draw3D()
 {
 	//单目标渲染需要渲染两次
 	hdrFbo.Begin();
@@ -118,11 +121,11 @@ void Fuben::Draw3D()
 	mCombineFSQ.DrawToRightTop();
 }
 
-void Fuben::Draw2D()
+void HDRScene::Draw2D()
 {
 
 }
-void Fuben::OnDesrory()
+void HDRScene::OnDesrory()
 {
 	m_Skybox.Destroy();
 	m_Sphere.Destroy();
@@ -130,7 +133,7 @@ void Fuben::OnDesrory()
 	m_Sphere2.Destroy();
 }
 
-void Fuben::OnKeyDown(char KeyCode)//按下键盘时调用
+void HDRScene::OnKeyDown(char KeyCode)//按下键盘时调用
 {
 	switch (KeyCode)
 	{
@@ -151,7 +154,7 @@ void Fuben::OnKeyDown(char KeyCode)//按下键盘时调用
 	}
 }
 
-void Fuben::OnKeyUp(char KeyCode)//松开键盘时被调用
+void HDRScene::OnKeyUp(char KeyCode)//松开键盘时被调用
 {
 	switch (KeyCode)
 	{
@@ -171,7 +174,7 @@ void Fuben::OnKeyUp(char KeyCode)//松开键盘时被调用
 	}
 }
 
-void Fuben::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
+void HDRScene::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 {
 	Scene::OnMouseMove(deltaX, deltaY);
 	float angleRotateByUp = deltaX / 1000.0f;
@@ -180,7 +183,7 @@ void Fuben::OnMouseMove(float deltaX, float deltaY)//鼠标移动导致旋转时被调
 	m_MainCamera->Pitch(-angleRotateByRight);
 }
 
-void Fuben::OnMouseWheel(int direction)
+void HDRScene::OnMouseWheel(int direction)
 {
 	switch (direction)
 	{

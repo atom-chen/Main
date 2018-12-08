@@ -5,7 +5,10 @@
 bool Yewai2::Awake()
 {
 	m_Skybox.Init("res/front_2.bmp", "res/back_2.bmp", "res/top_2.bmp", "res/bottom_2.bmp", "res/left_2.bmp", "res/right_2.bmp");
-	m_MainCamera = new Camera;
+	if (m_MainCamera == nullptr)
+	{
+		m_MainCamera = new Camera;
+	}
 	//m_Ground.Init("res/woodfloor.tga");
 	m_Ground.Init("res/1.jpg");
 	m_Niu.Init("res/niutou.obj", SHADER_ROOT"FragObj.vert", SHADER_ROOT"FragObj_Blin.frag");

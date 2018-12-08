@@ -73,3 +73,4 @@ using namespace glm;
 #define DEFAULT_TEXTURE2D "res/default.png"
 
 #define COLOR_WHITE vec4(1.0f,1.0f,1.0f,1.0f)
+

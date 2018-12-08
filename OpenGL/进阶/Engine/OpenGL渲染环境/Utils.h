@@ -8,3 +8,6 @@ unsigned char* DecodeBMP(unsigned char* bmpFileData, int& width, int& height);
 
 //读一个文件 返回其在内存中的指针、文件长度
 bool LoadFileContent(const char* path, int& filesize,char* content);
+
+
+void Debug(const char* fmt, ...);

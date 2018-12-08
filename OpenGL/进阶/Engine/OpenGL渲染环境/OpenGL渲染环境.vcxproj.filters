@@ -43,9 +43,6 @@
     <ClCompile Include="Yewai.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Fuben.cpp">
-      <Filter>Game\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="GameMain.cpp">
       <Filter>Game\main</Filter>
     </ClCompile>
@@ -133,6 +130,12 @@
     <ClCompile Include="BloomScene.cpp">
       <Filter>Game\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="HDR.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="2DScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ggl.h">
@@ -196,9 +199,6 @@
       <Filter>Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Yewai.h">
-      <Filter>Game\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Fuben.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="GamaMain.h">
@@ -286,6 +286,12 @@
       <Filter>Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="BloomScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="HDR.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="2DScene.h">
       <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,16 +1,11 @@
-#pragma  once
+#pragma once
 #include "Scene.h"
-#include "DirectionLight.h"
 #include "GameObject.h"
-#include "ParticleSystem.h"
-#include "Texture.h"
-#include "Ground.h"
-#include "SkyBox.h"
-#include "SkyBoxC.h"
+#include "FrameBuffer.h"
 #include "FullScreenQuad.h"
 
 
-class Fuben :public Scene
+class GaussScene: public Scene
 {
 public:
 	virtual bool Awake();
@@ -28,16 +23,10 @@ public:
 	virtual void OnMouseWheel(int direction);
 protected:
 private:
-	SkyBox m_Skybox;
-	GameObject m_Sphere;
-	DirectionLight m_DR;
-	FrameBuffer m_Fbo;
-	FullScreenQuad m_FSQ;
+	GameObject m_Cube,mCube2;
+	FrameBuffer mFBO,blurFBO;
+	FullScreenQuad mFSQ,blurFSQ;
 
-	//Õ®”√
-	GameObject m_Sphere2;
-	FrameBuffer hdrFbo,ldrFbo;
-	Shader ldrShader;
-
-	FullScreenQuad mCombineFSQ,mCombinefsq;
+	FrameBuffer mFBO1, blurFBOH, blurFBOV;
+	FullScreenQuad mFSQ1, blurFSQH, blurFSQV;
 };

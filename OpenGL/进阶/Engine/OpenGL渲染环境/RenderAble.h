@@ -30,7 +30,7 @@ public:
 public:
 	//…Ë÷√Shader Ù–‘
 	void InitShader(const char* vertexShader, const char* fragmentShader);
-	inline void SetTexture2D(const char* path, bool isRepeat = 1,const char* nameInShader = "U_Texture_1")
+	inline void SetTexture2D(const char* path, const char* nameInShader = "U_Texture_1", bool isRepeat = 1)
 	{
 		INIT_TEST_VOID
 			m_Shader.SetTexture2D(path, isRepeat, nameInShader);
