@@ -224,7 +224,7 @@
     <Compile Include="Connect\Log.cs" />
     <Compile Include="Connect\ServerEvent.cs" />
     <Compile Include="Connect\Connect.cs" />
-    <Compile Include="Connect\User_PAK.cs" />
+    <Compile Include="Connect\User\User_PAK.cs" />
     <Compile Include="Controller\ConnectRoutinue.cs" />
     <Compile Include="Tools\ReadTableTools.cs" />
     <Compile Include="Controller\RoutinueBase.cs" />

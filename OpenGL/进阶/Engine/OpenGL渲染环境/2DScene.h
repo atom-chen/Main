@@ -9,7 +9,25 @@
 #include "SkyBoxC.h"
 #include "FullScreenQuad.h"
 
-
+enum Scene2DType
+{
+	TINVALID = -1,
+	BLEND = 0,
+	LIGHTER = 1,
+	DARKER = 2,
+	ZPDD = 3,
+	MOTE_DARKER = 4,
+	MOTE_LIGHTER = 5,
+	RG = 6,
+	ADD = 7,
+	DEL = 8,
+	DJ = 9,           //叠加
+	QG = 10,          //强光
+	CZ = 11,         //插值
+	FCZ = 12,       //反插值
+	PC = 13,        //排除
+	MAX
+};
 class Scene2D :public Scene
 {
 public:
@@ -28,9 +46,7 @@ public:
 	virtual void OnMouseWheel(int direction);
 protected:
 private:
-	FullScreenQuad m_AlphaBlendFSQ,m_LighterFSQ,m_DarkerFSQ;
-	FullScreenQuad m_zpddFSQ, m_moteDarkerFSQ,m_moteLighterFSQ,m_rgFSQ;
-	FullScreenQuad m_AddFSQ, m_DelFSQ;
+	FullScreenQuad m_FSQS[Scene2DType::MAX];
 	int state = 0;
 
 };

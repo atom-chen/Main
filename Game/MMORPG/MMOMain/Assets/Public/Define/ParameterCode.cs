@@ -9,7 +9,8 @@ using System.Text;
 public enum ParameterCode : byte
 {
     Server,
-    User,
+    UserName,
+    PassWord,
     RoleList,
     Role,
     ErrorInfo

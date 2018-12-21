@@ -145,9 +145,8 @@ public class LaunchSceneLogic : MonoBehaviour
         GameManager.NetManager.TryConnect(mCurServer);
         //发包
         CG_ENTER_GAME_PAK pak = new CG_ENTER_GAME_PAK();
-        pak._User = new User();
-        pak._User.UserName = mCurUserName;
-        pak._User.PassWord = mCurPassword;
+        pak.userName = mCurUserName;
+        pak.passWord = mCurPassword;
         pak.SendPak();
         m_WaitServerObj.SetActive(true);
     }

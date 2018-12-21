@@ -65,40 +65,42 @@ NAT映射表：内网192.168.1.35：8000<->自己的10000端口，外部看到的就是123.24.56.78 
 实现一种通路)，当它把这个洞打好以后A、B就可以实时通信。打洞是由服务器来完成的，最终的目的就是为了提高数据传输的效率。
 
 
-总结：公-公 直接访问；   公-私 NAT映射； 私-公 NAT映射； 私-私 NAT映射+打洞机制；
+总结：公-公 直接访问；   公-私 NAT映射； 私-公 NAT映射； 私-私 NAT映射+打洞机制。
 
 6. 套接字
 作用为在网络环境中唯一标识一个进程。本质是文件，行为类似管道。
 
 	1. 成对出现。
 
-	2. bind  IP port
+	2. bind  IP+port
 
-	3. 一个fd 两个buf。一个缓存数据读入，一个负责数据写出。
+	3. 一个fd对应两个buf。一个缓存数据读入，一个负责数据写出。
 
-0x12345678
+0x12345678 高位->低位，1000较1003为低地址
 大端法：低址存高位（例：1000-12，1001-34，1002-56，1003-78）
 小端法：低存低（例：1000-78，1001-56，1002-34，1003-12）
 
 7. TCP  
 
 	预备知识。
+                           
+	   以往转换：	"192.168.1.24"(const char*) --》unsigned int（主机字节序） -》 htonl() -》 网络字节序
 
-		"192.168.1.24" --》unsigned int -》 htonl() -》 网络字节序
-
-				   10101010101001  -->　１０１０１０１０１０１００１０１
+	   现在一步到位：	10101010101001  -->　１０１０１０１０１０１００１０１
 	
-		192.168.1.24 ------------------> 网络字节序  inet_pton();
+	 (const char* -> 网络)	192.168.1.24 ------------------> 网络字节序  inet_pton();
 
-		网络字节序 ------------------> 点分十进制字符串  inet_ntop();
+	(网络字节序 -> const char*)网络字节序 ------------------> 点分十进制字符串  inet_ntop();
 
+      历史遗留问题：早期的sockaddr（废弃） 和 sockaddr_in
 	struct sockaddr_in addr;
 	
 	addr.sin_family = AF_INET/AFINET6;
-	addr.sin_port = htons/ntohs;
-	addr.sin_addr.s_addr = htonl; ntosl;  inet_pton  inet_ntop;
-		
-	bind( , （struct sockaddr *）&addr);
+	addr.sin_port = htons/ntohs;           (注意字节序转换)
+	addr.sin_addr.s_addr = htonl; ntosl;  inet_pton  inet_ntop;    （字节序转换）
+
+      相关函数	
+	bind( , （struct sockaddr *）&addr);  如果不调用会自动分配
 
 	accept();
 

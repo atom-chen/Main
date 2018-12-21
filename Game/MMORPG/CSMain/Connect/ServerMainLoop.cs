@@ -47,7 +47,7 @@ namespace CSMain
 
         void RegisteRoutinue()
         {
-            //用反射机制注册所有Factory
+            //用反射机制注册所有Routinue
             Type[] types = Assembly.GetAssembly(typeof(RoutinueBase)).GetTypes();
             foreach (var type in types)
             {

@@ -218,6 +218,7 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\Scripts\CallBack.cs" />
     <Compile Include="Assets\Scripts\GameSetting.cs" />
+    <Compile Include="Assets\Scripts\I.cs" />
     <Compile Include="Assets\Scripts\InputLimit.cs" />
     <Compile Include="Assets\Scripts\Mail\EmailItem.cs" />
     <Compile Include="Assets\Scripts\Mail\EmailUI.cs" />

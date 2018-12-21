@@ -17,8 +17,8 @@ public class ConnectRoutinue:RoutinueBase
         {
             CG_ENTER_GAME_PAK pak = m_EnterGameReq.Dequeue();
             MD_LoginMsg msg = new MD_LoginMsg();
-            msg.LoginUserName = pak._User.UserName;
-            msg.LoginPassword = pak._User.PassWord;
+            msg.LoginUserName = pak.userName;
+            msg.LoginPassword = pak.passWord;
             msg.IPAddrea = pak.SenderIp;
             DBRoutinue.SendMsgToDB(msg);
         }
