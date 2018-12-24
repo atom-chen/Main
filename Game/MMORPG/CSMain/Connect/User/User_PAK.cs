@@ -20,7 +20,6 @@ public partial class User
     public void HandlePacket(CG_ENTER_GAME_PAK package)
     {
         //user信息
-        User user = package._User;
         int guid = -1;
         //成功
         //if ((guid = UserManager.Login(user)) != Define._INVALID_ID)

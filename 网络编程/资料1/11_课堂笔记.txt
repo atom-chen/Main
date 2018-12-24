@@ -92,7 +92,7 @@ NAT映射表：内网192.168.1.35：8000<->自己的10000端口，外部看到的就是123.24.56.78 
 
 	(网络字节序 -> const char*)网络字节序 ------------------> 点分十进制字符串  inet_ntop();
 
-      历史遗留问题：早期的sockaddr（废弃） 和 sockaddr_in
+      历史遗留问题：早期的sockaddr（废弃） 和 sockaddr_in（实际用）
 	struct sockaddr_in addr;
 	
 	addr.sin_family = AF_INET/AFINET6;
@@ -111,7 +111,7 @@ C/S模型
 
 		1. socket()  建立套接字
 
-		2. bind() 绑定IP 端口号  (struct sockaddr_in addr 初始化)
+		2. bind() 绑定IP 端口号  (struct sockaddr_in addr 先进行赋值)
 
 		3. listen() 指定最大同时发起连接数
 

@@ -32,9 +32,10 @@ int main(int argc, char const *argv[])
 		bzero(buffer,sizeof(buffer));
 
 		//读玩家输入
-		fget(buffer,sizeof(buffer),STDIN_FILENO);
+		len = read(STDIN_FILENO,buffer,sizeof(buffer));
 		//写到流里
-		write(sSocket,buffer);
+		write(sSocket,buffer,len);
+		memset(buffer,0,sizeof(buffer));
 		//读服务器回传
 		len = read(sSocket,buffer,sizeof(buffer));
 		//打印
