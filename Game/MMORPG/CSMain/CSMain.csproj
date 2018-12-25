@@ -225,7 +225,7 @@
     <Compile Include="Connect\ServerEvent.cs" />
     <Compile Include="Connect\Connect.cs" />
     <Compile Include="Connect\User\User_PAK.cs" />
-    <Compile Include="Controller\ConnectRoutinue.cs" />
+    <Compile Include="Controller\NetRoutinue.cs" />
     <Compile Include="Tools\ReadTableTools.cs" />
     <Compile Include="Controller\RoutinueBase.cs" />
     <Compile Include="Model\Bag\DBItem.cs" />

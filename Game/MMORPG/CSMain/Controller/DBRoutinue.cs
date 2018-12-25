@@ -7,6 +7,18 @@ using System.Threading.Tasks;
 
 class DBRoutinue:RoutinueBase
 {
+    public override ROUTINUE_CODE Code
+    {
+        get { return ROUTINUE_CODE.DB; }
+    }
+    public override int UseResources
+    {
+        get { return 10; }
+    }
+    public override void SetUp()
+    {
+
+    }
     public override void Tick()
     {
         //读消息
@@ -16,7 +28,7 @@ class DBRoutinue:RoutinueBase
             switch(msg.code)
             {
                 case DM_MsgCode.USER_CONNECT:
-                    ConnectRoutinue.ReceiverMsg((DM_UserConnectMsg)msg);
+                    NetRoutinue.ReceiverMsg((DM_UserConnectMsg)msg);
                     break;
                 case DM_MsgCode.USER:
                     UserRoutinue.ReceiverMsg((DM_UserMsg)msg);

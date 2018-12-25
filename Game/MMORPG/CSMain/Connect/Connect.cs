@@ -78,14 +78,14 @@ public class Connect : PeerBase
                         CG_ENTER_GAME_PAK temp = pak as CG_ENTER_GAME_PAK;
                         if(temp != null)
                         {
-                            ConnectRoutinue.ReceiveEnterGamePak(temp);
+                            NetRoutinue.ReceiveEnterGamePak(temp);
                         }
                         break;
                     case OperationCode.Register:
                         CG_REGISTER_PAK temp2 = pak as CG_REGISTER_PAK;
                         if(temp2 != null)
                         {
-                            ConnectRoutinue.ReceiveRegisterPak(temp2);
+                            NetRoutinue.ReceiveRegisterPak(temp2);
                         }
                         break;
                 }

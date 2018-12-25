@@ -8,6 +8,18 @@ using System.Threading.Tasks;
 
 class UserRoutinue:RoutinueBase
 {
+    public override void SetUp()
+    {
+
+    }
+    public override ROUTINUE_CODE Code 
+    {
+        get { return ROUTINUE_CODE.USER; }
+    }
+    public override int UseResources
+    {
+        get { return 100; }
+    }
     public static Dictionary<int, User> m_OnlineUser = new Dictionary<int, User>();//在线用户
 
     public static Queue<CG_PAK_BASE> pakCache = new Queue<CG_PAK_BASE>();
@@ -154,5 +166,9 @@ class UserRoutinue:RoutinueBase
     {
         pakCache.Enqueue(pak);
     }
+
+
+
+
 }
 

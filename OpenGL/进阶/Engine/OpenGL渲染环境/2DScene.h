@@ -26,6 +26,9 @@ enum Scene2DType
 	CZ = 11,         //≤Â÷µ
 	FCZ = 12,       //∑¥≤Â÷µ
 	PC = 13,        //≈≈≥˝
+	SMOOTH = 14,    //∆Ωª¨
+	SHARPEN =15,   //»ÒªØ
+	EDGE = 16,     //±ﬂ‘µºÏ≤‚
 	MAX
 };
 class Scene2D :public Scene

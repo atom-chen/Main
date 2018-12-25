@@ -30,7 +30,10 @@ bool Scene2D::Awake()
 	m_FSQS[Scene2DType::QG].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"qg.frag");       //强光
 	m_FSQS[Scene2DType::CZ].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"cz.frag");       //插值
 	m_FSQS[Scene2DType::FCZ].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"fcz.frag");       //反插值
-	m_FSQS[Scene2DType::PC].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"pc.frag");       //反插值
+	m_FSQS[Scene2DType::PC].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"pc.frag");       //排除
+	m_FSQS[Scene2DType::SMOOTH].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"smooth.frag");       //平滑
+	m_FSQS[Scene2DType::SHARPEN].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"sharpen.frag");       //锐化
+	m_FSQS[Scene2DType::EDGE].Init(SHADER_ROOT"fullScreenQuad.vert", SHADER_ROOT"edgeDetect.frag");       //边缘检测
 	return 1;
 }
 
@@ -39,9 +42,15 @@ void Scene2D::Start()
 	SceneManager::SetClearColor(vec4(0, 0, 0, 1));
 	for (int i = 0; i < ARRLEN(m_FSQS); i++)
 	{
+		if (i == Scene2DType::SMOOTH || i == Scene2DType::SHARPEN || i == Scene2DType::EDGE)
+		{
+			m_FSQS[i].SetTexture2D(ssxPic);
+			continue;
+		}
 		m_FSQS[i].SetTexture2D(DEFAULT_TEXTURE2D);
 		m_FSQS[i].SetTexture2D(ssxPic, "U_Texture_2");
 	}
+
 }
 
 void Scene2D::Update()
