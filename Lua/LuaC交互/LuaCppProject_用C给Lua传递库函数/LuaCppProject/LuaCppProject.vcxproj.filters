@@ -1,223 +1,230 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="luavm">
-      <UniqueIdentifier>{03fc816d-4767-4ab8-80c7-583cca027ffb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="main">
       <UniqueIdentifier>{ebd5f3fd-e2da-4072-bd74-bae6f9b9a9b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="part">
-      <UniqueIdentifier>{4c31f077-2298-4718-a6da-955ee5a3d3cb}</UniqueIdentifier>
     </Filter>
     <Filter Include="main2">
       <UniqueIdentifier>{a2d4efc8-1e98-4b6f-a4c2-d6ec54aae78c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vm">
+      <UniqueIdentifier>{ab65298c-41e4-4c54-ac59-5ab698b99aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{7ca19f4a-67b1-496f-8216-7528d9579d76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lapi.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lauxlib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lbaselib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lbitlib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lcode.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lcorolib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lctype.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ldblib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ldebug.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ldo.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ldump.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lfunc.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lgc.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="linit.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="liolib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="llex.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lmathlib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lmem.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="loadlib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lobject.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lopcodes.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="loslib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lparser.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lstate.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lstring.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lstrlib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ltable.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ltablib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="ltm.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lundump.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lutf8lib.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lvm.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
-    <ClCompile Include="lzio.c">
-      <Filter>luavm</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="Function.cpp" />
     <ClCompile Include="main2.cpp">
       <Filter>main2</Filter>
     </ClCompile>
     <ClCompile Include="Cat.cpp">
       <Filter>main2</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Package\lapi.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lauxlib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lbaselib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lbitlib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lcode.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lcorolib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lctype.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ldblib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ldebug.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ldo.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ldump.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lfunc.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lgc.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\linit.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\liolib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\llex.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lmathlib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lmem.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\loadlib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lobject.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lopcodes.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\loslib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lparser.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lstate.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lstring.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lstrlib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ltable.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ltablib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\ltm.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lundump.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lutf8lib.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lvm.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\lzio.c">
+      <Filter>vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Package\Tools.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lapi.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lauxlib.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lcode.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lctype.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="ldebug.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="ldo.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lfunc.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lgc.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="llex.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="llimits.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lmem.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lobject.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lopcodes.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lparser.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lprefix.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lstate.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lstring.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="ltable.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="ltm.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lua.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lua.hpp">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="luaconf.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lualib.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lundump.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lvm.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="lzio.h">
-      <Filter>luavm</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h" />
     <ClInclude Include="Cat.h">
       <Filter>main2</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Package\lapi.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lauxlib.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lcode.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lctype.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\ldebug.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\ldo.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lfunc.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lgc.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\llex.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\llimits.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lmem.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lobject.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lopcodes.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lparser.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lprefix.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lstate.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lstring.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\ltable.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\ltm.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lua.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lua.hpp">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\luaconf.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lualib.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lundump.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lvm.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\lzio.h">
+      <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\Tools.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Makefile">
-      <Filter>luavm</Filter>
-    </None>
     <None Include="main.lua">
       <Filter>main</Filter>
     </None>
     <None Include="main2.lua">
       <Filter>main2</Filter>
+    </None>
+    <None Include="..\..\..\Package\Makefile">
+      <Filter>vm</Filter>
+    </None>
+    <None Include="..\..\..\Package\Tools.lua">
+      <Filter>vm</Filter>
     </None>
   </ItemGroup>
 </Project>

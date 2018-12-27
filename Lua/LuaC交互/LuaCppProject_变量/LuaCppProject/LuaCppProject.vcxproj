@@ -110,6 +110,7 @@
     <ClCompile Include="..\..\..\Package\lutf8lib.c" />
     <ClCompile Include="..\..\..\Package\lvm.c" />
     <ClCompile Include="..\..\..\Package\lzio.c" />
+    <ClCompile Include="..\..\..\Package\Tools.cpp" />
     <ClCompile Include="GlobalData.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="..\..\..\Package\lvm.h" />
     <ClInclude Include="..\..\..\Package\lzio.h" />
     <ClInclude Include="..\..\..\Package\main.h" />
+    <ClInclude Include="..\..\..\Package\Tools.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

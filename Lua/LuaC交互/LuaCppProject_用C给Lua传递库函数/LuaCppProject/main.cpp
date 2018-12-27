@@ -1,11 +1,16 @@
-#include "main.h"
+#include "Tools.h"
 #include "lauxlib.h"
 #include "lua.h"
 
 int TestCFunction_Export(lua_State *lua)
 {
-	lua_pushstring(lua, "Lua is beautiful");             //往lua堆栈写入数据
+#if defined(_WIN32)
+	lua_pushstring(lua, "Windows");             //往lua堆栈写入数据
 	return 1;
+#else if defined(_UNIX)
+	lua_pushstring(lua, "Unix");             //往lua堆栈写入数据
+	return 2;
+#endif
 }
 
 int main1(int argc, char** argv)

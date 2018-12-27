@@ -10,6 +10,9 @@
     <Filter Include="vm">
       <UniqueIdentifier>{632f12cb-d37f-40be-852c-418ae0d04b1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{6b777e6f-67b0-4cba-b8d7-878d87fe09d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -117,6 +120,9 @@
     <ClCompile Include="..\..\..\Package\lzio.c">
       <Filter>vm</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Package\Tools.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -202,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Package\main.h">
       <Filter>vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Package\Tools.h">
+      <Filter>Tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

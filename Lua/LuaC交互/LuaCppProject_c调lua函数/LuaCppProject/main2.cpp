@@ -1,7 +1,7 @@
-#include "main.h"
+#include "Tools.h"
 
 
-int main02(int argc, char** argv)
+int main(int argc, char** argv)
 {
 	lua_State *lua = luaL_newstate();  
 	luaL_openlibs(lua);
