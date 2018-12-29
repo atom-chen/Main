@@ -1,0 +1,20 @@
+1、在每次更新迭代中整理过去的代码
+2、当int和uint类型进行比较时，uint会被强转为int导致问题
+3、两个会频繁切换的UI公用脚本时，在将ins置空的时候要判一下是否==this
+4、拖到某个prefab时看不到物体，注意它的缩放是否正确
+5、在C++代码中，直接给string预留足够长的内存空间，不要掐点，只需要在收到CG包的时候，判断一下发过来的数据长度即可。
+6、所有人注意下无单提交和专单不专用的问题，后续马上要施行三项惩罚措施，抓到了你、我、昌哥都罚款，所以从今天开始必须注意
+7、当UIWidget没有走初始化时，自适应Box不会生效。
+迭代器、携程
+        WaitForEndOfFrame wait = new WaitForEndOfFrame();
+        while (true)
+        {
+            yield return wait;
+            if (canvasCam != null && canvasCam.targetTexture != null)
+            {
+                canvasCam.targetTexture.DiscardContents();
+            }
+        }
+
+PlayerPrefs
+PlayerPrefs.GetInt("DrawCardController_lockAnim") != 1;
