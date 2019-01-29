@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>5.6.4f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -222,14 +224,13 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-    <Compile Include="Assets\Scripts\Common\GameDefine.cs" />
-    <Compile Include="Assets\Scripts\DrawGridController.cs" />
-    <Compile Include="Assets\Scripts\DrawItem.cs" />
-    <Compile Include="Assets\Scripts\GameLogic.cs" />
-    <Compile Include="Assets\Scripts\GameOrderController.cs" />
-    <Compile Include="Assets\Scripts\GameOrderView.cs" />
-    <Compile Include="Assets\Scripts\SwitchMarkView.cs" />
+    <Compile Include="Assets\Scripts\GameDefine.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\TableManager.cs" />
+    <Compile Include="Assets\Scripts\UI\DrawGridItem.cs" />
+    <Compile Include="Assets\Scripts\UI\NameItem.cs" />
+    <Compile Include="Assets\Scripts\UI\GameOrderController.cs" />
+    <Compile Include="Assets\Scripts\UI\SwitchMarkView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />

@@ -3,27 +3,29 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class GameOrderView : MonoBehaviour
+public class GameOrderController : MonoBehaviour
 {
-    private static GameOrderView m_Instance;
-    public static GameOrderView Instance()
+    private static GameOrderController m_Instance;
+    public static GameOrderController Instance()
     {
         return m_Instance;
     }
     //Top
     public UISprite m_HelpSprite;
     public UILabel m_HelpLabel;
+    public UILabel m_PeopleHelpLabel;
     //Center
-    public DrawGridController m_PageThree;
-    public DrawGridController m_PageTwo;
-    public DrawGridController m_PageOne;
-    public DrawGridController m_PageBest;
-    public DrawGridController m_PageFree;
+    public DrawGridItem m_PageThree;
+    public DrawGridItem m_PageTwo;
+    public DrawGridItem m_PageOne;
+    public DrawGridItem m_PageBest;
+    public DrawGridItem m_PageFree;
     public GameObject m_PageFreeMain;
-    public UILabel m_FreeCommitLabel;
-    public DrawGridController m_CurTage;
+    public UIInput m_FreeInput;
+    [HideInInspector]
+    public DrawGridItem m_CurTage;
 
-
+    private DRAW_TYPE m_CurDraw;
     private int m_CurCount = 11;
     private bool m_bBeginDraw = false;
     private List<People> luckBoy;
@@ -33,14 +35,17 @@ public class GameOrderView : MonoBehaviour
     }
     void Start()
     {
-        m_CurTage = m_PageThree;
-        m_CurCount = m_CurTage.GetCount();
-        m_PageThree.TotalDraw = 88;
-        m_PageTwo.TotalDraw = 50;
-        m_PageOne.TotalDraw = 30;
-        m_PageBest.TotalDraw = 10;
-        m_PageFree.TotalDraw = -1;
-        UpdateView();
+        m_PageThree.Init(GameDefine.Total_Three, GameDefine.ThreeEveryDraw,GameDefine.ThreeAlreadyDraw,DRAW_TYPE.THREE);
+        m_PageTwo.Init(GameDefine.Total_Two, GameDefine.TwoEveryDraw, GameDefine.TwoAlreadyDraw, DRAW_TYPE.TWO);
+        m_PageOne.Init(GameDefine.Total_One, GameDefine.OneEveryDraw, GameDefine.OneAlreadyDraw, DRAW_TYPE.ONE);
+        m_PageBest.Init(GameDefine.Total_Best, GameDefine.BestEveryDraw, GameDefine.BestAlreadyDraw, DRAW_TYPE.BEST);
+        m_PageFree.Init(-1,-1,0,DRAW_TYPE.FREE);
+
+        m_PageTwo.gameObject.SetActive(false);
+        m_PageOne.gameObject.SetActive(false);
+        m_PageBest.gameObject.SetActive(false);
+        m_PageFreeMain.SetActive(false);
+        OnClickPageThree();
     }
     /// <summary>
     /// 开始抽奖后，每物理时间0.05s 随机当前数量个中奖者ID 按下停时停止随机
@@ -49,7 +54,7 @@ public class GameOrderView : MonoBehaviour
     {
         if (m_bBeginDraw && m_CurCount >= 0)
         {
-            luckBoy = GameOrderController.Instance().GetLuckBoys(m_CurCount);
+            luckBoy = GameManager.GetLuckBoys(m_CurCount);
             //到当前面板上去展示
             if (m_CurTage == null)
             {
@@ -80,20 +85,34 @@ public class GameOrderView : MonoBehaviour
         {
             return;
         }
-        if (m_CurTage != null)
+        if (m_CurTage == null)
+        {
+            return;
+        }
+        //做修正
+        if (m_CurTage == m_PageFree)
+        {
+            //点开始，如果还未完成输入，则将输入值进行转换
+            if (!string.IsNullOrEmpty(m_FreeInput.value))
+            {
+                OnCommitFreeCount();
+            }
+            m_CurCount = m_CurTage.EveryDrawCount;
+        }
+        else
         {
             m_CurCount = m_CurTage.GetCount();
-        } else
-        {
-            m_CurCount = 8;
         }
         if (m_CurTage.GetResidueNum() <= 0 && m_CurTage != m_PageFree)
         {
             //不允许操作
             return;
         }
+        if(GameManager.GetDrawRange() <=0)
+        {
+            return;
+        }
         m_bBeginDraw = true;
-        GameOrderController.Instance().Begin();
     }
     /// <summary>
     /// 点击结束按钮
@@ -105,64 +124,75 @@ public class GameOrderView : MonoBehaviour
             return;
         }
         m_bBeginDraw = false;
-        GameOrderController.Instance().Stop(luckBoy);
+        //更新Help显示
+        m_CurTage.DrawEnd();
+        GameManager.Stop(luckBoy, m_CurTage.mType);
+        UpdateView();
     }
     public void OnClickPageThree()
     {
-        if (m_CurTage == m_PageThree)
+        if (m_CurTage == m_PageThree || m_bBeginDraw)
         {
             return;
         }
         Leave();
         m_PageThree.gameObject.SetActive(true);
         m_CurTage = m_PageThree;
+        m_CurCount = m_CurTage.GetCount();
         SwitchMarkView.Instance().SwitchMark(0);
         UpdateView();
     }
     public void OnClickPageTwo()
     {
-        if (m_CurTage == m_PageTwo)
+        if (m_CurTage == m_PageTwo || m_bBeginDraw)
         {
             return;
         }
         Leave();
         m_PageTwo.gameObject.SetActive(true);
         m_CurTage = m_PageTwo;
+        m_CurCount = m_CurTage.GetCount();
         SwitchMarkView.Instance().SwitchMark(1);
         UpdateView();
     }
     public void OnClickPageOne()
     {
-        if (m_CurTage == m_PageOne)
+        if (m_CurTage == m_PageOne || m_bBeginDraw)
         {
             return;
         }
         Leave();
         m_PageOne.gameObject.SetActive(true);
         m_CurTage = m_PageOne;
+        m_CurCount = m_CurTage.GetCount();
         SwitchMarkView.Instance().SwitchMark(2);
         UpdateView();
     }
     public void OnClickPageBest()
     {
-        if (m_CurTage == m_PageBest)
+        if (m_CurTage == m_PageBest || m_bBeginDraw)
         {
             return;
         }
         Leave();
         m_PageBest.gameObject.SetActive(true);
         m_CurTage = m_PageBest;
+        m_CurCount = m_CurTage.GetCount();
         SwitchMarkView.Instance().SwitchMark(3);
         UpdateView();
     }
     public void OnClickTitle()
     {
+        if (m_CurTage == m_PageFree || m_bBeginDraw)
+        {
+            return;
+        }
         if (m_PageFree == null)
         {
-            m_PageFree = m_PageFreeMain.transform.GetChild(0).GetComponent<DrawGridController>();
+            m_PageFree = m_PageFreeMain.transform.GetChild(0).GetComponent<DrawGridItem>();
         }
         Leave();
-        m_PageFreeMain.gameObject.SetActive(true);
+        m_PageFreeMain.SetActive(true);
         m_CurTage = m_PageFree;
         SwitchMarkView.Instance().SwitchMark(-1);
         UpdateView();
@@ -171,17 +201,10 @@ public class GameOrderView : MonoBehaviour
     public void OnCommitFreeCount()
     {
         m_bBeginDraw = false;
-        //获取输入
-        if (m_FreeCommitLabel == null)
-        {
-            m_PageFreeMain.transform.GetChild(1).GetComponentInChildren<UILabel>();
-        }
-        if (m_FreeCommitLabel != null)
-        {
-            int count = Convert.ToInt32(m_FreeCommitLabel.text);
-            GameOrderController.Instance().OnFreeUpdateCount(count);
-            m_FreeCommitLabel.text = "";
-        }
+        int count = 0;
+        int.TryParse(m_FreeInput.value, out count);
+        m_PageFree.SetCount(count, count);
+        m_FreeInput.value = "";
     }
 
     void Leave()
@@ -190,19 +213,32 @@ public class GameOrderView : MonoBehaviour
         if (m_CurTage == m_PageFree)
         {
             m_PageFreeMain.gameObject.SetActive(false);
-        } else
+        } 
+        else
         {
-            m_CurTage.gameObject.SetActive(false);
+            if (m_CurTage != null)
+            {
+                m_CurTage.gameObject.SetActive(false);
+            }
         }
     }
+
+    public GameObject m_HelpObj;
     /// <summary>
     /// 切换奖励级别->更新help数字以及奖励级别sprite
     /// </summary>
     public void UpdateView()
     {
-        m_CurCount = m_CurTage.GetCount();
-        m_HelpLabel.text = m_CurTage.GetResidue();
-
+        if(m_CurTage == m_PageFree)
+        {
+            m_HelpObj.SetActive(false);
+        }
+        else
+        {
+            m_HelpObj.SetActive(true);
+        }
+        m_HelpLabel.text =string.Format("剩余次数：{0}",m_CurTage.GetResidue());
+        m_PeopleHelpLabel.text = string.Format("剩余人数：{0}", GameManager.GetDrawRange());
     }
 
 }

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawItem : MonoBehaviour
+public class NameItem : MonoBehaviour
 {
     public UILabel m_IDLabel;
     public UILabel m_NameLabel;
 
-    // Use this for initialization
     void Start()
     {
         if (m_IDLabel == null)

@@ -10,8 +10,8 @@ public class SwitchMarkView : MonoBehaviour {
     }
     public int StartIndex = 0;
 
-    private Color32 m_NormalColor = new Color32(255, 255, 255, 255);
-    private Color32 m_PressColor = new Color32(183, 163, 123, 255); 
+    private static Color32 m_NormalColor = new Color32(255, 255, 255, 255);
+    private static Color32 m_PressColor = new Color32(183, 163, 123, 255); 
     public UISprite[] m_SwitchMark;
     private UISprite m_CurMark;
     void Awake()
@@ -35,7 +35,7 @@ public class SwitchMarkView : MonoBehaviour {
       {
           return;
       }
-      else if(index==-1)
+      else if(index <0)
       {
           m_CurMark.color = m_NormalColor;
       }
@@ -45,6 +45,5 @@ public class SwitchMarkView : MonoBehaviour {
           m_CurMark = m_SwitchMark[index];
           m_CurMark.color = m_PressColor;
       }
-
   }
 }
