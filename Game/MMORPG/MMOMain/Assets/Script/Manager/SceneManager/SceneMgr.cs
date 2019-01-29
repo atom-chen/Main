@@ -36,9 +36,17 @@ public class SceneMgr
         }
     }
 
+    private static bool mFirst = true;
     public static void LoadScene(SCENE_CODE scene)
     {
-        //加载场景
+        //加载场景，首次加载时不走enter逻辑
+        if (mFirst)
+        {
+            SceneBase nextScene = GetScene(scene);
+            m_CurScene = nextScene;
+            mFirst = false;
+            return;
+        }
         SceneLoading.Show(scene,OnLoadSceneFinish);
     }
     private static void OnLoadSceneFinish(bool success,SCENE_CODE scene,object para)

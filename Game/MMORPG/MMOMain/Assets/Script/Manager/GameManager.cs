@@ -8,13 +8,11 @@ public class GameManager : MonoBehaviour
 
     public static NetManager NetManager;
 
-    public static CallBackManager CallBackManager;
 
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         NetManager = Utils.TryAddComponent<NetManager>(gameObject);
-        CallBackManager = Utils.TryAddComponent<CallBackManager>(gameObject);
     }
 
     void Start()

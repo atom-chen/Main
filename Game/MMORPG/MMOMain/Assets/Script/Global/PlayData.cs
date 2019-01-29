@@ -29,8 +29,6 @@ public partial class PlayData
             }
             RoleData = value;
             RoleData.OnInfoChange += OnChange;
-            CallBackManager.OneSecondCallBack -= RoleEnergyRecover;
-            CallBackManager.OneSecondCallBack += RoleEnergyRecover;
         }
     }
 
