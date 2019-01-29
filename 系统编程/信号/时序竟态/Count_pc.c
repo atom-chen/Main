@@ -20,7 +20,6 @@ void ChildCatch(int signal)
 
 int main(int argc, char const *argv[])
 {
-
 	pid=fork();
 	if(pid>0)
 	{
@@ -45,7 +44,7 @@ int main(int argc, char const *argv[])
 		sigemptyset(&(act.sa_mask));
 		act.sa_flags=0;
 		sigaction(SIGUSR1,&act,&old);	
-        pid=getppid();
+    pid=getppid();
 		while(1)
 		{
 			sleep(5);

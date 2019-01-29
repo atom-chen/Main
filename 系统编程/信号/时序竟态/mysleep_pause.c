@@ -1,7 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <signal.h>
+#include <unistd.h> #include <stdio.h> #include <stdlib.h> #include <signal.h>
 
 void Catch(int signal)
 {
@@ -18,7 +15,7 @@ int mySleep(float second)
 
 	ret=sigaction(SIGALRM,&act,&old);
 	alarm(second);
-    //signal(SIGALRM,Catch);
+  //signal(SIGALRM,Catch);
 	if(pause()==-1)
 	{
 		printf("%s\n","pause return value = -1");
