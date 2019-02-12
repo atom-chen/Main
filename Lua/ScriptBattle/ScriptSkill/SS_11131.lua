@@ -1,0 +1,55 @@
+
+require("BattleCore/SkillProcess/ScriptSkillParser")
+local sc = require("ScriptSkill/ScriptSkillCommon")
+
+local ImpactSubClass = require("BattleCore/Common/ImpactSubClass")
+local ImpactTargetType = require("BattleCore/Common/ImpactTargetType")
+local ImpactClass = require("BattleCore/Common/ImpactClass")
+
+--筝3技能：【人界效果】由女子连续攻击敌方全体3次，前两击造成筝攻击75%的普通伤害，第三击造成筝攻击150%的普通伤害，并为我方全体施加持续2回合的攻击强化效果。
+--[A78C84]【妖界效果】由男子攻击敌方全体，造成筝攻击300%的普通伤害，并以80%的概率使敌方全体受到持续2回合的防御降低效果。[-]冷却时间5回合。
+
+
+
+--防御降低效果
+local i_DefenceReduce = i_mk(sc.CommonBuffs.DefenceReduce)   --引用通用防御降低
+      i_DefenceReduce.Duration = 2                           --修改持续回合          
+
+
+--一击
+local i_damage  = i_mk{
+    ImpactClass=2,
+    ImpactLogic = 0,              --普通伤害
+
+    Param_1 = "a1",               -- 攻击力百分比(无则填0   10000表示造成的100%攻击力)
+    Param_2 = 0,                  -- 额外固定值（0表示无附加掉血；如填60表示附加60点掉血）
+    Param_3 = -1,                 -- 同一技能相同impact多次命中衰减系数
+}
+
+
+
+local sk_main = sk_mk{
+
+    
+    H_1 = h_mk{                         
+    TargetType = 4,
+
+    I_1 = {                        --防御降低效果
+        Chance = "a2",
+        IsChanceRefix = 1,
+        Impact = i_DefenceReduce,
+    }
+},
+
+    H_2 = h_mk{                         --伤害
+        TargetType = 4,
+        I_1 = {
+            Impact = i_damage,
+        },
+    },
+    IgnoreSelfState = 1, --处于眩晕等不可行动的状态时可释放
+    IgnoreTargetDead = 1, --目标死亡可释放
+   
+}
+
+return sk_main
