@@ -163,7 +163,7 @@ void main904()
 }
 
 //05演示：set集合查找功能
-int main()
+int main05()
 {
 	int		i = 0;
 	set<int> set1;

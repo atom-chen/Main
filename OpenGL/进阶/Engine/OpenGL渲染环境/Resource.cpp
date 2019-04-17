@@ -766,7 +766,7 @@ GLuint ResourceManager::CompileShader(GLenum shaderType, const char* shaderCode)
 		//拿到错误日志
 		glGetShaderInfoLog(shader, 1024, &logLen, szLog);   //shader，错误日志最多多少字符，做输出拿到实际多少个字符，日志写在哪
 
-		printf("Comoile Shaderr fail error log:%s\nshader code:\n%s\n", szLog, shaderCode);
+		Debug("Comoile Shaderr fail error log:%s\nshader code:\n%s\n", szLog, shaderCode);
 		glDeleteShader(shader);
 		shader = 0;
 	}

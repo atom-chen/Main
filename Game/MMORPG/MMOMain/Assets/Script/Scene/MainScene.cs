@@ -12,11 +12,13 @@ class MainScene : SceneBase
     }
     public override void OnLoadScene()
     {
+        base.OnLoadScene();
         UIManager.ShowUI(UIInfo._MainUI);
     }
 
     public override void OnCloseScene()
     {
+        base.OnCloseScene();
         UIManager.CloseUI(UIInfo._MainUI);
     }
 }

@@ -18,7 +18,7 @@ public enum BATTLE_TYPE
     CONTROL = 1, //控制系
     STORM = 2,   //强攻系
     QUICK = 3,   //敏攻系
-    ASSIST = 4,  //辅助系
+    SUP = 4,  //辅助系
 }
 //装备部位
 public enum EQUIP_TYPE

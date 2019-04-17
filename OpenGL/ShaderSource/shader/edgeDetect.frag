@@ -28,7 +28,7 @@ void main()
 		{
 			vec4 currentColor = texture2D(U_Texture_1,V_Texcoord.xy + vec2(float(x-1) * texelOffset,
 			                    float(-1+y)*texelOffset));
-			color += currentColor*kernal[idx++];
+			color += currentColor*kernal[idx++];     //当前点的像素颜色，乘上一个因子
 		}
 	}
 	gl_FragColor = 0.5*color+texture2D(U_Texture_1,V_Texcoord.xy);

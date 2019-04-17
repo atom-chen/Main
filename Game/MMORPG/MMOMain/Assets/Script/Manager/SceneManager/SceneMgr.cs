@@ -4,15 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public abstract class  SceneBase
-{
-    public abstract SCENE_CODE SceneCode { get; }
 
-    public abstract void OnLoadScene();
-
-    public abstract void OnCloseScene();
-}
 public class SceneMgr
 {
     public static SceneBase m_CurScene = null;
@@ -39,30 +33,23 @@ public class SceneMgr
     private static bool mFirst = true;
     public static void LoadScene(SCENE_CODE scene)
     {
+        SceneBase nextScene = GetScene(scene);
         //加载场景，首次加载时不走enter逻辑
         if (mFirst)
         {
-            SceneBase nextScene = GetScene(scene);
             m_CurScene = nextScene;
             mFirst = false;
             return;
         }
-        SceneLoading.Show(scene,OnLoadSceneFinish);
-    }
-    private static void OnLoadSceneFinish(bool success,SCENE_CODE scene,object para)
-    {
-        if(success)
+        if (m_CurScene != null)
         {
-            if(m_CurScene!=null)
-            {
-                m_CurScene.OnCloseScene();
-            }
-            SceneBase nextScene = GetScene(scene);
-            if (nextScene!=null)
-            {
-                m_CurScene = nextScene;
-                nextScene.OnLoadScene();
-            }
+            m_CurScene.OnCloseScene();
+        }
+        SceneManager.LoadScene((int)scene);
+        if (nextScene != null)
+        {
+            m_CurScene = nextScene;
+            nextScene.OnLoadScene();
         }
     }
 
